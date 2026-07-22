@@ -311,7 +311,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* ---------- Shared Photo Background Layout ---------- */
 .section-photo-shared {
   position: relative;
-  background-image: url('/assets/img/hero-vatican.jpg');
+  background-image: url('/assets/img/hero-paris.jpg');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
