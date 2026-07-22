@@ -1,0 +1,17 @@
+# Build outputs
+react-app/dist/
+
+# Dependencies
+react-app/node_modules/
+
+# Environment files
+react-app/.env*
+.env*
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
