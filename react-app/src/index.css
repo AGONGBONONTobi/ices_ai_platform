@@ -311,7 +311,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* ---------- Shared Photo Background Layout ---------- */
 .section-photo-shared {
   position: relative;
-  background-image: url('/assets/img/hero-paris.jpg');
+  background-image: url('/assets/img/hero-colonnade.jpg');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -785,18 +785,102 @@ textarea { resize: vertical; min-height: 110px; }
   display: block; width: 6px; height: 6px;
   background: var(--gold); transform: rotate(45deg); font-style: normal;
 }
-.portrait-stats {
-  display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
-  background: var(--parchment-warm);
-  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+/* ---- Portrait editorial split layout ---- */
+.portrait-editorial {
+  background: var(--ink-fixed);
+  position: relative; overflow: hidden;
+  padding: 80px 0;
 }
+.portrait-editorial::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.portrait-editorial::after {
+  content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.portrait-editorial-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.portrait-editorial-text {
+  display: flex; flex-direction: column; justify-content: center;
+}
+.portrait-editorial-text .portrait-band-quote {
+  margin-bottom: 2.5rem;
+}
+/* inline stats inside the text block */
+.portrait-stats-inline {
+  display: flex; flex-direction: column; gap: 0;
+  border-top: 1px solid var(--gold-border);
+}
+.portrait-stats-inline .portrait-stat {
+  display: flex; flex-direction: row; align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.portrait-stats-inline .portrait-stat-value {
+  font-family: var(--font-display); font-size: 1.7rem; font-weight: 600;
+  color: var(--gold); line-height: 1;
+}
+.portrait-stats-inline .portrait-stat-label {
+  font-family: var(--font-mono); font-size: 0.68rem;
+  text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted-ink);
+}
+/* image side */
+.portrait-editorial-image-wrap {
+  position: relative;
+}
+.portrait-editorial-frame {
+  position: relative;
+  overflow: hidden;
+}
+.portrait-editorial-frame::before {
+  content: "";
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to top, rgba(10,8,6,0.35) 0%, transparent 50%);
+  pointer-events: none;
+}
+.portrait-editorial-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+/* gold accent bar on left edge of portrait */
+.portrait-editorial-accent {
+  position: absolute;
+  top: 8%;
+  left: -3px;
+  width: 3px;
+  height: 50%;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  border-radius: 2px;
+}
+/* mobile: stack vertically, image first */
+@media (max-width: 768px) {
+  .portrait-editorial-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .portrait-editorial-text {
+    order: 2;
+  }
+  .portrait-editorial-image-wrap {
+    order: 1;
+  }
+  .portrait-editorial-img {
+    aspect-ratio: 4 / 5;
+  }
+}
+/* keep old portrait-stat styles for any remaining usage */
 .portrait-stat {
-  display: flex; flex-direction: column; align-items: center;
-  padding: 28px 40px; position: relative;
-}
-.portrait-stat + .portrait-stat::before {
-  content: ""; position: absolute; left: 0; top: 20%; height: 60%;
-  width: 1px; background: var(--line);
+  display: flex; flex-direction: column; align-items: flex-start;
 }
 .portrait-stat-value {
   font-family: var(--font-display); font-size: 1.9rem; font-weight: 600;
@@ -805,11 +889,6 @@ textarea { resize: vertical; min-height: 110px; }
 .portrait-stat-label {
   font-family: var(--font-mono); font-size: 0.68rem;
   text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted-ink);
-}
-@media (max-width: 560px) {
-  .portrait-stat { padding: 20px 24px; flex: 1 1 50%; }
-  .portrait-stat-value { font-size: 1.5rem; }
-  .portrait-stat + .portrait-stat::before { display: none; }
 }
 @theme inline {
   --font-heading: var(--font-sans);

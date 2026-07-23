@@ -151,14 +151,25 @@ export function Hero07({
         whileInView={animate ? "visible" : undefined}
         viewport={{ once: true, margin: "-80px" }}
       >
-        <Reveal active={animate} className="flex lg:col-span-4 lg:col-start-1 lg:items-start lg:self-stretch">
+        {/* Left column: tagline + CTAs on desktop */}
+        <Reveal active={animate} className="flex flex-col gap-6 lg:col-span-4 lg:col-start-1 lg:items-start lg:self-stretch lg:justify-between">
           {taglineElement}
+          {/* CTAs visible only on desktop in left column */}
+          <div className="hidden lg:flex lg:flex-col lg:gap-3">
+            {primaryCTA?.ctaEnabled && <Cta cta={primaryCTA} />}
+            {secondaryCTA?.ctaEnabled && <Cta cta={{ ...secondaryCTA, variant: secondaryCTA.variant ?? "link" }} />}
+          </div>
         </Reveal>
 
+        {/* Right column: title + description + CTAs (mobile only) */}
         <Reveal active={animate} className={cn("flex flex-col items-start lg:col-span-6 lg:col-start-7", vs.header)}>
           {titleElement}
           {descriptionElement}
-          {ctasElement}
+          {/* CTAs visible only on mobile in right column */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-3 lg:hidden">
+            {primaryCTA?.ctaEnabled && <Cta cta={primaryCTA} />}
+            {secondaryCTA?.ctaEnabled && <Cta cta={{ ...secondaryCTA, variant: secondaryCTA.variant ?? "link" }} />}
+          </div>
         </Reveal>
       </motion.div>
     </section>
