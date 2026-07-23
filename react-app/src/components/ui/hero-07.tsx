@@ -138,16 +138,16 @@ export function Hero07({
       )}
 
       <motion.div
-        className={cn("relative z-10 mx-auto w-full max-w-7xl px-6", vs.copy)}
+        className={cn("relative z-10 mx-auto w-full max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center", vs.copy)}
         variants={animate ? container : undefined}
         initial={animate ? "hidden" : false}
         whileInView={animate ? "visible" : undefined}
         viewport={{ once: true, margin: "-80px" }}
       >
         {/* Left-aligned content */}
-        <Reveal active={animate} className={cn("flex flex-col max-w-3xl lg:items-start lg:text-left", vs.header)}>
+        <Reveal active={animate} className={cn("flex flex-col lg:col-span-7 lg:items-start lg:text-left", vs.header)}>
           {/* Force text color to white/light for readability against dark overlay */}
-          <div className="text-white/90">
+          <div className="text-white/90 w-full">
             {taglineElement && (
               <p className={cn("max-w-xs leading-relaxed tracking-widest uppercase font-mono text-[#B8975A] mb-4", vs.tagline)}>
                 <Balancer>{tagline}</Balancer>
@@ -169,6 +169,25 @@ export function Hero07({
                 {secondaryCTA?.ctaEnabled && <Cta cta={{ ...secondaryCTA, variant: "outline" }} />}
               </div>
             )}
+          </div>
+        </Reveal>
+
+        {/* Right column: Elegant Quote (Desktop filler) */}
+        <Reveal active={animate} className="hidden lg:flex lg:col-span-4 lg:col-start-9 flex-col justify-center">
+          <div className="bg-background/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 relative overflow-hidden shadow-2xl">
+            {/* Elegant gold accent bar */}
+            <div className="absolute top-0 left-0 bottom-0 w-1 bg-gradient-to-b from-[#B8975A]/40 via-[#B8975A] to-[#B8975A]/40"></div>
+            
+            <svg className="w-10 h-10 text-[#B8975A]/40 mb-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+            <p className="text-white/90 text-lg font-serif italic leading-relaxed mb-6">
+              "La défense de vos intérêts requiert rigueur, réactivité et une confiance absolue. C'est le fondement de notre engagement à vos côtés."
+            </p>
+            <div className="flex items-center gap-4">
+              <div className="h-px bg-white/30 flex-1"></div>
+              <span className="text-[#B8975A] font-medium tracking-wide uppercase text-sm">Notre Vocation</span>
+            </div>
           </div>
         </Reveal>
       </motion.div>
