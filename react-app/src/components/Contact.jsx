@@ -64,7 +64,7 @@ export default function Contact({ sectionRef }) {
   }
 
   return (
-    <section className="section-photo-shared" id="contact" ref={sectionRef}>
+    <section className="pt-12 pb-24 lg:pt-16 lg:pb-32" id="contact" ref={sectionRef}>
       <div className="container">
         <Reveal as="div" className="section-panel">
           <div className="section-head">

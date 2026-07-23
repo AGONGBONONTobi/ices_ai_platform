@@ -51,8 +51,10 @@ function App() {
         <Competences sectionRef={competencesSectionRef} />
         <Testimonials sectionRef={testimonialsSectionRef} />
         <FAQ sectionRef={faqSectionRef} />
-        <Honoraires sectionRef={honorairesSectionRef} />
-        <Contact sectionRef={contactSectionRef} />
+        <div className="section-photo-shared">
+          <Honoraires sectionRef={honorairesSectionRef} />
+          <Contact sectionRef={contactSectionRef} />
+        </div>
       </main>
 
       <Footer />

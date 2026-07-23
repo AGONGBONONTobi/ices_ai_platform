@@ -18,7 +18,7 @@ export default function FAQ({ sectionRef }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="md:w-1/3 sticky top-32"
+            className="md:w-1/3 md:sticky md:top-32"
           >
             <h2 className="text-3xl md:text-4xl font-serif font-normal tracking-tight mb-4 text-foreground">
               Questions Fréquentes

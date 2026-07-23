@@ -353,7 +353,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .dark .section-photo-shared::before {
   background: linear-gradient(180deg, rgba(10, 10, 10, 0.65) 0%, rgba(10, 10, 10, 0.5) 50%, rgba(10, 10, 10, 0.75) 100%);
 }
-.section-photo-shared > .container {
+.section-photo-shared .container {
   position: relative;
   z-index: 1;
 }

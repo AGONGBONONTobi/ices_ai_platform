@@ -20,7 +20,7 @@ const BILLING_MODES = [
 ];
 export default function Honoraires({ sectionRef }) {
   return (
-    <section className="section-photo-shared" id="honoraires" ref={sectionRef}>
+    <section className="pt-16 pb-12 lg:pt-24 lg:pb-16" id="honoraires" ref={sectionRef}>
       <div className="container">
         <Reveal as="div" className="section-panel">
           <div className="section-head">
