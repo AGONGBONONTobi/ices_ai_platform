@@ -5,6 +5,29 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme inline {
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
 /* ---------- Design tokens ---------- */
 :root {
   --text: #111111;
@@ -311,7 +334,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* ---------- Shared Photo Background Layout ---------- */
 .section-photo-shared {
   position: relative;
-  background-image: url('/assets/img/hero-colonnade.jpg');
+  background-image: url('/assets/img/hero-paris.jpg');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;

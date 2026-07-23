@@ -4,6 +4,9 @@ import Balancer from "react-wrap-balancer";
 
 import { cn } from "@/lib/utils";
 import { Cta, type CtaProps } from "@/components/ui/hero-07-utils/cta";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 
 export interface Hero07Props {
   tagline: string;
@@ -145,30 +148,42 @@ export function Hero07({
       </Reveal>
 
       <motion.div
-        className={cn("relative z-10 mx-auto grid max-w-7xl grid-cols-1 px-6 lg:grid-cols-12", vs.copy, vs.grid)}
+        className={cn("relative z-10 mx-auto grid max-w-7xl grid-cols-1 px-6 lg:grid-cols-12", vs.copy, vs.grid, "items-center")}
         variants={animate ? container : undefined}
         initial={animate ? "hidden" : false}
         whileInView={animate ? "visible" : undefined}
         viewport={{ once: true, margin: "-80px" }}
       >
-        {/* Left column: tagline + CTAs on desktop */}
-        <Reveal active={animate} className="flex flex-col gap-6 lg:col-span-4 lg:col-start-1 lg:items-start lg:self-stretch lg:justify-between">
+        {/* Left column: Title, Tagline, Description */}
+        <Reveal active={animate} className={cn("flex flex-col gap-6 lg:col-span-7 lg:col-start-1 lg:items-start", vs.header)}>
           {taglineElement}
-          {/* CTAs visible only on desktop in left column */}
-          <div className="hidden lg:flex lg:flex-col lg:gap-3">
-            {primaryCTA?.ctaEnabled && <Cta cta={primaryCTA} />}
-            {secondaryCTA?.ctaEnabled && <Cta cta={{ ...secondaryCTA, variant: secondaryCTA.variant ?? "link" }} />}
-          </div>
-        </Reveal>
-
-        {/* Right column: title + description + CTAs (mobile only) */}
-        <Reveal active={animate} className={cn("flex flex-col items-start lg:col-span-6 lg:col-start-7", vs.header)}>
           {titleElement}
           {descriptionElement}
-          {/* CTAs visible only on mobile in right column */}
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-3 lg:hidden">
-            {primaryCTA?.ctaEnabled && <Cta cta={primaryCTA} />}
-            {secondaryCTA?.ctaEnabled && <Cta cta={{ ...secondaryCTA, variant: secondaryCTA.variant ?? "link" }} />}
+          {ctasElement}
+        </Reveal>
+
+        {/* Right column: Contact Form Card */}
+        <Reveal active={animate} className="flex flex-col lg:col-span-4 lg:col-start-9 w-full mt-8 lg:mt-0">
+          <div className="bg-background/80 backdrop-blur-xl border border-border rounded-xl p-8 shadow-2xl relative overflow-hidden">
+            {/* Elegant gold accent bar */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#B8975A] to-transparent"></div>
+            
+            <h3 className="text-xl font-serif mb-2 text-foreground">Demander un rendez-vous</h3>
+            <p className="text-sm text-muted-foreground mb-6">Laissez-nous vos coordonnées et nous vous rappellerons dans les plus brefs délais.</p>
+            
+            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <div className="space-y-2">
+                <Label htmlFor="name">Nom complet</Label>
+                <Input id="name" placeholder="Jean Dupont" className="bg-background/50" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="tel">Téléphone</Label>
+                <Input id="tel" type="tel" placeholder="06 00 00 00 00" className="bg-background/50" />
+              </div>
+              <Button type="submit" className="w-full mt-2 bg-[#111111] hover:bg-[#2A2A2A] text-white">
+                Être rappelé(e)
+              </Button>
+            </form>
           </div>
         </Reveal>
       </motion.div>

@@ -12,6 +12,8 @@ import { cn } from "@/lib/utils";
 export interface ScrollImageTunnelImage {
   src: string;
   alt: string;
+  quote?: string;
+  author?: string;
 }
 
 export interface ScrollImageTunnelProps {
@@ -25,12 +27,16 @@ export interface ScrollImageTunnelProps {
 function TunnelFrame({
   src,
   alt,
+  quote,
+  author,
   index,
   total,
   progress,
 }: {
   src: string;
   alt: string;
+  quote?: string;
+  author?: string;
   index: number;
   total: number;
   progress: MotionValue<number>;
@@ -45,7 +51,7 @@ function TunnelFrame({
 
   return (
     <div style={{ zIndex: index }} className="absolute inset-0 flex items-center justify-center">
-      <motion.div style={{ scale, y, opacity, filter }} className="h-[70%] w-full max-w-xl overflow-hidden">
+      <motion.div style={{ scale, y, opacity, filter }} className="relative h-[70%] w-full max-w-xl overflow-hidden rounded-md shadow-2xl">
         <img
           src={src}
           alt={alt}
@@ -54,6 +60,12 @@ function TunnelFrame({
           draggable={false}
           className="h-full w-full object-cover"
         />
+        {(quote || author) && (
+          <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-8 text-white">
+            {quote && <p className="text-xl md:text-2xl font-serif italic mb-4">"{quote}"</p>}
+            {author && <p className="text-sm font-bold uppercase tracking-widest">— {author}</p>}
+          </div>
+        )}
       </motion.div>
     </div>
   );
@@ -132,6 +144,8 @@ export function ScrollImageTunnel({
               key={image.src}
               src={image.src}
               alt={image.alt}
+              quote={image.quote}
+              author={image.author}
               index={index}
               total={images.length}
               progress={progress}
