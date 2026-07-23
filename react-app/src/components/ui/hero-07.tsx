@@ -123,7 +123,7 @@ export function Hero07({
 
   return (
     <section className="relative isolate w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Beautiful Background Image (NO OVERLAY) */}
       {landscapeImage && (
         <div className="absolute inset-0 -z-10">
           <img
@@ -131,9 +131,6 @@ export function Hero07({
             alt={landscapeAlt}
             className="w-full h-full object-cover object-center"
           />
-          {/* Strong dark overlay for readability */}
-          <div className="absolute inset-0 bg-black/60 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
         </div>
       )}
 
@@ -144,44 +141,42 @@ export function Hero07({
         whileInView={animate ? "visible" : undefined}
         viewport={{ once: true, margin: "-80px" }}
       >
-        {/* Left-aligned content */}
+        {/* Left-aligned content in a glass card for readability without ruining the image */}
         <Reveal active={animate} className={cn("flex flex-col lg:col-span-7 lg:items-start lg:text-left", vs.header)}>
-          {/* Force text color to white/light for readability against dark overlay */}
-          <div className="text-white/90 w-full">
-            {taglineElement && (
-              <p className={cn("max-w-xs leading-relaxed tracking-widest uppercase font-mono text-[#B8975A] mb-4", vs.tagline)}>
-                <Balancer>{tagline}</Balancer>
-              </p>
-            )}
-            {titleElement && (
-              <h1 className={cn("font-serif font-normal tracking-tight text-balance text-white mb-6", vs.title)}>
-                <Balancer>{title}</Balancer>
-              </h1>
-            )}
-            {descriptionElement && (
-              <p className={cn("max-w-xl leading-relaxed text-white/80 text-lg mb-8", vs.description)}>
-                <Balancer>{description}</Balancer>
-              </p>
-            )}
-            {ctasElement && (
-              <div className="dark flex flex-wrap items-center gap-x-4 gap-y-3 mt-4">
-                {primaryCTA?.ctaEnabled && <Cta cta={{...primaryCTA, variant: "default"}} />}
-                {secondaryCTA?.ctaEnabled && <Cta cta={{ ...secondaryCTA, variant: "outline" }} />}
-              </div>
-            )}
+          <div className="bg-background/40 backdrop-blur-lg border border-white/20 rounded-3xl p-8 lg:p-10 shadow-2xl relative overflow-hidden">
+            {/* Soft inner glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
+            
+            <div className="relative z-10">
+              {taglineElement && (
+                <p className={cn("max-w-xs leading-relaxed tracking-widest uppercase font-mono text-[#B8975A] mb-4 drop-shadow-md", vs.tagline)}>
+                  <Balancer>{tagline}</Balancer>
+                </p>
+              )}
+              {titleElement && (
+                <h1 className={cn("font-serif font-normal tracking-tight text-balance text-foreground mb-6 drop-shadow-lg", vs.title)}>
+                  <Balancer>{title}</Balancer>
+                </h1>
+              )}
+              {descriptionElement && (
+                <p className={cn("max-w-xl leading-relaxed text-foreground/90 text-lg", vs.description)}>
+                  <Balancer>{description}</Balancer>
+                </p>
+              )}
+            </div>
           </div>
         </Reveal>
 
-        {/* Right column: Elegant Quote (Desktop filler) */}
+        {/* Right column: Elegant Quote */}
         <Reveal active={animate} className="hidden lg:flex lg:col-span-4 lg:col-start-9 flex-col justify-center">
-          <div className="bg-background/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 relative overflow-hidden shadow-2xl">
+          <div className="bg-background/40 backdrop-blur-lg border border-white/20 rounded-3xl p-8 relative overflow-hidden shadow-2xl">
             {/* Elegant gold accent bar */}
             <div className="absolute top-0 left-0 bottom-0 w-1 bg-gradient-to-b from-[#B8975A]/40 via-[#B8975A] to-[#B8975A]/40"></div>
             
-            <svg className="w-10 h-10 text-[#B8975A]/40 mb-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg className="w-10 h-10 text-[#B8975A]/60 mb-4 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
             </svg>
-            <p className="text-white/90 text-lg font-serif italic leading-relaxed mb-6">
+            <p className="text-foreground/90 text-lg font-serif italic leading-relaxed mb-6 drop-shadow-sm">
               "La défense de vos intérêts requiert rigueur, réactivité et une confiance absolue. C'est le fondement de notre engagement à vos côtés."
             </p>
             <div className="flex items-center gap-4">
