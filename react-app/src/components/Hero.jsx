@@ -9,7 +9,7 @@ export default function Hero({ sectionRef }) {
         tagline="Avocate — Barreau de Paris · Serment prêté en 2024"
         title="Maître Moradéké Badirou"
         description="Consciencieuse, à l'écoute et réactive, Maître Badirou défend vos intérêts avec rigueur et engagement."
-        landscapeImage="/assets/img/hero-colonnade.jpg"
+        landscapeImage="/assets/img/hero-stairs.jpg"
         landscapeAlt=""
         primaryCTA={{ ctaEnabled: true, text: "Prendre rendez-vous", link: "#contact", variant: "default" }}
         secondaryCTA={{
