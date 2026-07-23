@@ -4,9 +4,6 @@ import Balancer from "react-wrap-balancer";
 
 import { cn } from "@/lib/utils";
 import { Cta, type CtaProps } from "@/components/ui/hero-07-utils/cta";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 
 export interface Hero07Props {
   tagline: string;
@@ -124,66 +121,54 @@ export function Hero07({
     </div>
   );
 
-  const mediaElement = landscapeImage && (
-    <div className="relative w-full overflow-hidden">
-      <div className={cn("relative overflow-hidden rounded-t-sm", "mask-b-from-80% mask-b-to-95%")}>
-        <div
-          aria-hidden
-          className="bg-background/15 dark:bg-background/30 pointer-events-none absolute inset-0 z-10 mix-blend-overlay"
-        />
-        <img
-          src={landscapeImage}
-          alt={landscapeAlt}
-          decoding="async"
-          className="aspect-[2/1] w-full object-cover object-center outline outline-black/10 sm:aspect-[9/4] dark:outline-white/10 dark:brightness-[0.97] dark:saturate-[0.92]"
-        />
-      </div>
-    </div>
-  );
-
   return (
-    <section className="bg-background relative isolate w-full overflow-hidden">
-      <Reveal active={animate} variants={mediaItem} className="w-full">
-        {mediaElement}
-      </Reveal>
+    <section className="relative isolate w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      {landscapeImage && (
+        <div className="absolute inset-0 -z-10">
+          <img
+            src={landscapeImage}
+            alt={landscapeAlt}
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Strong dark overlay for readability */}
+          <div className="absolute inset-0 bg-black/60 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+        </div>
+      )}
 
       <motion.div
-        className={cn("relative z-10 mx-auto grid max-w-7xl grid-cols-1 px-6 lg:grid-cols-12", vs.copy, vs.grid, "items-center")}
+        className={cn("relative z-10 mx-auto w-full max-w-7xl px-6", vs.copy)}
         variants={animate ? container : undefined}
         initial={animate ? "hidden" : false}
         whileInView={animate ? "visible" : undefined}
         viewport={{ once: true, margin: "-80px" }}
       >
-        {/* Left column: Title, Tagline, Description */}
-        <Reveal active={animate} className={cn("flex flex-col gap-6 lg:col-span-7 lg:col-start-1 lg:items-start", vs.header)}>
-          {taglineElement}
-          {titleElement}
-          {descriptionElement}
-          {ctasElement}
-        </Reveal>
-
-        {/* Right column: Contact Form Card */}
-        <Reveal active={animate} className="flex flex-col lg:col-span-4 lg:col-start-9 w-full mt-8 lg:mt-0">
-          <div className="bg-background/80 backdrop-blur-xl border border-border rounded-xl p-8 shadow-2xl relative overflow-hidden">
-            {/* Elegant gold accent bar */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#B8975A] to-transparent"></div>
-            
-            <h3 className="text-xl font-serif mb-2 text-foreground">Demander un rendez-vous</h3>
-            <p className="text-sm text-muted-foreground mb-6">Laissez-nous vos coordonnées et nous vous rappellerons dans les plus brefs délais.</p>
-            
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-              <div className="space-y-2">
-                <Label htmlFor="name">Nom complet</Label>
-                <Input id="name" placeholder="Jean Dupont" className="bg-background/50" />
+        {/* Left-aligned content */}
+        <Reveal active={animate} className={cn("flex flex-col max-w-3xl lg:items-start lg:text-left", vs.header)}>
+          {/* Force text color to white/light for readability against dark overlay */}
+          <div className="text-white/90">
+            {taglineElement && (
+              <p className={cn("max-w-xs leading-relaxed tracking-widest uppercase font-mono text-[#B8975A] mb-4", vs.tagline)}>
+                <Balancer>{tagline}</Balancer>
+              </p>
+            )}
+            {titleElement && (
+              <h1 className={cn("font-serif font-normal tracking-tight text-balance text-white mb-6", vs.title)}>
+                <Balancer>{title}</Balancer>
+              </h1>
+            )}
+            {descriptionElement && (
+              <p className={cn("max-w-xl leading-relaxed text-white/80 text-lg mb-8", vs.description)}>
+                <Balancer>{description}</Balancer>
+              </p>
+            )}
+            {ctasElement && (
+              <div className="dark flex flex-wrap items-center gap-x-4 gap-y-3 mt-4">
+                {primaryCTA?.ctaEnabled && <Cta cta={{...primaryCTA, variant: "default"}} />}
+                {secondaryCTA?.ctaEnabled && <Cta cta={{ ...secondaryCTA, variant: "outline" }} />}
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="tel">Téléphone</Label>
-                <Input id="tel" type="tel" placeholder="06 00 00 00 00" className="bg-background/50" />
-              </div>
-              <Button type="submit" className="w-full mt-2 bg-[#111111] hover:bg-[#2A2A2A] text-white">
-                Être rappelé(e)
-              </Button>
-            </form>
+            )}
           </div>
         </Reveal>
       </motion.div>
