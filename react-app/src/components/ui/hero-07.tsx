@@ -1,7 +1,9 @@
 import * as React from "react";
 import { motion, useReducedMotion, type Variants } from "motion/react";
 import Balancer from "react-wrap-balancer";
+
 import { cn } from "@/lib/utils";
+import { Cta, type CtaProps } from "@/components/ui/hero-07-utils/cta";
 
 export interface Hero07Props {
   tagline: string;
@@ -10,21 +12,52 @@ export interface Hero07Props {
   landscapeImage: string;
   landscapeAlt?: string;
   animation?: "none" | "subtle";
+  primaryCTA?: CtaProps;
+  secondaryCTA?: CtaProps;
   variant?: "standard" | "compact";
 }
 
+const variantStyles = {
+  standard: {
+    copy: "pb-20 pt-10 sm:pb-28 sm:pt-12 lg:pb-32",
+    tagline: "text-sm sm:text-base",
+    title: "text-3xl sm:text-4xl md:text-5xl",
+    description: "text-sm sm:text-base",
+    header: "gap-6 sm:gap-8",
+    grid: "gap-10",
+  },
+  compact: {
+    copy: "pb-14 pt-8 sm:pb-20 sm:pt-10 lg:pb-24",
+    tagline: "text-sm",
+    title: "text-2xl sm:text-3xl md:text-4xl",
+    description: "text-sm",
+    header: "gap-4 sm:gap-5",
+    grid: "gap-8",
+  },
+} as const;
+
 const container: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
 };
 
 const item: Variants = {
-  hidden: { opacity: 0, y: 16, filter: "blur(6px)" },
+  hidden: { opacity: 0, y: 12, filter: "blur(6px)" },
   visible: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.28, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const mediaItem: Variants = {
+  hidden: { opacity: 0, y: -20, filter: "blur(8px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.32, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
@@ -40,6 +73,7 @@ function Reveal({
   children: React.ReactNode;
 }>) {
   if (!active) return <div className={className}>{children}</div>;
+
   return (
     <motion.div variants={variants ?? item} className={className}>
       {children}
@@ -54,89 +88,109 @@ export function Hero07({
   landscapeImage,
   landscapeAlt = "",
   animation = "none",
+  primaryCTA,
+  secondaryCTA,
+  variant = "standard",
 }: Readonly<Hero07Props>) {
   const reduce = useReducedMotion();
   const animate = animation === "subtle" && !reduce;
+  const vs = variantStyles[variant];
+
+  const taglineElement = tagline && (
+    <p className={cn("text-muted-foreground max-w-xs leading-relaxed tracking-tight", vs.tagline)}>
+      <Balancer>{tagline}</Balancer>
+    </p>
+  );
+
+  const titleElement = title && (
+    <h1 className={cn("text-foreground font-serif font-normal tracking-tight text-balance", vs.title)}>
+      <Balancer>{title}</Balancer>
+    </h1>
+  );
+
+  const descriptionElement = description && (
+    <p className={cn("text-muted-foreground max-w-xl leading-relaxed", vs.description)}>
+      <Balancer>{description}</Balancer>
+    </p>
+  );
+
+  const ctasElement = (primaryCTA?.ctaEnabled || secondaryCTA?.ctaEnabled) && (
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
+      {primaryCTA?.ctaEnabled && <Cta cta={primaryCTA} />}
+      {secondaryCTA?.ctaEnabled && <Cta cta={{ ...secondaryCTA, variant: secondaryCTA.variant ?? "link" }} />}
+    </div>
+  );
+
+  const mediaElement = landscapeImage && (
+    <div className="relative w-full overflow-hidden">
+      <div className={cn("relative overflow-hidden rounded-t-sm", "mask-b-from-80% mask-b-to-95%")}>
+        {/* Subtle overlay for image tone */}
+        <div
+          aria-hidden
+          className="bg-background/15 dark:bg-background/30 pointer-events-none absolute inset-0 z-10 mix-blend-overlay"
+        />
+
+        {/* Cinematic left-edge gradient — desktop only, right side stays pristine */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-20 hidden lg:block"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(10,8,6,0.78) 0%, rgba(10,8,6,0.55) 18%, rgba(10,8,6,0.22) 36%, transparent 52%)",
+          }}
+        />
+
+        {/* Floating quote — sits on the dark gradient, desktop only */}
+        <div className="absolute inset-0 z-30 hidden lg:flex items-center">
+          <div className="pl-10 xl:pl-16 max-w-xs">
+            <div className="border-l-2 border-[#B8975A] pl-5">
+              <svg
+                className="w-5 h-5 text-[#B8975A]/80 mb-3"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+              <p className="text-white/80 font-serif italic leading-relaxed text-sm">
+                La défense de vos intérêts requiert rigueur, réactivité et une confiance absolue.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <img
+          src={landscapeImage}
+          alt={landscapeAlt}
+          decoding="async"
+          className="aspect-[2/1] w-full object-cover object-center outline outline-black/10 sm:aspect-[9/4] dark:outline-white/10 dark:brightness-[0.97] dark:saturate-[0.92]"
+        />
+      </div>
+    </div>
+  );
 
   return (
-    <section className="relative isolate w-full overflow-hidden" style={{ minHeight: "92vh" }}>
-      {/* Full-bleed background image — untouched */}
-      <img
-        src={landscapeImage}
-        alt={landscapeAlt}
-        decoding="async"
-        className="absolute inset-0 w-full h-full object-cover object-center -z-20"
-      />
+    <section className="bg-background relative isolate w-full overflow-hidden">
+      <Reveal active={animate} variants={mediaItem} className="w-full">
+        {mediaElement}
+      </Reveal>
 
-      {/*
-        Cinematic left-edge gradient:
-        On desktop, a rich dark veil covers only the left ~45% of the image,
-        fading to fully transparent toward the centre. The right half of the
-        photo remains completely unaltered.
-        On mobile we use a soft bottom-up veil so text on top stays readable.
-      */}
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-10 pointer-events-none"
-        style={{
-          background: [
-            /* Mobile: soft vignette from top */
-            "linear-gradient(to bottom, rgba(10,8,6,0.52) 0%, rgba(10,8,6,0.18) 55%, rgba(10,8,6,0.05) 100%)",
-          ].join(", "),
-        }}
-      />
-      {/* Desktop-only: lateral gradient — left side dark, right fully clear */}
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-10 pointer-events-none hidden lg:block"
-        style={{
-          background:
-            "linear-gradient(to right, rgba(10,8,6,0.82) 0%, rgba(10,8,6,0.70) 22%, rgba(10,8,6,0.38) 42%, rgba(10,8,6,0.08) 58%, transparent 72%)",
-        }}
-      />
-
-      {/* Content */}
       <motion.div
-        className="relative z-10 mx-auto max-w-7xl px-6 flex items-center"
-        style={{ minHeight: "92vh" }}
+        className={cn("relative z-10 mx-auto grid max-w-7xl grid-cols-1 px-6 lg:grid-cols-12", vs.copy, vs.grid)}
         variants={animate ? container : undefined}
         initial={animate ? "hidden" : false}
         whileInView={animate ? "visible" : undefined}
         viewport={{ once: true, margin: "-80px" }}
       >
-        {/* Left column — text sits on top of the dark gradient */}
-        <div className="w-full lg:max-w-xl py-24 lg:py-0">
-          <Reveal active={animate}>
-            <p className="font-mono text-xs tracking-[0.22em] uppercase text-[#B8975A] mb-6">
-              {tagline}
-            </p>
-          </Reveal>
+        <Reveal active={animate} className="flex lg:col-span-4 lg:col-start-1 lg:items-start lg:self-stretch">
+          {taglineElement}
+        </Reveal>
 
-          <Reveal active={animate}>
-            <h1 className="font-serif font-normal text-white leading-[1.08] tracking-tight mb-6"
-              style={{ fontSize: "clamp(2.2rem, 4vw + 0.5rem, 3.6rem)" }}>
-              <Balancer>{title}</Balancer>
-            </h1>
-          </Reveal>
-
-          <Reveal active={animate}>
-            <p className="text-white/75 leading-relaxed text-base lg:text-lg mb-10 max-w-md">
-              <Balancer>{description}</Balancer>
-            </p>
-          </Reveal>
-
-          {/* Elegant quote */}
-          <Reveal active={animate}>
-            <div className="border-l-2 border-[#B8975A] pl-5 max-w-sm">
-              <svg className="w-5 h-5 text-[#B8975A]/70 mb-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-              </svg>
-              <p className="text-white/65 font-serif italic leading-relaxed text-sm">
-                La défense de vos intérêts requiert rigueur, réactivité et une confiance absolue. C'est le fondement de notre engagement à vos côtés.
-              </p>
-            </div>
-          </Reveal>
-        </div>
+        <Reveal active={animate} className={cn("flex flex-col items-start lg:col-span-6 lg:col-start-7", vs.header)}>
+          {titleElement}
+          {descriptionElement}
+          {ctasElement}
+        </Reveal>
       </motion.div>
     </section>
   );
