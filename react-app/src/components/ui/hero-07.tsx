@@ -124,41 +124,10 @@ export function Hero07({
   const mediaElement = landscapeImage && (
     <div className="relative w-full overflow-hidden">
       <div className={cn("relative overflow-hidden rounded-t-sm", "mask-b-from-80% mask-b-to-95%")}>
-        {/* Subtle overlay for image tone */}
         <div
           aria-hidden
           className="bg-background/15 dark:bg-background/30 pointer-events-none absolute inset-0 z-10 mix-blend-overlay"
         />
-
-        {/* Cinematic left-edge gradient — desktop only, right side stays pristine */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 z-20 hidden lg:block"
-          style={{
-            background:
-              "linear-gradient(to right, rgba(10,8,6,0.78) 0%, rgba(10,8,6,0.55) 18%, rgba(10,8,6,0.22) 36%, transparent 52%)",
-          }}
-        />
-
-        {/* Floating quote — sits on the dark gradient, desktop only */}
-        <div className="absolute inset-0 z-30 hidden lg:flex items-center">
-          <div className="pl-10 xl:pl-16 max-w-xs">
-            <div className="border-l-2 border-[#B8975A] pl-5">
-              <svg
-                className="w-5 h-5 text-[#B8975A]/80 mb-3"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-              </svg>
-              <p className="text-white/80 font-serif italic leading-relaxed text-sm">
-                La défense de vos intérêts requiert rigueur, réactivité et une confiance absolue.
-              </p>
-            </div>
-          </div>
-        </div>
-
         <img
           src={landscapeImage}
           alt={landscapeAlt}
