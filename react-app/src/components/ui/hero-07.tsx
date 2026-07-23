@@ -3,7 +3,6 @@ import { motion, useReducedMotion, type Variants } from "motion/react";
 import Balancer from "react-wrap-balancer";
 
 import { cn } from "@/lib/utils";
-import { Cta, type CtaProps } from "@/components/ui/hero-07-utils/cta";
 
 export interface Hero07Props {
   tagline: string;
@@ -12,8 +11,6 @@ export interface Hero07Props {
   landscapeImage: string;
   landscapeAlt?: string;
   animation?: "none" | "subtle";
-  primaryCTA?: CtaProps;
-  secondaryCTA?: CtaProps;
   variant?: "standard" | "compact";
 }
 
@@ -88,8 +85,6 @@ export function Hero07({
   landscapeImage,
   landscapeAlt = "",
   animation = "none",
-  primaryCTA,
-  secondaryCTA,
   variant = "standard",
 }: Readonly<Hero07Props>) {
   const reduce = useReducedMotion();
@@ -97,7 +92,7 @@ export function Hero07({
   const vs = variantStyles[variant];
 
   const taglineElement = tagline && (
-    <p className={cn("text-muted-foreground max-w-xs leading-relaxed tracking-tight", vs.tagline)}>
+    <p className={cn("text-muted-foreground max-w-xs leading-relaxed tracking-tight uppercase font-mono mb-8", vs.tagline)}>
       <Balancer>{tagline}</Balancer>
     </p>
   );
@@ -109,81 +104,57 @@ export function Hero07({
   );
 
   const descriptionElement = description && (
-    <p className={cn("text-muted-foreground max-w-xl leading-relaxed", vs.description)}>
+    <p className={cn("text-muted-foreground max-w-xl leading-relaxed text-lg", vs.description)}>
       <Balancer>{description}</Balancer>
     </p>
   );
 
-  const ctasElement = (primaryCTA?.ctaEnabled || secondaryCTA?.ctaEnabled) && (
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
-      {primaryCTA?.ctaEnabled && <Cta cta={primaryCTA} />}
-      {secondaryCTA?.ctaEnabled && <Cta cta={{ ...secondaryCTA, variant: secondaryCTA.variant ?? "link" }} />}
+  const mediaElement = landscapeImage && (
+    <div className="relative w-full overflow-hidden">
+      <div className={cn("relative overflow-hidden rounded-t-sm", "mask-b-from-80% mask-b-to-95%")}>
+        <div
+          aria-hidden
+          className="bg-background/5 dark:bg-background/20 pointer-events-none absolute inset-0 z-10 mix-blend-overlay"
+        />
+        <img
+          src={landscapeImage}
+          alt={landscapeAlt}
+          decoding="async"
+          className="aspect-[2/1] w-full object-cover object-center outline outline-black/10 sm:aspect-[9/4] dark:outline-white/10 dark:brightness-[0.97] dark:saturate-[0.92]"
+        />
+      </div>
     </div>
   );
 
   return (
-    <section className="relative isolate w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
-      {/* Beautiful Background Image (NO OVERLAY) */}
-      {landscapeImage && (
-        <div className="absolute inset-0 -z-10">
-          <img
-            src={landscapeImage}
-            alt={landscapeAlt}
-            className="w-full h-full object-cover object-center"
-          />
-        </div>
-      )}
+    <section className="bg-background relative isolate w-full overflow-hidden">
+      <Reveal active={animate} variants={mediaItem} className="w-full">
+        {mediaElement}
+      </Reveal>
 
       <motion.div
-        className={cn("relative z-10 mx-auto w-full max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center", vs.copy)}
+        className={cn("relative z-10 mx-auto grid max-w-7xl grid-cols-1 px-6 lg:grid-cols-12", vs.copy, vs.grid)}
         variants={animate ? container : undefined}
         initial={animate ? "hidden" : false}
         whileInView={animate ? "visible" : undefined}
         viewport={{ once: true, margin: "-80px" }}
       >
-        {/* Left-aligned content in a glass card for readability without ruining the image */}
-        <Reveal active={animate} className={cn("flex flex-col lg:col-span-7 lg:items-start lg:text-left", vs.header)}>
-          <div className="bg-background/40 backdrop-blur-lg border border-white/20 rounded-3xl p-8 lg:p-10 shadow-2xl relative overflow-hidden">
-            {/* Soft inner glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
-            
-            <div className="relative z-10">
-              {taglineElement && (
-                <p className={cn("max-w-xs leading-relaxed tracking-widest uppercase font-mono text-[#B8975A] mb-4 drop-shadow-md", vs.tagline)}>
-                  <Balancer>{tagline}</Balancer>
-                </p>
-              )}
-              {titleElement && (
-                <h1 className={cn("font-serif font-normal tracking-tight text-balance text-foreground mb-6 drop-shadow-lg", vs.title)}>
-                  <Balancer>{title}</Balancer>
-                </h1>
-              )}
-              {descriptionElement && (
-                <p className={cn("max-w-xl leading-relaxed text-foreground/90 text-lg", vs.description)}>
-                  <Balancer>{description}</Balancer>
-                </p>
-              )}
-            </div>
+        <Reveal active={animate} className="flex flex-col lg:col-span-4 lg:col-start-1 lg:items-start lg:self-stretch">
+          {taglineElement}
+          
+          <div className="mt-8 pt-8 border-t border-border/50 max-w-sm hidden lg:block">
+            <svg className="w-6 h-6 text-[#B8975A] mb-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+            <p className="text-foreground/80 font-serif italic leading-relaxed text-sm">
+              "La défense de vos intérêts requiert rigueur, réactivité et une confiance absolue. C'est le fondement de notre engagement à vos côtés."
+            </p>
           </div>
         </Reveal>
 
-        {/* Right column: Elegant Quote */}
-        <Reveal active={animate} className="hidden lg:flex lg:col-span-4 lg:col-start-9 flex-col justify-center">
-          <div className="bg-background/40 backdrop-blur-lg border border-white/20 rounded-3xl p-8 relative overflow-hidden shadow-2xl">
-            {/* Elegant gold accent bar */}
-            <div className="absolute top-0 left-0 bottom-0 w-1 bg-gradient-to-b from-[#B8975A]/40 via-[#B8975A] to-[#B8975A]/40"></div>
-            
-            <svg className="w-10 h-10 text-[#B8975A]/60 mb-4 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-            </svg>
-            <p className="text-foreground/90 text-lg font-serif italic leading-relaxed mb-6 drop-shadow-sm">
-              "La défense de vos intérêts requiert rigueur, réactivité et une confiance absolue. C'est le fondement de notre engagement à vos côtés."
-            </p>
-            <div className="flex items-center gap-4">
-              <div className="h-px bg-white/30 flex-1"></div>
-              <span className="text-[#B8975A] font-medium tracking-wide uppercase text-sm">Notre Vocation</span>
-            </div>
-          </div>
+        <Reveal active={animate} className={cn("flex flex-col items-start lg:col-span-6 lg:col-start-7", vs.header)}>
+          {titleElement}
+          {descriptionElement}
         </Reveal>
       </motion.div>
     </section>
