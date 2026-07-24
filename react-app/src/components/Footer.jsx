@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -49,7 +51,10 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
           <p>&copy; {year} Maître Moradéké Badirou — Avocate au Barreau de Paris.</p>
-          <a href="#">Mentions légales</a>
+          <span className="footer-legal-links">
+            <Link to="/mentions-legales">Mentions légales</Link>
+            <Link to="/confidentialite">Politique de confidentialité</Link>
+          </span>
         </div>
       </div>
     </footer>
