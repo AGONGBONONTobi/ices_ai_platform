@@ -50,7 +50,7 @@
   --gold-border: rgba(184, 151, 90, 0.35);
 
   /* Translucent glass panel */
-  --panel-bg: rgba(255, 250, 240, 0.72);
+  --panel-bg: rgba(255, 250, 240, 0.88);
   --panel-border: rgba(184, 151, 90, 0.22);
 
   /* Fixed pair: always a dark ink band with light paper text, in both themes.
@@ -293,9 +293,9 @@ ul { list-style: none; margin: 0; padding: 0; }
   background:
     linear-gradient(
       100deg,
-      rgba(8, 8, 8, 0.74) 0%,
-      rgba(8, 8, 8, 0.52) 45%,
-      rgba(8, 8, 8, 0.3) 100%
+      rgba(8, 8, 8, 0.93) 0%,
+      rgba(8, 8, 8, 0.78) 52%,
+      rgba(8, 8, 8, 0.45) 100%
     ),
     url("/assets/img/hero-palais-justice.jpg");
   background-size: cover, cover;
@@ -317,11 +317,17 @@ ul { list-style: none; margin: 0; padding: 0; }
 .hero .container { position: relative; z-index: 1; }
 
 /* Texte clair sur fond sombre */
-.hero .eyebrow { color: var(--gold-light); text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5); }
-.hero-title { color: #ffffff; text-shadow: 0 2px 30px rgba(0, 0, 0, 0.45); }
-.hero-lead { color: rgba(255, 255, 255, 0.85); text-shadow: 0 1px 16px rgba(0, 0, 0, 0.55); }
-.hero-tags li { border-color: rgba(255, 255, 255, 0.28); color: rgba(255, 255, 255, 0.82); }
-.hero-photo figcaption { color: rgba(255, 255, 255, 0.75); text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7); }
+.hero .eyebrow { color: var(--gold-light); text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6); }
+.hero-title { color: #ffffff; text-shadow: 0 2px 30px rgba(0, 0, 0, 0.5); }
+.hero-lead { color: #ffffff; text-shadow: 0 1px 22px rgba(0, 0, 0, 0.8), 0 1px 4px rgba(0, 0, 0, 0.6); }
+.hero-tags li {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  background: rgba(10, 10, 10, 0.42);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+.hero-photo figcaption { color: rgba(255, 255, 255, 0.8); text-shadow: 0 1px 10px rgba(0, 0, 0, 0.75); }
 
 /* Boutons adaptés au fond sombre */
 .hero .btn-primary { background: var(--gold); border-color: var(--gold); color: #1a140a; }
@@ -678,11 +684,11 @@ ul { list-style: none; margin: 0; padding: 0; }
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: var(--gold-pale);
-  border: 1.5px solid var(--gold-border);
-  color: var(--gold);
+  background: rgba(184, 151, 90, 0.2);
+  border: 1.5px solid rgba(184, 151, 90, 0.6);
+  color: var(--gold-ink);
   flex-shrink: 0;
-  box-shadow: 0 0 10px rgba(184, 151, 90, 0.05), inset 0 0 0 1px rgba(184, 151, 90, 0.05);
+  box-shadow: 0 0 10px rgba(184, 151, 90, 0.05), inset 0 0 0 1px rgba(184, 151, 90, 0.08);
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 .info-list li:hover .icon-wrapper {
@@ -691,7 +697,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   border-color: var(--gold);
   box-shadow: 0 0 16px rgba(184, 151, 90, 0.25), inset 0 0 0 1px rgba(184, 151, 90, 0.15);
 }
-.info-list .icon { width: 18px; height: 18px; color: var(--gold); margin-top: 0; }
+.info-list .icon { width: 18px; height: 18px; color: var(--gold-ink); margin-top: 0; }
 .info-list strong { display: block; margin-bottom: 0.3em; font-family: var(--font-display); font-size: 1.05rem; font-weight: 500; color: var(--text); }
 .info-list span, .info-list a { color: var(--muted-ink); font-size: 0.95rem; text-decoration: none; transition: color var(--transition); }
 .info-list a:hover { color: var(--gold-ink); }
@@ -1247,7 +1253,7 @@ textarea { resize: vertical; min-height: 110px; }
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --panel-bg: rgba(24, 24, 24, 0.78);
+  --panel-bg: rgba(22, 22, 22, 0.9);
   --panel-border: rgba(184, 151, 90, 0.15);
   --parchment-warm: #1a1816;
   --gold-ink: var(--gold-light); /* on dark, gold is already high-contrast */
