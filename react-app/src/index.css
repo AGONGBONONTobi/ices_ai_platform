@@ -274,8 +274,8 @@ ul { list-style: none; margin: 0; padding: 0; }
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  padding: 88px 0 96px;
-  background: var(--parchment);
+  padding: 116px 0 116px;
+  background-color: #0a0a0a;
 }
 .hero-bg {
   position: absolute;
@@ -284,16 +284,50 @@ ul { list-style: none; margin: 0; padding: 0; }
   overflow: hidden;
   pointer-events: none;
 }
+/* Image en bandeau, ancrée en haut et fondue vers le bas (style du hero d'origine),
+   avec un filtre noir en dégradé pour la lisibilité du texte. */
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      100deg,
+      rgba(8, 8, 8, 0.74) 0%,
+      rgba(8, 8, 8, 0.52) 45%,
+      rgba(8, 8, 8, 0.3) 100%
+    ),
+    url("/assets/img/hero-palais-justice.jpg");
+  background-size: cover, cover;
+  background-position: center, top center;
+  background-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(to bottom, #000 50%, rgba(0, 0, 0, 0) 96%);
+  mask-image: linear-gradient(to bottom, #000 50%, rgba(0, 0, 0, 0) 96%);
+}
 .hero-glow {
   position: absolute;
   top: -22%;
   right: -12%;
   width: 62%;
   height: 82%;
-  background: radial-gradient(closest-side, var(--gold-pale), transparent 72%);
+  background: radial-gradient(closest-side, rgba(184, 151, 90, 0.22), transparent 72%);
   filter: blur(40px);
+  mix-blend-mode: screen;
 }
 .hero .container { position: relative; z-index: 1; }
+
+/* Texte clair sur fond sombre */
+.hero .eyebrow { color: var(--gold-light); text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5); }
+.hero-title { color: #ffffff; text-shadow: 0 2px 30px rgba(0, 0, 0, 0.45); }
+.hero-lead { color: rgba(255, 255, 255, 0.85); text-shadow: 0 1px 16px rgba(0, 0, 0, 0.55); }
+.hero-tags li { border-color: rgba(255, 255, 255, 0.28); color: rgba(255, 255, 255, 0.82); }
+.hero-photo figcaption { color: rgba(255, 255, 255, 0.75); text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7); }
+
+/* Boutons adaptés au fond sombre */
+.hero .btn-primary { background: var(--gold); border-color: var(--gold); color: #1a140a; }
+.hero .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); color: #1a140a; }
+.hero .btn-outline { border-color: rgba(255, 255, 255, 0.5); color: #ffffff; }
+.hero .btn-outline:hover { background: #ffffff; border-color: #ffffff; color: var(--text); }
 .hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -344,7 +378,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   padding: 10px;
   background: var(--parchment-warm);
   border: 1px solid var(--gold-border);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55);
 }
 .hero-photo-frame img {
   display: block;
