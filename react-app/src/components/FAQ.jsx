@@ -80,7 +80,7 @@ export default function FAQ({ sectionRef }) {
           transition={{ duration: 0.5 }}
           className="mb-12 lg:mb-16"
         >
-          <p className="font-mono text-xs tracking-[0.18em] uppercase text-[#B8975A] mb-3">
+          <p className="font-mono text-xs tracking-[0.18em] uppercase text-[#8A6E2A] mb-3">
             Foire Aux Questions
           </p>
           <h2 className="text-3xl md:text-4xl font-serif font-normal tracking-tight text-foreground mb-4">
@@ -107,7 +107,7 @@ export default function FAQ({ sectionRef }) {
         >
           {FAQ_DATA.map((group) => (
             <div key={group.category}>
-              <p className="text-xs font-mono uppercase tracking-[0.16em] font-semibold text-[#B8975A] mb-4 pb-3 border-b border-border">
+              <p className="text-xs font-mono uppercase tracking-[0.16em] font-semibold text-[#8A6E2A] mb-4 pb-3 border-b border-border">
                 {group.category}
               </p>
               <Accordion type="multiple" className="w-full">

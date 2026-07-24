@@ -1,41 +1,49 @@
-import React from "react";
-import { AnimatedTestimonials } from "@/components/ui/testimonial";
+import Reveal from "./Reveal";
 
-const testimonials = [
+/**
+ * Engagements — remplace les témoignages clients.
+ * La déontologie de l'avocat (RIN art. 10) encadre strictement l'usage de
+ * témoignages et de mentions laudatives : on présente ici la méthode et les
+ * engagements du cabinet plutôt que des avis clients.
+ */
+const ENGAGEMENTS = [
   {
-    quote: "Maître Badirou a fait preuve d'un professionnalisme exceptionnel. Son écoute et sa stratégie ont été déterminantes pour l'issue de mon affaire.",
-    name: "Jean M.",
-    designation: "Chef d'entreprise",
-    src: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1887&auto=format&fit=crop",
+    title: "Écoute & disponibilité",
+    text: "Chaque dossier est suivi personnellement. Vous disposez d'un interlocuteur unique, joignable et réactif, du premier rendez-vous à la dernière audience.",
   },
   {
-    quote: "Une avocate brillante, rigoureuse et toujours disponible. Je me suis sentie soutenue et informée à chaque étape de la procédure.",
-    name: "Sophie T.",
-    designation: "Particulier",
-    src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888&auto=format&fit=crop",
+    title: "Transparence des honoraires",
+    text: "Une convention d'honoraires claire est établie avant toute diligence. Le mode de facturation et les coûts prévisibles vous sont exposés dès le premier rendez-vous.",
   },
   {
-    quote: "Grâce à ses conseils avisés, nous avons pu éviter un long procès et trouver un accord favorable. Une vraie main de fer dans un gant de velours.",
-    name: "Marc L.",
-    designation: "Dirigeant",
-    src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1887&auto=format&fit=crop",
+    title: "Rigueur & stratégie",
+    text: "Une analyse précise de votre situation et une stratégie adaptée à vos enjeux, en privilégiant la résolution amiable lorsqu'elle sert votre intérêt.",
   },
 ];
 
 export default function Testimonials({ sectionRef }) {
   return (
-    <section ref={sectionRef} className="bg-background relative py-20 lg:py-32 overflow-hidden">
-      <div className="w-full max-w-7xl mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-serif font-normal tracking-tight text-foreground">
-          Ils nous font confiance
-        </h2>
-        <p className="text-muted-foreground mt-4 max-w-2xl mx-auto mb-10">
-          Découvrez les retours de nos clients sur la qualité de notre accompagnement et de nos plaidoiries.
-        </p>
-      </div>
-      
-      <div className="w-full relative z-10">
-        <AnimatedTestimonials testimonials={testimonials} />
+    <section className="section section-alt" id="engagements" ref={sectionRef}>
+      <div className="container">
+        <Reveal as="div" className="section-head">
+          <p className="eyebrow">Nos engagements</p>
+          <h2>Une relation de confiance, à chaque étape</h2>
+          <p className="section-intro">
+            Le cabinet s'engage sur une méthode de travail claire : une écoute
+            attentive, une information constante et une stratégie construite avec
+            vous.
+          </p>
+        </Reveal>
+
+        <div className="engagements-grid">
+          {ENGAGEMENTS.map((e, i) => (
+            <Reveal as="article" key={e.title} className="engagement" delay={String(i + 1)}>
+              <span className="engagement-num">{String(i + 1).padStart(2, "0")}</span>
+              <h3>{e.title}</h3>
+              <p>{e.text}</p>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

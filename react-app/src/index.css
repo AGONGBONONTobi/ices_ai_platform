@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/geist";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -44,8 +43,9 @@
   --muted: oklch(0.97 0 0);
 
   /* Gold accent — champagne parisien */
-  --gold: #B8975A;
+  --gold: #B8975A;            /* decorative: large text, borders, icons, accents */
   --gold-light: #C9A96E;
+  --gold-ink: #8A6E2A;        /* accessible gold for SMALL text on light (≈4.8:1 on #FFF) */
   --gold-pale: rgba(184, 151, 90, 0.12);
   --gold-border: rgba(184, 151, 90, 0.35);
 
@@ -75,7 +75,7 @@
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground: var(--muted-ink);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
@@ -172,7 +172,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   letter-spacing: 0.12em;
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--gold);
+  color: var(--gold-ink);
   margin: 0 0 1em;
 }
 .fiche-label {
@@ -267,6 +267,145 @@ ul { list-style: none; margin: 0; padding: 0; }
   font-size: 0.65rem;
   letter-spacing: 0.04em;
   color: var(--muted-ink);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 88px 0 96px;
+  background: var(--parchment);
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-glow {
+  position: absolute;
+  top: -22%;
+  right: -12%;
+  width: 62%;
+  height: 82%;
+  background: radial-gradient(closest-side, var(--gold-pale), transparent 72%);
+  filter: blur(40px);
+}
+.hero .container { position: relative; z-index: 1; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 64px;
+  align-items: center;
+}
+.hero-title {
+  font-size: clamp(2.6rem, 4.2vw + 1rem, 4.1rem);
+  margin: 0.1em 0 0.35em;
+}
+.hero-lead {
+  font-size: 1.12rem;
+  color: var(--muted-ink);
+  max-width: 46ch;
+  margin: 0 0 2em;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0 0 2.2em;
+}
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.hero-tags li {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.6em 1em;
+  border: 1px solid var(--gold-border);
+  color: var(--muted-ink);
+}
+.hero-photo {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-photo-frame {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  padding: 10px;
+  background: var(--parchment-warm);
+  border: 1px solid var(--gold-border);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
+}
+.hero-photo-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top center;
+}
+.hero-photo-accent {
+  position: absolute;
+  top: 8%;
+  left: -2px;
+  width: 3px;
+  height: 46%;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  border-radius: 2px;
+}
+.hero-photo figcaption {
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted-ink);
+}
+@media (max-width: 900px) {
+  .hero { padding: 40px 0 64px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .hero-photo { order: -1; }
+  .hero-photo-frame { max-width: 260px; }
+}
+
+/* ---------- Engagements ---------- */
+.engagements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 52px;
+}
+.engagement {
+  background: var(--parchment);
+  padding: 36px 32px;
+  transition: background var(--transition);
+}
+.engagement:hover { background: var(--parchment-warm); }
+.engagement-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.5em;
+}
+.engagement h3 { margin-bottom: 0.4em; }
+.engagement p { color: var(--muted-ink); font-size: 0.95rem; margin: 0; }
+@media (max-width: 900px) {
+  .engagements-grid { grid-template-columns: 1fr; }
 }
 
 /* ---------- Sections ---------- */
@@ -405,7 +544,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   border-bottom-color: var(--gold);
 }
 .billing-list li:hover strong {
-  color: var(--gold);
+  color: var(--gold-ink);
 }
 .billing-list span {
   color: var(--muted-ink);
@@ -445,7 +584,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   letter-spacing: 0.08em;
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--gold-ink);
   margin: 0 0 1em;
 }
 .fee-slip-text { color: var(--muted-ink); font-size: 0.95rem; }
@@ -521,7 +660,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .info-list .icon { width: 18px; height: 18px; color: var(--gold); margin-top: 0; }
 .info-list strong { display: block; margin-bottom: 0.3em; font-family: var(--font-display); font-size: 1.05rem; font-weight: 500; color: var(--text); }
 .info-list span, .info-list a { color: var(--muted-ink); font-size: 0.95rem; text-decoration: none; transition: color var(--transition); }
-.info-list a:hover { color: var(--gold); }
+.info-list a:hover { color: var(--gold-ink); }
 .hours-table { display: grid; grid-template-columns: auto auto; gap: 2px 16px; }
 .hours-table span:nth-child(odd) { color: var(--text); }
 
@@ -541,7 +680,7 @@ label {
   transition: color var(--transition);
 }
 .contact-form div:focus-within label {
-  color: var(--gold);
+  color: var(--gold-ink);
 }
 input, select, textarea {
   width: 100%;
@@ -568,7 +707,7 @@ textarea { resize: vertical; min-height: 110px; }
 .form-note { font-size: 0.8rem; color: var(--muted-ink); margin-bottom: 1.4em; }
 .form-status { margin: 1em 0 0; font-size: 0.85rem; font-weight: 600; min-height: 1.2em; font-family: var(--font-mono); }
 .form-status.is-success { color: #3F6B3F; }
-.form-status.is-error { color: var(--gold); }
+.form-status.is-error { color: var(--gold-ink); }
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--ink-fixed); color: rgba(255, 255, 255, 0.78); padding-top: 68px; }
@@ -914,8 +1053,12 @@ textarea { resize: vertical; min-height: 110px; }
   text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted-ink);
 }
 @theme inline {
-  --font-heading: var(--font-sans);
-  --font-sans: 'Geist Variable', sans-serif;
+  /* Unified type: shadcn/Tailwind utilities inherit the bespoke system.
+     font-sans → Public Sans (matches body), font-serif → Fraunces (matches h1–h4). */
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-heading: var(--font-display);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -966,6 +1109,7 @@ textarea { resize: vertical; min-height: 110px; }
   --panel-bg: rgba(24, 24, 24, 0.78);
   --panel-border: rgba(184, 151, 90, 0.15);
   --parchment-warm: #1a1816;
+  --gold-ink: var(--gold-light); /* on dark, gold is already high-contrast */
   --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
