@@ -1,0 +1,81 @@
+{
+  "id": "template-rapport-commissaire-aux-comptes",
+  "title": "Template de rapport de commissaire aux comptes",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Saisir le nom de l'entreprise",
+      "required": true
+    },
+    {
+      "name": "periode",
+      "type": "select",
+      "options": [
+        "Année civile",
+        "Exercice comptable",
+        "Autre"
+      ],
+      "label": "Période de référence pour le rapport",
+      "required": true
+    },
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Objectif du rapport de commissaire aux comptes",
+      "placeholder": "Décrire brièvement l'objectif du rapport",
+      "required": true
+    },
+    {
+      "name": "methode",
+      "type": "select",
+      "options": [
+        "Analyse financière",
+        "Audit interne",
+        "Contrôle de gestion"
+      ],
+      "label": "Méthode d'analyse utilisée",
+      "required": true
+    },
+    {
+      "name": "conclusion",
+      "type": "textarea",
+      "label": "Conclusion préliminaire du rapport",
+      "placeholder": "Résumer les principaux points de la conclusion",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un commissaire aux comptes chargé de rédiger un rapport pour l'entreprise {entreprise} sur la période {periode}. L'objectif de ce rapport est de {objectif}. Pour cela, vous avez utilisé la méthode d'analyse {methode}. Sur la base de vos constatations, vous avez établi une conclusion préliminaire comme suit : {conclusion}. Évaluez la situation financière de l'entreprise, donnez un score global sur 100, évaluez les axes clés et fournissez des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

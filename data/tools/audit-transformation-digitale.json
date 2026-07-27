@@ -1,0 +1,71 @@
+{
+  "id": "audit-transformation-digitale",
+  "title": "Audit de la transformation digitale",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Présentez les objectifs de la transformation digitale de votre entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Stratégie de croissance",
+        "Amélioration de l'efficacité",
+        "Réduction des coûts"
+      ],
+      "label": "Quel est l'objectif principal de la transformation digitale de votre entreprise ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Quel est le budget alloué à la transformation digitale pour l'année en cours ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quels sont les principaux acteurs impliqués dans la transformation digitale (nom, fonction, responsable) ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs de transformation digitale : {variable1}, Objectif principal : {variable2}, Budget alloué : {variable3}, Acteurs impliqués : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

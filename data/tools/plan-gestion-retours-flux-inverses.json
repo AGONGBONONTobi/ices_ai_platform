@@ -1,0 +1,71 @@
+{
+  "id": "plan-gestion-retours-flux-inverses",
+  "title": "Plan de gestion des retours & flux inverses",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "volume_retours",
+      "type": "number",
+      "label": "Volume de retours mensuels",
+      "placeholder": "Ex: 1500",
+      "required": true
+    },
+    {
+      "name": "process_maturity",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Niveau de maturité du processus",
+      "placeholder": "Sélectionnez",
+      "required": true
+    },
+    {
+      "name": "budget_retours",
+      "type": "number",
+      "label": "Budget alloué aux retours (en €)",
+      "placeholder": "Ex: 20000",
+      "required": true
+    },
+    {
+      "name": "principal_cause",
+      "type": "textarea",
+      "label": "Principales causes identifiées",
+      "placeholder": "Ex: défauts de fabrication, erreurs de logistique",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Volume de retours mensuels: {volume_retours}, Niveau de maturité du processus: {process_maturity}, Budget alloué aux retours: {budget_retours}, Principales causes identifiées: {principal_cause}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        },
+        "recommandations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

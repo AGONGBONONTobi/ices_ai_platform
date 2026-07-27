@@ -1,0 +1,77 @@
+{
+  "id": "profil-de-gestion-du-changement-et-transformation",
+  "title": "Profil de gestion du changement & transformation",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "motivation",
+      "type": "textarea",
+      "label": "Quelles sont les raisons qui vous motivent à accompagner les changements dans votre organisation ?",
+      "placeholder": "Exemple : Je suis motivé par la possibilité de développer de nouvelles compétences et de contribuer à l'évolution de l'entreprise.",
+      "required": true
+    },
+    {
+      "name": "style-de-management",
+      "type": "select",
+      "options": [
+        "Transformationnel",
+        "Transactionnel"
+      ],
+      "label": "Quel est votre style de management préféré lors des périodes de changement ?",
+      "placeholder": "Exemple : Transformationnel",
+      "required": true
+    },
+    {
+      "name": "capacite-a-adapter",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, comment évaluez-vous votre capacité à adapter vos processus et vos structures à un environnement en constante évolution ?",
+      "placeholder": "Exemple : 8",
+      "required": true
+    },
+    {
+      "name": "communication-interne",
+      "type": "text",
+      "label": "Comment assurez-vous la communication efficace avec vos équipes lors des périodes de changement ?",
+      "placeholder": "Exemple : Je m'assure de tenir régulièrement des réunions de suivi avec mes équipes pour leur expliquer les objectifs et les attentes.",
+      "required": true
+    },
+    {
+      "name": "ouverture-au-nouveau",
+      "type": "textarea",
+      "label": "Quelles sont les stratégies que vous mettez en place pour encourager l'ouverture et la curiosité chez vos collaborateurs face au changement ?",
+      "placeholder": "Exemple : Je propose des formations et des ateliers pour développer les compétences et les connaissances nécessaires pour accompagner les changements.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Motivation: {motivation}, Style de management: {style-de-management}, Capacité à adapter: {capacite-a-adapter}, Communication interne: {communication-interne}, Ouverture au nouveau: {ouverture-au-nouveau}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

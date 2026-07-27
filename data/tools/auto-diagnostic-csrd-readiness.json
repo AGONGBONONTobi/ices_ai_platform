@@ -1,0 +1,78 @@
+{
+  "id": "auto-diagnostic-csrd-readiness",
+  "title": "Auto-diagnostic CSRD readiness",
+  "category": "Labels ESG / RSE / Durabilité",
+  "inputs": [
+    {
+      "name": "entreprise_taille",
+      "type": "select",
+      "options": [
+        "Petite",
+        "Moyenne",
+        "Grande"
+      ],
+      "label": "Quelle est la taille de votre entreprise ?",
+      "required": true
+    },
+    {
+      "name": "secteur_activite",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre secteur d'activité",
+      "placeholder": "Ex : Industrie manufacturière, services financiers...",
+      "required": true
+    },
+    {
+      "name": "existence_plan_durabilite",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Avez-vous déjà un plan de durabilité en place ?",
+      "required": true
+    },
+    {
+      "name": "niveau_maturite_esrs",
+      "type": "select",
+      "options": [
+        "0 - Inexistant",
+        "1 - Initié",
+        "2 - Formalisé",
+        "3 - Optimisé"
+      ],
+      "label": "Quel est votre niveau de maturité actuel concernant les ESRS ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en durabilité. L'utilisateur a répondu : Taille de l'entreprise : {entreprise_taille}, Secteur d'activité : {secteur_activite}, Plan de durabilité existant : {existence_plan_durabilite}, Niveau de maturité ESRS : {niveau_maturite_esrs}. Évaluez la préparation de cette entreprise à la directive CSRD en donnant un score global sur 100, une évaluation par axe (gouvernance, stratégie, gestion des risques, indicateurs et objectifs), et des recommandations prioritaires pour améliorer sa conformité aux exigences ESRS.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

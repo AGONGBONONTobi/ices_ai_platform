@@ -1,0 +1,23 @@
+{
+  "id": "diagnostic-de-performance-globale",
+  "title": "Diagnostic de performance globale (BSC)",
+  "category": "RH",
+  "inputs": [
+    {
+      "name": "indicateursPerformance",
+      "type": "textarea",
+      "label": "Indicateurs de performance",
+      "placeholder": "Exemple : Indicateurs de performance financiers, indicateurs de performance non financiers",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en diagnostic de performance globale. Utilise {indicateursPerformance} pour évaluer la performance globale de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "string"
+      }
+    }
+  }
+}

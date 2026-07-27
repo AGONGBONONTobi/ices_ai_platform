@@ -1,0 +1,78 @@
+{
+  "id": "programme-de-reconnaissance-et-recompense",
+  "title": "Programme de reconnaissance & récompense",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "nomDeLemploye",
+      "type": "text",
+      "label": "Nom de l'employé",
+      "placeholder": "Exemple : Pierre Dupont",
+      "required": true
+    },
+    {
+      "name": "actionRealisee",
+      "type": "textarea",
+      "label": "Action réalisée par l'employé",
+      "placeholder": "Exemple : Aide à un collègue en difficulté",
+      "required": true
+    },
+    {
+      "name": "dateDeLaction",
+      "type": "text",
+      "label": "Date de l'action",
+      "placeholder": "Exemple : 01/01/2024",
+      "required": true
+    },
+    {
+      "name": "typeDeRecompense",
+      "type": "select",
+      "options": [
+        "Certificat",
+        "Temps de pause supplémentaire",
+        "Bonus"
+      ],
+      "label": "Type de récompense",
+      "placeholder": "Exemple : Certificat",
+      "required": true
+    },
+    {
+      "name": "montantDuBonus",
+      "type": "number",
+      "label": "Montant du bonus (si applicable)",
+      "placeholder": "Exemple : 100",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un responsable RH. L'utilisateur a répondu : Nom de l'employé: {nomDeLemploye}, Action réalisée : {actionRealisee}, Date de l'action : {dateDeLaction}, Type de récompense : {typeDeRecompense}, Montant du bonus : {montantDuBonus}. Analyse ces informations et propose une récompense adaptée.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

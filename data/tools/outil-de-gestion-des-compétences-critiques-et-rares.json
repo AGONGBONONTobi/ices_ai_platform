@@ -1,0 +1,76 @@
+{
+  "id": "outil-de-gestion-des-compétences-critiques-et-rares",
+  "title": "Outil de gestion des compétences critiques & rares",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "compétences-critiques",
+      "type": "textarea",
+      "label": "Liste des compétences critiques & rares identifiées",
+      "placeholder": "Exemple : gestion de projet, leadership, innovation",
+      "required": true
+    },
+    {
+      "name": "niveau-de-maturité",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Niveau de maturité des compétences",
+      "placeholder": "Exemple : Débutant",
+      "required": true
+    },
+    {
+      "name": "impact-sur-l-entreprise",
+      "type": "number",
+      "label": "Impact des compétences sur l'entreprise (sur 100)",
+      "placeholder": "Exemple : 80",
+      "required": true
+    },
+    {
+      "name": "priorité-de-développement",
+      "type": "select",
+      "options": [
+        "Élevée",
+        "Moyenne",
+        "Basse"
+      ],
+      "label": "Priorité de développement des compétences",
+      "placeholder": "Exemple : Élevée",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Compétences critiques & rares : {compétences-critiques}, Niveau de maturité : {niveau-de-maturité}, Impact sur l'entreprise : {impact-sur-l-entreprise}, Priorité de développement : {priorité-de-développement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

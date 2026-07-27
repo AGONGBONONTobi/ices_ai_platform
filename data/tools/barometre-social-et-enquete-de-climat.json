@@ -1,0 +1,87 @@
+{
+  "id": "barometre-social-et-enquete-de-climat",
+  "title": "Baromètre social & enquête de climat",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "satisfaction-employe",
+      "type": "number",
+      "label": "Sur 10, comment les employés sont-ils satisfaits de leur poste ?",
+      "placeholder": "Exemple : 7/10",
+      "required": true
+    },
+    {
+      "name": "motivation-employe",
+      "type": "select",
+      "options": [
+        "Très motivé",
+        "Motivé",
+        "Neutre",
+        "Démotivé",
+        "Très démotivé"
+      ],
+      "label": "Quel est le niveau de motivation des employés ?",
+      "placeholder": "Exemple : Très motivé",
+      "required": true
+    },
+    {
+      "name": "confort-travail",
+      "type": "textarea",
+      "label": "Quels sont les éléments qui contribuent à un bon confort au travail ?",
+      "placeholder": "Exemple : Éclairage, température, équipement de bureau",
+      "required": false
+    },
+    {
+      "name": "communication-interne",
+      "type": "text",
+      "label": "Comment la communication interne est-elle perçue par les employés ?",
+      "placeholder": "Exemple : Très bonne",
+      "required": true
+    },
+    {
+      "name": "recrutement-attractivite",
+      "type": "select",
+      "options": [
+        "Très attractif",
+        "Attractif",
+        "Moyen",
+        "Pas très attractif",
+        "Pas attractif du tout"
+      ],
+      "label": "Quelle est l'attractivité du recrutement de l'entreprise ?",
+      "placeholder": "Exemple : Très attractif",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. Les employés ont répondu : Satisfaction employé : {satisfaction-employe}, Motivation employé : {motivation-employe}, Confort travail : {confort-travail}, Communication interne : {communication-interne}, Recrutement attractivité : {recrutement-attractivite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

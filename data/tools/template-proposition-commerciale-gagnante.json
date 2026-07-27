@@ -1,0 +1,78 @@
+{
+  "id": "template-proposition-commerciale-gagnante",
+  "title": "Template de proposition commerciale gagnante",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : XYZ Inc.",
+      "required": true
+    },
+    {
+      "name": "produit",
+      "type": "text",
+      "label": "Nom du produit ou service",
+      "placeholder": "Exemple : Solution de gestion de projet",
+      "required": true
+    },
+    {
+      "name": "benefices",
+      "type": "textarea",
+      "label": "Avantages et bénéfices pour l'entreprise",
+      "placeholder": "Exemple : Amélioration de la productivité, réduction des coûts, etc.",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "select",
+      "options": [
+        "Augmenter les ventes",
+        "Améliorer la satisfaction client",
+        "Réduire les coûts"
+      ],
+      "label": "Objectifs à atteindre",
+      "placeholder": "Exemple : Augmenter les ventes, améliorer la satisfaction client, etc.",
+      "required": true
+    },
+    {
+      "name": "cible",
+      "type": "text",
+      "label": "Cible ou public ciblé",
+      "placeholder": "Exemple : Entreprises de taille moyenne",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise : {entreprise}, Produit : {produit}, Avantages : {benefices}, Objectifs : {objectifs}, Cible : {cible}. Analyse ces informations et propose un template de proposition commerciale gagnante.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

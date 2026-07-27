@@ -1,0 +1,71 @@
+{
+  "id": "diagnostic-proprietes-intellectuelles-brevets",
+  "title": "Diagnostic de la propriété intellectuelle & brevets",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "type-de-brevet",
+      "type": "select",
+      "options": [
+        "Brevet de base",
+        "Brevet d'innovation",
+        "Brevet de protection"
+      ],
+      "label": "Quel type de brevet souhaitez-vous protéger ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description-de-l-innovation",
+      "type": "textarea",
+      "label": "Décrivez brièvement l'invention ou l'innovation que vous souhaitez protéger",
+      "placeholder": "Exemple : Une nouvelle technologie de production de matériaux...",
+      "required": true
+    },
+    {
+      "name": "domaine-dapplication",
+      "type": "text",
+      "label": "Dans quel domaine d'application souhaitez-vous appliquer votre brevet ?",
+      "placeholder": "Exemple : Énergie renouvelable, Santé, etc.",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est votre budget alloué pour la protection de votre brevet ?",
+      "placeholder": "Exemple : 1000 €, 5000 €, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en propriété intellectuelle. L'utilisateur a répondu : Type de brevet : {type-de-brevet}, Description de l'innovation : {description-de-l-innovation}, Domaine d'application : {domaine-dapplication}, Budget alloué : {budget-alloue}. Analyse ces informations et proposez une stratégie de protection de brevet adaptée.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

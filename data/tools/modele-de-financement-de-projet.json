@@ -1,0 +1,77 @@
+{
+  "id": "modele-de-financement-de-projet",
+  "title": "Modèle de financement de projet (Project Finance/PPP)",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "montant_investi",
+      "type": "number",
+      "label": "Montant investi dans le projet",
+      "placeholder": "Entrez le montant investi",
+      "required": true
+    },
+    {
+      "name": "taux_d_interet",
+      "type": "number",
+      "label": "Taux d'intérêt appliqué",
+      "placeholder": "Entrez le taux d'intérêt",
+      "required": true
+    },
+    {
+      "name": "periode_de_remboursement",
+      "type": "number",
+      "label": "Période de remboursement",
+      "placeholder": "Entrez la période de remboursement",
+      "required": true
+    },
+    {
+      "name": "type_de_financement",
+      "type": "select",
+      "options": [
+        "Project Finance",
+        "PPP"
+      ],
+      "label": "Type de financement",
+      "placeholder": "Sélectionnez le type de financement",
+      "required": true
+    },
+    {
+      "name": "description_du_projet",
+      "type": "textarea",
+      "label": "Description du projet",
+      "placeholder": "Entrez une description du projet",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en financement de projet. L'utilisateur a répondu : Montant investi : {montant_investi}, Taux d'intérêt : {taux_d_interet}, Période de remboursement : {periode_de_remboursement}, Type de financement : {type_de_financement}, Description du projet : {description_du_projet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

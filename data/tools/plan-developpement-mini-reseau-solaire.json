@@ -1,0 +1,71 @@
+{
+  "id": "plan-developpement-mini-reseau-solaire",
+  "title": "Plan de développement d'un mini-réseau solaire",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "puissance",
+      "type": "number",
+      "label": "Quelle est la puissance électrique requise pour le mini-réseau solaire (en kW)?",
+      "placeholder": "10",
+      "required": true
+    },
+    {
+      "name": "superficie",
+      "type": "number",
+      "label": "Quelle est la superficie disponible pour l'installation du mini-réseau solaire (en m²)?",
+      "placeholder": "1000",
+      "required": true
+    },
+    {
+      "name": "type_de_site",
+      "type": "select",
+      "options": [
+        "Urbain",
+        "Rural",
+        "Isolé"
+      ],
+      "label": "Quel est le type de site pour l'installation du mini-réseau solaire?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "contraintes",
+      "type": "textarea",
+      "label": "Quelles sont les contraintes techniques ou environnementales à prendre en compte pour l'installation?",
+      "placeholder": "Exemple : proximité d'un cours d'eau, zone protégée...",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un expert en énergie renouvelable. L'utilisateur a répondu : Puissance: {puissance} kW, Superficie: {superficie} m², Type de site: {type_de_site}, Contraintes: {contraintes}. Analyse ces informations et propose un plan de développement pour un mini-réseau solaire, incluant un score global sur 100, une évaluation par axe (technique, financier, environnemental) avec des scores sur 100, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

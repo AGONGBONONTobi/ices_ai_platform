@@ -1,0 +1,71 @@
+{
+  "id": "audit-des-marches-publics-et-commande-publique",
+  "title": "Audit des marchés publics & commande publique",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "type-de-marche",
+      "type": "select",
+      "options": [
+        "Marché public",
+        "Concession de travaux",
+        "Concession de services"
+      ],
+      "label": "Quel type de marché est concerné ?",
+      "placeholder": "Sélectionnez un type de marché",
+      "required": true
+    },
+    {
+      "name": "duree-de-la-concession",
+      "type": "number",
+      "label": "Quelle est la durée de la concession ?",
+      "placeholder": "Saisissez la durée en années",
+      "required": true
+    },
+    {
+      "name": "description-des-problemes-identifies",
+      "type": "textarea",
+      "label": "Quels problèmes ont été identifiés pendant l'audit ?",
+      "placeholder": "Décrivez les problèmes identifiés",
+      "required": true
+    },
+    {
+      "name": "recommandations-pour-la-mise-en-conformite",
+      "type": "textarea",
+      "label": "Quelles recommandations ont été formulées pour la mise en conformité ?",
+      "placeholder": "Décrivez les recommandations",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en marchés publics. L'utilisateur a répondu : Type de marché: {type-de-marche}, Durée de la concession: {duree-de-la-concession}, Description des problèmes identifiés: {description-des-problemes-identifies}, Recommandations pour la mise en conformité: {recommandations-pour-la-mise-en-conformite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

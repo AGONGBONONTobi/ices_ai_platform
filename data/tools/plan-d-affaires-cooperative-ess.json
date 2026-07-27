@@ -1,0 +1,78 @@
+{
+  "id": "plan-d-affaires-cooperative-ess",
+  "title": "Plan d'affaires pour coopérative & ESS",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de la coopérative ?",
+      "placeholder": "Exemple : développer la production locale, améliorer la qualité des produits",
+      "required": true
+    },
+    {
+      "name": "cible-clientele",
+      "type": "select",
+      "options": [
+        "Jeunes adultes",
+        "Familles",
+        "Personnes âgées"
+      ],
+      "label": "Qui est la cible de la coopérative ?",
+      "placeholder": "Exemple : les jeunes adultes",
+      "required": true
+    },
+    {
+      "name": "ressources-financieres",
+      "type": "number",
+      "label": "Quels sont les ressources financières disponibles pour la coopérative ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "plan-marketing",
+      "type": "textarea",
+      "label": "Quel est le plan de marketing pour la coopérative ?",
+      "placeholder": "Exemple : campagnes publicitaires, partenariats avec des entreprises locales",
+      "required": true
+    },
+    {
+      "name": "plan-financier",
+      "type": "textarea",
+      "label": "Quel est le plan financier pour la coopérative ?",
+      "placeholder": "Exemple : budget, prévisions de revenus et de dépenses",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique : {objectif-stratégique}, Cible clientèle : {cible-clientele}, Ressources financières : {ressources-financieres}, Plan marketing : {plan-marketing}, Plan financier : {plan-financier}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "plan-de-gestion-des-dechets-et-economie-des-materiales",
+  "title": "Plan de gestion des déchets & économie des matières",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "type-de-dechet",
+      "type": "select",
+      "options": [
+        "Papier",
+        "Plastique",
+        "Verre",
+        "Métal"
+      ],
+      "label": "Quel type de déchet souhaitez-vous gérer ?",
+      "placeholder": "Sélectionnez un type de déchet",
+      "required": true
+    },
+    {
+      "name": "quantite-de-dechet",
+      "type": "number",
+      "label": "Quelle est la quantité de déchet généré par jour ?",
+      "placeholder": "Entrez la quantité de déchet",
+      "required": true
+    },
+    {
+      "name": "moyen-de-recyclage",
+      "type": "textarea",
+      "label": "Quels moyens de recyclage sont utilisés pour les déchets ?",
+      "placeholder": "Décrivez les moyens de recyclage utilisés",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la gestion des déchets ?",
+      "placeholder": "Entrez le budget alloué",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE & développement durable. L'utilisateur a répondu : Type de déchet : {type-de-dechet}, Quantité de déchet : {quantite-de-dechet} kg/jour, Moyens de recyclage : {moyen-de-recyclage}, Budget alloué : {budget-alloue} €. Analyse ces informations et propose un plan de gestion des déchets & économie des matières efficace.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

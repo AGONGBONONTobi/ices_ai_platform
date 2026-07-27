@@ -1,0 +1,77 @@
+{
+  "id": "audit-anti-corruption-kebab-case",
+  "title": "Audit anti-corruption (ISO 37001 & loi Sapin II)",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Société Générale",
+      "required": true
+    },
+    {
+      "name": "activites",
+      "type": "textarea",
+      "label": "Description des activités de l'entreprise",
+      "placeholder": "Exemple : Activités de banque et d'assurance",
+      "required": true
+    },
+    {
+      "name": "annee",
+      "type": "number",
+      "label": "Année de l'audit",
+      "placeholder": "Exemple : 2022",
+      "required": true
+    },
+    {
+      "name": "type_audit",
+      "type": "select",
+      "options": [
+        "ISO 37001",
+        "Loi Sapin II"
+      ],
+      "label": "Type d'audit",
+      "placeholder": "Exemple : ISO 37001",
+      "required": true
+    },
+    {
+      "name": "resultat_audit",
+      "type": "textarea",
+      "label": "Résultats de l'audit",
+      "placeholder": "Exemple : Les résultats de l'audit ont mis en évidence des lacunes dans la politique anti-corruption de l'entreprise",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audit anti-corruption. L'utilisateur a répondu : Entreprise : {entreprise}, Activités : {activites}, Année : {annee}, Type d'audit : {type_audit}, Résultats de l'audit : {resultat_audit}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

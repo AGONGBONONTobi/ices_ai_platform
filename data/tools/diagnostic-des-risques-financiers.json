@@ -1,0 +1,72 @@
+{
+  "id": "diagnostic-des-risques-financiers",
+  "title": "Diagnostic des risques financiers",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "revenus-mensuels",
+      "type": "number",
+      "label": "Quels sont vos revenus mensuels ?",
+      "placeholder": "Exemple : 5000",
+      "required": true
+    },
+    {
+      "name": "dettes-mensuelles",
+      "type": "number",
+      "label": "Quels sont vos dettes mensuelles ?",
+      "placeholder": "Exemple : 2000",
+      "required": true
+    },
+    {
+      "name": "type-de-contrat",
+      "type": "select",
+      "options": [
+        "CDI",
+        "CDD",
+        "Intérim",
+        "Autre"
+      ],
+      "label": "Quel type de contrat avez-vous ?",
+      "placeholder": "Exemple : CDI",
+      "required": true
+    },
+    {
+      "name": "activite-principale",
+      "type": "textarea",
+      "label": "Quelle est votre activité principale ?",
+      "placeholder": "Exemple : Consultant en gestion de projet",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion financière. L'utilisateur a répondu : Revenus mensuels : {revenus-mensuels}, Dettes mensuelles : {dettes-mensuelles}, Type de contrat : {type-de-contrat}, Activité principale : {activite-principale}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

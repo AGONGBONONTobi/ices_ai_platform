@@ -1,0 +1,71 @@
+{
+  "id": "audit-des-procedes-de-fabrication",
+  "title": "Audit des procédés de fabrication",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "procedes-utilises",
+      "type": "textarea",
+      "label": "Quels sont les procédés de fabrication utilisés ?",
+      "placeholder": "Exemple : usinage, soudure, assemblage",
+      "required": true
+    },
+    {
+      "name": "matieres-premieres",
+      "type": "select",
+      "options": [
+        "acier",
+        "aluminium",
+        "plastique"
+      ],
+      "label": "Quelles sont les matières premières utilisées ?",
+      "placeholder": "Exemple : acier, aluminium, plastique",
+      "required": true
+    },
+    {
+      "name": "equipements-utilises",
+      "type": "text",
+      "label": "Quels sont les équipements utilisés ?",
+      "placeholder": "Exemple : machines-outil, robots, outils",
+      "required": true
+    },
+    {
+      "name": "procedures-de-sécurité",
+      "type": "textarea",
+      "label": "Quelles sont les procédures de sécurité mises en place ?",
+      "placeholder": "Exemple : formation des employés, équipements de protection individuelle",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audit. L'utilisateur a répondu : Procédés utilisés : {procedes-utilises}, Matières premières : {matieres-premieres}, Équipements utilisés : {equipements-utilises}, Procédures de sécurité : {procedures-de-sécurité}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

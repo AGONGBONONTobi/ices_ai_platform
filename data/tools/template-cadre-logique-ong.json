@@ -1,0 +1,70 @@
+{
+  "id": "template-cadre-logique-ong",
+  "title": "Template de cadre logique (matrice logique ONG)",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectifGeneral",
+      "type": "textarea",
+      "label": "Décrivez l'objectif général du projet",
+      "placeholder": "Exemple : Améliorer la santé des enfants dans les communautés rurales",
+      "required": true
+    },
+    {
+      "name": "indicateursCles",
+      "type": "select",
+      "options": [
+        "Réduction de la mortalité infantile",
+        "Amélioration de l'accès à l'éducation",
+        "Renforcement des capacités des communautés"
+      ],
+      "label": "Sélectionnez les indicateurs clés pour mesurer le succès du projet",
+      "required": true
+    },
+    {
+      "name": "ressourcesDisponibles",
+      "type": "number",
+      "label": "Quel est le budget total disponible pour le projet ?",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    },
+    {
+      "name": "partenairesPotentiels",
+      "type": "textarea",
+      "label": "Listez les partenaires potentiels pour le projet (institutions, organisations, etc.)",
+      "placeholder": "Exemple : ONG locales, gouvernement, entreprises privées",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en développement de projets. L'utilisateur a répondu : Objectif général : {objectifGeneral}, Indicateurs clés : {indicateursCles}, Ressources disponibles : {ressourcesDisponibles}, Partenaires potentiels : {partenairesPotentiels}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (objectif, indicateurs, ressources, partenaires), et des recommandations pour améliorer le projet.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

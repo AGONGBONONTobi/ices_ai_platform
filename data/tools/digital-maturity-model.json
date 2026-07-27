@@ -1,0 +1,83 @@
+{
+  "id": "digital-maturity-model",
+  "title": "Diagnostic de maturité digitale (Digital Maturity Model)",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "digital_strategy",
+      "type": "textarea",
+      "label": "La stratégie digitale de votre entreprise est-elle clairement définie et alignée avec les objectifs de l'entreprise ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "digital_innovation",
+      "type": "select",
+      "options": [
+        "Pas d'initiatives d'innovation digitale",
+        "Initiatives d'innovation digitale en cours",
+        "Initiatives d'innovation digitale réussies"
+      ],
+      "label": "Quel est le niveau d'innovation digitale de votre entreprise ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "data_management",
+      "type": "number",
+      "label": "Quel est le niveau de maturité de la gestion des données dans votre entreprise ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "cybersecurity",
+      "type": "select",
+      "options": [
+        "Pas de mesures de sécurité",
+        "Mesures de sécurité en cours",
+        "Mesures de sécurité robustes"
+      ],
+      "label": "Quel est le niveau de maturité de la sécurité informatique dans votre entreprise ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "digital_skills",
+      "type": "textarea",
+      "label": "Quel est le niveau de compétences digitales des employés de votre entreprise ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Digital Strategy: {digital_strategy}, Digital Innovation: {digital_innovation}, Data Management: {data_management}, Cybersecurity: {cybersecurity}, Digital Skills: {digital_skills}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

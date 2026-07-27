@@ -1,0 +1,72 @@
+{
+  "id": "audit-de-conformite-reglementaire-sectorielle",
+  "title": "Audit de conformité réglementaire sectorielle",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Finance",
+        "Santé",
+        "Environnement",
+        "Cybersécurité"
+      ],
+      "label": "Quel secteur réglementaire est concerné par l'audit ?",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "réglementation",
+      "type": "textarea",
+      "label": "Quelles réglementations spécifiques doivent être respectées ?",
+      "placeholder": "Exemple : GDPR, HIPAA, etc.",
+      "required": true
+    },
+    {
+      "name": "critères",
+      "type": "text",
+      "label": "Quels critères de conformité doivent être évalués ?",
+      "placeholder": "Exemple : documentation, processus, etc.",
+      "required": true
+    },
+    {
+      "name": "risques",
+      "type": "number",
+      "label": "Quel est le niveau de risque associé à la non-conformité ?",
+      "placeholder": "Exemple : 1-5",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audit de conformité. L'utilisateur a répondu : Secteur: {secteur}, Réglementation: {réglementation}, Critères: {critères}, Risques: {risques}. Analyse ces informations et donne un score global de conformité sur 100, une évaluation par axe et des recommandations pour améliorer la conformité.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

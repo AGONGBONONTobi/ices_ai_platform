@@ -1,0 +1,71 @@
+{
+  "id": "plan-accreditation-certification-internationale",
+  "title": "Plan d'accréditation & certification internationale",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "domaineActivite",
+      "type": "text",
+      "label": "Quel est le domaine d'activité de votre organisation ?",
+      "placeholder": "Exemple : Santé, Éducation, etc.",
+      "required": true
+    },
+    {
+      "name": "normeCertification",
+      "type": "select",
+      "options": [
+        "ISO 9001",
+        "ISO 14001",
+        "ISO 45001",
+        "Autre"
+      ],
+      "label": "Quelle norme de certification internationale souhaitez-vous obtenir ?",
+      "required": true
+    },
+    {
+      "name": "objectifsCertification",
+      "type": "textarea",
+      "label": "Quels sont les objectifs que vous souhaitez atteindre avec cette certification ?",
+      "placeholder": "Exemple : Améliorer la qualité des services, augmenter la confiance des clients, etc.",
+      "required": true
+    },
+    {
+      "name": "delaiCertification",
+      "type": "number",
+      "label": "Quel est le délai souhaité pour obtenir la certification ?",
+      "placeholder": "Exemple : 6 mois, 1 an, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Domaine d'activité: {domaineActivite}, Norme de certification: {normeCertification}, Objectifs de certification: {objectifsCertification}, Délai de certification: {delaiCertification}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

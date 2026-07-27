@@ -1,0 +1,81 @@
+{
+  "id": "test-de-potentiel-de-leadership-hpi-hds",
+  "title": "Test de potentiel de leadership (HPI/HDS)",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "style-de-leadership",
+      "type": "select",
+      "options": [
+        "Transformationnel",
+        "Transactional"
+      ],
+      "label": "Quel style de leadership préféreriez-vous utiliser ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "motivation-des-équipes",
+      "type": "textarea",
+      "label": "Comment motiveriez-vous vos équipes pour atteindre les objectifs ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "communication-interpersonnelle",
+      "type": "text",
+      "label": "Comment décririez-vous votre communication avec les autres ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "prise-de-decision",
+      "type": "select",
+      "options": [
+        "Analytique",
+        "Intuitif"
+      ],
+      "label": "Comment prenez-vous les décisions ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "gestion-du-conflit",
+      "type": "textarea",
+      "label": "Comment gérez-vous les conflits avec vos collègues ou supérieurs ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Style de leadership: {style-de-leadership}, Motivation des équipes: {motivation-des-équipes}, Communication interpersonnelle: {communication-interpersonnelle}, Prise de décision: {prise-de-decision}, Gestion du conflit: {gestion-du-conflit}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

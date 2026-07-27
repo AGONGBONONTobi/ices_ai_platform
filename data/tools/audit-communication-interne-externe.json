@@ -1,0 +1,85 @@
+{
+  "id": "audit-communication-interne-externe",
+  "title": "Audit de la communication interne & externe",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de la communication interne ?",
+      "placeholder": "Exemple : Informer les employés sur les nouvelles politiques, etc.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Email",
+        "Intranet",
+        "Réunions",
+        "Autres"
+      ],
+      "label": "Quel est le principal canal de communication utilisé pour les employés ?",
+      "placeholder": "Exemple : Email",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Combien d'employés ont accès à l'intranet ?",
+      "placeholder": "Exemple : 80%",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "textarea",
+      "label": "Quels sont les principaux thèmes abordés dans les communications externes ?",
+      "placeholder": "Exemple : Actualités de l'entreprise, etc.",
+      "required": true
+    },
+    {
+      "name": "variable5",
+      "type": "select",
+      "options": [
+        "Social Media",
+        "Site Web",
+        "Presse",
+        "Autres"
+      ],
+      "label": "Quel est le principal canal de communication utilisé pour les clients ou les partenaires ?",
+      "placeholder": "Exemple : Social Media",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs de la communication interne : {variable1}, Canal de communication principal pour les employés : {variable2}, Pourcentage d'employés ayant accès à l'intranet : {variable3}%, Thèmes abordés dans les communications externes : {variable4}, Canal de communication principal pour les clients ou les partenaires : {variable5}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

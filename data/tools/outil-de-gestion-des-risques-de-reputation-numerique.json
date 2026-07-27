@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-gestion-des-risques-de-reputation-numerique",
+  "title": "Outil de gestion des risques de réputation numérique",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "text",
+      "label": "Quels sont les canaux utilisés par votre entreprise pour se connecter avec ses clients ?",
+      "placeholder": "Exemple : site web, réseaux sociaux, etc.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Quels sont les principaux risques identifiés pour votre entreprise en termes de réputation numérique ?",
+      "placeholder": "Exemple : fuite de données, cyberattaque, etc.",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "select",
+      "options": [
+        "faible",
+        "moyen",
+        "élevé"
+      ],
+      "label": "Quel est le niveau de préparation de votre entreprise face aux risques de réputation numérique ?",
+      "placeholder": "Exemple : faible, moyen, élevé",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la gestion des risques de réputation numérique ?",
+      "placeholder": "Exemple : 1000, 5000, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Canaux utilisés : {variable1}, Principaux risques identifiés : {variable2}, Niveau de préparation : {variable3}, Budget alloué : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

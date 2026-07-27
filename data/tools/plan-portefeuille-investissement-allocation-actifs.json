@@ -1,0 +1,71 @@
+{
+  "id": "plan-portefeuille-investissement-allocation-actifs",
+  "title": "Plan de portefeuille d'investissement & allocation d'actifs",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif-investissement",
+      "type": "select",
+      "options": [
+        "Croissance à long terme",
+        "Génération de revenus",
+        "Préservation du capital"
+      ],
+      "label": "Quel est votre objectif d'investissement principal ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "horizon-investissement",
+      "type": "number",
+      "label": "Quel est votre horizon d'investissement en années ?",
+      "placeholder": "5",
+      "required": true
+    },
+    {
+      "name": "tolérance-risque",
+      "type": "textarea",
+      "label": "Décrivez votre tolérance au risque (niveau de risque que vous êtes prêt à prendre) ?",
+      "placeholder": "Exemple : Je suis prêt à prendre des risques modérés pour obtenir des rendements plus élevés",
+      "required": true
+    },
+    {
+      "name": "montant-investissement",
+      "type": "number",
+      "label": "Quel est le montant que vous souhaitez investir ?",
+      "placeholder": "10000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un conseiller financier expert. L'utilisateur a répondu : Objectif d'investissement : {objectif-investissement}, Horizon d'investissement : {horizon-investissement} ans, Tolérance au risque : {tolérance-risque} et Montant d'investissement : {montant-investissement} euros. Créez un plan de portefeuille d'investissement et une allocation d'actifs adaptée à ses besoins. Évaluez les risques et les opportunités, et proposez une répartition indicative des actifs. Donnez un score global sur 100, une évaluation par axe (ex : diversification, rendement, liquidité), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

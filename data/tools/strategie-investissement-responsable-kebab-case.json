@@ -1,0 +1,79 @@
+{
+  "id": "strategie-investissement-responsable-kebab-case",
+  "title": "Stratégie d'investissement responsable (ISR/ESG)",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "objectif-investissement",
+      "type": "text",
+      "label": "Quel est l'objectif de votre investissement ?",
+      "placeholder": "Exemple : diversification, rendement, etc.",
+      "required": true
+    },
+    {
+      "name": "periode-investissement",
+      "type": "number",
+      "label": "Quelle est la période d'investissement ?",
+      "placeholder": "Exemple : 1 an, 5 ans, etc.",
+      "required": true
+    },
+    {
+      "name": "secteur-investissement",
+      "type": "select",
+      "options": [
+        "Energie renouvelable",
+        "Technologie verte",
+        "Industrie durable",
+        "Autres"
+      ],
+      "label": "Dans quel secteur souhaitez-vous investir ?",
+      "placeholder": "Exemple : énergie renouvelable, etc.",
+      "required": true
+    },
+    {
+      "name": "concerns-environnementaux",
+      "type": "textarea",
+      "label": "Quels sont vos principaux préoccupations environnementales ?",
+      "placeholder": "Exemple : changement climatique, pollution, etc.",
+      "required": true
+    },
+    {
+      "name": "concerns-sociaux",
+      "type": "textarea",
+      "label": "Quels sont vos principaux préoccupations sociales ?",
+      "placeholder": "Exemple : droits de l'homme, équité salariale, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un conseiller en investissement responsable. L'utilisateur a répondu : Objectif d'investissement : {objectif-investissement}, Période d'investissement : {periode-investissement}, Secteur d'investissement : {secteur-investissement}, Préoccupations environnementales : {concerns-environnementaux}, Préoccupations sociales : {concerns-sociaux}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

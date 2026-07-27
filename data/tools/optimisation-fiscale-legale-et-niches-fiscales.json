@@ -1,0 +1,78 @@
+{
+  "id": "optimisation-fiscale-legale-et-niches-fiscales",
+  "title": "Optimisation fiscale légale & niches fiscales",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de nom d'entreprise",
+      "required": true
+    },
+    {
+      "name": "revenus",
+      "type": "number",
+      "label": "Revenus annuels de l'entreprise",
+      "placeholder": "Exemple de revenus annuels",
+      "required": true
+    },
+    {
+      "name": "activites",
+      "type": "textarea",
+      "label": "Description des activités de l'entreprise",
+      "placeholder": "Exemple de description des activités",
+      "required": true
+    },
+    {
+      "name": "situation_fiscale",
+      "type": "select",
+      "options": [
+        "Situation fiscale 1",
+        "Situation fiscale 2",
+        "Situation fiscale 3"
+      ],
+      "label": "Situation fiscale actuelle de l'entreprise",
+      "placeholder": "Exemple de situation fiscale",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Objectifs d'optimisation fiscale de l'entreprise",
+      "placeholder": "Exemple d'objectifs d'optimisation fiscale",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en optimisation fiscale. L'utilisateur a répondu : Entreprise: {entreprise}, Revenus: {revenus}, Activités: {activites}, Situation fiscale: {situation_fiscale}, Objectifs: {objectifs}. Analyse ces informations et propose des recommandations pour optimiser la situation fiscale de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

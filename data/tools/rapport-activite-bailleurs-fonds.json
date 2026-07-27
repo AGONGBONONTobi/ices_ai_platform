@@ -1,0 +1,72 @@
+{
+  "id": "rapport-activite-bailleurs-fonds",
+  "title": "Rapport d'activité pour bailleurs de fonds (USAID, UE, BAD...)",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_bailleur",
+      "type": "select",
+      "options": [
+        "USAID",
+        "Union Européenne",
+        "Banque Africaine de Développement",
+        "Autre"
+      ],
+      "label": "Quel est le type de bailleur de fonds ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "periode_rapport",
+      "type": "textarea",
+      "label": "Décrivez la période du rapport d'activité (date de début et date de fin) :",
+      "placeholder": "Exemple : du 01/01/2022 au 31/12/2022",
+      "required": true
+    },
+    {
+      "name": "resultats_obtenus",
+      "type": "textarea",
+      "label": "Quels sont les principaux résultats obtenus pendant cette période ?",
+      "placeholder": "Exemple : 1000 bénéficiaires, 500 formations dispensées...",
+      "required": true
+    },
+    {
+      "name": "budget_utilise",
+      "type": "number",
+      "label": "Quel est le budget utilisé pendant cette période ?",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en rédaction de rapports d'activité pour des bailleurs de fonds. L'utilisateur a répondu : Type de bailleur : {type_bailleur}, Période du rapport : {periode_rapport}, Résultats obtenus : {resultats_obtenus}, Budget utilisé : {budget_utilise}. Rédigez un rapport d'activité complet et évaluez le projet en donnant un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

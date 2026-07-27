@@ -1,0 +1,71 @@
+{
+  "id": "template-term-sheet-lettre-d-intention",
+  "title": "Template de term sheet & lettre d'intention",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "nom-de-la-societe",
+      "type": "text",
+      "label": "Nom de la société",
+      "placeholder": "Exemple de société",
+      "required": true
+    },
+    {
+      "name": "nom-des-investisseurs",
+      "type": "textarea",
+      "label": "Nom des investisseurs",
+      "placeholder": "Exemple de liste d'investisseurs",
+      "required": true
+    },
+    {
+      "name": "montant-de-l-investissement",
+      "type": "number",
+      "label": "Montant de l'investissement",
+      "placeholder": "Exemple de montant",
+      "required": true
+    },
+    {
+      "name": "délai-de-l-investissement",
+      "type": "select",
+      "options": [
+        "3 mois",
+        "6 mois",
+        "9 mois"
+      ],
+      "label": "Durée de l'investissement",
+      "placeholder": "Exemple de durée",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un avocat expert. L'utilisateur a répondu : Nom de la société : {nom-de-la-societe}, Nom des investisseurs : {nom-des-investisseurs}, Montant de l'investissement : {montant-de-l-investissement}, Durée de l'investissement : {délai-de-l-investissement}. Analyse ces informations et propose un modèle de term sheet et une lettre d'intention adaptés.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "analyse-disruptions-reponse-strategique",
+  "title": "Analyse des disruptions & réponse stratégique",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "type-de-disruption",
+      "type": "select",
+      "options": [
+        "Technologique",
+        "Économique",
+        "Sociétale"
+      ],
+      "label": "Quel type de disruption est-il en jeu ?",
+      "placeholder": "Sélectionnez un type de disruption",
+      "required": true
+    },
+    {
+      "name": "impact-sur-la-borne",
+      "type": "textarea",
+      "label": "Quel est l'impact potentiel de cette disruption sur votre entreprise ?",
+      "placeholder": "Décrivez les conséquences potentielles",
+      "required": true
+    },
+    {
+      "name": "strategie-de-reponse",
+      "type": "text",
+      "label": "Quelle est votre stratégie de réponse à cette disruption ?",
+      "placeholder": "Décrivez vos plans d'action",
+      "required": true
+    },
+    {
+      "name": "ressources-necessaires",
+      "type": "number",
+      "label": "Quelles ressources (financières, humaines, matérielles) sont nécessaires pour mettre en œuvre cette stratégie ?",
+      "placeholder": "Indiquez les ressources requises",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Type de disruption: {type-de-disruption}, Impact sur la borne: {impact-sur-la-borne}, Stratégie de réponse: {strategie-de-reponse}, Ressources nécessaires: {ressources-necessaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

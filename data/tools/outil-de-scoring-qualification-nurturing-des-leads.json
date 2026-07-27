@@ -1,0 +1,89 @@
+{
+  "id": "outil-de-scoring-qualification-nurturing-des-leads",
+  "title": "Outil de scoring, qualification & nurturing des leads",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "type_de_lead",
+      "type": "select",
+      "options": [
+        "Prospect",
+        "Lead chaud",
+        "Lead froid"
+      ],
+      "label": "Quel type de lead est-ce ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "interet_du_lead",
+      "type": "select",
+      "options": [
+        "Fort",
+        "Moyen",
+        "Faible"
+      ],
+      "label": "Quel est l'intérêt du lead ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "niveau_de_connaissance",
+      "type": "textarea",
+      "label": "Quel est le niveau de connaissance du lead sur notre produit/service ?",
+      "placeholder": "Décrivez le niveau de connaissance",
+      "required": true
+    },
+    {
+      "name": "source_de_revenu",
+      "type": "select",
+      "options": [
+        "Internet",
+        "Réseaux sociaux",
+        "Événements",
+        "Publicités"
+      ],
+      "label": "Quelle est la source de revenu du lead ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "budget_disponible",
+      "type": "number",
+      "label": "Quel est le budget disponible du lead ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Type de lead : {type_de_lead}, Intérêt du lead : {interet_du_lead}, Niveau de connaissance : {niveau_de_connaissance}, Source de revenu : {source_de_revenu}, Budget disponible : {budget_disponible}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

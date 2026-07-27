@@ -1,0 +1,71 @@
+{
+  "id": "ideation-management-tool",
+  "title": "Outil de gestion des idées",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "idée_principale",
+      "type": "textarea",
+      "label": "Quelle est l'idée principale que vous souhaitez développer ?",
+      "placeholder": "Décrivez votre idée de manière claire et concise",
+      "required": true
+    },
+    {
+      "name": "objectif",
+      "type": "select",
+      "options": [
+        "Augmenter les ventes",
+        "Réduire les coûts",
+        "Développer un nouveau produit"
+      ],
+      "label": "Quel est l'objectif principal de votre idée ?",
+      "placeholder": "Sélectionnez l'objectif qui correspond le mieux à votre idée",
+      "required": true
+    },
+    {
+      "name": "barrières",
+      "type": "text",
+      "label": "Quelles sont les principales barrières à l'adoption de votre idée ?",
+      "placeholder": "Décrivez les obstacles qui pourraient empêcher l'adoption de votre idée",
+      "required": false
+    },
+    {
+      "name": "ressources",
+      "type": "number",
+      "label": "Quelles ressources (humaines, matérielles, financières) sont nécessaires pour développer votre idée ?",
+      "placeholder": "Saisissez le nombre de ressources nécessaires",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Idée principale : {idée_principale}, Objectif : {objectif}, Barrières : {barrières}, Ressources : {ressources}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

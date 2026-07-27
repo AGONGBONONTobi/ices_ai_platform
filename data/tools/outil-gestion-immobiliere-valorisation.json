@@ -1,0 +1,71 @@
+{
+  "id": "outil-gestion-immobiliere-valorisation",
+  "title": "Outil de gestion immobilière & valorisation",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "superficie",
+      "type": "number",
+      "label": "Quelle est la superficie du bien immobilier en m² ?",
+      "placeholder": "1000",
+      "required": true
+    },
+    {
+      "name": "emplacement",
+      "type": "select",
+      "options": [
+        "Centre-ville",
+        "Banlieue",
+        "Zone rurale"
+      ],
+      "label": "Où est situé le bien immobilier ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Décrivez le bien immobilier (état, équipements, etc.)",
+      "placeholder": "Appartement de 3 pièces avec balcon",
+      "required": true
+    },
+    {
+      "name": "budgetTravaux",
+      "type": "number",
+      "label": "Quel est le budget prévu pour les travaux de rénovation ?",
+      "placeholder": "50000",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion immobilière. L'utilisateur a répondu : Superficie: {superficie} m², Emplacement: {emplacement}, Description: {description}, Budget travaux: {budgetTravaux}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (emplacement, état du bien, potentiel de valorisation), et des recommandations pour améliorer la valeur du bien.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

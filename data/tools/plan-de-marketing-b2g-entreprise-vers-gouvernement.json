@@ -1,0 +1,71 @@
+{
+  "id": "plan-de-marketing-b2g-entreprise-vers-gouvernement",
+  "title": "Plan de marketing B2G (entreprise vers gouvernement)",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "objectif-commerce",
+      "type": "text",
+      "label": "Quels sont les objectifs commerciaux de l'entreprise pour ce marché public ?",
+      "placeholder": "Exemple : augmentation des ventes, développement de nouveaux marchés",
+      "required": true
+    },
+    {
+      "name": "cible-gouvernementale",
+      "type": "select",
+      "options": [
+        "Ministère de l'Économie",
+        "Ministère de la Santé",
+        "Ministère de l'Éducation"
+      ],
+      "label": "Quel ministère ou organisme gouvernemental est ciblé pour ce plan de marketing ?",
+      "placeholder": "Exemple : Ministère de l'Économie",
+      "required": true
+    },
+    {
+      "name": "strategie-marketing",
+      "type": "textarea",
+      "label": "Quelle est la stratégie marketing proposée pour atteindre les objectifs commerciaux ?",
+      "placeholder": "Exemple : campagne de publicité en ligne, partenariat avec un organisme gouvernemental",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour ce plan de marketing ?",
+      "placeholder": "Exemple : 10 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif commerce : {objectif-commerce}, Cible gouvernementale : {cible-gouvernementale}, Stratégie marketing : {strategie-marketing}, Budget alloué : {budget-alloue}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "strategie-communication-digitale-social-media",
+  "title": "Stratégie de communication digitale (social media)",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de votre stratégie de communication digitale?",
+      "placeholder": "Ex: augmenter la notoriété de la marque",
+      "required": true
+    },
+    {
+      "name": "cible",
+      "type": "text",
+      "label": "Qui est votre public cible?",
+      "placeholder": "Ex: jeunes adultes 18-25",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est votre budget mensuel pour les réseaux sociaux?",
+      "placeholder": "Ex: 2000",
+      "required": true
+    },
+    {
+      "name": "plateformes",
+      "type": "select",
+      "options": [
+        "Facebook",
+        "Instagram",
+        "LinkedIn",
+        "Twitter",
+        "TikTok",
+        "YouTube",
+        "Autre"
+      ],
+      "label": "Sur quelles plateformes souhaitez-vous concentrer vos efforts?",
+      "required": true
+    },
+    {
+      "name": "frequence",
+      "type": "number",
+      "label": "Combien de publications par semaine envisagez-vous?",
+      "placeholder": "Ex: 5",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en stratégie digitale. L'utilisateur a répondu : Objectif: {objectif}, Public cible: {cible}, Budget mensuel: {budget}€, Plateformes: {plateformes}, Fréquence: {frequence} publications/semaine. Analyse ces informations et donne un score global sur 100, une évaluation par axe (Objectif, Audience, Budget, Plateforme, Fréquence), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "programme-5s-organisation-espaces-travail",
+  "title": "Programme 5S & organisation des espaces de travail",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Entreprise XYZ",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "number",
+      "label": "Nombre d'employés",
+      "placeholder": "Exemple : 150",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "textarea",
+      "label": "État actuel de l'organisation",
+      "placeholder": "Décrivez brièvement l'organisation actuelle",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "select",
+      "options": [
+        "Haute",
+        "Moyenne",
+        "Basse"
+      ],
+      "label": "Priorité de mise en œuvre",
+      "placeholder": "Sélectionnez la priorité",
+      "required": true
+    },
+    {
+      "name": "variable5",
+      "type": "number",
+      "label": "Budget alloué (en €)",
+      "placeholder": "Exemple : 5000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom de l'entreprise: {variable1}, Nombre d'employés: {variable2}, État actuel de l'organisation: {variable3}, Priorité de mise en œuvre: {variable4}, Budget alloué: {variable5}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

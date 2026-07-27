@@ -1,0 +1,87 @@
+{
+  "id": "outil-de-veille-juridique-sectorielle-automatisee",
+  "title": "Outil de veille juridique sectorielle automatisée",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "BTP",
+        "Énergie",
+        "Finance",
+        "Santé",
+        "Autres"
+      ],
+      "label": "Quel secteur d'activité souhaitez-vous surveiller ?",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "pays",
+      "type": "select",
+      "options": [
+        "France",
+        "Belgique",
+        "Allemagne",
+        "États-Unis",
+        "Autres"
+      ],
+      "label": "Quel pays souhaitez-vous surveiller ?",
+      "placeholder": "Sélectionnez un pays",
+      "required": true
+    },
+    {
+      "name": "reglementation",
+      "type": "textarea",
+      "label": "Quelles réglementations spécifiques souhaitez-vous surveiller ?",
+      "placeholder": "Exemple : Règlement général sur la protection des données (RGPD)",
+      "required": true
+    },
+    {
+      "name": "sources",
+      "type": "select",
+      "options": [
+        "Sites web officiels",
+        "Presse écrite",
+        "Presse en ligne",
+        "Réseaux sociaux",
+        "Autres"
+      ],
+      "label": "Quelles sources d'information souhaitez-vous utiliser ?",
+      "placeholder": "Sélectionnez des sources",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en veille juridique. L'utilisateur a sélectionné le secteur {secteur}, le pays {pays}, surveille la réglementation {reglementation} et utilise les sources {sources}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

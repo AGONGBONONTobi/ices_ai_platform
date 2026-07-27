@@ -1,0 +1,77 @@
+{
+  "id": "guide-conformite-fiscale-internationale",
+  "title": "Guide de conformité fiscale internationale",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "pays",
+      "type": "select",
+      "options": [
+        "France",
+        "Belgique",
+        "Allemagne",
+        "États-Unis"
+      ],
+      "label": "Quel est le pays concerné par la conformité fiscale internationale ?",
+      "placeholder": "Sélectionnez un pays",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Finance",
+        "Industrie",
+        "Services"
+      ],
+      "label": "Quel est le secteur concerné par la conformité fiscale internationale ?",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "description_probleme",
+      "type": "textarea",
+      "label": "Décrivez le problème de conformité fiscale international que vous rencontrez",
+      "placeholder": "Exemple : Nous avons des problèmes avec la déclaration de revenus à l'étranger",
+      "required": true
+    },
+    {
+      "name": "revenus",
+      "type": "number",
+      "label": "Quels sont vos revenus totaux pour l'année en question ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en conformité fiscale internationale. L'utilisateur a répondu : Pays: {pays}, Secteur: {secteur}, Description du problème: {description_probleme}, Revenus: {revenus}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

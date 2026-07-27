@@ -1,0 +1,70 @@
+{
+  "id": "audit-risques-industriels-seveso",
+  "title": "Audit des risques industriels & SEVESO",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "risques_identifies",
+      "type": "textarea",
+      "label": "Quels sont les principaux risques identifiés dans l'usine ?",
+      "placeholder": "Exemple : risques liés à la sécurité, risques environnementaux, etc.",
+      "required": true
+    },
+    {
+      "name": "mesures_prises",
+      "type": "textarea",
+      "label": "Quelles mesures ont été prises pour atténuer ces risques ?",
+      "placeholder": "Exemple : mise en place de procédures de sécurité, formation des employés, etc.",
+      "required": true
+    },
+    {
+      "name": "seveso_compliance",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "L'usine est-elle conforme aux exigences SEVESO ?",
+      "placeholder": "Exemple : oui, non, en cours de vérification",
+      "required": true
+    },
+    {
+      "name": "risques_non_identifies",
+      "type": "textarea",
+      "label": "Quels sont les risques non identifiés dans l'usine ?",
+      "placeholder": "Exemple : risques liés à la maintenance, risques liés à la gestion des déchets, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audit des risques industriels & SEVESO. L'utilisateur a répondu : Risques identifiés : {risques_identifies}, Mesures prises : {mesures_prises}, SEVESO compliance : {seveso_compliance}, Risques non identifiés : {risques_non_identifies}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

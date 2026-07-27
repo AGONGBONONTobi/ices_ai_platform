@@ -1,0 +1,89 @@
+{
+  "id": "test-mbti-professionnel-16-profils",
+  "title": "Test MBTI professionnel (16 profils)",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "type-orientation",
+      "type": "select",
+      "options": [
+        "Extraversion",
+        "Introversion"
+      ],
+      "label": "Quelle est votre orientation naturelle ?",
+      "placeholder": "Choisissez une option",
+      "required": true
+    },
+    {
+      "name": "type-preference-decision",
+      "type": "select",
+      "options": [
+        "Sensibilité aux détails",
+        "Prise de décision intuitive"
+      ],
+      "label": "Comment prenez-vous les décisions ?",
+      "placeholder": "Choisissez une option",
+      "required": true
+    },
+    {
+      "name": "type-preference-organisation",
+      "type": "select",
+      "options": [
+        "Structure et planification",
+        "Flexibilité et adaptation"
+      ],
+      "label": "Comment organisez-vous votre temps ?",
+      "placeholder": "Choisissez une option",
+      "required": true
+    },
+    {
+      "name": "type-preference-communication",
+      "type": "select",
+      "options": [
+        "Communication verbale",
+        "Communication écrite"
+      ],
+      "label": "Comment vous exprimez-vous ?",
+      "placeholder": "Choisissez une option",
+      "required": true
+    },
+    {
+      "name": "type-preference-prise-de-decision",
+      "type": "textarea",
+      "label": "Pouvez-vous nous donner un exemple de situation où vous avez dû prendre une décision difficile ?",
+      "placeholder": "Décrivez la situation et votre prise de décision",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en psychologie du développement personnel. L'utilisateur a répondu : Type d'orientation : {type-orientation}, Type de préférence de décision : {type-preference-decision}, Type de préférence d'organisation : {type-preference-organisation}, Type de préférence de communication : {type-preference-communication}, Exemple de prise de décision difficile : {type-preference-prise-de-decision}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

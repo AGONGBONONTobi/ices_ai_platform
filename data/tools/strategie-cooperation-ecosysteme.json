@@ -1,0 +1,78 @@
+{
+  "id": "strategie-cooperation-ecosysteme",
+  "title": "Stratégie de coopétition & écosystème",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "entreprise_partenaire",
+      "type": "text",
+      "label": "Nom de l'entreprise partenaire",
+      "placeholder": "Exemple : Google",
+      "required": true
+    },
+    {
+      "name": "objectif_cooperation",
+      "type": "textarea",
+      "label": "Objectif de la coopération",
+      "placeholder": "Exemple : Améliorer les compétences en innovation",
+      "required": true
+    },
+    {
+      "name": "type_ecosysteme",
+      "type": "select",
+      "options": [
+        "Porte-voix",
+        "Partenariat stratégique",
+        "Incubateur"
+      ],
+      "label": "Type d'écosystème",
+      "placeholder": "Exemple : Porte-voix",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "textarea",
+      "label": "Ressources disponibles pour la coopération",
+      "placeholder": "Exemple : Équipes de développement, infrastructures de test",
+      "required": false
+    },
+    {
+      "name": "avantages_attendus",
+      "type": "textarea",
+      "label": "Avantages attendus de la coopération",
+      "placeholder": "Exemple : Accès à de nouvelles technologies, accélération du développement",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise partenaire : {entreprise_partenaire}, Objectif de la coopération : {objectif_cooperation}, Type d'écosystème : {type_ecosysteme}, Ressources disponibles : {ressources_disponibles}, Avantages attendus : {avantages_attendus}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

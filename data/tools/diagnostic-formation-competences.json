@@ -1,0 +1,77 @@
+{
+  "id": "diagnostic-formation-competences",
+  "title": "Diagnostic de la formation & développement des compétences",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "objectifs-professionnels",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs professionnels à court et long terme ?",
+      "placeholder": "Exemple : Développer des compétences en leadership, améliorer mes compétences en communication",
+      "required": true
+    },
+    {
+      "name": "domaines-intéressés",
+      "type": "select",
+      "options": [
+        "Technologie et numérique",
+        "Gestion et leadership",
+        "Communication et relations humaines",
+        "Marketing et vente"
+      ],
+      "label": "Quels domaines vous intéressez pour votre formation et développement ?",
+      "placeholder": "Sélectionnez les domaines qui vous intéressent",
+      "required": true
+    },
+    {
+      "name": "niveau-formation",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est votre niveau de formation actuel ?",
+      "placeholder": "Sélectionnez votre niveau de formation",
+      "required": true
+    },
+    {
+      "name": "motivations",
+      "type": "textarea",
+      "label": "Quelles sont vos motivations pour demander une formation et développement ?",
+      "placeholder": "Exemple : Améliorer mes compétences, changer de carrière, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs professionnels : {objectifs-professionnels}, Domaines intéressés : {domaines-intéressés}, Niveau de formation : {niveau-formation}, Motivations : {motivations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

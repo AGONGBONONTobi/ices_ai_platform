@@ -1,0 +1,82 @@
+{
+  "id": "diagnostic-certification-bio-ecocert-ab",
+  "title": "Diagnostic certification Bio (Ecocert/AB)",
+  "category": "Certification de Produits & Services",
+  "inputs": [
+    {
+      "name": "intrants_utilises",
+      "type": "textarea",
+      "label": "Quels intrants utilisez-vous dans votre production ?",
+      "placeholder": "Ex: engrais bio, pesticides naturels",
+      "required": true
+    },
+    {
+      "name": "rotation_cultures",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Pratiquez-vous la rotation des cultures ?",
+      "required": true
+    },
+    {
+      "name": "separation_flux",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Assurez-vous la séparation des flux bio et conventionnel ?",
+      "required": true
+    },
+    {
+      "name": "certification_operateur",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Êtes-vous certifié en tant qu'opérateur bio ?",
+      "required": true
+    },
+    {
+      "name": "description_processus",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre processus de production",
+      "placeholder": "Ex: description détaillée",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un auditeur pour la certification bio Ecocert/AB. L'utilisateur a répondu : Intrants utilisés: {intrants_utilises}, Rotation des cultures: {rotation_cultures}, Séparation des flux: {separation_flux}, Certification opérateur: {certification_operateur}, Description du processus: {description_processus}. Évaluez ces informations selon les exigences de la certification bio Ecocert/AB, notamment en termes d'intrants autorisés, de rotation des cultures, de séparation des flux et de certification de l'opérateur. Donnez un score global sur 100, une évaluation par axe (intrants, rotation, séparation, certification), et des recommandations prioritaires pour améliorer la conformité.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

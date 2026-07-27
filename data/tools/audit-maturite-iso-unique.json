@@ -1,0 +1,79 @@
+{
+  "id": "audit-maturite-iso-unique",
+  "title": "Audit de maturité ISO (pré-certification)",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "domaine",
+      "type": "select",
+      "options": [
+        "IT",
+        "Finance",
+        "Production",
+        "Ressources Humaines"
+      ],
+      "label": "Domaine d'activité",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "nombre-employes",
+      "type": "number",
+      "label": "Nombre d'employés",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "systeme-de-gestion",
+      "type": "textarea",
+      "label": "Description du système de gestion qualité",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "plan-de-conformite",
+      "type": "textarea",
+      "label": "Plan de conformité ISO",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en maturité ISO. L'utilisateur a répondu : Entreprise: {entreprise}, Domaine: {domaine}, Nombre d'employés: {nombre-employes}, Système de gestion: {systeme-de-gestion}, Plan de conformité: {plan-de-conformite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

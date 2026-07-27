@@ -1,0 +1,87 @@
+{
+  "id": "checklist-conformite-legale-par-pays",
+  "title": "Checklist de conformité légale par pays",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "pays",
+      "type": "select",
+      "options": [
+        "France",
+        "Allemagne",
+        "États-Unis",
+        "Chine",
+        "Inde"
+      ],
+      "label": "Sélectionnez le pays pour lequel vous souhaitez effectuer le checklist de conformité légale",
+      "placeholder": "Sélectionnez un pays",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Finance",
+        "Santé",
+        "Environnement",
+        "Énergie",
+        "Autre"
+      ],
+      "label": "Sélectionnez le secteur d'activité pour lequel vous souhaitez effectuer le checklist de conformité légale",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "entreprise",
+      "type": "textarea",
+      "label": "Décrivez brièvement l'entreprise pour laquelle vous souhaitez effectuer le checklist de conformité légale",
+      "placeholder": "Exemple : Société anonyme française",
+      "required": true
+    },
+    {
+      "name": "activites",
+      "type": "textarea",
+      "label": "Décrivez brièvement les activités de l'entreprise pour laquelle vous souhaitez effectuer le checklist de conformité légale",
+      "placeholder": "Exemple : Activités de trading sur les marchés financiers",
+      "required": true
+    },
+    {
+      "name": "ressources",
+      "type": "textarea",
+      "label": "Décrivez brièvement les ressources de l'entreprise pour laquelle vous souhaitez effectuer le checklist de conformité légale",
+      "placeholder": "Exemple : Effectif de 100 personnes, budget de 10 millions d'euros",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en droit et en conformité. L'utilisateur a répondu : Pays: {pays}, Secteur: {secteur}, Entreprise: {entreprise}, Activités: {activites}, Ressources: {ressources}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

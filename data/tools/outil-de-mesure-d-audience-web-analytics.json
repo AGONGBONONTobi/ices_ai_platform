@@ -1,0 +1,77 @@
+{
+  "id": "outil-de-mesure-d-audience-web-analytics",
+  "title": "Outil de mesure d'audience & web analytics",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "site-web",
+      "type": "text",
+      "label": "URL du site web à analyser",
+      "placeholder": "Exemple : https://example.com",
+      "required": true
+    },
+    {
+      "name": "periode",
+      "type": "select",
+      "options": [
+        "Mois",
+        "Trimestre",
+        "Semestre",
+        "Année"
+      ],
+      "label": "Choisissez la période d'analyse",
+      "placeholder": "Exemple : Mois",
+      "required": true
+    },
+    {
+      "name": "objectif",
+      "type": "select",
+      "options": [
+        "Augmenter les conversions",
+        "Améliorer l'expérience utilisateur",
+        "Augmenter les ventes"
+      ],
+      "label": "Quel est l'objectif de l'analyse ?",
+      "placeholder": "Exemple : Augmenter les conversions",
+      "required": true
+    },
+    {
+      "name": "donnees-avancees",
+      "type": "textarea",
+      "label": "Si vous avez des données avancées à partager (par exemple, des données de Google Analytics)",
+      "placeholder": "Exemple : ...",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un expert en web analytics. L'utilisateur a répondu : Site web : {site-web}, Période : {periode}, Objectif : {objectif}, Données avancées : {donnees-avancees}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

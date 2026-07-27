@@ -1,0 +1,71 @@
+{
+  "id": "risk-mapping-interactive",
+  "title": "Cartographie des risques (Risk mapping interactif)",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "risque_principal",
+      "type": "text",
+      "label": "Quel est le risque principal identifié ?",
+      "placeholder": "Exemple : Perte de données",
+      "required": true
+    },
+    {
+      "name": "cause_risque",
+      "type": "textarea",
+      "label": "Quelles sont les causes sous-jacentes de ce risque ?",
+      "placeholder": "Exemple : Faute humaine, erreur technique",
+      "required": true
+    },
+    {
+      "name": "impact_risque",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quel est l'impact potentiel de ce risque ?",
+      "placeholder": "Exemple : Faible",
+      "required": true
+    },
+    {
+      "name": "probabilité_risque",
+      "type": "number",
+      "label": "Quelle est la probabilité de survenance de ce risque ? (sur 100)",
+      "placeholder": "Exemple : 50",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Risque principal : {risque_principal}, Causes sous-jacentes : {cause_risque}, Impact potentiel : {impact_risque}, Probabilité de survenance : {probabilité_risque}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

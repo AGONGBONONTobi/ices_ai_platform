@@ -1,0 +1,76 @@
+{
+  "id": "outil-de-conformite-ai-act-et-regulation-de-l-ia",
+  "title": "Outil de conformité AI Act & régulation de l'IA",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "type_d_application",
+      "type": "select",
+      "options": [
+        "Application de consommation",
+        "Application de production",
+        "Application de recherche"
+      ],
+      "label": "Quel type d'application l'outil est-il destiné à traiter ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "donnees_personnelles_traitees",
+      "type": "textarea",
+      "label": "Quelles données personnelles sont traitées par l'outil ?",
+      "placeholder": "Exemple : données de contact, données de santé, etc.",
+      "required": true
+    },
+    {
+      "name": "mechanismes_de_gestion_des_donnees",
+      "type": "text",
+      "label": "Quels mécanismes de gestion des données sont mis en place pour respecter les règles de l'AI Act ?",
+      "placeholder": "Exemple : pseudonymisation, encryption, etc.",
+      "required": true
+    },
+    {
+      "name": "transparence_et_explainability",
+      "type": "select",
+      "options": [
+        "L'outil fournit une explication claire des décisions prises",
+        "L'outil fournit une explication sommaire des décisions prises",
+        "L'outil ne fournit pas d'explication des décisions prises"
+      ],
+      "label": "Quel niveau de transparence et d'explication est fourni par l'outil ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en conformité AI Act. L'utilisateur a répondu : Type d'application : {type_d_application}, Données personnelles traitées : {donnees_personnelles_traitees}, Mécanismes de gestion des données : {mechanismes_de_gestion_des_donnees}, Niveau de transparence et d'explication : {transparence_et_explainability}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

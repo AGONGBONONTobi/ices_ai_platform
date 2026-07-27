@@ -1,0 +1,88 @@
+{
+  "id": "outil-de-communication-de-crise-multicanal",
+  "title": "Outil de communication de crise multicanal",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "canaux-utilises",
+      "type": "select",
+      "options": [
+        "Réseaux sociaux",
+        "Site web",
+        "Courriels",
+        "Appels téléphoniques",
+        "Médias traditionnels"
+      ],
+      "label": "Quels canaux de communication avez-vous utilisés pour communiquer la crise ?",
+      "placeholder": "Sélectionnez les canaux utilisés",
+      "required": true
+    },
+    {
+      "name": "message-central",
+      "type": "textarea",
+      "label": "Quel message central avez-vous communiqué aux parties prenantes ?",
+      "placeholder": "Décrivez le message central",
+      "required": true
+    },
+    {
+      "name": "public-cible",
+      "type": "select",
+      "options": [
+        "Public général",
+        "Cibles spécifiques (ex : clients, employés)"
+      ],
+      "label": "Quel public avez-vous ciblé pour la communication de la crise ?",
+      "placeholder": "Sélectionnez le public cible",
+      "required": true
+    },
+    {
+      "name": "temps-reaction",
+      "type": "number",
+      "label": "Quel temps avez-vous mis pour réagir à la crise ?",
+      "placeholder": "Indiquez le temps de réaction en minutes",
+      "required": true
+    },
+    {
+      "name": "ressources-deployees",
+      "type": "select",
+      "options": [
+        "Ressources internes",
+        "Ressources externes (ex : agences de communication)"
+      ],
+      "label": "Quelles ressources avez-vous déployées pour gérer la crise ?",
+      "placeholder": "Sélectionnez les ressources déployées",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des risques. L'utilisateur a répondu : Canaux utilisés: {canaux-utilises}, Message central: {message-central}, Public cible: {public-cible}, Temps de réaction: {temps-reaction}, Ressources déployées: {ressources-deployees}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

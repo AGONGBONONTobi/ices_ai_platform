@@ -1,0 +1,72 @@
+{
+  "id": "plan-strategique-developpement-territorial",
+  "title": "Plan stratégique de développement territorial",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques du plan de développement territorial ?",
+      "placeholder": "Exemple : améliorer l'infrastructure, développer l'économie locale, etc.",
+      "required": true
+    },
+    {
+      "name": "axes-daction",
+      "type": "select",
+      "options": [
+        "Infrastructure",
+        "Économie locale",
+        "Environnement",
+        "Société"
+      ],
+      "label": "Quels sont les axes d'action prioritaires du plan ?",
+      "placeholder": "Sélectionnez les axes d'action",
+      "required": true
+    },
+    {
+      "name": "indicateurs-de-suivi",
+      "type": "text",
+      "label": "Quels sont les indicateurs de suivi pour mesurer la réussite du plan ?",
+      "placeholder": "Exemple : taux d'emploi, croissance économique, etc.",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "textarea",
+      "label": "Quelles sont les ressources disponibles pour mettre en œuvre le plan ?",
+      "placeholder": "Exemple : budget, personnel, partenariats, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Axes d'action : {axes-daction}, Indicateurs de suivi : {indicateurs-de-suivi}, Ressources disponibles : {ressources-disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

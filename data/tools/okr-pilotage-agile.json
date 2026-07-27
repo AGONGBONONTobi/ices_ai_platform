@@ -1,0 +1,71 @@
+{
+  "id": "okr-pilotage-agile",
+  "title": "OKR (Objectives & Key Results) & pilotage agile",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Définissez l'objectif stratégique de votre équipe ou organisation",
+      "placeholder": "Exemple : Augmenter les ventes de 20% dans les 6 prochains mois",
+      "required": true
+    },
+    {
+      "name": "resultat-cle",
+      "type": "textarea",
+      "label": "Définissez les résultats clés pour atteindre l'objectif stratégique",
+      "placeholder": "Exemple : Augmenter les ventes en ligne de 15% dans les 3 prochains mois, et augmenter les ventes hors ligne de 10% dans les 6 prochains mois",
+      "required": true
+    },
+    {
+      "name": "indicateur-de-suivi",
+      "type": "select",
+      "options": [
+        "Nombre de ventes",
+        "Chiffre d'affaires",
+        "Taux de satisfaction client"
+      ],
+      "label": "Choisissez l'indicateur de suivi pour mesurer le progrès vers l'objectif stratégique",
+      "placeholder": "Exemple : Nombre de ventes",
+      "required": true
+    },
+    {
+      "name": "cible-de-suivi",
+      "type": "number",
+      "label": "Définissez la cible de suivi pour l'indicateur de suivi choisi",
+      "placeholder": "Exemple : 1000 ventes",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique: {objectif-strategique}, Résultats clés: {resultat-cle}, Indicateur de suivi: {indicateur-de-suivi}, Cible de suivi: {cible-de-suivi}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

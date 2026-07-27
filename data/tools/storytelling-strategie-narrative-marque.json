@@ -1,0 +1,80 @@
+{
+  "id": "storytelling-strategie-narrative-marque",
+  "title": "Stratégie de storytelling & narrative de marque",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "mission",
+      "type": "textarea",
+      "label": "Quelle est la mission principale de votre marque?",
+      "placeholder": "Exemple: offrir des produits durables...",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "textarea",
+      "label": "Décrivez votre public cible.",
+      "placeholder": "Exemple: jeunes professionnels...",
+      "required": true
+    },
+    {
+      "name": "valeurs",
+      "type": "textarea",
+      "label": "Quelles sont les valeurs clés que vous souhaitez transmettre?",
+      "placeholder": "Exemple: innovation, transparence...",
+      "required": true
+    },
+    {
+      "name": "canaux",
+      "type": "select",
+      "options": [
+        "Réseaux sociaux",
+        "Site web",
+        "Événements",
+        "Relations presse",
+        "Autre"
+      ],
+      "label": "Quels canaux de communication utilisez-vous principalement?",
+      "placeholder": "Sélectionnez un canal",
+      "required": true
+    },
+    {
+      "name": "objectif",
+      "type": "number",
+      "label": "Quel est votre objectif principal en termes d'engagement (en % d'augmentation)?",
+      "placeholder": "Exemple: 20",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Mission: {mission}, Public cible: {public_cible}, Valeurs: {valeurs}, Canaux: {canaux}, Objectif: {objectif}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

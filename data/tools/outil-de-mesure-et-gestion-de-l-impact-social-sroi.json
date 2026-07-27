@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-mesure-et-gestion-de-l-impact-social-sroi",
+  "title": "Outil de mesure & gestion de l'impact social (SROI)",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "number",
+      "label": "Quel est le montant total investi dans le projet ?",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Présentez les objectifs du projet en termes de développement durable.",
+      "placeholder": "Exemple : Réduire les émissions de gaz à effet de serre, améliorer la qualité de l'air, etc.",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "select",
+      "options": [
+        "Économique",
+        "Social",
+        "Environnemental"
+      ],
+      "label": "Quel est le principal axe de l'impact social du projet ?",
+      "placeholder": "Exemple : Économique",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "number",
+      "label": "Quel est le nombre de personnes directement impactées par le projet ?",
+      "placeholder": "Exemple : 500",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en développement durable. L'utilisateur a répondu : Montant total investi : {variable1}, Objectifs du projet : {variable2}, Axe principal de l'impact social : {variable3}, Nombre de personnes directement impactées : {variable4}. Analyse ces informations et présente un score global de l'impact social du projet sur 100, une évaluation par axe (économique, social, environnemental) et des recommandations pour améliorer l'impact social du projet.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

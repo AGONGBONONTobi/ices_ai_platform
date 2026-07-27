@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-design-de-parcours-de-formation",
+  "title": "Outil de design de parcours de formation",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectifFormation",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de la formation ?",
+      "placeholder": "Améliorer les compétences en leadership, développer les connaissances en marketing digital, etc.",
+      "required": true
+    },
+    {
+      "name": "niveauFormation",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est le niveau de la formation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "publicCible",
+      "type": "text",
+      "label": "Qui est le public cible pour cette formation ?",
+      "placeholder": "Employés, managers, étudiants, etc.",
+      "required": true
+    },
+    {
+      "name": "dureeFormation",
+      "type": "number",
+      "label": "Quelle est la durée prévue de la formation en heures ?",
+      "placeholder": "10",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en formation. L'utilisateur a répondu : Objectif de formation: {objectifFormation}, Niveau de formation: {niveauFormation}, Public cible: {publicCible}, Durée de formation: {dureeFormation} heures. Conçois un parcours de formation sur mesure en fonction de ces critères et évalue son efficacité potentielle. Donne un score global sur 100, une évaluation par axe (contenu, méthode, durée), et des recommandations pour améliorer le parcours de formation.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

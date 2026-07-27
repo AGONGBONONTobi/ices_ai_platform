@@ -1,0 +1,84 @@
+{
+  "id": "rapport-rse-complet-kebab-case",
+  "title": "Rapport RSE complet (GRI, CSRD, DPEF, B-Corp)",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple d'entreprise",
+      "required": true
+    },
+    {
+      "name": "annee",
+      "type": "number",
+      "label": "Année de référence",
+      "placeholder": "Exemple d'année",
+      "required": true
+    },
+    {
+      "name": "gri",
+      "type": "textarea",
+      "label": "Rapport GRI (Global Reporting Initiative)",
+      "placeholder": "Exemple de rapport GRI",
+      "required": true
+    },
+    {
+      "name": "csrd",
+      "type": "textarea",
+      "label": "Rapport CSRD (Corporate Sustainability Reporting Directive)",
+      "placeholder": "Exemple de rapport CSRD",
+      "required": true
+    },
+    {
+      "name": "dpef",
+      "type": "textarea",
+      "label": "Rapport DPEF (Déclaration de Performance Énergétique et de Facture)",
+      "placeholder": "Exemple de rapport DPEF",
+      "required": true
+    },
+    {
+      "name": "b-corp",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Certification B-Corp",
+      "placeholder": "Exemple de certification B-Corp",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE. L'utilisateur a fourni les informations suivantes : Entreprise : {entreprise}, Année : {annee}, Rapport GRI : {gri}, Rapport CSRD : {csrd}, Rapport DPEF : {dpef}, Certification B-Corp : {b-corp}. Analyse ces informations et évalue la performance de l'entreprise en matière de RSE.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

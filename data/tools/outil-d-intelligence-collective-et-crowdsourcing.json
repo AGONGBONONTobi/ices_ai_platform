@@ -1,0 +1,78 @@
+{
+  "id": "outil-d-intelligence-collective-et-crowdsourcing",
+  "title": "Outil d'intelligence collective & crowdsourcing",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "probleme",
+      "type": "textarea",
+      "label": "Décrivez le problème ou la question à résoudre",
+      "placeholder": "Exemple : Comment améliorer la sécurité des données ?",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "select",
+      "options": [
+        "Améliorer la qualité",
+        "Réduire les coûts",
+        "Augmenter la productivité",
+        "Autre (décrivez)"
+      ],
+      "label": "Quels sont les objectifs principaux de l'intelligence collective ?",
+      "placeholder": "Exemple : Améliorer la qualité",
+      "required": true
+    },
+    {
+      "name": "solutions",
+      "type": "textarea",
+      "label": "Proposez des solutions possibles pour résoudre le problème",
+      "placeholder": "Exemple : Utiliser des algorithmes d'apprentissage automatique, implémenter des processus de validation",
+      "required": true
+    },
+    {
+      "name": "ressources",
+      "type": "select",
+      "options": [
+        "Humaines",
+        "Financières",
+        "Matérielles",
+        "Autre (décrivez)"
+      ],
+      "label": "Quelles ressources sont nécessaires pour mettre en œuvre les solutions ?",
+      "placeholder": "Exemple : Humaines",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en innovation et en R&D. L'utilisateur a répondu : Problème : {probleme}, Objectifs : {objectifs}, Solutions : {solutions}, Ressources : {ressources}. Analyse ces informations et propose des recommandations pour améliorer l'intelligence collective et le crowdsourcing.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "id": "analyse-cout-total-d-acquisition-tco",
+  "title": "Analyse coût total d'acquisition (TCO)",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "budget_annuel",
+      "type": "number",
+      "label": "Budget annuel alloué à l'acquisition (en €)",
+      "placeholder": "ex: 500000",
+      "required": true
+    },
+    {
+      "name": "nombre_produits",
+      "type": "number",
+      "label": "Nombre de produits ou services achetés annuellement",
+      "placeholder": "ex: 120",
+      "required": true
+    },
+    {
+      "name": "frais_transport",
+      "type": "number",
+      "label": "Coût moyen du transport par unité (en €)",
+      "placeholder": "ex: 15",
+      "required": false
+    },
+    {
+      "name": "frequence_commande",
+      "type": "select",
+      "options": [
+        "Hebdomadaire",
+        "Mensuelle",
+        "Trimestrielle",
+        "Annuelle"
+      ],
+      "label": "Fréquence des commandes",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "type_fournisseur",
+      "type": "textarea",
+      "label": "Description du type de fournisseur (ex: local, international, OEM, etc.)",
+      "placeholder": "ex: Fournisseur local spécialisé dans les pièces détachées",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en supply chain. L'utilisateur a répondu : Budget annuel: {budget_annuel}, Nombre de produits: {nombre_produits}, Frais transport: {frais_transport}, Fréquence des commandes: {frequence_commande}, Type de fournisseur: {type_fournisseur}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (coût, délai, qualité, flexibilité), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

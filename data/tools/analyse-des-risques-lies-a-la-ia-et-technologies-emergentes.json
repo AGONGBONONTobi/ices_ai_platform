@@ -1,0 +1,72 @@
+{
+  "id": "analyse-des-risques-lies-a-la-ia-et-technologies-emergentes",
+  "title": "Analyse des risques liés à l'IA & technologies émergentes",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "technologies-emergentes",
+      "type": "select",
+      "options": [
+        "Blockchain",
+        "Intelligence Artificielle",
+        "Realité Virtuelle",
+        "Internet des Objets"
+      ],
+      "label": "Quelles technologies émergentes sont impliquées dans votre projet ?",
+      "placeholder": "Sélectionnez les technologies émergentes concernées",
+      "required": true
+    },
+    {
+      "name": "risques-prevus",
+      "type": "textarea",
+      "label": "Quels risques prévus liés à l'IA & technologies émergentes ?",
+      "placeholder": "Décrivez les risques potentiels",
+      "required": true
+    },
+    {
+      "name": "mesures-de-controle",
+      "type": "text",
+      "label": "Quelles mesures de contrôle avez-vous mises en place pour gérer ces risques ?",
+      "placeholder": "Décrivez les mesures de contrôle",
+      "required": true
+    },
+    {
+      "name": "impact-prevu",
+      "type": "number",
+      "label": "Quel est l'impact prévu de ces risques sur votre organisation ?",
+      "placeholder": "Indiquez un score sur 100",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Technologies émergentes : {technologies-emergentes}, Risques prévus : {risques-prevus}, Mesures de contrôle : {mesures-de-controle}, Impact prévu : {impact-prevu}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

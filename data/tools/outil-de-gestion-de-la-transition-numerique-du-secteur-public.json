@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-gestion-de-la-transition-numerique-du-secteur-public",
+  "title": "Outil de gestion de la transition numérique du secteur public",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "text",
+      "label": "Quels sont les objectifs principaux de la transition numérique dans votre administration ?",
+      "placeholder": "Exemple : améliorer la transparence, réduire les coûts, etc.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Quelles sont les principales difficultés rencontrées lors de la mise en œuvre de projets numériques dans votre administration ?",
+      "placeholder": "Exemple : manque de ressources, complexité des processus, etc.",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "select",
+      "options": [
+        "Infrastructure",
+        "Sécurité",
+        "Formation des employés"
+      ],
+      "label": "Quel est le principal facteur de risque pour la sécurité des données dans votre administration ?",
+      "placeholder": "Exemple : infrastructure, sécurité, formation des employés",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "number",
+      "label": "Quel est le pourcentage de votre budget alloué à la transition numérique cette année ?",
+      "placeholder": "Exemple : 10%",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs principaux de la transition numérique : {variable1}, Difficultés rencontrées : {variable2}, Facteur de risque pour la sécurité des données : {variable3}, Pourcentage de budget alloué à la transition numérique : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

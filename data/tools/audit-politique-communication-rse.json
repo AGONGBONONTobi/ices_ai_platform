@@ -1,0 +1,78 @@
+{
+  "id": "audit-politique-communication-rse",
+  "title": "Audit de la politique communication RSE",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Société Générale",
+      "required": true
+    },
+    {
+      "name": "politique-rse",
+      "type": "textarea",
+      "label": "Description de la politique RSE de l'entreprise",
+      "placeholder": "Exemple : Notre politique RSE vise à...",
+      "required": true
+    },
+    {
+      "name": "objectifs-rse",
+      "type": "select",
+      "options": [
+        "Réduire les émissions de gaz à effet de serre",
+        "Promouvoir l'égalité des genres",
+        "Favoriser la diversité"
+      ],
+      "label": "Quels sont les objectifs principaux de la politique RSE ?",
+      "placeholder": "Sélectionnez les objectifs",
+      "required": true
+    },
+    {
+      "name": "ressources-humaines",
+      "type": "number",
+      "label": "Nombre d'employés",
+      "placeholder": "Exemple : 1000",
+      "required": true
+    },
+    {
+      "name": "budget-rse",
+      "type": "number",
+      "label": "Budget alloué à la politique RSE",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE. L'utilisateur a répondu : Entreprise : {entreprise}, Politique RSE : {politique-rse}, Objectifs RSE : {objectifs-rse}, Nombre d'employés : {ressources-humaines}, Budget RSE : {budget-rse}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

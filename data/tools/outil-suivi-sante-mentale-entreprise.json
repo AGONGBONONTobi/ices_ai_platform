@@ -1,0 +1,71 @@
+{
+  "id": "outil-suivi-sante-mentale-entreprise",
+  "title": "Outil de suivi de la santé mentale en entreprise",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "symptomes",
+      "type": "textarea",
+      "label": "Quels sont les symptômes observés chez l'employé ?",
+      "placeholder": "Exemple : fatigue, anxiété, dépression",
+      "required": true
+    },
+    {
+      "name": "duree-probleme",
+      "type": "number",
+      "label": "Depuis combien de temps les symptômes sont-ils présents ?",
+      "placeholder": "Exemple : 1 mois, 3 mois, 6 mois",
+      "required": true
+    },
+    {
+      "name": "type-support",
+      "type": "select",
+      "options": [
+        "Psychologue",
+        "Médecin",
+        "Coach"
+      ],
+      "label": "Quel type de support a reçu l'employé ?",
+      "placeholder": "Exemple : Psychologue, Médecin, Coach",
+      "required": true
+    },
+    {
+      "name": "efficacite-support",
+      "type": "number",
+      "label": "Quel est le niveau d'efficacité du support reçu ?",
+      "placeholder": "Exemple : 1/10, 5/10, 10/10",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Symptômes: {symptomes}, Durée du problème: {duree-probleme} mois, Type de support: {type-support}, Efficacité du support: {efficacite-support}/10. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

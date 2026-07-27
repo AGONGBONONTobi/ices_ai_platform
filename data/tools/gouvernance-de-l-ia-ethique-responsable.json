@@ -1,0 +1,77 @@
+{
+  "id": "gouvernance-de-l-ia-ethique-responsable",
+  "title": "Gouvernance de l'IA éthique & responsable (AI Ethics)",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "niveau_de_conscience",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est votre niveau de conscience en matière d'éthique de l'IA ?",
+      "placeholder": "Sélectionnez votre niveau",
+      "required": true
+    },
+    {
+      "name": "objectifs_ia",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs principaux pour l'utilisation de l'IA dans votre organisation ?",
+      "placeholder": "Décrivez vos objectifs",
+      "required": true
+    },
+    {
+      "name": "types_de_donnees",
+      "type": "select",
+      "options": [
+        "Données personnelles",
+        "Données sensibles",
+        "Données publiques",
+        "Autres"
+      ],
+      "label": "Quels types de données utilisez-vous pour l'entraînement et le déploiement de vos modèles d'IA ?",
+      "placeholder": "Sélectionnez les types de données",
+      "required": true
+    },
+    {
+      "name": "mesures_de_securite",
+      "type": "text",
+      "label": "Quelles mesures de sécurité avez-vous mises en place pour protéger les données utilisées par vos systèmes d'IA ?",
+      "placeholder": "Décrivez les mesures",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en gouvernance de l'IA éthique et responsable. L'utilisateur a répondu : Niveau de conscience : {niveau_de_conscience}, Objectifs d'IA : {objectifs_ia}, Types de données : {types_de_donnees}, Mesures de sécurité : {mesures_de_securite}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (par exemple, transparence, responsabilité, confidentialité), et des recommandations pour améliorer la gouvernance de l'IA éthique et responsable.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

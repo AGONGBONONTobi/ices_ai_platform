@@ -1,0 +1,72 @@
+{
+  "id": "outil-de-fundraising-et-gestion-des-relations-investisseurs",
+  "title": "Outil de fundraising & gestion des relations investisseurs",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif_financier",
+      "type": "number",
+      "label": "Quel est votre objectif financier pour la prochaine levée de fonds ?",
+      "placeholder": "10 millions",
+      "required": true
+    },
+    {
+      "name": "type_investisseurs",
+      "type": "select",
+      "options": [
+        "Investisseurs privés",
+        "Investisseurs institutionnels",
+        "Business Angels",
+        "Capital-risque"
+      ],
+      "label": "Quels types d'investisseurs ciblez-vous ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_projet",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre projet et ses besoins en financement",
+      "placeholder": "Description du projet...",
+      "required": true
+    },
+    {
+      "name": "strategie_communication",
+      "type": "text",
+      "label": "Quelle est votre stratégie de communication pour atteindre les investisseurs ?",
+      "placeholder": "Réseaux sociaux, conférences, etc.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en fundraising et gestion des relations investisseurs. L'utilisateur a répondu : Objectif financier: {objectif_financier}, Type d'investisseurs: {type_investisseurs}, Description du projet: {description_projet}, Stratégie de communication: {strategie_communication}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

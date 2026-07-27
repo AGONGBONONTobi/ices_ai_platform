@@ -1,0 +1,77 @@
+{
+  "id": "auto-positionnement-six-sigma-lean",
+  "title": "Auto-positionnement Six Sigma / Lean",
+  "category": "Certification de Compétences & Personnes",
+  "inputs": [
+    {
+      "name": "niveau_experience",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est votre niveau d'expérience dans le domaine Six Sigma / Lean ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "connaissance_processus",
+      "type": "textarea",
+      "label": "Décrivez votre compréhension des processus actuels dans votre organisation et les opportunités d'amélioration que vous avez identifiées.",
+      "placeholder": "Exemple : processus de production, flux de travail, etc.",
+      "required": true
+    },
+    {
+      "name": "gaspillages_identifies",
+      "type": "textarea",
+      "label": "Quels types de gaspillages (muda) avez-vous identifiés dans vos processus actuels ?",
+      "placeholder": "Exemple : surproduction, attente, transport, etc.",
+      "required": true
+    },
+    {
+      "name": "objectif_ceinture",
+      "type": "select",
+      "options": [
+        "White Belt",
+        "Yellow Belt",
+        "Green Belt",
+        "Black Belt"
+      ],
+      "label": "Quelle est votre objectif en termes de ceinture Six Sigma / Lean ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous avez répondu : Niveau d'expérience: {niveau_experience}, Connaissance des processus: {connaissance_processus}, Gaspillages identifiés: {gaspillages_identifies}, Objectif de ceinture: {objectif_ceinture}. Évaluez la maturité des processus de l'utilisateur, identifiez les opportunités d'amélioration et projetez-le vers la ceinture Six Sigma / Lean appropriée. Donnez un score global sur 100, une évaluation par axe (compréhension des processus, identification des gaspillages, adéquation à la ceinture visée), et des recommandations priorisées pour atteindre l'objectif de ceinture.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

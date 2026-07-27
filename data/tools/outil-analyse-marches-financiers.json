@@ -1,0 +1,77 @@
+{
+  "id": "outil-analyse-marches-financiers",
+  "title": "Outil d'analyse des marchés financiers",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Finance",
+        "Santé",
+        "Énergie"
+      ],
+      "label": "Secteur d'activité",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "description_marche",
+      "type": "textarea",
+      "label": "Description du marché actuel",
+      "placeholder": "Décrivez le marché actuel",
+      "required": true
+    },
+    {
+      "name": "objectif_investissement",
+      "type": "text",
+      "label": "Objectif d'investissement",
+      "placeholder": "Décrivez l'objectif d'investissement",
+      "required": true
+    },
+    {
+      "name": "niveau_risque",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Modéré",
+        "Élevé"
+      ],
+      "label": "Niveau de risque acceptable",
+      "placeholder": "Sélectionnez un niveau de risque",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en marchés financiers. L'utilisateur a répondu : Secteur: {secteur}, Description du marché: {description_marche}, Objectif d'investissement: {objectif_investissement}, Niveau de risque: {niveau_risque}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

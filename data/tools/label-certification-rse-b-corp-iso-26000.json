@@ -1,0 +1,71 @@
+{
+  "id": "label-certification-rse-b-corp-iso-26000",
+  "title": "Label & certification RSE, B-Corp, ISO 26000",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "text",
+      "label": "Quels labels et certifications RSE, B-Corp, ISO 26000 a-t-on déjà obtenus ?",
+      "placeholder": "Exemple : B-Corp, ISO 26000",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Présentez les processus mis en place pour atteindre ces labels et certifications",
+      "placeholder": "Exemple : processus de certification, audits, etc.",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "select",
+      "options": [
+        "RSE",
+        "B-Corp",
+        "ISO 26000"
+      ],
+      "label": "Quel est le label ou certification RSE, B-Corp, ISO 26000 que vous souhaitez obtenir dans les 12 prochains mois ?",
+      "placeholder": "Exemple : RSE",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "number",
+      "label": "Quel est le budget alloué pour les efforts de RSE et développement durable dans les 12 prochains mois ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Labels et certifications RSE, B-Corp, ISO 26000 : {variable1}, Processus mis en place : {variable2}, Label ou certification RSE, B-Corp, ISO 26000 souhaité : {variable3}, Budget alloué : {variable4} €. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "outil-de-veille-technologique-et-innovation",
+  "title": "Outil de veille technologique & innovation",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "domaine",
+      "type": "select",
+      "options": [
+        "Technologie de l'information",
+        "Biotechnologie",
+        "Energie renouvelable",
+        "Mécanique",
+        "Electronique"
+      ],
+      "label": "Dans quel domaine souhaitez-vous effectuer une veille ?",
+      "placeholder": "Sélectionnez un domaine",
+      "required": true
+    },
+    {
+      "name": "concurrents",
+      "type": "textarea",
+      "label": "Quels sont les principaux concurrents dans votre domaine ?",
+      "placeholder": "Liste des concurrents",
+      "required": true
+    },
+    {
+      "name": "innovations",
+      "type": "text",
+      "label": "Quelles sont les innovations récentes qui pourraient impacter votre domaine ?",
+      "placeholder": "Description des innovations",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs pour cette veille technologique ?",
+      "placeholder": "Description des objectifs",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en veille technologique et innovation. L'utilisateur a répondu : Domaine: {domaine}, Concurrents: {concurrents}, Innovations: {innovations}, Objectifs: {objectifs}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

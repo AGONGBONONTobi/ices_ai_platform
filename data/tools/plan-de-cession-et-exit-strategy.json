@@ -1,0 +1,78 @@
+{
+  "id": "plan-de-cession-et-exit-strategy",
+  "title": "Plan de cession & exit strategy",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectif_de_cession",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs de cession ?",
+      "placeholder": "Exemple : vendre l'entreprise pour financer un nouveau projet",
+      "required": true
+    },
+    {
+      "name": "periode_de_cession",
+      "type": "select",
+      "options": [
+        "Court terme (< 2 ans)",
+        "Moyen terme (2-5 ans)",
+        "Long terme (> 5 ans)"
+      ],
+      "label": "Quelle est la période de cession souhaitée ?",
+      "placeholder": "Exemple : vendre l'entreprise dans les 2 prochaines années",
+      "required": true
+    },
+    {
+      "name": "strategie_de_cession",
+      "type": "text",
+      "label": "Quelle est votre stratégie de cession ?",
+      "placeholder": "Exemple : vente à un investisseur, fusion-acquisition, etc.",
+      "required": true
+    },
+    {
+      "name": "risques_identifies",
+      "type": "textarea",
+      "label": "Quels sont les risques identifiés pour la cession ?",
+      "placeholder": "Exemple : risque de perte de valeur, risque de non-acheteur, etc.",
+      "required": true
+    },
+    {
+      "name": "plan_d_action",
+      "type": "textarea",
+      "label": "Quel est votre plan d'action pour la cession ?",
+      "placeholder": "Exemple : mise en place d'un comité de cession, recherche d'investisseurs, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif de cession : {objectif_de_cession}, Période de cession : {periode_de_cession}, Stratégie de cession : {strategie_de_cession}, Risques identifiés : {risques_identifies}, Plan d'action : {plan_d_action}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

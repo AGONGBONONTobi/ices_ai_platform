@@ -1,0 +1,71 @@
+{
+  "id": "reporting-de-gestion-de-projets-et-portefeuille",
+  "title": "Reporting de gestion de projets & portefeuille",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "projet_principal",
+      "type": "select",
+      "options": [
+        "Projet A",
+        "Projet B",
+        "Projet C"
+      ],
+      "label": "Quel est le projet principal ?",
+      "placeholder": "Sélectionnez un projet",
+      "required": true
+    },
+    {
+      "name": "budget_alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour le projet principal ?",
+      "placeholder": "Entrez le budget",
+      "required": true
+    },
+    {
+      "name": "duree_estimee",
+      "type": "number",
+      "label": "Quelle est la durée estimée pour le projet principal ?",
+      "placeholder": "Entrez la durée",
+      "required": true
+    },
+    {
+      "name": "description_portefeuille",
+      "type": "textarea",
+      "label": "Peut-être vous décrivez le portefeuille ?",
+      "placeholder": "Entrez la description",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Projet principal: {projet_principal}, Budget alloué: {budget_alloue}, Durée estimée: {duree_estimee}, Description portefeuille: {description_portefeuille}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

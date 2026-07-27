@@ -1,0 +1,71 @@
+{
+  "id": "audit-gestion-patrimoniale-unique",
+  "title": "Audit de la gestion patrimoniale",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Présentez les principaux actifs patrimoniaux de l'entreprise.",
+      "placeholder": "Exemple : Immobilisations, créances, etc.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Annuel",
+        "Semi-annuel",
+        "Quotidien"
+      ],
+      "label": "Quel est le rythme de mise à jour de la gestion patrimoniale ?",
+      "placeholder": "Exemple : Annuel",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Quel est le pourcentage d'actifs patrimoniaux non valorisés ?",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quels sont les principaux risques identifiés dans la gestion patrimoniale ?",
+      "placeholder": "Exemple : Perte de valeur, non-conformité réglementaire, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion patrimoniale. L'utilisateur a répondu : Actifs patrimoniaux : {variable1}, Rythme de mise à jour : {variable2}, Pourcentage non valorisé : {variable3}, Risques identifiés : {variable4}. Analyse ces informations et propose un plan d'action pour améliorer la gestion patrimoniale de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

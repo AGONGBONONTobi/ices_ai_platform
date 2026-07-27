@@ -1,0 +1,71 @@
+{
+  "id": "etude-acceptabilite-sociale-projet",
+  "title": "Étude de l'acceptabilité sociale d'un projet",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "description_projet",
+      "type": "textarea",
+      "label": "Décrivez brièvement le projet",
+      "placeholder": "Exemple : construction d'une nouvelle usine",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "select",
+      "options": [
+        "Riveraine",
+        "Communauté locale",
+        "Usagers d'un service"
+      ],
+      "label": "Quel est le public cible de votre projet ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "principales_inquiétudes",
+      "type": "textarea",
+      "label": "Quelles sont les principales inquiétudes ou préoccupations liées à votre projet ?",
+      "placeholder": "Exemple : impact environnemental, emplois...",
+      "required": true
+    },
+    {
+      "name": "budget_alloué",
+      "type": "number",
+      "label": "Quel est le budget alloué à cette étude ?",
+      "placeholder": "10000",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en acceptabilité sociale. L'utilisateur a répondu : Description du projet : {description_projet}, Public cible : {public_cible}, Principales inquiétudes : {principales_inquiétudes}, Budget alloué : {budget_alloué}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

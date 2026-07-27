@@ -1,0 +1,76 @@
+{
+  "id": "reporting-carbone-empreinte-ges",
+  "title": "Reporting carbone & empreinte GES",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "methode_de_calcule",
+      "type": "select",
+      "options": [
+        "GHG Protocol",
+        "WBCSD",
+        "ISO 14064"
+      ],
+      "label": "Quelle méthode de calcul utilisez-vous pour l'estimation de votre empreinte carbone ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "scopes_de_calcule",
+      "type": "select",
+      "options": [
+        "Scope 1",
+        "Scope 2",
+        "Scope 3"
+      ],
+      "label": "Quels scopes de calcul utilisez-vous pour l'estimation de votre empreinte carbone ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "emission_de_gaz_a effet_de_serre",
+      "type": "textarea",
+      "label": "Quelles sont les principales émissions de gaz à effet de serre que vous avez identifiées ?",
+      "placeholder": "Exemple : émissions de CO2, CH4, N2O, etc.",
+      "required": true
+    },
+    {
+      "name": "objectifs_de_reduction",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs de réduction de l'empreinte carbone pour les prochaines années ?",
+      "placeholder": "Exemple : réduction de 10% d'émissions de CO2 d'ici 2025, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en reporting carbone & empreinte GES. L'utilisateur a répondu : Methode de calcul : {methode_de_calcule}, Scopes de calcul : {scopes_de_calcule}, Emissions de gaz à effet de serre : {emission_de_gaz_a_effet_de_serre}, Objectifs de réduction : {objectifs_de_reduction}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

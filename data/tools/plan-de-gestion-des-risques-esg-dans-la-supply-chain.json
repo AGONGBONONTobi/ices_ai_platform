@@ -1,0 +1,87 @@
+{
+  "id": "plan-de-gestion-des-risques-esg-dans-la-supply-chain",
+  "title": "Plan de gestion des risques ESG dans la supply chain",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "esg_risque_climat",
+      "type": "number",
+      "label": "Quel est le niveau de risque climatique dans votre supply chain ?",
+      "placeholder": "0-100",
+      "required": true
+    },
+    {
+      "name": "esg_risque_sociale",
+      "type": "number",
+      "label": "Quel est le niveau de risque social dans votre supply chain ?",
+      "placeholder": "0-100",
+      "required": true
+    },
+    {
+      "name": "esg_risque_environmental",
+      "type": "number",
+      "label": "Quel est le niveau de risque environnemental dans votre supply chain ?",
+      "placeholder": "0-100",
+      "required": true
+    },
+    {
+      "name": "esg_action_climat",
+      "type": "textarea",
+      "label": "Quelles sont les actions que vous prenez pour réduire les risques climatiques dans votre supply chain ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "esg_action_sociale",
+      "type": "textarea",
+      "label": "Quelles sont les actions que vous prenez pour réduire les risques sociaux dans votre supply chain ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "esg_action_environmental",
+      "type": "textarea",
+      "label": "Quelles sont les actions que vous prenez pour réduire les risques environnementaux dans votre supply chain ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "esg_budget_alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la gestion des risques ESG dans votre supply chain ?",
+      "placeholder": "0-1000000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : ESG Risque Climat : {esg_risque_climat}, ESG Risque Social : {esg_risque_sociale}, ESG Risque Environnemental : {esg_risque_environmental}, ESG Action Climat : {esg_action_climat}, ESG Action Sociale : {esg_action_sociale}, ESG Action Environnemental : {esg_action_environmental}, ESG Budget Alloué : {esg_budget_alloue}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

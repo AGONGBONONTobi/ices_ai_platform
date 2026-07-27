@@ -1,0 +1,71 @@
+{
+  "id": "formation-poste-gap-analysis",
+  "title": "Test d'adéquation formation-poste & gap analysis",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "formation_requise",
+      "type": "textarea",
+      "label": "Quelles formations sont requises pour occuper ce poste ?",
+      "placeholder": "Exemple : Diplôme, certificat, cours en ligne",
+      "required": true
+    },
+    {
+      "name": "poste_reel",
+      "type": "textarea",
+      "label": "Quels sont les principaux tâches et responsabilités du poste ?",
+      "placeholder": "Exemple : Gestion de projet, gestion d'équipe, etc.",
+      "required": true
+    },
+    {
+      "name": "formation_acquise",
+      "type": "textarea",
+      "label": "Quelles formations ou compétences a l'apprenant déjà acquis ?",
+      "placeholder": "Exemple : Diplôme, certificat, cours en ligne",
+      "required": true
+    },
+    {
+      "name": "gap_analysis",
+      "type": "select",
+      "options": [
+        "faible",
+        "moyen",
+        "fort"
+      ],
+      "label": "Quel est le niveau de gap analysis entre la formation requise et la formation acquise ?",
+      "placeholder": "Exemple : Faible, Moyen, Fort",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Formation requise : {formation_requise}, Poste réel : {poste_reel}, Formation acquise : {formation_acquise}, Gap analysis : {gap_analysis}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

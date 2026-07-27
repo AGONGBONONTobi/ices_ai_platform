@@ -1,0 +1,92 @@
+{
+  "id": "template-cgv-cga",
+  "title": "Template de conditions générales de vente (CGV/CGA)",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "societe",
+      "type": "text",
+      "label": "Nom de la société",
+      "placeholder": "Exemple : S.A.S. du nom de la société",
+      "required": true
+    },
+    {
+      "name": "adresse",
+      "type": "textarea",
+      "label": "Adresse de la société",
+      "placeholder": "Exemple : 123, rue de l'industrie, 75012 Paris",
+      "required": true
+    },
+    {
+      "name": "codePostal",
+      "type": "number",
+      "label": "Code postal de la société",
+      "placeholder": "Exemple : 75012",
+      "required": true
+    },
+    {
+      "name": "ville",
+      "type": "text",
+      "label": "Ville de la société",
+      "placeholder": "Exemple : Paris",
+      "required": true
+    },
+    {
+      "name": "pays",
+      "type": "select",
+      "options": [
+        "France",
+        "Belgique",
+        "Allemagne"
+      ],
+      "label": "Pays de la société",
+      "placeholder": "Exemple : France",
+      "required": true
+    },
+    {
+      "name": "telephone",
+      "type": "text",
+      "label": "Numéro de téléphone de la société",
+      "placeholder": "Exemple : 01 23 45 67 89",
+      "required": true
+    },
+    {
+      "name": "email",
+      "type": "text",
+      "label": "Adresse e-mail de la société",
+      "placeholder": "Exemple : contact@societe.fr",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un juriste expert. L'utilisateur a répondu : Société : {societe}, Adresse : {adresse}, Code postal : {codePostal}, Ville : {ville}, Pays : {pays}, Téléphone : {telephone}, E-mail : {email}. Analyse ces informations et propose un modèle de conditions générales de vente (CGV/CGA) adapté.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

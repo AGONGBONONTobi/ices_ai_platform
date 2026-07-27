@@ -1,0 +1,23 @@
+{
+  "id": "diagnostic-de-l-innovation",
+  "title": "Diagnostic de l'innovation & de la créativité",
+  "category": "RH",
+  "inputs": [
+    {
+      "name": "niveauInnovation",
+      "type": "number",
+      "label": "Niveau d'innovation",
+      "placeholder": "Exemple : 8",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en diagnostic de l'innovation. Utilise {niveauInnovation} pour évaluer l'innovation de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "string"
+      }
+    }
+  }
+}

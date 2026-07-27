@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "brand": "AI Platform",
+    "toolsCount": "tools available",
+    "back": "Back to catalog"
+  },
+  "hero": {
+    "badge": "Powered by cutting-edge LLMs",
+    "title": "Your catalog of",
+    "titleHighlight": "professional AI tools",
+    "subtitle": "Diagnostics, audits, analyses and AI content generators, one click away. Each tool delivers a professional report in seconds."
+  },
+  "catalog": {
+    "searchPlaceholder": "Search an AI tool... (e.g: audit, contract, strategy)",
+    "filterAll": "All",
+    "resultCount": "tool",
+    "resultCountPlural": "tools",
+    "resultIn": "in",
+    "empty": {
+      "title": "No tools found",
+      "subtitle": "Try a different keyword or category."
+    },
+    "emptyDb": {
+      "title": "The database is empty.",
+      "subtitle": "Run the ingestion script to populate the catalog."
+    }
+  },
+  "tool": {
+    "launch": "Launch tool",
+    "generate": "Generate result",
+    "generating": "Generating...",
+    "result": "Generated result",
+    "restart": "Restart tool",
+    "downloadPdf": "Download Report (PDF)",
+    "error": "An error occurred"
+  },
+  "language": "Language"
+}

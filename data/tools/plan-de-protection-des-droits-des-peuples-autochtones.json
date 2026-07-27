@@ -1,0 +1,78 @@
+{
+  "id": "plan-de-protection-des-droits-des-peuples-autochtones",
+  "title": "Plan de protection des droits des peuples autochtones",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "nom-du-peuple-autochtone",
+      "type": "text",
+      "label": "Nom du peuple autochtone concerné",
+      "placeholder": "Exemple : Peuple Inuit",
+      "required": true
+    },
+    {
+      "name": "zone-de-vie",
+      "type": "textarea",
+      "label": "Zone de vie du peuple autochtone (description géographique)",
+      "placeholder": "Exemple : Territoire du Nunavik",
+      "required": true
+    },
+    {
+      "name": "type-de-protection",
+      "type": "select",
+      "options": [
+        "Protection des terres",
+        "Protection des ressources naturelles",
+        "Protection des droits culturels"
+      ],
+      "label": "Type de protection des droits des peuples autochtones",
+      "placeholder": "Exemple : Protection des terres",
+      "required": true
+    },
+    {
+      "name": "description-de-la-situation",
+      "type": "textarea",
+      "label": "Description de la situation actuelle (problèmes, menaces, etc.)",
+      "placeholder": "Exemple : La communauté est menacée par la construction d'une mine",
+      "required": true
+    },
+    {
+      "name": "objectifs-de-protection",
+      "type": "textarea",
+      "label": "Objectifs de protection des droits des peuples autochtones",
+      "placeholder": "Exemple : Protéger les terres traditionnelles, préserver la culture",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en droits des peuples autochtones. L'utilisateur a répondu : Nom du peuple autochtone : {nom-du-peuple-autochtone}, Zone de vie : {zone-de-vie}, Type de protection : {type-de-protection}, Description de la situation : {description-de-la-situation}, Objectifs de protection : {objectifs-de-protection}. Analyse ces informations et propose un plan de protection des droits des peuples autochtones.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

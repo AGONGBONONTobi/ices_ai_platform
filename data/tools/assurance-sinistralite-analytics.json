@@ -1,0 +1,72 @@
+{
+  "id": "assurance-sinistralite-analytics",
+  "title": "Analytics de la sinistralité (assurance)",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "annee",
+      "type": "number",
+      "label": "Année de référence",
+      "placeholder": "Saisissez l'année",
+      "required": true
+    },
+    {
+      "name": "type-sinistre",
+      "type": "select",
+      "options": [
+        "Incendie",
+        "Inondation",
+        "Vol",
+        "Autre"
+      ],
+      "label": "Type de sinistre",
+      "placeholder": "Sélectionnez le type de sinistre",
+      "required": true
+    },
+    {
+      "name": "montant-sinistre",
+      "type": "number",
+      "label": "Montant du sinistre",
+      "placeholder": "Saisissez le montant du sinistre",
+      "required": true
+    },
+    {
+      "name": "description-sinistre",
+      "type": "textarea",
+      "label": "Description du sinistre",
+      "placeholder": "Décrivez le sinistre",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en assurance. L'utilisateur a fourni les informations suivantes : Année : {annee}, Type de sinistre : {type-sinistre}, Montant du sinistre : {montant-sinistre}, Description du sinistre : {description-sinistre}. Analyse ces informations et proposez un score global de sinistralité sur 100, une évaluation par axe (risque, fréquence, impact) et des recommandations pour améliorer la gestion des sinistres.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "outil-management-visuel-tableau-bord-operationnel",
+  "title": "Outil de management visuel & tableau de bord opérationnel",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Niveau de maturité de l'équipe",
+      "placeholder": "Sélectionnez un niveau",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Indicateurs actuels",
+      "placeholder": "Exemple: taux de défaut, temps de cycle",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Nombre de tableaux de bord",
+      "placeholder": "Exemple: 3",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "select",
+      "options": [
+        "Améliorer la communication",
+        "Réduire les temps de cycle",
+        "Augmenter la qualité",
+        "Autre"
+      ],
+      "label": "Objectif principal",
+      "placeholder": "Sélectionnez un objectif",
+      "required": true
+    },
+    {
+      "name": "variable5",
+      "type": "textarea",
+      "label": "Difficultés rencontrées",
+      "placeholder": "Exemple: manque de visibilité, résistance au changement",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Variable1: {variable1}, Variable2: {variable2}, Variable3: {variable3}, Variable4: {variable4}, Variable5: {variable5}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      }
+    }
+  }
+}

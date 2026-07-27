@@ -1,0 +1,71 @@
+{
+  "id": "outil-d-evaluation-de-la-maturite-pmo",
+  "title": "Outil d'évaluation de la maturité PMO",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "maturite-strategique",
+      "type": "number",
+      "label": "Quel est le niveau de maturité stratégique de votre PMO ? (1-5)",
+      "placeholder": "Exemple : 3",
+      "required": true
+    },
+    {
+      "name": "maturite-opérationnelle",
+      "type": "number",
+      "label": "Quel est le niveau de maturité opérationnelle de votre PMO ? (1-5)",
+      "placeholder": "Exemple : 4",
+      "required": true
+    },
+    {
+      "name": "maturite-informatique",
+      "type": "select",
+      "options": [
+        "Bas",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quel est le niveau de maturité informatique de votre PMO ?",
+      "placeholder": "Exemple : Bas",
+      "required": true
+    },
+    {
+      "name": "recommandations",
+      "type": "textarea",
+      "label": "Quelles sont les recommandations pour améliorer la maturité de votre PMO ?",
+      "placeholder": "Exemple : ...",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Maturité stratégique : {maturite-strategique}, Maturité opérationnelle : {maturite-opérationnelle}, Maturité informatique : {maturite-informatique}, Recommandations : {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

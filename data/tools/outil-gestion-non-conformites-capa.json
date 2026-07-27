@@ -1,0 +1,77 @@
+{
+  "id": "outil-gestion-non-conformites-capa",
+  "title": "Outil de gestion des non-conformités & CAPA",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "non_conformite_type",
+      "type": "select",
+      "options": [
+        "Processus",
+        "Produit",
+        "Service",
+        "Autre"
+      ],
+      "label": "Quel type de non-conformité avez-vous identifié?",
+      "placeholder": "Ex: Processus",
+      "required": true
+    },
+    {
+      "name": "duree_resolution",
+      "type": "number",
+      "label": "Combien de jours avez-vous pris pour résoudre la non-conformité?",
+      "placeholder": "Ex: 5",
+      "required": true
+    },
+    {
+      "name": "impact_qualite",
+      "type": "textarea",
+      "label": "Décrivez l'impact de la non-conformité sur la qualité.",
+      "placeholder": "Ex: Réduction de la conformité des produits...",
+      "required": true
+    },
+    {
+      "name": "niveau_priorite",
+      "type": "select",
+      "options": [
+        "Haute",
+        "Moyenne",
+        "Basse"
+      ],
+      "label": "Quel est le niveau de priorité attribué à la CAPA?",
+      "placeholder": "Ex: Haute",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Non-conformité type: {non_conformite_type}, Durée de résolution: {duree_resolution} jours, Impact qualité: {impact_qualite}, Niveau priorité: {niveau_priorite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

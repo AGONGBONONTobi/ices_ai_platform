@@ -1,0 +1,78 @@
+{
+  "id": "template-plan-developpement-territorial",
+  "title": "Template de plan de développement territorial",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques du plan de développement territorial ?",
+      "placeholder": "Exemple : Diversifier l'économie locale, améliorer l'infrastructure de transport, etc.",
+      "required": true
+    },
+    {
+      "name": "actions-concretes",
+      "type": "textarea",
+      "label": "Quelles actions concretes seront mises en œuvre pour atteindre les objectifs stratégiques ?",
+      "placeholder": "Exemple : Création d'un parc d'entreprises, mise en place d'un système de transport en commun, etc.",
+      "required": true
+    },
+    {
+      "name": "indicateurs-de-suivi",
+      "type": "select",
+      "options": [
+        "Nombre de créations d'entreprises",
+        "Taux de chômage",
+        "Nombre de véhicules électriques en circulation"
+      ],
+      "label": "Quels indicateurs de suivi seront utilisés pour évaluer la réussite du plan de développement territorial ?",
+      "placeholder": "Sélectionnez un ou plusieurs indicateurs",
+      "required": true
+    },
+    {
+      "name": "ressources-financieres",
+      "type": "number",
+      "label": "Quelles sont les ressources financières allouées au plan de développement territorial ?",
+      "placeholder": "Exemple : 1 000 000 €",
+      "required": true
+    },
+    {
+      "name": "responsables",
+      "type": "text",
+      "label": "Qui sont les responsables de la mise en œuvre du plan de développement territorial ?",
+      "placeholder": "Exemple : Équipe de développement territorial",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Actions concretes : {actions-concretes}, Indicateurs de suivi : {indicateurs-de-suivi}, Ressources financières : {ressources-financieres}, Responsables : {responsables}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

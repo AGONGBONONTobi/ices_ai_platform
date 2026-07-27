@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-gamification-et-apprentissage-par-le-jeu",
+  "title": "Outil de gamification & apprentissage par le jeu",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "objectif_pédagogique",
+      "type": "textarea",
+      "label": "Quel est l'objectif pédagogique principal de l'activité de gamification ?",
+      "placeholder": "Décrivez l'objectif principal que vous souhaitez atteindre avec cette activité",
+      "required": true
+    },
+    {
+      "name": "type_de_jeu",
+      "type": "select",
+      "options": [
+        "Quiz",
+        "Jeu de rôle",
+        "Jeu de stratégie",
+        "Jeu de réflexion"
+      ],
+      "label": "Quel type de jeu souhaitez-vous intégrer dans votre activité de gamification ?",
+      "required": true
+    },
+    {
+      "name": "niveau_de_difficulte",
+      "type": "number",
+      "label": "Quel est le niveau de difficulté souhaité pour l'activité de gamification ? (sur une échelle de 1 à 10)",
+      "placeholder": "Entrez un nombre entre 1 et 10",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "text",
+      "label": "Quel est le public cible pour cette activité de gamification ?",
+      "placeholder": "Exemple : élèves de primaire, étudiants universitaires, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en gamification. L'utilisateur a répondu : Objectif pédagogique : {objectif_pédagogique}, Type de jeu : {type_de_jeu}, Niveau de difficulté : {niveau_de_difficulte}, Public cible : {public_cible}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (pédagogie, engagement, difficulté), et des recommandations pour améliorer l'expérience de gamification.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "analytics-des-risques-et-indicateurs-kri",
+  "title": "Analytics des risques & indicateurs KRI",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "number",
+      "label": "Quel est le nombre total de KRI identifiés ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Quels sont les principaux risques identifiés ?",
+      "placeholder": "Décrivez les risques identifiés",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "select",
+      "options": [
+        "En cours",
+        "En attente",
+        "Terminé"
+      ],
+      "label": "Quel est l'état actuel des actions correctives ?",
+      "placeholder": "Sélectionnez un état",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "number",
+      "label": "Quel est le pourcentage de KRI atteints ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un analyste expert. L'utilisateur a répondu : Nombre de KRI identifiés : {variable1}, Principaux risques identifiés : {variable2}, État actuel des actions correctives : {variable3}, Pourcentage de KRI atteints : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

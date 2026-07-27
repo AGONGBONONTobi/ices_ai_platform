@@ -1,0 +1,72 @@
+{
+  "id": "outil-de-construction-verte-hqe-breeam",
+  "title": "Plan de projet de construction verte (HQE/BREEAM)",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_de_projet",
+      "type": "select",
+      "options": [
+        "Résidentiel",
+        "Tertiaire",
+        "Industriel",
+        "Mixte"
+      ],
+      "label": "Quel est le type de projet de construction ?",
+      "placeholder": "Sélectionnez le type de projet",
+      "required": true
+    },
+    {
+      "name": "superficie",
+      "type": "number",
+      "label": "Quelle est la superficie totale du projet en m² ?",
+      "placeholder": "Exemple : 1000",
+      "required": true
+    },
+    {
+      "name": "objectifs_hqe",
+      "type": "textarea",
+      "label": "Quels sont les objectifs HQE (Haute Qualité Environnementale) du projet ?",
+      "placeholder": "Décrivez les objectifs",
+      "required": true
+    },
+    {
+      "name": "budget_estime",
+      "type": "number",
+      "label": "Quel est le budget estimé pour le projet ?",
+      "placeholder": "Exemple : 500000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en construction verte. L'utilisateur a répondu : Type de projet : {type_de_projet}, Superficie : {superficie} m², Objectifs HQE : {objectifs_hqe}, Budget estimé : {budget_estime}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (environnemental, social, économique), et des recommandations pour améliorer la durabilité du projet.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

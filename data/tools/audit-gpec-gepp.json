@@ -1,0 +1,76 @@
+{
+  "id": "audit-gpec-gepp",
+  "title": "Audit de la GPEC/GEPP",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "gpec_objectif",
+      "type": "text",
+      "label": "Quel est l'objectif de la GPEC/GEPP ?",
+      "placeholder": "Exemple : améliorer la sécurité des données",
+      "required": true
+    },
+    {
+      "name": "gepp_mise_en_place",
+      "type": "textarea",
+      "label": "Quelles sont les mesures mises en place pour la GEPP ?",
+      "placeholder": "Exemple : formation des employés, mise en place de procédures",
+      "required": true
+    },
+    {
+      "name": "gpec_compliance",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "La GPEC/GEPP est-elle conforme aux normes et réglementations en vigueur ?",
+      "required": true
+    },
+    {
+      "name": "gepp_risque_identifie",
+      "type": "number",
+      "label": "Quel est le niveau de risque identifié pour la GEPP ? (sur 100)",
+      "placeholder": "Exemple : 80",
+      "required": true
+    },
+    {
+      "name": "gpec_action_correction",
+      "type": "textarea",
+      "label": "Quelles actions de correction sont nécessaires pour la GPEC/GEPP ?",
+      "placeholder": "Exemple : mise en place de nouveaux processus, formation des employés",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif GPEC/GEPP : {gpec_objectif}, Mesures GEPP : {gepp_mise_en_place}, Conformité GPEC/GEPP : {gpec_compliance}, Niveau de risque GEPP : {gepp_risque_identifie}, Actions de correction GPEC/GEPP : {gpec_action_correction}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

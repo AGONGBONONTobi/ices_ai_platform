@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-mesure-de-l-acces-a-l-energie-et-inclusion-energetique",
+  "title": "Outil de mesure de l'accès à l'énergie & inclusion énergétique",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "number",
+      "label": "Quel est le pourcentage d'accès à l'électricité dans votre communauté ?",
+      "placeholder": "Exemple : 80",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Quelles sont les principales difficultés rencontrées pour accéder à l'énergie dans votre communauté ?",
+      "placeholder": "Exemple : manque d'infrastructure, coût élevé, etc.",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "select",
+      "options": [
+        "Ménages",
+        "Entreprises",
+        "Communautés rurales"
+      ],
+      "label": "Quel est le type de population qui bénéficie le plus de l'accès à l'énergie dans votre communauté ?",
+      "placeholder": "Exemple : Ménages",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "number",
+      "label": "Quel est le pourcentage de population qui bénéficie de l'énergie renouvelable dans votre communauté ?",
+      "placeholder": "Exemple : 50",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en développement durable. L'utilisateur a répondu : Pourcentage d'accès à l'électricité : {variable1}, Principales difficultés pour accéder à l'énergie : {variable2}, Type de population qui bénéficie le plus de l'accès à l'énergie : {variable3}, Pourcentage de population qui bénéficie de l'énergie renouvelable : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

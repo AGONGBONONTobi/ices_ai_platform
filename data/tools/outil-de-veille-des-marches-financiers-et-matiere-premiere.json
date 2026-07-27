@@ -1,0 +1,77 @@
+{
+  "id": "outil-de-veille-des-marches-financiers-et-matiere-premiere",
+  "title": "Outil de veille des marchés financiers & matières premières",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Finance",
+        "Matières premières",
+        "Technologie",
+        "Santé"
+      ],
+      "label": "Quel secteur souhaitez-vous surveiller ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Décrivez brièvement vos objectifs de veille :",
+      "placeholder": "Exemple : Suivre les tendances du marché, identifier les opportunités d'investissement...",
+      "required": true
+    },
+    {
+      "name": "frequence",
+      "type": "select",
+      "options": [
+        "Quotidienne",
+        "Hebdomadaire",
+        "Mensuelle"
+      ],
+      "label": "Quelle est la fréquence de votre veille ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "sources",
+      "type": "text",
+      "label": "Quelles sont vos sources d'information actuelles ?",
+      "placeholder": "Exemple : sites web, réseaux sociaux, newsletters...",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique. L'utilisateur a répondu : Secteur: {secteur}, Objectifs: {description}, Fréquence: {frequence}, Sources: {sources}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer la veille.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

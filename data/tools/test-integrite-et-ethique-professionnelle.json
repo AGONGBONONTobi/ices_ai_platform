@@ -1,0 +1,71 @@
+{
+  "id": "test-integrite-et-ethique-professionnelle",
+  "title": "Test d'intégrité & éthique professionnelle",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "question1",
+      "type": "select",
+      "options": [
+        "Je suis toujours honnête dans mes interactions professionnelles",
+        "Je peux être honnête ou non selon la situation",
+        "Je ne suis pas toujours honnête dans mes interactions professionnelles"
+      ],
+      "label": "Comment vous définiriez-vous en termes d'honnêteté professionnelle ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "question2",
+      "type": "textarea",
+      "label": "Pouvez-vous nous donner un exemple récent où vous avez dû faire un choix difficile en matière d'éthique professionnelle ?",
+      "placeholder": "Décrivez l'incident et les conséquences de votre choix",
+      "required": true
+    },
+    {
+      "name": "question3",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, combien de fois vous sentez-vous tenté de mentir ou de manipuler les informations pour atteindre vos objectifs professionnels ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "question4",
+      "type": "text",
+      "label": "Quels sont les principes éthiques les plus importants pour vous dans votre vie professionnelle ?",
+      "placeholder": "Listez les principes et expliquez pourquoi ils sont importants pour vous",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Question1: {question1}, Question2: {question2}, Question3: {question3}, Question4: {question4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

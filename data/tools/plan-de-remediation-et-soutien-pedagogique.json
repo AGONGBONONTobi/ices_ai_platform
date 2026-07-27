@@ -1,0 +1,76 @@
+{
+  "id": "plan-de-remediation-et-soutien-pedagogique",
+  "title": "Plan de remédiation & soutien pédagogique",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "type-d-apprentissage",
+      "type": "select",
+      "options": [
+        "Apprentissage individuel",
+        "Apprentissage en groupe",
+        "Apprentissage en ligne"
+      ],
+      "label": "Quel type d'apprentissage est utilisé ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "niveau-de-satisfaction",
+      "type": "select",
+      "options": [
+        "Très satisfaits",
+        "Satisfaits",
+        "Insatisfaits"
+      ],
+      "label": "Quel est le niveau de satisfaction des apprenants ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "commentaires-sur-la-pedagogie",
+      "type": "textarea",
+      "label": "Quels commentaires ont été faits sur la pédagogie ?",
+      "placeholder": "Exemple de réponse",
+      "required": false
+    },
+    {
+      "name": "recommandations-pour-l-amélioration",
+      "type": "textarea",
+      "label": "Quelles recommandations ont été faites pour améliorer la pédagogie ?",
+      "placeholder": "Exemple de réponse",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Type d'apprentissage: {type-d-apprentissage}, Niveau de satisfaction: {niveau-de-satisfaction}, Commentaires sur la pédagogie: {commentaires-sur-la-pedagogie}, Recommandations pour l'amélioration: {recommandations-pour-l-amélioration}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "plan-d-acces-universel-aux-services-et-inclusion",
+  "title": "Plan d'accès universel aux services & inclusion",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "ville",
+      "type": "text",
+      "label": "Nom de la ville ou de la commune",
+      "placeholder": "Exemple : Paris",
+      "required": true
+    },
+    {
+      "name": "type-d-infrastructure",
+      "type": "select",
+      "options": [
+        "Bâtiment",
+        "Espace public",
+        "Infrastructure de transport"
+      ],
+      "label": "Type d'infrastructure",
+      "placeholder": "Exemple : Bâtiment",
+      "required": true
+    },
+    {
+      "name": "description-des-accès",
+      "type": "textarea",
+      "label": "Description des accès existants",
+      "placeholder": "Exemple : Accès en roulant, accès en fauteuil roulant, etc.",
+      "required": true
+    },
+    {
+      "name": "recommandations-pour-l-inclusion",
+      "type": "textarea",
+      "label": "Recommandations pour l'inclusion",
+      "placeholder": "Exemple : Améliorer l'accès en fauteuil roulant, ajouter des signes de reconnaissance visuelle, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en accessibilité. L'utilisateur a répondu : Ville: {ville}, Type d'infrastructure: {type-d-infrastructure}, Description des accès: {description-des-accès}, Recommandations pour l'inclusion: {recommandations-pour-l-inclusion}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

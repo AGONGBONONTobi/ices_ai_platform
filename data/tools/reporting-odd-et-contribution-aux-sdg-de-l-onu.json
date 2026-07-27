@@ -1,0 +1,85 @@
+{
+  "id": "reporting-odd-et-contribution-aux-sdg-de-l-onu",
+  "title": "Reporting ODD & contribution aux SDG de l'ONU",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "objectifs-odd",
+      "type": "select",
+      "options": [
+        "ODD 1: Fin de la pauvreté",
+        "ODD 2: Faim zéro",
+        "ODD 3: Sante et bien-être",
+        "ODD 4: Éducation de qualité",
+        "ODD 5: Égalité des sexes",
+        "ODD 6: Eau propre et hygiène",
+        "ODD 7: Énergie propre et durable",
+        "ODD 8: Travail décent et croissance économique",
+        "ODD 9: Industrie, innovation et infrastructure",
+        "ODD 10: Réduction des inégalités",
+        "ODD 11: Villes et communautés durables",
+        "ODD 12: Production et consommation durables",
+        "ODD 13: Action climatique",
+        "ODD 14: Vie sous marine",
+        "ODD 15: Vie sauvage",
+        "ODD 16: Paix, justice et institutions fortes",
+        "ODD 17: Partenariats pour la réalisation des objectifs"
+      ],
+      "label": "Quels sont les ODD prioritaires pour votre organisation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "contribution-sdg",
+      "type": "textarea",
+      "label": "Précisez comment votre organisation contribue aux SDG",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "chiffres-cles",
+      "type": "number",
+      "label": "Quels sont les chiffres clés de votre contribution aux SDG ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "recommandations",
+      "type": "text",
+      "label": "Quelles sont les recommandations pour améliorer votre contribution aux SDG ?",
+      "placeholder": "",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE & développement durable. L'utilisateur a répondu : Objectifs ODD : {objectifs-odd}, Contribution aux SDG : {contribution-sdg}, Chiffres clés : {chiffres-cles}, Recommandations : {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

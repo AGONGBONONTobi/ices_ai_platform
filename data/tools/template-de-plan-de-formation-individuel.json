@@ -1,0 +1,78 @@
+{
+  "id": "template-de-plan-de-formation-individuel",
+  "title": "Template de plan de formation individuel",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "nom-de-l-apprenant",
+      "type": "text",
+      "label": "Nom et prénom de l'apprenant",
+      "placeholder": "Exemple : Jean Dupont",
+      "required": true
+    },
+    {
+      "name": "objectifs-de-formation",
+      "type": "textarea",
+      "label": "Objectifs de formation de l'apprenant",
+      "placeholder": "Exemple : Améliorer ses compétences en gestion de projet",
+      "required": true
+    },
+    {
+      "name": "niveau-de-formation",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Niveau de formation de l'apprenant",
+      "placeholder": "Exemple : Débutant",
+      "required": true
+    },
+    {
+      "name": "délai-de-formation",
+      "type": "number",
+      "label": "Délai de formation (en semaines)",
+      "placeholder": "Exemple : 12",
+      "required": true
+    },
+    {
+      "name": "ressources-nécessaires",
+      "type": "textarea",
+      "label": "Ressources nécessaires pour la formation (matériel, humain, financier)",
+      "placeholder": "Exemple : Un ordinateur portable, un accès à Internet, un formateur expérimenté",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un formateur expert. L'utilisateur a répondu : Nom de l'apprenant : {nom-de-l-apprenant}, Objectifs de formation : {objectifs-de-formation}, Niveau de formation : {niveau-de-formation}, Délai de formation : {délai-de-formation} semaines, Ressources nécessaires : {ressources-nécessaires}. Analyse ces informations et propose un plan de formation personnalisé.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

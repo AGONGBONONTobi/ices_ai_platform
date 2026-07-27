@@ -1,0 +1,79 @@
+{
+  "id": "template-business-plan-kebab-case",
+  "title": "Template de business plan (startup/PME)",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "nom_entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Startup Inc.",
+      "required": true
+    },
+    {
+      "name": "description_entreprise",
+      "type": "textarea",
+      "label": "Description de l'entreprise",
+      "placeholder": "Exemple : Nous sommes une startup innovante dans le domaine de la technologie.",
+      "required": true
+    },
+    {
+      "name": "objectif_entreprise",
+      "type": "text",
+      "label": "Objectif de l'entreprise",
+      "placeholder": "Exemple : Devenir le leader du marché dans les 5 ans.",
+      "required": true
+    },
+    {
+      "name": "secteur_activite",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Finance",
+        "Marketing",
+        "Autre"
+      ],
+      "label": "Secteur d'activité",
+      "placeholder": "Exemple : Technologie",
+      "required": true
+    },
+    {
+      "name": "cible_client",
+      "type": "text",
+      "label": "Cible client",
+      "placeholder": "Exemple : Entreprises de taille moyenne",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom de l'entreprise : {nom_entreprise}, Description de l'entreprise : {description_entreprise}, Objectif de l'entreprise : {objectif_entreprise}, Secteur d'activité : {secteur_activite}, Cible client : {cible_client}. Analyse ces informations et propose un plan d'affaires complet, y compris un diagnostic du marché, une analyse SWOT, un plan marketing et un plan financier.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

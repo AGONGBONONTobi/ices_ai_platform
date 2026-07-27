@@ -1,0 +1,80 @@
+{
+  "id": "auto-evaluation-conformite-halal",
+  "title": "Auto-évaluation conformité Halal",
+  "category": "Certification de Produits & Services",
+  "inputs": [
+    {
+      "name": "ingredients_halal",
+      "type": "textarea",
+      "label": "Liste des ingrédients utilisés",
+      "placeholder": "Ex: Huile de palme, sel, etc.",
+      "required": true
+    },
+    {
+      "name": "process_production",
+      "type": "select",
+      "options": [
+        "Contrôlé",
+        "Non contrôlé"
+      ],
+      "label": "Le processus de production est-il contrôlé pour éviter la contamination croisée ?",
+      "required": true
+    },
+    {
+      "name": "separation_produits",
+      "type": "textarea",
+      "label": "Description de la procédure de séparation des produits halal et non halal",
+      "placeholder": "Ex: stockage séparé, étiquetage spécifique, etc.",
+      "required": true
+    },
+    {
+      "name": "documentation",
+      "type": "text",
+      "label": "Existe-t-il une documentation sur les procédures halal ?",
+      "placeholder": "Ex: manuel qualité, procédures opérationnelles standard, etc.",
+      "required": true
+    },
+    {
+      "name": "formation_perso",
+      "type": "select",
+      "options": [
+        "Tous les employés",
+        "Certains employés",
+        "Aucun employé"
+      ],
+      "label": "Les employés sont-ils formés sur les procédures halal ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un auditeur expert du référentiel Halal. L'utilisateur a répondu :\nIngredients halal: {ingredients_halal}\nProcessus de production contrôlé: {process_production}\nSéparation des produits: {separation_produits}\nDocumentation: {documentation}\nFormation des employés: {formation_perso}\nAnalysez ces informations selon les exigences du référentiel Halal (ingrédients autorisés, processus de production, séparation, documentation et formation du personnel) et donnez un score global sur 100, une évaluation par axe (ingrédients, process, séparation, documentation, formation) et des recommandations priorisées.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "diagnostic-de-transformation-agile",
+  "title": "Diagnostic de la transformation agile",
+  "category": "Finance",
+  "inputs": [
+    {
+      "name": "niveauAgilite",
+      "type": "number",
+      "label": "Niveau d'agilité",
+      "placeholder": "Exemple : 6",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en diagnostic de transformation agile. Utilise {niveauAgilite} pour évaluer la transformation agile de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "string"
+      }
+    }
+  }
+}

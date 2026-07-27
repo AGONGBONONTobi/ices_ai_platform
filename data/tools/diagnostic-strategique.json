@@ -1,0 +1,44 @@
+{
+  "id": "diagnostic-strategique",
+  "title": "Diagnostic stratégique (SWOT augmenté IA)",
+  "category": "Finance",
+  "inputs": [
+    {
+      "name": "forces",
+      "type": "textarea",
+      "label": "Forces",
+      "placeholder": "Exemple : Forces actuelles de l'entreprise",
+      "required": true
+    },
+    {
+      "name": "faiblesses",
+      "type": "textarea",
+      "label": "Faiblesses",
+      "placeholder": "Exemple : Faiblesses actuelles de l'entreprise",
+      "required": true
+    },
+    {
+      "name": "opportunites",
+      "type": "textarea",
+      "label": "Opportunités",
+      "placeholder": "Exemple : Opportunités actuelles de l'entreprise",
+      "required": true
+    },
+    {
+      "name": "menaces",
+      "type": "textarea",
+      "label": "Menaces",
+      "placeholder": "Exemple : Menaces actuelles de l'entreprise",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en diagnostic stratégique. Utilise {forces}, {faiblesses}, {opportunites} et {menaces} pour évaluer la stratégie de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "string"
+      }
+    }
+  }
+}

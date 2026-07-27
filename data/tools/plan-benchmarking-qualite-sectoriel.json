@@ -1,0 +1,80 @@
+{
+  "id": "plan-benchmarking-qualite-sectoriel",
+  "title": "Plan de benchmarking qualité sectoriel",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Manufacturing",
+        "Healthcare",
+        "Retail",
+        "Finance",
+        "Technology"
+      ],
+      "label": "Quel est votre secteur d'activité?",
+      "placeholder": "Ex: Manufacturing",
+      "required": true
+    },
+    {
+      "name": "nombre_entreprises_benchmark",
+      "type": "number",
+      "label": "Combien d'entreprises souhaitez-vous inclure dans le benchmarking?",
+      "placeholder": "Ex: 5",
+      "required": true
+    },
+    {
+      "name": "objectifs_benchmark",
+      "type": "textarea",
+      "label": "Quels sont les principaux objectifs de votre benchmarking?",
+      "placeholder": "Ex: Améliorer la qualité des processus, réduire les défauts, etc.",
+      "required": true
+    },
+    {
+      "name": "indicateurs_qualite",
+      "type": "textarea",
+      "label": "Listez les indicateurs de qualité que vous souhaitez mesurer.",
+      "placeholder": "Ex: Taux de défaut, temps de cycle, satisfaction client.",
+      "required": false
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est votre budget alloué à ce projet?",
+      "placeholder": "Ex: 20000",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Secteur: {secteur}, Nombre d'entreprises: {nombre_entreprises_benchmark}, Objectifs: {objectifs_benchmark}, Indicateurs: {indicateurs_qualite}, Budget: {budget}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

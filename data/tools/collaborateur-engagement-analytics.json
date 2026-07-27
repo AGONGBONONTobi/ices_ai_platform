@@ -1,0 +1,71 @@
+{
+  "id": "collaborateur-engagement-analytics",
+  "title": "Analytics de l'engagement collaborateurs",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "taux-de-participation",
+      "type": "number",
+      "label": "Quel est le taux de participation aux réunions de l'équipe ?",
+      "placeholder": "Exemple : 80%",
+      "required": true
+    },
+    {
+      "name": "note-de-satisfaction",
+      "type": "number",
+      "label": "Quelle est la note moyenne de satisfaction des collaborateurs ?",
+      "placeholder": "Exemple : 4,5/5",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Quels sont les commentaires les plus fréquents des collaborateurs ?",
+      "placeholder": "Exemple : \"Je suis satisfait de mon travail...\"",
+      "required": true
+    },
+    {
+      "name": "type-de-reunion",
+      "type": "select",
+      "options": [
+        "En ligne",
+        "Présentielle",
+        "Hybride"
+      ],
+      "label": "Quel type de réunion est le plus courant ?",
+      "placeholder": "Exemple : En ligne",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Taux de participation : {taux-de-participation}, Note de satisfaction : {note-de-satisfaction}, Commentaires : {commentaires}, Type de réunion : {type-de-reunion}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

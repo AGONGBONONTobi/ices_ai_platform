@@ -1,0 +1,71 @@
+{
+  "id": "plan-gestion-hospitaliere-efficience-clinique",
+  "title": "Plan de gestion hospitalière & efficience clinique",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif_patient",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de prise en charge des patients pour votre établissement ?",
+      "placeholder": "Améliorer la qualité des soins, réduire les temps d'attente, etc.",
+      "required": true
+    },
+    {
+      "name": "niveau_ressources",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quel est le niveau de ressources (personnel, équipements, etc.) disponibles pour votre établissement ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "defis_actuels",
+      "type": "textarea",
+      "label": "Quels sont les défis actuels auxquels votre établissement est confronté en matière de gestion hospitalière et d'efficience clinique ?",
+      "placeholder": "Surcharge de travail, manque de personnel qualifié, etc.",
+      "required": true
+    },
+    {
+      "name": "budget_alloué",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la mise en œuvre de ce plan ?",
+      "placeholder": "100000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en gestion hospitalière. L'établissement a répondu : Objectif patient: {objectif_patient}, Niveau de ressources: {niveau_ressources}, Défis actuels: {defis_actuels}, Budget alloué: {budget_alloué}. Analysez ces informations et proposez un plan d'action pour améliorer l'efficience clinique et la gestion hospitalière, en incluant un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

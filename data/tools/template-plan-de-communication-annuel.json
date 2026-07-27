@@ -1,0 +1,79 @@
+{
+  "id": "template-plan-de-communication-annuel",
+  "title": "Template de plan de communication annuel",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectifs-stratégiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de l'entreprise pour l'année en cours ?",
+      "placeholder": "Décrivez les objectifs stratégiques de l'entreprise pour l'année en cours.",
+      "required": true
+    },
+    {
+      "name": "public-cible",
+      "type": "select",
+      "options": [
+        "Employés",
+        "Partenaires",
+        "Clients",
+        "Investisseurs"
+      ],
+      "label": "Quel est le public cible de la communication ?",
+      "placeholder": "Sélectionnez le public cible de la communication.",
+      "required": true
+    },
+    {
+      "name": "canaux-de-communication",
+      "type": "textarea",
+      "label": "Quels sont les canaux de communication prévus pour atteindre le public cible ?",
+      "placeholder": "Décrivez les canaux de communication prévus pour atteindre le public cible.",
+      "required": true
+    },
+    {
+      "name": "budget-alloué",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la communication ?",
+      "placeholder": "Entrez le budget alloué pour la communication.",
+      "required": true
+    },
+    {
+      "name": "indicateurs-de-suivi",
+      "type": "textarea",
+      "label": "Quels sont les indicateurs de suivi pour mesurer l'efficacité de la communication ?",
+      "placeholder": "Décrivez les indicateurs de suivi pour mesurer l'efficacité de la communication.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en communication. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-stratégiques}, Public cible : {public-cible}, Canaux de communication : {canaux-de-communication}, Budget alloué : {budget-alloué}, Indicateurs de suivi : {indicateurs-de-suivi}. Analyse ces informations et propose un plan de communication annuel complet, incluant des objectifs, des stratégies, des indicateurs de suivi et un budget.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

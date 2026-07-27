@@ -1,0 +1,71 @@
+{
+  "id": "analyse-brevets-et-propriete-intellectuelle",
+  "title": "Analyse des brevets & de la propriété intellectuelle",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "domaine",
+      "type": "text",
+      "label": "Quel est le domaine d'activité du brevet ?",
+      "placeholder": "Exemple : informatique, mécanique, etc.",
+      "required": true
+    },
+    {
+      "name": "type-brevet",
+      "type": "select",
+      "options": [
+        "Brevet d'invention",
+        "Brevet de modèle",
+        "Brevet de dessin ou modèle"
+      ],
+      "label": "Quel type de brevet s'agit-il ?",
+      "placeholder": "Sélectionner un type de brevet",
+      "required": true
+    },
+    {
+      "name": "description-brevet",
+      "type": "textarea",
+      "label": "Décrivez brièvement le contenu du brevet",
+      "placeholder": "Exemple : description du brevet",
+      "required": true
+    },
+    {
+      "name": "impact-économique",
+      "type": "number",
+      "label": "Quel est l'impact économique potentiel du brevet ?",
+      "placeholder": "Exemple : 500 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en propriété intellectuelle. L'utilisateur a répondu : Domaine: {domaine}, Type de brevet: {type-brevet}, Description du brevet: {description-brevet}, Impact économique potentiel: {impact-économique}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

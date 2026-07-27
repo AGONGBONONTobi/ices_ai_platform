@@ -1,0 +1,78 @@
+{
+  "id": "etude-profil-innovateur-social",
+  "title": "Étude du profil de l'innovateur social",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "motivation",
+      "type": "textarea",
+      "label": "Quelles sont les raisons qui vous motivent à innover dans le domaine social ?",
+      "placeholder": "Exemple : Je suis motivé par le désir de faire une différence positive dans la société.",
+      "required": true
+    },
+    {
+      "name": "style-de-travail",
+      "type": "select",
+      "options": [
+        "Travailleur autonome",
+        "Collaborateur",
+        "Chef de projet"
+      ],
+      "label": "Quel est votre style de travail préféré ?",
+      "placeholder": "Exemple : Je préfère travailler de manière autonome.",
+      "required": true
+    },
+    {
+      "name": "niveau-de-risque",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, comment évaluez-vous votre niveau de tolérance au risque ?",
+      "placeholder": "Exemple : Je suis très tolérant au risque (10)",
+      "required": true
+    },
+    {
+      "name": "exemples-dinnovation",
+      "type": "textarea",
+      "label": "Pouvez-vous donner des exemples d'innovations que vous avez déjà réalisées dans le domaine social ?",
+      "placeholder": "Exemple : J'ai créé un programme de mentorat pour les jeunes",
+      "required": true
+    },
+    {
+      "name": "objectifs-a-court-terme",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs à court terme en matière d'innovation sociale ?",
+      "placeholder": "Exemple : Je souhaite lancer un nouveau projet dans les 6 mois",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Motivation : {motivation}, Style de travail : {style-de-travail}, Niveau de risque : {niveau-de-risque}, Exemples d'innovation : {exemples-dinnovation}, Objectifs à court terme : {objectifs-a-court-terme}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

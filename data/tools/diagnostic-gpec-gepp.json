@@ -1,0 +1,78 @@
+{
+  "id": "diagnostic-gpec-gepp",
+  "title": "Diagnostic de la GPEC/GEPP",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "gpec_objectif",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de la GPEC/GEPP ?",
+      "placeholder": "Exemple : Améliorer la gestion des ressources humaines",
+      "required": true
+    },
+    {
+      "name": "gepp_methode",
+      "type": "select",
+      "options": [
+        "Analytique",
+        "Qualitatif",
+        "Mixte"
+      ],
+      "label": "Quelle est la méthode utilisée pour la GEPP ?",
+      "placeholder": "Exemple : Analytique",
+      "required": true
+    },
+    {
+      "name": "gpec_resultat",
+      "type": "number",
+      "label": "Quel est le résultat attendu de la GPEC/GEPP ?",
+      "placeholder": "Exemple : 80%",
+      "required": true
+    },
+    {
+      "name": "gepp_ressource",
+      "type": "text",
+      "label": "Quelles sont les ressources nécessaires pour la GEPP ?",
+      "placeholder": "Exemple : Un expert en GPEC/GEPP",
+      "required": true
+    },
+    {
+      "name": "gpec_impact",
+      "type": "textarea",
+      "label": "Quel est l'impact attendu de la GPEC/GEPP sur l'organisation ?",
+      "placeholder": "Exemple : Améliorer la productivité et la qualité",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif GPEC/GEPP : {gpec_objectif}, Méthode GEPP : {gepp_methode}, Résultat attendu : {gpec_resultat}%, Ressources nécessaires : {gepp_ressource}, Impact attendu : {gpec_impact}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

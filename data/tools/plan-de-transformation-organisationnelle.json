@@ -1,0 +1,78 @@
+{
+  "id": "plan-de-transformation-organisationnelle",
+  "title": "Plan de transformation organisationnelle",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quel est l'objectif stratégique de la transformation ?",
+      "placeholder": "Exemple : Améliorer l'efficacité opérationnelle",
+      "required": true
+    },
+    {
+      "name": "zone-d-intervention",
+      "type": "select",
+      "options": [
+        "Direction",
+        "Fonction",
+        "Processus"
+      ],
+      "label": "Quelle est la zone d'intervention de la transformation ?",
+      "placeholder": "Exemple : Direction",
+      "required": true
+    },
+    {
+      "name": "ressources-necessaires",
+      "type": "number",
+      "label": "Quelles sont les ressources nécessaires pour la transformation ?",
+      "placeholder": "Exemple : 10 personnes",
+      "required": true
+    },
+    {
+      "name": "plan-d-action",
+      "type": "textarea",
+      "label": "Quel est le plan d'action pour la transformation ?",
+      "placeholder": "Exemple : Élaboration d'un plan de transformation, mise en place d'une équipe de projet, etc.",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la transformation ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Zone d'intervention : {zone-d-intervention}, Ressources nécessaires : {ressources-necessaires}, Plan d'action : {plan-d-action}, Budget alloué : {budget-alloue}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

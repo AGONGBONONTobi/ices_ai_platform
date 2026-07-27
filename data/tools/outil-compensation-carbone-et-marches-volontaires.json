@@ -1,0 +1,72 @@
+{
+  "id": "outil-compensation-carbone-et-marches-volontaires",
+  "title": "Outil de compensation carbone & marchés volontaires",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "emissions-gaz-a-effect-rien-que-sur-le-climat",
+      "type": "number",
+      "label": "Quelles sont les émissions de gaz à effet de serre de votre entreprise ?",
+      "placeholder": "En tonnes CO2 équivalent",
+      "required": true
+    },
+    {
+      "name": "budget-compensation-carbone",
+      "type": "number",
+      "label": "Quel est votre budget pour la compensation carbone ?",
+      "placeholder": "En euros",
+      "required": true
+    },
+    {
+      "name": "type-de-projet-compensation",
+      "type": "select",
+      "options": [
+        "Réduction des émissions",
+        "Compensation des émissions",
+        "Reforestation",
+        "Énergie renouvelable"
+      ],
+      "label": "Quel type de projet de compensation carbone souhaitez-vous soutenir ?",
+      "placeholder": "Choisissez un type de projet",
+      "required": true
+    },
+    {
+      "name": "description-projet-compensation",
+      "type": "textarea",
+      "label": "Pouvez-vous décrire brièvement le projet de compensation carbone que vous souhaitez soutenir ?",
+      "placeholder": "Description du projet",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE et développement durable. L'utilisateur a répondu : Emissions de gaz à effet de serre : {emissions-gaz-a-effect-rien-que-sur-le-climat} tonnes CO2 équivalent, Budget pour la compensation carbone : {budget-compensation-carbone} euros, Type de projet de compensation : {type-de-projet-compensation}, Description du projet de compensation : {description-projet-compensation}. Analyse ces informations et propose un plan de compensation carbone adapté.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

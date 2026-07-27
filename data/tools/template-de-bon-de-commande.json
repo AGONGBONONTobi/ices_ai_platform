@@ -1,0 +1,70 @@
+{
+  "id": "template-de-bon-de-commande",
+  "title": "Template de bon de commande",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "fournisseur",
+      "type": "text",
+      "label": "Nom du fournisseur",
+      "placeholder": "Ex: Société XYZ",
+      "required": true
+    },
+    {
+      "name": "produits",
+      "type": "textarea",
+      "label": "Liste des produits commandés",
+      "placeholder": "Ex: Produit A, Produit B, Produit C",
+      "required": true
+    },
+    {
+      "name": "typeDePaiement",
+      "type": "select",
+      "options": [
+        "Carte de crédit",
+        "Chèque",
+        "Virement bancaire"
+      ],
+      "label": "Type de paiement",
+      "required": true
+    },
+    {
+      "name": "dateDeLivraison",
+      "type": "text",
+      "label": "Date de livraison souhaitée",
+      "placeholder": "Ex: 2024-09-20",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en gestion des commandes. L'utilisateur a répondu : Fournisseur: {fournisseur}, Liste des produits: {produits}, Type de paiement: {typeDePaiement}, Date de livraison souhaitée: {dateDeLivraison}. Analysez ces informations et donnez un score global sur 100 pour la qualité de la commande, évaluez les axes tels que la clarté de la commande, la précision des informations fournies et la conformité aux politiques de l'entreprise, et donnez des recommandations pour améliorer le processus de commande.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

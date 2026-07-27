@@ -1,0 +1,71 @@
+{
+  "id": "gestion-des-livrables-et-jalons",
+  "title": "Outil de gestion des livrables & jalons",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "nomDuProjet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple : Développement d'un nouveau logiciel",
+      "required": true
+    },
+    {
+      "name": "listeDesLivrables",
+      "type": "textarea",
+      "label": "Liste des livrables attendus",
+      "placeholder": "Exemple : Rapport d'avancement, prototype fonctionnel, documentation technique",
+      "required": true
+    },
+    {
+      "name": "typeDeProjet",
+      "type": "select",
+      "options": [
+        "Développement logiciel",
+        "Construction",
+        "Recherche et développement",
+        "Autre"
+      ],
+      "label": "Type de projet",
+      "required": true
+    },
+    {
+      "name": "delaiPrevu",
+      "type": "number",
+      "label": "Délai prévu pour la réalisation du projet (en semaines)",
+      "placeholder": "Exemple : 20",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en gestion de projets. L'utilisateur a répondu : Nom du projet : {nomDuProjet}, Liste des livrables : {listeDesLivrables}, Type de projet : {typeDeProjet}, Délai prévu : {delaiPrevu} semaines. Analyse ces informations et donne un score global sur 100, une évaluation par axe (planification, gestion des ressources, gestion des risques), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "id": "test-big-five-ocean-professionnel",
+  "title": "Test Big Five OCEAN professionnel",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "extraversion",
+      "type": "select",
+      "options": [
+        "Très d'accord",
+        "D'accord",
+        "Ni d'accord ni de désaccord",
+        "Désaccord",
+        "Très désaccord"
+      ],
+      "label": "Je me sens généralement",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "conscience",
+      "type": "select",
+      "options": [
+        "Très d'accord",
+        "D'accord",
+        "Ni d'accord ni de désaccord",
+        "Désaccord",
+        "Très désaccord"
+      ],
+      "label": "Je suis souvent",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "ouverture",
+      "type": "select",
+      "options": [
+        "Très d'accord",
+        "D'accord",
+        "Ni d'accord ni de désaccord",
+        "Désaccord",
+        "Très désaccord"
+      ],
+      "label": "Je me sens attiré par",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "sensibilité",
+      "type": "textarea",
+      "label": "Quand je suis en colère, je me sens",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "anticipation",
+      "type": "select",
+      "options": [
+        "Très d'accord",
+        "D'accord",
+        "Ni d'accord ni de désaccord",
+        "Désaccord",
+        "Très désaccord"
+      ],
+      "label": "Je suis souvent",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Extraversion: {extraversion}, Conscience: {conscience}, Ouverture: {ouverture}, Sensibilité: {sensibilité}, Anticipation: {anticipation}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

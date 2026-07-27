@@ -1,0 +1,87 @@
+{
+  "id": "plan-de-reprise-d-activite-pra-drp",
+  "title": "Plan de reprise d'activité (PRA/DRP)",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "nom-de-l-entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de nom d'entreprise",
+      "required": true
+    },
+    {
+      "name": "type-d-activite",
+      "type": "select",
+      "options": [
+        "Fabrication",
+        "Services",
+        "Commerce",
+        "Autre"
+      ],
+      "label": "Type d'activité",
+      "placeholder": "Exemple de type d'activité",
+      "required": true
+    },
+    {
+      "name": "description-de-l-activite",
+      "type": "textarea",
+      "label": "Description de l'activité",
+      "placeholder": "Exemple de description de l'activité",
+      "required": true
+    },
+    {
+      "name": "zone-geographique",
+      "type": "select",
+      "options": [
+        "Europe",
+        "Amérique du Nord",
+        "Amérique du Sud",
+        "Asie",
+        "Afrique",
+        "Océanie"
+      ],
+      "label": "Zone géographique",
+      "placeholder": "Exemple de zone géographique",
+      "required": true
+    },
+    {
+      "name": "nombre-de-salaries",
+      "type": "number",
+      "label": "Nombre de salariés",
+      "placeholder": "Exemple de nombre de salariés",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom de l'entreprise : {nom-de-l-entreprise}, Type d'activité : {type-d-activite}, Description de l'activité : {description-de-l-activite}, Zone géographique : {zone-geographique}, Nombre de salariés : {nombre-de-salaries}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

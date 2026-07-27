@@ -1,0 +1,71 @@
+{
+  "id": "monetisation-contenus-strategie",
+  "title": "Stratégie de monétisation des contenus",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "modele-de-revenu",
+      "type": "select",
+      "options": [
+        "Affiliation",
+        "Publicité ciblée",
+        "Vente de produits dérivés"
+      ],
+      "label": "Quel modèle de revenu prévoyez-vous pour vos contenus ?",
+      "placeholder": "Sélectionnez un modèle de revenu",
+      "required": true
+    },
+    {
+      "name": "contenus-a-monétiser",
+      "type": "textarea",
+      "label": "Quels types de contenus prévoyez-vous monétiser ? (ex : vidéos, articles, podcasts, etc.)",
+      "placeholder": "Listez les types de contenus",
+      "required": true
+    },
+    {
+      "name": "cible-ideal",
+      "type": "text",
+      "label": "Qui est votre cible idéale pour ces contenus ?",
+      "placeholder": "Décrivez votre cible idéale",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est votre budget alloué pour la création et la promotion de ces contenus ?",
+      "placeholder": "Entrez votre budget",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en stratégie de monétisation des contenus. L'utilisateur a répondu : Modèle de revenu : {modele-de-revenu}, Types de contenus à monétiser : {contenus-a-monétiser}, Cible idéale : {cible-ideal}, Budget alloué : {budget-alloue}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

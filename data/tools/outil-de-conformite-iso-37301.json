@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-conformite-iso-37301",
+  "title": "Outil de conformité ISO 37301",
+  "category": "Gouvernance, Éthique & Anti-Corruption",
+  "inputs": [
+    {
+      "name": "obligations_legal",
+      "type": "textarea",
+      "label": "Décrivez les obligations légales et réglementaires applicables à votre organisation",
+      "placeholder": "Ex: lois, règlements, normes",
+      "required": true
+    },
+    {
+      "name": "niveau_conformite",
+      "type": "select",
+      "options": [
+        "Inexistant (0)",
+        "Initié (1)",
+        "Formalisé (2)",
+        "Optimisé (3)"
+      ],
+      "label": "Quel est votre niveau de conformité actuel ?",
+      "required": true
+    },
+    {
+      "name": "culture_conformite",
+      "type": "text",
+      "label": "Décrivez les initiatives prises pour promouvoir une culture de conformité au sein de votre organisation",
+      "placeholder": "Ex: formations, communication, sanctions",
+      "required": true
+    },
+    {
+      "name": "programme_conformite",
+      "type": "textarea",
+      "label": "Décrivez votre programme de conformité réglementaire (existence, étendue, efficacité)",
+      "placeholder": "Ex: processus, procédures, ressources",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un auditeur/consultant expert du référentiel ISO 37301. L'utilisateur a répondu : Obligations légales: {obligations_legal}, Niveau de conformité: {niveau_conformite}, Culture de conformité: {culture_conformite}, Programme de conformité: {programme_conformite}. Évaluez ces informations selon les exigences de l'ISO 37301 (cartographie des obligations légales, culture de conformité, programme de conformité) et attribuez un score global sur 100. Évaluez également les axes suivants: Cartographie des obligations légales, Culture de conformité, Programme de conformité et donnez un score pour chaque axe. Fournissez des recommandations prioritaires pour améliorer la conformité.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

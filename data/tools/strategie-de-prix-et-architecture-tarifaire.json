@@ -1,0 +1,72 @@
+{
+  "id": "strategie-de-prix-et-architecture-tarifaire",
+  "title": "Stratégie de prix & architecture tarifaire",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Quels sont les principaux objectifs de la stratégie de prix ?",
+      "placeholder": "Exemple : accroître les ventes, améliorer la rentabilité, etc.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Accroître les ventes",
+        "Améliorer la rentabilité",
+        "Augmenter la part de marché",
+        "Autre"
+      ],
+      "label": "Quel est le principal facteur de variation du prix ?",
+      "placeholder": "Exemple : coûts, concurrence, demande, etc.",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Quel est le pourcentage de marge souhaité ?",
+      "placeholder": "Exemple : 20%",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quels sont les principaux concurrents et leurs stratégies de prix ?",
+      "placeholder": "Exemple : liste des concurrents et de leurs prix",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en marketing et commercial. L'utilisateur a répondu : Objectifs de la stratégie de prix : {variable1}, Facteur de variation du prix : {variable2}, Pourcentage de marge souhaité : {variable3}%, Principaux concurrents et leurs stratégies de prix : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

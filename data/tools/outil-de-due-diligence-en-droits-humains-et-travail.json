@@ -1,0 +1,81 @@
+{
+  "id": "outil-de-due-diligence-en-droits-humains-et-travail",
+  "title": "Outil de due diligence en droits humains & travail",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de nom d'entreprise",
+      "required": true
+    },
+    {
+      "name": "secteur-activite",
+      "type": "select",
+      "options": [
+        "Textile",
+        "Minerais",
+        "Pétrole et gaz",
+        "Bois",
+        "Autre"
+      ],
+      "label": "Secteur d'activité de l'entreprise",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "pays-doperation",
+      "type": "select",
+      "options": [
+        "Afrique",
+        "Asie",
+        "Amérique du Nord",
+        "Amérique du Sud",
+        "Europe",
+        "Océanie"
+      ],
+      "label": "Pays d'opération de l'entreprise",
+      "placeholder": "Sélectionnez un pays",
+      "required": true
+    },
+    {
+      "name": "informations-sur-la-gouvernance",
+      "type": "textarea",
+      "label": "Informations sur la gouvernance de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en droits humains & travail. L'utilisateur a répondu : Entreprise: {entreprise}, Secteur d'activité: {secteur-activite}, Pays d'opération: {pays-doperation}, Informations sur la gouvernance: {informations-sur-la-gouvernance}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

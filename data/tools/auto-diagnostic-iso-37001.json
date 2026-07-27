@@ -1,0 +1,84 @@
+{
+  "id": "auto-diagnostic-iso-37001",
+  "title": "Auto-diagnostic ISO 37001",
+  "category": "Systèmes de Management ISO",
+  "inputs": [
+    {
+      "name": "smac",
+      "type": "textarea",
+      "label": "Votre Système de Management Anti-Corruption (SMAC) est-il en place ? Décrivez-le brièvement.",
+      "placeholder": "Description du SMAC",
+      "required": true
+    },
+    {
+      "name": "due_diligence",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Avez-vous mis en place une procédure de due diligence pour vos partenaires et fournisseurs ?",
+      "required": true
+    },
+    {
+      "name": "gestion_cadeaux",
+      "type": "textarea",
+      "label": "Comment gérez-vous les cadeaux et avantages offerts ou reçus par vos employés ?",
+      "placeholder": "Description de la gestion des cadeaux",
+      "required": true
+    },
+    {
+      "name": "canaux_signalement",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Disposez-vous de canaux de signalement pour les employés et les tiers ?",
+      "required": true
+    },
+    {
+      "name": "niveau_maturite",
+      "type": "select",
+      "options": [
+        "0 - Inexistant",
+        "1 - Initié",
+        "2 - Formalisé",
+        "3 - Optimisé"
+      ],
+      "label": "Quel est votre niveau de maturité actuel en matière de conformité anti-corruption ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous avez répondu : SMAC: {smac}, Due Diligence: {due_diligence}, Gestion des cadeaux: {gestion_cadeaux}, Canaux de signalement: {canaux_signalement}, Niveau de maturité: {niveau_maturite}. Évaluez ces informations selon les exigences de l'ISO 37001 et donnez un score global sur 100, une évaluation par axe (SMAC, Due Diligence, Gestion des cadeaux, Canaux de signalement) et des recommandations prioritaires pour améliorer la conformité anti-corruption.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

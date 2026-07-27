@@ -1,0 +1,71 @@
+{
+  "id": "template-note-de-synthese-financiere",
+  "title": "Template de note de synthèse financière",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "bilan-comptable",
+      "type": "textarea",
+      "label": "Bilan comptable",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "flux-de-trésorerie",
+      "type": "textarea",
+      "label": "Flux de trésorerie",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "ratio-financiers",
+      "type": "select",
+      "options": [
+        "ROE",
+        "ROA",
+        "Rapport de trésorerie"
+      ],
+      "label": "Ratio financiers",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "recommandations",
+      "type": "textarea",
+      "label": "Recommandations",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant financier. L'utilisateur a répondu : Bilan comptable: {bilan-comptable}, Flux de trésorerie: {flux-de-tresorerie}, Ratio financiers: {ratio-financiers}, Recommandations: {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

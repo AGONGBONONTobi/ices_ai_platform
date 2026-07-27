@@ -1,0 +1,72 @@
+{
+  "id": "analyse-rentabilite-agricole-prix-revient",
+  "title": "Analyse de rentabilité agricole & prix de revient",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "superficieExploitee",
+      "type": "number",
+      "label": "Quelle est la superficie exploitée en hectares ?",
+      "placeholder": "100",
+      "required": true
+    },
+    {
+      "name": "typeCulture",
+      "type": "select",
+      "options": [
+        "Céréales",
+        "Légumineuses",
+        "Fruits",
+        "Légumes"
+      ],
+      "label": "Quel est le type de culture principale ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "descriptionActivite",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre activité agricole (assolement, pratiques, etc.)",
+      "placeholder": "Ex: exploitation de 100 ha de céréales avec irrigation...",
+      "required": true
+    },
+    {
+      "name": "coutsAnnuel",
+      "type": "number",
+      "label": "Quels sont vos coûts annuels totaux en milliers d'euros ?",
+      "placeholder": "500",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en agriculture. L'utilisateur a répondu : Superficie exploitée : {superficieExploitee} ha, Type de culture : {typeCulture}, Description de l'activité : {descriptionActivite}, Coûts annuels : {coutsAnnuel} milliers d'euros. Analysez ces informations pour déterminer la rentabilité de l'exploitation et estimez le prix de revient par unité de produit. Fournissez un score global de rentabilité sur 100, une évaluation par axe (efficacité de la production, gestion des coûts, etc.) avec des scores sur 100, et des recommandations concrètes pour améliorer la rentabilité.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

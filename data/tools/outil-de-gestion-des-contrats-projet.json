@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-gestion-des-contrats-projet",
+  "title": "Outil de gestion des contrats projet",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "typeDeContrat",
+      "type": "select",
+      "options": [
+        "Contrat de travail",
+        "Contrat de prestation de services",
+        "Contrat de fourniture de biens"
+      ],
+      "label": "Quel est le type de contrat que vous souhaitez gérer ?",
+      "placeholder": "Sélectionnez un type de contrat",
+      "required": true
+    },
+    {
+      "name": "descriptionDuProjet",
+      "type": "textarea",
+      "label": "Décrivez brièvement le projet associé au contrat",
+      "placeholder": "Exemple : Développement d'un logiciel de gestion de projet",
+      "required": true
+    },
+    {
+      "name": "dureeDuContrat",
+      "type": "number",
+      "label": "Quelle est la durée du contrat en mois ?",
+      "placeholder": "Exemple : 12",
+      "required": true
+    },
+    {
+      "name": "budgetAlloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour le projet ?",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en gestion de projets. L'utilisateur a fourni les informations suivantes : Type de contrat : {typeDeContrat}, Description du projet : {descriptionDuProjet}, Durée du contrat : {dureeDuContrat} mois, Budget alloué : {budgetAlloue}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe (gestion du contrat, gestion du projet, gestion budgétaire), et des recommandations pour améliorer la gestion du contrat.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

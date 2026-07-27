@@ -1,0 +1,77 @@
+{
+  "id": "rapports-de-gestion-automatises-mis",
+  "title": "Rapports de gestion automatisés (MIS)",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "periode",
+      "type": "select",
+      "options": [
+        "Mois",
+        "Trimestre",
+        "Semestre",
+        "Année"
+      ],
+      "label": "Sélectionnez la période de rapports",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "indicateurs",
+      "type": "textarea",
+      "label": "Sélectionnez les indicateurs clés à inclure dans le rapport",
+      "placeholder": "Exemple : chiffre d'affaires, marges bénéficiaires, etc.",
+      "required": true
+    },
+    {
+      "name": "fournisseurs",
+      "type": "text",
+      "label": "Sélectionnez les fournisseurs à inclure dans le rapport",
+      "placeholder": "Exemple : fournisseur 1, fournisseur 2, etc.",
+      "required": false
+    },
+    {
+      "name": "formats",
+      "type": "select",
+      "options": [
+        "PDF",
+        "Excel",
+        "PowerPoint"
+      ],
+      "label": "Sélectionnez le format de sortie du rapport",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en reporting. L'utilisateur a sélectionné la période {periode}, les indicateurs {indicateurs}, les fournisseurs {fournisseurs} et le format de sortie {formats}. Analyse ces informations et génère un rapport de gestion automatisé (MIS) complet.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

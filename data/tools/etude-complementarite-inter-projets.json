@@ -1,0 +1,72 @@
+{
+  "id": "etude-complementarite-inter-projets",
+  "title": "Étude de la complémentarité inter-projets",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "objectif_principal",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de votre étude de complémentarité ?",
+      "placeholder": "Exemple : Évaluer la synergie entre deux projets",
+      "required": true
+    },
+    {
+      "name": "projets_impliques",
+      "type": "textarea",
+      "label": "Quels sont les projets impliqués dans cette étude de complémentarité ?",
+      "placeholder": "Exemple : Projet A, Projet B, Projet C",
+      "required": true
+    },
+    {
+      "name": "criteres_evaluation",
+      "type": "select",
+      "options": [
+        "Synergie",
+        "Complémentarité",
+        "Rentabilité",
+        "Risque"
+      ],
+      "label": "Quels critères souhaitez-vous utiliser pour évaluer la complémentarité ?",
+      "placeholder": "Sélectionnez au moins un critère",
+      "required": true
+    },
+    {
+      "name": "contexte_economie",
+      "type": "text",
+      "label": "Quel est le contexte économique actuel pour ces projets ?",
+      "placeholder": "Exemple : Marché en croissance, concurrence accrue",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en études de projets et faisabilité. L'utilisateur a répondu : Objectif principal : {objectif_principal}, Projets impliqués : {projets_impliques}, Critères d'évaluation : {criteres_evaluation}, Contexte économique : {contexte_economie}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

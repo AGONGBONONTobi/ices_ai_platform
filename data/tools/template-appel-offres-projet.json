@@ -1,0 +1,78 @@
+{
+  "id": "template-appel-offres-projet",
+  "title": "Template de réponse à appel d'offres projet",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "nom-projet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple : Projet de développement d'un nouveau produit",
+      "required": true
+    },
+    {
+      "name": "description-projet",
+      "type": "textarea",
+      "label": "Description du projet",
+      "placeholder": "Exemple : Le projet consiste à développer un nouveau produit pour répondre à une demande du marché",
+      "required": true
+    },
+    {
+      "name": "objectifs-projet",
+      "type": "textarea",
+      "label": "Objectifs du projet",
+      "placeholder": "Exemple : Améliorer la qualité des produits, réduire les coûts de production, augmenter la productivité",
+      "required": true
+    },
+    {
+      "name": "methodologie-projet",
+      "type": "select",
+      "options": [
+        "Agile",
+        "Waterfall",
+        "Hybride"
+      ],
+      "label": "Methodologie de gestion du projet",
+      "placeholder": "Exemple : Agile",
+      "required": true
+    },
+    {
+      "name": "equipe-projet",
+      "type": "textarea",
+      "label": "Équipe du projet",
+      "placeholder": "Exemple : 5 développeurs, 2 designers, 1 product owner",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet : {nom-projet}, Description du projet : {description-projet}, Objectifs du projet : {objectifs-projet}, Methodologie de gestion du projet : {methodologie-projet}, Équipe du projet : {equipe-projet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

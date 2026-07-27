@@ -1,0 +1,70 @@
+{
+  "id": "template-de-rapport-de-non-conformite",
+  "title": "Template de rapport de non-conformité",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "description_probleme",
+      "type": "textarea",
+      "label": "Description détaillée du problème ou de la non-conformité",
+      "placeholder": "Décrivez le problème rencontré",
+      "required": true
+    },
+    {
+      "name": "cause_racontee",
+      "type": "textarea",
+      "label": "Cause présumée de la non-conformité",
+      "placeholder": "Expliquez les raisons possibles de la non-conformité",
+      "required": true
+    },
+    {
+      "name": "niveau_urgence",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Niveau d'urgence pour la résolution du problème",
+      "required": true
+    },
+    {
+      "name": "recommandations_correctives",
+      "type": "textarea",
+      "label": "Recommandations pour les actions correctives",
+      "placeholder": "Proposez des mesures pour résoudre le problème",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en gestion de la qualité. L'utilisateur a répondu : Description du problème: {description_probleme}, Cause présumée: {cause_racontee}, Niveau d'urgence: {niveau_urgence}, Recommandations correctives: {recommandations_correctives}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (identification du problème, analyse de cause, planification corrective), et des recommandations pour améliorer la procédure de gestion des non-conformités.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

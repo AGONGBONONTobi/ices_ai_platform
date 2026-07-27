@@ -1,0 +1,71 @@
+{
+  "id": "sante-travail-sport-entreprise",
+  "title": "Programme de santé au travail & sport en entreprise",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "entreprise_taille",
+      "type": "select",
+      "options": [
+        "Petite",
+        "Moyenne",
+        "Grande"
+      ],
+      "label": "Quelle est la taille de votre entreprise ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "budget_sport",
+      "type": "number",
+      "label": "Quel est votre budget annuel pour les activités sportives en entreprise ?",
+      "placeholder": "Exemple : 1000",
+      "required": true
+    },
+    {
+      "name": "objectifs_sport",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs pour le programme de santé au travail et sport en entreprise ?",
+      "placeholder": "Exemple : Améliorer la santé et le bien-être des employés, réduire les absences et les coûts médicaux",
+      "required": true
+    },
+    {
+      "name": "mesures_prises",
+      "type": "textarea",
+      "label": "Quelles mesures avez-vous déjà prises pour promouvoir la santé et le sport en entreprise ?",
+      "placeholder": "Exemple : Création d'une salle de sport, organisation de séances de yoga, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise taille : {entreprise_taille}, Budget sport : {budget_sport}, Objectifs sport : {objectifs_sport}, Mesures prises : {mesures_prises}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

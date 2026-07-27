@@ -1,0 +1,71 @@
+{
+  "id": "template-theorie-du-changement",
+  "title": "Template de théorie du changement",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectifPrincipal",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de votre projet de changement ?",
+      "placeholder": "Décrivez brièvement l'objectif principal de votre projet",
+      "required": true
+    },
+    {
+      "name": "publicCible",
+      "type": "select",
+      "options": [
+        "Employés",
+        "Clients",
+        "Partenaires",
+        "Autres"
+      ],
+      "label": "Qui est le public cible de votre projet de changement ?",
+      "required": true
+    },
+    {
+      "name": "strategieMiseEnOeuvre",
+      "type": "textarea",
+      "label": "Quelle est votre stratégie pour la mise en œuvre de ce changement ?",
+      "placeholder": "Décrivez les étapes clés pour mettre en œuvre le changement",
+      "required": true
+    },
+    {
+      "name": "indicateursSuivi",
+      "type": "text",
+      "label": "Quels sont les indicateurs que vous utiliserez pour suivre les progrès de votre projet de changement ?",
+      "placeholder": "Listez les indicateurs clés de performance",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en théorie du changement. L'utilisateur a répondu : Objectif principal: {objectifPrincipal}, Public cible: {publicCible}, Stratégie de mise en œuvre: {strategieMiseEnOeuvre}, Indicateurs de suivi: {indicateursSuivi}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (par exemple, stratégie, mise en œuvre, suivi), et des recommandations pour améliorer le projet de changement.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

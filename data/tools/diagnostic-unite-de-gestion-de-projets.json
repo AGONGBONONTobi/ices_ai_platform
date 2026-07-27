@@ -1,0 +1,71 @@
+{
+  "id": "diagnostic-unite-de-gestion-de-projets",
+  "title": "Diagnostic Unité de Gestion de Projets (UGP)",
+  "category": "Conformité Bailleurs & Projets Financés",
+  "inputs": [
+    {
+      "name": "gouvernance",
+      "type": "textarea",
+      "label": "Décrivez la gouvernance actuelle de votre UGP",
+      "placeholder": "Rôle du comité de pilotage, processus de prise de décision",
+      "required": true
+    },
+    {
+      "name": "niveau_maturite_rh",
+      "type": "select",
+      "options": [
+        "0=Inexistant",
+        "1=Initié",
+        "2=Formalisé",
+        "3=Optimisé"
+      ],
+      "label": "Quel est le niveau de maturité de vos ressources humaines ?",
+      "required": true
+    },
+    {
+      "name": "systemes_information",
+      "type": "text",
+      "label": "Quels sont les principaux systèmes d'information utilisés par votre UGP ?",
+      "placeholder": "ERP, CRM, outils de gestion de projet",
+      "required": true
+    },
+    {
+      "name": "controle_interne",
+      "type": "textarea",
+      "label": "Décrivez les processus de contrôle interne en place",
+      "placeholder": "Audit interne, gestion des risques",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous avez répondu : Gouvernance: {gouvernance}, Niveau de maturité RH: {niveau_maturite_rh}, Systèmes d'information: {systemes_information}, Contrôle interne: {controle_interne}. Évaluez la maturité organisationnelle de l'UGP selon les axes gouvernance, ressources humaines, systèmes d'information et contrôle interne. Donnez un score global sur 100, une évaluation par axe et des recommandations prioritaires.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

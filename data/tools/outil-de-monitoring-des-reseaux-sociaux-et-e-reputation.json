@@ -1,0 +1,76 @@
+{
+  "id": "outil-de-monitoring-des-reseaux-sociaux-et-e-reputation",
+  "title": "Outil de monitoring des réseaux sociaux & e-réputation",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "marques",
+      "type": "textarea",
+      "label": "Quelles sont les marques ou les noms de domaine que vous souhaitez surveiller ?",
+      "placeholder": "Ex: marque1, marque2, marque3",
+      "required": true
+    },
+    {
+      "name": "reseaux_sociaux",
+      "type": "select",
+      "options": [
+        "Facebook",
+        "Twitter",
+        "Instagram",
+        "LinkedIn",
+        "YouTube"
+      ],
+      "label": "Quels réseaux sociaux souhaitez-vous surveiller ?",
+      "required": true
+    },
+    {
+      "name": "mots_cles",
+      "type": "text",
+      "label": "Quels sont les mots-clés ou les hashtags que vous souhaitez suivre ?",
+      "placeholder": "Ex: #marque, motclé1, motclé2",
+      "required": true
+    },
+    {
+      "name": "periode",
+      "type": "select",
+      "options": [
+        "7 jours",
+        "15 jours",
+        "30 jours"
+      ],
+      "label": "Quelle est la période de monitoring souhaitée ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous souhaitez surveiller les marques suivantes : {marques}, sur les réseaux sociaux {reseaux_sociaux}, avec les mots-clés {mots_cles}, et pendant {periode}. Analysez les données collectées et fournissez un score global sur 100, une évaluation par axe (présence, engagement, sentiment), et des recommandations pour améliorer l'e-réputation.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

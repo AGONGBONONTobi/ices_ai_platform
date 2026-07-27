@@ -1,0 +1,71 @@
+{
+  "id": "audit-de-gouvernance-des-donnees",
+  "title": "Audit de gouvernance des données",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "text",
+      "label": "Quel est le but de l'audit ?",
+      "placeholder": "Exemple : conformité réglementaire",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Conformité réglementaire",
+        "Amélioration des processus",
+        "Risque de sécurité"
+      ],
+      "label": "Quel est le type d'audit ?",
+      "placeholder": "Exemple : conformité réglementaire",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "textarea",
+      "label": "Quels sont les principaux acteurs impliqués dans l'audit ?",
+      "placeholder": "Exemple : équipe de gouvernance des données, auditeurs internes",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "number",
+      "label": "Quel est le budget alloué pour l'audit ?",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gouvernance des données. L'utilisateur a répondu : But de l'audit : {variable1}, Type d'audit : {variable2}, Principaux acteurs : {variable3}, Budget : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

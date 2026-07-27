@@ -1,0 +1,71 @@
+{
+  "id": "audit-et-modernisation-des-systèmes-legacy",
+  "title": "Audit & modernisation des systèmes legacy",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "système_legacy",
+      "type": "text",
+      "label": "Quel est le nom du système legacy à auditer ?",
+      "placeholder": "Exemple : Système de gestion de la chaîne d'approvisionnement",
+      "required": true
+    },
+    {
+      "name": "objectifs_audit",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de l'audit ? (ex : améliorer la sécurité, réduire les coûts, etc.)",
+      "placeholder": "Exemple : Améliorer la sécurité, réduire les coûts, etc.",
+      "required": true
+    },
+    {
+      "name": "technologies_préférées",
+      "type": "select",
+      "options": [
+        "Microservices",
+        "Serverless",
+        "Blockchain"
+      ],
+      "label": "Quelles technologies préférées pour la modernisation du système legacy ?",
+      "placeholder": "Exemple : Microservices",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la modernisation du système legacy ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en transformation digitale et IA. L'utilisateur a répondu : Système legacy : {système_legacy}, Objectifs de l'audit : {objectifs_audit}, Technologies préférées : {technologies_préférées}, Budget alloué : {ressources_disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

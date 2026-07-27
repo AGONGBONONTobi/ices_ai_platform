@@ -1,0 +1,83 @@
+{
+  "id": "team-dynamics-assessment",
+  "title": "Analyse comportementale en équipe",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "leaderShipStyle",
+      "type": "select",
+      "options": [
+        "Transformationnel",
+        "Directif",
+        "Participatif"
+      ],
+      "label": "Quel est le style de leadership de votre équipe ?",
+      "placeholder": "Sélectionnez un style de leadership",
+      "required": true
+    },
+    {
+      "name": "communication",
+      "type": "textarea",
+      "label": "Comment la communication est-elle dans votre équipe ?",
+      "placeholder": "Décrivez les forces et les faiblesses de la communication",
+      "required": true
+    },
+    {
+      "name": "conflictManagement",
+      "type": "select",
+      "options": [
+        "Constructif",
+        "Destructif",
+        "Négatif"
+      ],
+      "label": "Comment gère votre équipe les conflits ?",
+      "placeholder": "Sélectionnez un mode de gestion des conflits",
+      "required": true
+    },
+    {
+      "name": "feedback",
+      "type": "text",
+      "label": "Quel est le niveau de feedback dans votre équipe ?",
+      "placeholder": "Décrivez le niveau de feedback",
+      "required": true
+    },
+    {
+      "name": "teamwork",
+      "type": "number",
+      "label": "Quel est le niveau de collaboration dans votre équipe ?",
+      "placeholder": "Notez le niveau de collaboration",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Leadership style: {leaderShipStyle}, Communication: {communication}, Gestion des conflits: {conflictManagement}, Niveau de feedback: {feedback}, Niveau de collaboration: {teamwork}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

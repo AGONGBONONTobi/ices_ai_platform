@@ -1,0 +1,77 @@
+{
+  "id": "strategie-marketing-digital-inbound",
+  "title": "Stratégie de marketing digital & inbound",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "objectif-commerce",
+      "type": "select",
+      "options": [
+        "Augmenter les ventes",
+        "Améliorer la notoriété de la marque",
+        "Augmenter la fréquentation du site web"
+      ],
+      "label": "Quel est l'objectif principal de la stratégie de marketing digital & inbound ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "cible-publique",
+      "type": "textarea",
+      "label": "Qui est la cible publique de la stratégie de marketing digital & inbound ?",
+      "placeholder": "Décrivez la cible publique",
+      "required": true
+    },
+    {
+      "name": "canal-de-communication",
+      "type": "select",
+      "options": [
+        "Email marketing",
+        "Réseaux sociaux",
+        "Contenu de qualité",
+        "Influencer marketing"
+      ],
+      "label": "Quel est le principal canal de communication pour la stratégie de marketing digital & inbound ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la stratégie de marketing digital & inbound ?",
+      "placeholder": "Entrez un montant",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en marketing digital & inbound. L'utilisateur a répondu : Objectif commerce: {objectif-commerce}, Cible publique: {cible-publique}, Canal de communication: {canal-de-communication}, Budget alloué: {budget-alloue}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

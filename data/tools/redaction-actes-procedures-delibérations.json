@@ -1,0 +1,77 @@
+{
+  "id": "redaction-actes-procedures-delibérations",
+  "title": "Rédaction d'actes, procédures & délibérations",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "type_d_acte",
+      "type": "select",
+      "options": [
+        "Acte administratif",
+        "Acte juridique",
+        "Procédure",
+        "Délibération"
+      ],
+      "label": "Quel type d'acte doit être rédigé ?",
+      "placeholder": "Sélectionnez un type d'acte",
+      "required": true
+    },
+    {
+      "name": "objectif_acte",
+      "type": "textarea",
+      "label": "Quel est l'objectif de l'acte ?",
+      "placeholder": "Décrivez l'objectif de l'acte",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "select",
+      "options": [
+        "Public général",
+        "Public ciblé",
+        "Personnes publiques"
+      ],
+      "label": "Qui est le public cible de l'acte ?",
+      "placeholder": "Sélectionnez le public cible",
+      "required": true
+    },
+    {
+      "name": "contenu_acte",
+      "type": "textarea",
+      "label": "Quels sont les contenus de l'acte ?",
+      "placeholder": "Décrivez les contenus de l'acte",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en rédaction juridique. L'utilisateur a répondu : Type d'acte : {type_d_acte}, Objectif de l'acte : {objectif_acte}, Public cible : {public_cible}, Contenus de l'acte : {contenu_acte}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

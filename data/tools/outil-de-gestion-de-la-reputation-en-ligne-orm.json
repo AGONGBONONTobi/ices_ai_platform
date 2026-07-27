@@ -1,0 +1,79 @@
+{
+  "id": "outil-de-gestion-de-la-reputation-en-ligne-orm",
+  "title": "Outil de gestion de la réputation en ligne (ORM)",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "site-web",
+      "type": "text",
+      "label": "Adresse du site web concerné",
+      "placeholder": "Exemple : https://example.com",
+      "required": true
+    },
+    {
+      "name": "plateforme-social",
+      "type": "select",
+      "options": [
+        "Facebook",
+        "Twitter",
+        "Instagram",
+        "LinkedIn"
+      ],
+      "label": "Plateforme sociale concernée",
+      "placeholder": "Exemple : Facebook",
+      "required": true
+    },
+    {
+      "name": "reputation-actuelle",
+      "type": "textarea",
+      "label": "Description de la réputation actuelle du site web ou de la plateforme sociale",
+      "placeholder": "Exemple : Notre site web est souvent critiqué pour sa lenteur.",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Objectifs de gestion de la réputation en ligne",
+      "placeholder": "Exemple : Augmenter la satisfaction client, améliorer la visibilité sur les moteurs de recherche.",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Budget alloué pour la gestion de la réputation en ligne",
+      "placeholder": "Exemple : 1000€",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion de la réputation en ligne. L'utilisateur a répondu : Site web : {site-web}, Plateforme sociale : {plateforme-social}, Réputation actuelle : {reputation-actuelle}, Objectifs : {objectifs}, Budget alloué : {budget-alloue}. Analyse ces informations et propose un plan de gestion de la réputation en ligne pour atteindre les objectifs définis.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

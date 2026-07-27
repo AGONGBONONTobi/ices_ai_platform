@@ -1,0 +1,64 @@
+{
+  "id": "outil-de-gestion-de-lidentite-numerique-kyc-digital",
+  "title": "Outil de gestion de l'identité numérique (KYC digital)",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_de_piece_didentite",
+      "type": "select",
+      "options": [
+        "Passeport",
+        "Carte d'identité",
+        "Permis de conduire"
+      ],
+      "label": "Quel type de pièce d'identité est fourni ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "numero_de_piece_didentite",
+      "type": "text",
+      "label": "Quel est le numéro de la pièce d'identité ?",
+      "placeholder": "Exemple : AZ123456",
+      "required": true
+    },
+    {
+      "name": "informations_complementaires",
+      "type": "textarea",
+      "label": "Veuillez fournir toute information complémentaire utile pour la vérification de l'identité",
+      "placeholder": "Exemple : Date de délivrance, lieu de délivrance, etc.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en gestion de l'identité numérique. L'utilisateur a répondu : Type de pièce d'identité: {type_de_piece_didentite}, Numéro de pièce d'identité: {numero_de_piece_didentite}, Informations complémentaires: {informations_complementaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

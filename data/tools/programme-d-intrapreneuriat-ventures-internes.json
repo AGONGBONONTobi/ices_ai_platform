@@ -1,0 +1,72 @@
+{
+  "id": "programme-d-intrapreneuriat-ventures-internes",
+  "title": "Programme d'intrapreneuriat & ventures internes",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quel est l'objectif stratégique du programme d'intrapreneuriat & ventures internes ?",
+      "placeholder": "Exemple : Renforcer la compétitivité du marché",
+      "required": true
+    },
+    {
+      "name": "domaine-innovation",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Marketing",
+        "Produit",
+        "Process"
+      ],
+      "label": "Quel est le domaine d'innovation du programme ?",
+      "placeholder": "Exemple : Technologie",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources disponibles pour le programme (budget, personnel, etc.) ?",
+      "placeholder": "Exemple : 500 000 €",
+      "required": true
+    },
+    {
+      "name": "cible-entreprise",
+      "type": "text",
+      "label": "Quelle est la cible d'entreprise pour le programme (nombre de startups créées, etc.) ?",
+      "placeholder": "Exemple : 5 startups créées dans les 2 ans",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Domaine d'innovation : {domaine-innovation}, Ressources disponibles : {ressources-disponibles}, Cible entreprise : {cible-entreprise}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

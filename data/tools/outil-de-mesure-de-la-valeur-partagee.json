@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-mesure-de-la-valeur-partagee",
+  "title": "Outil de mesure de la valeur partagée (CSV — Porter)",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de votre entreprise ?",
+      "placeholder": "Exemple : réduire notre empreinte carbone, améliorer la qualité de vie de nos employés",
+      "required": true
+    },
+    {
+      "name": "indicateurs-de-performance",
+      "type": "select",
+      "options": [
+        "Réduction des émissions de gaz à effet de serre",
+        "Amélioration de la qualité de l'eau",
+        "Augmentation de la diversité des espèces"
+      ],
+      "label": "Quels sont les indicateurs de performance clés pour votre entreprise ?",
+      "placeholder": "Exemple : réduction des émissions de gaz à effet de serre",
+      "required": true
+    },
+    {
+      "name": "ressources-dediees",
+      "type": "number",
+      "label": "Quelles sont les ressources dédiées à la RSE et au développement durable ?",
+      "placeholder": "Exemple : 10% du budget annuel",
+      "required": true
+    },
+    {
+      "name": "resultats-esperes",
+      "type": "textarea",
+      "label": "Quels sont les résultats attendus de votre stratégie de RSE et de développement durable ?",
+      "placeholder": "Exemple : réduction de 20% des émissions de gaz à effet de serre, amélioration de 15% de la qualité de l'eau",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Indicateurs de performance : {indicateurs-de-performance}, Ressources dédiées : {ressources-dediees}, Résultats attendus : {resultats-esperes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

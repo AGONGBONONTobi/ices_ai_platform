@@ -1,0 +1,72 @@
+{
+  "id": "logistique-chaîne-analytics",
+  "title": "Analytics de la chaîne logistique",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "transporteur",
+      "type": "select",
+      "options": [
+        "DHL",
+        "UPS",
+        "FedEx",
+        "La Poste"
+      ],
+      "label": "Quel transporteur a été utilisé ?",
+      "placeholder": "Sélectionnez un transporteur",
+      "required": true
+    },
+    {
+      "name": "délai-livraison",
+      "type": "number",
+      "label": "Quel délai de livraison a été atteint ?",
+      "placeholder": "Entrez un délai de livraison",
+      "required": true
+    },
+    {
+      "name": "problèmes-logistiques",
+      "type": "textarea",
+      "label": "Quels problèmes logistiques ont été rencontrés ?",
+      "placeholder": "Décrivez les problèmes logistiques",
+      "required": true
+    },
+    {
+      "name": "score-satisfaction",
+      "type": "number",
+      "label": "Quel est le score de satisfaction de la chaîne logistique ?",
+      "placeholder": "Entrez un score de satisfaction",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en analytics. L'utilisateur a répondu : Transporteur: {transporteur}, Délai de livraison: {délai-livraison}, Problèmes logistiques: {problèmes-logistiques}, Score de satisfaction: {score-satisfaction}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

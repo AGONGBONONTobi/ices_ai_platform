@@ -1,0 +1,85 @@
+{
+  "id": "etude-prefaisabilite-investissement",
+  "title": "Étude de préfaisabilité d'investissement",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "select",
+      "options": [
+        "Immobilier",
+        "Infrastructure",
+        "Technologie",
+        "Énergie renouvelable"
+      ],
+      "label": "Quel type d'investissement envisagez-vous?",
+      "placeholder": "Sélectionnez un type",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "number",
+      "label": "Budget estimé (en €)",
+      "placeholder": "Ex: 5000000",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "textarea",
+      "label": "Objectifs stratégiques",
+      "placeholder": "Décrivez les objectifs de l'investissement",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "select",
+      "options": [
+        "Moins de 1 an",
+        "1-3 ans",
+        "3-5 ans",
+        "Plus de 5 ans"
+      ],
+      "label": "Quel est votre horizon de retour sur investissement?",
+      "placeholder": "Sélectionnez une période",
+      "required": true
+    },
+    {
+      "name": "variable5",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Ex: Projet X",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Variable1: {variable1}, Variable2: {variable2}, Variable3: {variable3}, Variable4: {variable4}, Variable5: {variable5}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

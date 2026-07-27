@@ -1,0 +1,77 @@
+{
+  "id": "plan-deployement-erp-sirh-integre",
+  "title": "Plan de déploiement ERP & SIRH intégré",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : XYZ SA",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Objectifs du déploiement ERP & SIRH intégré",
+      "placeholder": "Exemple : Améliorer l'efficacité, réduire les coûts, etc.",
+      "required": true
+    },
+    {
+      "name": "equipe",
+      "type": "select",
+      "options": [
+        "Equipe interne",
+        "Fournisseur externe"
+      ],
+      "label": "Qui sera chargé du déploiement ?",
+      "placeholder": "Exemple : Equipe interne",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Budget alloué pour le déploiement",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "deadline",
+      "type": "text",
+      "label": "Date limite de déploiement",
+      "placeholder": "Exemple : 30/09/2024",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise : {entreprise}, Objectifs : {objectifs}, Equipe : {equipe}, Budget : {budget}, Deadline : {deadline}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

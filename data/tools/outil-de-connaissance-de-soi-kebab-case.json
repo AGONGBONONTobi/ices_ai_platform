@@ -1,0 +1,79 @@
+{
+  "id": "outil-de-connaissance-de-soi-kebab-case",
+  "title": "Outil de connaissance de soi (Fenêtre de Johari)",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "autoperception",
+      "type": "textarea",
+      "label": "Quels sont vos points forts et vos qualités ?",
+      "placeholder": "Exemple : je suis une personne très organisée et je peux gérer plusieurs tâches en même temps.",
+      "required": true
+    },
+    {
+      "name": "autoperception-contraste",
+      "type": "textarea",
+      "label": "Quels sont les aspects de votre personnalité que vous ne connaissez pas ou qui vous sont inconnus ?",
+      "placeholder": "Exemple : je ne sais pas comment je réagirais dans une situation de crise.",
+      "required": true
+    },
+    {
+      "name": "autoperception-acceptation",
+      "type": "textarea",
+      "label": "Quels sont les aspects de votre personnalité que vous acceptez et appréciez ?",
+      "placeholder": "Exemple : je suis fier de mon sens de l'humour et de ma capacité à faire rire les autres.",
+      "required": true
+    },
+    {
+      "name": "autoperception-rejet",
+      "type": "textarea",
+      "label": "Quels sont les aspects de votre personnalité que vous rejetez ou que vous essayez de cacher ?",
+      "placeholder": "Exemple : je ne veux pas être vu comme une personne égoïste ou manipulateuse.",
+      "required": true
+    },
+    {
+      "name": "autoperception-contraste-rejet",
+      "type": "select",
+      "options": [
+        "Je suis trop critique envers moi-même",
+        "Je suis trop permissif envers moi-même",
+        "Je suis trop anxieux",
+        "Je suis trop confiant"
+      ],
+      "label": "Quel aspect de votre personnalité vous fait le plus peur ou vous inquiète-t-il ?",
+      "placeholder": "Choisissez une option",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Autoperception : {autoperception}, Autoperception-contraste : {autoperception-contraste}, Autoperception-acceptation : {autoperception-acceptation}, Autoperception-rejet : {autoperception-rejet}, Autoperception-contraste-rejet : {autoperception-contraste-rejet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

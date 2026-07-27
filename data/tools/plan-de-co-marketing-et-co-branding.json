@@ -1,0 +1,79 @@
+{
+  "id": "plan-de-co-marketing-et-co-branding",
+  "title": "Plan de co-marketing & co-branding",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de ce plan de co-marketing & co-branding ?",
+      "placeholder": "Exemple : augmenter la visibilité de la marque, développer la notoriété de la marque-partenaire, etc.",
+      "required": true
+    },
+    {
+      "name": "partenaire",
+      "type": "text",
+      "label": "Qui est le partenaire choisi pour ce plan de co-marketing & co-branding ?",
+      "placeholder": "Exemple : nom de l'entreprise, nom de la marque, etc.",
+      "required": true
+    },
+    {
+      "name": "strategie",
+      "type": "select",
+      "options": [
+        "Stratégie de contenu",
+        "Stratégie d'influence",
+        "Stratégie de publicité",
+        "Autre"
+      ],
+      "label": "Quelle est la stratégie choisie pour ce plan de co-marketing & co-branding ?",
+      "placeholder": "Exemple : contenu, influence, publicité, etc.",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué pour ce plan de co-marketing & co-branding ?",
+      "placeholder": "Exemple : 1000€, 5000€, etc.",
+      "required": true
+    },
+    {
+      "name": "délai",
+      "type": "number",
+      "label": "Quel est le délai pour la mise en œuvre de ce plan de co-marketing & co-branding ?",
+      "placeholder": "Exemple : 3 mois, 6 mois, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en marketing & commercial. L'utilisateur a répondu : Objectif: {objectif}, Partenaire: {partenaire}, Stratégie: {stratégie}, Budget: {budget}, Délai: {délai}. Analyse ces informations et propose un plan de co-marketing & co-branding efficace, en tenant compte des objectifs, du partenaire, de la stratégie, du budget et du délai.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "strategie-de-vente-sociale",
+  "title": "Stratégie de vente sociale (social selling)",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "objectifVente",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs de vente pour les 6 prochains mois ?",
+      "placeholder": "Exemple : Augmenter les ventes de 15% sur les produits A et B",
+      "required": true
+    },
+    {
+      "name": "canalSocial",
+      "type": "select",
+      "options": [
+        "LinkedIn",
+        "Twitter",
+        "Facebook",
+        "Instagram"
+      ],
+      "label": "Quel canal social utilisez-vous le plus pour votre stratégie de vente ?",
+      "required": true
+    },
+    {
+      "name": "publicCible",
+      "type": "text",
+      "label": "Qui est votre public cible pour cette stratégie de vente sociale ?",
+      "placeholder": "Exemple : Directeurs marketing de PME",
+      "required": true
+    },
+    {
+      "name": "contenuPropose",
+      "type": "textarea",
+      "label": "Quel type de contenu proposez-vous à votre public cible pour les inciter à l'achat ?",
+      "placeholder": "Exemple : Articles de blog, vidéos explicatives, études de cas",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en marketing. L'utilisateur a répondu : Objectif de vente : {objectifVente}, Canal social : {canalSocial}, Public cible : {publicCible}, Contenu proposé : {contenuPropose}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (par exemple, qualité du contenu, pertinence du public cible, efficacité du canal social), et des recommandations pour améliorer la stratégie de vente sociale.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

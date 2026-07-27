@@ -1,0 +1,78 @@
+{
+  "id": "guide-des-obligations-reglementaires-sectorielles",
+  "title": "Guide des obligations réglementaires sectorielles",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Finance",
+        "Santé",
+        "Environnement",
+        "Énergie"
+      ],
+      "label": "Quel secteur d'activité est concerné ?",
+      "placeholder": "Sélectionner un secteur",
+      "required": true
+    },
+    {
+      "name": "type-obligation",
+      "type": "select",
+      "options": [
+        "Règlement",
+        "Loi",
+        "Décret",
+        "Arrêté"
+      ],
+      "label": "Quel type d'obligation réglementaire est concerné ?",
+      "placeholder": "Sélectionner un type d'obligation",
+      "required": true
+    },
+    {
+      "name": "description-probleme",
+      "type": "textarea",
+      "label": "Décrivez le problème ou la situation qui nécessite une analyse réglementaire",
+      "placeholder": "Exemple de description du problème",
+      "required": true
+    },
+    {
+      "name": "mesures-prises",
+      "type": "textarea",
+      "label": "Quelles mesures ont été prises pour se conformer à l'obligation réglementaire ?",
+      "placeholder": "Exemple de mesures prises",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en conformité réglementaire. L'utilisateur a répondu : Secteur: {secteur}, Type d'obligation: {type-obligation}, Description du problème: {description-probleme}, Mesures prises: {mesures-prises}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

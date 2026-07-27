@@ -1,0 +1,71 @@
+{
+  "id": "diagnostic-de-performance-globale-bsc",
+  "title": "Diagnostic de performance globale (BSC)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "objectifs_strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de votre organisation ?",
+      "placeholder": "Décrivez les objectifs principaux de votre organisation",
+      "required": true
+    },
+    {
+      "name": "indicateurs_performance",
+      "type": "select",
+      "options": [
+        "Financiers",
+        "Clients",
+        "Processus internes",
+        "Apprentissage et croissance"
+      ],
+      "label": "Quels indicateurs de performance utilisez-vous pour mesurer la réussite de votre organisation ?",
+      "required": true
+    },
+    {
+      "name": "niveau_satisfaction",
+      "type": "number",
+      "label": "Quel est le niveau de satisfaction de vos clients ou utilisateurs (sur une échelle de 1 à 10) ?",
+      "placeholder": "Entrez un nombre entre 1 et 10",
+      "required": true
+    },
+    {
+      "name": "defis_principaux",
+      "type": "textarea",
+      "label": "Quels sont les défis principaux auxquels votre organisation est confrontée actuellement ?",
+      "placeholder": "Décrivez les défis majeurs que votre organisation doit relever",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques: {objectifs_strategiques}, Indicateurs de performance: {indicateurs_performance}, Niveau de satisfaction: {niveau_satisfaction}, Défis principaux: {defis_principaux}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

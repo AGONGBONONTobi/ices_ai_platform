@@ -1,0 +1,72 @@
+{
+  "id": "analyse-donnees-macro-economiques-sectorielles",
+  "title": "Analyse des données macro-économiques sectorielles",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Industrie",
+        "Services",
+        "Agriculture",
+        "Construction"
+      ],
+      "label": "Sélectionnez le secteur d'activité",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Décrivez brièvement la situation actuelle du secteur",
+      "placeholder": "Exemple : Croissance, défis, tendances...",
+      "required": true
+    },
+    {
+      "name": "donnees_economiques",
+      "type": "text",
+      "label": "Quelles sont les données économiques clés (PIB, inflation, chômage, etc.) ?",
+      "placeholder": "Exemple : PIB : 2%, inflation : 1,5%, chômage : 5%",
+      "required": true
+    },
+    {
+      "name": "tendances",
+      "type": "text",
+      "label": "Quelles sont les tendances futures prévues pour ce secteur ?",
+      "placeholder": "Exemple : Développement durable, innovation technologique, etc.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique. L'utilisateur a fourni les informations suivantes : Secteur: {secteur}, Description: {description}, Données économiques: {donnees_economiques}, Tendances: {tendances}. Analysez ces données macro-économiques sectorielles et fournissez un score global sur 100, une évaluation par axe pertinent pour ce secteur, ainsi que des recommandations stratégiques.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "outil-de-feedback-pedagogique-360",
+  "title": "Outil de feedback pédagogique 360°",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "encadreur",
+      "type": "select",
+      "options": [
+        "Encadrant",
+        "Collègue",
+        "Supérieur"
+      ],
+      "label": "Qui a donné le feedback ?",
+      "placeholder": "Sélectionnez l'encadrant",
+      "required": true
+    },
+    {
+      "name": "domaine",
+      "type": "select",
+      "options": [
+        "Compétences professionnelles",
+        "Compétences sociales",
+        "Compétences émotionnelles"
+      ],
+      "label": "Quel domaine du feedback ?",
+      "placeholder": "Sélectionnez le domaine",
+      "required": true
+    },
+    {
+      "name": "commentaire",
+      "type": "textarea",
+      "label": "Quel est le commentaire du feedback ?",
+      "placeholder": "Saisissez le commentaire",
+      "required": true
+    },
+    {
+      "name": "score",
+      "type": "number",
+      "label": "Quel est le score du feedback ?",
+      "placeholder": "Saisissez le score",
+      "required": true
+    },
+    {
+      "name": "recommandations",
+      "type": "textarea",
+      "label": "Quelles sont les recommandations du feedback ?",
+      "placeholder": "Saisissez les recommandations",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Encadrant: {encadrreur}, Domaine: {domaine}, Commentaire: {commentaire}, Score: {score}, Recommandations: {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

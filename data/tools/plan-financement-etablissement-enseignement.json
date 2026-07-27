@@ -1,0 +1,72 @@
+{
+  "id": "plan-financement-etablissement-enseignement",
+  "title": "Plan de financement d'établissement d'enseignement",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "typeEtablissement",
+      "type": "select",
+      "options": [
+        "École primaire",
+        "Collège",
+        "Lycée",
+        "Université"
+      ],
+      "label": "Quel est le type d'établissement d'enseignement ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "budgetActuel",
+      "type": "number",
+      "label": "Quel est le budget actuel de l'établissement ?",
+      "placeholder": "Montant en euros",
+      "required": true
+    },
+    {
+      "name": "besoinsSpecifiques",
+      "type": "textarea",
+      "label": "Quels sont les besoins spécifiques de financement de l'établissement ?",
+      "placeholder": "Description détaillée",
+      "required": true
+    },
+    {
+      "name": "subventionsPubliques",
+      "type": "number",
+      "label": "L'établissement bénéficie-t-il de subventions publiques ? Si oui, quel est le montant ?",
+      "placeholder": "Montant en euros",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en financement d'établissements d'enseignement. L'utilisateur a répondu : Type d'établissement: {typeEtablissement}, Budget actuel: {budgetActuel}, Besoins spécifiques: {besoinsSpecifiques}, Subventions publiques: {subventionsPubliques}. Analyse ces informations et propose un plan de financement adapté. Évalue les besoins de l'établissement et suggère des solutions de financement. Donne un score global sur 100, une évaluation par axe (administration, pédagogie, infrastructures), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

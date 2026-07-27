@@ -1,0 +1,72 @@
+{
+  "id": "plan-de-projet-btp",
+  "title": "Plan de projet BTP (budget, délais, qualité)",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_de_projet",
+      "type": "select",
+      "options": [
+        "Construction de bâtiment",
+        "Rénovation de bâtiment",
+        "Aménagement de terrain",
+        "Autre"
+      ],
+      "label": "Quel est le type de projet BTP ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_du_projet",
+      "type": "textarea",
+      "label": "Veuillez fournir une description détaillée du projet",
+      "placeholder": "Description du projet...",
+      "required": true
+    },
+    {
+      "name": "budget_prevu",
+      "type": "number",
+      "label": "Quel est le budget prévu pour le projet ?",
+      "placeholder": "Budget en euros",
+      "required": true
+    },
+    {
+      "name": "delai_prevu",
+      "type": "text",
+      "label": "Quel est le délai prévu pour la réalisation du projet ?",
+      "placeholder": "Délai en mois",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en gestion de projet BTP. L'utilisateur a répondu : Type de projet: {type_de_projet}, Description du projet: {description_du_projet}, Budget prévu: {budget_prevu}, Délai prévu: {delai_prevu}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (budget, délais, qualité), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "analyse-des-marches-emergents-africains",
+  "title": "Analyse des marchés émergents africains",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Agriculture",
+        "Technologie",
+        "Santé",
+        "Énergie",
+        "Finance"
+      ],
+      "label": "Quel secteur souhaitez-vous analyser ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "pays",
+      "type": "text",
+      "label": "Quels pays africains souhaitez-vous cibler ?",
+      "placeholder": "Ex: Nigeria, Égypte, Afrique du Sud",
+      "required": true
+    },
+    {
+      "name": "description_projet",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre projet ou vos objectifs d'analyse :",
+      "placeholder": "Ex: Développement d'un produit, implantation locale, étude de marché",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique. L'utilisateur cherche à analyser les marchés émergents africains dans le secteur de {secteur} et les pays ciblés sont {pays}. L'objectif est {description_projet}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe pertinent pour ce secteur et des recommandations stratégiques.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

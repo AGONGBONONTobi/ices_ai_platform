@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-facilitation-strategique-kebab-case",
+  "title": "Outil de facilitation stratégique (workshop & CODIR)",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de l'entreprise ?",
+      "placeholder": "Exemple : Augmenter les ventes, développer de nouveaux marchés, etc.",
+      "required": true
+    },
+    {
+      "name": "forces-ressources",
+      "type": "textarea",
+      "label": "Quelles sont les forces et ressources de l'entreprise ?",
+      "placeholder": "Exemple : Équipe expérimentée, budget important, etc.",
+      "required": true
+    },
+    {
+      "name": "faiblesses-constraints",
+      "type": "textarea",
+      "label": "Quelles sont les faiblesses et contraintes de l'entreprise ?",
+      "placeholder": "Exemple : Manque de ressources, concurrence féroce, etc.",
+      "required": true
+    },
+    {
+      "name": "strategie-choix",
+      "type": "select",
+      "options": [
+        "Stratégie de croissance externe",
+        "Stratégie de croissance interne",
+        "Stratégie de consolidation"
+      ],
+      "label": "Quelle est la stratégie de choix pour l'entreprise ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Forces et ressources : {forces-ressources}, Faiblesses et contraintes : {faiblesses-constraints}, Stratégie de choix : {strategie-choix}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

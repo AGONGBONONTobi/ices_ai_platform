@@ -1,0 +1,81 @@
+{
+  "id": "diagnostic-competences-management-de-projet",
+  "title": "Diagnostic compétences management de projet (PMP/Prince2)",
+  "category": "Certification de Compétences & Personnes",
+  "inputs": [
+    {
+      "name": "experience",
+      "type": "number",
+      "label": "Quelle est votre expérience dans le management de projet (en années) ?",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "domaineConnaissance",
+      "type": "select",
+      "options": [
+        "Gestion de l'intégration",
+        "Gestion de la portée",
+        "Gestion du temps",
+        "Gestion des coûts",
+        "Gestion de la qualité",
+        "Gestion des ressources",
+        "Gestion des communications",
+        "Gestion des risques",
+        "Gestion des approvisionnements"
+      ],
+      "label": "Quel domaine de connaissance en management de projet souhaitez-vous évaluer ?",
+      "required": true
+    },
+    {
+      "name": "niveauMaturite",
+      "type": "select",
+      "options": [
+        "0 - Inexistant",
+        "1 - Initié",
+        "2 - Formalisé",
+        "3 - Optimisé"
+      ],
+      "label": "Quel est votre niveau de maturité dans le domaine choisi ?",
+      "required": true
+    },
+    {
+      "name": "descriptionProjet",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre expérience dans un projet récent (type de projet, rôle, résultats) :",
+      "placeholder": "Exemple : Projet de développement logiciel, chef de projet, résultats satisfaisants",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous avez répondu : Experience: {experience}, Domaine de connaissance: {domaineConnaissance}, Niveau de maturité: {niveauMaturite}, Description du projet: {descriptionProjet}. Évaluez les compétences de cette personne en management de projet selon le référentiel PMBOK et identifiez les lacunes par domaine de connaissance. Donnez un score global sur 100, une évaluation par axe (gestion de l'intégration, gestion de la portée, etc.) et des recommandations priorisées.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

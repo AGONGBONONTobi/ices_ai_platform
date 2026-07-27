@@ -1,0 +1,79 @@
+{
+  "id": "plan-de-lancement-de-produit-service-gtm",
+  "title": "Plan de lancement de produit/service (GTM)",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "nomDuProduit",
+      "type": "text",
+      "label": "Nom du produit/service",
+      "placeholder": "Exemple : Produit X",
+      "required": true
+    },
+    {
+      "name": "descriptionDuProduit",
+      "type": "textarea",
+      "label": "Description du produit/service",
+      "placeholder": "Exemple : C'est un produit qui...",
+      "required": true
+    },
+    {
+      "name": "objectifDeVente",
+      "type": "number",
+      "label": "Objectif de vente (en €)",
+      "placeholder": "Exemple : 100 000",
+      "required": true
+    },
+    {
+      "name": "canalDeVente",
+      "type": "select",
+      "options": [
+        "Site web",
+        "Réseaux sociaux",
+        "Email marketing",
+        "Publicité en ligne"
+      ],
+      "label": "Canal de vente principal",
+      "placeholder": "Exemple : Site web",
+      "required": true
+    },
+    {
+      "name": "budgetAlloue",
+      "type": "number",
+      "label": "Budget alloué (en €)",
+      "placeholder": "Exemple : 50 000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du produit/service : {nomDuProduit}, Description du produit/service : {descriptionDuProduit}, Objectif de vente : {objectifDeVente} €, Canal de vente principal : {canalDeVente}, Budget alloué : {budgetAlloue} €. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

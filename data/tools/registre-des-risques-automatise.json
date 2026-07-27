@@ -1,0 +1,78 @@
+{
+  "id": "registre-des-risques-automatise",
+  "title": "Registre des risques automatisé",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "nom_risque",
+      "type": "text",
+      "label": "Nom du risque",
+      "placeholder": "Exemple : Perte de données",
+      "required": true
+    },
+    {
+      "name": "description_risque",
+      "type": "textarea",
+      "label": "Description du risque",
+      "placeholder": "Exemple : La perte de données pourrait entraîner une perte de confiance des clients",
+      "required": true
+    },
+    {
+      "name": "probabilité_risque",
+      "type": "number",
+      "label": "Probabilité du risque (sur 100)",
+      "placeholder": "Exemple : 50",
+      "required": true
+    },
+    {
+      "name": "impact_risque",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Impact du risque",
+      "placeholder": "Exemple : Élevé",
+      "required": true
+    },
+    {
+      "name": "plan_action",
+      "type": "textarea",
+      "label": "Plan d'action pour atténuer le risque",
+      "placeholder": "Exemple : Mettre en place un système de sauvegarde régulière",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des risques. L'utilisateur a répondu : Nom du risque: {nom_risque}, Description du risque: {description_risque}, Probabilité du risque: {probabilité_risque}, Impact du risque: {impact_risque}, Plan d'action pour atténuer le risque: {plan_action}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

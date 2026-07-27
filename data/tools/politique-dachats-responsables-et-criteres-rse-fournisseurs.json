@@ -1,0 +1,76 @@
+{
+  "id": "politique-dachats-responsables-et-criteres-rse-fournisseurs",
+  "title": "Politique d'achats responsables & critères RSE fournisseurs",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "critere-environnemental",
+      "type": "select",
+      "options": [
+        "Énergie renouvelable",
+        "Réduction des émissions de gaz à effet de serre",
+        "Utilisation de matériaux recyclés"
+      ],
+      "label": "Quel critère environnemental donnez-vous la priorité ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "engagement-social",
+      "type": "textarea",
+      "label": "Quel engagement social donnez-vous la priorité ? (ex : droits de l'homme, égalité des sexes, etc.)",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "politique-diversite",
+      "type": "select",
+      "options": [
+        "Diversité des fournisseurs",
+        "Égalité des sexes dans les équipes de direction",
+        "Inclusion des personnes handicapées"
+      ],
+      "label": "Quelle politique de diversité et d'inclusion donnez-vous la priorité ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "indicateurs-de-suivi",
+      "type": "text",
+      "label": "Quels indicateurs de suivi utilisez-vous pour mesurer l'impact de votre politique d'achats responsables ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE. L'utilisateur a répondu : Critère environnemental : {critere-environnemental}, Engagement social : {engagement-social}, Politique de diversité : {politique-diversite}, Indicateurs de suivi : {indicateurs-de-suivi}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

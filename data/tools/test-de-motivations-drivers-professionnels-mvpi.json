@@ -1,0 +1,78 @@
+{
+  "id": "test-de-motivations-drivers-professionnels-mvpi",
+  "title": "Test de motivations & drivers professionnels (MVPI)",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "objectifsProfessionnels",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs professionnels à court et à long terme ?",
+      "placeholder": "Exemple : Je souhaite devenir chef de projet dans les 5 ans",
+      "required": true
+    },
+    {
+      "name": "motivations",
+      "type": "select",
+      "options": [
+        "Réussite",
+        "Reconnaissance",
+        "Satisfaction personnelle",
+        "Sécurité financière",
+        "Autre"
+      ],
+      "label": "Quelle est votre principale motivation pour travailler ?",
+      "required": true
+    },
+    {
+      "name": "drivers",
+      "type": "select",
+      "options": [
+        "Indépendance",
+        "Créativité",
+        "Interaction avec les autres",
+        "Stabilité",
+        "Autre"
+      ],
+      "label": "Quel est votre principal driver pour vous investir dans votre travail ?",
+      "required": true
+    },
+    {
+      "name": "experiencesProfessionnelles",
+      "type": "textarea",
+      "label": "Quelles sont vos expériences professionnelles les plus marquantes et pourquoi ?",
+      "placeholder": "Exemple : J'ai travaillé comme chef de projet pendant 3 ans et j'ai apprécié la responsabilité et la créativité que cela m'a apportée",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs professionnels : {objectifsProfessionnels}, Motivations : {motivations}, Drivers : {drivers}, Expériences professionnelles : {experiencesProfessionnelles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

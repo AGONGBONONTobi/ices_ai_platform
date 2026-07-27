@@ -1,0 +1,76 @@
+{
+  "id": "diagnostic-conformite-medicaments-iso-13485",
+  "title": "Diagnostic conformité médicaments (ISO 13485)",
+  "category": "Certification de Produits & Services",
+  "inputs": [
+    {
+      "name": "type_dispositif",
+      "type": "select",
+      "options": [
+        "Dispositif médical implantable",
+        "Dispositif médical non implantable",
+        "Logiciel médical"
+      ],
+      "label": "Quel est le type de dispositif médical que vous développez ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "niveau_risque",
+      "type": "select",
+      "options": [
+        "Risque élevé",
+        "Risque moyen",
+        "Risque faible"
+      ],
+      "label": "Quel est le niveau de risque associé à votre dispositif médical ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "etat_dossier_technique",
+      "type": "textarea",
+      "label": "Décrivez l'état actuel de votre dossier technique réglementaire",
+      "placeholder": "Exemple : en cours de constitution, complet, etc.",
+      "required": true
+    },
+    {
+      "name": "processus_gestion_rizques",
+      "type": "textarea",
+      "label": "Décrivez vos processus de gestion des risques",
+      "placeholder": "Exemple : identification des risques, évaluation des risques, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un auditeur expert du référentiel ISO 13485. L'utilisateur a répondu : Type de dispositif médical: {type_dispositif}, Niveau de risque: {niveau_risque}, État du dossier technique réglementaire: {etat_dossier_technique} et Processus de gestion des risques: {processus_gestion_rizques}. Évaluez la conformité de ce dispositif médical au référentiel ISO 13485 en donnant un score global sur 100, une évaluation par axe (gestion des risques, dossier technique réglementaire, etc.) et des recommandations prioritaires.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

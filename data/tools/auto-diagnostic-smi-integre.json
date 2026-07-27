@@ -1,0 +1,88 @@
+{
+  "id": "auto-diagnostic-smi-integre",
+  "title": "Auto-diagnostic SMI intégré",
+  "category": "Systèmes de Management ISO",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de votre entreprise",
+      "placeholder": "Exemple : Société XYZ",
+      "required": true
+    },
+    {
+      "name": "niveau_qualite",
+      "type": "select",
+      "options": [
+        "Inexistant (0)",
+        "Initié (1)",
+        "Formalisé (2)",
+        "Optimisé (3)"
+      ],
+      "label": "Quel est votre niveau de maturité en matière de qualité (ISO 9001) ?",
+      "required": true
+    },
+    {
+      "name": "niveau_environnement",
+      "type": "select",
+      "options": [
+        "Inexistant (0)",
+        "Initié (1)",
+        "Formalisé (2)",
+        "Optimisé (3)"
+      ],
+      "label": "Quel est votre niveau de maturité en matière d'environnement (ISO 14001) ?",
+      "required": true
+    },
+    {
+      "name": "niveau_sante_securite",
+      "type": "select",
+      "options": [
+        "Inexistant (0)",
+        "Initié (1)",
+        "Formalisé (2)",
+        "Optimisé (3)"
+      ],
+      "label": "Quel est votre niveau de maturité en matière de santé et sécurité (ISO 45001) ?",
+      "required": true
+    },
+    {
+      "name": "description_synergies",
+      "type": "textarea",
+      "label": "Décrivez les synergies que vous avez identifiées entre les trois référentiels (qualité, environnement, santé et sécurité)",
+      "placeholder": "Exemple : Nos processus de gestion de la qualité ont permis d'améliorer nos processus de gestion de l'environnement...",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en systèmes de management intégrés. L'utilisateur a répondu : Entreprise: {entreprise}, Niveau de maturité en qualité: {niveau_qualite}, Niveau de maturité en environnement: {niveau_environnement}, Niveau de maturité en santé et sécurité: {niveau_sante_securite}, Synergies: {description_synergies}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (qualité, environnement, santé et sécurité) avec leur score sur 100, et des recommandations prioritaires pour améliorer les synergies et réduire les redondances.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

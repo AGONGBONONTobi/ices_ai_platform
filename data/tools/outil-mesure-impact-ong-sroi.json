@@ -1,0 +1,72 @@
+{
+  "id": "outil-mesure-impact-ong-sroi",
+  "title": "Outil de mesure d'impact ONG & SROI",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Décrivez l'objectif principal de votre projet ou organisation",
+      "placeholder": "Exemple : Améliorer l'accès à l'éducation pour les enfants défavorisés",
+      "required": true
+    },
+    {
+      "name": "type_impact",
+      "type": "select",
+      "options": [
+        "Environnemental",
+        "Social",
+        "Économique",
+        "Autre"
+      ],
+      "label": "Quel type d'impact votre projet ou organisation cherche-t-il à avoir ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget total de votre projet ou organisation ?",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    },
+    {
+      "name": "resultats_attendus",
+      "type": "textarea",
+      "label": "Décrivez les résultats attendus de votre projet ou organisation",
+      "placeholder": "Exemple : Augmenter le taux de scolarisation de 20% dans les communautés cibles",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en mesure d'impact. L'utilisateur a répondu : Objectif: {objectif}, Type d'impact: {type_impact}, Budget: {budget}, Résultats attendus: {resultats_attendus}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer l'impact de l'ONG.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

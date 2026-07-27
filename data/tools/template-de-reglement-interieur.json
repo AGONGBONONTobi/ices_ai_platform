@@ -1,0 +1,79 @@
+{
+  "id": "template-de-reglement-interieur",
+  "title": "Template de règlement intérieur",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "nom-de-l-entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "adresse-de-l-entreprise",
+      "type": "textarea",
+      "label": "Adresse de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "type-de-societe",
+      "type": "select",
+      "options": [
+        "SARL",
+        "SAS",
+        "SA",
+        "Autre"
+      ],
+      "label": "Type de société",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "description-de-la-societe",
+      "type": "textarea",
+      "label": "Description de la société",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "règles-de-conduite",
+      "type": "textarea",
+      "label": "Règles de conduite",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom de l'entreprise: {nom-de-l-entreprise}, Adresse de l'entreprise: {adresse-de-l-entreprise}, Type de société: {type-de-societe}, Description de la société: {description-de-la-societe}, Règles de conduite: {règles-de-conduite}. Analyse ces informations et propose un modèle de règlement intérieur adapté.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

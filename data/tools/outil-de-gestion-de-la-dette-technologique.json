@@ -1,0 +1,79 @@
+{
+  "id": "outil-de-gestion-de-la-dette-technologique",
+  "title": "Outil de gestion de la dette technologique",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "dette-technologique-estimee",
+      "type": "number",
+      "label": "Quel est l'estimation de la dette technologique actuelle ?",
+      "placeholder": "Entrez un chiffre",
+      "required": true
+    },
+    {
+      "name": "projet-actuel",
+      "type": "textarea",
+      "label": "Quels sont les projets technologiques actuels en cours ?",
+      "placeholder": "Décrivez les projets en cours",
+      "required": true
+    },
+    {
+      "name": "technologies-legacy",
+      "type": "select",
+      "options": [
+        "Java",
+        "C++",
+        "Python",
+        "Autres"
+      ],
+      "label": "Quelles sont les technologies legacy utilisées dans votre codebase ?",
+      "placeholder": "Sélectionnez les technologies legacy",
+      "required": true
+    },
+    {
+      "name": "equipe-technologie",
+      "type": "text",
+      "label": "Quelle est la taille de l'équipe technologique ?",
+      "placeholder": "Entrez un chiffre",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la gestion de la dette technologique ?",
+      "placeholder": "Entrez un chiffre",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Dette technologique estimée : {dette-technologique-estimee}, Projets actuels : {projet-actuel}, Technologies legacy : {technologies-legacy}, Équipe technologique : {equipe-technologie}, Budget alloué : {budget-alloue}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

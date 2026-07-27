@@ -1,0 +1,77 @@
+{
+  "id": "parcours-de-montee-en-competences-individualise",
+  "title": "Parcours de montée en compétences individualisé",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "domaine",
+      "type": "select",
+      "options": [
+        "Informatique",
+        "Finance",
+        "Marketing",
+        "Gestion"
+      ],
+      "label": "Quel est le domaine dans lequel vous souhaitez vous développer ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "niveau-de-competence",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est votre niveau de compétence actuel dans ce domaine ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "objectifs-professionnels",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs professionnels à court et à long terme ?",
+      "placeholder": "Exemple : Je souhaite devenir développeur web dans les 2 ans.",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles ressources (temps, argent, etc.) disposez-vous pour vous former ?",
+      "placeholder": "Exemple : 10 heures par semaine",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Domaine: {domaine}, Niveau de compétence: {niveau-de-competence}, Objectifs professionnels: {objectifs-professionnels}, Ressources disponibles: {ressources-disponibles}. Analyse ces informations et propose un parcours de formation individualisé pour atteindre les objectifs professionnels de l'utilisateur.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

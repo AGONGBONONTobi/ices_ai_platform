@@ -1,0 +1,23 @@
+{
+  "id": "diagnostic-des-processus-metiers",
+  "title": "Diagnostic des processus métiers (BPM)",
+  "category": "Finance",
+  "inputs": [
+    {
+      "name": "processusMetiers",
+      "type": "textarea",
+      "label": "Processus métiers",
+      "placeholder": "Exemple : Processus métiers actuels de l'entreprise",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en diagnostic des processus métiers. Utilise {processusMetiers} pour évaluer les processus métiers de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "string"
+      }
+    }
+  }
+}

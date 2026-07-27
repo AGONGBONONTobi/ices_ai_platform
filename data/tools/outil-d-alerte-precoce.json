@@ -1,0 +1,77 @@
+{
+  "id": "outil-d-alerte-precoce",
+  "title": "Outil d'alerte précoce",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Finance",
+        "Santé",
+        "Énergie"
+      ],
+      "label": "Secteur d'activité",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Décrivez la situation actuelle",
+      "placeholder": "Entrez une description détaillée",
+      "required": true
+    },
+    {
+      "name": "niveau_urgence",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Niveau d'urgence",
+      "placeholder": "Sélectionnez un niveau",
+      "required": true
+    },
+    {
+      "name": "sources_info",
+      "type": "text",
+      "label": "Sources d'information utilisées",
+      "placeholder": "Entrez les sources d'information",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur a répondu : Secteur: {secteur}, Description: {description}, Niveau d'urgence: {niveau_urgence}, Sources d'information: {sources_info}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

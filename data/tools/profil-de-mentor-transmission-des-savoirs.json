@@ -1,0 +1,72 @@
+{
+  "id": "profil-de-mentor-transmission-des-savoirs",
+  "title": "Profil de mentor & transmission des savoirs",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "experience-mentor",
+      "type": "textarea",
+      "label": "Quel est votre niveau d'expérience en tant que mentor ?",
+      "placeholder": "Exemple : 5 ans d'expérience en tant que mentor",
+      "required": true
+    },
+    {
+      "name": "methode-transmission",
+      "type": "select",
+      "options": [
+        "Formation en présentiel",
+        "Formation en ligne",
+        "Apprentissage par la pratique",
+        "Autre"
+      ],
+      "label": "Quelle est votre méthode de transmission des savoirs ?",
+      "placeholder": "Exemple : Formation en présentiel",
+      "required": true
+    },
+    {
+      "name": "objectif-transmission",
+      "type": "text",
+      "label": "Quel est votre objectif principal en transmettant vos savoirs ?",
+      "placeholder": "Exemple : Transmettre mes connaissances pour aider les autres à progresser",
+      "required": true
+    },
+    {
+      "name": "challenges-encountered",
+      "type": "textarea",
+      "label": "Quels sont les principaux défis que vous avez rencontrés lors de la transmission de vos savoirs ?",
+      "placeholder": "Exemple : Les difficultés à motiver les apprenants, les différences de niveau",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Expérience en tant que mentor : {experience-mentor}, Méthode de transmission : {methode-transmission}, Objectif de transmission : {objectif-transmission}, Défis rencontrés : {challenges-encountered}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

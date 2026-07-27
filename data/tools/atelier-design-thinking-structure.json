@@ -1,0 +1,78 @@
+{
+  "id": "atelier-design-thinking-structure",
+  "title": "Atelier de design thinking structuré (5 étapes)",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "probleme",
+      "type": "textarea",
+      "label": "Décrivez le problème ou la opportunité que vous souhaitez résoudre",
+      "placeholder": "Exemple : Comment améliorer l'expérience client ?",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs que vous souhaitez atteindre avec ce projet ?",
+      "placeholder": "Exemple : Augmenter les ventes de 20% dans les 6 prochains mois",
+      "required": true
+    },
+    {
+      "name": "methodologie",
+      "type": "select",
+      "options": [
+        "Design Thinking",
+        "Lean Startup",
+        "Agile"
+      ],
+      "label": "Quelle méthode de développement de produits souhaitez-vous utiliser ?",
+      "placeholder": "Exemple : Design Thinking",
+      "required": true
+    },
+    {
+      "name": "equipe",
+      "type": "textarea",
+      "label": "Qui fait partie de l'équipe chargée de ce projet ?",
+      "placeholder": "Exemple : 2 designers, 1 développeur, 1 product owner",
+      "required": true
+    },
+    {
+      "name": "ressources",
+      "type": "textarea",
+      "label": "Quelles ressources avez-vous à disposition pour ce projet ?",
+      "placeholder": "Exemple : Budget de 10 000€, accès à des outils de design",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en design thinking. L'utilisateur a répondu : Problème : {probleme}, Objectifs : {objectifs}, Méthodologie : {methodologie}, Équipe : {equipe}, Ressources : {ressources}. Analyse ces informations et propose une stratégie de développement de produit qui répond aux besoins de l'utilisateur et atteint les objectifs fixés.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

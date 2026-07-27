@@ -1,0 +1,70 @@
+{
+  "id": "budget-annuel-et-pluriannuel-participatif",
+  "title": "Budget annuel & pluriannuel participatif",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de l'organisation ?",
+      "placeholder": "Exemple : Réduire les coûts, augmenter les ventes, etc.",
+      "required": true
+    },
+    {
+      "name": "budget-actuel",
+      "type": "number",
+      "label": "Quel est le budget actuel de l'organisation ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "budget-prevu",
+      "type": "number",
+      "label": "Quel est le budget prévu pour la prochaine période ?",
+      "placeholder": "Exemple : 120 000 €",
+      "required": true
+    },
+    {
+      "name": "participation-employes",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Les employés participent-ils au processus de budget ?",
+      "placeholder": "Exemple : Oui",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Budget actuel : {budget-actuel} €, Budget prévu : {budget-prevu} €, Participation employés : {participation-employes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

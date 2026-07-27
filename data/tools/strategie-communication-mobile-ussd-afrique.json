@@ -1,0 +1,84 @@
+{
+  "id": "strategie-communication-mobile-ussd-afrique",
+  "title": "Stratégie de communication mobile & USSD (Afrique)",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de la stratégie de communication mobile & USSD ?",
+      "placeholder": "Exemple : augmentation des ventes, amélioration de la notoriété de la marque, etc.",
+      "required": true
+    },
+    {
+      "name": "cible",
+      "type": "select",
+      "options": [
+        "Jeunes adultes (18-35 ans)",
+        "Adultes (36-55 ans)",
+        "Aînés (56 ans et plus)"
+      ],
+      "label": "Quelle est la cible de la stratégie de communication mobile & USSD ?",
+      "placeholder": "Exemple : jeunes adultes",
+      "required": true
+    },
+    {
+      "name": "canal",
+      "type": "select",
+      "options": [
+        "SMS",
+        "MMS",
+        "USSD",
+        "App mobile"
+      ],
+      "label": "Quel est le canal de communication préféré pour la stratégie ?",
+      "placeholder": "Exemple : SMS",
+      "required": true
+    },
+    {
+      "name": "contenu",
+      "type": "textarea",
+      "label": "Quel est le contenu de la stratégie de communication mobile & USSD ?",
+      "placeholder": "Exemple : promotions, informations sur les produits, etc.",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la stratégie de communication mobile & USSD ?",
+      "placeholder": "Exemple : 1000 euros",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en marketing et commercial. L'utilisateur a répondu : Objectif : {objectif}, Cible : {cible}, Canal : {canal}, Contenu : {contenu}, Budget : {budget}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

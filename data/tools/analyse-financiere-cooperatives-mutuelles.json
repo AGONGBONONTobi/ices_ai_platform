@@ -1,0 +1,78 @@
+{
+  "id": "analyse-financiere-cooperatives-mutuelles",
+  "title": "Analyse financière des coopératives & mutuelles",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "bénéfice-net",
+      "type": "number",
+      "label": "Bénéfice net de l'entreprise (en euros)",
+      "placeholder": "Exemple : 100 000",
+      "required": true
+    },
+    {
+      "name": "taux-interet-emprunts",
+      "type": "number",
+      "label": "Taux d'intérêt des emprunts (en %)",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "taux-interet-épargne",
+      "type": "number",
+      "label": "Taux d'intérêt des épargnes (en %)",
+      "placeholder": "Exemple : 2",
+      "required": true
+    },
+    {
+      "name": "taux-inflation",
+      "type": "number",
+      "label": "Taux d'inflation (en %)",
+      "placeholder": "Exemple : 3",
+      "required": true
+    },
+    {
+      "name": "modele-économique",
+      "type": "select",
+      "options": [
+        "modèle A",
+        "modèle B",
+        "modèle C"
+      ],
+      "label": "Modèle économique utilisé",
+      "placeholder": "Exemple : modèle A",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a répondu : Bénéfice net : {bénéfice-net}, Taux d'intérêt des emprunts : {taux-interet-emprunts}%, Taux d'intérêt des épargnes : {taux-interet-épargne}%, Taux d'inflation : {taux-inflation}%, Modèle économique : {modele-économique}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

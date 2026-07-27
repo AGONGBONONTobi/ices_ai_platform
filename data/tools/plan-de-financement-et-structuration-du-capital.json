@@ -1,0 +1,72 @@
+{
+  "id": "plan-de-financement-et-structuration-du-capital",
+  "title": "Plan de financement & structuration du capital",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "montant-de-financement-necessaire",
+      "type": "number",
+      "label": "Quel est le montant de financement nécessaire pour votre projet ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "sources-de-financement",
+      "type": "select",
+      "options": [
+        "Investisseurs",
+        "Banques",
+        "Crédit-bail",
+        "Autres"
+      ],
+      "label": "Quelles sont les sources de financement que vous envisagez ?",
+      "placeholder": "Exemple : Investisseurs",
+      "required": true
+    },
+    {
+      "name": "structure-du-capital",
+      "type": "textarea",
+      "label": "Pouvez-vous décrire la structure du capital que vous souhaitez mettre en place ?",
+      "placeholder": "Exemple : 50% des actionnaires, 30% des investisseurs, 20% des prêteurs",
+      "required": true
+    },
+    {
+      "name": "risques-associes",
+      "type": "text",
+      "label": "Quels sont les risques associés à votre projet et comment les allez-vous gérer ?",
+      "placeholder": "Exemple : Risque de non-remboursement, risque de défaillance du marché",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Montant de financement nécessaire : {montant-de-financement-necessaire}, Sources de financement : {sources-de-financement}, Structure du capital : {structure-du-capital}, Risques associés : {risques-associes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

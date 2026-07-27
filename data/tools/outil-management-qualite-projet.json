@@ -1,0 +1,79 @@
+{
+  "id": "outil-management-qualite-projet",
+  "title": "Outil de management de la qualité en projet (QAP)",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "objectif_projet",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal du projet?",
+      "placeholder": "Exemple: Réduire les coûts de production de 10%",
+      "required": true
+    },
+    {
+      "name": "niveau_qualite",
+      "type": "select",
+      "options": [
+        "Excellent",
+        "Bon",
+        "Moyen",
+        "Faible"
+      ],
+      "label": "Quel est le niveau de qualité actuel du projet?",
+      "placeholder": "Sélectionnez",
+      "required": true
+    },
+    {
+      "name": "indicateurs_qualite",
+      "type": "textarea",
+      "label": "Quels indicateurs de qualité utilisez-vous?",
+      "placeholder": "Exemple: Taux de défaut, temps de cycle",
+      "required": true
+    },
+    {
+      "name": "frequence_evaluation",
+      "type": "number",
+      "label": "À quelle fréquence évaluez-vous la qualité?",
+      "placeholder": "Exemple: 30",
+      "required": true
+    },
+    {
+      "name": "risques_qualite",
+      "type": "textarea",
+      "label": "Quels sont les principaux risques liés à la qualité?",
+      "placeholder": "Exemple: Retards, non-conformité",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif projet: {objectif_projet}, Niveau qualité: {niveau_qualite}, Indicateurs qualité: {indicateurs_qualite}, Fréquence évaluation: {frequence_evaluation}, Risques qualité: {risques_qualite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

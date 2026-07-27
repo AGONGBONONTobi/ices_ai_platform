@@ -1,0 +1,76 @@
+{
+  "id": "plan-de-gestion-des-risques-liés-aux-données",
+  "title": "Plan de gestion des risques liés aux données",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "typeDeDonnees",
+      "type": "select",
+      "options": [
+        "Données personnelles",
+        "Données financières",
+        "Données confidentielles"
+      ],
+      "label": "Quel type de données votre entreprise traite-t-elle principalement ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "mesuresDeSecurite",
+      "type": "textarea",
+      "label": "Quelles mesures de sécurité votre entreprise a-t-elle déjà mises en place pour protéger les données ?",
+      "placeholder": "Décrivez les mesures de sécurité actuelles",
+      "required": true
+    },
+    {
+      "name": "frequenceDeSauvegarde",
+      "type": "select",
+      "options": [
+        "Tous les jours",
+        "Toutes les semaines",
+        "Tous les mois"
+      ],
+      "label": "À quelle fréquence les données sont-elles sauvegardées ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "nombreDutilisateurs",
+      "type": "number",
+      "label": "Combien d'utilisateurs ont accès aux données ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en gestion des risques. L'entreprise a répondu : Type de données : {typeDeDonnees}, Mesures de sécurité : {mesuresDeSecurite}, Fréquence de sauvegarde : {frequenceDeSauvegarde}, Nombre d'utilisateurs : {nombreDutilisateurs}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer la gestion des risques liés aux données.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

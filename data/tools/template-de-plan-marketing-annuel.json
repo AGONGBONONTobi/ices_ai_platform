@@ -1,0 +1,70 @@
+{
+  "id": "template-de-plan-marketing-annuel",
+  "title": "Template de plan marketing annuel",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectifsMarketing",
+      "type": "textarea",
+      "label": "Quels sont les objectifs marketing pour l'année à venir ?",
+      "placeholder": "Exemple : Augmenter les ventes de 10%, améliorer la visibilité de la marque",
+      "required": true
+    },
+    {
+      "name": "cible",
+      "type": "select",
+      "options": [
+        "Entreprises",
+        "Particuliers",
+        "Institutions"
+      ],
+      "label": "Qui est votre cible principale ?",
+      "required": true
+    },
+    {
+      "name": "budgetMarketing",
+      "type": "number",
+      "label": "Quel est votre budget alloué pour le marketing cette année ?",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    },
+    {
+      "name": "strategie",
+      "type": "textarea",
+      "label": "Quelle stratégie marketing souhaitez-vous mettre en place ?",
+      "placeholder": "Exemple : Utilisation des réseaux sociaux, publicité en ligne, événements",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant en marketing. L'utilisateur a répondu : Objectifs marketing : {objectifsMarketing}, cible : {cible}, budget marketing : {budgetMarketing}, stratégie : {strategie}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (objectifs, cible, budget, stratégie), et des recommandations pour améliorer le plan marketing annuel.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "tableau-de-bord-apprenant-learning-analytics",
+  "title": "Tableau de bord apprenant & learning analytics",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "niveau_apprentissage",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est le niveau d'apprentissage de l'étudiant ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "motivation",
+      "type": "textarea",
+      "label": "Quelles sont les motivations de l'étudiant pour apprendre ?",
+      "placeholder": "Exemple : Je veux améliorer mes compétences pour mon travail",
+      "required": true
+    },
+    {
+      "name": "difficultes",
+      "type": "text",
+      "label": "Quelles sont les difficultés que l'étudiant rencontre dans son apprentissage ?",
+      "placeholder": "Exemple : Je n'ai pas le temps de faire les devoirs",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs que l'étudiant souhaite atteindre grâce à l'apprentissage ?",
+      "placeholder": "Exemple : Je veux améliorer mes compétences en mathématiques pour passer un concours",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un conseiller pédagogique. L'étudiant a répondu : Niveau d'apprentissage : {niveau_apprentissage}, Motivations : {motivation}, Difficultés : {difficultes}, Objectifs : {objectifs}. Analyse ces informations et propose un plan d'action personnalisé pour aider l'étudiant à atteindre ses objectifs.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

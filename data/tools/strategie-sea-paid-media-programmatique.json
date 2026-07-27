@@ -1,0 +1,85 @@
+{
+  "id": "strategie-sea-paid-media-programmatique",
+  "title": "Stratégie SEA, paid media & programmatique",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "budget-sea",
+      "type": "number",
+      "label": "Budget SEA alloué",
+      "placeholder": "Exemple : 1000€",
+      "required": true
+    },
+    {
+      "name": "cpc-sea",
+      "type": "number",
+      "label": "CPC SEA moyen",
+      "placeholder": "Exemple : 0,50€",
+      "required": true
+    },
+    {
+      "name": "budget-paid-media",
+      "type": "number",
+      "label": "Budget paid media alloué",
+      "placeholder": "Exemple : 5000€",
+      "required": true
+    },
+    {
+      "name": "cpc-paid-media",
+      "type": "number",
+      "label": "CPC paid media moyen",
+      "placeholder": "Exemple : 1,20€",
+      "required": true
+    },
+    {
+      "name": "programmatique-objectifs",
+      "type": "textarea",
+      "label": "Objectifs de la stratégie programmatique",
+      "placeholder": "Exemple : Augmenter la visibilité des produits",
+      "required": true
+    },
+    {
+      "name": "programmatique-stratégie",
+      "type": "select",
+      "options": [
+        "Retargeting",
+        "Lookalike",
+        "Custom Audience"
+      ],
+      "label": "Stratégie programmatique choisie",
+      "placeholder": "Exemple : Retargeting",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Budget SEA : {budget-sea}, CPC SEA : {cpc-sea}, Budget paid media : {budget-paid-media}, CPC paid media : {cpc-paid-media}, Objectifs de la stratégie programmatique : {programmatique-objectifs}, Stratégie programmatique choisie : {programmatique-stratégie}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

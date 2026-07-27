@@ -1,0 +1,71 @@
+{
+  "id": "rapport-d-activite-annuelle-automatise",
+  "title": "Rapport d'activité annuel automatisé",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "periode",
+      "type": "select",
+      "options": [
+        "Année en cours",
+        "Année précédente",
+        "Multi-annuelle"
+      ],
+      "label": "Sélectionnez la période à prendre en compte",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Décrivez les objectifs atteints pendant la période",
+      "placeholder": "Exemple : Augmentation de 10% des ventes",
+      "required": true
+    },
+    {
+      "name": "resultats-financiers",
+      "type": "number",
+      "label": "Indiquez les résultats financiers (chiffres)",
+      "placeholder": "Exemple : 1 234 567",
+      "required": true
+    },
+    {
+      "name": "recommandations-strategiques",
+      "type": "text",
+      "label": "Formulez des recommandations stratégiques pour l'avenir",
+      "placeholder": "Exemple : Investir dans la digitalisation",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en reporting. L'utilisateur a répondu : Période: {periode}, Objectifs: {objectifs}, Résultats financiers: {resultats-financiers}, Recommandations stratégiques: {recommandations-strategiques}. Analyse ces informations et présente un rapport d'activité annuel automatisé complet.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

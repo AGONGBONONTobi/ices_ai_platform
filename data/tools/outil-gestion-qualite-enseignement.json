@@ -1,0 +1,79 @@
+{
+  "id": "outil-gestion-qualite-enseignement",
+  "title": "Outil de gestion de la qualité dans l'enseignement",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "niveau_qualite",
+      "type": "select",
+      "options": [
+        "Excellent",
+        "Bon",
+        "Moyen",
+        "Faible"
+      ],
+      "label": "Quel est le niveau actuel de qualité de votre établissement?",
+      "placeholder": "Ex: Bon",
+      "required": true
+    },
+    {
+      "name": "frequence_evaluations",
+      "type": "number",
+      "label": "À quelle fréquence réalisez-vous des évaluations internes?",
+      "placeholder": "Ex: 4 par an",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Veuillez décrire les principaux défis rencontrés dans la gestion de la qualité.",
+      "placeholder": "Ex: manque de ressources",
+      "required": false
+    },
+    {
+      "name": "objectif_amelioration",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs d'amélioration pour les 12 prochains mois?",
+      "placeholder": "Ex: augmenter le taux de satisfaction",
+      "required": false
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "number",
+      "label": "Combien de ressources humaines (personnes) sont dédiées à la qualité?",
+      "placeholder": "Ex: 5",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Niveau de qualité: {niveau_qualite}, Fréquence des évaluations: {frequence_evaluations}, Commentaires: {commentaires}, Objectifs d'amélioration: {objectif_amelioration}, Ressources dédiées: {ressources_disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

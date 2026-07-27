@@ -1,0 +1,78 @@
+{
+  "id": "plan-reduction-delais-time-to-market",
+  "title": "Plan de réduction des délais (Time to Market)",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "current_time_to_market",
+      "type": "number",
+      "label": "Temps actuel en jours pour livrer un produit",
+      "placeholder": "Ex: 90",
+      "required": true
+    },
+    {
+      "name": "target_time_to_market",
+      "type": "number",
+      "label": "Objectif de délai en jours",
+      "placeholder": "Ex: 60",
+      "required": true
+    },
+    {
+      "name": "process_complexity",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyenne",
+        "Élevée"
+      ],
+      "label": "Complexité du processus actuel",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "team_size",
+      "type": "number",
+      "label": "Nombre de membres dans l'équipe de développement",
+      "placeholder": "Ex: 12",
+      "required": true
+    },
+    {
+      "name": "primary_challenge",
+      "type": "textarea",
+      "label": "Décrivez le principal défi rencontré dans la réduction des délais",
+      "placeholder": "Ex: Coordination inter-services",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en amélioration des processus. L'utilisateur a répondu : Temps actuel : {current_time_to_market} jours, Objectif : {target_time_to_market} jours, Complexité du processus : {process_complexity}, Taille de l'équipe : {team_size} membres, Principal défi : {primary_challenge}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (ex: Efficacité, Collaboration, Technologie, Gestion de projet), et des recommandations concrètes pour atteindre l'objectif.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

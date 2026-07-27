@@ -1,0 +1,78 @@
+{
+  "id": "strategie-dambassadeur-porte-parole",
+  "title": "Stratégie d'ambassadeur & porte-parole",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "text",
+      "label": "Quel est l'objectif principal de votre stratégie d'ambassadeur?",
+      "placeholder": "Augmenter la notoriété de la marque",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "textarea",
+      "label": "Décrivez votre public cible.",
+      "placeholder": "Jeunes professionnels...",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget mensuel alloué?",
+      "placeholder": "5000",
+      "required": true
+    },
+    {
+      "name": "canaux_preferes",
+      "type": "select",
+      "options": [
+        "Réseaux sociaux",
+        "Événements",
+        "Relations presse",
+        "Partenariats"
+      ],
+      "label": "Quels canaux préférez-vous utiliser?",
+      "required": true
+    },
+    {
+      "name": "mesure_succes",
+      "type": "textarea",
+      "label": "Comment allez-vous mesurer le succès?",
+      "placeholder": "Taux d'engagement, ventes, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif: {objectif}, Public cible: {public_cible}, Budget: {budget}, Canaux préférés: {canaux_preferes}, Mesure de succès: {mesure_succes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        },
+        "recommandations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

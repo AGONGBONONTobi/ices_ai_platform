@@ -1,0 +1,77 @@
+{
+  "id": "plan-damelioration-continue-kaizen-lean",
+  "title": "Plan d'amélioration continue (Kaizen & Lean)",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple: Société XYZ",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "number",
+      "label": "Nombre de projets Kaizen en cours",
+      "placeholder": "Ex: 3",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "textarea",
+      "label": "Principaux obstacles rencontrés",
+      "placeholder": "Ex: Manque de ressources, résistance au changement",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Maturité Lean",
+      "required": true
+    },
+    {
+      "name": "variable5",
+      "type": "number",
+      "label": "Taux de participation des employés (%)",
+      "placeholder": "Ex: 75",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Variable1: {variable1}, Variable2: {variable2}, Variable3: {variable3}, Variable4: {variable4}, Variable5: {variable5}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

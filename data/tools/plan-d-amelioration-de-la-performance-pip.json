@@ -1,0 +1,80 @@
+{
+  "id": "plan-d-amelioration-de-la-performance-pip",
+  "title": "Plan d'amélioration de la performance (PIP)",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quels sont les objectifs spécifiques à atteindre ?",
+      "placeholder": "Exemple : Améliorer la productivité, réduire les délais de livraison",
+      "required": true
+    },
+    {
+      "name": "domaine",
+      "type": "select",
+      "options": [
+        "Marketing",
+        "Vente",
+        "Support client",
+        "Développement",
+        "Gestion"
+      ],
+      "label": "Dans quel domaine souhaitez-vous améliorer la performance ?",
+      "placeholder": "Sélectionnez un domaine",
+      "required": true
+    },
+    {
+      "name": "indicateurs",
+      "type": "text",
+      "label": "Quels sont les indicateurs clés de performance (KPI) à suivre ?",
+      "placeholder": "Exemple : Temps de réponse, taux de satisfaction client, etc.",
+      "required": true
+    },
+    {
+      "name": "actions",
+      "type": "textarea",
+      "label": "Quelles actions concrettes souhaitez-vous mettre en place pour atteindre les objectifs ?",
+      "placeholder": "Exemple : Formation, changement de processus, réaffectation de ressources",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la mise en œuvre du PIP ?",
+      "placeholder": "Exemple : 10 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif : {objectif}, Domaine : {domaine}, Indicateurs : {indicateurs}, Actions : {actions}, Budget : {budget}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

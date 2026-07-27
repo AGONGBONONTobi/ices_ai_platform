@@ -1,0 +1,74 @@
+{
+  "id": "audit-equipements-maintenance-gmao",
+  "title": "Audit des équipements, maintenance & GMAO",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "equipements-audit",
+      "type": "textarea",
+      "label": "Décrivez les équipements audités",
+      "placeholder": "Exemple : machines, systèmes de sécurité, etc.",
+      "required": true
+    },
+    {
+      "name": "maintenance-effectuee",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "A-t-il été effectué des travaux de maintenance récents ?",
+      "placeholder": "Exemple : oui/non",
+      "required": true
+    },
+    {
+      "name": "gmao-en-place",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Existe-t-il un système de GMAO (Gestion de Maintenance et d'Assistance Opérationnelle) en place ?",
+      "placeholder": "Exemple : oui/non",
+      "required": true
+    },
+    {
+      "name": "risques-identifies",
+      "type": "number",
+      "label": "Combien de risques ont été identifiés lors de l'audit ?",
+      "placeholder": "Exemple : 0, 1, 2, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audit et en GMAO. L'utilisateur a répondu : Equipements audités : {equipements-audit}, Maintenance effectuée : {maintenance-effectuee}, GMAO en place : {gmao-en-place}, Risques identifiés : {risques-identifies}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

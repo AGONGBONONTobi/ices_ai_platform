@@ -1,0 +1,76 @@
+{
+  "id": "gestion-identites-acces-kebab-case",
+  "title": "Stratégie de gestion des identités & accès (IAM)",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "type_d_identite",
+      "type": "select",
+      "options": [
+        "Utilisateur",
+        "Service",
+        "Application"
+      ],
+      "label": "Quel type d'identité souhaitez-vous gérer ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "methode_authentification",
+      "type": "select",
+      "options": [
+        "Authentification par mot de passe",
+        "Authentification par certificat",
+        "Authentification par clé publique"
+      ],
+      "label": "Quelle méthode d'authentification utilisez-vous ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "niveau_acces",
+      "type": "number",
+      "label": "Quel est le niveau d'accès souhaité pour les utilisateurs ?",
+      "placeholder": "Exemple : 1-5",
+      "required": true
+    },
+    {
+      "name": "description_politique_acces",
+      "type": "textarea",
+      "label": "Veuillez décrire la politique d'accès en place",
+      "placeholder": "Exemple : La politique d'accès est basée sur le principe de least privilege",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en IAM. L'utilisateur a répondu : Type d'identité : {type_d_identite}, Méthode d'authentification : {methode_authentification}, Niveau d'accès : {niveau_acces}, Description de la politique d'accès : {description_politique_acces}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

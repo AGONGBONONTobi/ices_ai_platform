@@ -1,0 +1,78 @@
+{
+  "id": "plan-de-souverainete-numerique-et-des-donnees",
+  "title": "Plan de souveraineté numérique & des données",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques du plan de souveraineté numérique & des données ?",
+      "placeholder": "Exemple : améliorer la sécurité des données, développer l'innovation numérique",
+      "required": true
+    },
+    {
+      "name": "donnees-a-protéger",
+      "type": "select",
+      "options": [
+        "Données personnelles",
+        "Données sensibles",
+        "Données de sécurité"
+      ],
+      "label": "Quelles données doivent être protégées selon le plan ?",
+      "placeholder": "Exemple : données personnelles",
+      "required": true
+    },
+    {
+      "name": "stratégies-de-securisation",
+      "type": "text",
+      "label": "Quelles stratégies de sécurisation seront mises en place pour protéger les données ?",
+      "placeholder": "Exemple : mise en place de firewalls, utilisation de chiffrement",
+      "required": true
+    },
+    {
+      "name": "budget-alloué",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la mise en œuvre du plan de souveraineté numérique & des données ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "échéancier",
+      "type": "textarea",
+      "label": "Quel est l'échéancier prévu pour la mise en œuvre du plan ?",
+      "placeholder": "Exemple : phase 1 : analyse des données, phase 2 : mise en place de la sécurité",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en transformation digitale & IA. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Données à protéger : {donnees-a-protéger}, Stratégies de sécurisation : {stratégies-de-securisation}, Budget alloué : {budget-alloué}, Échéancier : {échéancier}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

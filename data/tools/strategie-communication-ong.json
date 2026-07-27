@@ -1,0 +1,80 @@
+{
+  "id": "strategie-communication-ong",
+  "title": "Stratégie de communication institutionnelle pour ONG",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "text",
+      "label": "Quel est l'objectif principal de votre communication institutionnelle?",
+      "placeholder": "ex: Accroître la notoriété",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "textarea",
+      "label": "Décrivez votre public cible",
+      "placeholder": "ex: Jeunes adultes, décideurs politiques, etc.",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué (en euros) ?",
+      "placeholder": "ex: 50000",
+      "required": true
+    },
+    {
+      "name": "canaux_preferes",
+      "type": "select",
+      "options": [
+        "Réseaux sociaux",
+        "Presse écrite",
+        "Événements",
+        "Partenariats",
+        "Autre"
+      ],
+      "label": "Quels canaux préférez-vous utiliser?",
+      "placeholder": "Sélectionnez un ou plusieurs",
+      "required": true
+    },
+    {
+      "name": "message_clé",
+      "type": "textarea",
+      "label": "Quel est le message clé que vous souhaitez transmettre?",
+      "placeholder": "ex: Notre ONG lutte contre la faim dans le monde",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif: {objectif}, Public cible: {public_cible}, Budget: {budget}, Canaux préférés: {canaux_preferes}, Message clé: {message_clé}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

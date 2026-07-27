@@ -1,0 +1,87 @@
+{
+  "id": "cartographie-des-forces-cliftonstrengths",
+  "title": "Cartographie des forces (CliftonStrengths)",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "domaine1",
+      "type": "select",
+      "options": [
+        "Développement personnel",
+        "Relations interpersonnelles",
+        "Apprentissage",
+        "Analyse",
+        "Connexion"
+      ],
+      "label": "Quel est votre domaine de force préféré ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description-domaine1",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre domaine de force préféré et expliquez pourquoi il est important pour vous.",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "domaine2",
+      "type": "select",
+      "options": [
+        "Développement personnel",
+        "Relations interpersonnelles",
+        "Apprentissage",
+        "Analyse",
+        "Connexion"
+      ],
+      "label": "Quel est votre deuxième domaine de force préféré ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description-domaine2",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre deuxième domaine de force préféré et expliquez pourquoi il est important pour vous.",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "objectif-professionnel",
+      "type": "text",
+      "label": "Quel est votre objectif professionnel actuel ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en développement personnel. L'utilisateur a répondu : Domaine 1 : {domaine1}, Description de Domaine 1 : {description-domaine1}, Domaine 2 : {domaine2}, Description de Domaine 2 : {description-domaine2}, Objectif Professionnel : {objectif-professionnel}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

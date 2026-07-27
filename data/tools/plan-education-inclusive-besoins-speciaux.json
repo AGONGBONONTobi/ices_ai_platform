@@ -1,0 +1,77 @@
+{
+  "id": "plan-education-inclusive-besoins-speciaux",
+  "title": "Plan d'éducation inclusive & besoins spéciaux",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_etablissement",
+      "type": "select",
+      "options": [
+        "École primaire",
+        "Collège",
+        "Lycée",
+        "Université"
+      ],
+      "label": "Quel est le type d'établissement scolaire que vous représentez ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_besoins",
+      "type": "textarea",
+      "label": "Décrivez les besoins spécifiques des élèves que vous souhaitez soutenir",
+      "placeholder": "Ex: élèves avec handicap, difficultés d'apprentissage, etc.",
+      "required": true
+    },
+    {
+      "name": "niveau_scolaire",
+      "type": "select",
+      "options": [
+        "Primaire",
+        "Secondaire",
+        "Supérieur"
+      ],
+      "label": "Quel est le niveau scolaire des élèves concernés ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "textarea",
+      "label": "Décrivez les ressources (humaines, matérielles, financières) actuellement disponibles pour soutenir ces élèves",
+      "placeholder": "Ex: nombre d'enseignants spécialisés, équipements spécifiques, budget alloué",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un spécialiste de l'éducation inclusive. L'utilisateur a répondu : Type d'établissement: {type_etablissement}, Description des besoins: {description_besoins}, Niveau scolaire: {niveau_scolaire}, Ressources disponibles: {ressources_disponibles}. Analysez ces informations pour créer un plan d'éducation adapté. Évaluez le niveau actuel d'inclusion (score global sur 100), identifiez les axes d'amélioration avec leurs scores respectifs, et proposez des recommandations concrètes pour améliorer l'inclusion et répondre aux besoins spécifiques des élèves.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

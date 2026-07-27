@@ -1,0 +1,79 @@
+{
+  "id": "modele-scoring-credit-et-risque-client",
+  "title": "Modèle de scoring crédit & risque client",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "age",
+      "type": "number",
+      "label": "Âge du client",
+      "placeholder": "Entrez l'âge du client",
+      "required": true
+    },
+    {
+      "name": "salaire",
+      "type": "number",
+      "label": "Salaire mensuel du client",
+      "placeholder": "Entrez le salaire mensuel du client",
+      "required": true
+    },
+    {
+      "name": "historique-credit",
+      "type": "select",
+      "options": [
+        "Très bon",
+        "Bon",
+        "Moyen",
+        "Mauvais"
+      ],
+      "label": "Historique de crédit du client",
+      "placeholder": "Choisissez l'historique de crédit du client",
+      "required": true
+    },
+    {
+      "name": "taux-impayé",
+      "type": "number",
+      "label": "Taux d'impayé du client",
+      "placeholder": "Entrez le taux d'impayé du client",
+      "required": true
+    },
+    {
+      "name": "solde-compte",
+      "type": "number",
+      "label": "Solde du compte bancaire du client",
+      "placeholder": "Entrez le solde du compte bancaire du client",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en crédit et risque client. L'utilisateur a répondu : Âge: {age}, Salaire: {salaire}, Historique de crédit: {historique-credit}, Taux d'impayé: {taux-impayé}, Solde du compte: {solde-compte}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (crédit, risque, solvabilité), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

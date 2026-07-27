@@ -1,0 +1,78 @@
+{
+  "id": "audit-subventions-financements-publics",
+  "title": "Audit des subventions & financements publics",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "type-de-subvention",
+      "type": "select",
+      "options": [
+        "Subvention de fonctionnement",
+        "Subvention de développement",
+        "Financement de projet"
+      ],
+      "label": "Quel type de subvention ou financement public est concerné ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "montant-de-la-subvention",
+      "type": "number",
+      "label": "Quel est le montant de la subvention ou du financement public ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "periode-de-realisation",
+      "type": "textarea",
+      "label": "Pouvez-vous décrire la période de réalisation du projet ou de la subvention ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "nom-du-projet",
+      "type": "text",
+      "label": "Quel est le nom du projet ou de la subvention ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "nom-de-la-structure",
+      "type": "text",
+      "label": "Quel est le nom de la structure ou de l'organisme bénéficiaire ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audit des subventions et financements publics. L'utilisateur a répondu : Type de subvention : {type-de-subvention}, Montant de la subvention : {montant-de-la-subvention}, Période de réalisation : {periode-de-realisation}, Nom du projet : {nom-du-projet}, Nom de la structure : {nom-de-la-structure}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

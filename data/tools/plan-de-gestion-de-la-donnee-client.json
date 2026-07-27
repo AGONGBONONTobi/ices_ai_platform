@@ -1,0 +1,70 @@
+{
+  "id": "plan-de-gestion-de-la-donnee-client",
+  "title": "Plan de gestion de la donnée client (CDP & CRM)",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de la mise en place d'un CDP & CRM ?",
+      "placeholder": "Exemple : Améliorer la personnalisation de l'expérience client, augmenter les ventes, etc.",
+      "required": true
+    },
+    {
+      "name": "donnees-disponibles",
+      "type": "text",
+      "label": "Quelles données sont déjà disponibles sur les clients ?",
+      "placeholder": "Exemple : Informations de base (nom, adresse, etc.), historique d'achat, etc.",
+      "required": true
+    },
+    {
+      "name": "donnees-a-collecter",
+      "type": "textarea",
+      "label": "Quelles données doivent être collectées pour atteindre les objectifs stratégiques ?",
+      "placeholder": "Exemple : Données de comportement en ligne, données de satisfaction client, etc.",
+      "required": true
+    },
+    {
+      "name": "methodologie-de-gestion",
+      "type": "select",
+      "options": [
+        "Méthodologie centrée sur le client",
+        "Méthodologie centrée sur les données"
+      ],
+      "label": "Quelle méthodologie de gestion de la donnée client préconisez-vous ?",
+      "placeholder": "Choisissez une option",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en transformation digitale & IA. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Données disponibles : {donnees-disponibles}, Données à collecter : {donnees-a-collecter}, Méthodologie de gestion : {methodologie-de-gestion}. Analyse ces informations et propose un plan de gestion de la donnée client (CDP & CRM) qui répond aux objectifs stratégiques et qui prend en compte les données disponibles et à collecter.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

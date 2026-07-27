@@ -1,0 +1,79 @@
+{
+  "id": "outil-de-conformite-droit-de-la-concurrence",
+  "title": "Outil de conformité droit de la concurrence",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Industrie",
+        "Services",
+        "Commerce",
+        "Autres"
+      ],
+      "label": "Secteur d'activité de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Description de l'activité de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "revenus",
+      "type": "number",
+      "label": "Revenus annuels de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "emplois",
+      "type": "number",
+      "label": "Effectif de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en droit de la concurrence. L'utilisateur a répondu : Entreprise: {entreprise}, Secteur: {secteur}, Description: {description}, Revenus: {revenus}, Emplois: {emplois}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "template-rse-dd-unique",
+  "title": "Template de politique RSE & DD",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : XYZ SA",
+      "required": true
+    },
+    {
+      "name": "description-rse",
+      "type": "textarea",
+      "label": "Description de la politique de RSE",
+      "placeholder": "Exemple : Notre entreprise s'engage à respecter les principes de responsabilité sociale et environnementale.",
+      "required": true
+    },
+    {
+      "name": "objectifs-dd",
+      "type": "textarea",
+      "label": "Objectifs de la politique de DD",
+      "placeholder": "Exemple : Nous nous engageons à réduire nos émissions de gaz à effet de serre de 50% d'ici 2025.",
+      "required": true
+    },
+    {
+      "name": "strategie-dd",
+      "type": "textarea",
+      "label": "Stratégie de mise en œuvre de la politique de DD",
+      "placeholder": "Exemple : Nous allons mettre en place un programme de réduction des émissions de gaz à effet de serre en mettant en place des mesures de réduction de la consommation d'énergie.",
+      "required": true
+    },
+    {
+      "name": "ressources",
+      "type": "select",
+      "options": [
+        "Humain",
+        "Matériel",
+        "Financier"
+      ],
+      "label": "Ressources nécessaires pour la mise en œuvre de la politique de DD",
+      "placeholder": "Exemple : Humain",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise : {entreprise}, Description de la politique de RSE : {description-rse}, Objectifs de la politique de DD : {objectifs-dd}, Stratégie de mise en œuvre de la politique de DD : {stratégie-dd}, Ressources nécessaires : {ressources}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

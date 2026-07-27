@@ -1,0 +1,77 @@
+{
+  "id": "template-de-memo-de-decision-executive",
+  "title": "Template de mémo de décision executive",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de la décision ?",
+      "placeholder": "Décrivez brièvement l'objectif de la décision",
+      "required": true
+    },
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "label": "Quel est le contexte de la décision ?",
+      "placeholder": "Décrivez le contexte dans lequel la décision doit être prise",
+      "required": true
+    },
+    {
+      "name": "options",
+      "type": "select",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C"
+      ],
+      "label": "Quelles sont les options disponibles pour la décision ?",
+      "required": true
+    },
+    {
+      "name": "critères",
+      "type": "textarea",
+      "label": "Quels sont les critères de décision ?",
+      "placeholder": "Listez les critères à prendre en compte pour la décision",
+      "required": true
+    },
+    {
+      "name": "recommandation",
+      "type": "textarea",
+      "label": "Quelle est la recommandation pour la décision ?",
+      "placeholder": "Décrivez la recommandation pour la décision",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert. L'utilisateur a répondu : Objectif: {objectif}, Contexte: {contexte}, Options: {options}, Critères: {critères}, Recommandation: {recommandation}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "guide-conformite-lois-donnees-personnelles-africaines",
+  "title": "Guide de conformité aux lois données personnelles africaines",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "pays",
+      "type": "select",
+      "options": [
+        "Afrique du Sud",
+        "Côte d'Ivoire",
+        "Ghana",
+        "Nigéria",
+        "Sénégal"
+      ],
+      "label": "Quel pays africain est concerné par la conformité ?",
+      "placeholder": "Sélectionnez un pays",
+      "required": true
+    },
+    {
+      "name": "type-donnees",
+      "type": "select",
+      "options": [
+        "Données personnelles sensibles",
+        "Données personnelles non sensibles"
+      ],
+      "label": "Quel type de données personnelles est concerné ?",
+      "placeholder": "Sélectionnez un type de données",
+      "required": true
+    },
+    {
+      "name": "reglementation",
+      "type": "textarea",
+      "label": "Quelles sont les réglementations et lois pertinentes à appliquer ?",
+      "placeholder": "Exemple : Loi sur la protection des données personnelles de 2013",
+      "required": true
+    },
+    {
+      "name": "processus-conformite",
+      "type": "textarea",
+      "label": "Quel processus de conformité est déjà en place ?",
+      "placeholder": "Exemple : Audit annuel, formation des employés, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert juridique. L'utilisateur a répondu : Pays: {pays}, Type de données: {type-donnees}, Réglementation: {reglementation}, Processus de conformité: {processus-conformite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

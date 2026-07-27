@@ -1,0 +1,87 @@
+{
+  "id": "evaluation-annuelle-de-performance",
+  "title": "Template d'évaluation annuelle de performance",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectifs-atteints",
+      "type": "number",
+      "label": "Nombre d'objectifs atteints sur l'année",
+      "placeholder": "Exemple : 8/10",
+      "required": true
+    },
+    {
+      "name": "qualite-travail",
+      "type": "select",
+      "options": [
+        "Très bonne",
+        "Bonne",
+        "Moyenne",
+        "Mauvaise",
+        "Très mauvaise"
+      ],
+      "label": "Qualité du travail réalisé",
+      "placeholder": "Exemple : Très bonne",
+      "required": true
+    },
+    {
+      "name": "recommandations",
+      "type": "textarea",
+      "label": "Recommandations pour améliorer la performance",
+      "placeholder": "Exemple : Augmenter la fréquence de réunions de suivi",
+      "required": true
+    },
+    {
+      "name": "score-global",
+      "type": "number",
+      "label": "Score global sur 100",
+      "placeholder": "Exemple : 85",
+      "required": true
+    },
+    {
+      "name": "axe-communication",
+      "type": "number",
+      "label": "Score pour l'axe de la communication",
+      "placeholder": "Exemple : 90",
+      "required": true
+    },
+    {
+      "name": "axe-colaboration",
+      "type": "number",
+      "label": "Score pour l'axe de la collaboration",
+      "placeholder": "Exemple : 85",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en ressources humaines. L'utilisateur a répondu : Objectifs atteints : {objectifs-atteints}, Qualité du travail : {qualite-travail}, Recommandations pour améliorer la performance : {recommandations}, Score global : {score-global}, Axe de la communication : {axe-communication}, Axe de la collaboration : {axe-colaboration}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-detection-des-biais-au-recrutement",
+  "title": "Outil de détection des biais au recrutement",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "type-de-recrutement",
+      "type": "select",
+      "options": [
+        "Recrutement interne",
+        "Recrutement externe",
+        "Recrutement en partenariat"
+      ],
+      "label": "Quel type de recrutement est-il en cours ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "description-de-poste",
+      "type": "textarea",
+      "label": "Veuillez décrire brièvement le poste à pourvoir",
+      "placeholder": "Exemple : Développeur full-stack pour un projet de plateforme de e-commerce",
+      "required": true
+    },
+    {
+      "name": "critères-de-sélection",
+      "type": "text",
+      "label": "Quels sont les critères de sélection pour ce poste ? (ex : expérience, compétences techniques, etc.)",
+      "placeholder": "Exemple : expérience, compétences en développement web, etc.",
+      "required": true
+    },
+    {
+      "name": "problématiques-actuelles",
+      "type": "textarea",
+      "label": "Quelles sont les problématiques actuelles liées au recrutement dans votre entreprise ? (ex : difficultés à trouver des candidats compétents, etc.)",
+      "placeholder": "Exemple : difficultés à trouver des candidats compétents, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en RH. L'utilisateur a répondu : Type de recrutement : {type-de-recrutement}, Description du poste : {description-de-poste}, Critères de sélection : {critères-de-sélection}, Problématiques actuelles : {problématiques-actuelles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

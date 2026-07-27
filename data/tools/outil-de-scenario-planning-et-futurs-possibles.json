@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-scenario-planning-et-futurs-possibles",
+  "title": "Outil de scenario planning & futurs possibles",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Décrivez les tendances actuelles qui pourraient influencer le futur de votre entreprise",
+      "placeholder": "Exemple : l'adoption de la technologie de l'information, les changements démographiques, etc.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Conjuncture",
+        "Tendance",
+        "Scénario"
+      ],
+      "label": "Quel type de scénario souhaitez-vous explorer ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Quel est le niveau de risque que vous êtes prêt à prendre pour atteindre vos objectifs ?",
+      "placeholder": "Exemple : 1-5",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quels sont les principaux acteurs qui pourraient influencer le futur de votre entreprise ?",
+      "placeholder": "Exemple : clients, fournisseurs, concurrents, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Tendances actuelles : {variable1}, Type de scénario : {variable2}, Niveau de risque : {variable3}, Principaux acteurs : {variable4}. Analyse ces informations et propose 3 scénarios possibles pour le futur de l'entreprise, ainsi que des recommandations pour les mettre en œuvre.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

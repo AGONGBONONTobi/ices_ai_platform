@@ -1,0 +1,73 @@
+{
+  "id": "outil-gestion-ressources-minieres",
+  "title": "Outil de gestion des ressources minières",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_ressource",
+      "type": "select",
+      "options": [
+        "Charbon",
+        "Minerai de fer",
+        "Cuivre",
+        "Or",
+        "Autre"
+      ],
+      "label": "Quel type de ressource minière souhaitez-vous gérer ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "quantite_ressource",
+      "type": "number",
+      "label": "Quelle est la quantité de ressource minière disponible ?",
+      "placeholder": "1000",
+      "required": true
+    },
+    {
+      "name": "description_projet",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre projet d'exploitation minière",
+      "placeholder": "Exploitation minière à ciel ouvert, projet de développement durable...",
+      "required": true
+    },
+    {
+      "name": "budget_alloué",
+      "type": "number",
+      "label": "Quel est le budget alloué pour ce projet ?",
+      "placeholder": "1000000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en gestion de ressources minières. L'utilisateur a répondu : Type de ressource: {type_ressource}, Quantité de ressource: {quantite_ressource}, Description du projet: {description_projet}, Budget alloué: {budget_alloué}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

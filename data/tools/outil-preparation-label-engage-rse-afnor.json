@@ -1,0 +1,72 @@
+{
+  "id": "outil-preparation-label-engage-rse-afnor",
+  "title": "Outil de préparation label Engagé RSE (AFNOR)",
+  "category": "Labels ESG / RSE / Durabilité",
+  "inputs": [
+    {
+      "name": "niveau_actuel",
+      "type": "select",
+      "options": [
+        "Progression",
+        "Confirmé",
+        "Exemplaire",
+        "Référent"
+      ],
+      "label": "Quel est votre niveau actuel d'engagement RSE ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_politique_rse",
+      "type": "textarea",
+      "label": "Décrivez votre politique RSE actuelle",
+      "placeholder": "Exemple de description",
+      "required": true
+    },
+    {
+      "name": "liste_preuves",
+      "type": "textarea",
+      "label": "Liste des preuves que vous avez déjà pour soutenir votre démarche RSE",
+      "placeholder": "Exemple de liste",
+      "required": true
+    },
+    {
+      "name": "objectifs_cles",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs clés en matière de RSE pour les prochains mois ?",
+      "placeholder": "Exemple d'objectifs",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert du label Engagé RSE de l'AFNOR. L'utilisateur a répondu : Niveau actuel: {niveau_actuel}, Description de la politique RSE: {description_politique_rse}, Liste des preuves: {liste_preuves}, Objectifs clés: {objectifs_cles}. Évaluez ces informations selon les critères du label (liste de preuves attendues pour chaque niveau) et donnez un score global sur 100, une évaluation par axe (Governance, Stratégie, Mise en œuvre, Suivi), et des recommandations prioritaires pour atteindre le niveau souhaité.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

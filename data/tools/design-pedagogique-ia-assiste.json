@@ -1,0 +1,83 @@
+{
+  "id": "design-pedagogique-ia-assiste",
+  "title": "Design pédagogique (instructional design) IA-assisté",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Décrivez les objectifs de l'apprentissage",
+      "placeholder": "Exemple : Acquérir des compétences en développement web",
+      "required": true
+    },
+    {
+      "name": "public-cible",
+      "type": "select",
+      "options": [
+        "Étudiants",
+        "Professionnels",
+        "Enfants"
+      ],
+      "label": "Qui est le public cible de l'apprentissage ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "contenu-apprentissage",
+      "type": "text",
+      "label": "Quel est le contenu de l'apprentissage ?",
+      "placeholder": "Exemple : Développement web, bases de données, etc.",
+      "required": true
+    },
+    {
+      "name": "méthode-apprentissage",
+      "type": "select",
+      "options": [
+        "En ligne",
+        "En présentiel",
+        "Hybride"
+      ],
+      "label": "Quelle est la méthode d'apprentissage préférée ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "textarea",
+      "label": "Quelles ressources sont disponibles pour l'apprentissage ?",
+      "placeholder": "Exemple : Outils de développement, bibliothèques, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un designer pédagogique expert. L'utilisateur a répondu : Objectifs : {objectifs}, Public cible : {public-cible}, Contenu d'apprentissage : {contenu-apprentissage}, Méthode d'apprentissage : {méthode-apprentissage}, Ressources disponibles : {ressources-disponibles}. Analyse ces informations et propose un plan de design pédagogique personnalisé, incluant un score global sur 100, une évaluation par axe et des recommandations pour améliorer l'apprentissage.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

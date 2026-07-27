@@ -1,0 +1,81 @@
+{
+  "id": "outil-diagnostic-conformite-afd",
+  "title": "Outil diagnostic conformité AFD",
+  "category": "Conformité Bailleurs & Projets Financés",
+  "inputs": [
+    {
+      "name": "procedures_operationnelles",
+      "type": "textarea",
+      "label": "Décrivez vos procédures opérationnelles actuelles",
+      "placeholder": "Exemple : procédures de gestion des projets, de suivi des activités, etc.",
+      "required": true
+    },
+    {
+      "name": "piste_audit",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Disposez-vous d'une piste d'audit fiable ?",
+      "required": true
+    },
+    {
+      "name": "reporting_bailleur",
+      "type": "text",
+      "label": "Quel est votre processus de reporting au bailleur ?",
+      "placeholder": "Exemple : fréquence, contenu, etc.",
+      "required": true
+    },
+    {
+      "name": "gestion_contractuelle",
+      "type": "textarea",
+      "label": "Décrivez vos pratiques de gestion contractuelle",
+      "placeholder": "Exemple : suivi des contrats, gestion des avenants, etc.",
+      "required": true
+    },
+    {
+      "name": "niveau_maturite",
+      "type": "select",
+      "options": [
+        "0 - Inexistant",
+        "1 - Initié",
+        "2 - Formalisé",
+        "3 - Optimisé"
+      ],
+      "label": "Quel est votre niveau de maturité en matière de conformité ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un auditeur/consultant expert des exigences de l'AFD. L'utilisateur a répondu : procédures opérationnelles : {procedures_operationnelles}, piste d'audit : {piste_audit}, reporting bailleur : {reporting_bailleur}, gestion contractuelle : {gestion_contractuelle} et niveau de maturité : {niveau_maturite}. Évaluez ces informations selon les exigences de l'AFD (procédures opérationnelles, piste d'audit, reporting bailleur, gestion contractuelle) et attribuez un score global sur 100, une évaluation par axe (procédures opérationnelles, piste d'audit, reporting bailleur, gestion contractuelle) et des recommandations prioritaires.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

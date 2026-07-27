@@ -1,0 +1,70 @@
+{
+  "id": "plan-de-deploiement-et-mise-en-production",
+  "title": "Plan de déploiement & mise en production",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "objectif_projet",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux de votre projet ?",
+      "placeholder": "Décrivez les buts et les résultats attendus",
+      "required": true
+    },
+    {
+      "name": "type_deployment",
+      "type": "select",
+      "options": [
+        "Déploiement initial",
+        "Mise à jour de version",
+        "Migration de système"
+      ],
+      "label": "Quel est le type de déploiement ou de mise en production que vous prévoyez ?",
+      "required": true
+    },
+    {
+      "name": "duree_projet",
+      "type": "number",
+      "label": "Quelle est la durée estimée du projet en semaines ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "textarea",
+      "label": "Quelles sont les ressources humaines et matérielles disponibles pour le projet ?",
+      "placeholder": "Listez les équipes, les outils et les infrastructures",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en gestion de projets. L'utilisateur a répondu : Objectif du projet: {objectif_projet}, Type de déploiement: {type_deployment}, Durée du projet: {duree_projet} semaines, Ressources disponibles: {ressources_disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (planification, ressources, déploiement), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

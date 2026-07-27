@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-developpement-de-la-pensee-systemique",
+  "title": "Outil de développement de la pensée systémique",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "contexte-pro",
+      "type": "textarea",
+      "label": "Décrivez le contexte professionnel dans lequel vous vous sentez bloqué.",
+      "placeholder": "Exemple : Je suis en situation de changement de poste, etc.",
+      "required": true
+    },
+    {
+      "name": "objectifs-personnels",
+      "type": "text",
+      "label": "Quels sont vos objectifs personnels que vous souhaitez atteindre dans votre carrière ?",
+      "placeholder": "Exemple : Je souhaite améliorer mes compétences en leadership, etc.",
+      "required": true
+    },
+    {
+      "name": "challenges-actuels",
+      "type": "select",
+      "options": [
+        "Problèmes de communication",
+        "Manque de motivation",
+        "Difficultés de prise de décision"
+      ],
+      "label": "Quel est le principal défi que vous rencontrez actuellement dans votre carrière ?",
+      "placeholder": "Choisissez une option",
+      "required": true
+    },
+    {
+      "name": "strategies-actuelles",
+      "type": "textarea",
+      "label": "Quelles stratégies utilisez-vous actuellement pour gérer ce défi ?",
+      "placeholder": "Exemple : Je me concentre sur la communication avec mes collègues, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Contexte-pro : {contexte-pro}, Objectifs-personnels : {objectifs-personnels}, Challenges-actuels : {challenges-actuels}, Strategies-actuelles : {strategies-actuelles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

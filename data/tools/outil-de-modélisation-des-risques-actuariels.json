@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-modélisation-des-risques-actuariels",
+  "title": "Outil de modélisation des risques actuariels",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "type_de_risque",
+      "type": "select",
+      "options": [
+        "Risque de crédit",
+        "Risque de liquidité",
+        "Risque de change"
+      ],
+      "label": "Quel type de risque souhaitez-vous modéliser ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "taux_d_interet",
+      "type": "number",
+      "label": "Quel est le taux d'intérêt actuel ?",
+      "placeholder": "Exemple : 2,5%",
+      "required": true
+    },
+    {
+      "name": "montant_investi",
+      "type": "number",
+      "label": "Quel est le montant investi ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "periode_d_investissement",
+      "type": "number",
+      "label": "Quelle est la période d'investissement ?",
+      "placeholder": "Exemple : 5 ans",
+      "required": true
+    },
+    {
+      "name": "description_de_la_risque",
+      "type": "textarea",
+      "label": "Veuillez décrire les facteurs qui contribuent à ce risque",
+      "placeholder": "Exemple : La crise financière mondiale",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en modélisation des risques actuariels. L'utilisateur a répondu : Type de risque : {type_de_risque}, Taux d'intérêt : {taux_d_interet}%, Montant investi : {montant_investi} €, Période d'investissement : {periode_d_investissement} ans, Description du risque : {description_de_la_risque}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

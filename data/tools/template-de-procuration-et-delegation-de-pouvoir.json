@@ -1,0 +1,70 @@
+{
+  "id": "template-de-procuration-et-delegation-de-pouvoir",
+  "title": "Template de procuration & délégation de pouvoir",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "type_de_procuration",
+      "type": "select",
+      "options": [
+        "Générale",
+        "Spécifique",
+        "Temporaire"
+      ],
+      "label": "Quel est le type de procuration que vous souhaitez établir ?",
+      "required": true
+    },
+    {
+      "name": "duree_de_la_procuration",
+      "type": "text",
+      "label": "Quelle est la durée de la procuration ?",
+      "placeholder": "Exemple : 6 mois, 1 an, etc.",
+      "required": true
+    },
+    {
+      "name": "details_de_la_procuration",
+      "type": "textarea",
+      "label": "Pouvez-vous fournir plus de détails sur la procuration ?",
+      "placeholder": "Exemple : but de la procuration, tâches spécifiques, etc.",
+      "required": false
+    },
+    {
+      "name": "nom_du_mandataire",
+      "type": "text",
+      "label": "Quel est le nom du mandataire désigné ?",
+      "placeholder": "Exemple : Jean Dupont",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant juridique expert. L'utilisateur a répondu : Type de procuration : {type_de_procuration}, Durée de la procuration : {duree_de_la_procuration}, Détails de la procuration : {details_de_la_procuration}, Nom du mandataire : {nom_du_mandataire}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (ex : conformité, sécurité, etc.), et des recommandations pour la mise en place de cette procuration.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

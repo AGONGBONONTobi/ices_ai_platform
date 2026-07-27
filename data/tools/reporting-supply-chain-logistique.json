@@ -1,0 +1,72 @@
+{
+  "id": "reporting-supply-chain-logistique",
+  "title": "Reporting supply chain & logistique",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "transport_mode",
+      "type": "select",
+      "options": [
+        "Road",
+        "Air",
+        "Sea",
+        "Rail"
+      ],
+      "label": "Quel mode de transport est utilisé ?",
+      "placeholder": "Sélectionnez un mode de transport",
+      "required": true
+    },
+    {
+      "name": "transport_delay",
+      "type": "number",
+      "label": "Quel est le délai de transport moyen ?",
+      "placeholder": "Entrez le délai de transport moyen",
+      "required": true
+    },
+    {
+      "name": "shipping_cost",
+      "type": "number",
+      "label": "Quel est le coût moyen de l'expédition ?",
+      "placeholder": "Entrez le coût moyen de l'expédition",
+      "required": true
+    },
+    {
+      "name": "logistique_problems",
+      "type": "textarea",
+      "label": "Quels problèmes logistiques sont rencontrés ?",
+      "placeholder": "Décrivez les problèmes logistiques rencontrés",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en reporting et en analytics. L'utilisateur a répondu : Transport Mode: {transport_mode}, Transport Delay: {transport_delay}, Shipping Cost: {shipping_cost}, Logistique Problems: {logistique_problems}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

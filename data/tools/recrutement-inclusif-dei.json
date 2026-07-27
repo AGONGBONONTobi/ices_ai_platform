@@ -1,0 +1,82 @@
+{
+  "id": "recrutement-inclusif-dei",
+  "title": "Processus de recrutement inclusif & DEI",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "type_de_contrat",
+      "type": "select",
+      "options": [
+        "CDD",
+        "CDI",
+        "Intérim"
+      ],
+      "label": "Quel type de contrat est proposé à l'employé ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "taux_de_diversite",
+      "type": "number",
+      "label": "Quel est le taux de diversité actuel dans l'équipe ? (en %)",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "programmes_dei_en_place",
+      "type": "textarea",
+      "label": "Quels sont les programmes DEI mis en place dans l'entreprise ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "formation_en_dei",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "L'entreprise propose-t-elle des formations sur les thèmes DEI ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "objectifs_dei",
+      "type": "textarea",
+      "label": "Quels sont les objectifs DEI fixés par l'entreprise ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Type de contrat : {type_de_contrat}, Taux de diversité : {taux_de_diversite}%, Programmes DEI : {programmes_dei_en_place}, Formation DEI : {formation_en_dei}, Objectifs DEI : {objectifs_dei}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

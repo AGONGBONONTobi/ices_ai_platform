@@ -1,0 +1,72 @@
+{
+  "id": "reporting-de-cybersecurite-et-incidents",
+  "title": "Reporting de cybersécurité & incidents",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "typeDincident",
+      "type": "select",
+      "options": [
+        "Attaque de phishing",
+        "Vol de données",
+        "Attaque DDoS",
+        "Autre"
+      ],
+      "label": "Quel est le type d'incident de cybersécurité que vous avez détecté ?",
+      "placeholder": "Sélectionnez le type d'incident",
+      "required": true
+    },
+    {
+      "name": "descriptionDeLincident",
+      "type": "textarea",
+      "label": "Décrivez l'incident de cybersécurité que vous avez détecté",
+      "placeholder": "Entrez une description détaillée de l'incident",
+      "required": true
+    },
+    {
+      "name": "nombreDutilisateursConcernes",
+      "type": "number",
+      "label": "Combien d'utilisateurs sont concernés par l'incident ?",
+      "placeholder": "Entrez le nombre d'utilisateurs",
+      "required": true
+    },
+    {
+      "name": "mesuresPrises",
+      "type": "textarea",
+      "label": "Quelles mesures avez-vous prises pour contenir et résoudre l'incident ?",
+      "placeholder": "Entrez les mesures prises",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en cybersécurité. L'utilisateur a détecté un incident de type {typeDincident} et a décrit l'incident comme suit : {descriptionDeLincident}. L'incident concerne {nombreDutilisateursConcernes} utilisateurs. Les mesures prises pour contenir et résoudre l'incident sont : {mesuresPrises}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

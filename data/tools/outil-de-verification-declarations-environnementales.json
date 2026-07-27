@@ -1,0 +1,80 @@
+{
+  "id": "outil-de-verification-declarations-environnementales",
+  "title": "Outil de vérification déclarations environnementales",
+  "category": "Inspection Technique & Vérification",
+  "inputs": [
+    {
+      "name": "type_de_declaration",
+      "type": "select",
+      "options": [
+        "Écolabel",
+        "Empreinte carbone",
+        "Déclaration environnementale"
+      ],
+      "label": "Type de déclaration environnementale",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_de_la_declaration",
+      "type": "textarea",
+      "label": "Description de la déclaration environnementale",
+      "placeholder": "Exemple de description",
+      "required": true
+    },
+    {
+      "name": "niveau_de_preuve",
+      "type": "select",
+      "options": [
+        "Preuve documentaire",
+        "Preuve quantitative",
+        "Preuve qualitative"
+      ],
+      "label": "Niveau de preuve apporté",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "existence_dun_processus_de_verification",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Existe-t-il un processus de vérification interne ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un auditeur environnemental. L'utilisateur a répondu : Type de déclaration: {type_de_declaration}, Description de la déclaration: {description_de_la_declaration}, Niveau de preuve: {niveau_de_preuve}, Existence d'un processus de vérification: {existence_dun_processus_de_verification}. Évaluez la conformité de cette déclaration environnementale aux exigences du référentiel concerné (écolabels, empreinte carbone) et donnez un score global sur 100. Évaluez également les axes suivants : la transparence des informations, la fiabilité des preuves, l'adéquation aux normes environnementales. Proposez des recommandations prioritaires pour améliorer la déclaration.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

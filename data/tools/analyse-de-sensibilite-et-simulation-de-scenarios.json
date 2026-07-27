@@ -1,0 +1,71 @@
+{
+  "id": "analyse-de-sensibilite-et-simulation-de-scenarios",
+  "title": "Analyse de sensibilité & simulation de scénarios",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "taux-de-croissance",
+      "type": "number",
+      "label": "Taux de croissance attendu",
+      "placeholder": "Exemple : 3%",
+      "required": true
+    },
+    {
+      "name": "taux-d-interet",
+      "type": "number",
+      "label": "Taux d'intérêt",
+      "placeholder": "Exemple : 5%",
+      "required": true
+    },
+    {
+      "name": "scenarios",
+      "type": "select",
+      "options": [
+        "Scénario 1 : Croissance forte",
+        "Scénario 2 : Croissance faible",
+        "Scénario 3 : Récession"
+      ],
+      "label": "Choisissez un scénario",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "variables-financieres",
+      "type": "textarea",
+      "label": "Variables financières à prendre en compte",
+      "placeholder": "Exemple : chiffre d'affaires, bénéfice net, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a répondu : Taux de croissance : {taux-de-croissance}, Taux d'intérêt : {taux-d-interet}, Scénario : {scenarios}, Variables financières : {variables-financieres}. Analyse ces informations et simule les scénarios pour obtenir un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

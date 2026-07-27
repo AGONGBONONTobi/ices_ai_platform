@@ -1,0 +1,78 @@
+{
+  "id": "methode-triz-et-inventique-systematique",
+  "title": "Méthode TRIZ & inventique systématique",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "probleme_a_resoudre",
+      "type": "textarea",
+      "label": "Décrivez le problème à résoudre ou le défis à relever",
+      "placeholder": "Exemple : Comment améliorer l'efficacité énergétique de notre usine ?",
+      "required": true
+    },
+    {
+      "name": "contraintes",
+      "type": "select",
+      "options": [
+        "Technologique",
+        "Financière",
+        "Temporelle",
+        "Autre"
+      ],
+      "label": "Quelles sont les contraintes principales que vous rencontrez ?",
+      "placeholder": "Exemple : Technologique",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "text",
+      "label": "Quelles ressources (humaines, matérielles, financières) disposez-vous pour résoudre ce problème ?",
+      "placeholder": "Exemple : 10 ingénieurs, 500 000 euros",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "select",
+      "options": [
+        "Améliorer la qualité",
+        "Réduire les coûts",
+        "Augmenter la productivité",
+        "Autre"
+      ],
+      "label": "Quels sont vos objectifs principaux ?",
+      "placeholder": "Exemple : Améliorer la qualité",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en innovation et R&D. L'utilisateur a répondu : Problème à résoudre : {probleme_a_resoudre}, Contraintes : {contraintes}, Ressources disponibles : {ressources_disponibles}, Objectifs : {objectifs}. Analyse ces informations et propose une méthode TRIZ & inventique systématique pour résoudre ce problème, en incluant les étapes clés et les outils utilisés.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

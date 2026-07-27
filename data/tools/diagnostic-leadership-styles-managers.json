@@ -1,0 +1,84 @@
+{
+  "id": "diagnostic-leadership-styles-managers",
+  "title": "Diagnostic du leadership & styles managériaux",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "style-leadership",
+      "type": "select",
+      "options": [
+        "Transformationnel",
+        "Transaktionnel",
+        "Servant",
+        "Autocratique"
+      ],
+      "label": "Quel style de leadership préfère-t-il utiliser ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "motivation-équipe",
+      "type": "textarea",
+      "label": "Comment motive-t-il son équipe ?",
+      "placeholder": "Exemple : en leur donnant des objectifs clairs, en les récompensant, etc.",
+      "required": true
+    },
+    {
+      "name": "communication-interne",
+      "type": "text",
+      "label": "Comment s'assure-t-il de la communication interne dans son équipe ?",
+      "placeholder": "Exemple : en organisant des réunions régulières, en utilisant des outils de collaboration, etc.",
+      "required": true
+    },
+    {
+      "name": "prise-de-décision",
+      "type": "select",
+      "options": [
+        "Individuel",
+        "Collectif",
+        "Participatif"
+      ],
+      "label": "Comment prend-il les décisions dans son équipe ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "confiance-équipe",
+      "type": "number",
+      "label": "Sur 10, combien de confiance a-t-il en son équipe ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Style de leadership : {style-leadership}, Motivation de l'équipe : {motivation-équipe}, Communication interne : {communication-interne}, Prise de décision : {prise-de-décision}, Confiance en l'équipe : {confiance-équipe}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

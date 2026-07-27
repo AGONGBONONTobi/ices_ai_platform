@@ -1,0 +1,70 @@
+{
+  "id": "reporting-du-capital-immaterial",
+  "title": "Reporting du capital immatériel",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "amortissement-annuel",
+      "type": "number",
+      "label": "Quel est l'amortissement annuel du capital immatériel ?",
+      "placeholder": "Exemple : 10 000",
+      "required": true
+    },
+    {
+      "name": "duree-de-vie",
+      "type": "number",
+      "label": "Quelle est la durée de vie du capital immatériel ?",
+      "placeholder": "Exemple : 5 ans",
+      "required": true
+    },
+    {
+      "name": "methode-damortissement",
+      "type": "select",
+      "options": [
+        "Lignes directrices IFRS",
+        "Lignes directrices IAS"
+      ],
+      "label": "Quelle méthode d'amortissement est utilisée ?",
+      "placeholder": "Exemple : Lignes directrices IFRS",
+      "required": true
+    },
+    {
+      "name": "description-du-capital-immaterial",
+      "type": "textarea",
+      "label": "Décrivez brièvement le capital immatériel",
+      "placeholder": "Exemple : Le capital immatériel représente les coûts de développement de notre nouvelle plateforme numérique",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en reporting. L'utilisateur a répondu : Amortissement annuel : {amortissement-annuel}, Durée de vie : {duree-de-vie}, Méthode d'amortissement : {methode-damortissement}, Description du capital immatériel : {description-du-capital-immaterial}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "outil-de-conformite-marches-publics-et-ohada",
+  "title": "Outil de conformité marchés publics & OHADA",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "type_de_contrat",
+      "type": "select",
+      "options": [
+        "Contrat de fourniture",
+        "Contrat de service",
+        "Contrat de travaux"
+      ],
+      "label": "Quel est le type de contrat ?",
+      "placeholder": "Sélectionnez le type de contrat",
+      "required": true
+    },
+    {
+      "name": "montant_contrat",
+      "type": "number",
+      "label": "Quel est le montant du contrat ?",
+      "placeholder": "Entrez le montant du contrat",
+      "required": true
+    },
+    {
+      "name": "date_debut_contrat",
+      "type": "text",
+      "label": "Quelle est la date de début du contrat ?",
+      "placeholder": "Sélectionnez la date de début du contrat",
+      "required": true
+    },
+    {
+      "name": "description_contrat",
+      "type": "textarea",
+      "label": "Quelle est la description du contrat ?",
+      "placeholder": "Entrez la description du contrat",
+      "required": true
+    },
+    {
+      "name": "réglementation_appliquée",
+      "type": "select",
+      "options": [
+        "OHADA",
+        "Décision du Conseil d'État",
+        "Autre"
+      ],
+      "label": "Quelle est la réglementation applicable ?",
+      "placeholder": "Sélectionnez la réglementation applicable",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en conformité marchés publics & OHADA. L'utilisateur a répondu : Type de contrat: {type_de_contrat}, Montant du contrat: {montant_contrat}, Date de début du contrat: {date_debut_contrat}, Description du contrat: {description_contrat}, Réglementation applicable: {réglementation_appliquée}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

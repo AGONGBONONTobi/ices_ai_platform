@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-micro-learning-et-learning-nuggets",
+  "title": "Outil de micro-learning & learning nuggets",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "niveau-de-connaissance",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est votre niveau de connaissance sur le sujet ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "objectif-d-apprentissage",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs d'apprentissage pour ce sujet ?",
+      "placeholder": "Exemple : acquérir les connaissances nécessaires pour améliorer mes compétences",
+      "required": true
+    },
+    {
+      "name": "moyens-d-apprentissage",
+      "type": "text",
+      "label": "Quels moyens d'apprentissage préférez-vous (vidéos, articles, tutoriels, etc.) ?",
+      "placeholder": "Exemple : vidéos",
+      "required": true
+    },
+    {
+      "name": "duree-de-l-apprentissage",
+      "type": "number",
+      "label": "Combien de temps êtes-vous prêt à consacrer à l'apprentissage ?",
+      "placeholder": "Exemple : 30 minutes",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un formateur expert. L'utilisateur a répondu : Niveau de connaissance : {niveau-de-connaissance}, Objectif d'apprentissage : {objectif-d-apprentissage}, Moyens d'apprentissage : {moyens-d-apprentissage}, Durée de l'apprentissage : {duree-de-l-apprentissage}. Analyse ces informations et propose un plan d'apprentissage personnalisé.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

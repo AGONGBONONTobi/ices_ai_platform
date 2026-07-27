@@ -1,0 +1,72 @@
+{
+  "id": "analyse-resultats-scolaires-tableaux-bord",
+  "title": "Analyse des résultats scolaires & tableaux de bord",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "niveau_scolaire",
+      "type": "select",
+      "options": [
+        "Primaire",
+        "Collège",
+        "Lycée",
+        "Université"
+      ],
+      "label": "Quel est le niveau scolaire concerné ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "resultats_eleves",
+      "type": "textarea",
+      "label": "Veuillez saisir les résultats scolaires des élèves (ex : notes, taux de réussite, etc.)",
+      "placeholder": "Exemple : Note moyenne en mathématiques : 80, Taux de réussite : 90%",
+      "required": true
+    },
+    {
+      "name": "objectifs_pedagogiques",
+      "type": "text",
+      "label": "Quels sont les objectifs pédagogiques visés ?",
+      "placeholder": "Améliorer les résultats en mathématiques",
+      "required": true
+    },
+    {
+      "name": "periode_scolaire",
+      "type": "text",
+      "label": "Quelle est la période scolaire concernée ?",
+      "placeholder": "Semestre 1",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en éducation. L'utilisateur a répondu : Niveau scolaire: {niveau_scolaire}, Résultats des élèves: {resultats_eleves}, Objectifs pédagogiques: {objectifs_pedagogiques}, Période scolaire: {periode_scolaire}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations pour améliorer les résultats scolaires.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

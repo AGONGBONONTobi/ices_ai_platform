@@ -1,0 +1,84 @@
+{
+  "id": "diagnostic-de-la-performance-commerciale",
+  "title": "Diagnostic de la performance commerciale",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "chiffreAffaire",
+      "type": "number",
+      "label": "Quel est votre chiffre d'affaire annuel ?",
+      "placeholder": "Ex: 1000000",
+      "required": true
+    },
+    {
+      "name": "secteurActivite",
+      "type": "select",
+      "options": [
+        "Services",
+        "Industrie",
+        "Commerce",
+        "Autre"
+      ],
+      "label": "Quel est votre secteur d'activité ?",
+      "required": true
+    },
+    {
+      "name": "descriptionDefis",
+      "type": "textarea",
+      "label": "Décrivez les défis que vous rencontrez actuellement dans votre entreprise",
+      "placeholder": "Ex: difficultés à trouver des clients, concurrence accrue, etc.",
+      "required": true
+    },
+    {
+      "name": "objectifsStrategiques",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs stratégiques pour les prochaines années ?",
+      "placeholder": "Ex: augmenter les ventes, développer de nouveaux produits, etc.",
+      "required": true
+    },
+    {
+      "name": "niveauSatisfaction",
+      "type": "select",
+      "options": [
+        "Très satisfait",
+        "Satisfait",
+        "Neutre",
+        "Insatisfait",
+        "Très insatisfait"
+      ],
+      "label": "Quel est votre niveau de satisfaction actuel par rapport à la performance de votre entreprise ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en diagnostic de la performance commerciale. L'utilisateur a répondu : Chiffre d'affaire: {chiffreAffaire}, Secteur d'activité: {secteurActivite}, Défis actuels: {descriptionDefis}, Objectifs stratégiques: {objectifsStrategiques}, Niveau de satisfaction: {niveauSatisfaction}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (stratégie, marketing, finances, ressources humaines), et des recommandations pour améliorer la performance commerciale de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

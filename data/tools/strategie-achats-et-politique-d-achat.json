@@ -1,0 +1,79 @@
+{
+  "id": "strategie-achats-et-politique-d-achat",
+  "title": "Stratégie achats & politique d'achat",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : XYZ Corporation",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Alimentaire",
+        "Technologie",
+        "Énergie",
+        "Autres"
+      ],
+      "label": "Secteur d'activité de l'entreprise",
+      "placeholder": "Choisissez un secteur",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Objectifs de la stratégie achats (ex : réduction des coûts, amélioration de la qualité, etc.)",
+      "placeholder": "Exemple : Réduire les coûts de 10% dans les 6 prochains mois",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Budget alloué pour la stratégie achats",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "échéancier",
+      "type": "textarea",
+      "label": "Échéancier de mise en œuvre de la stratégie achats",
+      "placeholder": "Exemple : Phase 1 : analyse des besoins (mois 1-3), Phase 2 : mise en œuvre (mois 4-6)",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en stratégie achats. L'utilisateur a répondu : Entreprise : {entreprise}, Secteur : {secteur}, Objectifs : {objectifs}, Budget : {budget}, Échéancier : {échéancier}. Analyse ces informations et propose une stratégie d'achat personnalisée pour atteindre les objectifs de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

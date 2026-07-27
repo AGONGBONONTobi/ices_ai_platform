@@ -1,0 +1,71 @@
+{
+  "id": "plan-de-croissance-startup-et-metriques-north-star",
+  "title": "Plan de croissance startup & métriques north star",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectifCroissance",
+      "type": "number",
+      "label": "Quel est votre objectif de croissance annuelle en % ?",
+      "placeholder": "Exemple : 20",
+      "required": true
+    },
+    {
+      "name": "marchéCible",
+      "type": "select",
+      "options": [
+        "B2B",
+        "B2C",
+        "B2G"
+      ],
+      "label": "Quel est votre marché cible ?",
+      "placeholder": "Sélectionnez votre marché cible",
+      "required": true
+    },
+    {
+      "name": "descriptionMétriques",
+      "type": "textarea",
+      "label": "Décrivez les métriques que vous utilisez actuellement pour mesurer votre croissance (ex : nombre d'utilisateurs, chiffre d'affaires, etc.)",
+      "placeholder": "Exemple : Nous utilisons le nombre d'utilisateurs actifs mensuels et le chiffre d'affaires mensuel",
+      "required": true
+    },
+    {
+      "name": "northStarMetric",
+      "type": "text",
+      "label": "Quelle est votre métrique North Star (la métrique la plus importante pour votre entreprise) ?",
+      "placeholder": "Exemple : nombre d'utilisateurs actifs mensuels",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en croissance de startups. L'utilisateur a répondu : Objectif de croissance : {objectifCroissance}%, Marché cible : {marchéCible}, Métriques actuelles : {descriptionMétriques}, Métrique North Star : {northStarMetric}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations pour atteindre l'objectif de croissance.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

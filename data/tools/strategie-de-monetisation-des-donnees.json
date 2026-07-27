@@ -1,0 +1,76 @@
+{
+  "id": "strategie-de-monetisation-des-donnees",
+  "title": "Stratégie de monétisation des données",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "type-de-donnees",
+      "type": "select",
+      "options": [
+        "Données structurées",
+        "Données non structurées",
+        "Données semi-structurées"
+      ],
+      "label": "Quel type de données souhaitez-vous monétiser ?",
+      "placeholder": "Sélectionnez un type de données",
+      "required": true
+    },
+    {
+      "name": "methode-de-monetisation",
+      "type": "select",
+      "options": [
+        "Licence de vente",
+        "Partenariat",
+        "Publicité ciblée"
+      ],
+      "label": "Quelle méthode de monétisation préférez-vous ?",
+      "placeholder": "Sélectionnez une méthode de monétisation",
+      "required": true
+    },
+    {
+      "name": "cible-de-monetisation",
+      "type": "textarea",
+      "label": "Qui est votre cible de monétisation ?",
+      "placeholder": "Décrivez votre cible de monétisation",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel budget allouez-vous à la monétisation des données ?",
+      "placeholder": "Entrez un budget",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en transformation digitale et IA. L'utilisateur a répondu : Type de données : {type-de-donnees}, Méthode de monétisation : {methode-de-monetisation}, Cible de monétisation : {cible-de-monetisation}, Budget alloué : {budget-alloue}. Analyse ces informations et propose une stratégie de monétisation des données efficace.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

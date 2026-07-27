@@ -1,0 +1,70 @@
+{
+  "id": "outil-optimisation-portuaire-fret-maritime",
+  "title": "Outil d'optimisation portuaire & fret maritime",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "nombre_de_conteneurs_par_semaine",
+      "type": "number",
+      "label": "Combien de conteneurs traitez-vous par semaine ?",
+      "placeholder": "ex: 1200",
+      "required": true
+    },
+    {
+      "name": "principaux_ports_utilises",
+      "type": "textarea",
+      "label": "Quels sont les principaux ports que vous utilisez ?",
+      "placeholder": "ex: Rotterdam, Shanghai, Los Angeles",
+      "required": true
+    },
+    {
+      "name": "niveau_de_collaboration_avec_fret",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quel est votre niveau de collaboration avec les transporteurs maritimes ?",
+      "required": true
+    },
+    {
+      "name": "principaux_challenges",
+      "type": "textarea",
+      "label": "Quels sont les principaux défis que vous rencontrez dans la gestion du fret maritime ?",
+      "placeholder": "ex: délais, coûts, conformité",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nombre de conteneurs par semaine: {nombre_de_conteneurs_par_semaine}, Principaux ports utilisés: {principaux_ports_utilises}, Niveau de collaboration avec le fret: {niveau_de_collaboration_avec_fret}, Principaux challenges: {principaux_challenges}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

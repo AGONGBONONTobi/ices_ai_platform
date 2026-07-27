@@ -1,0 +1,85 @@
+{
+  "id": "bilan-social-automatise-preparation-nao",
+  "title": "Bilan social automatisé & préparation NAO",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : XYZ",
+      "required": true
+    },
+    {
+      "name": "effectif",
+      "type": "number",
+      "label": "Effectif de l'entreprise",
+      "placeholder": "Exemple : 100",
+      "required": true
+    },
+    {
+      "name": "salaire-moyen",
+      "type": "number",
+      "label": "Salaire moyen de l'entreprise",
+      "placeholder": "Exemple : 4000",
+      "required": true
+    },
+    {
+      "name": "type-contrat",
+      "type": "select",
+      "options": [
+        "CDI",
+        "CDD",
+        "INTÉrim"
+      ],
+      "label": "Type de contrat principal",
+      "placeholder": "Exemple : CDI",
+      "required": true
+    },
+    {
+      "name": "taux-chomage",
+      "type": "number",
+      "label": "Taux de chômage dans la région",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "description-probleme",
+      "type": "textarea",
+      "label": "Description du problème à résoudre",
+      "placeholder": "Exemple : Nous avons des difficultés à trouver des candidats qualifiés",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise: {entreprise}, Effectif: {effectif}, Salaire moyen: {salaire-moyen}, Type de contrat principal: {type-contrat}, Taux de chômage dans la région: {taux-chomage}, Description du problème à résoudre: {description-probleme}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

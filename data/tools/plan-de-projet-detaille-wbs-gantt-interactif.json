@@ -1,0 +1,78 @@
+{
+  "id": "plan-de-projet-detaille-wbs-gantt-interactif",
+  "title": "Plan de projet détaillé (WBS & Gantt interactif)",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "nom-projet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple : Développement d'un nouveau produit",
+      "required": true
+    },
+    {
+      "name": "description-projet",
+      "type": "textarea",
+      "label": "Description du projet",
+      "placeholder": "Exemple : Développer un nouveau produit pour répondre à une demande du marché",
+      "required": true
+    },
+    {
+      "name": "duree-projet",
+      "type": "number",
+      "label": "Durée du projet (en mois)",
+      "placeholder": "Exemple : 6",
+      "required": true
+    },
+    {
+      "name": "budget-projet",
+      "type": "number",
+      "label": "Budget du projet (en euros)",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    },
+    {
+      "name": "type-projet",
+      "type": "select",
+      "options": [
+        "Développement",
+        "Maintenance",
+        "Réalisations"
+      ],
+      "label": "Type de projet",
+      "placeholder": "Exemple : Développement",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet : {nom-projet}, Description du projet : {description-projet}, Durée du projet : {duree-projet} mois, Budget du projet : {budget-projet} euros, Type de projet : {type-projet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

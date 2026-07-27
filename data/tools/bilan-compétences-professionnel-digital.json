@@ -1,0 +1,71 @@
+{
+  "id": "bilan-compétences-professionnel-digital",
+  "title": "Bilan de compétences professionnel digital",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "niveau-digitalisation",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est votre niveau de digitalisation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "domaines-digitalisation",
+      "type": "textarea",
+      "label": "Quels domaines de la digitalisation avez-vous déjà explorés ? (ex : gestion de projet, développement web, etc.)",
+      "placeholder": "Exemple : gestion de projet, développement web, etc.",
+      "required": true
+    },
+    {
+      "name": "objectifs-digitalisation",
+      "type": "text",
+      "label": "Quels sont vos objectifs en matière de digitalisation ? (ex : améliorer la productivité, réduire les coûts, etc.)",
+      "placeholder": "Exemple : améliorer la productivité, réduire les coûts, etc.",
+      "required": true
+    },
+    {
+      "name": "barrières-digitalisation",
+      "type": "textarea",
+      "label": "Quelles sont les barrières que vous rencontrez pour adopter la digitalisation ? (ex : manque de ressources, manque de connaissances, etc.)",
+      "placeholder": "Exemple : manque de ressources, manque de connaissances, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Niveau de digitalisation : {niveau-digitalisation}, Domaines de la digitalisation explorés : {domaines-digitalisation}, Objectifs en matière de digitalisation : {objectifs-digitalisation}, Barrières à la digitalisation : {barrières-digitalisation}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

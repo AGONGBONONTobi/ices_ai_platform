@@ -1,0 +1,81 @@
+{
+  "id": "cartographie-audit-de-la-supply-chain",
+  "title": "Cartographie & audit de la supply chain",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "nomEntreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Entreprise XYZ",
+      "required": true
+    },
+    {
+      "name": "typeDeSupplyChain",
+      "type": "select",
+      "options": [
+        "Produits alimentaires",
+        "Produits manufacturés",
+        "Services"
+      ],
+      "label": "Type de supply chain",
+      "required": true
+    },
+    {
+      "name": "descriptionDeLaSupplyChain",
+      "type": "textarea",
+      "label": "Description de la supply chain actuelle",
+      "placeholder": "Exemple : Nous importons des matières premières de l'étranger, les transformons en produits finis, puis les distribuons à nos clients.",
+      "required": true
+    },
+    {
+      "name": "objectifsDeLAudit",
+      "type": "textarea",
+      "label": "Objectifs de l'audit de la supply chain",
+      "placeholder": "Exemple : Améliorer la qualité des produits, réduire les coûts, augmenter la rapidité de livraison.",
+      "required": true
+    },
+    {
+      "name": "frequenceDesLivraisons",
+      "type": "select",
+      "options": [
+        "Quotidienne",
+        "Hebdomadaire",
+        "Mensuelle"
+      ],
+      "label": "Fréquence des livraisons",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en supply chain. L'entreprise {nomEntreprise} a une supply chain de type {typeDeSupplyChain}. La description de la supply chain actuelle est : {descriptionDeLaSupplyChain}. Les objectifs de l'audit sont : {objectifsDeLAudit}. La fréquence des livraisons est {frequenceDesLivraisons}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (qualité, coûts, rapidité de livraison), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

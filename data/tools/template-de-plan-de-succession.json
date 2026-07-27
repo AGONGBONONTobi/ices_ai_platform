@@ -1,0 +1,70 @@
+{
+  "id": "template-de-plan-de-succession",
+  "title": "Template de plan de succession",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "nom_de_lentreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Entreprise XYZ",
+      "required": true
+    },
+    {
+      "name": "poste_cible",
+      "type": "select",
+      "options": [
+        "Directeur Général",
+        "Directeur Financier",
+        "Directeur Ressources Humaines"
+      ],
+      "label": "Poste cible pour le plan de succession",
+      "required": true
+    },
+    {
+      "name": "objectifs_strategiques",
+      "type": "textarea",
+      "label": "Objectifs stratégiques de l'entreprise pour les 5 prochaines années",
+      "placeholder": "Décrivez les objectifs clés de l'entreprise",
+      "required": true
+    },
+    {
+      "name": "competences_clefs",
+      "type": "textarea",
+      "label": "Compétences clés requises pour le poste cible",
+      "placeholder": "Listez les compétences essentielles pour le poste",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en stratégie d'entreprise. L'entreprise {nom_de_lentreprise} souhaite développer un plan de succession pour le {poste_cible}. Les objectifs stratégiques de l'entreprise pour les 5 prochaines années sont : {objectifs_strategiques}. Les compétences clés requises pour le poste cible sont : {competences_clefs}. Analysez ces informations et proposez un plan de succession détaillé, y compris une évaluation des risques et des opportunités, ainsi que des recommandations pour la mise en œuvre du plan.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

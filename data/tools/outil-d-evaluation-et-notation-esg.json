@@ -1,0 +1,71 @@
+{
+  "id": "outil-d-evaluation-et-notation-esg",
+  "title": "Outil d'évaluation & notation ESG",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "esg_score",
+      "type": "number",
+      "label": "Score ESG attribué par l'entreprise",
+      "placeholder": "Exemple de score",
+      "required": true
+    },
+    {
+      "name": "emissions_carbone",
+      "type": "number",
+      "label": "Émissions de gaz à effet de serre (tonnes CO2 équivalent)",
+      "placeholder": "Exemple d'émissions",
+      "required": true
+    },
+    {
+      "name": "diversite_emploi",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Niveau de diversité dans l'emploi",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "engagement_citoyen",
+      "type": "textarea",
+      "label": "Engagement citoyen et responsabilité sociale de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE. L'utilisateur a répondu : ESG Score: {esg_score}, Émissions de gaz à effet de serre : {emissions_carbone} tonnes CO2 équivalent, Niveau de diversité dans l'emploi : {diversite_emploi}, Engagement citoyen : {engagement_citoyen}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "id": "analyse-de-la-structure-du-capital",
+  "title": "Analyse de la structure du capital (WACC, levier financier)",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "taux_d_interet",
+      "type": "number",
+      "label": "Taux d'intérêt moyen sur les emprunts",
+      "placeholder": "Exemple : 5%",
+      "required": true
+    },
+    {
+      "name": "taux_d_action",
+      "type": "number",
+      "label": "Taux d'action moyen",
+      "placeholder": "Exemple : 8%",
+      "required": true
+    },
+    {
+      "name": "taux_d_emprunt",
+      "type": "number",
+      "label": "Taux d'emprunt moyen",
+      "placeholder": "Exemple : 6%",
+      "required": true
+    },
+    {
+      "name": "taux_d_dividende",
+      "type": "number",
+      "label": "Taux de dividende moyen",
+      "placeholder": "Exemple : 4%",
+      "required": true
+    },
+    {
+      "name": "taux_d_emprunt_select",
+      "type": "select",
+      "options": [
+        "5%",
+        "6%",
+        "7%",
+        "8%",
+        "9%"
+      ],
+      "label": "Taux d'emprunt moyen (sélectionner)",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Analyse de la structure du capital d'une entreprise. L'utilisateur a fourni les informations suivantes : Taux d'intérêt moyen sur les emprunts : {taux_d_interet}, Taux d'action moyen : {taux_d_action}, Taux d'emprunt moyen : {taux_d_emprunt}, Taux de dividende moyen : {taux_d_dividende}, Taux d'emprunt moyen (sélectionner) : {taux_d_emprunt_select}. Analyse ces informations et calcule le WACC et le levier financier.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

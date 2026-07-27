@@ -1,0 +1,84 @@
+{
+  "id": "test-de-styles-de-leadership-kebab-case",
+  "title": "Test de styles de leadership (Situational Leadership)",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "style-leadership",
+      "type": "select",
+      "options": [
+        "Transformationnel",
+        "Transactif",
+        "Paternaliste",
+        "Laissez-faire"
+      ],
+      "label": "Quel style de leadership utilisez-vous le plus souvent ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "motivation",
+      "type": "textarea",
+      "label": "Comment motiveriez-vous vos équipes pour atteindre des objectifs ambitieux ?",
+      "placeholder": "Exemple :",
+      "required": true
+    },
+    {
+      "name": "communication",
+      "type": "text",
+      "label": "Comment décririez-vous votre style de communication avec vos équipes ?",
+      "placeholder": "Exemple :",
+      "required": true
+    },
+    {
+      "name": "conflits",
+      "type": "select",
+      "options": [
+        "Je m'efforce de résoudre les conflits de manière constructive",
+        "Je laisse les conflits se résoudre naturellement",
+        "Je peux être impatient ou agressif lors de conflits"
+      ],
+      "label": "Comment gérez-vous les conflits avec vos équipes ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "apprentissage",
+      "type": "textarea",
+      "label": "Comment encouragez-vous l'apprentissage et le développement de vos équipes ?",
+      "placeholder": "Exemple :",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Style de leadership : {style-leadership}, Motivation : {motivation}, Communication : {communication}, Gestion des conflits : {conflits}, Encouragement de l'apprentissage : {apprentissage}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

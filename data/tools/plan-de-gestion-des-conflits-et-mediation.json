@@ -1,0 +1,78 @@
+{
+  "id": "plan-de-gestion-des-conflits-et-mediation",
+  "title": "Plan de gestion des conflits & médiation",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "typeDeConflit",
+      "type": "select",
+      "options": [
+        "Interpersonnel",
+        "Intergénérationnel",
+        "Intra-perso"
+      ],
+      "label": "Quel type de conflit est-il en jeu ?",
+      "placeholder": "Sélectionnez un type de conflit",
+      "required": true
+    },
+    {
+      "name": "descriptionDuConflit",
+      "type": "textarea",
+      "label": "Décrivez brièvement le conflit en question",
+      "placeholder": "Exemple : Désaccord sur les objectifs de l'équipe",
+      "required": true
+    },
+    {
+      "name": "partiesImpliquees",
+      "type": "text",
+      "label": "Qui sont les parties impliquées dans le conflit ?",
+      "placeholder": "Exemple : L'équipe et le manager",
+      "required": true
+    },
+    {
+      "name": "objectifsDesParties",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de chaque partie impliquée ?",
+      "placeholder": "Exemple : L'équipe souhaite obtenir plus de ressources, tandis que le manager souhaite améliorer la productivité",
+      "required": true
+    },
+    {
+      "name": "barriersAuResoudre",
+      "type": "textarea",
+      "label": "Quels sont les obstacles ou les barrières qui empêchent de résoudre le conflit ?",
+      "placeholder": "Exemple : Manque de communication, différences de valeurs",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en gestion des conflits et médiation. L'utilisateur a répondu : Type de conflit : {typeDeConflit}, Description du conflit : {descriptionDuConflit}, Parties impliquées : {partiesImpliquees}, Objectifs des parties : {objectifsDesParties}, Barrières au résoudre : {barriersAuResoudre}. Analyse ces informations et propose un plan de gestion des conflits et des recommandations pour résoudre le conflit de manière efficace.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

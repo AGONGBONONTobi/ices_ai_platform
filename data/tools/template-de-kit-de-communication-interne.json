@@ -1,0 +1,78 @@
+{
+  "id": "template-de-kit-de-communication-interne",
+  "title": "Template de kit de communication interne",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "nom-de-projet",
+      "type": "text",
+      "label": "Nom du projet ou initiative",
+      "placeholder": "Exemple : Lancement de la nouvelle gamme de produits",
+      "required": true
+    },
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Objectif principal du projet",
+      "placeholder": "Exemple : Augmenter les ventes de 20% en 6 mois",
+      "required": true
+    },
+    {
+      "name": "cible",
+      "type": "select",
+      "options": [
+        "Equipe commerciale",
+        "Equipe marketing",
+        "Equipe de développement"
+      ],
+      "label": "Cible de la communication",
+      "placeholder": "Exemple : Equipe commerciale",
+      "required": true
+    },
+    {
+      "name": "contenu",
+      "type": "textarea",
+      "label": "Contenu clé à transmettre",
+      "placeholder": "Exemple : Les avantages de la nouvelle gamme de produits",
+      "required": true
+    },
+    {
+      "name": "références",
+      "type": "text",
+      "label": "Références utiles (documents, liens, etc.)",
+      "placeholder": "Exemple : Document de présentation de la nouvelle gamme",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom de projet : {nom-de-projet}, Objectif : {objectif}, Cible : {cible}, Contenu : {contenu}, Références : {références}. Analyse ces informations et propose un kit de communication interne complet, incluant un plan d'action, des indicateurs de performance clés et des recommandations pour améliorer la communication.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

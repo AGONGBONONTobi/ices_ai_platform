@@ -1,0 +1,79 @@
+{
+  "id": "outil-de-veille-des-prix-et-indices-sectoriels",
+  "title": "Outil de veille des prix & indices sectoriels",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Finance",
+        "Santé",
+        "Énergie",
+        "Autres"
+      ],
+      "label": "Sélectionnez le secteur d'activité",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Décrivez les produits ou services que vous souhaitez suivre",
+      "placeholder": "Exemple : produits électroniques, services financiers, etc.",
+      "required": true
+    },
+    {
+      "name": "periode",
+      "type": "select",
+      "options": [
+        "Mensuel",
+        "Trimestriel",
+        "Semestriel",
+        "Annuel"
+      ],
+      "label": "Sélectionnez la période de suivi",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "concurrents",
+      "type": "text",
+      "label": "Liste des concurrents à surveiller (séparés par des virgules)",
+      "placeholder": "Exemple : Entreprise A, Entreprise B, etc.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique. L'utilisateur a répondu : Secteur: {secteur}, Description: {description}, Période: {periode}, Concurrents: {concurrents}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer la veille des prix et indices sectoriels.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

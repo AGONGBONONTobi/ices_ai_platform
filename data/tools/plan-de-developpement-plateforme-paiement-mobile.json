@@ -1,0 +1,71 @@
+{
+  "id": "plan-de-developpement-plateforme-paiement-mobile",
+  "title": "Plan de développement d'une plateforme de paiement mobile",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Décrivez les objectifs principaux de votre plateforme de paiement mobile",
+      "placeholder": "Exemple : Faciliter les transactions financières, sécuriser les données des utilisateurs",
+      "required": true
+    },
+    {
+      "name": "publicCible",
+      "type": "select",
+      "options": [
+        "Particuliers",
+        "Entreprises",
+        "Les deux"
+      ],
+      "label": "Quelle est votre public cible principal ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "fonctionnalites",
+      "type": "text",
+      "label": "Listez les fonctionnalités clés que vous souhaitez intégrer (séparées par des virgules)",
+      "placeholder": "Exemple : paiement en ligne, transfert d'argent, gestion de compte",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget approximatif alloué pour le développement ?",
+      "placeholder": "100000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en développement de plateformes de paiement mobile. L'utilisateur a répondu : Objectif: {objectif}, Public cible: {publicCible}, Fonctionnalités: {fonctionnalites}, Budget: {budget}. Analysez ces informations pour proposer un plan de développement. Évaluez la faisabilité du projet et donnez un score global sur 100. Proposez une évaluation par axe (sécurité, expérience utilisateur, fonctionnalités) et des recommandations pour améliorer le projet.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

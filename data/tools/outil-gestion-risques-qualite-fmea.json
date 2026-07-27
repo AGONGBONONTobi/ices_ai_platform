@@ -1,0 +1,85 @@
+{
+  "id": "outil-gestion-risques-qualite-fmea",
+  "title": "Outil de gestion des risques qualité (FMEA)",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "process_name",
+      "type": "text",
+      "label": "Nom du processus",
+      "placeholder": "Exemple: Montage",
+      "required": true
+    },
+    {
+      "name": "failure_modes",
+      "type": "textarea",
+      "label": "Liste des modes de défaillance identifiés",
+      "placeholder": "Exemple: Court-circuit, Usure",
+      "required": true
+    },
+    {
+      "name": "severity",
+      "type": "select",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "label": "Score de gravité (1-10)",
+      "placeholder": "Sélectionnez un score",
+      "required": true
+    },
+    {
+      "name": "occurrence",
+      "type": "number",
+      "label": "Score d'occurrence (1-10)",
+      "placeholder": "Exemple: 5",
+      "required": true
+    },
+    {
+      "name": "detection",
+      "type": "number",
+      "label": "Score de détection (1-10)",
+      "placeholder": "Exemple: 3",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Process Name: {process_name}, Failure Modes: {failure_modes}, Severity: {severity}, Occurrence: {occurrence}, Detection: {detection}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

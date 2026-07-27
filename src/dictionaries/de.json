@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "brand": "KI-Plattform",
+    "toolsCount": "verfügbare Tools",
+    "back": "Zurück zum Katalog"
+  },
+  "hero": {
+    "badge": "Angetrieben von erstklassigen LLMs",
+    "title": "Ihr Katalog professioneller",
+    "titleHighlight": "KI-Tools",
+    "subtitle": "Diagnosen, Audits, Analysen und KI-Inhaltsgeneratoren, auf Knopfdruck. Jedes Tool liefert in Sekunden einen professionellen Bericht."
+  },
+  "catalog": {
+    "searchPlaceholder": "KI-Tool suchen... (z.B.: Audit, Strategie, Vertrag)",
+    "filterAll": "Alle",
+    "resultCount": "Tool",
+    "resultCountPlural": "Tools",
+    "resultIn": "in",
+    "empty": {
+      "title": "Keine Tools gefunden",
+      "subtitle": "Versuchen Sie ein anderes Stichwort oder eine andere Kategorie."
+    },
+    "emptyDb": {
+      "title": "Die Datenbank ist leer.",
+      "subtitle": "Führen Sie das Ingestion-Skript aus, um den Katalog zu befüllen."
+    }
+  },
+  "tool": {
+    "launch": "Tool starten",
+    "generate": "Ergebnis generieren",
+    "generating": "Wird generiert...",
+    "result": "Generiertes Ergebnis",
+    "restart": "Tool neu starten",
+    "downloadPdf": "Bericht herunterladen (PDF)",
+    "error": "Ein Fehler ist aufgetreten"
+  },
+  "language": "Sprache"
+}

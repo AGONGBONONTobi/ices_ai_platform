@@ -1,0 +1,80 @@
+{
+  "id": "analyse-ecosysteme-startup-africain",
+  "title": "Analyse de l'écosystème startup africain",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "pays",
+      "type": "select",
+      "options": [
+        "Afrique du Sud",
+        "Nigeria",
+        "Égypte",
+        "Maroc",
+        "Côte d'Ivoire"
+      ],
+      "label": "Sélectionnez le pays africain que vous souhaitez analyser",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Fintech",
+        "Healthtech",
+        "Edtech",
+        "E-commerce",
+        "Autres"
+      ],
+      "label": "Sélectionnez le secteur d'activité que vous souhaitez analyser",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Décrivez brièvement l'écosystème startup dans le pays et le secteur sélectionnés",
+      "placeholder": "Exemple : L'écosystème fintech en Afrique du Sud est en plein essor...",
+      "required": true
+    },
+    {
+      "name": "investissement",
+      "type": "number",
+      "label": "Quel est le montant approximatif des investissements dans l'écosystème startup dans les 5 dernières années ?",
+      "placeholder": "Exemple : 100 millions",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur a répondu : Pays: {pays}, Secteur: {secteur}, Description de l'écosystème: {description}, Investissement: {investissement}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (innovation, croissance, impact), et des recommandations pour améliorer l'écosystème startup dans ce pays et secteur.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

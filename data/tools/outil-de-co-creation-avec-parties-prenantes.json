@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-co-creation-avec-parties-prenantes",
+  "title": "Outil de co-création avec parties prenantes",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de la co-création ?",
+      "placeholder": "Exemple : Développer un nouveau produit",
+      "required": true
+    },
+    {
+      "name": "partiesPrenantes",
+      "type": "select",
+      "options": [
+        "Équipes de développement",
+        "Partenaires commerciaux",
+        "Utilisateurs finaux"
+      ],
+      "label": "Quelles parties prenantes sont impliquées dans la co-création ?",
+      "placeholder": "Sélectionnez les parties prenantes",
+      "required": true
+    },
+    {
+      "name": "ressourcesDisponibles",
+      "type": "number",
+      "label": "Quelles ressources sont disponibles pour la co-création ? (en jours)",
+      "placeholder": "Exemple : 10 jours",
+      "required": true
+    },
+    {
+      "name": "barriersPotentiels",
+      "type": "textarea",
+      "label": "Quels sont les obstacles potentiels à la co-création ?",
+      "placeholder": "Exemple : Manque de ressources, difficultés de communication",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en co-création. Les parties prenantes ont répondu : Objectif : {objectif}, Parties prenantes : {partiesPrenantes}, Ressources disponibles : {ressourcesDisponibles} jours, Barriers potentiels : {barriersPotentiels}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

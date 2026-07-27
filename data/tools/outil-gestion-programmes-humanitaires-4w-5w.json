@@ -1,0 +1,79 @@
+{
+  "id": "outil-gestion-programmes-humanitaires-4w-5w",
+  "title": "Outil de gestion de programmes humanitaires (4W/5W)",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Décrivez l'objectif principal du programme humanitaire",
+      "placeholder": "Exemple : Fournir une aide alimentaire d'urgence aux populations affectées",
+      "required": true
+    },
+    {
+      "name": "localisation",
+      "type": "text",
+      "label": "Où se déroule le programme (pays, région, ville) ?",
+      "placeholder": "Exemple : Haïti, département de l'Ouest",
+      "required": true
+    },
+    {
+      "name": "type_aide",
+      "type": "select",
+      "options": [
+        "Alimentaire",
+        "Sanitaire",
+        "Abri",
+        "Eau et assainissement"
+      ],
+      "label": "Quel type d'aide sera fourni ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "number",
+      "label": "Combien de personnes seront bénéficiaires du programme ?",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    },
+    {
+      "name": "partenaires",
+      "type": "textarea",
+      "label": "Listez les principaux partenaires impliqués dans le programme",
+      "placeholder": "Exemple : UNICEF, Croix-Rouge, ONG locale",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un spécialiste en gestion de programmes humanitaires. L'utilisateur a répondu : Objectif: {objectif}, Localisation: {localisation}, Type d'aide: {type_aide}, Public cible: {public_cible}, Partenaires: {partenaires}. Évaluez ce programme selon les critères 4W/5W (Qui, Quoi, Où, Quand, Combien) et fournissez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

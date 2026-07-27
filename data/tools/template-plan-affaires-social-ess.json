@@ -1,0 +1,71 @@
+{
+  "id": "template-plan-affaires-social-ess",
+  "title": "Template de plan d'affaires social (ESS)",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectifEntreprise",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux de votre entreprise sociale ?",
+      "placeholder": "Décrivez les buts et les objectifs de votre entreprise",
+      "required": true
+    },
+    {
+      "name": "publicCible",
+      "type": "select",
+      "options": [
+        "Personnes âgées",
+        "Enfants et jeunes",
+        "Personnes handicapées",
+        "Autres (préciser)"
+      ],
+      "label": "Quel est le public cible de votre entreprise sociale ?",
+      "required": true
+    },
+    {
+      "name": "ressourcesFinancieres",
+      "type": "number",
+      "label": "Quel est le budget initial pour lancer votre entreprise sociale ?",
+      "placeholder": "Entrez le montant en euros",
+      "required": true
+    },
+    {
+      "name": "strategieMarketing",
+      "type": "textarea",
+      "label": "Quelle stratégie de marketing prévoyez-vous pour votre entreprise sociale ?",
+      "placeholder": "Décrivez les canaux et les outils que vous utiliserez",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en entreprises sociales. L'utilisateur a répondu : Objectif de l'entreprise : {objectifEntreprise}, Public cible : {publicCible}, Ressources financières : {ressourcesFinancieres} euros, Stratégie de marketing : {strategieMarketing}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (objectifs, public cible, ressources financières, stratégie de marketing), et des recommandations pour améliorer le plan d'affaires.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-calcul-de-l-empreinte-eau-et-biodiversite",
+  "title": "Outil de calcul de l'empreinte eau & biodiversité",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "surface-terre",
+      "type": "number",
+      "label": "Surface terrestre en hectares",
+      "placeholder": "Exemple : 100",
+      "required": true
+    },
+    {
+      "name": "consommation-eau",
+      "type": "number",
+      "label": "Consommation d'eau en mètres cubes",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    },
+    {
+      "name": "types-biodiversite",
+      "type": "select",
+      "options": [
+        "faune",
+        "flores",
+        "oiseaux"
+      ],
+      "label": "Types de biodiversité affectés",
+      "placeholder": "Exemple : faune",
+      "required": true
+    },
+    {
+      "name": "description-impact",
+      "type": "textarea",
+      "label": "Description de l'impact sur l'environnement",
+      "placeholder": "Exemple : La construction d'une centrale électrique a entraîné la destruction de plusieurs espèces",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE. L'utilisateur a répondu : Surface terrestre : {surface-terre} hectares, Consommation d'eau : {consommation-eau} mètres cubes, Types de biodiversité affectés : {types-biodiversite}, Description de l'impact sur l'environnement : {description-impact}. Analyse ces informations et calcule l'empreinte eau & biodiversité de l'activité.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

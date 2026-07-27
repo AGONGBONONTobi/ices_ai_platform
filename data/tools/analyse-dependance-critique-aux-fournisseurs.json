@@ -1,0 +1,70 @@
+{
+  "id": "analyse-dependance-critique-aux-fournisseurs",
+  "title": "Analyse de la dépendance critique aux fournisseurs",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "nomFournisseur",
+      "type": "text",
+      "label": "Nom du fournisseur",
+      "placeholder": "Exemple : XYZ Inc.",
+      "required": true
+    },
+    {
+      "name": "pourcentageDependance",
+      "type": "number",
+      "label": "Pourcentage de dépendance",
+      "placeholder": "Exemple : 80",
+      "required": true
+    },
+    {
+      "name": "typeContrat",
+      "type": "select",
+      "options": [
+        "Contrat à durée déterminée",
+        "Contrat à durée indéterminée"
+      ],
+      "label": "Type de contrat",
+      "placeholder": "Exemple : Contrat à durée déterminée",
+      "required": true
+    },
+    {
+      "name": "zoneActivite",
+      "type": "textarea",
+      "label": "Zone d'activité du fournisseur",
+      "placeholder": "Exemple : Production de composants électroniques",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des risques. L'utilisateur a répondu : Nom du fournisseur : {nomFournisseur}, Pourcentage de dépendance : {pourcentageDependance}%, Type de contrat : {typeContrat}, Zone d'activité du fournisseur : {zoneActivite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

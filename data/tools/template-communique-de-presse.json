@@ -1,0 +1,85 @@
+{
+  "id": "template-communique-de-presse",
+  "title": "Template de communiqué de presse",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Société XYZ",
+      "required": true
+    },
+    {
+      "name": "annonce",
+      "type": "textarea",
+      "label": "Contenu de l'annonce",
+      "placeholder": "Exemple : Nous sommes heureux d'annoncer que nous avons atteint un nouveau record de ventes.",
+      "required": true
+    },
+    {
+      "name": "date",
+      "type": "text",
+      "label": "Date de l'annonce",
+      "placeholder": "Exemple : Le 12 mars 2023",
+      "required": true
+    },
+    {
+      "name": "lieu",
+      "type": "text",
+      "label": "Lieu de l'annonce",
+      "placeholder": "Exemple : Paris, France",
+      "required": true
+    },
+    {
+      "name": "contact",
+      "type": "text",
+      "label": "Contact pour plus d'informations",
+      "placeholder": "Exemple : [nom.prenom@entreprise.com](mailto:nom.prenom@entreprise.com)",
+      "required": true
+    },
+    {
+      "name": "type",
+      "type": "select",
+      "options": [
+        "Annonce de lancement",
+        "Annonce de partenariat",
+        "Annonce de fermeture"
+      ],
+      "label": "Type de communiqué",
+      "placeholder": "Exemple : Annonce de lancement",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en relations publiques. L'utilisateur a répondu : Entreprise: {entreprise}, Annonce: {annonce}, Date: {date}, Lieu: {lieu}, Contact: {contact}, Type: {type}. Crée un communiqué de presse professionnel et engageant.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

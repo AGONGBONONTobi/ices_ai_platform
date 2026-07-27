@@ -1,0 +1,71 @@
+{
+  "id": "reporting-dimpact-social-et-societal",
+  "title": "Reporting d'impact social & sociétal",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "impact_social",
+      "type": "textarea",
+      "label": "Décrivez les initiatives prises pour mesurer l'impact social de l'entreprise",
+      "placeholder": "Exemple : Nous avons mis en place un programme de dons pour soutenir les associations locales",
+      "required": true
+    },
+    {
+      "name": "objectifs_societaux",
+      "type": "select",
+      "options": [
+        "Réduction des émissions de gaz à effet de serre",
+        "Amélioration de la qualité de l'air",
+        "Promotion de la diversité et de l'inclusion"
+      ],
+      "label": "Quels sont les objectifs sociétaux prioritaires de l'entreprise ?",
+      "placeholder": "Sélectionnez les objectifs pertinents",
+      "required": true
+    },
+    {
+      "name": "indicateurs_de_performance",
+      "type": "text",
+      "label": "Quels sont les indicateurs de performance utilisés pour mesurer l'impact social ?",
+      "placeholder": "Exemple : Ratio de dons, nombre de bénévoles engagés",
+      "required": true
+    },
+    {
+      "name": "challenges_recontres",
+      "type": "textarea",
+      "label": "Quels sont les défis ou les obstacles rencontrés pour mesurer l'impact social ?",
+      "placeholder": "Exemple : Manque de ressources, difficultés de collecte de données",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Impact social : {impact_social}, Objectifs sociétaux : {objectifs_societaux}, Indicateurs de performance : {indicateurs_de_performance}, Défis rencontrés : {challenges_recontres}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

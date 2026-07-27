@@ -1,0 +1,78 @@
+{
+  "id": "diagnostic-skills-mapping-ia",
+  "title": "Diagnostic des compétences (skills mapping IA)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "domaine",
+      "type": "select",
+      "options": [
+        "Développement web",
+        "Analyse de données",
+        "Intelligence artificielle",
+        "Cybersécurité"
+      ],
+      "label": "Quel est le domaine d'expertise de l'utilisateur ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "niveau-expertise",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé",
+        "Expert"
+      ],
+      "label": "Quel est le niveau d'expertise de l'utilisateur dans le domaine sélectionné ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "problématiques",
+      "type": "textarea",
+      "label": "Quelles sont les principales problématiques que l'utilisateur rencontre dans son domaine d'expertise ?",
+      "placeholder": "Exemple : difficultés à résoudre des problèmes complexes, besoin d'améliorer ses compétences en analyse de données",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs que l'utilisateur souhaite atteindre dans son domaine d'expertise ?",
+      "placeholder": "Exemple : améliorer ses compétences en développement web, acquérir des connaissances en intelligence artificielle",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Domaine: {domaine}, Niveau d'expertise: {niveau-expertise}, Problématiques: {problématiques}, Objectifs: {objectifs}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

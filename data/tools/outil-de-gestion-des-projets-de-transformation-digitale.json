@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-gestion-des-projets-de-transformation-digitale",
+  "title": "Outil de gestion des projets de transformation digitale",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "nomDuProjet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple : Projet de transformation digitale de l'entreprise",
+      "required": true
+    },
+    {
+      "name": "objectifDuProjet",
+      "type": "textarea",
+      "label": "Objectif du projet",
+      "placeholder": "Exemple : Améliorer l'efficacité opérationnelle et la qualité des services",
+      "required": true
+    },
+    {
+      "name": "methodeDeGestionDuProjet",
+      "type": "select",
+      "options": [
+        "Agile",
+        "Scrum",
+        "Kanban"
+      ],
+      "label": "Méthode de gestion du projet",
+      "placeholder": "Exemple : Agile",
+      "required": true
+    },
+    {
+      "name": "equipeDeProjet",
+      "type": "number",
+      "label": "Effectif de l'équipe de projet",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "budgetDuProjet",
+      "type": "number",
+      "label": "Budget du projet",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet : {nomDuProjet}, Objectif du projet : {objectifDuProjet}, Méthode de gestion du projet : {methodeDeGestionDuProjet}, Effectif de l'équipe de projet : {equipeDeProjet}, Budget du projet : {budgetDuProjet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

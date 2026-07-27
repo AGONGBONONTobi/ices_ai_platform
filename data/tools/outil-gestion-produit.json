@@ -1,0 +1,71 @@
+{
+  "id": "outil-gestion-produit",
+  "title": "Outil de gestion produit",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Décrivez l'objectif principal du produit",
+      "placeholder": "Exemple : Développer une nouvelle fonctionnalité pour améliorer l'expérience utilisateur",
+      "required": true
+    },
+    {
+      "name": "publicCible",
+      "type": "select",
+      "options": [
+        "Utilisateurs existants",
+        "Nouveaux utilisateurs",
+        "Entreprises partenaires"
+      ],
+      "label": "Qui est le public cible pour ce produit ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "fonctionnalites",
+      "type": "textarea",
+      "label": "Listez les fonctionnalités clés attendues pour ce produit",
+      "placeholder": "Exemple : Authentification, gestion de projet, reporting",
+      "required": true
+    },
+    {
+      "name": "delai",
+      "type": "number",
+      "label": "Quel est le délai prévu pour la mise en œuvre de ce produit ? (en mois)",
+      "placeholder": "6",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en gestion de produit. L'utilisateur a répondu : Objectif: {objectif}, Public cible: {publicCible}, Fonctionnalités: {fonctionnalites}, Délai: {delai} mois. Analyse ces informations et donne un score global sur 100, une évaluation par axe (viabilité, faisabilité, adéquation au marché), et des recommandations pour ajuster la roadmap et le backlog du produit.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

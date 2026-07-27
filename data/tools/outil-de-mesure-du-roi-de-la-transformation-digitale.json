@@ -1,0 +1,76 @@
+{
+  "id": "outil-de-mesure-du-roi-de-la-transformation-digitale",
+  "title": "Outil de mesure du ROI de la transformation digitale",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "investissementInitial",
+      "type": "number",
+      "label": "Quel est l'investissement initial dans la transformation digitale ?",
+      "placeholder": "Exemple: 100000",
+      "required": true
+    },
+    {
+      "name": "dureeDeProjet",
+      "type": "select",
+      "options": [
+        "Moins de 6 mois",
+        "6 mois à 1 an",
+        "1 an à 2 ans",
+        "Plus de 2 ans"
+      ],
+      "label": "Quelle est la durée prévue du projet de transformation digitale ?",
+      "required": true
+    },
+    {
+      "name": "objectifsStrategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de la transformation digitale ?",
+      "placeholder": "Exemple: Améliorer l'expérience client, augmenter l'efficacité opérationnelle",
+      "required": true
+    },
+    {
+      "name": "indicateursDePerformance",
+      "type": "select",
+      "options": [
+        "CA",
+        "Marge bénéficiaire",
+        "Satisfaction client",
+        "Autres"
+      ],
+      "label": "Quels indicateurs de performance seront utilisés pour mesurer le succès de la transformation digitale ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Investissement initial: {investissementInitial}, Durée de projet: {dureeDeProjet}, Objectifs stratégiques: {objectifsStrategiques}, Indicateurs de performance: {indicateursDePerformance}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

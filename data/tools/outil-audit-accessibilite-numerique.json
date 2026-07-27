@@ -1,0 +1,70 @@
+{
+  "id": "outil-audit-accessibilite-numerique",
+  "title": "Outil d'audit de l'accessibilité numérique",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "site_url",
+      "type": "text",
+      "label": "URL du site à auditer",
+      "placeholder": "https://example.com",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Décrivez les objectifs et les attentes de cet audit",
+      "placeholder": "Entrez une description détaillée",
+      "required": true
+    },
+    {
+      "name": "niveau_priorite",
+      "type": "select",
+      "options": [
+        "Haute",
+        "Moyenne",
+        "Basse"
+      ],
+      "label": "Niveau de priorité de l'audit",
+      "required": true
+    },
+    {
+      "name": "responsable_audit",
+      "type": "text",
+      "label": "Nom et prénom du responsable de l'audit",
+      "placeholder": "Jean Dupont",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en accessibilité numérique. L'utilisateur a fourni les informations suivantes : Site URL: {site_url}, Description: {description}, Niveau de priorité: {niveau_priorite}, Responsable de l'audit: {responsable_audit}. Effectuez un audit de l'accessibilité numérique du site et fournissez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

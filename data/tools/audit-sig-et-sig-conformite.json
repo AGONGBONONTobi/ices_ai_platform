@@ -1,0 +1,71 @@
+{
+  "id": "audit-sig-et-sig-conformite",
+  "title": "Audit des SIG & systèmes d'information de gestion",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Présentez les objectifs de l'audit et les critères de conformité à suivre",
+      "placeholder": "Exemple : Vérification de la conformité aux normes ISO 27001",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "SIG métier",
+        "SIG de support",
+        "SIG d'entreprise"
+      ],
+      "label": "Quel type de SIG est concerné par l'audit ?",
+      "placeholder": "Exemple : SIG métier",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Combien de personnes sont impliquées dans l'audit ?",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quels sont les principaux risques identifiés lors de l'audit ?",
+      "placeholder": "Exemple : Risque de sécurité, risque de conformité",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audit des systèmes d'information. L'utilisateur a répondu : Objectifs de l'audit : {variable1}, Type de SIG concerné : {variable2}, Nombre de personnes impliquées : {variable3}, Principaux risques identifiés : {variable4}. Analyse ces informations et propose un plan d'action pour améliorer la conformité et la sécurité des systèmes d'information.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

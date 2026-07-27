@@ -1,0 +1,77 @@
+{
+  "id": "outil-de-veille-des-brevets-et-propriete-intellectuelle",
+  "title": "Outil de veille des brevets & propriété intellectuelle",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "domaine",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Innovation",
+        "Industrie",
+        "Recherche"
+      ],
+      "label": "Sélectionnez le domaine d'intérêt",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_projet",
+      "type": "textarea",
+      "label": "Décrivez votre projet ou votre produit",
+      "placeholder": "Exemple : projet de développement d'un nouveau produit",
+      "required": true
+    },
+    {
+      "name": "concurrents",
+      "type": "text",
+      "label": "Liste des concurrents (séparés par des virgules)",
+      "placeholder": "Exemple : Entreprise A, Entreprise B",
+      "required": false
+    },
+    {
+      "name": "objectif",
+      "type": "select",
+      "options": [
+        "Détection de brevets similaires",
+        "Évaluation de la disponibilité de la propriété intellectuelle",
+        "Identification de partenaires potentiels"
+      ],
+      "label": "Quel est votre objectif ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en veille des brevets et propriété intellectuelle. L'utilisateur a répondu : Domaine: {domaine}, Description du projet: {description_projet}, Concurrents: {concurrents}, Objectif: {objectif}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

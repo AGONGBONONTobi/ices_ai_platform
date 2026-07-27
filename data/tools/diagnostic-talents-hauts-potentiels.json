@@ -1,0 +1,72 @@
+{
+  "id": "diagnostic-talents-hauts-potentiels",
+  "title": "Diagnostic de la gestion des talents & hauts potentiels",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Quels sont les principaux défis que votre équipe rencontre actuellement pour identifier et développer les talents et les hauts potentiels ?",
+      "placeholder": "Exemple : difficultés à identifier les compétences clés, manque de ressources pour former les employés, etc.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Manque de ressources financières",
+        "Manque de temps pour former les employés",
+        "Difficultés à identifier les compétences clés",
+        "Autre (décrivez)"
+      ],
+      "label": "Quel est le principal obstacle à la mise en place d'un programme de gestion des talents et des hauts potentiels dans votre organisation ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Quel est le pourcentage d'employés qui ont bénéficié d'une formation ou d'un développement de compétences au cours des 12 derniers mois ?",
+      "placeholder": "Exemple : 20%",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quels sont les principaux indicateurs de performance utilisés pour mesurer la réussite du programme de gestion des talents et des hauts potentiels ?",
+      "placeholder": "Exemple : taux de satisfaction des employés, taux de rétention des talents, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Variable1: {variable1}, Variable2: {variable2}, Variable3: {variable3}%, Variable4: {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "bilan-carbone-complet-scope-1-2-3-ghg-protocol",
+  "title": "Bilan carbone complet (Scope 1, 2, 3 — GHG Protocol)",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "emissions-scope-1",
+      "type": "number",
+      "label": "Emissions de gaz à effet de serre (GES) du scope 1 (émissions directes) en tonnes CO2 équivalent",
+      "placeholder": "0",
+      "required": true
+    },
+    {
+      "name": "emissions-scope-2",
+      "type": "number",
+      "label": "Emissions de GES du scope 2 (émissions indirectes) en tonnes CO2 équivalent",
+      "placeholder": "0",
+      "required": true
+    },
+    {
+      "name": "emissions-scope-3",
+      "type": "number",
+      "label": "Emissions de GES du scope 3 (émissions induites) en tonnes CO2 équivalent",
+      "placeholder": "0",
+      "required": true
+    },
+    {
+      "name": "reductions-annuelles",
+      "type": "number",
+      "label": "Réductions annuelles d'émissions de GES en tonnes CO2 équivalent",
+      "placeholder": "0",
+      "required": true
+    },
+    {
+      "name": "objectifs-carbone",
+      "type": "textarea",
+      "label": "Objectifs de réduction des émissions de GES définis par l'entreprise",
+      "placeholder": "Exemple : réduire les émissions de 20% d'ici 2025",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en bilan carbone. L'utilisateur a fourni les informations suivantes : Emissions de GES du scope 1 : {emissions-scope-1} tonnes CO2 équivalent, Emissions de GES du scope 2 : {emissions-scope-2} tonnes CO2 équivalent, Emissions de GES du scope 3 : {emissions-scope-3} tonnes CO2 équivalent, Réductions annuelles d'émissions de GES : {reductions-annuelles} tonnes CO2 équivalent, Objectifs de réduction des émissions de GES : {objectifs-carbone}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

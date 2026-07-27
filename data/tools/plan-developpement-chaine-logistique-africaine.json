@@ -1,0 +1,72 @@
+{
+  "id": "plan-developpement-chaine-logistique-africaine",
+  "title": "Plan de développement d'une chaîne logistique africaine",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_de_bien",
+      "type": "select",
+      "options": [
+        "Produits alimentaires",
+        "Produits manufacturés",
+        "Matériel informatique",
+        "Équipements médicaux"
+      ],
+      "label": "Quel type de bien souhaitez-vous acheminer ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "pays_de_depart",
+      "type": "text",
+      "label": "Depuis quel pays d'Afrique souhaitez-vous expédier vos biens ?",
+      "placeholder": "Ex: Afrique du Sud, Égypte, Maroc",
+      "required": true
+    },
+    {
+      "name": "description_challenges",
+      "type": "textarea",
+      "label": "Décrivez les défis logistiques que vous rencontrez ou anticipez dans votre chaîne d'approvisionnement :",
+      "placeholder": "Ex: Infrastructures insuffisantes, problèmes de douane, éloignement des marchés",
+      "required": true
+    },
+    {
+      "name": "objectif_qualite_service",
+      "type": "text",
+      "label": "Quel est votre objectif en termes de qualité de service (délai, fiabilité, etc.) ?",
+      "placeholder": "Ex: Livraison en 72h avec un taux de fiabilité de 95%",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en développement de chaînes logistiques en Afrique. L'utilisateur cherche à établir un plan pour améliorer son processus d'acheminement de {type_de_bien} depuis {pays_de_depart}. Il est confronté aux {description_challenges}. Son objectif en termes de qualité de service est {objectif_qualite_service}. Analysez ces informations et proposez un plan de développement incluant un score global sur 100, une évaluation par axe (ex: infrastructure, gestion des risques, technologie), et des recommandations spécifiques.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

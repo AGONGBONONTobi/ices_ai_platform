@@ -1,0 +1,78 @@
+{
+  "id": "template-cahier-des-charges-fonctionnel",
+  "title": "Template de cahier des charges fonctionnel",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "projetDescription",
+      "type": "textarea",
+      "label": "Description du projet",
+      "placeholder": "Décrivez brièvement le projet",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Objectifs du projet",
+      "placeholder": "Listez les objectifs principaux",
+      "required": true
+    },
+    {
+      "name": "delais",
+      "type": "number",
+      "label": "Délais pour la réalisation du projet",
+      "placeholder": "Nombre de semaines",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Budget alloué pour le projet",
+      "placeholder": "Montant en euros",
+      "required": true
+    },
+    {
+      "name": "typeProjet",
+      "type": "select",
+      "options": [
+        "Développement logiciel",
+        "Conception de produit",
+        "Marketing",
+        "Autre"
+      ],
+      "label": "Type de projet",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en gestion de projet. L'utilisateur a répondu : ProjetDescription: {projetDescription}, Objectifs: {objectifs}, Délais: {delais} semaines, Budget: {budget} euros, Type de projet: {typeProjet}. Analysez ces informations et donnez un score global sur 100 pour la faisabilité du projet, évaluez les axes clés (gestion du temps, gestion des ressources, gestion des risques) et proposez des recommandations pour améliorer la réussite du projet.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

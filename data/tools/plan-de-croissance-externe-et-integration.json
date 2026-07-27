@@ -1,0 +1,79 @@
+{
+  "id": "plan-de-croissance-externe-et-integration",
+  "title": "Plan de croissance externe (M&A) & intégration",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de la croissance externe ?",
+      "placeholder": "Exemple : accroître la présence géographique, renforcer la compétitivité, etc.",
+      "required": true
+    },
+    {
+      "name": "secteurs-cible",
+      "type": "select",
+      "options": [
+        "Industrie manufacturière",
+        "Services financiers",
+        "Tertiaire",
+        "Autres"
+      ],
+      "label": "Quels secteurs sont ciblés pour la croissance externe ?",
+      "placeholder": "Sélectionnez les secteurs pertinents",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la croissance externe ?",
+      "placeholder": "Exemple : 10 millions d'euros",
+      "required": true
+    },
+    {
+      "name": "délai-realisation",
+      "type": "number",
+      "label": "Quel est le délai de réalisation pour la croissance externe ?",
+      "placeholder": "Exemple : 6 mois",
+      "required": true
+    },
+    {
+      "name": "risques-identifies",
+      "type": "textarea",
+      "label": "Quels sont les risques identifiés pour la croissance externe ?",
+      "placeholder": "Exemple : risque de concurrence, risque de non-intégration, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Secteur cible : {secteurs-cible}, Budget alloué : {budget-alloue}, Délai de réalisation : {délai-realisation}, Risques identifiés : {risques-identifies}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

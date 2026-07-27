@@ -1,0 +1,71 @@
+{
+  "id": "plan-decentralisation-gouvernance-locale",
+  "title": "Plan de décentralisation & gouvernance locale",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "niveau_decentralisation_actuel",
+      "type": "select",
+      "options": [
+        "Centralisé",
+        "Décentralisé",
+        "Semi-décentralisé"
+      ],
+      "label": "Quel est le niveau de décentralisation actuel de votre organisation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "objectifs_gouvernance",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs pour la gouvernance locale ?",
+      "placeholder": "Exemple : améliorer la transparence, renforcer la participation citoyenne",
+      "required": true
+    },
+    {
+      "name": "budget_alloué",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la mise en œuvre de votre plan de décentralisation ?",
+      "placeholder": "100000",
+      "required": true
+    },
+    {
+      "name": "parties_prenantes_impliquées",
+      "type": "text",
+      "label": "Quelles sont les parties prenantes impliquées dans votre plan de décentralisation ?",
+      "placeholder": "Exemple : élus locaux, citoyens, associations",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en gouvernance locale. L'utilisateur a répondu : Niveau de décentralisation actuel : {niveau_decentralisation_actuel}, Objectifs pour la gouvernance locale : {objectifs_gouvernance}, Budget alloué : {budget_alloué}, Parties prenantes impliquées : {parties_prenantes_impliquées}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

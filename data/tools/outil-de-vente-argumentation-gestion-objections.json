@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-vente-argumentation-gestion-objections",
+  "title": "Script de vente, argumentation & gestion des objections",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "produit",
+      "type": "text",
+      "label": "Quel est le produit ou service que vous souhaitez vendre ?",
+      "placeholder": "Exemple : logiciel de gestion de projet",
+      "required": true
+    },
+    {
+      "name": "client",
+      "type": "text",
+      "label": "Qui est votre client cible ?",
+      "placeholder": "Exemple : PME dans le secteur de la technologie",
+      "required": true
+    },
+    {
+      "name": "avantages",
+      "type": "textarea",
+      "label": "Quels sont les principaux avantages de votre produit ou service pour le client ?",
+      "placeholder": "Exemple : amélioration de la productivité, réduction des coûts, etc.",
+      "required": true
+    },
+    {
+      "name": "objections",
+      "type": "textarea",
+      "label": "Quelles sont les objections les plus courantes que les clients peuvent avoir à votre produit ou service ?",
+      "placeholder": "Exemple : le coût, la complexité, la concurrence, etc.",
+      "required": true
+    },
+    {
+      "name": "stratégie",
+      "type": "select",
+      "options": [
+        "Argumentation basée sur les avantages",
+        "Argumentation basée sur les avantages et les inconvénients",
+        "Argumentation basée sur les avantages, les inconvénients et les alternatives"
+      ],
+      "label": "Quelle est votre stratégie d'argumentation pour répondre aux objections ?",
+      "placeholder": "Exemple : Argumentation basée sur les avantages",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Produit : {produit}, Client : {client}, Avantages : {avantages}, Objections : {objections}, Stratégie : {stratégie}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "id": "diagnostic-innovation-frugale-inclusive",
+  "title": "Diagnostic de l'innovation frugale & inclusive",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "text",
+      "label": "Quel est l'objectif stratégique de l'innovation ?",
+      "placeholder": "Exemple : améliorer la compétitivité",
+      "required": true
+    },
+    {
+      "name": "public-cible",
+      "type": "select",
+      "options": [
+        "clients",
+        "fournisseurs",
+        "partenaires",
+        "employés"
+      ],
+      "label": "Quel public est ciblé par l'innovation ?",
+      "placeholder": "Exemple : clients",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "textarea",
+      "label": "Quelles ressources sont disponibles pour développer l'innovation ?",
+      "placeholder": "Exemple : personnel, budget, technologies",
+      "required": true
+    },
+    {
+      "name": "avantages-environnementaux",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 5, quel est l'avantage environnemental de l'innovation ?",
+      "placeholder": "Exemple : 4",
+      "required": true
+    },
+    {
+      "name": "avantages-sociaux",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 5, quel est l'avantage social de l'innovation ?",
+      "placeholder": "Exemple : 3",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Public ciblé : {public-cible}, Ressources disponibles : {ressources-disponibles}, Avantages environnementaux : {avantages-environnementaux}, Avantages sociaux : {avantages-sociaux}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

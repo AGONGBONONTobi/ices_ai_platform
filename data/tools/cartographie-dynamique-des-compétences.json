@@ -1,0 +1,72 @@
+{
+  "id": "cartographie-dynamique-des-compétences",
+  "title": "Cartographie dynamique des compétences",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "domaines",
+      "type": "select",
+      "options": [
+        "Informatique",
+        "Marketing",
+        "Finances",
+        "Gestion"
+      ],
+      "label": "Quels sont les domaines d'activité de l'entreprise ?",
+      "placeholder": "Sélectionnez les domaines pertinents",
+      "required": true
+    },
+    {
+      "name": "compétences-clés",
+      "type": "textarea",
+      "label": "Quelles sont les compétences clés attendues des employés dans ces domaines ?",
+      "placeholder": "Décrivez les compétences clés",
+      "required": true
+    },
+    {
+      "name": "niveau-de-compétence",
+      "type": "number",
+      "label": "Quel est le niveau de compétence actuel des employés dans ces domaines ? (échelle de 1 à 5)",
+      "placeholder": "Indiquez le niveau de compétence",
+      "required": true
+    },
+    {
+      "name": "objectifs-stratégiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de l'entreprise pour les prochains mois ?",
+      "placeholder": "Décrivez les objectifs stratégiques",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Domaines: {domaines}, Compétences clés: {compétences-clés}, Niveau de compétence: {niveau-de-compétence}, Objectifs stratégiques: {objectifs-stratégiques}. Analyse ces informations et propose une cartographie dynamique des compétences pour atteindre les objectifs stratégiques de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "id": "persona-et-profil-client-ideal",
+  "title": "Persona & profil client idéal (ICP & Buyer Persona)",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "secteurActivite",
+      "type": "text",
+      "label": "Quel est le secteur d'activité de votre entreprise ?",
+      "placeholder": "Exemple : Technologie, Santé, Finance",
+      "required": true
+    },
+    {
+      "name": "ciblePrincipale",
+      "type": "select",
+      "options": [
+        "Particuliers",
+        "Entreprises",
+        "Institutions"
+      ],
+      "label": "Qui est votre cible principale ?",
+      "required": true
+    },
+    {
+      "name": "besoinsAttentes",
+      "type": "textarea",
+      "label": "Quels sont les besoins et les attentes de votre cible principale ?",
+      "placeholder": "Décrivez les besoins et les attentes de votre cible principale",
+      "required": true
+    },
+    {
+      "name": "canalCommunication",
+      "type": "select",
+      "options": [
+        "Réseaux sociaux",
+        "Email",
+        "Téléphone",
+        "Publicité en ligne"
+      ],
+      "label": "Quel canal de communication utilisez-vous pour atteindre votre cible principale ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en marketing. L'utilisateur a répondu : Secteur d'activité : {secteurActivite}, Cible principale : {ciblePrincipale}, Besoins et attentes : {besoinsAttentes}, Canal de communication : {canalCommunication}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (compréhension de la cible, stratégie de communication, etc.) et des recommandations pour améliorer la compréhension et la stratégie de communication de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

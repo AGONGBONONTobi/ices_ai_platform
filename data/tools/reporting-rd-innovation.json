@@ -1,0 +1,77 @@
+{
+  "id": "reporting-rd-innovation",
+  "title": "Reporting R&D & innovation",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "projet",
+      "type": "text",
+      "label": "Nom du projet R&D",
+      "placeholder": "Exemple de projet",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Budget alloué au projet",
+      "placeholder": "Exemple de budget",
+      "required": true
+    },
+    {
+      "name": "resultat",
+      "type": "textarea",
+      "label": "Résultats obtenus dans le projet",
+      "placeholder": "Exemple de résultats",
+      "required": true
+    },
+    {
+      "name": "challenges",
+      "type": "select",
+      "options": [
+        "Manque de ressources",
+        "Problèmes de coordination",
+        "Autres"
+      ],
+      "label": "Challenges rencontrés dans le projet",
+      "required": true
+    },
+    {
+      "name": "recommandations",
+      "type": "textarea",
+      "label": "Recommandations pour améliorer le projet",
+      "placeholder": "Exemple de recommandations",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Projet: {projet}, Budget: {budget}, Résultats: {resultat}, Challenges: {challenges}, Recommandations: {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

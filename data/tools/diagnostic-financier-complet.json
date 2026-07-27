@@ -1,0 +1,79 @@
+{
+  "id": "diagnostic-financier-complet",
+  "title": "Diagnostic financier complet (santé financière)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "revenus-mensuels",
+      "type": "number",
+      "label": "Quels sont vos revenus mensuels ?",
+      "placeholder": "Exemple : 2000",
+      "required": true
+    },
+    {
+      "name": "dettes-mensuelles",
+      "type": "number",
+      "label": "Quelles sont vos dettes mensuelles ?",
+      "placeholder": "Exemple : 500",
+      "required": true
+    },
+    {
+      "name": "epargne-mensuelle",
+      "type": "number",
+      "label": "Quelle est votre épargne mensuelle ?",
+      "placeholder": "Exemple : 1000",
+      "required": true
+    },
+    {
+      "name": "type-de-contrat",
+      "type": "select",
+      "options": [
+        "CDD",
+        "CDI",
+        "Intérim",
+        "Autre"
+      ],
+      "label": "Quel est votre type de contrat ?",
+      "placeholder": "Exemple : CDD",
+      "required": true
+    },
+    {
+      "name": "salaire-actuel",
+      "type": "number",
+      "label": "Quel est votre salaire actuel ?",
+      "placeholder": "Exemple : 3000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un conseiller financier. L'utilisateur a répondu : Revenus mensuels : {revenus-mensuels}, Dettes mensuelles : {dettes-mensuelles}, Épargne mensuelle : {epargne-mensuelle}, Type de contrat : {type-de-contrat}, Salaire actuel : {salaire-actuel}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

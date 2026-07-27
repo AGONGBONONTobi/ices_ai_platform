@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-suivi-et-reporting-chantier",
+  "title": "Outil de suivi & reporting chantier",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "nom_chantier",
+      "type": "text",
+      "label": "Nom du chantier",
+      "placeholder": "Exemple : Construction de la nouvelle bibliothèque",
+      "required": true
+    },
+    {
+      "name": "etat_avancement",
+      "type": "select",
+      "options": [
+        "En cours de planification",
+        "En cours de construction",
+        "Terminé"
+      ],
+      "label": "État d'avancement du chantier",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Commentaires et remarques sur le chantier",
+      "placeholder": "Exemple : Retards prévus, problèmes rencontrés...",
+      "required": false
+    },
+    {
+      "name": "budget_alloué",
+      "type": "number",
+      "label": "Budget alloué pour le chantier",
+      "placeholder": "100000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion de projet. L'utilisateur a répondu : Nom du chantier : {nom_chantier}, État d'avancement : {etat_avancement}, Commentaires : {commentaires}, Budget alloué : {budget_alloué}. Évalue l'avancement du chantier et propose un score global sur 100, une évaluation par axe (respect du budget, respect des délais, qualité des travaux), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "id": "checklist-conformite-agroalimentaire",
+  "title": "Checklist conformité agroalimentaire (BRC/IFS/SQF)",
+  "category": "Certification de Produits & Services",
+  "inputs": [
+    {
+      "name": "hygiène",
+      "type": "textarea",
+      "label": "Décrivez vos procédures d'hygiène et de nettoyage",
+      "placeholder": "Exemple : fréquence de nettoyage, produits utilisés",
+      "required": true
+    },
+    {
+      "name": "traçabilité",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Avez-vous un système de traçabilité des produits?",
+      "required": true
+    },
+    {
+      "name": "gestionRisques",
+      "type": "textarea",
+      "label": "Décrivez vos procédures de gestion des risques produits",
+      "placeholder": "Exemple : identification des risques, mesures de contrôle",
+      "required": true
+    },
+    {
+      "name": "auditsFournisseurs",
+      "type": "number",
+      "label": "Combien d'audits fournisseurs avez-vous réalisés au cours de la dernière année?",
+      "required": true
+    },
+    {
+      "name": "niveauMaturité",
+      "type": "select",
+      "options": [
+        "0 - Inexistant",
+        "1 - Initié",
+        "2 - Formalisé",
+        "3 - Optimisé"
+      ],
+      "label": "Quel est votre niveau de maturité en matière de conformité agroalimentaire?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous avez répondu : Hygiène: {hygiène}, Traçabilité: {traçabilité}, Gestion des risques: {gestionRisques}, Audits fournisseurs: {auditsFournisseurs}, Niveau de maturité: {niveauMaturité}. Évaluez la conformité de cette organisation aux référentiels BRC, IFS et SQF en matière d'hygiène, de traçabilité, de gestion des risques produits et d'audits fournisseurs. Donnez un score global sur 100, une évaluation par axe (hygiène, traçabilité, gestion des risques, audits fournisseurs) et des recommandations prioritaires.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

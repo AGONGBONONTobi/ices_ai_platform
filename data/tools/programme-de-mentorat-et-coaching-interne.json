@@ -1,0 +1,83 @@
+{
+  "id": "programme-de-mentorat-et-coaching-interne",
+  "title": "Programme de mentorat & coaching interne",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "objectifs-entreprise",
+      "type": "textarea",
+      "label": "Quels sont les objectifs clés de l'entreprise pour ce programme de mentorat et de coaching interne ?",
+      "placeholder": "Exemple : Améliorer la motivation des employés, développer les compétences des managers, etc.",
+      "required": true
+    },
+    {
+      "name": "niveau-de-maturite",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est le niveau de maturité actuel du programme de mentorat et de coaching interne dans l'entreprise ?",
+      "placeholder": "Choisissez un niveau",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources (budget, temps, personnel) disponibles pour le programme de mentorat et de coaching interne ?",
+      "placeholder": "Exemple : 10 000 € par an",
+      "required": true
+    },
+    {
+      "name": "objectifs-des-participants",
+      "type": "text",
+      "label": "Quels sont les objectifs individuels des participants au programme de mentorat et de coaching interne ?",
+      "placeholder": "Exemple : Améliorer les compétences en leadership, développer la confiance en soi, etc.",
+      "required": true
+    },
+    {
+      "name": "methodologie-de-coaching",
+      "type": "select",
+      "options": [
+        "Gestion de projet",
+        "Méthode de coaching personnalisée",
+        "Autre"
+      ],
+      "label": "Quelle est la méthodologie de coaching préférée pour ce programme ?",
+      "placeholder": "Choisissez une option",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs entreprise : {objectifs-entreprise}, Niveau de maturité : {niveau-de-maturite}, Ressources disponibles : {ressources-disponibles}, Objectifs des participants : {objectifs-des-participants}, Méthodologie de coaching : {methodologie-de-coaching}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

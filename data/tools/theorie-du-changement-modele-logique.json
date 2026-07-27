@@ -1,0 +1,72 @@
+{
+  "id": "theorie-du-changement-modele-logique",
+  "title": "Théorie du changement & modèle logique",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Décrivez l'objectif principal de votre projet ou programme",
+      "placeholder": "Exemple : Améliorer la santé des enfants dans les communautés rurales",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "select",
+      "options": [
+        "Enfants",
+        "Adultes",
+        "Personnes âgées",
+        "Toutes les tranches d'âge"
+      ],
+      "label": "Qui est votre public cible ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "activites",
+      "type": "textarea",
+      "label": "Décrivez les principales activités prévues pour atteindre vos objectifs",
+      "placeholder": "Exemple : Formation des agents de santé, distribution de matériel médical",
+      "required": true
+    },
+    {
+      "name": "resultats_attendus",
+      "type": "textarea",
+      "label": "Quels sont les résultats attendus de votre projet ou programme ?",
+      "placeholder": "Exemple : Réduction de la mortalité infantile, amélioration de la santé globale",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en évaluation de programmes. L'utilisateur a répondu : Objectif: {objectif}, Public cible: {public_cible}, Activités: {activites}, Résultats attendus: {resultats_attendus}. Analysez ces informations et proposez un score global sur 100, une évaluation par axe (pertinence, efficacité, efficience, impact), et des recommandations pour améliorer la théorie du changement et le modèle logique du programme.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

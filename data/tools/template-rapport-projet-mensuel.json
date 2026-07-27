@@ -1,0 +1,78 @@
+{
+  "id": "template-rapport-projet-mensuel",
+  "title": "Template de rapport de projet (mensuel)",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "nomProjet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple : Projet de développement web",
+      "required": true
+    },
+    {
+      "name": "objectifProjet",
+      "type": "textarea",
+      "label": "Objectif du projet",
+      "placeholder": "Exemple : Développer un site web pour une entreprise",
+      "required": true
+    },
+    {
+      "name": "avancementProjet",
+      "type": "number",
+      "label": "Avancement du projet (en %)",
+      "placeholder": "Exemple : 50",
+      "required": true
+    },
+    {
+      "name": "problemesEncountres",
+      "type": "textarea",
+      "label": "Problèmes rencontrés",
+      "placeholder": "Exemple : Les tests de compatibilité avec les navigateurs",
+      "required": false
+    },
+    {
+      "name": "planDeTravail",
+      "type": "select",
+      "options": [
+        "Courts termes",
+        "Moyens termes",
+        "Longs termes"
+      ],
+      "label": "Plan de travail",
+      "placeholder": "Exemple : Courts termes",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet : {nomProjet}, Objectif du projet : {objectifProjet}, Avancement du projet : {avancementProjet}%, Problèmes rencontrés : {problemesEncountres}, Plan de travail : {planDeTravail}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

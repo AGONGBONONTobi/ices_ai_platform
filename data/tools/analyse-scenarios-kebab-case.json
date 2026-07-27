@@ -1,0 +1,76 @@
+{
+  "id": "analyse-scenarios-kebab-case",
+  "title": "Analyse des scénarios prospectifs & futurs possibles",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "scenarios-prospects",
+      "type": "textarea",
+      "label": "Décrivez les scénarios prospectifs et futurs possibles pour votre entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "risques-identifies",
+      "type": "select",
+      "options": [
+        "Risques financiers",
+        "Risques opérationnels",
+        "Risques stratégiques"
+      ],
+      "label": "Quels sont les risques identifiés dans les scénarios prospectifs ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "opportunites-identifies",
+      "type": "select",
+      "options": [
+        "Opportunités de croissance",
+        "Opportunités de partenariat",
+        "Opportunités de innovation"
+      ],
+      "label": "Quelles sont les opportunités identifiées dans les scénarios prospectifs ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "strategie-adoption",
+      "type": "text",
+      "label": "Quelle est la stratégie d'adoption pour les scénarios prospectifs ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Scénarios prospectifs : {scenarios-prospects}, Risques identifiés : {risques-identifies}, Opportunités identifiées : {opportunites-identifies}, Stratégie d'adoption : {strategie-adoption}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

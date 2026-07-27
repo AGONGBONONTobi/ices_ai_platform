@@ -1,0 +1,78 @@
+{
+  "id": "plan-deploiement-de-l-ia-generative-en-innovation",
+  "title": "Plan de déploiement de l'IA générative en innovation",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de l'IA générative dans l'innovation ?",
+      "placeholder": "Exemple : Améliorer la qualité des produits, accélérer la création de nouvelles idées, etc.",
+      "required": true
+    },
+    {
+      "name": "technologies-impliquees",
+      "type": "select",
+      "options": [
+        "Génération de texte",
+        "Génération d'images",
+        "Génération de sons"
+      ],
+      "label": "Quelles technologies sont impliquées dans le plan de déploiement ?",
+      "placeholder": "Sélectionnez les technologies pertinentes",
+      "required": true
+    },
+    {
+      "name": "ressources-humaines",
+      "type": "number",
+      "label": "Quel est le nombre de ressources humaines affectées au projet ?",
+      "placeholder": "Exemple : 5 personnes",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué au projet ?",
+      "placeholder": "Exemple : 100 000 euros",
+      "required": true
+    },
+    {
+      "name": "periode-de-deploiement",
+      "type": "text",
+      "label": "Quelle est la période de déploiement prévue ?",
+      "placeholder": "Exemple : 6 mois",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en innovation. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Technologies impliquées : {technologies-impliquees}, Ressources humaines : {ressources-humaines}, Budget alloué : {budget-alloue}, Période de déploiement : {periode-de-deploiement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

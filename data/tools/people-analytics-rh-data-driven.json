@@ -1,0 +1,78 @@
+{
+  "id": "people-analytics-rh-data-driven",
+  "title": "People analytics & RH data-driven",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "effectif",
+      "type": "number",
+      "label": "Effectif total",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "taux-de-rotation",
+      "type": "number",
+      "label": "Taux de rotation moyen",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "type-de-conge",
+      "type": "select",
+      "options": [
+        "Congés payés",
+        "Congés sans solde",
+        "Congés sans solde avec pécule"
+      ],
+      "label": "Type de congé le plus pris",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "motifs-de-conge",
+      "type": "textarea",
+      "label": "Motifs de congé les plus fréquents",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise: {entreprise}, Effectif: {effectif}, Taux de rotation moyen: {taux-de-rotation}, Type de congé le plus pris: {type-de-conge}, Motifs de congé les plus fréquents: {motifs-de-conge}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

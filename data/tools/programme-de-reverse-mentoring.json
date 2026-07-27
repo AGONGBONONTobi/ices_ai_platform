@@ -1,0 +1,79 @@
+{
+  "id": "programme-de-reverse-mentoring",
+  "title": "Programme de reverse mentoring",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "mentee",
+      "type": "text",
+      "label": "Nom du mentoré",
+      "placeholder": "Exemple : John Doe",
+      "required": true
+    },
+    {
+      "name": "menteur",
+      "type": "text",
+      "label": "Nom du mentor",
+      "placeholder": "Exemple : Jane Doe",
+      "required": true
+    },
+    {
+      "name": "domaine",
+      "type": "select",
+      "options": [
+        "Leadership",
+        "Communication",
+        "Innovation",
+        "Technologie"
+      ],
+      "label": "Domaine de reverse mentoring",
+      "placeholder": "Exemple : Leadership",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Objectifs du programme de reverse mentoring",
+      "placeholder": "Exemple : Améliorer la communication entre les équipes",
+      "required": true
+    },
+    {
+      "name": "duree",
+      "type": "number",
+      "label": "Durée du programme (en mois)",
+      "placeholder": "Exemple : 6",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Mentoré : {mentee}, Mentor : {menteur}, Domaine : {domaine}, Objectifs : {objectifs}, Durée : {duree}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

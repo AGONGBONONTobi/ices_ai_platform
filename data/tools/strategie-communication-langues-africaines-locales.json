@@ -1,0 +1,80 @@
+{
+  "id": "strategie-communication-langues-africaines-locales",
+  "title": "Stratégie de communication en langues africaines locales",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "langue_cible",
+      "type": "select",
+      "options": [
+        "Wolof",
+        "Yoruba",
+        "Zulu",
+        "Shona",
+        "Swahili"
+      ],
+      "label": "Quelle langue africaine locale souhaitez-vous cibler pour votre stratégie de communication ?",
+      "placeholder": "Sélectionnez une langue",
+      "required": true
+    },
+    {
+      "name": "objectif_communication",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de votre stratégie de communication en langues africaines locales ?",
+      "placeholder": "Décrivez brièvement votre objectif",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "text",
+      "label": "Qui est votre public cible pour cette stratégie de communication ?",
+      "placeholder": "Exemple : jeunes, femmes, agriculteurs",
+      "required": true
+    },
+    {
+      "name": "canal_preferer",
+      "type": "select",
+      "options": [
+        "Radio",
+        "Télévision",
+        "Réseaux sociaux",
+        "Imprimé",
+        "Événements locaux"
+      ],
+      "label": "Quel canal de communication préférez-vous utiliser pour atteindre votre public cible ?",
+      "placeholder": "Sélectionnez un canal",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en communication expert. L'utilisateur a répondu : Langue cible: {langue_cible}, Objectif de communication: {objectif_communication}, Public cible: {public_cible}, Canal préféré: {canal_preferer}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (par exemple, pertinence de la langue cible, clarté de l'objectif, adéquation du public cible et du canal), et des recommandations pour améliorer la stratégie de communication.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

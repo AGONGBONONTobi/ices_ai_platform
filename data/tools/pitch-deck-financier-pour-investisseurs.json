@@ -1,0 +1,78 @@
+{
+  "id": "pitch-deck-financier-pour-investisseurs",
+  "title": "Pitch deck financier pour investisseurs",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de nom d'entreprise",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Description de l'entreprise",
+      "placeholder": "Exemple de description de l'entreprise",
+      "required": true
+    },
+    {
+      "name": "chiffre-daffaires",
+      "type": "number",
+      "label": "Chiffre d'affaires actuel",
+      "placeholder": "Exemple de chiffre d'affaires",
+      "required": true
+    },
+    {
+      "name": "modele-de-business",
+      "type": "select",
+      "options": [
+        "B2B",
+        "B2C",
+        "B2B2C"
+      ],
+      "label": "Modèle de business",
+      "placeholder": "Exemple de modèle de business",
+      "required": true
+    },
+    {
+      "name": "equipe",
+      "type": "textarea",
+      "label": "Composition de l'équipe",
+      "placeholder": "Exemple de composition de l'équipe",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a répondu : Entreprise: {entreprise}, Description: {description}, Chiffre d'affaires: {chiffre-daffaires}, Modèle de business: {modele-de-business}, Équipe: {equipe}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

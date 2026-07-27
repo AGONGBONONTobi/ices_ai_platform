@@ -1,0 +1,84 @@
+{
+  "id": "audit-economie-circulaire",
+  "title": "Audit de l'économie circulaire",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "ressources-recyclables",
+      "type": "number",
+      "label": "Quantité de ressources recyclables utilisées (en %)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "mode-de-transport",
+      "type": "select",
+      "options": [
+        "Voiture",
+        "Camion",
+        "Avion",
+        "Train"
+      ],
+      "label": "Mode de transport utilisé pour les livraisons",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "reduction-de-dechets",
+      "type": "textarea",
+      "label": "Mesures prises pour réduire les déchets",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "engagement-environnemental",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Niveau d'engagement environnemental de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise: {entreprise}, Ressources recyclables : {ressources-recyclables}%, Mode de transport : {mode-de-transport}, Réduction de déchets : {reduction-de-dechets}, Engagement environnemental : {engagement-environnemental}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

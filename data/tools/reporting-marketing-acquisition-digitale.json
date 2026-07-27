@@ -1,0 +1,71 @@
+{
+  "id": "reporting-marketing-acquisition-digitale",
+  "title": "Reporting marketing & acquisition digitale",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Budget alloué pour les campagnes marketing et acquisition digitale",
+      "placeholder": "Exemple de budget",
+      "required": true
+    },
+    {
+      "name": "taux-conversion",
+      "type": "number",
+      "label": "Taux de conversion des campagnes marketing et acquisition digitale",
+      "placeholder": "Exemple de taux de conversion",
+      "required": true
+    },
+    {
+      "name": "plateforme-utilisee",
+      "type": "select",
+      "options": [
+        "Google Ads",
+        "Facebook Ads",
+        "LinkedIn Ads"
+      ],
+      "label": "Plateforme utilisée pour les campagnes marketing et acquisition digitale",
+      "placeholder": "Exemple de plateforme",
+      "required": true
+    },
+    {
+      "name": "commentaire-client",
+      "type": "textarea",
+      "label": "Commentaire des clients sur les campagnes marketing et acquisition digitale",
+      "placeholder": "Exemple de commentaire client",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Budget alloué : {budget-alloue}, Taux de conversion : {taux-conversion}, Plateforme utilisée : {plateforme-utilisee}, Commentaire client : {commentaire-client}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

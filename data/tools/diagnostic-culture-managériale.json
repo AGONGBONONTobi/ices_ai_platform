@@ -1,0 +1,83 @@
+{
+  "id": "diagnostic-culture-managériale",
+  "title": "Diagnostic de la culture managériale",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "style-de-gestion",
+      "type": "select",
+      "options": [
+        "Centralisé",
+        "Décentralisé",
+        "Hybride"
+      ],
+      "label": "Quel est le style de gestion actuel dans votre organisation ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "communication-interne",
+      "type": "textarea",
+      "label": "Comment la communication interne est-elle organisée dans votre organisation ?",
+      "placeholder": "Décrivez les processus de communication interne",
+      "required": true
+    },
+    {
+      "name": "encadrement-des-équipes",
+      "type": "number",
+      "label": "Quel est le niveau d'encadrement des équipes dans votre organisation ?",
+      "placeholder": "Sur 10",
+      "required": true
+    },
+    {
+      "name": "motivation-des-employés",
+      "type": "text",
+      "label": "Quel est le niveau de motivation des employés dans votre organisation ?",
+      "placeholder": "Décrivez les initiatives de motivation",
+      "required": true
+    },
+    {
+      "name": "innovation-et-entrepreneuriat",
+      "type": "select",
+      "options": [
+        "Encouragé",
+        "Non encouragé",
+        "En cours de développement"
+      ],
+      "label": "Quel est le niveau d'encouragement à l'innovation et à l'entrepreneuriat dans votre organisation ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Style de gestion : {style-de-gestion}, Communication interne : {communication-interne}, Encadrement des équipes : {encadrement-des-équipes}/10, Motivation des employés : {motivation-des-employés}, Innovation et entrepreneuriat : {innovation-et-entrepreneuriat}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "id": "entreprise-valorisation",
+  "title": "Valorisation d'entreprise (DCF, comparables, actif net)",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Airbus",
+      "required": true
+    },
+    {
+      "name": "revenu_annuel",
+      "type": "number",
+      "label": "Revenu annuel de l'entreprise (en millions d'Euros)",
+      "placeholder": "Exemple : 100",
+      "required": true
+    },
+    {
+      "name": "marge_marchande",
+      "type": "number",
+      "label": "Marge marchande de l'entreprise (en %)",
+      "placeholder": "Exemple : 15",
+      "required": true
+    },
+    {
+      "name": "taux_risque",
+      "type": "number",
+      "label": "Taux de risque pour l'entreprise (en %)",
+      "placeholder": "Exemple : 8",
+      "required": true
+    },
+    {
+      "name": "modele_comparables",
+      "type": "select",
+      "options": [
+        "DCF",
+        "Comparables"
+      ],
+      "label": "Modele de valorisation utilisé",
+      "placeholder": "Exemple : DCF",
+      "required": true
+    },
+    {
+      "name": "taux_dette",
+      "type": "number",
+      "label": "Taux de la dette de l'entreprise (en %)",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "actif_net",
+      "type": "number",
+      "label": "Actif net de l'entreprise (en millions d'Euros)",
+      "placeholder": "Exemple : 50",
+      "required": true
+    },
+    {
+      "name": "textarea_commentaires",
+      "type": "textarea",
+      "label": "Commentaires supplémentaires",
+      "placeholder": "Exemple : L'entreprise a des perspectives de croissance importantes",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un expert en valorisation d'entreprise. L'utilisateur a répondu : Entreprise : {entreprise}, Revenu annuel : {revenu_annuel} millions d'Euros, Marge marchande : {marge_marchande} %, Taux de risque : {taux_risque} %, Modele de comparaison : {modele_comparables}, Taux de la dette : {taux_dette} %, Actif net : {actif_net} millions d'Euros, Commentaires : {textarea_commentaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

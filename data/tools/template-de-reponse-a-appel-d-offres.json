@@ -1,0 +1,70 @@
+{
+  "id": "template-de-reponse-a-appel-d-offres",
+  "title": "Template de réponse à appel d'offres",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Entreprise XYZ",
+      "required": true
+    },
+    {
+      "name": "description_projet",
+      "type": "textarea",
+      "label": "Description du projet",
+      "placeholder": "Exemple : Projet de développement de logiciel",
+      "required": true
+    },
+    {
+      "name": "type_offre",
+      "type": "select",
+      "options": [
+        "Développement de logiciel",
+        "Conseil en gestion",
+        "Formation"
+      ],
+      "label": "Type d'offre",
+      "required": true
+    },
+    {
+      "name": "delai_livraison",
+      "type": "number",
+      "label": "Délai de livraison (en jours)",
+      "placeholder": "Exemple : 30",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert. L'entreprise {entreprise} a répondu à un appel d'offres pour le projet {description_projet}. Le type d'offre est {type_offre} et le délai de livraison est de {delai_livraison} jours. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

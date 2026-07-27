@@ -1,0 +1,78 @@
+{
+  "id": "profil-apprenant-formation-duale",
+  "title": "Profil de l'apprenant en formation duale (alternance)",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "niveauEtude",
+      "type": "select",
+      "options": [
+        "Bac",
+        "Bac+2",
+        "Bac+3",
+        "Bac+5"
+      ],
+      "label": "Quel est votre niveau d'étude actuel ?",
+      "placeholder": "Sélectionnez votre niveau d'étude",
+      "required": true
+    },
+    {
+      "name": "objectifFormation",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs de formation en alternance ?",
+      "placeholder": "Décrivez vos objectifs de formation",
+      "required": true
+    },
+    {
+      "name": "competencesAcquises",
+      "type": "text",
+      "label": "Quelles compétences avez-vous déjà acquises dans votre domaine d'étude ?",
+      "placeholder": "Listez vos compétences",
+      "required": true
+    },
+    {
+      "name": "typeEntreprise",
+      "type": "select",
+      "options": [
+        "PMI",
+        "PME",
+        "Grand groupe",
+        "Association"
+      ],
+      "label": "Quel type d'entreprise vous intéresse pour votre formation en alternance ?",
+      "placeholder": "Sélectionnez le type d'entreprise",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Niveau d'étude: {niveauEtude}, Objectifs de formation: {objectifFormation}, Compétences acquises: {competencesAcquises}, Type d'entreprise: {typeEntreprise}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

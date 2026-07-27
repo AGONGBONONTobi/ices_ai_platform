@@ -1,0 +1,78 @@
+{
+  "id": "strategie-co-innovation-fournisseurs-cles",
+  "title": "Stratégie de co-innovation avec fournisseurs clés",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "nombre_fournisseurs",
+      "type": "number",
+      "label": "Combien de fournisseurs clés avez-vous identifiés pour la co-innovation?",
+      "placeholder": "Ex: 5",
+      "required": true
+    },
+    {
+      "name": "niveau_collaboration",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quel est le niveau actuel de collaboration avec ces fournisseurs?",
+      "placeholder": "Sélectionnez",
+      "required": true
+    },
+    {
+      "name": "objectifs_coinnovation",
+      "type": "textarea",
+      "label": "Quels sont les principaux objectifs de votre stratégie de co-innovation?",
+      "placeholder": "Ex: développement de nouveaux produits, réduction des coûts",
+      "required": true
+    },
+    {
+      "name": "ressources_allouees",
+      "type": "number",
+      "label": "Quel budget annuel (en €) avez-vous alloué à la co-innovation avec les fournisseurs?",
+      "placeholder": "Ex: 200000",
+      "required": false
+    },
+    {
+      "name": "risques_identifies",
+      "type": "textarea",
+      "label": "Quels risques avez-vous identifiés dans cette collaboration?",
+      "placeholder": "Ex: dépendance, perte de contrôle",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nombre de fournisseurs: {nombre_fournisseurs}, Niveau de collaboration: {niveau_collaboration}, Objectifs de co-innovation: {objectifs_coinnovation}, Ressources allouées: {ressources_allouees}, Risques identifiés: {risques_identifies}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

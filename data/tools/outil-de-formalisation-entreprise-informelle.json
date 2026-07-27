@@ -1,0 +1,72 @@
+{
+  "id": "outil-de-formalisation-entreprise-informelle",
+  "title": "Outil de formalisation d'entreprise informelle",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "nom_entreprise",
+      "type": "text",
+      "label": "Quel est le nom de votre entreprise ?",
+      "placeholder": "Exemple : Entreprise XYZ",
+      "required": true
+    },
+    {
+      "name": "secteur_activite",
+      "type": "select",
+      "options": [
+        "Agriculture",
+        "Industrie",
+        "Services",
+        "Commerce"
+      ],
+      "label": "Dans quel secteur d'activité votre entreprise opère-t-elle ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_entreprise",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre entreprise et ses activités",
+      "placeholder": "Exemple : Entreprise de services de nettoyage...",
+      "required": true
+    },
+    {
+      "name": "objectif_formalisation",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs pour la formalisation de votre entreprise ?",
+      "placeholder": "Exemple : Obtenir un financement, développer de nouveaux marchés...",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en formalisation d'entreprise. L'utilisateur a répondu : Nom de l'entreprise : {nom_entreprise}, Secteur d'activité : {secteur_activite}, Description de l'entreprise : {description_entreprise}, Objectif de formalisation : {objectif_formalisation}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour aider l'entreprise à se formaliser.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

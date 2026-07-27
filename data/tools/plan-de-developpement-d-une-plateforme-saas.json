@@ -1,0 +1,83 @@
+{
+  "id": "plan-de-developpement-d-une-plateforme-saas",
+  "title": "Plan de développement d'une plateforme SaaS",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de la plateforme SaaS ?",
+      "placeholder": "Exemple : Augmenter les ventes, améliorer l'expérience client, etc.",
+      "required": true
+    },
+    {
+      "name": "cible-entreprise",
+      "type": "select",
+      "options": [
+        "Petites et moyennes entreprises",
+        "Grands groupes",
+        "Startups"
+      ],
+      "label": "Quelle est la taille de l'entreprise ciblée par la plateforme SaaS ?",
+      "placeholder": "Exemple : Petites et moyennes entreprises",
+      "required": true
+    },
+    {
+      "name": "fonctionnalites-esperées",
+      "type": "text",
+      "label": "Quelles sont les fonctionnalités attendues par les utilisateurs de la plateforme SaaS ?",
+      "placeholder": "Exemple : Gestion des projets, suivi des tâches, etc.",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources (humaines, financières, matérielles) disponibles pour le développement de la plateforme SaaS ?",
+      "placeholder": "Exemple : 10 développeurs, 5 millions d'euros, etc.",
+      "required": true
+    },
+    {
+      "name": "periode-de-lancement",
+      "type": "select",
+      "options": [
+        "Court terme (< 6 mois)",
+        "Moyen terme (6-12 mois)",
+        "Long terme (> 12 mois)"
+      ],
+      "label": "Quelle est la période de lancement prévue pour la plateforme SaaS ?",
+      "placeholder": "Exemple : Court terme (< 6 mois)",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en transformation digitale et IA. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Cible entreprise : {cible-entreprise}, Fonctionnalités attendues : {fonctionnalités-esperées}, Ressources disponibles : {ressources-disponibles}, Période de lancement : {periode-de-lancement}. Analyse ces informations et propose un plan de développement détaillé pour la plateforme SaaS, y compris les étapes clés, les ressources nécessaires et les délais prévus.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

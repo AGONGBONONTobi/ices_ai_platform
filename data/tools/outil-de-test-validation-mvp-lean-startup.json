@@ -1,0 +1,72 @@
+{
+  "id": "outil-de-test-validation-mvp-lean-startup",
+  "title": "Outil de test & validation MVP (Lean Startup)",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "probleme-identifie",
+      "type": "textarea",
+      "label": "Quel problème ou besoin identifiez-vous ?",
+      "placeholder": "Décrivez le problème ou besoin que vous souhaitez résoudre",
+      "required": true
+    },
+    {
+      "name": "solution-proposée",
+      "type": "textarea",
+      "label": "Quelle solution proposez-vous pour résoudre ce problème ?",
+      "placeholder": "Décrivez la solution que vous proposez",
+      "required": true
+    },
+    {
+      "name": "criteres-de-sucess",
+      "type": "select",
+      "options": [
+        "Réduction des coûts",
+        "Augmentation de la qualité",
+        "Amélioration de l'expérience utilisateur",
+        "Autre"
+      ],
+      "label": "Quels sont les critères de succès pour votre MVP ?",
+      "placeholder": "Sélectionnez les critères de succès",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles ressources (temps, argent, personnel) disposez-vous pour développer votre MVP ?",
+      "placeholder": "Indiquez les ressources disponibles",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Problème identifié : {probleme-identifie}, Solution proposée : {solution-proposée}, Critères de succès : {criteres-de-sucess}, Ressources disponibles : {ressources-disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

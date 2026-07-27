@@ -1,0 +1,71 @@
+{
+  "id": "plan-de-formation-upskilling-numerique",
+  "title": "Plan de formation & upskilling numérique",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "domaine-interet",
+      "type": "text",
+      "label": "Quel est votre domaine d'intérêt pour la formation ?",
+      "placeholder": "Exemple : Data Science, Développement Web, etc.",
+      "required": true
+    },
+    {
+      "name": "niveau-de-connaissance",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est votre niveau de connaissance en matière de formation ?",
+      "placeholder": "Exemple : Débutant, Intermédiaire, Avancé",
+      "required": true
+    },
+    {
+      "name": "objectifs-de-formation",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs de formation ?",
+      "placeholder": "Exemple : Améliorer mes compétences en data science, apprendre à développer des applications mobiles, etc.",
+      "required": true
+    },
+    {
+      "name": "disponibilite-temps",
+      "type": "number",
+      "label": "Combien de temps êtes-vous disponible pour la formation ?",
+      "placeholder": "Exemple : 1 mois, 3 mois, 6 mois, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en formation et upskilling numérique. L'utilisateur a répondu : Domaine d'intérêt : {domaine-interet}, Niveau de connaissance : {niveau-de-connaissance}, Objectifs de formation : {objectifs-de-formation}, Disponibilité de temps : {disponibilite-temps}. Analyse ces informations et propose un plan de formation personnalisé incluant les cours, les ressources et les outils nécessaires.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

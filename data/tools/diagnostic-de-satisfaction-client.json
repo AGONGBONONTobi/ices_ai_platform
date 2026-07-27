@@ -1,0 +1,78 @@
+{
+  "id": "diagnostic-de-satisfaction-client",
+  "title": "Diagnostic de satisfaction client (NPS, CSAT, CES)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "note_nps",
+      "type": "number",
+      "label": "Quelle note sur 10 attribuez-vous à notre entreprise ?",
+      "placeholder": "Ex: 8",
+      "required": true
+    },
+    {
+      "name": "satisfaction_csat",
+      "type": "select",
+      "options": [
+        "Très satisfaits",
+        "Satisfaits",
+        "Neutres",
+        "Insatisfaits",
+        "Très insatisfaits"
+      ],
+      "label": "Quel est votre niveau de satisfaction globale ?",
+      "required": true
+    },
+    {
+      "name": "effort_ces",
+      "type": "select",
+      "options": [
+        "Très facile",
+        "Facile",
+        "Moyen",
+        "Difficile",
+        "Très difficile"
+      ],
+      "label": "Quel a été le niveau d'effort pour résoudre votre problème ou répondre à votre besoin ?",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Pouvez-vous nous donner des commentaires ou des suggestions pour améliorer ?",
+      "placeholder": "Ex: Nous avons apprécié la rapidité de réponse, mais...",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Un client a répondu au diagnostic de satisfaction : Note NPS: {note_nps}, Satisfaction CSAT: {satisfaction_csat}, Effort CES: {effort_ces}, Commentaires: {commentaires}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (NPS, CSAT, CES), et des recommandations pour améliorer la satisfaction client.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

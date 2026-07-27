@@ -1,0 +1,90 @@
+{
+  "id": "analyse-strategique-pestel-augmente-ia",
+  "title": "Analyse stratégique PESTEL augmentée IA",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "macroeconomic",
+      "type": "textarea",
+      "label": "Quelles sont les tendances macroéconomiques actuelles et futures qui pourraient affecter l'entreprise ?",
+      "placeholder": "Exemple : inflation, taux d'intérêt, croissance économique",
+      "required": true
+    },
+    {
+      "name": "politique",
+      "type": "textarea",
+      "label": "Quelles sont les évolutions politiques actuelles et futures qui pourraient affecter l'entreprise ?",
+      "placeholder": "Exemple : lois, réglementations, changements de gouvernement",
+      "required": true
+    },
+    {
+      "name": "société",
+      "type": "textarea",
+      "label": "Quelles sont les évolutions sociétales actuelles et futures qui pourraient affecter l'entreprise ?",
+      "placeholder": "Exemple : changements démographiques, évolutions culturelles",
+      "required": true
+    },
+    {
+      "name": "technologie",
+      "type": "select",
+      "options": [
+        "IA",
+        "Big Data",
+        "Blockchain"
+      ],
+      "label": "Quelle technologie est la plus pertinente pour l'entreprise ?",
+      "placeholder": "Exemple : IA pour l'automatisation",
+      "required": true
+    },
+    {
+      "name": "environnement",
+      "type": "textarea",
+      "label": "Quelles sont les évolutions environnementales actuelles et futures qui pourraient affecter l'entreprise ?",
+      "placeholder": "Exemple : changements climatiques, énergies renouvelables",
+      "required": true
+    },
+    {
+      "name": "legislation",
+      "type": "select",
+      "options": [
+        "UE",
+        "USA",
+        "Chine"
+      ],
+      "label": "Quelle législation est la plus pertinente pour l'entreprise ?",
+      "placeholder": "Exemple : RGPD pour la protection des données",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Macroéconomique: {macroeconomic}, Politique: {politique}, Société: {société}, Technologie: {technologie}, Environnement: {environnement}, Législation: {legislation}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

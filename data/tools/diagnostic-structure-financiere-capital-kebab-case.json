@@ -1,0 +1,78 @@
+{
+  "id": "diagnostic-structure-financiere-capital-kebab-case",
+  "title": "Diagnostic de la structure financière & du capital",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "montant-emprunts",
+      "type": "number",
+      "label": "Quel est le montant total des emprunts de l'entreprise ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "taux-interet-emprunts",
+      "type": "number",
+      "label": "Quel est le taux d'intérêt moyen des emprunts de l'entreprise ?",
+      "placeholder": "Exemple : 5%",
+      "required": true
+    },
+    {
+      "name": "capital-propre",
+      "type": "number",
+      "label": "Quel est le montant du capital propre de l'entreprise ?",
+      "placeholder": "Exemple : 50 000 €",
+      "required": true
+    },
+    {
+      "name": "type-actionnaire",
+      "type": "select",
+      "options": [
+        "Actionnaire majoritaire",
+        "Actionnaire minoritaire",
+        "Société de capitaux"
+      ],
+      "label": "Quel est le type d'actionnaire principal de l'entreprise ?",
+      "placeholder": "Exemple : Actionnaire majoritaire",
+      "required": true
+    },
+    {
+      "name": "description-activite",
+      "type": "textarea",
+      "label": "Peut-être vous décririez brièvement l'activité principale de l'entreprise ?",
+      "placeholder": "Exemple : Fabrication de produits alimentaires",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a répondu : Montant des emprunts : {montant-emprunts} €, Taux d'intérêt moyen des emprunts : {taux-interet-emprunts}%, Capital propre : {capital-propre} €, Type d'actionnaire principal : {type-actionnaire}, Description de l'activité principale : {description-activite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

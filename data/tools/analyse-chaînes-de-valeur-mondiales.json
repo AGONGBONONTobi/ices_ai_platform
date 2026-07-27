@@ -1,0 +1,73 @@
+{
+  "id": "analyse-chaînes-de-valeur-mondiales",
+  "title": "Analyse des chaînes de valeur mondiales",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Santé",
+        "Finance",
+        "Industrie",
+        "Services"
+      ],
+      "label": "Dans quel secteur opère votre entreprise ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_activite",
+      "type": "textarea",
+      "label": "Décrivez brièvement l'activité principale de votre entreprise",
+      "placeholder": "Exemple : Développement de logiciels pour la santé",
+      "required": true
+    },
+    {
+      "name": "zone_geographique",
+      "type": "text",
+      "label": "Quelles sont les zones géographiques clés où votre entreprise opère ?",
+      "placeholder": "Exemple : Europe, Asie, Amérique du Nord",
+      "required": true
+    },
+    {
+      "name": "partenaires_cles",
+      "type": "textarea",
+      "label": "Listez les partenaires clés de votre chaîne de valeur (fournisseurs, distributeurs, etc.)",
+      "placeholder": "Exemple : Fournisseur A, Distributeur B",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique. L'utilisateur a répondu : Secteur: {secteur}, Description de l'activité: {description_activite}, Zone géographique: {zone_geographique}, Partenaires clés: {partenaires_cles}. Analysez ces informations pour fournir un score global sur 100 de la position de l'entreprise dans les chaînes de valeur mondiales, une évaluation par axe (technologique, économique, stratégique), et des recommandations pour améliorer sa position.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

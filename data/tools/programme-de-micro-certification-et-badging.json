@@ -1,0 +1,76 @@
+{
+  "id": "programme-de-micro-certification-et-badging",
+  "title": "Programme de micro-certification & badging",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "niveau-de-connaissance",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est le niveau de connaissance de l'apprenant sur le sujet ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "objectifs-dapprentissage",
+      "type": "textarea",
+      "label": "Quels sont les objectifs d'apprentissage de l'apprenant ?",
+      "placeholder": "Exemple : Améliorer ses compétences en développement web",
+      "required": true
+    },
+    {
+      "name": "moyens-dapprentissage",
+      "type": "select",
+      "options": [
+        "Formation en ligne",
+        "Formation en présentiel",
+        "Auto-apprentissage"
+      ],
+      "label": "Quels sont les moyens d'apprentissage préférés de l'apprenant ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles ressources sont disponibles pour l'apprenant ? (ex : budget, équipement, etc.)",
+      "placeholder": "Exemple : 1000€",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Niveau de connaissance : {niveau-de-connaissance}, Objectifs d'apprentissage : {objectifs-dapprentissage}, Moyens d'apprentissage : {moyens-dapprentissage}, Ressources disponibles : {ressources-disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

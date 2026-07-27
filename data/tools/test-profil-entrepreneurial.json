@@ -1,0 +1,83 @@
+{
+  "id": "test-profil-entrepreneurial",
+  "title": "Test de profil entrepreneurial & goût du risque",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "goût-du-risque",
+      "type": "select",
+      "options": [
+        "Fort",
+        "Moyen",
+        "Faible"
+      ],
+      "label": "Quel est votre goût pour le risque ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "independance",
+      "type": "textarea",
+      "label": "Quelle est votre perception de l'indépendance ?",
+      "placeholder": "Exemple : Je suis une personne très autonome et je préfère travailler de manière indépendante.",
+      "required": true
+    },
+    {
+      "name": "motivation",
+      "type": "text",
+      "label": "Qu'est-ce qui vous motive pour prendre des risques ?",
+      "placeholder": "Exemple : Je suis motivé par la possibilité de créer quelque chose de nouveau et de réussir.",
+      "required": true
+    },
+    {
+      "name": "tolerance-au-fauteuil",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Fort"
+      ],
+      "label": "Quelle est votre tolérance à l'égard des fautes ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "vision-strategique",
+      "type": "textarea",
+      "label": "Quelle est votre vision stratégique pour votre entreprise ?",
+      "placeholder": "Exemple : Je vois mon entreprise comme une entreprise innovante et leader sur le marché.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Goût du risque : {goût-du-risque}, Indépendance : {independance}, Motivation : {motivation}, Tolerance au fauteuil : {tolerance-au-fauteuil}, Vision stratégique : {vision-strategique}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

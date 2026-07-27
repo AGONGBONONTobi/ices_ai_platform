@@ -1,0 +1,78 @@
+{
+  "id": "etude-faisabilite-projet-touristique",
+  "title": "Étude de faisabilité d'un projet touristique",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "project_name",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Ex: Tourisme de montagne",
+      "required": true
+    },
+    {
+      "name": "location",
+      "type": "text",
+      "label": "Localisation géographique",
+      "placeholder": "Ex: Alpes françaises",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Budget prévu (en euros)",
+      "placeholder": "Ex: 500000",
+      "required": true
+    },
+    {
+      "name": "target_audience",
+      "type": "textarea",
+      "label": "Public cible",
+      "placeholder": "Ex: Familles, voyageurs d'affaires, etc.",
+      "required": true
+    },
+    {
+      "name": "environmental_impact",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Modéré",
+        "Élevé"
+      ],
+      "label": "Impact environnemental prévu",
+      "placeholder": "Sélectionnez",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Project name: {project_name}, Location: {location}, Budget: {budget}, Target audience: {target_audience}, Environmental impact: {environmental_impact}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

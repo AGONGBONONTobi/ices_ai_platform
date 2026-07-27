@@ -1,0 +1,70 @@
+{
+  "id": "plan-d-adoption-de-l-ia-en-entreprise",
+  "title": "Plan d'adoption de l'IA en entreprise (AI Strategy)",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "objectifs_metier",
+      "type": "textarea",
+      "label": "Quels sont les objectifs métier que vous souhaitez atteindre avec l'adoption de l'IA ?",
+      "placeholder": "Décrivez les objectifs métier que vous souhaitez atteindre",
+      "required": true
+    },
+    {
+      "name": "niveau_de_maturite",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est votre niveau de maturité actuel en matière d'IA ?",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "text",
+      "label": "Quelles sont les ressources (humaines, financières, technologiques) que vous avez à disposition pour l'adoption de l'IA ?",
+      "placeholder": "Décrivez les ressources disponibles",
+      "required": true
+    },
+    {
+      "name": "defis_technologiques",
+      "type": "textarea",
+      "label": "Quels sont les défis technologiques que vous rencontrez actuellement dans votre entreprise ?",
+      "placeholder": "Décrivez les défis technologiques",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en transformation digitale et IA. L'utilisateur a répondu : Objectifs métier: {objectifs_metier}, Niveau de maturité: {niveau_de_maturite}, Ressources disponibles: {ressources_disponibles}, Défis technologiques: {defis_technologiques}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (stratégie, organisation, technologie), et des recommandations pour élaborer un plan d'adoption de l'IA en entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

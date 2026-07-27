@@ -1,0 +1,72 @@
+{
+  "id": "plan-open-innovation-partenariats-rd",
+  "title": "Plan d'open innovation & partenariats R&D",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de l'entreprise pour l'open innovation et les partenariats R&D ?",
+      "placeholder": "Exemple : Améliorer la compétitivité, développer de nouveaux produits/services, etc.",
+      "required": true
+    },
+    {
+      "name": "partenaires-cibles",
+      "type": "select",
+      "options": [
+        "Universités et écoles de recherche",
+        "Startups et PME innovantes",
+        "Grandes entreprises et groupes industriels",
+        "Associations et organisations de la société civile"
+      ],
+      "label": "Quels types de partenaires cibles souhaitez-vous identifier pour l'open innovation et les partenariats R&D ?",
+      "placeholder": "Sélectionnez les options",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources disponibles pour lancer et maintenir les partenariats R&D ? (ex : budget, personnel, infrastructures, etc.)",
+      "placeholder": "Exemple : 100 000 €, 5 personnes, etc.",
+      "required": true
+    },
+    {
+      "name": "avantages-esperes",
+      "type": "textarea",
+      "label": "Quels sont les avantages attendus de l'open innovation et des partenariats R&D ? (ex : accès à de nouvelles technologies, développement de nouveaux marchés, etc.)",
+      "placeholder": "Exemple : Accès à de nouvelles technologies, développement de nouveaux marchés, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Partenaires cibles : {partenaires-cibles}, Ressources disponibles : {ressources-disponibles}, Avantages attendus : {avantages-esperes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

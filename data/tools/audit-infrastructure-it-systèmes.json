@@ -1,0 +1,72 @@
+{
+  "id": "audit-infrastructure-it-systèmes",
+  "title": "Audit de l'infrastructure IT & systèmes",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Quels sont les systèmes et applications utilisés dans l'entreprise ?",
+      "placeholder": "Liste détaillée des systèmes et applications",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "AWS",
+        "Azure",
+        "Google Cloud",
+        "Sur site"
+      ],
+      "label": "Quel est le fournisseur de cloud utilisé ?",
+      "placeholder": "Choisissez un fournisseur de cloud",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Combien de serveurs physiques sont utilisés ?",
+      "placeholder": "Nombre de serveurs physiques",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quels sont les protocoles de sécurité utilisés ?",
+      "placeholder": "Liste détaillée des protocoles de sécurité",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audit de l'infrastructure IT & systèmes. L'utilisateur a répondu : Systèmes et applications utilisés : {variable1}, fournisseur de cloud : {variable2}, nombre de serveurs physiques : {variable3}, protocoles de sécurité utilisés : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

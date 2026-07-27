@@ -1,0 +1,76 @@
+{
+  "id": "outil-rse-africain",
+  "title": "Programme RSE adapté aux contextes africains",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "contexte",
+      "type": "select",
+      "options": [
+        "Urbain",
+        "Rural",
+        "Mixte"
+      ],
+      "label": "Quel est le contexte géographique du programme RSE ?",
+      "placeholder": "Sélectionnez un contexte",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux du programme RSE ?",
+      "placeholder": "Décrivez les objectifs du programme",
+      "required": true
+    },
+    {
+      "name": "ressources",
+      "type": "number",
+      "label": "Quelles sont les ressources allouées au programme RSE ?",
+      "placeholder": "Entrez le montant des ressources",
+      "required": true
+    },
+    {
+      "name": "partenaires",
+      "type": "select",
+      "options": [
+        "Gouvernement",
+        "Organisations internationales",
+        "Associations locales"
+      ],
+      "label": "Quels sont les partenaires principaux du programme RSE ?",
+      "placeholder": "Sélectionnez les partenaires",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE. L'utilisateur a répondu : Contexte: {contexte}, Objectifs: {objectifs}, Ressources: {ressources}, Partenaires: {partenaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

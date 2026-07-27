@@ -1,0 +1,73 @@
+{
+  "id": "rapport-positionnement-concurrentiel",
+  "title": "Rapport de positionnement concurrentiel",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise à analyser",
+      "placeholder": "Exemple : Entreprise X",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Finance",
+        "Santé",
+        "Énergie",
+        "Autres"
+      ],
+      "label": "Secteur d'activité de l'entreprise",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Description de l'entreprise et de son environnement",
+      "placeholder": "Informations sur l'entreprise, ses produits, ses marchés, etc.",
+      "required": true
+    },
+    {
+      "name": "concurrents",
+      "type": "textarea",
+      "label": "Liste des principaux concurrents de l'entreprise",
+      "placeholder": "Nom des concurrents, liens vers leurs sites web, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique. L'entreprise {entreprise} opère dans le secteur {secteur}. Voici une description de l'entreprise et de son environnement : {description}. Ses principaux concurrents sont : {concurrents}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer son positionnement concurrentiel.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

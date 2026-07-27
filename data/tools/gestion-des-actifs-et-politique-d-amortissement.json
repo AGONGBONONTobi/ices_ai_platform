@@ -1,0 +1,84 @@
+{
+  "id": "gestion-des-actifs-et-politique-d-amortissement",
+  "title": "Gestion des actifs & politique d'amortissement",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "type-dactif",
+      "type": "select",
+      "options": [
+        "Immeuble",
+        "Véhicule",
+        "Matériel",
+        "Informatique"
+      ],
+      "label": "Quel type d'actif est-ce ?",
+      "placeholder": "Sélectionnez un type d'actif",
+      "required": true
+    },
+    {
+      "name": "valeur-de-lactif",
+      "type": "number",
+      "label": "Quelle est la valeur de l'actif ?",
+      "placeholder": "Entrez la valeur de l'actif",
+      "required": true
+    },
+    {
+      "name": "periode-damortissement",
+      "type": "number",
+      "label": "Quelle est la période d'amortissement ?",
+      "placeholder": "Entrez la période d'amortissement",
+      "required": true
+    },
+    {
+      "name": "methode-damortissement",
+      "type": "select",
+      "options": [
+        "Linaire",
+        "Décroissante",
+        "Constante"
+      ],
+      "label": "Quelle méthode d'amortissement est utilisée ?",
+      "placeholder": "Sélectionnez une méthode d'amortissement",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Quels commentaires avez-vous sur la gestion des actifs ?",
+      "placeholder": "Entrez vos commentaires",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des actifs. L'utilisateur a répondu : Type d'actif: {type-dactif}, Valeur de l'actif: {valeur-de-lactif}, Période d'amortissement: {periode-damortissement}, Méthode d'amortissement: {methode-damortissement}, Commentaires: {commentaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "analytics-predictif-des-ventes",
+  "title": "Analytics prédictif des ventes",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "periode",
+      "type": "select",
+      "options": [
+        "Mois",
+        "Trimestre",
+        "Année"
+      ],
+      "label": "Sélectionnez la période de temps",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "produit",
+      "type": "select",
+      "options": [
+        "Produit A",
+        "Produit B",
+        "Produit C"
+      ],
+      "label": "Sélectionnez le produit",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Entrez le budget prévisionnel",
+      "placeholder": "0",
+      "required": true
+    },
+    {
+      "name": "volumes",
+      "type": "textarea",
+      "label": "Entrez les volumes de vente",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Période: {periode}, Produit: {produit}, Budget: {budget}, Volumes: {volumes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

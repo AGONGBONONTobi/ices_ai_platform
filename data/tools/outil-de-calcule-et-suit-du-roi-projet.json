@@ -1,0 +1,77 @@
+{
+  "id": "outil-de-calcule-et-suit-du-roi-projet",
+  "title": "Outil de calcul & suivi du ROI projet",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "budget_investi",
+      "type": "number",
+      "label": "Budget investi dans le projet",
+      "placeholder": "Entrez le budget investi",
+      "required": true
+    },
+    {
+      "name": "revenus_generes",
+      "type": "number",
+      "label": "Revenus générés par le projet",
+      "placeholder": "Entrez les revenus générés",
+      "required": true
+    },
+    {
+      "name": "duree_projet",
+      "type": "number",
+      "label": "Durée du projet (en mois)",
+      "placeholder": "Entrez la durée du projet",
+      "required": true
+    },
+    {
+      "name": "methode_calcule_roi",
+      "type": "select",
+      "options": [
+        "Méthode 1",
+        "Méthode 2"
+      ],
+      "label": "Méthode de calcul du ROI",
+      "placeholder": "Sélectionnez la méthode de calcul",
+      "required": true
+    },
+    {
+      "name": "recommandations",
+      "type": "textarea",
+      "label": "Recommandations pour améliorer le ROI",
+      "placeholder": "Entrez les recommandations",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Budget investi : {budget_investi}, Revenus générés : {revenus_generes}, Durée du projet : {duree_projet}, Méthode de calcul du ROI : {methode_calcule_roi}, Recommandations : {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

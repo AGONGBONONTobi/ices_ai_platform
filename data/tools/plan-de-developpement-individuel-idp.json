@@ -1,0 +1,72 @@
+{
+  "id": "plan-de-developpement-individuel-idp",
+  "title": "Plan de développement individuel (PDI/IDP)",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "objectifs-professionnels",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs professionnels à court et à long terme ?",
+      "placeholder": "Exemple : Je souhaite occuper un poste de responsable dans 2 ans.",
+      "required": true
+    },
+    {
+      "name": "competences-necessaires",
+      "type": "select",
+      "options": [
+        "Communication",
+        "Analyse de données",
+        "Leadership",
+        "Gestion de projet"
+      ],
+      "label": "Quelles compétences vous semblez nécessaires pour atteindre vos objectifs ?",
+      "placeholder": "Sélectionnez plusieurs options si nécessaire",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles ressources (financières, humaines, matérielles) disposez-vous pour atteindre vos objectifs ?",
+      "placeholder": "Exemple : 1000 euros par mois",
+      "required": true
+    },
+    {
+      "name": "barriers-a-overcome",
+      "type": "textarea",
+      "label": "Quels sont les principaux obstacles ou défis que vous devez surmonter pour atteindre vos objectifs ?",
+      "placeholder": "Exemple : Manque de temps, manque de connaissances en matière de marketing",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs professionnels : {objectifs-professionnels}, Compétences nécessaires : {competences-necessaires}, Ressources disponibles : {ressources-disponibles}, Barrières à surmonter : {barriers-a-overcome}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "outil-de-gouvernance-des-donnees",
+  "title": "Outil de gouvernance des données (Data Governance)",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "niveauDeMaturite",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est votre niveau de maturité actuel en matière de gouvernance des données ?",
+      "placeholder": "Sélectionnez votre niveau de maturité",
+      "required": true
+    },
+    {
+      "name": "descriptionProjet",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre projet de gouvernance des données",
+      "placeholder": "Entrez une description de votre projet",
+      "required": true
+    },
+    {
+      "name": "nombreUtilisateurs",
+      "type": "number",
+      "label": "Combien d'utilisateurs auront accès aux données ?",
+      "placeholder": "Entrez le nombre d'utilisateurs",
+      "required": true
+    },
+    {
+      "name": "typesDeDonnees",
+      "type": "select",
+      "options": [
+        "Données personnelles",
+        "Données financières",
+        "Données de production",
+        "Autres"
+      ],
+      "label": "Quels types de données seront gérés ?",
+      "placeholder": "Sélectionnez les types de données",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en gouvernance des données. L'utilisateur a répondu : Niveau de maturité : {niveauDeMaturite}, Description du projet : {descriptionProjet}, Nombre d'utilisateurs : {nombreUtilisateurs}, Types de données : {typesDeDonnees}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (sécurité, conformité, qualité des données), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

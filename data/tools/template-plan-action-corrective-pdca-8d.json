@@ -1,0 +1,70 @@
+{
+  "id": "template-plan-action-corrective-pdca-8d",
+  "title": "Template de plan d'action corrective (PDCA/8D)",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "probleme_identifie",
+      "type": "textarea",
+      "label": "Décrivez le problème identifié",
+      "placeholder": "Exemple : Le taux de défauts dans notre processus de production a augmenté ces derniers mois.",
+      "required": true
+    },
+    {
+      "name": "objectif_correctif",
+      "type": "text",
+      "label": "Quel est l'objectif de la correction ?",
+      "placeholder": "Exemple : Réduire le taux de défauts à moins de 2%.",
+      "required": true
+    },
+    {
+      "name": "methode_analyse",
+      "type": "select",
+      "options": [
+        "Analyse de cause racine (RCA)",
+        "Diagramme d'Ishikawa",
+        "5 Why"
+      ],
+      "label": "Quelle méthode d'analyse utiliserez-vous pour identifier les causes du problème ?",
+      "required": true
+    },
+    {
+      "name": "plan_action",
+      "type": "textarea",
+      "label": "Décrivez le plan d'action pour résoudre le problème",
+      "placeholder": "Exemple : Mettre en place un système de contrôle qualité plus strict, former le personnel sur les nouvelles procédures.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en amélioration continue. L'utilisateur a identifié un problème : {probleme_identifie}, avec l'objectif correctif de {objectif_correctif}. Il utilise la méthode d'analyse {methode_analyse} et propose le plan d'action suivant : {plan_action}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (identification du problème, analyse, plan d'action), et des recommandations pour améliorer le plan d'action corrective.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "brand": "Plataforma IA",
+    "toolsCount": "herramientas disponibles",
+    "back": "Volver al catálogo"
+  },
+  "hero": {
+    "badge": "Impulsado por los mejores LLMs",
+    "title": "Tu catálogo de herramientas",
+    "titleHighlight": "de IA profesionales",
+    "subtitle": "Diagnósticos, auditorías, análisis y generadores de contenido IA, al alcance de un clic. Cada herramienta produce un informe profesional en segundos."
+  },
+  "catalog": {
+    "searchPlaceholder": "Buscar una herramienta IA... (ej: auditoría, contrato, estrategia)",
+    "filterAll": "Todos",
+    "resultCount": "herramienta",
+    "resultCountPlural": "herramientas",
+    "resultIn": "en",
+    "empty": {
+      "title": "No se encontraron herramientas",
+      "subtitle": "Prueba con otra palabra clave o categoría."
+    },
+    "emptyDb": {
+      "title": "La base de datos está vacía.",
+      "subtitle": "Ejecute el script de ingesta para poblar el catálogo."
+    }
+  },
+  "tool": {
+    "launch": "Lanzar herramienta",
+    "generate": "Generar resultado",
+    "generating": "Generando...",
+    "result": "Resultado generado",
+    "restart": "Reiniciar herramienta",
+    "downloadPdf": "Descargar Informe (PDF)",
+    "error": "Ocurrió un error"
+  },
+  "language": "Idioma"
+}

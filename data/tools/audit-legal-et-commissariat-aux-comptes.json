@@ -1,0 +1,84 @@
+{
+  "id": "audit-legal-et-commissariat-aux-comptes",
+  "title": "Audit légal & commissariat aux comptes",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "BTP",
+        "Finance",
+        "Industrie",
+        "Services"
+      ],
+      "label": "Secteur d'activité de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Objectif de l'audit",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "réglementation",
+      "type": "select",
+      "options": [
+        "RGPD",
+        "SAPIN 2",
+        "Loi Bélier"
+      ],
+      "label": "Réglementation applicable",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "défaillances",
+      "type": "textarea",
+      "label": "Défaillances ou anomalies constatées",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audit légal et commissariat aux comptes. L'utilisateur a répondu : Entreprise: {entreprise}, Secteur: {secteur}, Objectif: {objectif}, Réglementation: {réglementation}, Défaillances: {défaillances}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

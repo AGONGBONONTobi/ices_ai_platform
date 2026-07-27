@@ -1,0 +1,71 @@
+{
+  "id": "modele-de-financement-d-infrastructure-publique",
+  "title": "Modèle de financement d'infrastructure publique",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "montant-investi",
+      "type": "number",
+      "label": "Quel est le montant investi dans l'infrastructure publique ?",
+      "placeholder": "Exemple : 1000000",
+      "required": true
+    },
+    {
+      "name": "type-de-financement",
+      "type": "select",
+      "options": [
+        "Prêt",
+        "Subvention",
+        "Partenariat public-privé"
+      ],
+      "label": "Quel type de financement a été utilisé pour l'infrastructure publique ?",
+      "placeholder": "Exemple : Prêt",
+      "required": true
+    },
+    {
+      "name": "duree-de-financement",
+      "type": "number",
+      "label": "Quelle est la durée de financement de l'infrastructure publique ?",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "cout-opportunite",
+      "type": "textarea",
+      "label": "Quels sont les coûts d'opportunité associés à l'infrastructure publique ?",
+      "placeholder": "Exemple : Les coûts d'opportunité sont évalués à 500000 euros",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en financement d'infrastructure publique. L'utilisateur a répondu : Montant investi : {montant-investi}, Type de financement : {type-de-financement}, Durée de financement : {duree-de-financement}, Coûts d'opportunité : {cout-opportunite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

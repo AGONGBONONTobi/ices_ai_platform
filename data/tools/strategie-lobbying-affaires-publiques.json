@@ -1,0 +1,85 @@
+{
+  "id": "strategie-lobbying-affaires-publiques",
+  "title": "Stratégie de lobbying & affaires publiques",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de votre stratégie de lobbying?",
+      "placeholder": "Exemple: influencer la législation sur les émissions de CO2",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué (en euros)?",
+      "placeholder": "Exemple: 50000",
+      "required": true
+    },
+    {
+      "name": "partenaires",
+      "type": "textarea",
+      "label": "Quels partenaires ou organisations envisagez-vous de mobiliser?",
+      "placeholder": "Exemple: ONG environnementales, associations professionnelles",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Énergie",
+        "Santé",
+        "Technologie",
+        "Agriculture",
+        "Autre"
+      ],
+      "label": "Quel est le secteur d'activité concerné?",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "niveau",
+      "type": "select",
+      "options": [
+        "Local",
+        "National",
+        "International"
+      ],
+      "label": "Quel est le niveau d'influence visé?",
+      "placeholder": "Sélectionnez un niveau",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif: {objectif}, Budget: {budget}, Partenaires: {partenaires}, Secteur: {secteur}, Niveau: {niveau}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

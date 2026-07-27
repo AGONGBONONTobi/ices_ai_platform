@@ -1,0 +1,78 @@
+{
+  "id": "outil-traçabilité-supply-chain-responsable",
+  "title": "Outil de traçabilité & supply chain responsable",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "matières-premières",
+      "type": "textarea",
+      "label": "Liste des matières premières utilisées",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "sources-approvisionnement",
+      "type": "select",
+      "options": [
+        "Local",
+        "National",
+        "International"
+      ],
+      "label": "Sources d'approvisionnement",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "émissions-gaz-à-effet-de-serre",
+      "type": "number",
+      "label": "Émissions de gaz à effet de serre (tonnes CO2éq)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "engagement-rse",
+      "type": "textarea",
+      "label": "Engagement en matière de RSE (politique, objectifs, etc.)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE et développement durable. L'utilisateur a répondu : Entreprise: {entreprise}, Matières premières : {matières-premières}, Sources d'approvisionnement : {sources-approvisionnement}, Émissions de gaz à effet de serre : {émissions-gaz-à-effet-de-serre}, Engagement RSE : {engagement-rse}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

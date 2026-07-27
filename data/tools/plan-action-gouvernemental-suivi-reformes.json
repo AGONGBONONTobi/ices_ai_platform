@@ -1,0 +1,71 @@
+{
+  "id": "plan-action-gouvernemental-suivi-reformes",
+  "title": "Plan d'action gouvernemental & suivi des réformes",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif_reforme",
+      "type": "textarea",
+      "label": "Décrivez l'objectif principal de la réforme",
+      "placeholder": "Exemple : Améliorer la transparence financière",
+      "required": true
+    },
+    {
+      "name": "niveau_implication",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quel est le niveau d'implication du gouvernement dans cette réforme ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "delai_mise_en_oeuvre",
+      "type": "number",
+      "label": "Quel est le délai prévu pour la mise en œuvre de cette réforme ? (en mois)",
+      "placeholder": "Exemple : 12",
+      "required": true
+    },
+    {
+      "name": "ressources_allouees",
+      "type": "text",
+      "label": "Décrivez les ressources allouées pour cette réforme",
+      "placeholder": "Exemple : 100 000 euros",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant spécialisé dans les réformes gouvernementales. L'utilisateur a répondu : Objectif de la réforme : {objectif_reforme}, Niveau d'implication : {niveau_implication}, Délai de mise en œuvre : {delai_mise_en_oeuvre} mois, Ressources allouées : {ressources_allouees}. Évaluez ces informations et fournissez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

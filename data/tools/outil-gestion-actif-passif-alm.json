@@ -1,0 +1,71 @@
+{
+  "id": "outil-gestion-actif-passif-alm",
+  "title": "Outil de gestion actif-passif (ALM)",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "actifs_totaux",
+      "type": "number",
+      "label": "Quels sont vos actifs totaux ?",
+      "placeholder": "1000000",
+      "required": true
+    },
+    {
+      "name": "passifs_totaux",
+      "type": "number",
+      "label": "Quels sont vos passifs totaux ?",
+      "placeholder": "500000",
+      "required": true
+    },
+    {
+      "name": "type_activite",
+      "type": "select",
+      "options": [
+        "Banque",
+        "Assurance",
+        "Entreprise"
+      ],
+      "label": "Quel est votre type d'activité ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_strategie",
+      "type": "textarea",
+      "label": "Décrivez votre stratégie de gestion actif-passif",
+      "placeholder": "Exemple de stratégie",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en gestion actif-passif. L'utilisateur a répondu : Actifs totaux: {actifs_totaux}, Passifs totaux: {passifs_totaux}, Type d'activité: {type_activite}, Description de la stratégie: {description_strategie}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

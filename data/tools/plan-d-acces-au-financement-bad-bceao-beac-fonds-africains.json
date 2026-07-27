@@ -1,0 +1,72 @@
+{
+  "id": "plan-d-acces-au-financement-bad-bceao-beac-fonds-africains",
+  "title": "Plan d'accès au financement BAD, BCEAO, BEAC, Fonds africains",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "type-de-financement",
+      "type": "select",
+      "options": [
+        "BAD",
+        "BCEAO",
+        "BEAC",
+        "Fonds africains"
+      ],
+      "label": "Quel type de financement recherchez-vous ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "montant-demande",
+      "type": "number",
+      "label": "Quel montant de financement est-il demandé ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "duree-projet",
+      "type": "number",
+      "label": "Quelle est la durée du projet ?",
+      "placeholder": "Exemple : 24 mois",
+      "required": true
+    },
+    {
+      "name": "description-projet",
+      "type": "textarea",
+      "label": "Veuillez décrire brièvement le projet",
+      "placeholder": "Exemple : Création d'une entreprise de services",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en financement. L'utilisateur a répondu : Type de financement : {type-de-financement}, Montant demandé : {montant-demande}, Durée du projet : {duree-projet}, Description du projet : {description-projet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

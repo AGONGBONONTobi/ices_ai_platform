@@ -1,0 +1,72 @@
+{
+  "id": "outil-de-priorisation-strategique-moscow-scoring",
+  "title": "Outil de priorisation stratégique (MoSCoW, scoring)",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Liste des objectifs stratégiques à prioriser",
+      "placeholder": "Exemple : Améliorer la satisfaction client, Augmenter les ventes, etc.",
+      "required": true
+    },
+    {
+      "name": "priorite-moscow",
+      "type": "select",
+      "options": [
+        "Must-Have",
+        "Should-Have",
+        "Could-Have",
+        "Won't-Have"
+      ],
+      "label": "Priorité de l'objectif selon la méthode MoSCoW",
+      "placeholder": "Choisissez une priorité",
+      "required": true
+    },
+    {
+      "name": "score-attribue",
+      "type": "number",
+      "label": "Score attribué à l'objectif (sur 100)",
+      "placeholder": "Exemple : 80",
+      "required": true
+    },
+    {
+      "name": "justification",
+      "type": "textarea",
+      "label": "Justification de la priorité et du score attribué",
+      "placeholder": "Exemple : Cette priorité est cruciale pour atteindre nos objectifs de croissance.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Priorité MoSCoW : {priorite-moscow}, Score attribué : {score-attribue}, Justification : {justification}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

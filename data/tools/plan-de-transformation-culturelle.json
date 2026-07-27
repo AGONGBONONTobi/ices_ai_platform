@@ -1,0 +1,79 @@
+{
+  "id": "plan-de-transformation-culturelle",
+  "title": "Plan de transformation culturelle",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de la transformation culturelle ?",
+      "placeholder": "Exemple : améliorer la collaboration, accroître l'innovation, etc.",
+      "required": true
+    },
+    {
+      "name": "barriers-culturels",
+      "type": "select",
+      "options": [
+        "Manque de confiance",
+        "Différences de valeurs",
+        "Problèmes de communication",
+        "Autres"
+      ],
+      "label": "Quels sont les principaux obstacles culturels à surmonter ?",
+      "placeholder": "Sélectionnez les options qui s'appliquent",
+      "required": true
+    },
+    {
+      "name": "strategie-de-communiquer",
+      "type": "text",
+      "label": "Quelle est la stratégie de communication pour animer la transformation culturelle ?",
+      "placeholder": "Exemple : campagnes de sensibilisation, formation, etc.",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources disponibles pour soutenir la transformation culturelle ?",
+      "placeholder": "Exemple : budget, personnel, etc.",
+      "required": true
+    },
+    {
+      "name": "indicateurs-de-suivi",
+      "type": "textarea",
+      "label": "Quels sont les indicateurs de suivi pour évaluer l'efficacité de la transformation culturelle ?",
+      "placeholder": "Exemple : satisfaction des employés, productivité, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Barriers culturels : {barriers-culturels}, Stratégie de communiquer : {strategie-de-communiquer}, Ressources disponibles : {ressources-disponibles}, Indicateurs de suivi : {indicateurs-de-suivi}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

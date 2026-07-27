@@ -1,0 +1,71 @@
+{
+  "id": "client-segmentation-analytics",
+  "title": "Analytics client & segmentation comportementale",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "text",
+      "label": "Quel est le secteur d'activité principal du client ?",
+      "placeholder": "Exemple : Industrie manufacturière",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Quels sont les principaux défis que le client rencontre dans son processus de décision ?",
+      "placeholder": "Exemple : Coût élevé, complexité de la chaîne d'approvisionnement",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "select",
+      "options": [
+        "Très satisfait",
+        "Satisfait",
+        "Déçu"
+      ],
+      "label": "Quel est le niveau de satisfaction globale du client avec nos services ?",
+      "placeholder": "Exemple : Très satisfait, Satisfait, Déçu",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "number",
+      "label": "Combien de fois le client a-t-il acheté nos produits ou services dans les 6 derniers mois ?",
+      "placeholder": "Exemple : 5",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Secteur d'activité principal : {variable1}, Principaux défis : {variable2}, Niveau de satisfaction : {variable3}, Fréquence d'achat : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

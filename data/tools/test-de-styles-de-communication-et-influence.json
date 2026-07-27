@@ -1,0 +1,72 @@
+{
+  "id": "test-de-styles-de-communication-et-influence",
+  "title": "Test de styles de communication & influence",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Comment vous présentez-vous aux collègues et aux clients ?",
+      "placeholder": "Exemple : Je m'appelle Jean, je suis responsable de la gestion des projets.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Conformiste",
+        "Conformiste avec une touche d'innovation",
+        "Innovant",
+        "Innovant avec une touche de conformisme"
+      ],
+      "label": "Quel est votre style de communication préféré ?",
+      "placeholder": "Exemple : Je suis un innovant",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Sur 10, combien de fois vous sentez-vous influencé par les opinions des autres ?",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quel est votre point fort en matière de communication ?",
+      "placeholder": "Exemple : Je suis très clair et concis dans mes messages.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Présentation : {variable1}, Style de communication : {variable2}, Influence : {variable3}, Point fort : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

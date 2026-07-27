@@ -1,0 +1,76 @@
+{
+  "id": "outil-de-protection-de-la-proprieté-intellectuelle",
+  "title": "Outil de protection de la propriété intellectuelle",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "marque",
+      "type": "text",
+      "label": "Nom de la marque ou du brevet protégé",
+      "placeholder": "Exemple : Logiciel XYZ",
+      "required": true
+    },
+    {
+      "name": "domaine",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Design",
+        "Innovation"
+      ],
+      "label": "Domaine d'application de la protection",
+      "placeholder": "Exemple : Technologie",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Description détaillée de la protection souhaitée",
+      "placeholder": "Exemple : Nous souhaitons protéger notre logiciel contre toute copie ou utilisation non autorisée.",
+      "required": true
+    },
+    {
+      "name": "pays",
+      "type": "select",
+      "options": [
+        "France",
+        "Europe",
+        "Monde"
+      ],
+      "label": "Zone géographique de la protection",
+      "placeholder": "Exemple : France",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en propriété intellectuelle. L'utilisateur a répondu : Marque : {marque}, Domaine : {domaine}, Description : {description}, Pays : {pays}. Analyse ces informations et recommande les mesures nécessaires pour protéger la propriété intellectuelle.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

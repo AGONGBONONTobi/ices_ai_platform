@@ -1,0 +1,83 @@
+{
+  "id": "outil-de-suivi-des-megatendances-mondiales",
+  "title": "Outil de suivi des mégatendances mondiales",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Santé",
+        "Énergie",
+        "Finance",
+        "Autre"
+      ],
+      "label": "Dans quel secteur souhaitez-vous suivre les mégatendances ?",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Décrivez brièvement les mégatendances que vous souhaitez suivre :",
+      "placeholder": "Exemple : Évolution de l'intelligence artificielle, croissance des énergies renouvelables...",
+      "required": true
+    },
+    {
+      "name": "horizonTemporel",
+      "type": "select",
+      "options": [
+        "Court terme (2024-2025)",
+        "Moyen terme (2025-2030)",
+        "Long terme (2030-2040)"
+      ],
+      "label": "Quel est votre horizon temporel pour suivre ces mégatendances ?",
+      "placeholder": "Sélectionnez un horizon temporel",
+      "required": true
+    },
+    {
+      "name": "niveauDeRisque",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Modéré",
+        "Élevé"
+      ],
+      "label": "Quel est le niveau de risque associé à ces mégatendances pour votre organisation ?",
+      "placeholder": "Sélectionnez un niveau de risque",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur a répondu : Secteur: {secteur}, Description des mégatendances: {description}, Horizon temporel: {horizonTemporel}, Niveau de risque: {niveauDeRisque}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

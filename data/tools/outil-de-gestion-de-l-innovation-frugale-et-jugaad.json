@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-gestion-de-l-innovation-frugale-et-jugaad",
+  "title": "Outil de gestion de l'innovation frugale & jugaad",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de l'innovation frugale et jugaad dans votre organisation ?",
+      "placeholder": "Exemple : Réduire les coûts, améliorer la qualité, etc.",
+      "required": true
+    },
+    {
+      "name": "ressources",
+      "type": "select",
+      "options": [
+        "Humaines",
+        "Financières",
+        "Matérielles"
+      ],
+      "label": "Quelles ressources manquez-vous pour mettre en œuvre l'innovation frugale et jugaad ?",
+      "placeholder": "Exemple : Personnel qualifié, budget, équipement, etc.",
+      "required": true
+    },
+    {
+      "name": "barriers",
+      "type": "text",
+      "label": "Quels sont les principaux obstacles à l'innovation frugale et jugaad dans votre organisation ?",
+      "placeholder": "Exemple : Manque de culture d'innovation, difficultés à mobiliser les ressources, etc.",
+      "required": true
+    },
+    {
+      "name": "stratégie",
+      "type": "textarea",
+      "label": "Quelle stratégie proposez-vous pour mettre en œuvre l'innovation frugale et jugaad dans votre organisation ?",
+      "placeholder": "Exemple : Identifier les opportunités, créer un comité d'innovation, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif: {objectif}, Ressources manquantes: {ressources}, Barrières : {barriers}, Stratégie : {stratégie}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

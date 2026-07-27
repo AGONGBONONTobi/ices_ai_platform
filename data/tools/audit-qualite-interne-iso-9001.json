@@ -1,0 +1,77 @@
+{
+  "id": "audit-qualite-interne-iso-9001",
+  "title": "Audit qualité interne (ISO 9001)",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "documentations",
+      "type": "textarea",
+      "label": "Quelles sont les procédures documentées pour les processus clés ?",
+      "placeholder": "Exemple : Manuel d'opération, Procédure de qualité, etc.",
+      "required": true
+    },
+    {
+      "name": "formation-et-competences",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Les employés ont-ils reçu la formation et les compétences nécessaires pour exécuter leurs tâches ?",
+      "placeholder": "Exemple : Formation initiale, Formation continue, etc.",
+      "required": true
+    },
+    {
+      "name": "contrôle-et-verifications",
+      "type": "textarea",
+      "label": "Quels sont les contrôles et vérifications mis en place pour garantir la qualité des produits/services ?",
+      "placeholder": "Exemple : Contrôle qualité, Vérification de conformité, etc.",
+      "required": true
+    },
+    {
+      "name": "plan-de-maintenance",
+      "type": "textarea",
+      "label": "Existe-t-il un plan de maintenance pour les équipements et les infrastructures ?",
+      "placeholder": "Exemple : Plan de maintenance préventif, Plan de maintenance correctif, etc.",
+      "required": true
+    },
+    {
+      "name": "suivi-et-évaluation",
+      "type": "textarea",
+      "label": "Quels sont les indicateurs de performance utilisés pour suivre et évaluer la qualité ?",
+      "placeholder": "Exemple : Indicateurs de qualité, Indicateurs de performance, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Documentations : {documentations}, Formation et compétences : {formation-et-competences}, Contrôle et vérifications : {contrôle-et-verifications}, Plan de maintenance : {plan-de-maintenance}, Suivi et évaluation : {suivi-et-évaluation}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

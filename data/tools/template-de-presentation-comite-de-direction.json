@@ -1,0 +1,71 @@
+{
+  "id": "template-de-presentation-comite-de-direction",
+  "title": "Template de présentation Comité de direction",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectif_presentation",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de votre présentation au Comité de direction ?",
+      "placeholder": "Décrivez brièvement l'objectif de votre présentation",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "select",
+      "options": [
+        "Comité de direction",
+        "Investisseurs",
+        "Partenaires",
+        "Équipe de direction"
+      ],
+      "label": "Qui est votre public cible pour cette présentation ?",
+      "required": true
+    },
+    {
+      "name": "duree_presentation",
+      "type": "number",
+      "label": "Quelle est la durée approximative de votre présentation en minutes ?",
+      "placeholder": "Entrez le nombre de minutes",
+      "required": true
+    },
+    {
+      "name": "supports_visuels",
+      "type": "text",
+      "label": "Quels supports visuels (diapositives, vidéos, etc.) prévoyez-vous utiliser pour votre présentation ?",
+      "placeholder": "Listez les supports visuels que vous allez utiliser",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en présentation. L'utilisateur a répondu : Objectif de la présentation: {objectif_presentation}, Public cible: {public_cible}, Durée de la présentation: {duree_presentation} minutes, Supports visuels: {supports_visuels}. Analysez ces informations et donnez un score global sur 100 pour la préparation de la présentation, évaluez les axes tels que la clarté de l'objectif, l'adéquation au public cible, la gestion du temps et l'efficacité des supports visuels, et fournissez des recommandations pour améliorer la présentation.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "reporting-opérationnel-et-production",
+  "title": "Reporting opérationnel & production",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "periode",
+      "type": "select",
+      "options": [
+        "Mois en cours",
+        "Mois précédent",
+        "Trimestre en cours"
+      ],
+      "label": "Sélectionnez la période à analyser",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "produits",
+      "type": "textarea",
+      "label": "Listez les produits clés à inclure dans le reporting",
+      "placeholder": "Exemple : Produit A, Produit B, Produit C",
+      "required": true
+    },
+    {
+      "name": "indicateurs",
+      "type": "select",
+      "options": [
+        "Vente",
+        "Marge",
+        "Cout"
+      ],
+      "label": "Sélectionnez les indicateurs clés à inclure dans le reporting",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "cible",
+      "type": "number",
+      "label": "Saisissez la cible de vente pour la période",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Période: {periode}, Produits: {produits}, Indicateurs: {indicateurs}, Cible: {cible}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

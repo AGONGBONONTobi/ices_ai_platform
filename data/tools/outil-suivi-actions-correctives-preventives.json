@@ -1,0 +1,78 @@
+{
+  "id": "outil-suivi-actions-correctives-preventives",
+  "title": "Outil de suivi des actions correctives & préventives",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "nombre_actions",
+      "type": "number",
+      "label": "Nombre total d'actions correctives et préventives",
+      "placeholder": "Ex: 12",
+      "required": true
+    },
+    {
+      "name": "duree_moyenne",
+      "type": "number",
+      "label": "Durée moyenne de résolution (en jours)",
+      "placeholder": "Ex: 5",
+      "required": true
+    },
+    {
+      "name": "type_action",
+      "type": "select",
+      "options": [
+        "Corrective",
+        "Préventive",
+        "Amélioration"
+      ],
+      "label": "Type d'action principale",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "responsable",
+      "type": "text",
+      "label": "Responsable principal",
+      "placeholder": "Ex: Jean Dupont",
+      "required": true
+    },
+    {
+      "name": "description_action",
+      "type": "textarea",
+      "label": "Description détaillée des actions",
+      "placeholder": "Ex: ...",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nombre d'actions: {nombre_actions}, Durée moyenne: {duree_moyenne}, Type d'action: {type_action}, Responsable: {responsable}, Description: {description_action}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

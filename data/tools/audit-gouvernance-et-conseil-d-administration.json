@@ -1,0 +1,71 @@
+{
+  "id": "audit-gouvernance-et-conseil-d-administration",
+  "title": "Audit de gouvernance & conseil d'administration",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Quels sont les principaux objectifs de l'audit ?",
+      "placeholder": "Exemple : améliorer la transparence, réduire les risques, etc.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Transparence",
+        "Risques",
+        "Ressources"
+      ],
+      "label": "Quel est le principal axe d'attention de l'audit ?",
+      "placeholder": "Choisissez un axe",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Quel est le budget alloué pour l'audit ?",
+      "placeholder": "Exemple : 10 000 €",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quels sont les principaux acteurs impliqués dans l'audit ?",
+      "placeholder": "Exemple : le conseil d'administration, les auditeurs internes, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gouvernance et conseil d'administration. L'utilisateur a répondu : Objectifs de l'audit : {variable1}, Axe d'attention : {variable2}, Budget : {variable3}, Acteurs impliqués : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

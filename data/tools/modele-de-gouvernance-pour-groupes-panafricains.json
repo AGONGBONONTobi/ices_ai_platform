@@ -1,0 +1,71 @@
+{
+  "id": "modele-de-gouvernance-pour-groupes-panafricains",
+  "title": "Modèle de gouvernance pour groupes panafricains",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques du groupe ?",
+      "placeholder": "Exemple : développement économique, amélioration de la gouvernance, etc.",
+      "required": true
+    },
+    {
+      "name": "structure-organisationnelle",
+      "type": "select",
+      "options": [
+        "Matricule",
+        "Flattened",
+        "Hybride"
+      ],
+      "label": "Quelle est la structure organisationnelle du groupe ?",
+      "placeholder": "Exemple : Matricule, Flattened, Hybride",
+      "required": true
+    },
+    {
+      "name": "processus-de-decision",
+      "type": "text",
+      "label": "Quels sont les processus de décision du groupe ?",
+      "placeholder": "Exemple : réunions régulières, votes, etc.",
+      "required": true
+    },
+    {
+      "name": "mechanismes-de-control",
+      "type": "textarea",
+      "label": "Quels sont les mécanismes de contrôle du groupe ?",
+      "placeholder": "Exemple : audits, vérifications, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Structure organisationnelle : {structure-organisationnelle}, Processus de décision : {processus-de-decision}, Mécanismes de contrôle : {mechanismes-de-control}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

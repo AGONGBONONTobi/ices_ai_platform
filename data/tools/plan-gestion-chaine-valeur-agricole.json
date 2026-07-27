@@ -1,0 +1,72 @@
+{
+  "id": "plan-gestion-chaine-valeur-agricole",
+  "title": "Plan de gestion de la chaîne de valeur agricole",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_culture",
+      "type": "select",
+      "options": [
+        "Céréales",
+        "Fruits et Légumes",
+        "Élevage",
+        "Autres"
+      ],
+      "label": "Quel type de culture ou de production agricole gérez-vous ?",
+      "placeholder": "Sélectionnez un type de culture",
+      "required": true
+    },
+    {
+      "name": "superficie_exploitation",
+      "type": "number",
+      "label": "Quelle est la superficie de votre exploitation agricole (en hectares) ?",
+      "placeholder": "100",
+      "required": true
+    },
+    {
+      "name": "description_processus",
+      "type": "textarea",
+      "label": "Décrivez brièvement vos processus de production, de récolte et de commercialisation",
+      "placeholder": "Exemple : Nous produisons des céréales sur 50 hectares, avec des méthodes de culture biologique...",
+      "required": true
+    },
+    {
+      "name": "objectifs_qualite",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs en termes de qualité et de certification (ex: bio, ISO) ?",
+      "placeholder": "Exemple : Obtenir la certification bio dans les 2 prochaines années",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en gestion de la chaîne de valeur agricole. L'utilisateur a répondu : Type de culture: {type_culture}, Superficie de l'exploitation: {superficie_exploitation} hectares, Description des processus: {description_processus}, Objectifs de qualité: {objectifs_qualite}. Analysez ces informations et proposez un plan d'action pour améliorer la chaîne de valeur, en incluant un score global sur 100, une évaluation par axe (ex: production, logistique, commercialisation), et des recommandations concrètes.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

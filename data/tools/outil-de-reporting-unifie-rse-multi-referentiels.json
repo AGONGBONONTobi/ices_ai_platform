@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-reporting-unifie-rse-multi-referentiels",
+  "title": "Outil de reporting unifié RSE multi-référentiels",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "objectifs-rse",
+      "type": "textarea",
+      "label": "Objectifs RSE de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "indicateurs-rse",
+      "type": "select",
+      "options": [
+        "Indicateur 1",
+        "Indicateur 2",
+        "Indicateur 3"
+      ],
+      "label": "Indicateurs RSE utilisés",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "donnees-collectees",
+      "type": "number",
+      "label": "Données collectées",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "periode-echauffement",
+      "type": "text",
+      "label": "Période d'echauffement",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE. L'utilisateur a répondu : Entreprise: {entreprise}, Objectifs RSE: {objectifs-rse}, Indicateurs RSE: {indicateurs-rse}, Données collectées: {donnees-collectees}, Période d'echauffement: {periode-echauffement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

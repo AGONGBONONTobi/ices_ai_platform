@@ -1,0 +1,79 @@
+{
+  "id": "plan-gestion-chaine-froid",
+  "title": "Plan de gestion de la chaîne du froid",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "temperature_range",
+      "type": "text",
+      "label": "Plage de température recommandée (°C)",
+      "placeholder": "Ex: -20 à -10",
+      "required": true
+    },
+    {
+      "name": "transport_method",
+      "type": "select",
+      "options": [
+        "Refrigerated truck",
+        "Refrigerated container",
+        "Air freight",
+        "Sea freight"
+      ],
+      "label": "Méthode de transport utilisée",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "storage_duration",
+      "type": "number",
+      "label": "Durée de stockage maximale (jours)",
+      "placeholder": "Ex: 14",
+      "required": true
+    },
+    {
+      "name": "inventory_system",
+      "type": "textarea",
+      "label": "Système d'inventaire actuel",
+      "placeholder": "Décrivez votre système d'inventaire",
+      "required": true
+    },
+    {
+      "name": "additional_comments",
+      "type": "textarea",
+      "label": "Commentaires supplémentaires",
+      "placeholder": "Ajoutez toute information pertinente",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Temperature_range: {temperature_range}, Transport_method: {transport_method}, Storage_duration: {storage_duration}, Inventory_system: {inventory_system}, Additional_comments: {additional_comments}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

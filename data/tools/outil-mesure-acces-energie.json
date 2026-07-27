@@ -1,0 +1,72 @@
+{
+  "id": "outil-mesure-acces-energie",
+  "title": "Outil de mesure de l'accès à l'énergie",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "population_totale",
+      "type": "number",
+      "label": "Quelle est la population totale desservie par votre système énergétique ?",
+      "placeholder": "10000",
+      "required": true
+    },
+    {
+      "name": "type_energie",
+      "type": "select",
+      "options": [
+        "Électricité",
+        "Gaz",
+        "Eau chaude",
+        "Autres"
+      ],
+      "label": "Quel type d'énergie votre système fournit-il principalement ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_systeme",
+      "type": "textarea",
+      "label": "Veuillez décrire brièvement votre système énergétique (technologie utilisée, capacité, etc.)",
+      "placeholder": "Description du système",
+      "required": true
+    },
+    {
+      "name": "taux_penalisation",
+      "type": "number",
+      "label": "Quel est le taux de pénalisation pour les interruptions de service (en %) ?",
+      "placeholder": "10",
+      "required": true
+    }
+  ],
+  "promptTemplate": "L'utilisateur a répondu : Population totale: {population_totale}, Type d'énergie: {type_energie}, Description du système: {description_systeme}, Taux de pénalisation: {taux_penalisation}. Évaluez l'accès à l'énergie fourni par ce système et donnez un score global sur 100, une évaluation par axe (fiabilité, qualité, couverture), et des recommandations pour améliorer l'accès à l'énergie.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

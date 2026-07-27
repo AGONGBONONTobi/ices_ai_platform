@@ -1,0 +1,71 @@
+{
+  "id": "template-charte-teletravail-flex-office",
+  "title": "Template de charte télétravail & flex-office",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectifCharte",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux de votre charte de télétravail et de flex-office ?",
+      "placeholder": "Décrivez les objectifs de votre charte",
+      "required": true
+    },
+    {
+      "name": "typeEntreprise",
+      "type": "select",
+      "options": [
+        "PMI",
+        "PME",
+        "Grand groupe",
+        "Administration publique"
+      ],
+      "label": "Quel est le type de votre entreprise ?",
+      "required": true
+    },
+    {
+      "name": "effectif",
+      "type": "number",
+      "label": "Quel est l'effectif de votre entreprise ?",
+      "placeholder": "Nombre d'employés",
+      "required": true
+    },
+    {
+      "name": "besoinsSpecifiques",
+      "type": "textarea",
+      "label": "Quels sont les besoins spécifiques de votre entreprise en matière de télétravail et de flex-office ?",
+      "placeholder": "Décrivez les besoins spécifiques de votre entreprise",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en télétravail et flex-office. L'entreprise a pour objectif de mettre en place une charte de {objectifCharte}. Elle est un {typeEntreprise} avec un effectif de {effectif} employés. Ses besoins spécifiques sont les suivants : {besoinsSpecifiques}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour mettre en place une charte de télétravail et de flex-office efficace.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "id": "diagnostic-continuite-activite-iso-22301",
+  "title": "Diagnostic continuité d'activité (ISO 22301)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "risques_identifies",
+      "type": "textarea",
+      "label": "Quels sont les risques identifiés dans votre organisation ?",
+      "placeholder": "Décrivez les risques identifiés",
+      "required": true
+    },
+    {
+      "name": "processus_cle",
+      "type": "select",
+      "options": [
+        "Processus de gestion de la continuité d'activité",
+        "Processus de gestion des risques",
+        "Processus de gestion des crises"
+      ],
+      "label": "Quel est le processus clé pour la continuité d'activité dans votre organisation ?",
+      "placeholder": "Sélectionnez un processus",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "number",
+      "label": "Quel est le nombre de ressources disponibles pour la continuité d'activité ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    },
+    {
+      "name": "plan_continuite_activite",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Existe-t-il un plan de continuité d'activité en place ?",
+      "placeholder": "Sélectionnez une réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Risques identifiés : {risques_identifies}, Processus clé : {processus_cle}, Ressources disponibles : {ressources_disponibles}, Plan de continuité d'activité : {plan_continuite_activite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

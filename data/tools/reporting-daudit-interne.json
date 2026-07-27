@@ -1,0 +1,70 @@
+{
+  "id": "reporting-daudit-interne",
+  "title": "Reporting d'audit interne",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "risques_identifies",
+      "type": "textarea",
+      "label": "Quels sont les principaux risques identifiés dans l'audit interne ?",
+      "placeholder": "Décrivez les risques identifiés",
+      "required": true
+    },
+    {
+      "name": "controles_mis_en_place",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Quels contrôles ont été mis en place pour atténuer les risques identifiés ?",
+      "placeholder": "Sélectionnez une réponse",
+      "required": true
+    },
+    {
+      "name": "recommandations_proposees",
+      "type": "textarea",
+      "label": "Quelles recommandations ont été proposées pour améliorer les processus ?",
+      "placeholder": "Décrivez les recommandations proposées",
+      "required": true
+    },
+    {
+      "name": "ressources_necessaires",
+      "type": "number",
+      "label": "Quelles ressources sont nécessaires pour mettre en œuvre les recommandations ?",
+      "placeholder": "Indiquez le nombre de ressources nécessaires",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Risques identifiés : {risques_identifies}, Contrôles mis en place : {controles_mis_en_place}, Recommandations proposées : {recommandations_proposees}, Ressources nécessaires : {ressources_necessaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

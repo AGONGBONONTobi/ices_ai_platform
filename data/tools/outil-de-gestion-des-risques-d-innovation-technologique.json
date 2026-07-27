@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-gestion-des-risques-d-innovation-technologique",
+  "title": "Outil de gestion des risques d'innovation technologique",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "nom_projet",
+      "type": "text",
+      "label": "Nom du projet d'innovation technologique",
+      "placeholder": "Exemple : Projet de développement d'un nouveau produit",
+      "required": true
+    },
+    {
+      "name": "description_projet",
+      "type": "textarea",
+      "label": "Description détaillée du projet d'innovation technologique",
+      "placeholder": "Exemple : Le projet consiste à développer un nouveau produit qui répond à un besoin spécifique du marché",
+      "required": true
+    },
+    {
+      "name": "type_risque",
+      "type": "select",
+      "options": [
+        "Technologique",
+        "Financier",
+        "Stratégique"
+      ],
+      "label": "Type de risque associé au projet",
+      "placeholder": "Exemple : Technologique",
+      "required": true
+    },
+    {
+      "name": "impact_risque",
+      "type": "number",
+      "label": "Impact potentiel du risque sur le projet",
+      "placeholder": "Exemple : 8/10",
+      "required": true
+    },
+    {
+      "name": "probabilité_risque",
+      "type": "number",
+      "label": "Probabilité de survenance du risque",
+      "placeholder": "Exemple : 6/10",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des risques. L'utilisateur a fourni les informations suivantes : Nom du projet : {nom_projet}, Description du projet : {description_projet}, Type de risque : {type_risque}, Impact potentiel du risque : {impact_risque}, Probabilité de survenance du risque : {probabilité_risque}. Analyse ces informations et propose un score global de risque sur 100, une évaluation par axe (technologique, financier, stratégique) et des recommandations pour atténuer les risques.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

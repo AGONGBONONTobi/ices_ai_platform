@@ -1,0 +1,81 @@
+{
+  "id": "auto-diagnostic-iso-22000-haccp",
+  "title": "Auto-diagnostic ISO 22000 / HACCP",
+  "category": "Systèmes de Management ISO",
+  "inputs": [
+    {
+      "name": "prp",
+      "type": "textarea",
+      "label": "Décrivez vos prérequis (PRP) pour la sécurité alimentaire",
+      "placeholder": "Ex: nettoyage, formation du personnel",
+      "required": true
+    },
+    {
+      "name": "haccp",
+      "type": "textarea",
+      "label": "Décrivez votre analyse HACCP (identification des dangers, évaluation des risques, mesures de contrôle)",
+      "placeholder": "Ex: identification des CCP, limites critiques",
+      "required": true
+    },
+    {
+      "name": "traçabilité",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Votre système de traçabilité est-il en place ?",
+      "required": true
+    },
+    {
+      "name": "gestion_allergenes",
+      "type": "textarea",
+      "label": "Décrivez votre gestion des allergènes",
+      "placeholder": "Ex: identification des allergènes, procédures de contrôle",
+      "required": true
+    },
+    {
+      "name": "niveau_maturite",
+      "type": "select",
+      "options": [
+        "0 - Inexistant",
+        "1 - Initié",
+        "2 - Formalisé",
+        "3 - Optimisé"
+      ],
+      "label": "Quel est votre niveau de maturité en matière de sécurité alimentaire ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un auditeur/consultant expert du référentiel ISO 22000. L'utilisateur a répondu : PRP: {prp}, Analyse HACCP: {haccp}, Traçabilité: {traçabilité}, Gestion des allergènes: {gestion_allergenes}, Niveau de maturité: {niveau_maturite}. Analysez ces informations selon les exigences de la norme ISO 22000 et évaluez la conformité de l'entreprise aux exigences de sécurité alimentaire. Donnez un score global sur 100, une évaluation par axe (PRP, HACCP, Traçabilité, Gestion des allergènes) et des recommandations prioritaires.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

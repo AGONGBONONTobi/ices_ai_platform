@@ -1,0 +1,73 @@
+{
+  "id": "outil-de-gestion-des-risques-physiques-et-climatiques",
+  "title": "Outil de gestion des risques physiques & climatiques",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "risques-physiques",
+      "type": "textarea",
+      "label": "Décrivez les risques physiques (ex: tremblements de terre, inondations, etc.)",
+      "placeholder": "Exemple : tremblements de terre, inondations, etc.",
+      "required": true
+    },
+    {
+      "name": "risques-climatiques",
+      "type": "textarea",
+      "label": "Décrivez les risques climatiques (ex: sécheresse, tempêtes, etc.)",
+      "placeholder": "Exemple : sécheresse, tempêtes, etc.",
+      "required": true
+    },
+    {
+      "name": "zone-geographique",
+      "type": "select",
+      "options": [
+        "Europe",
+        "Amérique du Nord",
+        "Asie",
+        "Afrique",
+        "Amérique du Sud"
+      ],
+      "label": "Quelle est la zone géographique où se situent les risques ?",
+      "placeholder": "Exemple : Europe",
+      "required": true
+    },
+    {
+      "name": "impact-environnemental",
+      "type": "number",
+      "label": "Quel est l'impact environnemental estimé des risques ? (sur 100)",
+      "placeholder": "Exemple : 50",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE & développement durable. L'utilisateur a répondu : Risques physiques : {risques-physiques}, Risques climatiques : {risques-climatiques}, Zone géographique : {zone-geographique}, Impact environnemental : {impact-environnemental}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

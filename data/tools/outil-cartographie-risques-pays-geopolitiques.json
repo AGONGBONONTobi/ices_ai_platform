@@ -1,0 +1,65 @@
+{
+  "id": "outil-cartographie-risques-pays-geopolitiques",
+  "title": "Outil de cartographie des risques pays & géopolitiques",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "pays_concerne",
+      "type": "text",
+      "label": "Quel est le pays concerné par votre analyse ?",
+      "placeholder": "Exemple : France, États-Unis",
+      "required": true
+    },
+    {
+      "name": "type_activite",
+      "type": "select",
+      "options": [
+        "Export",
+        "Investissement",
+        "Implantation",
+        "Autre"
+      ],
+      "label": "Quelle est la nature de votre activité dans ce pays ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_context",
+      "type": "textarea",
+      "label": "Décrivez le contexte actuel de votre projet dans ce pays (économique, politique, social) :",
+      "placeholder": "Exemple : Le pays connaît une période de stabilité politique, mais des tensions économiques sont présentes.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur a répondu : Pays concerné : {pays_concerne}, Type d'activité : {type_activite}, Contexte : {description_context}. Analysez ces informations pour fournir une cartographie des risques pays et géopolitiques associés à cette situation. Évaluez les risques sur 100 et proposez des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score de risque global sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score de risque sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

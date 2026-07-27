@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-gestion-des-risques-pays-et-de-change",
+  "title": "Outil de gestion des risques pays & de change",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "pays",
+      "type": "select",
+      "options": [
+        "France",
+        "Allemagne",
+        "Italie",
+        "Espagne",
+        "Royaume-Uni"
+      ],
+      "label": "Sélectionnez le pays concerné par le risque",
+      "placeholder": "Sélectionnez un pays",
+      "required": true
+    },
+    {
+      "name": "typeDeRisque",
+      "type": "select",
+      "options": [
+        "Risque pays",
+        "Risque de change",
+        "Risque économique"
+      ],
+      "label": "Sélectionnez le type de risque",
+      "placeholder": "Sélectionnez un type de risque",
+      "required": true
+    },
+    {
+      "name": "descriptionDuRisque",
+      "type": "textarea",
+      "label": "Décrivez le risque",
+      "placeholder": "Décrivez le risque en quelques lignes",
+      "required": true
+    },
+    {
+      "name": "niveauDeRisque",
+      "type": "number",
+      "label": "Niveau de risque (sur une échelle de 1 à 10)",
+      "placeholder": "Entrez un nombre entre 1 et 10",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en gestion des risques. L'utilisateur a sélectionné le pays {pays}, le type de risque {typeDeRisque}, décrit le risque comme suit : {descriptionDuRisque} et a attribué un niveau de risque de {niveauDeRisque}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

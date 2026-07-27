@@ -1,0 +1,76 @@
+{
+  "id": "api-strategie-microservices-interop",
+  "title": "Stratégie d'API, microservices & interopérabilité",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "architecture-api",
+      "type": "select",
+      "options": [
+        "Monolithe",
+        "Microservices",
+        "Event-Driven"
+      ],
+      "label": "Quelle architecture d'API utilisez-vous ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "technologie-microservices",
+      "type": "select",
+      "options": [
+        "Kubernetes",
+        "Docker Swarm",
+        "Serverless"
+      ],
+      "label": "Quelle technologie de microservices utilisez-vous ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "interoperabilite",
+      "type": "textarea",
+      "label": "Comment assurez-vous l'interopérabilité entre vos services ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "evaluation-impact",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, comment évaluez-vous l'impact de vos services sur l'entreprise ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Architecture API: {architecture-api}, Technologie Microservices: {technologie-microservices}, Interoperabilité: {interoperabilite}, Évaluation Impact: {evaluation-impact}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

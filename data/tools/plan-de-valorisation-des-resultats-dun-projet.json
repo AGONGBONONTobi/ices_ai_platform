@@ -1,0 +1,72 @@
+{
+  "id": "plan-de-valorisation-des-resultats-dun-projet",
+  "title": "Plan de valorisation des résultats d'un projet",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "objectif_principal",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal du projet ?",
+      "placeholder": "Exemple : Améliorer la qualité de vie des habitants",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "select",
+      "options": [
+        "Grand public",
+        "Professionnels",
+        "Étudiants",
+        "Autres"
+      ],
+      "label": "Qui est le public cible de votre projet ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "resultats_attendus",
+      "type": "text",
+      "label": "Quels sont les résultats attendus du projet ?",
+      "placeholder": "Exemple : Augmentation de la fréquentation de 20%",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "textarea",
+      "label": "Quelles sont les ressources disponibles pour le projet (budget, personnel, matériel) ?",
+      "placeholder": "Exemple : 100 000 €, 2 personnes à temps plein",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en valorisation de projet. L'utilisateur a répondu : Objectif principal : {objectif_principal}, Public cible : {public_cible}, Résultats attendus : {resultats_attendus}, Ressources disponibles : {ressources_disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

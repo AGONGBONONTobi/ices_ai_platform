@@ -1,0 +1,84 @@
+{
+  "id": "plan-de-gestion-qualite-donnees",
+  "title": "Plan de gestion de la qualité des données (Data Quality)",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quel est le niveau de maturité actuel de votre gouvernance des données?",
+      "placeholder": "Sélectionnez un niveau",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Décrivez les processus actuels de collecte et de validation des données.",
+      "placeholder": "Exemple: ...",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Combien de sources de données critiques avez-vous?",
+      "placeholder": "Exemple: 5",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "select",
+      "options": [
+        "Améliorer la précision",
+        "Réduire les doublons",
+        "Augmenter la conformité réglementaire",
+        "Optimiser les processus métier"
+      ],
+      "label": "Quel est votre principal objectif en matière de qualité des données?",
+      "placeholder": "Sélectionnez un objectif",
+      "required": true
+    },
+    {
+      "name": "variable5",
+      "type": "textarea",
+      "label": "Quelles contraintes ou ressources avez-vous pour mettre en œuvre un plan de qualité?",
+      "placeholder": "Exemple: budget limité, manque de personnel",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Variable1: {variable1}, Variable2: {variable2}, Variable3: {variable3}, Variable4: {variable4}, Variable5: {variable5}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "plan-de-financement-d-energie-renouvelable-ppa",
+  "title": "Plan de financement d'énergie renouvelable (PPA)",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "montant-investissement",
+      "type": "number",
+      "label": "Montant d'investissement prévu pour le projet",
+      "placeholder": "Exemple : 1000000",
+      "required": true
+    },
+    {
+      "name": "taux-d-interet",
+      "type": "number",
+      "label": "Taux d'intérêt prévu pour le financement",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "periode-de-repayment",
+      "type": "number",
+      "label": "Période de remboursement prévue",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "methode-de-financement",
+      "type": "select",
+      "options": [
+        "Banque",
+        "Investisseur privé",
+        "Subvention"
+      ],
+      "label": "Méthode de financement préférée",
+      "placeholder": "Exemple : Banque",
+      "required": true
+    },
+    {
+      "name": "description-projet",
+      "type": "textarea",
+      "label": "Description détaillée du projet",
+      "placeholder": "Exemple : Construction d'une centrale solaire",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en financement. L'utilisateur a répondu : Montant d'investissement : {montant-investissement}, Taux d'intérêt : {taux-d-interet}, Période de remboursement : {periode-de-repayment}, Méthode de financement : {methode-de-financement}, Description du projet : {description-projet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "diagnostic-qualite-iso-9001",
+  "title": "Diagnostic qualité (ISO 9001)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "processus-identifie",
+      "type": "text",
+      "label": "Quel processus ou système souhaitez-vous évaluer ?",
+      "placeholder": "Exemple : gestion de la qualité, gestion des ressources humaines, etc.",
+      "required": true
+    },
+    {
+      "name": "objectif-entreprise",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de l'entreprise en matière de qualité ?",
+      "placeholder": "Exemple : améliorer la satisfaction client, réduire les coûts, etc.",
+      "required": true
+    },
+    {
+      "name": "methodologie-utilisee",
+      "type": "select",
+      "options": [
+        "Analyse de risques",
+        "Analyse SWOT",
+        "Enquête auprès des clients"
+      ],
+      "label": "Quelle méthode utilisez-vous pour évaluer la qualité ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "resultats-esperes",
+      "type": "number",
+      "label": "Quels résultats attendez-vous de ce diagnostic ?",
+      "placeholder": "Exemple : améliorer la qualité de 20% en 6 mois",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Processus identifié : {processus-identifie}, Objectif entreprise : {objectif-entreprise}, Méthodologie utilisée : {methodologie-utilisee}, Résultats attendus : {resultats-esperes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

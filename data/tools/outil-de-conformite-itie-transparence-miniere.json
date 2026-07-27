@@ -1,0 +1,76 @@
+{
+  "id": "outil-de-conformite-itie-transparence-miniere",
+  "title": "Outil de conformité ITIE (transparence minière)",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "nom_entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise minière",
+      "placeholder": "Exemple : Société Minière du Nord",
+      "required": true
+    },
+    {
+      "name": "type_activite",
+      "type": "select",
+      "options": [
+        "Exploitation minière",
+        "Exploration minière",
+        "Traitement minier"
+      ],
+      "label": "Type d'activité minière",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_projet",
+      "type": "textarea",
+      "label": "Description du projet minier",
+      "placeholder": "Veuillez fournir une description détaillée du projet",
+      "required": true
+    },
+    {
+      "name": "niveau_conformite",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Niveau de conformité actuel",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en transparence minière. L'utilisateur a répondu : Nom de l'entreprise : {nom_entreprise}, Type d'activité : {type_activite}, Description du projet : {description_projet}, Niveau de conformité : {niveau_conformite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations pour améliorer la conformité ITIE.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

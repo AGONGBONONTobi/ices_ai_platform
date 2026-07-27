@@ -1,0 +1,71 @@
+{
+  "id": "reporting-de-gouvernance-et-ca",
+  "title": "Reporting de gouvernance & CA",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "periode",
+      "type": "select",
+      "options": [
+        "Annuel",
+        "Semi-Annuel",
+        "Trimestriel"
+      ],
+      "label": "Quelle est la période de reporting ?",
+      "placeholder": "Sélectionnez une période",
+      "required": true
+    },
+    {
+      "name": "indicateurs",
+      "type": "textarea",
+      "label": "Quels sont les indicateurs clés à prendre en compte ?",
+      "placeholder": "Exemple : Indicateur 1, Indicateur 2, etc.",
+      "required": true
+    },
+    {
+      "name": "risques",
+      "type": "text",
+      "label": "Quels sont les risques potentiels identifiés ?",
+      "placeholder": "Exemple : Risque 1, Risque 2, etc.",
+      "required": true
+    },
+    {
+      "name": "actions",
+      "type": "textarea",
+      "label": "Quelles sont les actions à mettre en place pour atténuer les risques ?",
+      "placeholder": "Exemple : Action 1, Action 2, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Période: {periode}, Indicateurs: {indicateurs}, Risques: {risques}, Actions: {actions}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

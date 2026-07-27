@@ -1,0 +1,71 @@
+{
+  "id": "plan-strategique-kebab-case",
+  "title": "Plan stratégique à 3-5-10 ans",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de l'entreprise pour les 3 prochaines années ?",
+      "placeholder": "Exemple : Augmenter les ventes de 15% par an, développer de nouveaux marchés, etc.",
+      "required": true
+    },
+    {
+      "name": "priorites",
+      "type": "select",
+      "options": [
+        "Priorité élevée",
+        "Priorité moyenne",
+        "Priorité basse"
+      ],
+      "label": "Quelle est la priorité de chaque objectif stratégique ?",
+      "placeholder": "Exemple : Priorité élevée pour l'augmentation des ventes, priorité moyenne pour le développement de nouveaux marchés, etc.",
+      "required": true
+    },
+    {
+      "name": "ressources-necessaires",
+      "type": "textarea",
+      "label": "Quelles sont les ressources nécessaires pour atteindre les objectifs stratégiques ?",
+      "placeholder": "Exemple : Personnel, budget, équipements, etc.",
+      "required": true
+    },
+    {
+      "name": "indicateurs-de-suivi",
+      "type": "textarea",
+      "label": "Quels sont les indicateurs de suivi pour mesurer la progression vers les objectifs stratégiques ?",
+      "placeholder": "Exemple : Taux de croissance des ventes, nombre de nouveaux clients, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Priorités : {priorites}, Ressources nécessaires : {ressources-necessaires}, Indicateurs de suivi : {indicateurs-de-suivi}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

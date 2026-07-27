@@ -1,0 +1,78 @@
+{
+  "id": "analyse-de-la-performance-economique",
+  "title": "Analyse de la performance économique (EVA, EBITDA)",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "chiffre-daffaires",
+      "type": "number",
+      "label": "Chiffre d'affaires (en millions de dollars)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "EBITDA",
+      "type": "number",
+      "label": "EBITDA (en millions de dollars)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "taux-de-marge",
+      "type": "number",
+      "label": "Taux de marge (en %)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "modele-financier",
+      "type": "select",
+      "options": [
+        "modele-1",
+        "modele-2",
+        "modele-3"
+      ],
+      "label": "Modèle financier utilisé",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un analyste financier expert. L'utilisateur a répondu : Entreprise: {entreprise}, Chiffre d'affaires: {chiffre-daffaires}, EBITDA: {EBITDA}, Taux de marge: {taux-de-marge}, Modèle financier: {modele-financier}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

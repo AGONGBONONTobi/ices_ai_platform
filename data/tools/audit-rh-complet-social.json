@@ -1,0 +1,79 @@
+{
+  "id": "audit-rh-complet-social",
+  "title": "Audit RH complet & social",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : XYZ Inc.",
+      "required": true
+    },
+    {
+      "name": "effectif",
+      "type": "number",
+      "label": "Effectif total de l'entreprise",
+      "placeholder": "Exemple : 500",
+      "required": true
+    },
+    {
+      "name": "type_contrat",
+      "type": "select",
+      "options": [
+        "CDD",
+        "CDI",
+        "Intérim",
+        "Autre"
+      ],
+      "label": "Type de contrat principal",
+      "placeholder": "Exemple : CDI",
+      "required": true
+    },
+    {
+      "name": "horaire_de_travail",
+      "type": "textarea",
+      "label": "Description des horaires de travail",
+      "placeholder": "Exemple : 35 heures hebdomadaires",
+      "required": true
+    },
+    {
+      "name": "formation_professionnelle",
+      "type": "textarea",
+      "label": "Description des formations professionnelles proposées",
+      "placeholder": "Exemple : Formation en gestion de projet",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise : {entreprise}, Effectif : {effectif}, Type de contrat principal : {type_contrat}, Horaires de travail : {horaire_de_travail}, Formations professionnelles : {formation_professionnelle}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

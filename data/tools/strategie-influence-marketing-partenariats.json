@@ -1,0 +1,77 @@
+{
+  "id": "strategie-influence-marketing-partenariats",
+  "title": "Stratégie d'influence marketing & partenariats",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de la stratégie d'influence marketing & partenariats ?",
+      "placeholder": "Exemple : Augmenter la visibilité de la marque, améliorer l'image de la marque, etc.",
+      "required": true
+    },
+    {
+      "name": "public-cible",
+      "type": "select",
+      "options": [
+        "Jeunes adultes (18-30 ans)",
+        "Adultes (31-50 ans)",
+        "Aînés (51 ans et plus)"
+      ],
+      "label": "Qui est le public cible de la stratégie d'influence marketing & partenariats ?",
+      "placeholder": "Choisissez le public cible",
+      "required": true
+    },
+    {
+      "name": "canal-de-distribution",
+      "type": "select",
+      "options": [
+        "Réseaux sociaux (Instagram, Facebook, etc.)",
+        "Influencers",
+        "Événements",
+        "Publicités en ligne"
+      ],
+      "label": "Quel est le canal de distribution préféré pour la stratégie d'influence marketing & partenariats ?",
+      "placeholder": "Choisissez le canal de distribution",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la stratégie d'influence marketing & partenariats ?",
+      "placeholder": "Exemple : 10 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en marketing. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Public cible : {public-cible}, Canal de distribution : {canal-de-distribution}, Budget alloué : {budget-alloue}. Analyse ces informations et propose une stratégie d'influence marketing & partenariats efficace, en incluant un plan d'action et des indicateurs de performance.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

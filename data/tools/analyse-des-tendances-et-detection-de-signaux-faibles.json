@@ -1,0 +1,71 @@
+{
+  "id": "analyse-des-tendances-et-detection-de-signaux-faibles",
+  "title": "Analyse des tendances & détection de signaux faibles",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "periode",
+      "type": "number",
+      "label": "Sélectionnez la période d'analyse (en mois)",
+      "placeholder": "Exemple : 6",
+      "required": true
+    },
+    {
+      "name": "indicateurs",
+      "type": "textarea",
+      "label": "Listez les indicateurs clés à suivre (ex : taux de croissance, part de marché, etc.)",
+      "placeholder": "Exemple : taux de croissance, part de marché, etc.",
+      "required": true
+    },
+    {
+      "name": "source-donnees",
+      "type": "select",
+      "options": [
+        "Base de données interne",
+        "Base de données externe",
+        "API"
+      ],
+      "label": "Sélectionnez la source des données",
+      "placeholder": "Exemple : Base de données interne",
+      "required": true
+    },
+    {
+      "name": "seuil-significatif",
+      "type": "number",
+      "label": "Sélectionnez le seuil de signification (en %)",
+      "placeholder": "Exemple : 5",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en analyse de données. L'utilisateur a sélectionné la période {periode} mois, a listé les indicateurs clés {indicateurs}, a choisi la source des données {source-donnees} et a défini le seuil de signification à {seuil-significatif}%. Analyse ces informations et détectez les signaux faibles. Donnez un score global sur 100, une évaluation par axe et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

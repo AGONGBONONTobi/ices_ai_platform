@@ -1,0 +1,81 @@
+{
+  "id": "audit-conformite-produits-services",
+  "title": "Audit de conformité produits & services",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "domaine",
+      "type": "select",
+      "options": [
+        "Produits",
+        "Services"
+      ],
+      "label": "Quel domaine est concerné par l'audit ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "reglement",
+      "type": "text",
+      "label": "Quel règlement ou norme est applicable ?",
+      "placeholder": "Exemple : RGPD, ISO 9001, etc.",
+      "required": true
+    },
+    {
+      "name": "risques_identifies",
+      "type": "textarea",
+      "label": "Quels risques ont été identifiés dans le cadre de l'audit ?",
+      "placeholder": "Exemple : risque de non-conformité, risque de sécurité, etc.",
+      "required": true
+    },
+    {
+      "name": "mesures_correctives",
+      "type": "textarea",
+      "label": "Quelles mesures correctives ont été prises pour atténuer les risques identifiés ?",
+      "placeholder": "Exemple : mise en place de procédures, formation des employés, etc.",
+      "required": true
+    },
+    {
+      "name": "suivi",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Est-il prévu de suivre l'audit pour s'assurer de la conformité ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audit de conformité. L'utilisateur a répondu : Domaine: {domaine}, Règlement: {reglement}, Risques identifiés: {risques_identifies}, Mesures correctives: {mesures_correctives}, Suivi: {suivi}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

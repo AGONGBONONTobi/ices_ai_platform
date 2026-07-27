@@ -1,0 +1,78 @@
+{
+  "id": "analyse-ecosysteme-kebab-case",
+  "title": "Analyse de l'écosystème d'innovation local & global",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Énergie",
+        "Santé",
+        "Autres"
+      ],
+      "label": "Quel secteur d'activité est concerné par l'innovation ?",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "localisation",
+      "type": "text",
+      "label": "Quelle est la localisation géographique de l'innovation (ville, pays, région) ?",
+      "placeholder": "Exemple : Paris, France",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Décrivez brièvement l'innovation (projet, produit, service, etc.)",
+      "placeholder": "Exemple : Développement d'un nouveau matériel pour la production d'énergie renouvelable",
+      "required": true
+    },
+    {
+      "name": "impact",
+      "type": "select",
+      "options": [
+        "Économique",
+        "Environnemental",
+        "Social",
+        "Tous"
+      ],
+      "label": "Quel est l'impact attendu de l'innovation ?",
+      "placeholder": "Sélectionnez un impact",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en innovation. L'utilisateur a répondu : Secteur: {secteur}, Localisation: {localisation}, Description: {description}, Impact: {impact}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "plan-de-gestion-des-risques-de-liquidite-pme",
+  "title": "Plan de gestion des risques de liquidité PME",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Quels sont les principaux flux de trésorerie de votre entreprise ?",
+      "placeholder": "Exemple : Paiements des fournisseurs, recettes des ventes, etc.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Courant",
+        "Long terme"
+      ],
+      "label": "Quel est le délai de paiement moyen de vos clients ?",
+      "placeholder": "Exemple : 30 jours",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Quel est votre niveau actuel de liquidité (en jours de trésorerie) ?",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quels sont les principaux facteurs de risque de liquidité que votre entreprise est susceptible de rencontrer ?",
+      "placeholder": "Exemple : Augmentation des coûts, diminution des ventes, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion financière. L'utilisateur a répondu : Flux de trésorerie : {variable1}, Délai de paiement moyen : {variable2}, Niveau de liquidité : {variable3}, Facteurs de risque de liquidité : {variable4}. Analyse ces informations et propose un plan de gestion des risques de liquidité adapté à la situation de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

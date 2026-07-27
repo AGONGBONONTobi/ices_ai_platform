@@ -1,0 +1,85 @@
+{
+  "id": "plan-formation-sensibilisation-rse",
+  "title": "Plan de formation & sensibilisation RSE",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "domaine",
+      "type": "select",
+      "options": [
+        "Environnement",
+        "Société",
+        "Économie",
+        "Éducation"
+      ],
+      "label": "Quel est le domaine concerné par la formation ?",
+      "placeholder": "Sélectionnez un domaine",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de la formation ?",
+      "placeholder": "Décrivez les objectifs de la formation",
+      "required": true
+    },
+    {
+      "name": "public-cible",
+      "type": "select",
+      "options": [
+        "Salariés",
+        "Partenaires",
+        "Clients",
+        "Communauté locale"
+      ],
+      "label": "Qui est le public cible de la formation ?",
+      "placeholder": "Sélectionnez un public cible",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources disponibles pour la formation ?",
+      "placeholder": "Indiquez le nombre de ressources disponibles",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la formation ?",
+      "placeholder": "Indiquez le budget alloué",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE & développement durable. L'utilisateur a répondu : Domaine: {domaine}, Objectifs: {objectifs}, Public cible: {public-cible}, Ressources disponibles: {ressources-disponibles}, Budget alloué: {budget-alloue}. Analyse ces informations et propose un plan de formation & sensibilisation RSE adapté.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

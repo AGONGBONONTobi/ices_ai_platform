@@ -1,0 +1,72 @@
+{
+  "id": "outil-analyse-epidemiologique-surveillance-sanitaire",
+  "title": "Outil d'analyse épidémiologique & surveillance sanitaire",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "region",
+      "type": "select",
+      "options": [
+        "Île-de-France",
+        "Nord-Pas-de-Calais",
+        "Provence-Alpes-Côte d'Azur",
+        "Autres"
+      ],
+      "label": "Sélectionnez la région concernée",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "periode",
+      "type": "text",
+      "label": "Indiquez la période d'analyse (mois/année)",
+      "placeholder": "Exemple : janvier 2022",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Décrivez les indicateurs épidémiologiques à analyser (prévalence, incidence, etc.)",
+      "placeholder": "Exemple : Taux d'incidence des maladies infectieuses...",
+      "required": true
+    },
+    {
+      "name": "population",
+      "type": "number",
+      "label": "Indiquez la taille de la population étudiée",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un épidémiologiste. L'utilisateur a fourni les informations suivantes : Région: {region}, Période: {periode}, Description des indicateurs: {description}, Taille de la population: {population}. Analysez ces données pour fournir un score global sur 100 de l'état sanitaire de la région durant cette période, une évaluation par axe (prévalence, incidence, etc.), et des recommandations pour améliorer la surveillance sanitaire.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

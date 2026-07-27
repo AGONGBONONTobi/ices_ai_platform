@@ -1,0 +1,23 @@
+{
+  "id": "diagnostic-de-l-impact-societal",
+  "title": "Diagnostic de l'impact sociétal & des externalités",
+  "category": "Finance",
+  "inputs": [
+    {
+      "name": "impactSocietal",
+      "type": "textarea",
+      "label": "Impact sociétal",
+      "placeholder": "Exemple : Impact sociétal actuel de l'entreprise",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en diagnostic de l'impact sociétal. Utilise {impactSocietal} pour évaluer l'impact sociétal de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "string"
+      }
+    }
+  }
+}

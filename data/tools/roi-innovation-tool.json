@@ -1,0 +1,78 @@
+{
+  "id": "roi-innovation-tool",
+  "title": "Mesure de l'impact de l'innovation (ROI innovation)",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "investissement",
+      "type": "number",
+      "label": "Investissement total en euros",
+      "placeholder": "Exemple : 100 000",
+      "required": true
+    },
+    {
+      "name": "revenus",
+      "type": "number",
+      "label": "Revenus générés en euros",
+      "placeholder": "Exemple : 200 000",
+      "required": true
+    },
+    {
+      "name": "periode",
+      "type": "text",
+      "label": "Période de calcul (en années)",
+      "placeholder": "Exemple : 2",
+      "required": true
+    },
+    {
+      "name": "methode",
+      "type": "select",
+      "options": [
+        "Net Present Value (NPV)",
+        "Payback Period",
+        "Return on Investment (ROI)"
+      ],
+      "label": "Méthode de calcul du ROI",
+      "placeholder": "Exemple : NPV",
+      "required": true
+    },
+    {
+      "name": "risques",
+      "type": "textarea",
+      "label": "Risques potentiels associés à l'innovation",
+      "placeholder": "Exemple : Perte de marché, difficultés de production",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en innovation. L'utilisateur a répondu : Investissement : {investissement} euros, Revenus : {revenus} euros, Période : {periode} années, Méthode : {methode}, Risques : {risques}. Analyse ces informations et calcule le ROI en utilisant la méthode choisie. Prévois également les risques potentiels et propose des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

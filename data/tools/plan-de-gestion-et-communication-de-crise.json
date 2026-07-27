@@ -1,0 +1,79 @@
+{
+  "id": "plan-de-gestion-et-communication-de-crise",
+  "title": "Plan de gestion & communication de crise",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "type-de-crise",
+      "type": "select",
+      "options": [
+        "Incendie",
+        "Inondation",
+        "Pandémie",
+        "Cyberattaque"
+      ],
+      "label": "Quel type de crise est-il susceptible de se produire ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "zone-geographique",
+      "type": "text",
+      "label": "Quelle est la zone géographique concernée par la crise ?",
+      "placeholder": "Exemple : région, ville, pays",
+      "required": true
+    },
+    {
+      "name": "équipe-de-crise",
+      "type": "textarea",
+      "label": "Qui compose l'équipe de crise ? (noms, fonctions, contacts)",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "plan-d-action",
+      "type": "textarea",
+      "label": "Quel plan d'action est prévu en cas de crise ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "budget-alloué",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la gestion de la crise ?",
+      "placeholder": "Exemple : euros, dollars, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Type de crise : {type-de-crise}, Zone géographique : {zone-geographique}, Équipe de crise : {équipe-de-crise}, Plan d'action : {plan-d-action}, Budget alloué : {budget-alloué}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

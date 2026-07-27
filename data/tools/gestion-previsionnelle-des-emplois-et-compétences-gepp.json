@@ -1,0 +1,84 @@
+{
+  "id": "gestion-previsionnelle-des-emplois-et-compétences-gepp",
+  "title": "Gestion prévisionnelle des emplois & compétences (GEPP)",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : XYZ Corporation",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Industrie",
+        "Services",
+        "Tertiaire",
+        "Quaternaire"
+      ],
+      "label": "Secteur d'activité de l'entreprise",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "effectif",
+      "type": "number",
+      "label": "Effectif de l'entreprise",
+      "placeholder": "Exemple : 1000",
+      "required": true
+    },
+    {
+      "name": "projet",
+      "type": "textarea",
+      "label": "Description du projet GEPP",
+      "placeholder": "Exemple : Mise en place d'un système de gestion prévisionnelle des emplois et compétences",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "select",
+      "options": [
+        "Améliorer la gestion des ressources humaines",
+        "Optimiser les processus de recrutement",
+        "Développer les compétences des employés"
+      ],
+      "label": "Objectifs du projet GEPP",
+      "placeholder": "Sélectionnez un objectif",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en GEPP. L'utilisateur a répondu : Entreprise : {entreprise}, Secteur : {secteur}, Effectif : {effectif}, Projet : {projet}, Objectifs : {objectifs}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

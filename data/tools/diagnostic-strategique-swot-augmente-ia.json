@@ -1,0 +1,78 @@
+{
+  "id": "diagnostic-strategique-swot-augmente-ia",
+  "title": "Diagnostic stratégique (SWOT augmenté IA)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "forces",
+      "type": "textarea",
+      "label": "Quelles sont les forces de votre organisation ?",
+      "placeholder": "Exemple : équipe expérimentée, bonne réputation, etc.",
+      "required": true
+    },
+    {
+      "name": "faiblesses",
+      "type": "textarea",
+      "label": "Quelles sont les faiblesses de votre organisation ?",
+      "placeholder": "Exemple : manque de ressources, dépendance à une technologie, etc.",
+      "required": true
+    },
+    {
+      "name": "opportunites",
+      "type": "textarea",
+      "label": "Quelles sont les opportunités pour votre organisation ?",
+      "placeholder": "Exemple : nouveau marché, partenariat potentiel, etc.",
+      "required": true
+    },
+    {
+      "name": "menaces",
+      "type": "textarea",
+      "label": "Quelles sont les menaces pour votre organisation ?",
+      "placeholder": "Exemple : concurrence accrue, changement réglementaire, etc.",
+      "required": true
+    },
+    {
+      "name": "objectif_strategique",
+      "type": "select",
+      "options": [
+        "Développement de nouveaux produits",
+        "Expansion sur de nouveaux marchés",
+        "Amélioration de l'efficacité opérationnelle",
+        "Renforcement de la présence en ligne"
+      ],
+      "label": "Quel est l'objectif stratégique principal de votre organisation ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en stratégie. L'organisation a répondu : Forces : {forces}, Faiblesses : {faiblesses}, Opportunités : {opportunites}, Menaces : {menaces}, Objectif stratégique : {objectif_strategique}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (forces, faiblesses, opportunités, menaces), et des recommandations pour atteindre l'objectif stratégique.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

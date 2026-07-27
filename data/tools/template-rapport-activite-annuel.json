@@ -1,0 +1,71 @@
+{
+  "id": "template-rapport-activite-annuel",
+  "title": "Template de rapport d'activité annuel (board deck)",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux de votre entreprise pour l'année écoulée ?",
+      "placeholder": "Exemple : Augmenter les ventes de 10%, réduire les coûts de production de 5%",
+      "required": true
+    },
+    {
+      "name": "indicateursCles",
+      "type": "select",
+      "options": [
+        "Chiffre d'affaires",
+        "Bénéfice net",
+        "Parts de marché",
+        "Satisfaction client"
+      ],
+      "label": "Quels sont les indicateurs clés de performance que vous souhaitez suivre ?",
+      "required": true
+    },
+    {
+      "name": "realisations",
+      "type": "textarea",
+      "label": "Quelles sont les réalisations les plus importantes de votre entreprise au cours de l'année écoulée ?",
+      "placeholder": "Exemple : Lancement d'un nouveau produit, ouverture d'un nouveau marché",
+      "required": true
+    },
+    {
+      "name": "defis",
+      "type": "text",
+      "label": "Quels sont les défis les plus importants que votre entreprise a rencontrés au cours de l'année écoulée ?",
+      "placeholder": "Exemple : Concurrence accrue, changements réglementaires",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en stratégie d'entreprise. L'utilisateur a répondu : Objectifs : {objectifs}, Indicateurs clés : {indicateursCles}, Réalisations : {realisations}, Défis : {defis}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (stratégie, finances, opérations, ressources humaines), et des recommandations pour améliorer les performances de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

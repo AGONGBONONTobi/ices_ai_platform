@@ -1,0 +1,78 @@
+{
+  "id": "plan-d-accessibilite-numerique-rgaa-wcag",
+  "title": "Plan d'accessibilité numérique (RGAA/WCAG)",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "pages-audit",
+      "type": "textarea",
+      "label": "Liste des pages à auditer",
+      "placeholder": "Exemple : page1, page2, page3",
+      "required": true
+    },
+    {
+      "name": "erreurs-rpaa",
+      "type": "number",
+      "label": "Nombre d'erreurs RGAA détectées",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "erreurs-wcag",
+      "type": "number",
+      "label": "Nombre d'erreurs WCAG détectées",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "axe-accessibilite",
+      "type": "select",
+      "options": [
+        "Accessibilité des contenus",
+        "Accessibilité des interfaces",
+        "Accessibilité des interactions"
+      ],
+      "label": "Axe d'accessibilité prioritaire",
+      "placeholder": "Exemple : Accessibilité des contenus",
+      "required": true
+    },
+    {
+      "name": "recommandations",
+      "type": "textarea",
+      "label": "Recommandations pour améliorer l'accessibilité",
+      "placeholder": "Exemple : ...",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en accessibilité numérique. L'utilisateur a répondu : Pages à auditer : {pages-audit}, Erreurs RGAA : {erreurs-rpaa}, Erreurs WCAG : {erreurs-wcag}, Axe d'accessibilité prioritaire : {axe-accessibilite}, Recommandations : {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

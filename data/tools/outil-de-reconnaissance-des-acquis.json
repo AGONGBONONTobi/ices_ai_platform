@@ -1,0 +1,84 @@
+{
+  "id": "outil-de-reconnaissance-des-acquis",
+  "title": "Outil de reconnaissance des acquis",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "niveau-etudes",
+      "type": "select",
+      "options": [
+        "Bac",
+        "Bac+2",
+        "Bac+3",
+        "Bac+4",
+        "Bac+5"
+      ],
+      "label": "Quel est votre niveau d'études ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "domaine-acquis",
+      "type": "textarea",
+      "label": "Quels domaines ou compétences avez-vous acquis ? (par exemple, langues, technologies, sciences, etc.)",
+      "placeholder": "Exemple : développement web, gestion de projet, etc.",
+      "required": true
+    },
+    {
+      "name": "experience-pro",
+      "type": "number",
+      "label": "Combien d'années d'expérience professionnelle avez-vous ?",
+      "placeholder": "Exemple : 2 ans",
+      "required": true
+    },
+    {
+      "name": "formation-continue",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Avez-vous suivi une formation continue ou continuez-les ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "autres-acquis",
+      "type": "textarea",
+      "label": "Quels autres acquis souhaitez-vous mentionner ? (par exemple, diplômes, certifications, etc.)",
+      "placeholder": "Exemple : diplôme de langues, certification en gestion de projet, etc.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un expert en reconnaissance des acquis. L'utilisateur a répondu : Niveau d'études : {niveau-etudes}, Domaines ou compétences acquis : {domaine-acquis}, Expérience professionnelle : {experience-pro} ans, Formation continue : {formation-continue}, Autres acquis : {autres-acquis}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

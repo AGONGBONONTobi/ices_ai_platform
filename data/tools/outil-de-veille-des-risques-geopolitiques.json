@@ -1,0 +1,79 @@
+{
+  "id": "outil-de-veille-des-risques-geopolitiques",
+  "title": "Outil de veille des risques géopolitiques",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "zone-geopolitique",
+      "type": "select",
+      "options": [
+        "Asie",
+        "Afrique",
+        "Europe",
+        "Amérique du Nord",
+        "Amérique du Sud"
+      ],
+      "label": "Quelle zone géopolitique souhaitez-vous surveiller ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "type-de-risque",
+      "type": "select",
+      "options": [
+        "Conflit armé",
+        "Crise économique",
+        "Pandémie",
+        "Catastrophe naturelle"
+      ],
+      "label": "Quel type de risque géopolitique souhaitez-vous surveiller ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description-de-la-situation",
+      "type": "textarea",
+      "label": "Décrivez brièvement la situation actuelle dans la zone géopolitique sélectionnée.",
+      "placeholder": "Exemple : La situation est tendue en raison d'une crise économique.",
+      "required": true
+    },
+    {
+      "name": "évaluation-de-la-gravité",
+      "type": "number",
+      "label": "Évaluez la gravité de la situation sur une échelle de 1 à 10.",
+      "placeholder": "Exemple : 8",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des risques. L'utilisateur a sélectionné la zone géopolitique {zone-geopolitique} et le type de risque {type-de-risque}. Il a également décrit la situation actuelle comme suit : {description-de-la-situation}. Enfin, il a évalué la gravité de la situation à {évaluation-de-la-gravité} sur 10. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

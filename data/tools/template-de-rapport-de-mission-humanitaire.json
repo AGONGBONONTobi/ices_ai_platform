@@ -1,0 +1,78 @@
+{
+  "id": "template-de-rapport-de-mission-humanitaire",
+  "title": "Template de rapport de mission humanitaire",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "label": "Présentez le contexte de la mission humanitaire",
+      "placeholder": "Exemple : Situation géopolitique, objectifs de la mission, etc.",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Décrivez les objectifs de la mission",
+      "placeholder": "Exemple : Objectifs spécifiques, résultats attendus, etc.",
+      "required": true
+    },
+    {
+      "name": "situation-terre",
+      "type": "textarea",
+      "label": "Décrivez la situation sur le terrain",
+      "placeholder": "Exemple : Conditions météorologiques, accès aux zones, etc.",
+      "required": true
+    },
+    {
+      "name": "équipe",
+      "type": "textarea",
+      "label": "Présentez l'équipe impliquée dans la mission",
+      "placeholder": "Exemple : Composition de l'équipe, rôles et responsabilités, etc.",
+      "required": true
+    },
+    {
+      "name": "choix-évaluation",
+      "type": "select",
+      "options": [
+        "Efficacité",
+        "Efficience",
+        "Impact"
+      ],
+      "label": "Choisissez l'évaluation principale de la mission",
+      "placeholder": "Exemple : Efficacité, efficience, impact",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en mission humanitaire. L'utilisateur a répondu : Contexte : {contexte}, Objectifs : {objectifs}, Situation terre : {situation-terre}, Équipe : {équipe}, Évaluation principale : {choix-évaluation}. Analyse ces informations et présentez un rapport détaillé sur la mission.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

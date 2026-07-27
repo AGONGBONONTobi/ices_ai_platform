@@ -1,0 +1,72 @@
+{
+  "id": "audit-traçabilité-chaîne-de-contrôle",
+  "title": "Audit de traçabilité & chaîne de contrôle",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "produit",
+      "type": "text",
+      "label": "Quel est le produit ou service concerné par l'audit ?",
+      "placeholder": "Exemple : Produit alimentaire",
+      "required": true
+    },
+    {
+      "name": "processus",
+      "type": "textarea",
+      "label": "Décrivez les processus clés impliqués dans la chaîne de contrôle du produit.",
+      "placeholder": "Exemple : Fabrication, conditionnement, stockage, livraison",
+      "required": true
+    },
+    {
+      "name": "risques",
+      "type": "select",
+      "options": [
+        "Non conforme",
+        "Contamination",
+        "Perte de qualité",
+        "Autre (décrivez)"
+      ],
+      "label": "Quels sont les principaux risques identifiés dans la chaîne de contrôle ?",
+      "placeholder": "Exemple : Non conforme",
+      "required": true
+    },
+    {
+      "name": "mesures",
+      "type": "textarea",
+      "label": "Quelles mesures ont été prises pour atténuer ces risques ?",
+      "placeholder": "Exemple : Contrôle qualité, formation des employés, mise en place de procédures",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en traçabilité et chaîne de contrôle. L'utilisateur a répondu : Produit: {produit}, Processus: {processus}, Risques: {risques}, Mesures: {mesures}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

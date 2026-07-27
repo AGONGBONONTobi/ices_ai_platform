@@ -1,0 +1,78 @@
+{
+  "id": "reporting-de-tresorerie-en-temps-reel",
+  "title": "Reporting de trésorerie en temps réel",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "periode",
+      "type": "select",
+      "options": [
+        "Mois en cours",
+        "Mois précédent",
+        "Année en cours"
+      ],
+      "label": "Sélectionnez la période pour le reporting",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "revenus",
+      "type": "number",
+      "label": "Entrez les revenus totaux pour la période sélectionnée",
+      "placeholder": "0",
+      "required": true
+    },
+    {
+      "name": "depenses",
+      "type": "number",
+      "label": "Entrez les dépenses totales pour la période sélectionnée",
+      "placeholder": "0",
+      "required": true
+    },
+    {
+      "name": "solde",
+      "type": "textarea",
+      "label": "Décrivez le solde actuel de la trésorerie",
+      "placeholder": "Exemple : Le solde actuel est positif et nous avons suffisamment de liquidités pour les prochaines semaines.",
+      "required": true
+    },
+    {
+      "name": "recommandations",
+      "type": "textarea",
+      "label": "Proposez des recommandations pour améliorer la gestion de la trésorerie",
+      "placeholder": "Exemple : Il est recommandé de réduire les dépenses non essentielles et d'augmenter les revenus en augmentant la vente de produits supplémentaires.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Période: {periode}, Revenus: {revenus}, Dépenses: {depenses}, Solde: {solde}, Recommandations: {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

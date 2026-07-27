@@ -1,0 +1,72 @@
+{
+  "id": "plan-de-marketing-touristique-digital",
+  "title": "Plan de marketing touristique digital",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "destination",
+      "type": "text",
+      "label": "Quelle est la destination touristique que vous souhaitez promouvoir ?",
+      "placeholder": "Exemple : Paris, France",
+      "required": true
+    },
+    {
+      "name": "cible",
+      "type": "select",
+      "options": [
+        "Les jeunes adultes (18-35 ans)",
+        "Les familles avec enfants",
+        "Les seniors (65 ans et plus)",
+        "Les voyageurs d'affaires"
+      ],
+      "label": "Quelle est votre cible principale ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs pour cette campagne de marketing touristique digital ?",
+      "placeholder": "Exemple : Augmenter la visibilité de la destination, stimuler les réservations, etc.",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est votre budget alloué pour cette campagne ?",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en marketing touristique digital. L'utilisateur souhaite promouvoir la destination de {destination} auprès de la cible {cible}. Ses objectifs sont {objectifs} et son budget est de {budget}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations pour mettre en place un plan de marketing touristique digital efficace.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

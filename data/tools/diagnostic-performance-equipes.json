@@ -1,0 +1,71 @@
+{
+  "id": "diagnostic-performance-equipes",
+  "title": "Diagnostic de la performance des équipes",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "nombre-d-employes",
+      "type": "number",
+      "label": "Combien d'employés compte votre équipe ?",
+      "placeholder": "Saisissez un nombre",
+      "required": true
+    },
+    {
+      "name": "taux-de-rotation",
+      "type": "number",
+      "label": "Quel est le taux de rotation des employés dans votre équipe ? (en %)",
+      "placeholder": "Saisissez un nombre",
+      "required": true
+    },
+    {
+      "name": "type-de-management",
+      "type": "select",
+      "options": [
+        "Centralisé",
+        "Décentralisé",
+        "Hybride"
+      ],
+      "label": "Quel est le type de management utilisé dans votre équipe ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "motivations-des-employes",
+      "type": "textarea",
+      "label": "Quelles sont les principales motivations des employés de votre équipe ?",
+      "placeholder": "Saisissez un texte",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nombre d'employés : {nombre-d-employes}, Taux de rotation : {taux-de-rotation}%, Type de management : {type-de-management}, Motivations des employés : {motivations-des-employes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

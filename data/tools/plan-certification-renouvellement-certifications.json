@@ -1,0 +1,73 @@
+{
+  "id": "plan-certification-renouvellement-certifications",
+  "title": "Plan de certification & renouvellement des certifications",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "current_certifications",
+      "type": "textarea",
+      "label": "Quelles certifications actuelles possède votre organisation?",
+      "placeholder": "Ex: ISO 9001, ISO 14001",
+      "required": true
+    },
+    {
+      "name": "certification_goals",
+      "type": "textarea",
+      "label": "Quelles certifications souhaitez-vous obtenir dans les 12 prochains mois?",
+      "placeholder": "Ex: ISO 27001, ISO 45001",
+      "required": true
+    },
+    {
+      "name": "renewal_schedule",
+      "type": "select",
+      "options": [
+        "Annuel",
+        "Bimensuel",
+        "Trimestriel",
+        "Semestriel"
+      ],
+      "label": "À quelle fréquence votre organisation renouvele-t-elle ses certifications?",
+      "placeholder": "Sélectionnez",
+      "required": true
+    },
+    {
+      "name": "budget_available",
+      "type": "number",
+      "label": "Quel budget annuel est alloué aux certifications?",
+      "placeholder": "En euros",
+      "required": true
+    },
+    {
+      "name": "responsible_person",
+      "type": "text",
+      "label": "Qui est responsable de la gestion des certifications?",
+      "placeholder": "Ex: Jean Dupont",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : current_certifications: {current_certifications}, certification_goals: {certification_goals}, renewal_schedule: {renewal_schedule}, budget_available: {budget_available}, responsible_person: {responsible_person}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "id": "dashboard-odd-contribution-sdg-nations-unies",
+  "title": "Dashboard ODD & contribution SDG Nations Unies",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "pays",
+      "type": "text",
+      "label": "Nom du pays",
+      "placeholder": "Exemple : France",
+      "required": true
+    },
+    {
+      "name": "annee",
+      "type": "number",
+      "label": "Année de référence",
+      "placeholder": "Exemple : 2022",
+      "required": true
+    },
+    {
+      "name": "objectif-sdg",
+      "type": "select",
+      "options": [
+        "SDG 1 : Pauvreté éradiquée",
+        "SDG 2 : Faim zéro",
+        "SDG 3 : Santé et bien-être",
+        "SDG 4 : Éducation de qualité",
+        "SDG 5 : Égalité des sexes",
+        "SDG 6 : Eau propre et assainissement",
+        "SDG 7 : Énergie propre et durable",
+        "SDG 8 : Travail décent et croissance économique",
+        "SDG 9 : Infrastructure et invention",
+        "SDG 10 : Réduction des inégalités",
+        "SDG 11 : Villes et communautés durables",
+        "SDG 12 : Consommation et production durables",
+        "SDG 13 : Action climatique",
+        "SDG 14 : Mer et océans",
+        "SDG 15 : Vie sauvage et écosystèmes",
+        "SDG 16 : Paix, justice et institutions fortes",
+        "SDG 17 : Partenariats pour la durabilité"
+      ],
+      "label": "Objectif SDG",
+      "placeholder": "Exemple : SDG 1 : Pauvreté éradiquée",
+      "required": true
+    },
+    {
+      "name": "contribution-financiere",
+      "type": "number",
+      "label": "Contribution financière (en millions de dollars)",
+      "placeholder": "Exemple : 100",
+      "required": true
+    },
+    {
+      "name": "contribution-humanitaire",
+      "type": "textarea",
+      "label": "Contribution humanitaire (détails)",
+      "placeholder": "Exemple : Aide alimentaire, secours en cas de catastrophe, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en développement durable. L'utilisateur a répondu : Pays : {pays}, Année : {annee}, Objectif SDG : {objectif-sdg}, Contribution financière : {contribution-financiere} millions de dollars, Contribution humanitaire : {contribution-humanitaire}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "evaluation-acquis-prealables-positionnement",
+  "title": "Évaluation des acquis préalables & positionnement",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "niveau-de-connaissance",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est le niveau de connaissance de l'apprenant en matière de sujet ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "objectifs-personnels",
+      "type": "textarea",
+      "label": "Quels sont les objectifs personnels de l'apprenant en matière de sujet ?",
+      "placeholder": "Exemple : Je souhaite améliorer mes compétences en ...",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "text",
+      "label": "Quelles ressources (matériel, humain, financier) sont disponibles pour l'apprenant ?",
+      "placeholder": "Exemple : Accès à un ordinateur, aide d'un mentor, etc.",
+      "required": true
+    },
+    {
+      "name": "barrières-identifiées",
+      "type": "textarea",
+      "label": "Quelles barrières (temporelles, psychologiques, matérielles) l'apprenant a-t-il identifié ?",
+      "placeholder": "Exemple : Manque de temps, peur de l'échec, etc.",
+      "required": true
+    },
+    {
+      "name": "stratégies-de-soutien",
+      "type": "text",
+      "label": "Quelles stratégies de soutien l'apprenant souhaite mettre en place pour atteindre ses objectifs ?",
+      "placeholder": "Exemple : Recherche de ressources en ligne, aide d'un pair, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Niveau de connaissance : {niveau-de-connaissance}, Objectifs personnels : {objectifs-personnels}, Ressources disponibles : {ressources-disponibles}, Barrières identifiées : {barrières-identifiées}, Stratégies de soutien : {stratégies-de-soutien}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "diagnostic-controle-de-gestion",
+  "title": "Diagnostic du contrôle de gestion",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Présentez les principaux objectifs de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Stratégique",
+        "Opérationnel",
+        "Financier"
+      ],
+      "label": "Quel est le type de contrôle de gestion mis en place ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Quel est le pourcentage de budget alloué au contrôle de gestion ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quels sont les principaux indicateurs de performance clés (KPI) utilisés ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs de l'entreprise : {variable1}, Type de contrôle de gestion : {variable2}, Pourcentage de budget alloué au contrôle de gestion : {variable3}%, Principaux KPI : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

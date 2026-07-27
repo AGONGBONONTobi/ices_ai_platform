@@ -1,0 +1,71 @@
+{
+  "id": "plan-de-developpement-institutionnel",
+  "title": "Plan de développement institutionnel (PDI)",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif_principal",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de votre institution ?",
+      "placeholder": "Exemple : Améliorer les services de santé publique",
+      "required": true
+    },
+    {
+      "name": "niveau_de_maturite",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est le niveau de maturité actuel de votre institution ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "text",
+      "label": "Quelles sont les ressources (humaines, financières, matérielles) actuellement disponibles ?",
+      "placeholder": "Exemple : 10 employés, 100 000 $ de budget annuel",
+      "required": true
+    },
+    {
+      "name": "defis_actuels",
+      "type": "textarea",
+      "label": "Quels sont les principaux défis auxquels votre institution est actuellement confrontée ?",
+      "placeholder": "Exemple : Manque de personnel qualifié, infrastructures vieillissantes",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en développement institutionnel. L'utilisateur a répondu : Objectif principal : {objectif_principal}, Niveau de maturité : {niveau_de_maturite}, Ressources disponibles : {ressources_disponibles}, Défis actuels : {defis_actuels}. Analysez ces informations et proposez un plan de développement institutionnel. Fournissez un score global sur 100, une évaluation par axe (par exemple, gouvernance, ressources humaines, infrastructures), et des recommandations concrètes pour améliorer la situation actuelle.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

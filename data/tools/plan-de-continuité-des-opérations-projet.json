@@ -1,0 +1,77 @@
+{
+  "id": "plan-de-continuité-des-opérations-projet",
+  "title": "Plan de continuité des opérations projet",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "nom-projet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple : Projet XYZ",
+      "required": true
+    },
+    {
+      "name": "risques-identifiés",
+      "type": "textarea",
+      "label": "Risques identifiés et leurs conséquences",
+      "placeholder": "Exemple : Risque 1, Conséquence 1 ; Risque 2, Conséquence 2",
+      "required": true
+    },
+    {
+      "name": "plans-de-contingence",
+      "type": "select",
+      "options": [
+        "Plan de continuité des opérations",
+        "Plan de gestion des crises"
+      ],
+      "label": "Type de plan de continuité des opérations",
+      "placeholder": "Exemple : Plan de continuité des opérations",
+      "required": true
+    },
+    {
+      "name": "équipe-de-crise",
+      "type": "text",
+      "label": "Équipe de crise (noms et rôles)",
+      "placeholder": "Exemple : Jean Dupont, Responsable de crise ; Marie Dupont, Spécialiste en communication",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "textarea",
+      "label": "Ressources disponibles en cas de crise (matériel, humain, financier)",
+      "placeholder": "Exemple : Matériel : Serveurs, Imprimantes ; Humain : Équipe de crise ; Financier : Budget de crise",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet : {nom-projet}, Risques identifiés : {risques-identifiés}, Type de plan de continuité des opérations : {plans-de-contingence}, Équipe de crise : {équipe-de-crise}, Ressources disponibles : {ressources-disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

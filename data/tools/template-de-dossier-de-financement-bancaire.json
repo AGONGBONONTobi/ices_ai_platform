@@ -1,0 +1,78 @@
+{
+  "id": "template-de-dossier-de-financement-bancaire",
+  "title": "Template de dossier de financement bancaire",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "montantDemande",
+      "type": "number",
+      "label": "Quel est le montant de financement demandé ?",
+      "placeholder": "Exemple: 100000",
+      "required": true
+    },
+    {
+      "name": "dureeRemboursement",
+      "type": "select",
+      "options": [
+        "12 mois",
+        "24 mois",
+        "36 mois",
+        "48 mois",
+        "60 mois"
+      ],
+      "label": "Quelle est la durée de remboursement prévue ?",
+      "required": true
+    },
+    {
+      "name": "descriptionProjet",
+      "type": "textarea",
+      "label": "Décrivez brièvement le projet ou l'activité pour lequel vous demandez un financement",
+      "placeholder": "Exemple: Développement d'un nouveau produit, expansion de l'entreprise, etc.",
+      "required": true
+    },
+    {
+      "name": "typeFinancement",
+      "type": "select",
+      "options": [
+        "Prêt bancaire classique",
+        "Prêt à taux fixe",
+        "Prêt à taux variable",
+        "Ligne de crédit",
+        "Autre"
+      ],
+      "label": "Quel type de financement recherchez-vous ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant financier expert. L'utilisateur a répondu : Montant demandé: {montantDemande}, Durée de remboursement: {dureeRemboursement}, Description du projet: {descriptionProjet}, Type de financement: {typeFinancement}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (solabilité, risque, potentiel de croissance), et des recommandations pour le dossier de financement bancaire.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

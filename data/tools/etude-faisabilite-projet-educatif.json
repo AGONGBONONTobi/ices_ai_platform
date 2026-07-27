@@ -1,0 +1,78 @@
+{
+  "id": "etude-faisabilite-projet-educatif",
+  "title": "Étude de faisabilité d'un projet éducatif",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "project_name",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple: Programme de formation en IA",
+      "required": true
+    },
+    {
+      "name": "target_audience",
+      "type": "textarea",
+      "label": "Public cible",
+      "placeholder": "Exemple: Étudiants de 18-25 ans",
+      "required": true
+    },
+    {
+      "name": "budget_estimate",
+      "type": "number",
+      "label": "Budget estimé (en euros)",
+      "placeholder": "Exemple: 50000",
+      "required": true
+    },
+    {
+      "name": "resource_availability",
+      "type": "select",
+      "options": [
+        "High",
+        "Medium",
+        "Low"
+      ],
+      "label": "Disponibilité des ressources",
+      "placeholder": "Sélectionnez",
+      "required": true
+    },
+    {
+      "name": "regulatory_compliance",
+      "type": "textarea",
+      "label": "Conformité réglementaire",
+      "placeholder": "Exemple: Conformité aux normes GDPR",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Project_name: {project_name}, Target_audience: {target_audience}, Budget_estimate: {budget_estimate}, Resource_availability: {resource_availability}, Regulatory_compliance: {regulatory_compliance}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

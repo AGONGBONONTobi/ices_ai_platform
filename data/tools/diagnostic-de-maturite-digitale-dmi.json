@@ -1,0 +1,71 @@
+{
+  "id": "diagnostic-de-maturite-digitale-dmi",
+  "title": "Diagnostic de maturité digitale (DMI)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "niveau_de_maturite",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est votre niveau de maturité digitale actuel ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "objectifs_strategiques",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs stratégiques pour la transformation digitale de votre organisation ?",
+      "placeholder": "Décrivez vos objectifs",
+      "required": true
+    },
+    {
+      "name": "technologies_utilisees",
+      "type": "text",
+      "label": "Quelles technologies utilisez-vous actuellement pour soutenir votre transformation digitale ?",
+      "placeholder": "Exemple : cloud, IA, etc.",
+      "required": false
+    },
+    {
+      "name": "defis_encountres",
+      "type": "textarea",
+      "label": "Quels défis avez-vous rencontrés lors de votre transformation digitale ?",
+      "placeholder": "Décrivez les défis",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en transformation digitale. L'utilisateur a répondu : Niveau de maturité : {niveau_de_maturite}, Objectifs stratégiques : {objectifs_strategiques}, Technologies utilisées : {technologies_utilisees}, Défis rencontrés : {defis_encountres}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer la maturité digitale de l'organisation.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

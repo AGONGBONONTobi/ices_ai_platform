@@ -1,0 +1,78 @@
+{
+  "id": "benchmark-prix-analyse-marche-achats",
+  "title": "Benchmark des prix & analyse de marché achats",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "produit_service",
+      "type": "text",
+      "label": "Quel produit ou service souhaitez-vous benchmarker?",
+      "placeholder": "ex: matériel informatique",
+      "required": true
+    },
+    {
+      "name": "budget_achat",
+      "type": "number",
+      "label": "Quel est votre budget annuel pour les achats de ce produit/service?",
+      "placeholder": "ex: 50000",
+      "required": true
+    },
+    {
+      "name": "volume_achat",
+      "type": "number",
+      "label": "Quel est le volume d'achat prévu (en unités)?",
+      "placeholder": "ex: 200",
+      "required": true
+    },
+    {
+      "name": "periode_etude",
+      "type": "select",
+      "options": [
+        "1 mois",
+        "3 mois",
+        "6 mois",
+        "1 an"
+      ],
+      "label": "Sur quelle période souhaitez-vous réaliser l'étude?",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Commentaires ou informations supplémentaires",
+      "placeholder": "ex: contraintes de livraison",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Produit/Service: {produit_service}, Budget: {budget_achat}, Volume: {volume_achat}, Période: {periode_etude}, Commentaires: {commentaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

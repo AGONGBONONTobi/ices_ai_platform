@@ -1,0 +1,77 @@
+{
+  "id": "auto-diagnostic-iso-45001",
+  "title": "Auto-diagnostic ISO 45001",
+  "category": "Systèmes de Management ISO",
+  "inputs": [
+    {
+      "name": "identification_dangers",
+      "type": "textarea",
+      "label": "Quels sont les principaux dangers identifiés dans votre environnement de travail ?",
+      "placeholder": "Ex: chutes d'objets, exposition à des produits chimiques, etc.",
+      "required": true
+    },
+    {
+      "name": "niveau_evaluation_risques",
+      "type": "select",
+      "options": [
+        "Inexistant (0)",
+        "Initié (1)",
+        "Formalisé (2)",
+        "Optimisé (3)"
+      ],
+      "label": "Quel est votre niveau de maturité pour l'évaluation des risques ?",
+      "required": true
+    },
+    {
+      "name": "programme_prevention",
+      "type": "text",
+      "label": "Décrivez brièvement votre programme de prévention des accidents",
+      "placeholder": "Ex: formation du personnel, équipements de protection individuelle, etc.",
+      "required": true
+    },
+    {
+      "name": "declaration_incidents",
+      "type": "number",
+      "label": "Combien d'incidents avez-vous déclarés au cours de la dernière année ?",
+      "required": true
+    },
+    {
+      "name": "actions_correctives",
+      "type": "textarea",
+      "label": "Quelles actions correctives avez-vous mises en place suite à des incidents ?",
+      "placeholder": "Ex: modification de procédures, formation complémentaire, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un auditeur expert du référentiel ISO 45001. L'utilisateur a répondu : Identification des dangers: {identification_dangers}, Niveau d'évaluation des risques: {niveau_evaluation_risques}, Programme de prévention: {programme_prevention}, Nombre d'incidents déclarés: {declaration_incidents}, Actions correctives: {actions_correctives}. Analysez ces informations selon les chapitres clés du référentiel ISO 45001 (identification des dangers, évaluation des risques, programme de prévention, gestion des incidents) et donnez un score global sur 100, une évaluation par axe, et des recommandations priorisées.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

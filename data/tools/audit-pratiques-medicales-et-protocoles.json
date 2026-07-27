@@ -1,0 +1,71 @@
+{
+  "id": "audit-pratiques-medicales-et-protocoles",
+  "title": "Audit des pratiques médicales & des protocoles",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_etablissement",
+      "type": "select",
+      "options": [
+        "Hôpital",
+        "Clinique privée",
+        "Centre de santé communautaire"
+      ],
+      "label": "Quel est le type d'établissement de santé que vous auditez ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "protocoles_en_place",
+      "type": "textarea",
+      "label": "Décrivez les protocoles et procédures actuellement en place pour les soins aux patients :",
+      "placeholder": "Ex: Protocole de gestion des dossiers médicaux, procédure de suivi des patients...",
+      "required": true
+    },
+    {
+      "name": "niveau_conformite",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, quel est le niveau de conformité aux normes médicales actuelles selon vous ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "observations_supplementaires",
+      "type": "textarea",
+      "label": "Avez-vous des observations supplémentaires concernant les pratiques médicales et les protocoles en place ?",
+      "placeholder": "",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en audit médical. L'utilisateur a répondu : Type d'établissement: {type_etablissement}, Protocoles en place: {protocoles_en_place}, Niveau de conformité: {niveau_conformite}, Observations supplémentaires: {observations_supplementaires}. Évaluez les pratiques médicales et les protocoles de cet établissement de santé et fournissez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

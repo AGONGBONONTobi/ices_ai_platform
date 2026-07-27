@@ -1,0 +1,79 @@
+{
+  "id": "test-de-preferences-sensorielles-vark",
+  "title": "Test de préférences sensorielles VARK",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "mode-preference",
+      "type": "select",
+      "options": [
+        "Visual",
+        "Auditive",
+        "Rythmique",
+        "Kinesthésique"
+      ],
+      "label": "Quel mode de préférence sensorielle est le plus important pour toi ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "visual-preference",
+      "type": "textarea",
+      "label": "Quels sont tes préférences visuelles ? (par exemple, lecture de texte, images, vidéos)",
+      "placeholder": "",
+      "required": false
+    },
+    {
+      "name": "auditive-preference",
+      "type": "textarea",
+      "label": "Quels sont tes préférences auditives ? (par exemple, lecture de texte, musique, podcasts)",
+      "placeholder": "",
+      "required": false
+    },
+    {
+      "name": "kinesthésique-preference",
+      "type": "textarea",
+      "label": "Quels sont tes préférences kinesthésiques ? (par exemple, activités physiques, jeux, manipulations)",
+      "placeholder": "",
+      "required": false
+    },
+    {
+      "name": "rythmique-preference",
+      "type": "textarea",
+      "label": "Quels sont tes préférences rythmiques ? (par exemple, rythmes musicaux, rythmes de la vie quotidienne)",
+      "placeholder": "",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un conseiller en apprentissage. L'utilisateur a répondu : Mode préférence : {mode-preference}, Préférences visuelles : {visual-preference}, Préférences auditives : {auditive-preference}, Préférences kinesthésiques : {kinesthésique-preference}, Préférences rythmiques : {rythmique-preference}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

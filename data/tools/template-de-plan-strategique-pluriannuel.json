@@ -1,0 +1,76 @@
+{
+  "id": "template-de-plan-strategique-pluriannuel",
+  "title": "Template de plan stratégique pluriannuel",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux de votre organisation pour les prochaines années ?",
+      "placeholder": "Décrivez les objectifs clés de votre organisation",
+      "required": true
+    },
+    {
+      "name": "secteurs_cles",
+      "type": "select",
+      "options": [
+        "Développement durable",
+        "Innovation technologique",
+        "Croissance économique",
+        "Développement social"
+      ],
+      "label": "Quels sont les secteurs clés sur lesquels votre organisation souhaite se concentrer ?",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "number",
+      "label": "Quel est le budget total alloué pour la mise en œuvre du plan stratégique ?",
+      "placeholder": "Entrez le montant en euros",
+      "required": true
+    },
+    {
+      "name": "delai_mise_en_oeuvre",
+      "type": "select",
+      "options": [
+        "Moins de 6 mois",
+        "6 mois à 1 an",
+        "1 an à 2 ans",
+        "Plus de 2 ans"
+      ],
+      "label": "Quel est le délai prévu pour la mise en œuvre du plan stratégique ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en stratégie. L'organisation a répondu : Objectifs: {objectifs}, Secteurs clés: {secteurs_cles}, Ressources disponibles: {ressources_disponibles} euros, Délai de mise en œuvre: {delai_mise_en_oeuvre}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (objectifs, ressources, délai), et des recommandations pour améliorer le plan stratégique.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

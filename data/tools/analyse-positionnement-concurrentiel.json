@@ -1,0 +1,92 @@
+{
+  "id": "analyse-positionnement-concurrentiel",
+  "title": "Analyse du positionnement concurrentiel",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Amazon",
+      "required": true
+    },
+    {
+      "name": "produit",
+      "type": "text",
+      "label": "Nom du produit ou service",
+      "placeholder": "Exemple : Amazon Prime",
+      "required": true
+    },
+    {
+      "name": "rival1",
+      "type": "text",
+      "label": "Nom d'un principal concurrent",
+      "placeholder": "Exemple : Walmart",
+      "required": true
+    },
+    {
+      "name": "rival2",
+      "type": "text",
+      "label": "Nom d'un autre concurrent",
+      "placeholder": "Exemple : eBay",
+      "required": true
+    },
+    {
+      "name": "strategie",
+      "type": "textarea",
+      "label": "Stratégie de positionnement concurrentiel",
+      "placeholder": "Exemple : Nous nous positionnons comme la plateforme de vente en ligne la plus fiable et la plus large.",
+      "required": true
+    },
+    {
+      "name": "avantages",
+      "type": "textarea",
+      "label": "Avantages uniques de l'entreprise",
+      "placeholder": "Exemple : Nous offrons une expérience de client personnalisée et une livraison rapide.",
+      "required": true
+    },
+    {
+      "name": "options",
+      "type": "select",
+      "options": [
+        "Prix compétitif",
+        "Qualité des produits",
+        "Service client"
+      ],
+      "label": "Option de positionnement concurrentiel",
+      "placeholder": "Exemple : Prix compétitif",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise : {entreprise}, Produit : {produit}, Rival1 : {rival1}, Rival2 : {rival2}, Stratégie : {strategie}, Avantages : {avantages}, Option : {options}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

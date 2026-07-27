@@ -1,0 +1,78 @@
+{
+  "id": "gestion-de-projets-pmo-plan-de-communication-projet",
+  "title": "Plan de communication projet",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "objectif-projet",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux du projet ?",
+      "placeholder": "Exemple : Améliorer la productivité, réduire les coûts, etc.",
+      "required": true
+    },
+    {
+      "name": "public-cible",
+      "type": "select",
+      "options": [
+        "Équipe de projet",
+        "Direction",
+        "Clients",
+        "Partenaires"
+      ],
+      "label": "Qui est le public cible de la communication du projet ?",
+      "placeholder": "Exemple : Équipe de projet",
+      "required": true
+    },
+    {
+      "name": "canal-de-communication",
+      "type": "select",
+      "options": [
+        "Réunions régulières",
+        "Courriels",
+        "Messagerie instantanée",
+        "Site web"
+      ],
+      "label": "Quels canaux de communication seront utilisés pour informer le public cible ?",
+      "placeholder": "Exemple : Réunions régulières",
+      "required": true
+    },
+    {
+      "name": "frequentiel-de-communication",
+      "type": "number",
+      "label": "Quel est le fréquentiel de communication souhaité (en jours) ?",
+      "placeholder": "Exemple : 15 jours",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif projet: {objectif-projet}, Public cible: {public-cible}, Canal de communication: {canal-de-communication}, Fréquentiel de communication: {frequentiel-de-communication}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "diagnostic-des-systemes-d-information",
+  "title": "Diagnostic des systèmes d'information (SI/DSI)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "nomEntreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Entreprise XYZ",
+      "required": true
+    },
+    {
+      "name": "tailleEntreprise",
+      "type": "select",
+      "options": [
+        "Moins de 10 employés",
+        "10-50 employés",
+        "51-200 employés",
+        "Plus de 200 employés"
+      ],
+      "label": "Taille de l'entreprise",
+      "required": true
+    },
+    {
+      "name": "descriptionProbleme",
+      "type": "textarea",
+      "label": "Description du problème ou du besoin",
+      "placeholder": "Décrivez le problème ou le besoin que vous souhaitez résoudre",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Objectifs de l'entreprise",
+      "placeholder": "Décrivez les objectifs de l'entreprise",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en systèmes d'information. L'entreprise {nomEntreprise} de taille {tailleEntreprise} rencontre le problème suivant : {descriptionProbleme}. Les objectifs de l'entreprise sont les suivants : {objectifs}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

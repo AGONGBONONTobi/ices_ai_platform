@@ -1,0 +1,73 @@
+{
+  "id": "outil-de-veille-strategique-sectorielle-ia",
+  "title": "Outil de veille stratégique sectorielle IA",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Santé",
+        "Finance",
+        "Énergie",
+        "Autre"
+      ],
+      "label": "Sélectionnez le secteur d'activité",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "concurrents",
+      "type": "textarea",
+      "label": "Liste des principaux concurrents (nom, description)",
+      "placeholder": "Ex: Entreprise X, leader dans le domaine Y",
+      "required": true
+    },
+    {
+      "name": "tendances",
+      "type": "text",
+      "label": "Quelles sont les tendances actuelles dans le secteur ?",
+      "placeholder": "Ex: Hausse de la demande, évolution des réglementations",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs stratégiques dans ce secteur ?",
+      "placeholder": "Ex: Accroître la part de marché, développer de nouveaux produits",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en veille stratégique. L'utilisateur a fourni les informations suivantes : Secteur: {secteur}, Concurrents: {concurrents}, Tendances: {tendances}, Objectifs: {objectifs}. Analysez ces données pour fournir un score global sur 100, une évaluation par axe stratégique, et des recommandations pour améliorer la position de l'entreprise dans le secteur.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

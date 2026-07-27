@@ -1,0 +1,76 @@
+{
+  "id": "outil-de-personnalisation-ia-des-offres",
+  "title": "Outil de personnalisation IA des offres",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "produits_intéressés",
+      "type": "select",
+      "options": [
+        "Produits A",
+        "Produits B",
+        "Produits C"
+      ],
+      "label": "Quels sont les produits les plus intéressants pour le client ?",
+      "placeholder": "Sélectionnez les produits",
+      "required": true
+    },
+    {
+      "name": "budget_client",
+      "type": "number",
+      "label": "Quel est le budget du client ?",
+      "placeholder": "Entrez le budget",
+      "required": true
+    },
+    {
+      "name": "objectifs_client",
+      "type": "textarea",
+      "label": "Quels sont les objectifs du client ?",
+      "placeholder": "Décrivez les objectifs du client",
+      "required": true
+    },
+    {
+      "name": "canal_de_distribution",
+      "type": "select",
+      "options": [
+        "Canal A",
+        "Canal B",
+        "Canal C"
+      ],
+      "label": "Quel est le canal de distribution préféré du client ?",
+      "placeholder": "Sélectionnez le canal",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Produits intéressés: {produits_intéressés}, Budget client: {budget_client}, Objectifs client: {objectifs_client}, Canal de distribution: {canal_de_distribution}. Analyse ces informations et propose une offre personnalisée pour le client.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

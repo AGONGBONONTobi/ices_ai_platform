@@ -1,0 +1,72 @@
+{
+  "id": "outil-de-veille-des-appels-doffres-et-marches-publics",
+  "title": "Outil de veille des appels d'offres & marchés publics",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Bâtiment et travaux publics",
+        "Informatique et télécommunications",
+        "Services",
+        "Autres"
+      ],
+      "label": "Secteur d'activité",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Description de l'appel d'offre ou du marché public",
+      "placeholder": "Entrez une description détaillée",
+      "required": true
+    },
+    {
+      "name": "date_limite",
+      "type": "text",
+      "label": "Date limite de réponse",
+      "placeholder": "YYYY-MM-DD",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Budget estimé",
+      "placeholder": "Entrez un montant",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur a répondu : Secteur: {secteur}, Description: {description}, Date limite: {date_limite}, Budget: {budget}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour maximiser les chances de succès dans cet appel d'offre ou marché public.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

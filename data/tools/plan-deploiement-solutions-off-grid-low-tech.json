@@ -1,0 +1,78 @@
+{
+  "id": "plan-deploiement-solutions-off-grid-low-tech",
+  "title": "Plan de déploiement de solutions off-grid & low-tech",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "label": "Décrivez le contexte de déploiement (ville, région, pays, etc.)",
+      "placeholder": "Exemple : Déploiement dans la ville de Dakar",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs du déploiement de solutions off-grid & low-tech ?",
+      "placeholder": "Exemple : Réduire les émissions de gaz à effet de serre, améliorer l'accès à l'énergie",
+      "required": true
+    },
+    {
+      "name": "technologies",
+      "type": "select",
+      "options": [
+        "Panels solaires",
+        "Éoliennes",
+        "Pompe à chaleur"
+      ],
+      "label": "Quelles technologies off-grid & low-tech envisagez-vous de déployer ?",
+      "placeholder": "Exemple : Panels solaires",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué pour le déploiement de solutions off-grid & low-tech ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "équipe",
+      "type": "textarea",
+      "label": "Quelle est la composition de l'équipe chargée du déploiement ?",
+      "placeholder": "Exemple : Ingénieur, technicien, consultant",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en transformation digitale et IA. L'utilisateur a répondu : Contexte : {contexte}, Objectifs : {objectifs}, Technologies : {technologies}, Budget : {budget}, Équipe : {équipe}. Analyse ces informations et propose un plan de déploiement détaillé, incluant les étapes clés, les ressources nécessaires et les indicateurs de suivi.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "plan-et-processus-d-onboarding-digital-30-60-90-jours",
+  "title": "Plan & processus d'onboarding digital 30-60-90 jours",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "nom-de-l-employe",
+      "type": "text",
+      "label": "Nom de l'employé",
+      "placeholder": "Exemple de nom",
+      "required": true
+    },
+    {
+      "name": "poste-occupe",
+      "type": "select",
+      "options": [
+        "Développeur",
+        "Conseiller RH",
+        "Chef d'équipe"
+      ],
+      "label": "Poste occupé par l'employé",
+      "placeholder": "Exemple de poste",
+      "required": true
+    },
+    {
+      "name": "objectifs-de-l-employe",
+      "type": "textarea",
+      "label": "Objectifs de l'employé",
+      "placeholder": "Exemple d'objectif",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Ressources disponibles pour l'employé",
+      "placeholder": "Exemple de ressource",
+      "required": true
+    },
+    {
+      "name": "challenges-encountres",
+      "type": "textarea",
+      "label": "Challenges rencontrés par l'employé",
+      "placeholder": "Exemple de challenge",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom de l'employé: {nom-de-l-employe}, Poste occupé: {poste-occupe}, Objectifs de l'employé: {objectifs-de-l-employe}, Ressources disponibles: {ressources-disponibles}, Challenges rencontrés: {challenges-encountres}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

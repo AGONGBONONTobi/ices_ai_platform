@@ -1,0 +1,78 @@
+{
+  "id": "etude-faisabilite-projet-agricole",
+  "title": "Étude de faisabilité d'un projet agricole",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "nom_projet",
+      "type": "text",
+      "label": "Nom du projet agricole",
+      "placeholder": "Ex: Ferme de pommes de terre",
+      "required": true
+    },
+    {
+      "name": "surface_disponible",
+      "type": "number",
+      "label": "Surface disponible en hectares",
+      "placeholder": "Ex: 5",
+      "required": true
+    },
+    {
+      "name": "type_culture",
+      "type": "select",
+      "options": [
+        "Pommes de terre",
+        "Maïs",
+        "Céleri",
+        "Autre"
+      ],
+      "label": "Type de culture envisagée",
+      "required": true
+    },
+    {
+      "name": "budget_prevu",
+      "type": "number",
+      "label": "Budget prévu en euros",
+      "placeholder": "Ex: 20000",
+      "required": true
+    },
+    {
+      "name": "description_projet",
+      "type": "textarea",
+      "label": "Description détaillée du projet",
+      "placeholder": "Ex: ...",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet: {nom_projet}, Surface disponible: {surface_disponible} hectares, Type de culture: {type_culture}, Budget prévu: {budget_prevu} euros, Description: {description_projet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

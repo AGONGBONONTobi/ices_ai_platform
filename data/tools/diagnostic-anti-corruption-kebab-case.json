@@ -1,0 +1,77 @@
+{
+  "id": "diagnostic-anti-corruption-kebab-case",
+  "title": "Diagnostic anti-corruption (ISO 37001)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "structure-organisationnelle",
+      "type": "textarea",
+      "label": "Présentez la structure organisationnelle de votre entreprise.",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "politique-anti-corruption",
+      "type": "textarea",
+      "label": "Présentez la politique anti-corruption de votre entreprise.",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "procedures-internes",
+      "type": "textarea",
+      "label": "Présentez les procédures internes mises en place pour prévenir la corruption.",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "formation-et-sensibilisation",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Votre entreprise propose-t-elle des formations et des sensibilisations sur la lutte contre la corruption ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "mechanismes-de-denonciation",
+      "type": "textarea",
+      "label": "Présentez les mécanismes de dénonciation mis en place pour signaler les cas de corruption.",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en lutte contre la corruption. L'utilisateur a répondu : Structure organisationnelle : {structure-organisationnelle}, Politique anti-corruption : {politique-anti-corruption}, Procédures internes : {procedures-internes}, Formation et sensibilisation : {formation-et-sensibilisation}, Mécanismes de dénonciation : {mechanismes-de-denonciation}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

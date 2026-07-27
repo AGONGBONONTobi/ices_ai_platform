@@ -1,0 +1,23 @@
+{
+  "id": "diagnostic-de-maturite-ia",
+  "title": "Diagnostic de maturité IA & intelligence artificielle",
+  "category": "RH",
+  "inputs": [
+    {
+      "name": "niveauMaturiteIA",
+      "type": "number",
+      "label": "Niveau de maturité IA",
+      "placeholder": "Exemple : 4",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en diagnostic de maturité IA. Utilise {niveauMaturiteIA} pour évaluer la maturité IA de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "string"
+      }
+    }
+  }
+}

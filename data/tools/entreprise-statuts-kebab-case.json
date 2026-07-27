@@ -1,0 +1,80 @@
+{
+  "id": "entreprise-statuts-kebab-case",
+  "title": "Template de statuts d'entreprise",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "forme-juridique",
+      "type": "select",
+      "options": [
+        "SARL",
+        "SA",
+        "SAS",
+        "SNC",
+        "SCS"
+      ],
+      "label": "Quelle forme juridique a choisi l'entreprise ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "nom-entreprise",
+      "type": "text",
+      "label": "Quel est le nom de l'entreprise ?",
+      "placeholder": "Exemple : Société Anonyme",
+      "required": true
+    },
+    {
+      "name": "siege-social",
+      "type": "textarea",
+      "label": "Où est situé le siège social de l'entreprise ?",
+      "placeholder": "Exemple : 12 rue de la République, 75001 Paris",
+      "required": true
+    },
+    {
+      "name": "capital-social",
+      "type": "number",
+      "label": "Quel est le montant du capital social de l'entreprise ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "actionnaires",
+      "type": "textarea",
+      "label": "Qui sont les actionnaires de l'entreprise ?",
+      "placeholder": "Exemple : Jean Dupont, Pierre Martin, Marie Dupont",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en droit des sociétés. L'utilisateur a répondu : Forme juridique : {forme-juridique}, Nom de l'entreprise : {nom-entreprise}, Siège social : {siege-social}, Capital social : {capital-social} €, Actionnaires : {actionnaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

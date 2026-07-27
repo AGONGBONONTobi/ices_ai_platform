@@ -1,0 +1,80 @@
+{
+  "id": "analyse-valeur-value-engineering-achats",
+  "title": "Analyse de la valeur & value engineering achats",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "objectif_commercial",
+      "type": "textarea",
+      "label": "Quel est l'objectif commercial de votre projet d'achats?",
+      "placeholder": "Ex: Réduire les coûts de 10% tout en améliorant la qualité",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué (en €)?",
+      "placeholder": "Ex: 500000",
+      "required": true
+    },
+    {
+      "name": "duree_projet",
+      "type": "number",
+      "label": "Durée prévue du projet (en mois)",
+      "placeholder": "Ex: 12",
+      "required": true
+    },
+    {
+      "name": "criteres_evaluation",
+      "type": "select",
+      "options": [
+        "Coût",
+        "Qualité",
+        "Délais",
+        "Innovation",
+        "Durabilité"
+      ],
+      "label": "Quels critères d'évaluation sont prioritaires?",
+      "placeholder": "Sélectionnez un ou plusieurs",
+      "required": true
+    },
+    {
+      "name": "parties_interesses",
+      "type": "textarea",
+      "label": "Qui sont les parties prenantes clés?",
+      "placeholder": "Ex: Fournisseurs, équipes internes, clients",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif commercial: {objectif_commercial}, Budget: {budget}, Durée projet: {duree_projet}, Critères d'évaluation: {criteres_evaluation}, Parties prenantes: {parties_interesses}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

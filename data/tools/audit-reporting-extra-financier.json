@@ -1,0 +1,72 @@
+{
+  "id": "audit-reporting-extra-financier",
+  "title": "Audit du reporting extra-financier",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Présentez les principaux objectifs du reporting extra-financier de votre entreprise.",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Énergie",
+        "Eau",
+        "Matières premières",
+        "Émissions de gaz à effet de serre"
+      ],
+      "label": "Quel est le principal thème de reporting extra-financier de votre entreprise ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Quel est le pourcentage d'objectifs de développement durable atteints par votre entreprise en 2022 ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Présentez les principaux indicateurs clés de performance (KPI) utilisés pour mesurer les progrès de votre entreprise en matière de développement durable.",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs du reporting extra-financier : {variable1}, Thème de reporting extra-financier : {variable2}, Pourcentage d'objectifs de développement durable atteints : {variable3}%, Indicateurs clés de performance (KPI) : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

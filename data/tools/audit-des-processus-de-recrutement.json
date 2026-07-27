@@ -1,0 +1,71 @@
+{
+  "id": "audit-des-processus-de-recrutement",
+  "title": "Audit des processus de recrutement",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "duree_de_recrutement",
+      "type": "number",
+      "label": "Quelle est la durée moyenne de recrutement pour un poste ?",
+      "placeholder": "Exemple : 30 jours",
+      "required": true
+    },
+    {
+      "name": "nombre_de_candidats_par_poste",
+      "type": "number",
+      "label": "Quel est le nombre moyen de candidats par poste ?",
+      "placeholder": "Exemple : 50",
+      "required": true
+    },
+    {
+      "name": "type_de_selection",
+      "type": "select",
+      "options": [
+        "Entretien en personne",
+        "Entretien par visioconférence",
+        "Évaluation de compétences"
+      ],
+      "label": "Quel type de sélection utilisez-vous ?",
+      "placeholder": "Exemple : Entretien en personne",
+      "required": true
+    },
+    {
+      "name": "commentaires_sur_le_processus",
+      "type": "textarea",
+      "label": "Quels commentaires avez-vous sur le processus de recrutement actuel ?",
+      "placeholder": "Exemple : Nous avons du mal à trouver les bons candidats.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Duree de recrutement : {duree_de_recrutement} jours, Nombre de candidats par poste : {nombre_de_candidats_par_poste}, Type de sélection : {type_de_selection}, Commentaires sur le processus : {commentaires_sur_le_processus}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

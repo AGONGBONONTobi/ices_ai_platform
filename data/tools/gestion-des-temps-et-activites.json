@@ -1,0 +1,72 @@
+{
+  "id": "gestion-des-temps-et-activites",
+  "title": "Gestion des temps & activités (GTA/SIRH)",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "duree-travail-hebdomadaire",
+      "type": "number",
+      "label": "Quelle est la durée de travail hebdomadaire moyenne de vos collaborateurs ?",
+      "placeholder": "Exemple : 35 heures",
+      "required": true
+    },
+    {
+      "name": "pourcentage-de-temps-de-travail-loin",
+      "type": "number",
+      "label": "Quel est le pourcentage de temps de travail effectué à distance ?",
+      "placeholder": "Exemple : 50%",
+      "required": true
+    },
+    {
+      "name": "type-de-contract",
+      "type": "select",
+      "options": [
+        "CDD",
+        "CDI",
+        "Intérimaire",
+        "Autre"
+      ],
+      "label": "Quel est le type de contrat de travail le plus courant chez vous ?",
+      "placeholder": "Exemple : CDI",
+      "required": true
+    },
+    {
+      "name": "description-de-la-tache",
+      "type": "textarea",
+      "label": "Pouvez-vous décrire la tâche ou le projet le plus complexe que vos collaborateurs ont réalisé ces derniers mois ?",
+      "placeholder": "Exemple : Développer un nouveau produit",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Duree travail hebdomadaire : {duree-travail-hebdomadaire}, Pourcentage de temps de travail loin : {pourcentage-de-temps-de-travail-loin}, Type de contrat : {type-de-contract}, Description de la tache : {description-de-la-tache}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

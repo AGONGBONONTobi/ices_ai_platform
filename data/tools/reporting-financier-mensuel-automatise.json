@@ -1,0 +1,78 @@
+{
+  "id": "reporting-financier-mensuel-automatise",
+  "title": "Reporting financier mensuel automatisé",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "periode",
+      "type": "text",
+      "label": "Sélectionnez la période de rapport (ex : Janvier 2023)",
+      "placeholder": "Janvier 2023",
+      "required": true
+    },
+    {
+      "name": "revenus",
+      "type": "number",
+      "label": "Entrez les revenus totaux de la période",
+      "placeholder": "0",
+      "required": true
+    },
+    {
+      "name": "depenses",
+      "type": "number",
+      "label": "Entrez les dépenses totales de la période",
+      "placeholder": "0",
+      "required": true
+    },
+    {
+      "name": "marge",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyenne",
+        "Elevée"
+      ],
+      "label": "Sélectionnez la marge de profit de la période",
+      "placeholder": "Choisissez une option",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Ajoutez des commentaires supplémentaires sur la période",
+      "placeholder": "Exemple de commentaire",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un analyste financier. L'utilisateur a répondu : Période: {periode}, Revenus: {revenus}, Dépenses: {depenses}, Marge: {marge}, Commentaires: {commentaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

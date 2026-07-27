@@ -1,0 +1,23 @@
+{
+  "id": "diagnostic-du-business-model",
+  "title": "Diagnostic du business model (BMC)",
+  "category": "RH",
+  "inputs": [
+    {
+      "name": "businessModel",
+      "type": "textarea",
+      "label": "Business model",
+      "placeholder": "Exemple : Business model actuel de l'entreprise",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en diagnostic du business model. Utilise {businessModel} pour évaluer le business model de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "string"
+      }
+    }
+  }
+}

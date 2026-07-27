@@ -1,0 +1,77 @@
+{
+  "id": "outil-gestion-flux-douaniers-transitaires",
+  "title": "Outil de gestion des flux douaniers & transitaires",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_de_marchandise",
+      "type": "select",
+      "options": [
+        "Produits alimentaires",
+        "Produits chimiques",
+        "Matériel électronique",
+        "Autres"
+      ],
+      "label": "Quel est le type de marchandise transportée ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "poids_de_marchandise",
+      "type": "number",
+      "label": "Quel est le poids total de la marchandise en kg ?",
+      "placeholder": "100",
+      "required": true
+    },
+    {
+      "name": "description_probleme",
+      "type": "textarea",
+      "label": "Décrivez les problèmes rencontrés lors du transport ou de la douane :",
+      "placeholder": "Problèmes de délais, de documentation, etc.",
+      "required": false
+    },
+    {
+      "name": "urgence",
+      "type": "select",
+      "options": [
+        "Haute",
+        "Moyenne",
+        "Basse"
+      ],
+      "label": "Quelle est l'urgence de la situation ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en gestion des flux douaniers et transitaires. L'utilisateur a répondu : Type de marchandise: {type_de_marchandise}, Poids de marchandise: {poids_de_marchandise} kg, Description du problème: {description_probleme}, Urgence: {urgence}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "id": "plan-deploiement-de-projet-a-l-international",
+  "title": "Plan de déploiement de projet à l'international",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "pays",
+      "type": "select",
+      "options": [
+        "France",
+        "Allemagne",
+        "États-Unis",
+        "Chine",
+        "Inde"
+      ],
+      "label": "Quel est le pays cible pour le déploiement du projet ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "equipe",
+      "type": "textarea",
+      "label": "Quel est le nombre d'employés qui seront affectés au projet ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué pour le déploiement du projet ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "duree",
+      "type": "number",
+      "label": "Quelle est la durée prévue pour le déploiement du projet ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "risques",
+      "type": "textarea",
+      "label": "Quels sont les principaux risques identifiés pour le déploiement du projet ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion de projet. L'utilisateur a répondu : Pays : {pays}, Équipe : {equipe}, Budget : {budget}, Durée : {duree}, Risques : {risques}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "test-des-valeurs-professionnelles-schwartz-graves",
+  "title": "Test des valeurs professionnelles (Schwartz/Graves)",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "importance-financiere",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, combien est-il important pour vous de gagner de l'argent ?",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "importance-sécurité",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, combien est-il important pour vous de vous sentir en sécurité dans votre vie professionnelle ?",
+      "placeholder": "Exemple : 6",
+      "required": true
+    },
+    {
+      "name": "importance-pouvoir",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, combien est-il important pour vous d'avoir du pouvoir et d'être influent dans votre vie professionnelle ?",
+      "placeholder": "Exemple : 4",
+      "required": true
+    },
+    {
+      "name": "importance-égalité",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, combien est-il important pour vous de vous sentir égal à vos collègues et de travailler dans un environnement égalitaire ?",
+      "placeholder": "Exemple : 8",
+      "required": true
+    },
+    {
+      "name": "importance-autonomie",
+      "type": "textarea",
+      "label": "Qu'est-ce qui vous fait sentir autonome et en contrôle de votre vie professionnelle ?",
+      "placeholder": "Exemple : avoir le temps de faire les choses à ma manière",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Importance financière : {importance-financiere}, Importance sécurité : {importance-sécurité}, Importance pouvoir : {importance-pouvoir}, Importance égalité : {importance-égalité}, Importance autonomie : {importance-autonomie}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

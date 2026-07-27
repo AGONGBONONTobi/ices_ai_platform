@@ -1,0 +1,85 @@
+{
+  "id": "due-diligence-financiere-et-d-investissement",
+  "title": "Due diligence financière & d'investissement",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Société XYZ",
+      "required": true
+    },
+    {
+      "name": "chiffre-d-affaires",
+      "type": "number",
+      "label": "Chiffre d'affaires annuel",
+      "placeholder": "Exemple : 10 000 000 €",
+      "required": true
+    },
+    {
+      "name": "taux-de-marge",
+      "type": "number",
+      "label": "Taux de marge brute",
+      "placeholder": "Exemple : 20%",
+      "required": true
+    },
+    {
+      "name": "dette-financiere",
+      "type": "number",
+      "label": "Dette financière",
+      "placeholder": "Exemple : 500 000 €",
+      "required": true
+    },
+    {
+      "name": "type-d-investissement",
+      "type": "select",
+      "options": [
+        "Investissement direct",
+        "Investissement indirect",
+        "Investissement à risque"
+      ],
+      "label": "Type d'investissement",
+      "placeholder": "Exemple : Investissement direct",
+      "required": true
+    },
+    {
+      "name": "objectifs-d-investissement",
+      "type": "textarea",
+      "label": "Objectifs d'investissement",
+      "placeholder": "Exemple : Génération de revenus, Croissance du capital",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en due diligence financière & d'investissement. L'utilisateur a répondu : Entreprise : {entreprise}, Chiffre d'affaires : {chiffre-d-affaires}, Taux de marge : {taux-de-marge}, Dette financière : {dette-financiere}, Type d'investissement : {type-d-investissement}, Objectifs d'investissement : {objectifs-d-investissement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

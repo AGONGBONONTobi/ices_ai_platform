@@ -1,0 +1,71 @@
+{
+  "id": "tresorerie-optimisation",
+  "title": "Optimisation & prévision de trésorerie",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "periode",
+      "type": "number",
+      "label": "Sélectionnez la période de trésorerie à analyser (en mois)",
+      "placeholder": "Exemple : 3",
+      "required": true
+    },
+    {
+      "name": "revenus",
+      "type": "textarea",
+      "label": "Entrez les revenus prévisibles pour la période sélectionnée",
+      "placeholder": "Exemple : 10 000€, 12 000€, 15 000€, etc.",
+      "required": true
+    },
+    {
+      "name": "depenses",
+      "type": "textarea",
+      "label": "Entrez les dépenses prévisibles pour la période sélectionnée",
+      "placeholder": "Exemple : 5 000€, 6 000€, 8 000€, etc.",
+      "required": true
+    },
+    {
+      "name": "taux_taux",
+      "type": "select",
+      "options": [
+        "5%",
+        "10%",
+        "15%"
+      ],
+      "label": "Sélectionnez le taux d'intérêt pour la trésorerie",
+      "placeholder": "Exemple : 5%",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a sélectionné une période de trésorerie de {periode} mois, avec des revenus prévisibles de {revenus} et des dépenses prévisibles de {depenses}. Le taux d'intérêt pour la trésorerie est de {taux_taux}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

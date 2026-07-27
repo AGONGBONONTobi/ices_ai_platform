@@ -1,0 +1,79 @@
+{
+  "id": "plan-de-decarbonation-de-la-supply-chain",
+  "title": "Plan de décarbonation de la supply chain",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "number",
+      "label": "Nombre d'unités de transport par an",
+      "placeholder": "Ex: 5000",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "number",
+      "label": "Pourcentage de fournisseurs utilisant des énergies renouvelables",
+      "placeholder": "Ex: 30",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "select",
+      "options": [
+        "Transport",
+        "Emballage",
+        "Production",
+        "Logistique interne"
+      ],
+      "label": "Principales sources d'émissions (sélectionner toutes les qui s'appliquent)",
+      "placeholder": "Ex: Transport, Emballage",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "textarea",
+      "label": "Décrivez les initiatives actuelles de votre entreprise pour réduire l'empreinte carbone",
+      "placeholder": "Ex: Installation de panneaux solaires, optimisation des itinéraires",
+      "required": true
+    },
+    {
+      "name": "variable5",
+      "type": "number",
+      "label": "Budget alloué à la décarbonation (en €)",
+      "placeholder": "Ex: 200000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nombre d'unités de transport par an: {variable1}, Pourcentage de fournisseurs utilisant des énergies renouvelables: {variable2}, Principales sources d'émissions: {variable3}, Initiatives actuelles: {variable4}, Budget alloué: {variable5}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

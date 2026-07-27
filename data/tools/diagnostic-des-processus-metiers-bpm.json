@@ -1,0 +1,71 @@
+{
+  "id": "diagnostic-des-processus-metiers-bpm",
+  "title": "Diagnostic des processus métiers (BPM)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "processusMetier",
+      "type": "text",
+      "label": "Quel est le processus métier que vous souhaitez diagnostiquer ?",
+      "placeholder": "Exemple : Gestion des commandes",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux de ce processus métier ?",
+      "placeholder": "Exemple : Améliorer la satisfaction client, réduire les coûts",
+      "required": true
+    },
+    {
+      "name": "frequence",
+      "type": "select",
+      "options": [
+        "quotidien",
+        "hebdomadaire",
+        "mensuel",
+        "trimestriel"
+      ],
+      "label": "Avec quelle fréquence ce processus métier est-il exécuté ?",
+      "required": true
+    },
+    {
+      "name": "acteurs",
+      "type": "text",
+      "label": "Quels sont les acteurs impliqués dans ce processus métier ?",
+      "placeholder": "Exemple : Service client, équipe de production",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en diagnostic de processus métier. L'utilisateur a répondu : Processus métier : {processusMetier}, Objectifs : {objectifs}, Fréquence : {frequence}, Acteurs : {acteurs}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer ce processus métier.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

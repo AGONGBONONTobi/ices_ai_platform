@@ -1,0 +1,71 @@
+{
+  "id": "audit-politiques-diversite-inclusion",
+  "title": "Audit des politiques diversité & inclusion",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Présentez les principes de base de votre politique de diversité et inclusion.",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Formation obligatoire pour tous les employés",
+        "Formation facultative pour les employés",
+        "Aucune formation"
+      ],
+      "label": "Quelle est la politique de formation en matière de diversité et inclusion dans votre entreprise ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Combien de postes de direction sont occupés par des femmes dans votre entreprise ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Présentez les mesures que votre entreprise a prises pour promouvoir l'inclusion des personnes handicapées.",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Principe de base de la politique de diversité et inclusion : {variable1}, Formation en matière de diversité et inclusion : {variable2}, Nombre de postes de direction occupés par des femmes : {variable3}, Mesures pour promouvoir l'inclusion des personnes handicapées : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

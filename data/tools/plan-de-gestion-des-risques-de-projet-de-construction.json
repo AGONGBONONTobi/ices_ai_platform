@@ -1,0 +1,86 @@
+{
+  "id": "plan-de-gestion-des-risques-de-projet-de-construction",
+  "title": "Plan de gestion des risques de projet de construction",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "nomDuProjet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple : Construction d'un immeuble",
+      "required": true
+    },
+    {
+      "name": "descriptionDuProjet",
+      "type": "textarea",
+      "label": "Description du projet",
+      "placeholder": "Exemple : Construction d'un immeuble de 10 étages avec 50 logements",
+      "required": true
+    },
+    {
+      "name": "typeDeRisque",
+      "type": "select",
+      "options": [
+        "Technique",
+        "Financier",
+        "Environnemental",
+        "Social"
+      ],
+      "label": "Type de risque",
+      "placeholder": "Exemple : Technique",
+      "required": true
+    },
+    {
+      "name": "descriptionDuRisque",
+      "type": "textarea",
+      "label": "Description du risque",
+      "placeholder": "Exemple : Risque de retard de livraison",
+      "required": true
+    },
+    {
+      "name": "probabiliteDuRisque",
+      "type": "number",
+      "label": "Probabilité du risque (sur 100)",
+      "placeholder": "Exemple : 50",
+      "required": true
+    },
+    {
+      "name": "impactDuRisque",
+      "type": "number",
+      "label": "Impact du risque (sur 100)",
+      "placeholder": "Exemple : 80",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet : {nomDuProjet}, Description du projet : {descriptionDuProjet}, Type de risque : {typeDeRisque}, Description du risque : {descriptionDuRisque}, Probabilité du risque : {probabiliteDuRisque}, Impact du risque : {impactDuRisque}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

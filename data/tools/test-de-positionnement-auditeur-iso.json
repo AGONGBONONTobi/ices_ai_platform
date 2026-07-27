@@ -1,0 +1,89 @@
+{
+  "id": "test-de-positionnement-auditeur-iso",
+  "title": "Test de positionnement auditeur ISO (9001/14001/45001/27001)",
+  "category": "Certification de Compétences & Personnes",
+  "inputs": [
+    {
+      "name": "niveau_experience",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est votre niveau d'expérience en audit ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "connaissances_normatives",
+      "type": "textarea",
+      "label": "Décrivez vos connaissances des normes ISO 9001, 14001, 45001 et 27001",
+      "placeholder": "Ex: Vous avez une expérience de 5 ans en audit, vous avez travaillé sur des projets de mise en place de systèmes de gestion de la qualité...",
+      "required": true
+    },
+    {
+      "name": "formation_actuelle",
+      "type": "select",
+      "options": [
+        "Aucune",
+        "Formation de base",
+        "Lead Implementer",
+        "Lead Auditor"
+      ],
+      "label": "Quelle est votre formation actuelle ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "competences_techniques",
+      "type": "textarea",
+      "label": "Décrivez vos compétences techniques en audit (ex: analyse de risques, planification d'audit, etc.)",
+      "placeholder": "Ex: Vous avez une expérience en analyse de risques, vous avez travaillé sur des projets de planification d'audit...",
+      "required": true
+    },
+    {
+      "name": "objectif_professionnel",
+      "type": "select",
+      "options": [
+        "Lead Implementer",
+        "Lead Auditor",
+        "Foundation"
+      ],
+      "label": "Quel est votre objectif professionnel ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un auditeur expérimenté. L'utilisateur a répondu : Niveau d'expérience: {niveau_experience}, Connaissances normatives: {connaissances_normatives}, Formation actuelle: {formation_actuelle}, Compétences techniques: {competences_techniques}, Objectif professionnel: {objectif_professionnel}. Évaluez les connaissances et compétences de l'utilisateur en matière d'audit selon les normes ISO 9001, 14001, 45001 et 27001. Donnez un score global sur 100, une évaluation par axe (connaissances normatives, compétences techniques, expérience) et des recommandations de formation adaptées pour atteindre son objectif professionnel.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

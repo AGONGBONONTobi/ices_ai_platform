@@ -1,0 +1,73 @@
+{
+  "id": "audit-des-parties-prenantes-et-engagement-stakeholders",
+  "title": "Audit des parties prenantes & engagement stakeholders",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "objectifs-stratégiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de l'entreprise ?",
+      "placeholder": "Exemple : réduire les émissions de gaz à effet de serre, améliorer la qualité de vie au travail",
+      "required": true
+    },
+    {
+      "name": "parties-prenantes-identifiées",
+      "type": "select",
+      "options": [
+        "Les clients",
+        "Les employés",
+        "Les fournisseurs",
+        "Les partenaires",
+        "Les investisseurs"
+      ],
+      "label": "Quelles parties prenantes ont été identifiées comme étant importantes pour l'entreprise ?",
+      "placeholder": "Sélectionnez les parties prenantes pertinentes",
+      "required": true
+    },
+    {
+      "name": "engagement-stakeholders",
+      "type": "textarea",
+      "label": "Quels sont les moyens mis en œuvre pour engager les parties prenantes ?",
+      "placeholder": "Exemple : communication régulière, participation à des événements, création de communautés de pratiques",
+      "required": true
+    },
+    {
+      "name": "resultats-es",
+      "type": "number",
+      "label": "Quels sont les résultats ES (environnementaux et sociaux) attendus de l'audit ?",
+      "placeholder": "Exemple : réduction des émissions de gaz à effet de serre de 10%",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-stratégiques}, Parties prenantes identifiées : {parties-prenantes-identifiées}, Engagement des parties prenantes : {engagement-stakeholders}, Résultats ES attendus : {resultats-es}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "template-de-plan-de-communication-projet",
+  "title": "Template de plan de communication projet",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "nomDuProjet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple : Projet de développement de nouveaux produits",
+      "required": true
+    },
+    {
+      "name": "objectifDuProjet",
+      "type": "textarea",
+      "label": "Objectif du projet",
+      "placeholder": "Exemple : Développer un nouveau produit pour répondre à la demande croissante du marché",
+      "required": true
+    },
+    {
+      "name": "publicCible",
+      "type": "select",
+      "options": [
+        "Équipe de direction",
+        "Équipe de développement",
+        "Équipe de vente",
+        "Tous"
+      ],
+      "label": "Public cible",
+      "placeholder": "Exemple : Équipe de direction",
+      "required": true
+    },
+    {
+      "name": "canalDeCommunication",
+      "type": "select",
+      "options": [
+        "Réunion mensuelle",
+        "Courriel",
+        "Site intranet",
+        "Tous"
+      ],
+      "label": "Canal de communication",
+      "placeholder": "Exemple : Réunion mensuelle",
+      "required": true
+    },
+    {
+      "name": "frequanceDeCommunication",
+      "type": "number",
+      "label": "Fréquence de communication",
+      "placeholder": "Exemple : 1 fois par semaine",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet : {nomDuProjet}, Objectif du projet : {objectifDuProjet}, Public cible : {publicCible}, Canal de communication : {canalDeCommunication}, Fréquence de communication : {frequanceDeCommunication}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

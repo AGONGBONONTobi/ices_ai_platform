@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "brand": "Plateforme IA",
+    "toolsCount": "outils disponibles",
+    "back": "Retour au catalogue"
+  },
+  "hero": {
+    "badge": "Propulsé par des LLMs de pointe",
+    "title": "Votre catalogue d'outils",
+    "titleHighlight": "IA professionnels",
+    "subtitle": "Des diagnostics, audits, analyses et générateurs de contenu IA, à portée de clic. Chaque outil produit un rapport professionnel en quelques secondes."
+  },
+  "catalog": {
+    "searchPlaceholder": "Rechercher un outil IA... (ex: bilan, audit, contrat)",
+    "filterAll": "Tous",
+    "resultCount": "outil",
+    "resultCountPlural": "outils",
+    "resultIn": "dans",
+    "empty": {
+      "title": "Aucun outil trouvé",
+      "subtitle": "Essayez un autre mot-clé ou une autre catégorie."
+    },
+    "emptyDb": {
+      "title": "La base de données est vide.",
+      "subtitle": "Lancez le script d'ingestion pour peupler le catalogue."
+    }
+  },
+  "tool": {
+    "launch": "Lancer l'outil",
+    "generate": "Générer le résultat",
+    "generating": "Génération en cours...",
+    "result": "Résultat généré",
+    "restart": "Relancer l'outil",
+    "downloadPdf": "Télécharger le Rapport (PDF)",
+    "error": "Une erreur est survenue"
+  },
+  "language": "Langue"
+}

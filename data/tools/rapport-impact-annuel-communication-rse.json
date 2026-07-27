@@ -1,0 +1,73 @@
+{
+  "id": "rapport-impact-annuel-communication-rse",
+  "title": "Rapport d'impact annuel & communication RSE",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "objectifs-rse",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de la stratégie RSE de votre entreprise ?",
+      "placeholder": "Exemple : réduire les émissions de gaz à effet de serre, améliorer la gestion des déchets, etc.",
+      "required": true
+    },
+    {
+      "name": "indicateurs-de-suivi",
+      "type": "text",
+      "label": "Quels sont les indicateurs de suivi utilisés pour évaluer la performance de la stratégie RSE ?",
+      "placeholder": "Exemple : émissions de gaz à effet de serre, consommation d'énergie, etc.",
+      "required": true
+    },
+    {
+      "name": "communication-rse",
+      "type": "select",
+      "options": [
+        "site web",
+        "réseaux sociaux",
+        "campagnes publicitaires",
+        "événements",
+        "autres"
+      ],
+      "label": "Quels canaux de communication utilisez-vous pour partager les informations RSE avec les parties prenantes ?",
+      "placeholder": "Exemple : site web, réseaux sociaux, etc.",
+      "required": true
+    },
+    {
+      "name": "budget-rse",
+      "type": "number",
+      "label": "Quel est le budget alloué à la stratégie RSE pour l'année en cours ?",
+      "placeholder": "Exemple : 100 000 euros",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs RSE : {objectifs-rse}, Indicateurs de suivi : {indicateurs-de-suivi}, Communication RSE : {communication-rse}, Budget RSE : {budget-rse}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

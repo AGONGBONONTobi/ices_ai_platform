@@ -1,0 +1,83 @@
+{
+  "id": "prospection-pipeline-crm-commercial",
+  "title": "Prospection, pipeline & CRM commercial",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise cible",
+      "placeholder": "Exemple : XYZ Inc.",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Finance",
+        "Santé",
+        "Autres"
+      ],
+      "label": "Secteur d'activité de l'entreprise cible",
+      "placeholder": "Exemple : Technologie",
+      "required": true
+    },
+    {
+      "name": "prospecteur",
+      "type": "textarea",
+      "label": "Description du prospecteur (fonction, rôle, responsabilités)",
+      "placeholder": "Exemple : Responsable des ventes, gestionnaire de compte",
+      "required": true
+    },
+    {
+      "name": "pipeline",
+      "type": "number",
+      "label": "Étape actuelle dans le pipeline (1-10)",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "crm",
+      "type": "select",
+      "options": [
+        "Utilise un CRM",
+        "Ne utilise pas de CRM"
+      ],
+      "label": "Utilisation d'un CRM par l'entreprise cible",
+      "placeholder": "Exemple : Utilise un CRM",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise : {entreprise}, Secteur : {secteur}, Prospecteur : {prospecteur}, Pipeline : {pipeline}, CRM : {crm}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

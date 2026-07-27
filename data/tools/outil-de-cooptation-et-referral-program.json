@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-cooptation-et-referral-program",
+  "title": "Outil de cooptation & referral program",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "nom_de_lentreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "type_de_contrat",
+      "type": "select",
+      "options": [
+        "CDD",
+        "CDI",
+        "Intérim"
+      ],
+      "label": "Type de contrat",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "duree_de_contrat",
+      "type": "number",
+      "label": "Durée de contrat (en mois)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "salaire_mensuel",
+      "type": "number",
+      "label": "Salaire mensuel (en euros)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "benefices_sociaux",
+      "type": "textarea",
+      "label": "Avantages sociaux (ex : mutuelle, retraite, etc.)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom de l'entreprise: {nom_de_lentreprise}, Type de contrat: {type_de_contrat}, Durée de contrat: {duree_de_contrat} mois, Salaire mensuel: {salaire_mensuel} euros, Avantages sociaux: {benefices_sociaux}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

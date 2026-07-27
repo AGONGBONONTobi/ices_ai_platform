@@ -1,0 +1,76 @@
+{
+  "id": "outil-de-gestion-des-idees",
+  "title": "Outil de gestion des idées (Ideation management)",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "idee",
+      "type": "textarea",
+      "label": "Décrivez votre idée",
+      "placeholder": "Exemple : Création d'un nouveau produit pour améliorer l'efficacité énergétique",
+      "required": true
+    },
+    {
+      "name": "domaine",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Santé",
+        "Environnement",
+        "Éducation"
+      ],
+      "label": "Domaine d'application de l'idée",
+      "required": true
+    },
+    {
+      "name": "objectif",
+      "type": "text",
+      "label": "Quel est l'objectif principal de votre idée ?",
+      "placeholder": "Exemple : Réduire les coûts, améliorer la qualité de vie",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "select",
+      "options": [
+        "Grand public",
+        "Entreprises",
+        "Institutions",
+        "Gouvernements"
+      ],
+      "label": "Public cible pour votre idée",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en innovation. L'utilisateur a répondu : Idée: {idee}, Domaine: {domaine}, Objectif: {objectif}, Public cible: {public_cible}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (innovation, faisabilité, impact), et des recommandations pour améliorer cette idée.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

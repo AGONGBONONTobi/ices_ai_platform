@@ -1,0 +1,71 @@
+{
+  "id": "analyse-causes-racines-ishikawa-5-why",
+  "title": "Analyse des causes racines (Ishikawa / 5 Pourquoi)",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "cause_identified",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non",
+        "En cours"
+      ],
+      "label": "Avez-vous identifié une cause principale ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "process_description",
+      "type": "textarea",
+      "label": "Décrivez le processus concerné",
+      "placeholder": "Exemple: processus de contrôle qualité",
+      "required": true
+    },
+    {
+      "name": "root_cause",
+      "type": "textarea",
+      "label": "Quelle est la cause racine identifiée ?",
+      "placeholder": "Exemple: manque de formation",
+      "required": false
+    },
+    {
+      "name": "num_why_questions",
+      "type": "number",
+      "label": "Combien de questions 5 Pourquoi avez-vous posées ?",
+      "placeholder": "Exemple: 5",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Cause identifiée: {cause_identified}, Processus: {process_description}, Cause racine: {root_cause}, Nombre de 5 Pourquoi: {num_why_questions}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

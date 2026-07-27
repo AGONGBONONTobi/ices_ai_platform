@@ -1,0 +1,80 @@
+{
+  "id": "plan-communication-rh-employer-branding",
+  "title": "Plan de communication RH & employer branding",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "text",
+      "label": "Quel est l'objectif principal de votre plan de communication RH?",
+      "placeholder": "Exemple: Accroître la notoriété de l'employeur",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "select",
+      "options": [
+        "Employés internes",
+        "Candidats potentiels",
+        "Partenaires externes",
+        "Investisseurs",
+        "Communauté locale"
+      ],
+      "label": "Quel est le public cible principal?",
+      "placeholder": "Sélectionnez un public",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué (en €)?",
+      "placeholder": "Exemple: 50000",
+      "required": true
+    },
+    {
+      "name": "canaux",
+      "type": "textarea",
+      "label": "Quels canaux de communication envisagez-vous d'utiliser?",
+      "placeholder": "Exemple: Réseaux sociaux, newsletter interne, événements",
+      "required": true
+    },
+    {
+      "name": "indicateurs",
+      "type": "textarea",
+      "label": "Quels indicateurs de performance souhaitez-vous suivre?",
+      "placeholder": "Exemple: Taux de clics, taux de conversion, engagement",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif: {objectif}, Public cible: {public_cible}, Budget: {budget}, Canaux: {canaux}, Indicateurs: {indicateurs}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

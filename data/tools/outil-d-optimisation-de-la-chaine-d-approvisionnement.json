@@ -1,0 +1,71 @@
+{
+  "id": "outil-d-optimisation-de-la-chaine-d-approvisionnement",
+  "title": "Outil d'optimisation de la chaîne d'approvisionnement",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "fournisseurs",
+      "type": "select",
+      "options": [
+        "Fournisseurs locaux",
+        "Fournisseurs internationaux",
+        "Les deux"
+      ],
+      "label": "Quel type de fournisseurs utilisez-vous actuellement ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "delai_livraison",
+      "type": "number",
+      "label": "Quel est le délai de livraison moyen de vos produits ?",
+      "placeholder": "En jours",
+      "required": true
+    },
+    {
+      "name": "description_probleme",
+      "type": "textarea",
+      "label": "Décrivez les problèmes que vous rencontrez actuellement avec votre chaîne d'approvisionnement",
+      "placeholder": "Décrivez les problèmes",
+      "required": true
+    },
+    {
+      "name": "budget_optimisation",
+      "type": "number",
+      "label": "Quel est votre budget alloué pour l'optimisation de la chaîne d'approvisionnement ?",
+      "placeholder": "En euros",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en chaîne d'approvisionnement. L'utilisateur a répondu : Fournisseurs: {fournisseurs}, Délai de livraison: {delai_livraison} jours, Problèmes actuels: {description_probleme}, Budget alloué: {budget_optimisation} euros. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

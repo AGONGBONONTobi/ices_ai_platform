@@ -1,0 +1,73 @@
+{
+  "id": "diagnostic-des-parties-prenantes",
+  "title": "Diagnostic des parties prenantes (stakeholder mapping)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "objectifProjet",
+      "type": "textarea",
+      "label": "Décrivez l'objectif principal du projet",
+      "placeholder": "Exemple : Améliorer la satisfaction client",
+      "required": true
+    },
+    {
+      "name": "partiesPrenantes",
+      "type": "select",
+      "options": [
+        "Investisseurs",
+        "Clients",
+        "Employés",
+        "Fournisseurs",
+        "Partenaires",
+        "Autres"
+      ],
+      "label": "Sélectionnez les parties prenantes clés du projet",
+      "required": true
+    },
+    {
+      "name": "niveauInfluence",
+      "type": "number",
+      "label": "Évaluez le niveau d'influence des parties prenantes sur le projet (sur une échelle de 1 à 10)",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "strategieEngagement",
+      "type": "textarea",
+      "label": "Décrivez la stratégie d'engagement pour chacune des parties prenantes",
+      "placeholder": "Exemple : Réunions régulières avec les investisseurs",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en diagnostic des parties prenantes. L'utilisateur a répondu : Objectif du projet : {objectifProjet}, Parties prenantes clés : {partiesPrenantes}, Niveau d'influence : {niveauInfluence}, Stratégie d'engagement : {strategieEngagement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (identification des parties prenantes, analyse de leur influence, stratégie d'engagement), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

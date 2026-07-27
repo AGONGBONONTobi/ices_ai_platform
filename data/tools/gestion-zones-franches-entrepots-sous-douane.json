@@ -1,0 +1,78 @@
+{
+  "id": "gestion-zones-franches-entrepots-sous-douane",
+  "title": "Outil de gestion des zones franches & entrepôts sous douane",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "zone_type",
+      "type": "select",
+      "options": [
+        "Zone franche",
+        "Entrepôt sous douane",
+        "Zone de transit"
+      ],
+      "label": "Type de zone",
+      "placeholder": "Sélectionnez le type de zone",
+      "required": true
+    },
+    {
+      "name": "number_of_warehouses",
+      "type": "number",
+      "label": "Nombre d'entrepôts",
+      "placeholder": "Entrez le nombre d'entrepôts",
+      "required": true
+    },
+    {
+      "name": "customs_regulations",
+      "type": "textarea",
+      "label": "Réglementations douanières applicables",
+      "placeholder": "Décrivez les réglementations douanières",
+      "required": false
+    },
+    {
+      "name": "budget_annual",
+      "type": "number",
+      "label": "Budget annuel alloué (en €)",
+      "placeholder": "Entrez le budget annuel",
+      "required": true
+    },
+    {
+      "name": "expected_volume",
+      "type": "textarea",
+      "label": "Volume de marchandises attendu",
+      "placeholder": "Décrivez le volume attendu",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Zone type: {zone_type}, Nombre d'entrepôts: {number_of_warehouses}, Réglementations douanières: {customs_regulations}, Budget annuel: {budget_annual}, Volume attendu: {expected_volume}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

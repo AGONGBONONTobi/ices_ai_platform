@@ -1,0 +1,76 @@
+{
+  "id": "strategie-assurance-couverture-optimale",
+  "title": "Stratégie d'assurance & couverture optimale des risques",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "type-d-assurance",
+      "type": "select",
+      "options": [
+        "Assurance vie",
+        "Assurance responsabilité",
+        "Assurance dommages"
+      ],
+      "label": "Quel type d'assurance souhaitez-vous optimiser ?",
+      "placeholder": "Sélectionnez un type d'assurance",
+      "required": true
+    },
+    {
+      "name": "risques-principaux",
+      "type": "textarea",
+      "label": "Quels sont les principaux risques que vous souhaitez couvrir ?",
+      "placeholder": "Décrivez les risques principaux",
+      "required": true
+    },
+    {
+      "name": "budget-assurance",
+      "type": "number",
+      "label": "Quel est votre budget pour l'assurance ?",
+      "placeholder": "Entrez votre budget",
+      "required": true
+    },
+    {
+      "name": "duree-contrat",
+      "type": "select",
+      "options": [
+        "1 an",
+        "2 ans",
+        "3 ans"
+      ],
+      "label": "Quelle durée de contrat souhaitez-vous pour l'assurance ?",
+      "placeholder": "Sélectionnez une durée de contrat",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des risques. L'utilisateur a répondu : Type d'assurance : {type-d-assurance}, Risques principaux : {risques-principaux}, Budget assurance : {budget-assurance}, Durée de contrat : {duree-contrat}. Analyse ces informations et propose une stratégie d'assurance & couverture optimale des risques.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

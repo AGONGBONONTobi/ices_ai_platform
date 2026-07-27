@@ -1,0 +1,85 @@
+{
+  "id": "outil-traceabilite-produits-agricoles-certifications",
+  "title": "Outil de traçabilité des produits agricoles & certifications",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "type_de_produit",
+      "type": "select",
+      "options": [
+        "Fruits",
+        "Légumes",
+        "Céréales",
+        "Produits laitiers",
+        "Viandes"
+      ],
+      "label": "Quel type de produit agricole traquez-vous?",
+      "placeholder": "Ex: Fruits",
+      "required": true
+    },
+    {
+      "name": "certifications_requises",
+      "type": "textarea",
+      "label": "Quelles certifications sont requises pour ce produit?",
+      "placeholder": "Ex: Bio, Fair Trade, ISO 22000",
+      "required": true
+    },
+    {
+      "name": "niveau_de_tracabilite",
+      "type": "select",
+      "options": [
+        "Basique",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel niveau de traçabilité avez-vous actuellement?",
+      "placeholder": "Ex: Avancé",
+      "required": true
+    },
+    {
+      "name": "nombre_de_fournisseurs",
+      "type": "number",
+      "label": "Combien de fournisseurs sont impliqués dans la chaîne?",
+      "placeholder": "Ex: 5",
+      "required": true
+    },
+    {
+      "name": "delais_de_livraison",
+      "type": "textarea",
+      "label": "Quels sont les délais moyens de livraison?",
+      "placeholder": "Ex: 3-5 jours",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : type_de_produit: {type_de_produit}, certifications_requises: {certifications_requises}, niveau_de_tracabilite: {niveau_de_tracabilite}, nombre_de_fournisseurs: {nombre_de_fournisseurs}, delais_de_livraison: {delais_de_livraison}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "plan-reduction-emissions-ges-neutralite-carbone",
+  "title": "Plan de réduction des émissions GES & neutralité carbone",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "objectifs-reduction-ges",
+      "type": "textarea",
+      "label": "Décrivez les objectifs de réduction des émissions de GES que vous souhaitez atteindre",
+      "placeholder": "Exemple : réduire les émissions de GES de 50% d'ici 2025",
+      "required": true
+    },
+    {
+      "name": "strategie-reduction-ges",
+      "type": "text",
+      "label": "Présentez votre stratégie de réduction des émissions de GES",
+      "placeholder": "Exemple : mise en place de systèmes de gestion des énergies, réduction des déplacements",
+      "required": true
+    },
+    {
+      "name": "objectifs-neutralite-carbone",
+      "type": "textarea",
+      "label": "Décrivez les objectifs de neutralité carbone que vous souhaitez atteindre",
+      "placeholder": "Exemple : atteindre la neutralité carbone d'ici 2030",
+      "required": true
+    },
+    {
+      "name": "strategie-neutralite-carbone",
+      "type": "select",
+      "options": [
+        "achat d'énergies renouvelables",
+        "réduction des émissions de GES",
+        "compensation carbone"
+      ],
+      "label": "Présentez votre stratégie de neutralité carbone",
+      "placeholder": "Exemple : achat d'énergies renouvelables",
+      "required": true
+    },
+    {
+      "name": "budget-reduction-ges",
+      "type": "number",
+      "label": "Indiquez le budget alloué à la réduction des émissions de GES",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs de réduction des GES : {objectifs-reduction-ges}, Stratégie de réduction des GES : {strategie-reduction-ges}, Objectifs de neutralité carbone : {objectifs-neutralite-carbone}, Stratégie de neutralité carbone : {strategie-neutralite-carbone}, Budget de réduction des GES : {budget-reduction-ges}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

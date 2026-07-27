@@ -1,0 +1,23 @@
+{
+  "id": "diagnostic-de-performance-commerciale",
+  "title": "Diagnostic de performance commerciale",
+  "category": "RH",
+  "inputs": [
+    {
+      "name": "indicateursPerformanceCommerciale",
+      "type": "textarea",
+      "label": "Indicateurs de performance commerciale",
+      "placeholder": "Exemple : Indicateurs de performance commerciale actuels de l'entreprise",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en diagnostic de performance commerciale. Utilise {indicateursPerformanceCommerciale} pour évaluer la performance commerciale de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "string"
+      }
+    }
+  }
+}

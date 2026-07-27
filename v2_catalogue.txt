@@ -1,0 +1,170 @@
+
+
+COMPOSANTE 1
+
+Outils d'auto-évaluation en ligne
+
+Par catégorie — Plateforme ICES Digital
+
+
+
+1.1  Vision & Architecture de la suite d'outils
+
+La plateforme ICES en ligne intégrera une suite d'outils d'auto-évaluation interactifs permettant à toute organisation (PME, institution publique, ONG, projet financé) de mesurer son niveau de conformité par rapport aux référentiels de certification avant de s'engager dans une démarche formelle. Chaque outil génère un rapport de positionnement personnalisé et une feuille de route de mise à niveau.
+
+
+
+Principe structurant : chaque outil d'auto-évaluation est conçu selon 4 niveaux de maturité (Niveau 0 = Inexistant / Niveau 1 = Initié / Niveau 2 = Formalisé / Niveau 3 = Optimisé) et génère un score, un radar de positionnement et un plan d'actions prioritaires.
+
+
+
+CATÉGORIE 1 — Systèmes de Management ISO
+
+Liste des outils d'auto-évaluation à développer :
+
+Auto-diagnostic ISO 9001 : Évaluation du SMQ — 80 questions couvrant les 10 chapitres de la norme (contexte, leadership, planification, support, réalisation, évaluation, amélioration). Score par chapitre + radar global + écarts prioritaires.
+
+Auto-diagnostic ISO 14001 : Maturité environnementale — 65 questions sur aspects environnementaux, conformité légale, objectifs verts, bilan carbone.
+
+Auto-diagnostic ISO 45001 : Sécurité & santé au travail — 70 questions sur identification des dangers, évaluation des risques, programme de prévention, incidents.
+
+Auto-diagnostic ISO 27001 : Sécurité de l'information — 114 contrôles Annexe A + exigences chapitres. Calcul du gap de conformité SMSI. Outil adapté aux établissements financiers, télécoms, administrations.
+
+Auto-diagnostic ISO 22000 / HACCP : Sécurité alimentaire — 75 questions sur prérequis (PRP), analyse HACCP, traçabilité, gestion des allergènes.
+
+Auto-diagnostic ISO 50001 : Énergie — Revue énergétique initiale, identification des usages énergétiques significatifs (UES), plan d'actions d'efficacité énergétique.
+
+Auto-diagnostic ISO 37001 : Anti-corruption — Évaluation du SMAC, due diligence, gestion des cadeaux et avantages, canaux de signalement.
+
+Auto-diagnostic SMI intégré : Outil combiné QSE (9001 + 14001 + 45001) avec identification des synergies et des redondances.
+
+
+
+CATÉGORIE 2 — Certification de Produits & Services
+
+Checklist conformité agroalimentaire (BRC/IFS/SQF) : Auto-évaluation hygiène, traçabilité, gestion des risques produits, audits fournisseurs.
+
+Diagnostic certification Bio (Ecocert/AB) : Questions sur intrants, rotation cultures, séparation flux bio/conventionnel, certification opérateur.
+
+Auto-évaluation conformité Halal : 40 questions sur ingrédients, process de production, séparation, documentation, formation personnel.
+
+Outil IGP/AOP — éligibilité produit : Questionnaire sur ancrage territorial, savoir-faire spécifique, cahier des charges, organisation de producteurs.
+
+Diagnostic conformité médicaments (ISO 13485) : Auto-évaluation dispositifs médicaux, gestion risques, dossier technique réglementaire.
+
+
+
+CATÉGORIE 3 — Certification de Compétences & Personnes
+
+Test de positionnement auditeur ISO (9001/14001/45001/27001) : QCM interactif 50 questions, évaluation des connaissances normatives et techniques d'audit, recommandation de formation adaptée (Lead Implementer / Lead Auditor / Foundation).
+
+Auto-évaluation DPO (Délégué Protection Données) : Questions sur RGPD, loi CEDEAO données personnelles, registre des traitements, analyse d'impact (AIPD).
+
+Diagnostic compétences management de projet (PMP/Prince2) : Évaluation pratiques PM selon PMBOK, identification lacunes par domaine de connaissance.
+
+Auto-positionnement Six Sigma / Lean : Évaluation maturité processus, identification gaspillages, projection vers ceinture appropriée (Green/Black Belt).
+
+
+
+CATÉGORIE 4 — Labels ESG / RSE / Durabilité
+
+Diagnostic RSE ISO 26000 : Évaluation des 7 questions centrales (gouvernance, droits de l'homme, relations travail, environnement, loyauté pratiques, consommateurs, communautés). Score par domaine + niveau de maturité RSE.
+
+Outil de préparation label Engagé RSE (AFNOR) : Simulateur des 4 niveaux du label (Progression, Confirmé, Exemplaire, Référent) avec liste de preuves attendues.
+
+Auto-évaluation B Corp : Questionnaire simplifié B Impact Assessment (BIA) adapté au contexte Afrique subsaharienne — gouvernance, travailleurs, communauté, environnement, clients.
+
+Outil de préparation reporting GRI/SASB : Identification des indicateurs GRI pertinents selon secteur d'activité, checklist de données à collecter.
+
+Auto-diagnostic CSRD readiness : Évaluation de la préparation à la directive européenne de durabilité (ESRS), applicable aux filiales d'entreprises européennes.
+
+Calculateur bilan carbone simplifié : Estimation Scope 1, 2, 3 selon secteur, base pour certification CDP ou engagement Net Zero.
+
+
+
+CATÉGORIE 5 — Économie Circulaire & Déchets
+
+Auto-évaluation Économie Circulaire (XP X30-901) : Questionnaire sur les 7 piliers de l'économie circulaire (approvisionnement durable, éco-conception, écologie industrielle, économie de la fonctionnalité, consommation responsable, allongement durée de vie, recyclage). Score de maturité circulaire.
+
+Diagnostic de traçabilité filière déchets : Évaluation de la chaîne de gestion des déchets (collecte, tri, transport, traitement, valorisation), conformité réglementaire, documentation BSD.
+
+Outil ACV simplifié (ISO 14040/44) : Périmètre et données de base pour une analyse cycle de vie produit, identification des hotspots environnementaux.
+
+Checklist zéro déchet (Zero Waste) : Auto-évaluation selon les 5R (Refuser, Réduire, Réutiliser, Recycler, Composter), mesure du taux de détournement des déchets.
+
+
+
+CATÉGORIE 6 — Conformité Bailleurs & Projets Financés
+
+Auto-diagnostic CES/ESF Banque Mondiale : Évaluation de la conformité au Cadre Environnemental et Social, les 10 Normes Environnementales et Sociales (NES), gestion des parties prenantes.
+
+Checklist conformité BAD : Auto-évaluation système de gestion financière, passation des marchés, sauvegarde environnementale selon politiques BAD.
+
+Outil diagnostic conformité AFD : Évaluation procédures opérationnelles, piste d'audit, reporting bailleur, gestion contractuelle.
+
+Diagnostic Unité de Gestion de Projets (UGP) : Maturité organisationnelle de l'UGP — gouvernance, ressources humaines, systèmes d'information, contrôle interne.
+
+
+
+CATÉGORIE 7 — Gouvernance, Éthique & Anti-Corruption
+
+Auto-diagnostic ISO 37001 — SMAC : Évaluation du Système de Management Anti-Corruption sur 8 dimensions (leadership, politique, due diligence, contrôles financiers, formation, signalement, enquêtes, revue de direction).
+
+Outil de conformité ISO 37301 : Évaluation du programme de conformité réglementaire, cartographie des obligations légales, culture de conformité.
+
+Diagnostic gouvernance OHADA : Conformité aux règles OHADA (droit des affaires, comptabilité SYSCOHADA, gouvernance SA/SARL), identification des écarts.
+
+Outil intégrité marchés publics : Auto-évaluation des pratiques de passation de marchés, gestion des conflits d'intérêts, transparence des décisions.
+
+
+
+CATÉGORIE 8 — Inspection Technique & Vérification
+
+Checklist ISO 17020 — organisme d'inspection : Auto-évaluation pour les structures souhaitant devenir organismes d'inspection accrédités (impartialité, compétence, procédures).
+
+Diagnostic conformité laboratoire (ISO 17025) : Évaluation des exigences techniques et de management pour l'accréditation laboratoire d'essais.
+
+Outil de vérification déclarations environnementales : Conformité des déclarations et allégations vertes (écolabels, empreinte carbone), prévention du greenwashing.
+
+
+
+Architecture technique recommandée pour la plateforme
+
+Module
+
+Fonctionnalité
+
+Output généré
+
+Moteur de questionnaire
+
+Questions conditionnelles, scoring automatique, niveaux de maturité
+
+Score par axe + global
+
+Générateur de rapport
+
+Rapport PDF personnalisé, radar de positionnement, classement écarts
+
+Rapport PDF auto
+
+Feuille de route
+
+Plan d'actions prioritaires, estimation délais et coûts
+
+Roadmap PDF/XLS
+
+Dashboard client
+
+Suivi de progression, historique des évaluations, comparaisons
+
+Tableau de bord
+
+Module CRM ICES
+
+Leads qualifiés, score de maturité, recommandation de service
+
+Fiche prospect ICES
+
+
+

@@ -1,0 +1,71 @@
+{
+  "id": "template-plan-de-compte-grand-client",
+  "title": "Template de plan de compte grand client",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "clientName",
+      "type": "text",
+      "label": "Nom du client",
+      "placeholder": "Exemple : Entreprise XYZ",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Objectifs principaux du plan de compte",
+      "placeholder": "Exemple : Augmenter les ventes, améliorer la satisfaction client",
+      "required": true
+    },
+    {
+      "name": "secteurActivite",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Finance",
+        "Santé",
+        "Autre"
+      ],
+      "label": "Secteur d'activité du client",
+      "required": true
+    },
+    {
+      "name": "budgetAlloue",
+      "type": "number",
+      "label": "Budget alloué pour le plan de compte",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert. L'utilisateur a répondu : Nom du client : {clientName}, Objectifs principaux : {objectifs}, Secteur d'activité : {secteurActivite}, Budget alloué : {budgetAlloue}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (par exemple, stratégie, budget, ressources humaines), et des recommandations pour améliorer le plan de compte.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

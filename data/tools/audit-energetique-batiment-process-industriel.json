@@ -1,0 +1,72 @@
+{
+  "id": "audit-energetique-batiment-process-industriel",
+  "title": "Audit énergétique bâtiment & process industriel",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "superficie",
+      "type": "number",
+      "label": "Quelle est la superficie du bâtiment (en m²) ?",
+      "placeholder": "1000",
+      "required": true
+    },
+    {
+      "name": "type_batiment",
+      "type": "select",
+      "options": [
+        "Bureaux",
+        "Entrepôt",
+        "Usine",
+        "Autre"
+      ],
+      "label": "Quel est le type de bâtiment ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_process",
+      "type": "textarea",
+      "label": "Décrivez brièvement les processus industriels utilisés dans le bâtiment :",
+      "placeholder": "Processus de fabrication, utilisation de machines, etc.",
+      "required": true
+    },
+    {
+      "name": "consommation_energie",
+      "type": "number",
+      "label": "Quelle est la consommation annuelle d'énergie (en kWh) ?",
+      "placeholder": "100000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en audit énergétique. L'utilisateur a fourni les informations suivantes : Superficie : {superficie} m², Type de bâtiment : {type_batiment}, Description des processus : {description_process}, Consommation d'énergie : {consommation_energie} kWh. Analysez ces données pour fournir un score global sur 100, une évaluation par axe (efficacité énergétique, émissions de gaz à effet de serre, etc.) et des recommandations pour améliorer la performance énergétique du bâtiment et des processus industriels.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

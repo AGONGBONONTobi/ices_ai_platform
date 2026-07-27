@@ -1,0 +1,73 @@
+{
+  "id": "outil-qualification-evaluation-fournisseurs",
+  "title": "Outil de qualification & évaluation des fournisseurs",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "nombre_fournisseurs",
+      "type": "number",
+      "label": "Combien de fournisseurs avez-vous évalués cette année ?",
+      "placeholder": "Ex: 12",
+      "required": true
+    },
+    {
+      "name": "criteres_prioritaires",
+      "type": "select",
+      "options": [
+        "Qualité",
+        "Prix",
+        "Délais",
+        "Responsabilité sociale",
+        "Innovation"
+      ],
+      "label": "Quels sont vos critères de priorité pour l'évaluation des fournisseurs ?",
+      "placeholder": "Ex: Qualité",
+      "required": true
+    },
+    {
+      "name": "budget_alloue",
+      "type": "number",
+      "label": "Quel est le budget total alloué à vos achats de fournisseurs cette année (en €) ?",
+      "placeholder": "Ex: 500000",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Veuillez fournir tout commentaire supplémentaire ou contexte pertinent sur vos fournisseurs.",
+      "placeholder": "Ex: ...",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nombre de fournisseurs: {nombre_fournisseurs}, Critères de priorité: {criteres_prioritaires}, Budget alloué: {budget_alloue}, Commentaires: {commentaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

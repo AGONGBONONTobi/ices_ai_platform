@@ -1,0 +1,85 @@
+{
+  "id": "outil-de-gestion-des-litiges-et-contentieux",
+  "title": "Outil de gestion des litiges & contentieux",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "nature-du-litige",
+      "type": "select",
+      "options": [
+        "Contrat",
+        "Dommages et intérêts",
+        "Propriété intellectuelle",
+        "Autre"
+      ],
+      "label": "Quelle est la nature du litige ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "description-du-litige",
+      "type": "textarea",
+      "label": "Décrivez brièvement le litige",
+      "placeholder": "Exemple : Dommages causés à un tiers",
+      "required": true
+    },
+    {
+      "name": "dépendances",
+      "type": "text",
+      "label": "Quelles sont les dépendances du litige (ex : clients, fournisseurs, etc.) ?",
+      "placeholder": "Séparez les éléments par des virgules",
+      "required": true
+    },
+    {
+      "name": "étapes-poursuivies",
+      "type": "select",
+      "options": [
+        "Réglement amiable",
+        "Médiation",
+        "Litige judiciaire",
+        "Autre"
+      ],
+      "label": "Quelles étapes ont été poursuivies pour résoudre le litige ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "résultat",
+      "type": "text",
+      "label": "Quel est le résultat final du litige ?",
+      "placeholder": "Exemple : Réglement amiable",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert juridique. L'utilisateur a répondu : Nature du litige : {nature-du-litige}, Description du litige : {description-du-litige}, Dépendances : {dépendances}, Étapes poursuivies : {étapes-poursuivies}, Résultat : {résultat}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

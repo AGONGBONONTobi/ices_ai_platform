@@ -1,0 +1,72 @@
+{
+  "id": "strategie-marketplace-distribution-digitale",
+  "title": "Stratégie marketplace & distribution digitale",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de votre entreprise en matière de marketplace et de distribution digitale ?",
+      "placeholder": "Exemple : Augmenter la visibilité, améliorer l'expérience client, etc.",
+      "required": true
+    },
+    {
+      "name": "cibles-actuelles",
+      "type": "text",
+      "label": "Qui sont vos cibles actuelles ? (ex : âge, sexe, intérêts, etc.)",
+      "placeholder": "Exemple : 18-35 ans, femmes, intérêts en mode et beauté, etc.",
+      "required": true
+    },
+    {
+      "name": "canal-de-communication",
+      "type": "select",
+      "options": [
+        "Email",
+        "Réseaux sociaux",
+        "Publicité en ligne",
+        "Influencers"
+      ],
+      "label": "Quel est votre canal de communication préféré pour atteindre vos cibles ?",
+      "placeholder": "Exemple : Email",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est votre budget alloué pour la stratégie marketplace et distribution digitale ?",
+      "placeholder": "Exemple : 10000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en transformation digitale et IA. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Cibles actuelles : {cibles-actuelles}, Canal de communication : {canal-de-communication}, Budget alloué : {budget-alloue}. Analyse ces informations et propose une stratégie marketplace et distribution digitale efficace pour atteindre les objectifs de l'utilisateur.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

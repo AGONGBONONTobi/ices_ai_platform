@@ -1,0 +1,71 @@
+{
+  "id": "outil-acv-simplifie-iso-14040-44",
+  "title": "Outil ACV simplifié (ISO 14040/44)",
+  "category": "Économie Circulaire & Déchets",
+  "inputs": [
+    {
+      "name": "produit",
+      "type": "text",
+      "label": "Nom du produit analysé",
+      "placeholder": "Exemple : Smartphone",
+      "required": true
+    },
+    {
+      "name": "materiaux",
+      "type": "textarea",
+      "label": "Liste des matériaux principaux utilisés dans le produit (séparés par des virgules)",
+      "placeholder": "Exemple : Aluminium, Plastique, Verre",
+      "required": true
+    },
+    {
+      "name": "processus",
+      "type": "textarea",
+      "label": "Description des principaux processus de fabrication et de vie du produit",
+      "placeholder": "Exemple : Fabrication des composants, Assemblage, Utilisation, Recyclage",
+      "required": true
+    },
+    {
+      "name": "niveau_maturite",
+      "type": "select",
+      "options": [
+        "0 - Inexistant",
+        "1 - Initié",
+        "2 - Formalisé",
+        "3 - Optimisé"
+      ],
+      "label": "Niveau de maturité de l'analyse ACV",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un auditeur/consultant expert en analyse de cycle de vie selon les normes ISO 14040/44. L'utilisateur a répondu : Produit: {produit}, Matériaux: {materiaux}, Processus: {processus}, Niveau de maturité: {niveau_maturite}. Analyse ces informations pour identifier les hotspots environnementaux clés et donne un score global sur 100, une évaluation par axe environnemental (ex : émissions de gaz à effet de serre, consommation d'énergie, déchets), et des recommandations priorisées pour améliorer l'impact environnemental du produit.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

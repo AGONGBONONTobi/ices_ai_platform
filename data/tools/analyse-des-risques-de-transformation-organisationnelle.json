@@ -1,0 +1,70 @@
+{
+  "id": "analyse-des-risques-de-transformation-organisationnelle",
+  "title": "Analyse des risques de transformation organisationnelle",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "type_de_transformation",
+      "type": "select",
+      "options": [
+        "Fusion",
+        "Acquisition",
+        "Restructuration",
+        "Expansion"
+      ],
+      "label": "Quel est le type de transformation organisationnelle que vous envisagez ?",
+      "required": true
+    },
+    {
+      "name": "objectifs_de_la_transformation",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux de cette transformation ?",
+      "placeholder": "Décrivez les objectifs clés de la transformation",
+      "required": true
+    },
+    {
+      "name": "risques_identifies",
+      "type": "text",
+      "label": "Quels sont les principaux risques que vous avez déjà identifiés ?",
+      "placeholder": "Listez les risques majeurs",
+      "required": true
+    },
+    {
+      "name": "niveau_de_confiance",
+      "type": "number",
+      "label": "Quel est votre niveau de confiance dans la réussite de cette transformation (sur une échelle de 1 à 10) ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en gestion des risques. L'utilisateur a répondu : Type de transformation : {type_de_transformation}, Objectifs de la transformation : {objectifs_de_la_transformation}, Risques identifiés : {risques_identifies}, Niveau de confiance : {niveau_de_confiance}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour gérer les risques associés à cette transformation.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

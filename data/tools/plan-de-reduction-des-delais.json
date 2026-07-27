@@ -1,0 +1,78 @@
+{
+  "id": "plan-de-reduction-des-delais",
+  "title": "Plan de réduction des délais (Lead Time reduction)",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "delaiActuel",
+      "type": "number",
+      "label": "Quel est le délai actuel de production ou de livraison ?",
+      "placeholder": "Exemple: 10 jours",
+      "required": true
+    },
+    {
+      "name": "objectifDelai",
+      "type": "number",
+      "label": "Quel est l'objectif de réduction du délai ?",
+      "placeholder": "Exemple: 5 jours",
+      "required": true
+    },
+    {
+      "name": "processusActuel",
+      "type": "textarea",
+      "label": "Décrivez le processus actuel de production ou de livraison",
+      "placeholder": "Exemple: Les produits sont fabriqués sur mesure, la logistique est gérée par un tiers...",
+      "required": true
+    },
+    {
+      "name": "bottlenecks",
+      "type": "select",
+      "options": [
+        "Matériaux",
+        "Main d'œuvre",
+        "Équipements",
+        "Logistique"
+      ],
+      "label": "Quels sont les principaux goulets d'étranglement dans votre processus actuel ?",
+      "required": true
+    },
+    {
+      "name": "strategieAmelioration",
+      "type": "textarea",
+      "label": "Quelles stratégies d'amélioration du processus avez-vous déjà mises en place ou envisagées ?",
+      "placeholder": "Exemple: Amélioration de la gestion des stocks, mise en place d'un système de production juste-à-temps...",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en supply chain. L'utilisateur a répondu : Délai actuel: {delaiActuel}, Objectif de délai: {objectifDelai}, Processus actuel: {processusActuel}, Goulets d'étranglement: {bottlenecks}, Stratégies d'amélioration: {strategieAmelioration}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (approvisionnement, production, logistique), et des recommandations pour améliorer le processus et atteindre l'objectif de réduction du délai.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

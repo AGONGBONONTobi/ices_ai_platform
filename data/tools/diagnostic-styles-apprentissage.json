@@ -1,0 +1,72 @@
+{
+  "id": "diagnostic-styles-apprentissage",
+  "title": "Diagnostic des styles d'apprentissage (Kolb/Honey-Mumford)",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "style-apprentissage",
+      "type": "select",
+      "options": [
+        "Activiste",
+        "Conceptuel",
+        "Assimilateur",
+        "Réalisateur"
+      ],
+      "label": "Quel style d'apprentissage est le plus représentatif de votre approche ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "motivation-apprentissage",
+      "type": "textarea",
+      "label": "Quels sont les facteurs qui vous motivent à apprendre ?",
+      "placeholder": "Exemple : Je suis motivé par la possibilité de résoudre des problèmes complexes.",
+      "required": true
+    },
+    {
+      "name": "preferances-environnement",
+      "type": "text",
+      "label": "Quel environnement d'apprentissage préférez-vous ? (ex : travail en groupe, travail individuel, etc.)",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "niveau-de-confiance",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, comment évaluez-vous votre niveau de confiance dans vos capacités d'apprentissage ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Style d'apprentissage : {style-apprentissage}, Motivation d'apprentissage : {motivation-apprentissage}, Préférences environnementales : {preferances-environnement}, Niveau de confiance : {niveau-de-confiance}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

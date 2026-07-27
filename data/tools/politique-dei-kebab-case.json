@@ -1,0 +1,69 @@
+{
+  "id": "politique-dei-kebab-case",
+  "title": "Politique de diversité, équité & inclusion (DEI)",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "objectifs-dei",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de la politique DEI ?",
+      "placeholder": "Exemple : Augmenter la représentation des minorités, améliorer la culture d'inclusion",
+      "required": true
+    },
+    {
+      "name": "strategie-dei",
+      "type": "text",
+      "label": "Quelle est la stratégie mise en place pour atteindre les objectifs DEI ?",
+      "placeholder": "Exemple : Formation des employés, recrutement ciblé, partenariats avec des organisations de la communauté",
+      "required": true
+    },
+    {
+      "name": "indicateurs-de-suivi",
+      "type": "select",
+      "options": [
+        "Taux de diversité, Équité salariale, Satisfaction des employés"
+      ],
+      "label": "Quels indicateurs seront utilisés pour suivre la mise en œuvre de la politique DEI ?",
+      "placeholder": "Sélectionner un ou plusieurs indicateurs",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la mise en œuvre de la politique DEI ?",
+      "placeholder": "Exemple : 100 000 $",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs DEI : {objectifs-dei}, Stratégie DEI : {strategie-dei}, Indicateurs de suivi : {indicateurs-de-suivi}, Budget alloué : {budget-alloue}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

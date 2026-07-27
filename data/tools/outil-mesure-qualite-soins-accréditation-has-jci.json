@@ -1,0 +1,71 @@
+{
+  "id": "outil-mesure-qualite-soins-accréditation-has-jci",
+  "title": "Outil de mesure de la qualité des soins (accréditation HAS/JCI)",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_etablissement",
+      "type": "select",
+      "options": [
+        "Clinique",
+        "Hôpital",
+        "Centre de rééducation"
+      ],
+      "label": "Quel est le type d'établissement de santé ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_pratique_soins",
+      "type": "textarea",
+      "label": "Décrivez les pratiques actuelles de soins dans votre établissement",
+      "placeholder": "Exemple : nos infirmières sont formées aux dernières techniques de soins...",
+      "required": true
+    },
+    {
+      "name": "niveau_formation_personnel",
+      "type": "number",
+      "label": "Quel est le niveau moyen de formation du personnel soignant (échelle de 1 à 10) ?",
+      "placeholder": "5",
+      "required": true
+    },
+    {
+      "name": "resultat_audit",
+      "type": "textarea",
+      "label": "Décrivez les résultats des derniers audits de qualité réalisés dans votre établissement",
+      "placeholder": "Exemple : nos audits ont révélé des améliorations nécessaires dans la gestion des médicaments...",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en qualité des soins. L'utilisateur a répondu : Type d'établissement: {type_etablissement}, Description des pratiques de soins: {description_pratique_soins}, Niveau de formation du personnel: {niveau_formation_personnel}, Résultats de l'audit: {resultat_audit}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations pour améliorer la qualité des soins.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

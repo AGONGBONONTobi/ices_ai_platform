@@ -1,0 +1,71 @@
+{
+  "id": "strategie-alliance-jv-partenariat-strategique",
+  "title": "Stratégie d'alliance, JV & partenariat stratégique",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de l'alliance ou du partenariat ?",
+      "placeholder": "Exemple : accéder à de nouveaux marchés, partager les coûts, développer des compétences",
+      "required": true
+    },
+    {
+      "name": "partenaires-cibles",
+      "type": "text",
+      "label": "Quels sont les partenaires cibles pour cette alliance ou partenariat ?",
+      "placeholder": "Exemple : entreprises concurrentes, startups, institutions publiques",
+      "required": true
+    },
+    {
+      "name": "avantages-competitifs",
+      "type": "select",
+      "options": [
+        "ressources complémentaires",
+        "expertise unique",
+        "réseau de contacts"
+      ],
+      "label": "Quels sont les avantages compétitifs que vous offrez pour cette alliance ou partenariat ?",
+      "placeholder": "Exemple : ressources complémentaires, expertise unique, réseau de contacts",
+      "required": true
+    },
+    {
+      "name": "challenges-prevus",
+      "type": "textarea",
+      "label": "Quels sont les défis prévus pour cette alliance ou partenariat ?",
+      "placeholder": "Exemple : différences culturelles, incompatibilités technologiques, risques de concurrence",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique: {objectif-strategique}, Partenaires cibles: {partenaires-cibles}, Avantages compétitifs: {avantages-competitifs}, Challenges prévus: {challenges-prevus}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

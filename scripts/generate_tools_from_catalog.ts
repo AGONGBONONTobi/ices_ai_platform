@@ -1,0 +1,204 @@
+import fs from "fs";
+import path from "path";
+import Groq from "groq-sdk";
+import dotenv from "dotenv";
+import { toolSchema } from "../src/lib/schema/tool-schema";
+import { createClient } from "@supabase/supabase-js";
+
+dotenv.config({ path: ".env.local" });
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!
+);
+
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+const CATALOG_PATH = path.join(__dirname, "../v1_catalogue.txt");
+const OUT_DIR = path.join(__dirname, "../data/tools");
+
+// Create data/tools directory if it doesn't exist
+if (!fs.existsSync(OUT_DIR)) {
+  fs.mkdirSync(OUT_DIR, { recursive: true });
+}
+
+// System prompt for a single tool
+const SYSTEM_PROMPT = `
+Tu es un ingénieur produit IA. Ta mission est de générer la configuration JSON d'un outil d'évaluation ou de diagnostic.
+On te donne un Nom d'outil et sa Catégorie.
+
+Tu dois générer un objet JSON respectant CE SCHÉMA EXACT pour cet outil :
+{
+  "id": "identifiant-unique-kebab-case",
+  "title": "Nom de l'outil",
+  "category": "La catégorie (ex: RH, Finance)",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "text|textarea|number|select",
+      "options": ["choix1", "choix2"], // Seulement si type=select
+      "label": "Question claire posée à l'utilisateur",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Variable1: {variable1}, etc. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": { "type": "number", "description": "Score sur 100" },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": { "type": "string" },
+            "score": { "type": "number", "description": "Score sur 100" }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    }
+  }
+}
+
+Règles pour la génération :
+1. Crée 3 à 5 \`inputs\` pertinents pour l'outil demandé. Varie les types (au moins un \`select\` et un \`textarea\`).
+2. Rédige un \`promptTemplate\` de très haute qualité qui mentionne toutes les variables d'input en utilisant les accolades {variable}.
+3. L'\`outputSchema\` doit TOUJOURS correspondre exactement à l'exemple donné ci-dessus (score_global, axes avec axe et score, et recommandations), ne change pas cette structure.
+4. L'ID doit être unique et en kebab-case.
+5. Renvoie UNIQUEMENT l'objet JSON valide. Pas de markdown, pas de \`\`\`json, juste l'objet brut.
+`;
+
+const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+async function main() {
+  console.log("Lecture du catalogue TXT...");
+  let text = "";
+  try {
+    text = fs.readFileSync(CATALOG_PATH, "utf-8");
+  } catch (e) {
+    console.error("Erreur de lecture du TXT:", e);
+    return;
+  }
+
+  // Parse lines
+  const lines = text.split("\n").map(l => l.trim()).filter(l => l.length > 0);
+
+  const extractedTools: { title: string, category: string }[] = [];
+  let currentCategory = "";
+
+  for (const line of lines) {
+    // PARTIE II lists the 212 sectors, not tools — stop parsing tools once we reach it.
+    if (/^PARTIE\s+II\b/.test(line)) break;
+
+    // Detect category: matches CAT. XX — NAME
+    const catMatch = line.match(/CAT\.\s*\d+\s*—\s*(.*?)\s*\(/);
+    if (catMatch) {
+      currentCategory = catMatch[1].trim();
+      continue;
+    }
+
+    // Detect tool: matches "Number. Tool Name"
+    const toolMatch = line.match(/^\d+\.\s+(.+)$/);
+    if (toolMatch && currentCategory) {
+      extractedTools.push({
+        title: toolMatch[1].trim(),
+        category: currentCategory
+      });
+    }
+  }
+
+  console.log(`Nombre total d'outils détectés : ${extractedTools.length}`);
+
+  // Skip tools that already have a generated JSON file (matched by title, case-insensitive)
+  const existingTitles = new Set(
+    fs.readdirSync(OUT_DIR)
+      .filter(f => f.endsWith(".json"))
+      .map(f => {
+        try {
+          return JSON.parse(fs.readFileSync(path.join(OUT_DIR, f), "utf-8")).title?.trim().toLowerCase();
+        } catch {
+          return null;
+        }
+      })
+      .filter(Boolean)
+  );
+
+  const toolsToProcess = extractedTools.filter(t => !existingTitles.has(t.title.trim().toLowerCase()));
+
+  console.log(`Déjà générés : ${extractedTools.length - toolsToProcess.length} — Restants à générer : ${toolsToProcess.length}`);
+
+  for (let i = 0; i < toolsToProcess.length; i++) {
+    const tool = toolsToProcess[i];
+    console.log(`[${i + 1}/${toolsToProcess.length}] Génération pour : ${tool.title} (${tool.category})`);
+
+    await generateTool(tool.title, tool.category, 3); // 3 retries max
+
+    // Rate limit delay: wait 3.5 seconds between calls to avoid API limits (Groq has strict limits on free tier)
+    await delay(3500);
+  }
+
+  console.log("Génération terminée.");
+}
+
+async function generateTool(title: string, category: string, retries: number) {
+  try {
+    const completion = await groq.chat.completions.create({
+      messages: [
+        { role: "system", content: SYSTEM_PROMPT },
+        { role: "user", content: `Génère le JSON pour l'outil suivant :\nTitre: ${title}\nCatégorie: ${category}` }
+      ],
+      model: "meta-llama/llama-4-scout-17b-16e-instruct",
+      temperature: 0.3,
+      response_format: { type: "json_object" },
+    });
+
+    const responseContent = completion.choices[0]?.message?.content;
+    if (!responseContent) throw new Error("Réponse vide");
+
+    const toolData = JSON.parse(responseContent);
+
+    // Validate using Zod
+    const parseResult = toolSchema.safeParse(toolData);
+    
+    if (parseResult.success) {
+      const data = parseResult.data;
+      
+      // Sauvegarde locale
+      const filePath = path.join(OUT_DIR, `${data.id}.json`);
+      fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+      
+      // Upsert Supabase
+      const { error } = await supabase.from('tools').upsert({
+        id: data.id,
+        title: data.title,
+        category: data.category,
+        config: data as any
+      });
+
+      if (error) {
+        console.error(`❌ Erreur Supabase pour l'outil "${data.title}" :`, error.message);
+      } else {
+        console.log(`✅ Outil inséré avec succès !`);
+      }
+    } else {
+      console.warn(`⚠️ Erreur de validation Zod pour "${title}" :`);
+      parseResult.error.issues.forEach(issue => console.warn(`  - ${issue.path.join('.')}: ${issue.message}`));
+      throw new Error("Schéma invalide");
+    }
+  } catch (error: any) {
+    console.error(`❌ Erreur pour ${title} :`, error.message || error);
+    if (retries > 0) {
+      console.log(`Nouvelle tentative dans 5 secondes (${retries} restantes)...`);
+      await delay(5000);
+      await generateTool(title, category, retries - 1);
+    } else {
+      console.log(`⏭️ Abandon de l'outil ${title}`);
+    }
+  }
+}
+
+main().catch(console.error);

@@ -1,0 +1,76 @@
+{
+  "id": "outil-d-analyse-de-la-donnee-et-business-intelligence-bi",
+  "title": "Outil d'analyse de la donnée & Business Intelligence (BI)",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "type_de_donnee",
+      "type": "select",
+      "options": [
+        "Données quantitatives",
+        "Données qualitatives",
+        "Données mixtes"
+      ],
+      "label": "Quel type de données souhaitez-vous analyser ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "source_de_donnee",
+      "type": "textarea",
+      "label": "Quelle est la source de vos données ?",
+      "placeholder": "Exemple : base de données, fichier CSV, etc.",
+      "required": true
+    },
+    {
+      "name": "objectif_de_lanalyse",
+      "type": "text",
+      "label": "Quel est l'objectif de votre analyse ?",
+      "placeholder": "Exemple : améliorer la prise de décision, identifier des tendances, etc.",
+      "required": true
+    },
+    {
+      "name": "methodologie_utilisee",
+      "type": "select",
+      "options": [
+        "Analyse exploratoire",
+        "Analyse prédictive",
+        "Analyse descriptive"
+      ],
+      "label": "Quelle méthode d'analyse utilisez-vous ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en Business Intelligence. L'utilisateur a répondu : Type de données : {type_de_donnee}, Source de données : {source_de_donnee}, Objectif de l'analyse : {objectif_de_lanalyse}, Méthodologie utilisée : {methodologie_utilisee}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

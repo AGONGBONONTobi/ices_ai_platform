@@ -1,0 +1,72 @@
+{
+  "id": "plan-internationalisation-pme-africaine",
+  "title": "Plan d'internationalisation PME africaine",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "secteurActivite",
+      "type": "select",
+      "options": [
+        "Agriculture",
+        "Industrie",
+        "Services",
+        "Technologie"
+      ],
+      "label": "Quel est votre secteur d'activité principal ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "chiffreAffaires",
+      "type": "number",
+      "label": "Quel est votre chiffre d'affaires annuel ?",
+      "placeholder": "En milliers de monnaie locale",
+      "required": true
+    },
+    {
+      "name": "objectifsExportation",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs en matière d'exportation (marchés ciblés, produits, etc.) ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "competencesInternationales",
+      "type": "textarea",
+      "label": "Quelles sont les compétences et expériences internationales de votre équipe ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en internationalisation des PME. La PME africaine a répondu : Secteur d'activité: {secteurActivite}, Chiffre d'affaires: {chiffreAffaires}, Objectifs d'exportation: {objectifsExportation}, Compétences internationales: {competencesInternationales}. Analysez ces informations et proposez un plan d'internationalisation comprenant un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

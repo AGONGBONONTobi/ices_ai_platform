@@ -1,0 +1,86 @@
+{
+  "id": "outil-mesure-satisfaction-interne-collaborateurs",
+  "title": "Outil de mesure de la satisfaction interne (collaborateurs)",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "nombre_employes",
+      "type": "number",
+      "label": "Combien d'employés sont concernés par l'enquête?",
+      "placeholder": "Ex: 150",
+      "required": true
+    },
+    {
+      "name": "niveau_satisfaction",
+      "type": "select",
+      "options": [
+        "Très satisfait",
+        "Satisfait",
+        "Neutre",
+        "Insatisfait",
+        "Très insatisfait"
+      ],
+      "label": "Quel est le niveau de satisfaction global de vos collaborateurs?",
+      "placeholder": "Sélectionnez",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Commentaires ou suggestions supplémentaires",
+      "placeholder": "Ex: Les horaires flexibles sont appréciés",
+      "required": false
+    },
+    {
+      "name": "frequence_enquete",
+      "type": "select",
+      "options": [
+        "Mensuelle",
+        "Trimestrielle",
+        "Semestrielle",
+        "Annuelle"
+      ],
+      "label": "À quelle fréquence réalisez-vous cette enquête?",
+      "placeholder": "Sélectionnez",
+      "required": true
+    },
+    {
+      "name": "niveau_engagement",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, comment évalueriez-vous l'engagement de vos collaborateurs?",
+      "placeholder": "Ex: 7",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nombre d'employés: {nombre_employes}, Niveau de satisfaction: {niveau_satisfaction}, Commentaires: {commentaires}, Fréquence enquête: {frequence_enquete}, Niveau d'engagement: {niveau_engagement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

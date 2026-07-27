@@ -1,0 +1,72 @@
+{
+  "id": "plan-deploiement-saas-go-to-market-tech",
+  "title": "Plan de déploiement SaaS & go-to-market tech",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Décrivez l'objectif principal de votre déploiement SaaS",
+      "placeholder": "Exemple : Augmenter la base d'utilisateurs de 20% en 6 mois",
+      "required": true
+    },
+    {
+      "name": "cible",
+      "type": "select",
+      "options": [
+        "B2B",
+        "B2C",
+        "Entreprises",
+        "Particuliers"
+      ],
+      "label": "Quelle est votre cible principale ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est votre budget alloué pour le déploiement ?",
+      "placeholder": "10000",
+      "required": true
+    },
+    {
+      "name": "concurrents",
+      "type": "textarea",
+      "label": "Listez vos principaux concurrents directs",
+      "placeholder": "Exemple : Concurrent 1, Concurrent 2",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en stratégie de déploiement SaaS. L'utilisateur a répondu : Objectif: {objectif}, Cible: {cible}, Budget: {budget}, Concurrents: {concurrents}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations pour améliorer le plan de déploiement et la stratégie go-to-market.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

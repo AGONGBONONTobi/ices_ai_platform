@@ -1,0 +1,76 @@
+{
+  "id": "analyse-de-la-dette-publique-et-financement-souverain",
+  "title": "Analyse de la dette publique & financement souverain",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "montant-de-la-dette",
+      "type": "number",
+      "label": "Quel est le montant total de la dette publique ?",
+      "placeholder": "Entrez le montant en milliards d'euros",
+      "required": true
+    },
+    {
+      "name": "taux-d-interet",
+      "type": "number",
+      "label": "Quel est le taux d'intérêt moyen de la dette publique ?",
+      "placeholder": "Entrez le taux en pourcentage",
+      "required": true
+    },
+    {
+      "name": "revenus-de-l-etat",
+      "type": "number",
+      "label": "Quels sont les revenus de l'État (impôts, taxes, etc.) ?",
+      "placeholder": "Entrez le montant en milliards d'euros",
+      "required": true
+    },
+    {
+      "name": "recommandations-financieres",
+      "type": "textarea",
+      "label": "Quelles sont les recommandations financières pour réduire la dette publique ?",
+      "placeholder": "Décrivez les mesures à prendre",
+      "required": true
+    },
+    {
+      "name": "modele-de-financement",
+      "type": "select",
+      "options": [
+        "Modèle de financement souverain",
+        "Modèle de financement privé"
+      ],
+      "label": "Quel modèle de financement est le plus approprié pour l'État ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en finance publique. L'utilisateur a répondu : Montant de la dette : {montant-de-la-dette} milliards d'euros, Taux d'intérêt : {taux-d-interet} %, Revenus de l'État : {revenus-de-l-etat} milliards d'euros, Recommandations financières : {recommandations-financieres}, Modèle de financement : {modele-de-financement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

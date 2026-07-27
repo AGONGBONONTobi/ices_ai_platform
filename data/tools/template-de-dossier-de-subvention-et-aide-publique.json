@@ -1,0 +1,70 @@
+{
+  "id": "template-de-dossier-de-subvention-et-aide-publique",
+  "title": "Template de dossier de subvention & aide publique",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectifDuProjet",
+      "type": "textarea",
+      "label": "Décrivez l'objectif principal de votre projet",
+      "placeholder": "Exemple : Développer un nouveau produit pour améliorer la qualité de vie des personnes âgées",
+      "required": true
+    },
+    {
+      "name": "montantDemande",
+      "type": "number",
+      "label": "Quel est le montant de la subvention demandée ?",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    },
+    {
+      "name": "typeDeSubvention",
+      "type": "select",
+      "options": [
+        "Subvention pour la recherche et le développement",
+        "Subvention pour l'innovation",
+        "Subvention pour la création d'emplois"
+      ],
+      "label": "Quel type de subvention demandez-vous ?",
+      "required": true
+    },
+    {
+      "name": " calendrierProjet",
+      "type": "textarea",
+      "label": "Décrivez le calendrier prévisionnel de votre projet",
+      "placeholder": "Exemple : Les travaux de recherche seront effectués entre janvier et juin, suivis d'une phase de développement jusqu'en décembre",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en financement de projets. L'utilisateur a répondu : Objectif du projet : {objectifDuProjet}, Montant demandé : {montantDemande}, Type de subvention : {typeDeSubvention}, Calendrier du projet : {calendrierProjet}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (par exemple, viabilité financière, impact social, innovation), et des recommandations pour améliorer le dossier de candidature.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

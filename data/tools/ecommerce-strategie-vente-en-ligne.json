@@ -1,0 +1,77 @@
+{
+  "id": "ecommerce-strategie-vente-en-ligne",
+  "title": "Stratégie d'e-commerce & vente en ligne",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "cible",
+      "type": "select",
+      "options": [
+        "Jeunes adultes",
+        "Familles",
+        "Professionnels"
+      ],
+      "label": "Qui est votre cible ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "canal",
+      "type": "select",
+      "options": [
+        "Facebook",
+        "Instagram",
+        "Google Ads",
+        "Email marketing"
+      ],
+      "label": "Quel canal de communication préférez-vous ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est votre budget mensuel pour la publicité en ligne ?",
+      "placeholder": "Entrez un montant",
+      "required": true
+    },
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs pour la stratégie d'e-commerce & vente en ligne ?",
+      "placeholder": "Décrivez vos objectifs",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Cible: {cible}, Canal: {canal}, Budget: {budget}, Objectif: {objectif}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

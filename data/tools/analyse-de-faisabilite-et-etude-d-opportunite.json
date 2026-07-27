@@ -1,0 +1,71 @@
+{
+  "id": "analyse-de-faisabilite-et-etude-d-opportunite",
+  "title": "Analyse de faisabilité & étude d'opportunité",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "objectifProjet",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal du projet ?",
+      "placeholder": "Décrivez brièvement l'objectif du projet",
+      "required": true
+    },
+    {
+      "name": "ressourcesDisponibles",
+      "type": "select",
+      "options": [
+        "Financières",
+        "Humaines",
+        "Technologiques",
+        "Autres"
+      ],
+      "label": "Quelles sont les ressources disponibles pour le projet ?",
+      "required": true
+    },
+    {
+      "name": "delaiRealisation",
+      "type": "number",
+      "label": "Quel est le délai de réalisation prévu pour le projet ?",
+      "placeholder": "En mois",
+      "required": true
+    },
+    {
+      "name": "budgetEstime",
+      "type": "number",
+      "label": "Quel est le budget estimé pour le projet ?",
+      "placeholder": "En euros",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif du projet: {objectifProjet}, Ressources disponibles: {ressourcesDisponibles}, Délai de réalisation: {delaiRealisation} mois, Budget estimé: {budgetEstime} euros. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

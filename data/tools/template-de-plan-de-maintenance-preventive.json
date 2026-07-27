@@ -1,0 +1,78 @@
+{
+  "id": "template-de-plan-de-maintenance-preventive",
+  "title": "Template de plan de maintenance préventive",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "equipements",
+      "type": "textarea",
+      "label": "Liste des équipements à maintenir",
+      "placeholder": "Exemple : machine A, machine B, etc.",
+      "required": true
+    },
+    {
+      "name": "frequences",
+      "type": "number",
+      "label": "Fréquences de maintenance préventive",
+      "placeholder": "Exemple : tous les 3 mois, tous les 6 mois, etc.",
+      "required": true
+    },
+    {
+      "name": "responsables",
+      "type": "select",
+      "options": [
+        "Equipe Maintenance",
+        "Equipe Opérationnelle",
+        "Autre"
+      ],
+      "label": "Responsable de la maintenance préventive",
+      "placeholder": "Exemple : Equipe Maintenance",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Budget alloué pour la maintenance préventive",
+      "placeholder": "Exemple : 10 000 €",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Objectifs de la maintenance préventive",
+      "placeholder": "Exemple : améliorer la disponibilité, réduire les coûts, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Equipements : {equipements}, Fréquences : {frequences}, Responsables : {responsables}, Budget : {budget}, Objectifs : {objectifs}. Analyse ces informations et propose un plan de maintenance préventive efficace.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

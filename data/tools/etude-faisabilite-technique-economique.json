@@ -1,0 +1,84 @@
+{
+  "id": "etude-faisabilite-technique-economique",
+  "title": "Étude de faisabilité technique & économique",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "select",
+      "options": [
+        "Infrastructure",
+        "Logiciel",
+        "Produit",
+        "Service"
+      ],
+      "label": "Type de projet",
+      "placeholder": "Sélectionnez un type",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "number",
+      "label": "Budget estimé (en €)",
+      "placeholder": "ex: 500000",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "textarea",
+      "label": "Description du projet",
+      "placeholder": "ex: Développement d'une application mobile...",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Niveau de risque perçu",
+      "placeholder": "Sélectionnez un niveau",
+      "required": true
+    },
+    {
+      "name": "variable5",
+      "type": "text",
+      "label": "Date de début prévue",
+      "placeholder": "ex: 2025-01-15",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Variable1: {variable1}, Variable2: {variable2}, Variable3: {variable3}, Variable4: {variable4}, Variable5: {variable5}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

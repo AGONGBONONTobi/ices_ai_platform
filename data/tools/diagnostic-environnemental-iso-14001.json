@@ -1,0 +1,78 @@
+{
+  "id": "diagnostic-environnemental-iso-14001",
+  "title": "Diagnostic environnemental (ISO 14001)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "activites_principales",
+      "type": "textarea",
+      "label": "Quelles sont les activités principales de votre entreprise ?",
+      "placeholder": "Exemple : production, commerce, services",
+      "required": true
+    },
+    {
+      "name": "emissions_principales",
+      "type": "textarea",
+      "label": "Quelles sont les émissions principales de votre entreprise (ex : gaz à effet de serre, déchets, eaux usées) ?",
+      "placeholder": "Exemple : CO2, SO2, particules fines",
+      "required": true
+    },
+    {
+      "name": "gestion_des_dechets",
+      "type": "select",
+      "options": [
+        "Déchets recyclés",
+        "Déchets incinérés",
+        "Déchets enfouis"
+      ],
+      "label": "Comment gère votre entreprise les déchets ?",
+      "placeholder": "Exemple : recyclés, incinérés, enfouis",
+      "required": true
+    },
+    {
+      "name": "formation_des_employes",
+      "type": "number",
+      "label": "Quel est le pourcentage de formation des employés sur les aspects environnementaux ?",
+      "placeholder": "Exemple : 50%",
+      "required": true
+    },
+    {
+      "name": "budget_environnemental",
+      "type": "number",
+      "label": "Quel est le budget alloué à l'environnement par an ?",
+      "placeholder": "Exemple : 10000€",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en environnement. L'utilisateur a répondu : Activités principales : {activites_principales}, Émissions principales : {emissions_principales}, Gestion des déchets : {gestion_des_dechets}, Formation des employés : {formation_des_employes}%, Budget environnemental : {budget_environnemental}€. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

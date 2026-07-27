@@ -1,0 +1,78 @@
+{
+  "id": "plan-de-developpement-d-une-franchise",
+  "title": "Plan de développement d'une franchise",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quel est l'objectif stratégique de la franchise ?",
+      "placeholder": "Exemple : Augmenter la visibilité et la notoriété de la marque",
+      "required": true
+    },
+    {
+      "name": "cible-client",
+      "type": "select",
+      "options": [
+        "Jeunes adultes",
+        "Familles",
+        "Professionnels"
+      ],
+      "label": "Qui est la cible cliente de la franchise ?",
+      "placeholder": "Exemple : Jeunes adultes",
+      "required": true
+    },
+    {
+      "name": "strategie-marketing",
+      "type": "text",
+      "label": "Quelle est la stratégie marketing pour atteindre la cible cliente ?",
+      "placeholder": "Exemple : Utilisation de réseaux sociaux et publicités ciblées",
+      "required": true
+    },
+    {
+      "name": "plan-operationnel",
+      "type": "textarea",
+      "label": "Quel est le plan opérationnel pour mettre en œuvre le plan de développement ?",
+      "placeholder": "Exemple : Établir des objectifs clairs, définir des indicateurs de performance et mettre en place un système de suivi",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué pour le plan de développement ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Cible cliente : {cible-client}, Stratégie marketing : {strategie-marketing}, Plan opérationnel : {plan-operationnel}, Budget : {budget}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

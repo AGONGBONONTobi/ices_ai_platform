@@ -1,0 +1,78 @@
+{
+  "id": "teletravail-config",
+  "title": "Politique télétravail, flex-office & remote",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "duree_teletravail",
+      "type": "number",
+      "label": "Combien de jours par semaine le télétravail est autorisé ?",
+      "placeholder": "Saisir un nombre",
+      "required": true
+    },
+    {
+      "name": "flexibilite_heures",
+      "type": "textarea",
+      "label": "Quelles sont les heures flexibles autorisées pour les employés ?",
+      "placeholder": "Saisir les heures flexibles",
+      "required": true
+    },
+    {
+      "name": "type_remote",
+      "type": "select",
+      "options": [
+        "Télétravail partiel",
+        "Télétravail complet",
+        "Flex-office"
+      ],
+      "label": "Quel type de télétravail est prévu ?",
+      "placeholder": "Sélectionner un type",
+      "required": true
+    },
+    {
+      "name": "equipement_necessaire",
+      "type": "text",
+      "label": "Quels équipements sont nécessaires pour le télétravail ?",
+      "placeholder": "Saisir les équipements nécessaires",
+      "required": true
+    },
+    {
+      "name": "sécurité_informative",
+      "type": "textarea",
+      "label": "Quelles mesures de sécurité informatique sont prises pour les employés en télétravail ?",
+      "placeholder": "Saisir les mesures de sécurité",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Duree télétravail: {duree_teletravail} jours/semaine, Flexibilite heures: {flexibilite_heures}, Type remote: {type_remote}, Equipement necessaire: {equipement_necessaire}, Sécurité informative: {sécurité_informative}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

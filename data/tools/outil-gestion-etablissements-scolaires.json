@@ -1,0 +1,72 @@
+{
+  "id": "outil-gestion-etablissements-scolaires",
+  "title": "Outil de gestion des établissements scolaires",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "nom_etablissement",
+      "type": "text",
+      "label": "Nom de l'établissement scolaire",
+      "placeholder": "Exemple : Lycée Jean Dupont",
+      "required": true
+    },
+    {
+      "name": "type_etablissement",
+      "type": "select",
+      "options": [
+        "Primaire",
+        "Collège",
+        "Lycée",
+        "Université"
+      ],
+      "label": "Type d'établissement scolaire",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_defis",
+      "type": "textarea",
+      "label": "Décrivez les défis actuels de l'établissement",
+      "placeholder": "Exemple : manque de ressources, difficultés d'absentéisme...",
+      "required": true
+    },
+    {
+      "name": "effectif_eleves",
+      "type": "number",
+      "label": "Effectif actuel d'élèves",
+      "placeholder": "Exemple : 500",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en éducation. L'établissement scolaire nommé {nom_etablissement} de type {type_etablissement} avec un effectif de {effectif_eleves} élèves, rencontre les défis suivants : {description_defis}. Analysez ces informations et proposez un score global sur 100, une évaluation par axe, ainsi que des recommandations pour améliorer la situation.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

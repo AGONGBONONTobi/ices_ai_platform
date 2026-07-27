@@ -1,0 +1,71 @@
+{
+  "id": "plan-d-action-rse-annuel-priorites",
+  "title": "Plan d'action RSE annuel & priorités",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "objectifs-rse",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de RSE pour l'année en cours ?",
+      "placeholder": "Exemple : réduire les émissions de gaz à effet de serre, améliorer la gestion des déchets",
+      "required": true
+    },
+    {
+      "name": "priorites",
+      "type": "select",
+      "options": [
+        "Réduire les émissions de gaz à effet de serre",
+        "Améliorer la gestion des déchets",
+        "Promouvoir l'emploi durable"
+      ],
+      "label": "Quelle est la priorité numéro 1 pour l'année en cours ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour les actions RSE cette année ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "indicateurs-suivi",
+      "type": "textarea",
+      "label": "Quels sont les indicateurs de suivi pour mesurer les progrès RSE ?",
+      "placeholder": "Exemple : réduction des émissions de gaz à effet de serre, augmentation de la participation des employés aux actions RSE",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE. L'utilisateur a répondu : Objectifs RSE : {objectifs-rse}, Priorité numéro 1 : {priorites}, Budget alloué : {budget-alloue}, Indicateurs de suivi : {indicateurs-suivi}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

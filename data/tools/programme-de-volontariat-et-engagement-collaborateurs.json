@@ -1,0 +1,72 @@
+{
+  "id": "programme-de-volontariat-et-engagement-collaborateurs",
+  "title": "Programme de volontariat & engagement collaborateurs",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "nombre-de-volontaires",
+      "type": "number",
+      "label": "Combien de collaborateurs ont participé au programme de volontariat ?",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "type-dactivites",
+      "type": "select",
+      "options": [
+        "Environnement",
+        "Santé",
+        "Éducation",
+        "Autres"
+      ],
+      "label": "Quel type d'activités ont été menées par les volontaires ?",
+      "placeholder": "Exemple : Environnement",
+      "required": true
+    },
+    {
+      "name": "impact-environnemental",
+      "type": "textarea",
+      "label": "Quel impact environnemental le programme de volontariat a-t-il eu ?",
+      "placeholder": "Exemple : Réduction de 50% des déchets",
+      "required": true
+    },
+    {
+      "name": "recommandations",
+      "type": "textarea",
+      "label": "Quelles recommandations pouvez-vous faire pour améliorer le programme de volontariat ?",
+      "placeholder": "Exemple : Augmenter la sensibilisation auprès des collaborateurs",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en développement durable. L'utilisateur a répondu : Nombre de volontaires : {nombre-de-volontaires}, Type d'activités : {type-dactivites}, Impact environnemental : {impact-environnemental}, Recommandations : {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

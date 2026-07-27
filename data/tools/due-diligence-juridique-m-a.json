@@ -1,0 +1,87 @@
+{
+  "id": "due-diligence-juridique-m-a",
+  "title": "Due Diligence Juridique M&A",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise-acheteuse",
+      "type": "text",
+      "label": "Nom de l'entreprise acheteuse",
+      "placeholder": "Exemple : Société XYZ",
+      "required": true
+    },
+    {
+      "name": "entreprise-vendue",
+      "type": "text",
+      "label": "Nom de l'entreprise vendue",
+      "placeholder": "Exemple : Société ABC",
+      "required": true
+    },
+    {
+      "name": "secteur-activite",
+      "type": "select",
+      "options": [
+        "Finance",
+        "Technologie",
+        "Santé",
+        "Énergie",
+        "Autres"
+      ],
+      "label": "Secteur d'activité de l'entreprise vendue",
+      "placeholder": "Exemple : Finance",
+      "required": true
+    },
+    {
+      "name": "contrats-clés",
+      "type": "textarea",
+      "label": "Liste des contrats clés liés à l'entreprise vendue",
+      "placeholder": "Exemple : Contrat de location, contrat de travail, etc.",
+      "required": true
+    },
+    {
+      "name": "risques-juridiques",
+      "type": "select",
+      "options": [
+        "Contrefaçon",
+        "Plagiat",
+        "Droit de la concurrence",
+        "Droit du travail",
+        "Autres"
+      ],
+      "label": "Risques juridiques potentiels liés à l'entreprise vendue",
+      "placeholder": "Exemple : Contrefaçon",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en due diligence juridique. L'utilisateur a répondu : Entreprise acheteuse : {entreprise-acheteuse}, Entreprise vendue : {entreprise-vendue}, Secteur d'activité : {secteur-activite}, Contrats clés : {contrats-clés}, Risques juridiques : {risques-juridiques}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

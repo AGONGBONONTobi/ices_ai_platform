@@ -1,0 +1,78 @@
+{
+  "id": "plan-de-gestion-des-projets-de-developpement-territorial",
+  "title": "Plan de gestion des projets de développement territorial",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "objectif-projet",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal du projet ?",
+      "placeholder": "Exemple : Améliorer la qualité de vie des habitants",
+      "required": true
+    },
+    {
+      "name": "equipe-projet",
+      "type": "text",
+      "label": "Qui compose l'équipe de projet ?",
+      "placeholder": "Exemple : Responsable, coordinateur, experts",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources disponibles pour le projet ?",
+      "placeholder": "Exemple : Budget, personnel, matériel",
+      "required": true
+    },
+    {
+      "name": "methodologie-approche",
+      "type": "select",
+      "options": [
+        "Agile",
+        "Waterfall",
+        "Hybride"
+      ],
+      "label": "Quelle méthode ou approche de gestion du projet est utilisée ?",
+      "placeholder": "Exemple : Agile",
+      "required": true
+    },
+    {
+      "name": "risques-identifies",
+      "type": "textarea",
+      "label": "Quels sont les risques identifiés pour le projet ?",
+      "placeholder": "Exemple : Risques financiers, risques de retard, risques de non-respect des objectifs",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif projet : {objectif-projet}, Équipe projet : {equipe-projet}, Ressources disponibles : {ressources-disponibles}, Méthodologie approche : {methodologie-approche}, Risques identifiés : {risques-identifies}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

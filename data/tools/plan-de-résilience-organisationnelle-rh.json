@@ -1,0 +1,72 @@
+{
+  "id": "plan-de-résilience-organisationnelle-rh",
+  "title": "Plan de résilience organisationnelle RH",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "type-d'incident",
+      "type": "select",
+      "options": [
+        "Perte de personnel clé",
+        "Cyberattaque",
+        "Incendie",
+        "Désastre naturel"
+      ],
+      "label": "Quel type d'incident souhaitez-vous simuler ?",
+      "placeholder": "Sélectionnez un type d'incident",
+      "required": true
+    },
+    {
+      "name": "nombre-de-employés",
+      "type": "number",
+      "label": "Combien d'employés compte votre organisation ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "textarea",
+      "label": "Quelles ressources (matérielles, financières, humaines) disposez-vous pour répondre à l'incident ?",
+      "placeholder": "Décrivez les ressources disponibles",
+      "required": true
+    },
+    {
+      "name": "objectifs-stratégiques",
+      "type": "textarea",
+      "label": "Quels objectifs stratégiques souhaitez-vous maintenir ou atteindre malgré l'incident ?",
+      "placeholder": "Décrivez les objectifs stratégiques",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en résilience organisationnelle. L'utilisateur a répondu : Type d'incident : {type-d'incident}, Nombre d'employés : {nombre-de-employés}, Ressources disponibles : {ressources-disponibles}, Objectifs stratégiques : {objectifs-stratégiques}. Analyse ces informations et propose un plan de résilience organisationnelle adapté.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

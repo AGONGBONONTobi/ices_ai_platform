@@ -1,0 +1,71 @@
+{
+  "id": "outil-optimisation-tournees-routage-ia",
+  "title": "Outil d'optimisation des tournées & routage IA",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "nb_vehicules",
+      "type": "number",
+      "label": "Combien de véhicules avez-vous à disposition ?",
+      "placeholder": "10",
+      "required": true
+    },
+    {
+      "name": "liste_adresses",
+      "type": "textarea",
+      "label": "Liste des adresses à visiter (une par ligne)",
+      "placeholder": "Adresse 1\nAdresse 2\nAdresse 3",
+      "required": true
+    },
+    {
+      "name": "type_optimisation",
+      "type": "select",
+      "options": [
+        "Temps de trajet",
+        "Distance parcourue",
+        "Coût"
+      ],
+      "label": "Quel est votre objectif d'optimisation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "heure_debut",
+      "type": "text",
+      "label": "Heure de début des tournées (format HH:mm)",
+      "placeholder": "08:00",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en optimisation de tournées. L'utilisateur a répondu : nb_vehicules: {nb_vehicules}, liste_adresses: {liste_adresses}, type_optimisation: {type_optimisation}, heure_debut: {heure_debut}. Analyse ces informations et propose un plan de tournée optimisé. Donne un score global sur 100, une évaluation par axe (respect des horaires, efficacité du parcours, utilisation des véhicules), et des recommandations pour améliorer les tournées.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "prise-de-risque-calculée",
+  "title": "Profil de la prise de risque calculée",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "prise-de-risque-générale",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, comment évaluez-vous votre tendance naturelle à prendre des risques ?",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "prise-de-risque-financière",
+      "type": "select",
+      "options": [
+        "Très prudent",
+        "Prudent",
+        "Équilibré",
+        "Ouvert",
+        "Très ouvert"
+      ],
+      "label": "Comment gérez-vous les risques financiers ?",
+      "placeholder": "Exemple : Équilibré",
+      "required": true
+    },
+    {
+      "name": "prise-de-risque-professionnel",
+      "type": "textarea",
+      "label": "Pouvez-vous nous décrire un moment où vous avez pris un risque important dans votre carrière ?",
+      "placeholder": "Exemple :",
+      "required": true
+    },
+    {
+      "name": "prise-de-risque-personnel",
+      "type": "text",
+      "label": "Quels sont vos objectifs personnels à court terme ?",
+      "placeholder": "Exemple :",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Prise de risque générale : {prise-de-risque-générale}, Prise de risque financière : {prise-de-risque-financière}, Prise de risque professionnel : {prise-de-risque-professionnel}, Prise de risque personnel : {prise-de-risque-personnel}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

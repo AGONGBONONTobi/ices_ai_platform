@@ -1,0 +1,73 @@
+{
+  "id": "strategie-distribution-canaux-partenaires",
+  "title": "Stratégie de distribution, canaux & partenaires",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "canaux-commercialises",
+      "type": "select",
+      "options": [
+        "Site web",
+        "Réseaux sociaux",
+        "Email marketing",
+        "Publicité en ligne",
+        "Partenariats"
+      ],
+      "label": "Quels canaux commerciaux utilisez-vous actuellement ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "cibles-actuelles",
+      "type": "textarea",
+      "label": "Qui sont vos cibles actuelles ? (décrivez-les en détail)",
+      "placeholder": "Exemple : les professionnels de l'âge de 25 à 45 ans, résidant en France",
+      "required": true
+    },
+    {
+      "name": "strategie-partenariats",
+      "type": "text",
+      "label": "Quelle est votre stratégie actuelle en matière de partenariats ?",
+      "placeholder": "Exemple : nous collaborons avec des entreprises similaires pour développer nos offres",
+      "required": true
+    },
+    {
+      "name": "resultats-attendus",
+      "type": "number",
+      "label": "Quels résultats attendez-vous de votre stratégie de distribution, canaux & partenaires ?",
+      "placeholder": "Exemple : 20% de croissance des ventes dans les 6 prochains mois",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Canaux commercialisés : {canaux-commercialises}, Cibles actuelles : {cibles-actuelles}, Stratégie partenariats : {strategie-partenariats}, Résultats attendus : {resultats-attendus}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

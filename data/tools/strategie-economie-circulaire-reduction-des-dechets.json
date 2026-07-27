@@ -1,0 +1,71 @@
+{
+  "id": "strategie-economie-circulaire-reduction-des-dechets",
+  "title": "Stratégie d'économie circulaire & réduction des déchets",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : XYZ S.A.",
+      "required": true
+    },
+    {
+      "name": "type-de-produits",
+      "type": "select",
+      "options": [
+        "Produits alimentaires",
+        "Produits non alimentaires",
+        "Services"
+      ],
+      "label": "Type de produits ou services proposés",
+      "placeholder": "Exemple : Produits alimentaires",
+      "required": true
+    },
+    {
+      "name": "taux-de-reduction-des-dechets",
+      "type": "number",
+      "label": "Taux de réduction des déchets par rapport à l'année précédente",
+      "placeholder": "Exemple : 20%",
+      "required": true
+    },
+    {
+      "name": "initiatives-environnementales",
+      "type": "textarea",
+      "label": "Initiatives environnementales mises en place (ex : recyclage, éco-conception, etc.)",
+      "placeholder": "Exemple : Nous avons mis en place un programme de recyclage des déchets et une éco-conception de nos produits.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en développement durable. L'utilisateur a répondu : Entreprise : {entreprise}, Type de produits : {type-de-produits}, Taux de réduction des déchets : {taux-de-reduction-des-dechets}%, Initiatives environnementales : {initiatives-environnementales}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

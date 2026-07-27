@@ -1,0 +1,78 @@
+{
+  "id": "analyse-cout-volume-profit-seuil-de-rentabilite",
+  "title": "Analyse coût-volume-profit & seuil de rentabilité",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "volumes",
+      "type": "number",
+      "label": "Quels sont les volumes de production prévus ?",
+      "placeholder": "Exemple : 1000 unités",
+      "required": true
+    },
+    {
+      "name": "couts",
+      "type": "number",
+      "label": "Quels sont les coûts fixes et variables ?",
+      "placeholder": "Exemple : 10000 €/an pour les coûts fixes et 5 €/unité pour les coûts variables",
+      "required": true
+    },
+    {
+      "name": "prix-de-vente",
+      "type": "number",
+      "label": "Quel est le prix de vente prévu ?",
+      "placeholder": "Exemple : 20 €/unité",
+      "required": true
+    },
+    {
+      "name": "seuil-de-rentabilite",
+      "type": "number",
+      "label": "Quel est le seuil de rentabilité souhaité ?",
+      "placeholder": "Exemple : 15%",
+      "required": true
+    },
+    {
+      "name": "options-strategie",
+      "type": "select",
+      "options": [
+        "Augmenter les volumes de production",
+        "Réduire les coûts",
+        "Augmenter le prix de vente"
+      ],
+      "label": "Quelle est la stratégie préférée pour atteindre le seuil de rentabilité ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Volumes : {volumes}, Couts : {couts}, Prix de vente : {prix-de-vente}, Seuil de rentabilité : {seuil-de-rentabilite}, Stratégie : {options-strategie}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

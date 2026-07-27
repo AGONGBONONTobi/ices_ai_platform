@@ -1,0 +1,71 @@
+{
+  "id": "outils-de-cartographie-des-acteurs-et-reseaux-d-influence",
+  "title": "Outil de cartographie des acteurs & réseaux d'influence",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteurActivite",
+      "type": "text",
+      "label": "Quel est le secteur d'activité que vous souhaitez analyser ?",
+      "placeholder": "Exemple : Technologie, Finance, Santé",
+      "required": true
+    },
+    {
+      "name": "acteursCles",
+      "type": "textarea",
+      "label": "Qui sont les acteurs clés dans ce secteur d'activité ?",
+      "placeholder": "Exemple : Entreprises, organisations, personnalités",
+      "required": true
+    },
+    {
+      "name": "typeInfluence",
+      "type": "select",
+      "options": [
+        "Économique",
+        "Politique",
+        "Média",
+        "Social"
+      ],
+      "label": "Quel type d'influence souhaitez-vous analyser ?",
+      "required": true
+    },
+    {
+      "name": "objectifAnalyse",
+      "type": "text",
+      "label": "Quel est l'objectif de votre analyse de réseaux d'influence ?",
+      "placeholder": "Exemple : Comprendre les relations entre les acteurs, identifier les tendances",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique. L'utilisateur a répondu : Secteur d'activité : {secteurActivite}, Acteurs clés : {acteursCles}, Type d'influence : {typeInfluence}, Objectif d'analyse : {objectifAnalyse}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour une meilleure compréhension des réseaux d'influence dans ce secteur.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

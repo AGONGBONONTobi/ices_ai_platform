@@ -1,0 +1,85 @@
+{
+  "id": "audit-de-la-chaine-logistique",
+  "title": "Audit de la chaîne logistique",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "transporteur",
+      "type": "select",
+      "options": [
+        "DHL",
+        "UPS",
+        "FedEx",
+        "La Poste"
+      ],
+      "label": "Nom du transporteur utilisé",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "problemes-logistiques",
+      "type": "textarea",
+      "label": "Problèmes logistiques rencontrés (détailler)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "zone-geographique",
+      "type": "select",
+      "options": [
+        "Europe",
+        "Amérique du Nord",
+        "Asie",
+        "Afrique"
+      ],
+      "label": "Zone géographique où l'entreprise opère",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "nombre-de-employes",
+      "type": "number",
+      "label": "Nombre d'employés de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audit logistique. L'utilisateur a répondu : Entreprise: {entreprise}, Transporteur: {transporteur}, Problèmes logistiques: {problemes-logistiques}, Zone géographique: {zone-geographique}, Nombre d'employés: {nombre-de-employes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

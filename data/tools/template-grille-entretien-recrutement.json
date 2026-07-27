@@ -1,0 +1,78 @@
+{
+  "id": "template-grille-entretien-recrutement",
+  "title": "Template de grille d'entretien de recrutement",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "poste",
+      "type": "text",
+      "label": "Quel est le poste à pourvoir ?",
+      "placeholder": "Exemple : Développeur Full Stack",
+      "required": true
+    },
+    {
+      "name": "nomCandidat",
+      "type": "text",
+      "label": "Nom et prénom du candidat",
+      "placeholder": "Exemple : Jean Dupont",
+      "required": true
+    },
+    {
+      "name": "experience",
+      "type": "textarea",
+      "label": "Quelle est l'expérience professionnelle du candidat ?",
+      "placeholder": "Exemple : 5 ans d'expérience en développement web",
+      "required": true
+    },
+    {
+      "name": "competences",
+      "type": "select",
+      "options": [
+        "Développement web",
+        "Analyse de données",
+        "Gestion de projet"
+      ],
+      "label": "Quelles sont les compétences clés du candidat ?",
+      "placeholder": "Sélectionnez une ou plusieurs compétences",
+      "required": true
+    },
+    {
+      "name": "motivation",
+      "type": "textarea",
+      "label": "Quelle est la motivation du candidat pour ce poste ?",
+      "placeholder": "Exemple : Je suis motivé pour ce poste car je souhaite développer mes compétences en développement web",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Poste: {poste}, Nom et prénom du candidat: {nomCandidat}, Expérience professionnelle: {experience}, Compétences clés: {competences}, Motivation: {motivation}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "profil-entrepreneurial-capacite-a-innover",
+  "title": "Profil entrepreneurial & capacité à innover",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "experience-entreprise",
+      "type": "number",
+      "label": "Combien d'années d'expérience professionnelle avez-vous dans une entreprise ?",
+      "placeholder": "Saisissez un nombre",
+      "required": true
+    },
+    {
+      "name": "idees-innovees",
+      "type": "textarea",
+      "label": "Quelles sont les idées innovantes que vous avez développées dans votre carrière ?",
+      "placeholder": "Décrivez vos idées innovantes",
+      "required": true
+    },
+    {
+      "name": "modele-de-reussite",
+      "type": "select",
+      "options": [
+        "Création d'une entreprise",
+        "Développement d'un produit",
+        "Amélioration d'un processus"
+      ],
+      "label": "Quel est votre modèle de réussite préféré ?",
+      "placeholder": "Sélectionnez un modèle de réussite",
+      "required": true
+    },
+    {
+      "name": "challenges-innovees",
+      "type": "textarea",
+      "label": "Quels sont les défis que vous avez relevés pour innover dans votre carrière ?",
+      "placeholder": "Décrivez les défis que vous avez relevés",
+      "required": true
+    },
+    {
+      "name": "resultats-attentes",
+      "type": "number",
+      "label": "Quels sont les résultats que vous attendez de votre capacité à innover ?",
+      "placeholder": "Saisissez un nombre",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Expérience entreprise : {experience-entreprise} ans, Idées innovantes : {idees-innovees}, Modèle de réussite : {modele-de-reussite}, Défis innoves : {challenges-innovees}, Résultats attendus : {resultats-attentes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

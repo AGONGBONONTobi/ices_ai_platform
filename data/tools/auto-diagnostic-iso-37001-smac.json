@@ -1,0 +1,87 @@
+{
+  "id": "auto-diagnostic-iso-37001-smac",
+  "title": "Auto-diagnostic ISO 37001 — SMAC",
+  "category": "Gouvernance, Éthique & Anti-Corruption",
+  "inputs": [
+    {
+      "name": "leadership",
+      "type": "textarea",
+      "label": "Dans quelle mesure la direction est-elle impliquée dans la lutte contre la corruption ?",
+      "placeholder": "Décrivez les actions de la direction",
+      "required": true
+    },
+    {
+      "name": "politique",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Existe-t-il une politique anti-corruption clairement définie ?",
+      "required": true
+    },
+    {
+      "name": "due_diligence",
+      "type": "number",
+      "label": "Quel est le niveau de diligence raisonnable appliqué aux partenaires commerciaux ?",
+      "placeholder": "Échelle de 1 à 5",
+      "required": true
+    },
+    {
+      "name": "controles_financiers",
+      "type": "textarea",
+      "label": "Quels contrôles financiers sont mis en place pour prévenir la corruption ?",
+      "placeholder": "Décrivez les contrôles",
+      "required": true
+    },
+    {
+      "name": "formation",
+      "type": "select",
+      "options": [
+        "Tous les ans",
+        "Tous les 2 ans",
+        "Jamais"
+      ],
+      "label": "Quelle est la fréquence de la formation anti-corruption dispensée aux employés ?",
+      "required": true
+    },
+    {
+      "name": "signalement",
+      "type": "textarea",
+      "label": "Quels sont les mécanismes de signalement des faits de corruption mis en place ?",
+      "placeholder": "Décrivez les mécanismes",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un auditeur expert du référentiel ISO 37001. L'utilisateur a répondu :\nLeadership: {leadership},\nPolitique: {politique},\nDue Diligence: {due_diligence},\nContrôles financiers: {controles_financiers},\nFormation: {formation},\nSignalement: {signalement}. Évaluez ces informations selon les 8 dimensions du Système de Management Anti-Corruption (leadership, politique, due diligence, contrôles financiers, formation, signalement, enquêtes, revue de direction) et attribuez un score global sur 100, une évaluation par axe, et des recommandations priorisées.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

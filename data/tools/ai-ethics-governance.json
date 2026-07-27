@@ -1,0 +1,78 @@
+{
+  "id": "ai-ethics-governance",
+  "title": "Gouvernance de l'IA éthique & responsable",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "context",
+      "type": "textarea",
+      "label": "Décrivez le contexte dans lequel l'IA sera utilisée",
+      "placeholder": "Exemple : projet de développement de chatbot pour un service client",
+      "required": true
+    },
+    {
+      "name": "donnees",
+      "type": "text",
+      "label": "Quels types de données seront traités par l'IA ?",
+      "placeholder": "Exemple : données personnelles, données de santé, données financières",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "text",
+      "label": "Quels sont les objectifs de l'utilisation de l'IA ?",
+      "placeholder": "Exemple : améliorer l'efficacité, améliorer la sécurité, améliorer l'expérience utilisateur",
+      "required": true
+    },
+    {
+      "name": "risques",
+      "type": "select",
+      "options": [
+        "biais",
+        "dépendance à l'algorithme",
+        "incohérence des données"
+      ],
+      "label": "Quels sont les risques potentiels liés à l'utilisation de l'IA ?",
+      "placeholder": "Sélectionnez les risques pertinents",
+      "required": true
+    },
+    {
+      "name": "mesures",
+      "type": "textarea",
+      "label": "Quelles mesures seront prises pour atténuer les risques ?",
+      "placeholder": "Exemple : utilisation de données diversifiées, mise en place de mécanismes de contrôle",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gouvernance de l'IA éthique & responsable. L'utilisateur a répondu : Contexte : {context}, Données : {donnees}, Objectifs : {objectifs}, Risques : {risques}, Mesures : {mesures}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

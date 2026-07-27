@@ -1,0 +1,70 @@
+{
+  "id": "plan-de-gestion-des-risques-de-securite-alimentaire",
+  "title": "Plan de gestion des risques de sécurité alimentaire",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "text",
+      "label": "Quels sont les principaux risques de sécurité alimentaire identifiés dans l'entreprise ?",
+      "placeholder": "Exemple : contamination, erreur de fabrication, etc.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Quelles sont les mesures de prévention déjà mises en place pour atténuer ces risques ?",
+      "placeholder": "Exemple : formation des employés, mise en place de procédures, etc.",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Existe-t-il un plan d'action pour gérer les risques de sécurité alimentaire ?",
+      "placeholder": "Sélectionner une réponse",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la mise en œuvre du plan de gestion des risques de sécurité alimentaire ?",
+      "placeholder": "Exemple : 1000€",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des risques. L'utilisateur a répondu : Risques identifiés : {variable1}, Mesures de prévention : {variable2}, Existe un plan d'action ? : {variable3}, Budget alloué : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

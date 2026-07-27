@@ -1,0 +1,82 @@
+{
+  "id": "auto-diagnostic-ces-esf-banque-mondiale",
+  "title": "Auto-diagnostic CES/ESF Banque Mondiale",
+  "category": "Conformité Bailleurs & Projets Financés",
+  "inputs": [
+    {
+      "name": "projet_description",
+      "type": "textarea",
+      "label": "Description du projet",
+      "placeholder": "Veuillez décrire le projet",
+      "required": true
+    },
+    {
+      "name": "nes_application",
+      "type": "select",
+      "options": [
+        "NES 1: Évaluation et Gestion des Risques Environnementaux et Sociaux",
+        "NES 2: Travailleurs et Conditions de Travail",
+        "NES 3: Réinstallation Involontaire",
+        "NES 4: Terres et Droits de Propriété",
+        "NES 5: Biodiversité et Services Écosystémiques",
+        "NES 6: Ressources Naturelles",
+        "NES 7: Changement Climatique et Energie",
+        "NES 8: Santé et Sécurité",
+        "NES 9: Acquisition de Terrain et Réinstallation Involontaire de personnes",
+        "NES 10: Information et Participation des Parties Prenantes"
+      ],
+      "label": "Quelle NES appliquer ?",
+      "required": true
+    },
+    {
+      "name": "parties_prenantes",
+      "type": "textarea",
+      "label": "Liste des parties prenantes impliquées",
+      "placeholder": "Veuillez lister les parties prenantes",
+      "required": true
+    },
+    {
+      "name": "niveau_maturite",
+      "type": "select",
+      "options": [
+        "0 - Inexistant",
+        "1 - Initié",
+        "2 - Formalisé",
+        "3 - Optimisé"
+      ],
+      "label": "Niveau de maturité de la gestion environnementale et sociale",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Évaluez la conformité du projet décrit ({projet_description}) au Cadre Environnemental et Social de la Banque Mondiale, en particulier à la NES sélectionnée ({nes_application}). Considérez la liste des parties prenantes impliquées ({parties_prenantes}) et le niveau de maturité de la gestion environnementale et sociale ({niveau_maturite}). Donnez un score global sur 100, une évaluation par axe (gestion des risques environnementaux et sociaux, travail, réinstallation involontaire, etc.), et des recommandations priorisées.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "id": "template-charte-ethique-code-conduite",
+  "title": "Template de charte éthique & code de conduite",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : XYZ Corporation",
+      "required": true
+    },
+    {
+      "name": "mission",
+      "type": "textarea",
+      "label": "Mission de l'entreprise",
+      "placeholder": "Exemple : Nous sommes une entreprise qui se démarque par notre engagement envers la durabilité et la responsabilité sociale.",
+      "required": true
+    },
+    {
+      "name": "valeurs",
+      "type": "textarea",
+      "label": "Valeurs de l'entreprise",
+      "placeholder": "Exemple : Honnêteté, Intégrité, Respect, Innovation, et Collaboration.",
+      "required": true
+    },
+    {
+      "name": "principes",
+      "type": "textarea",
+      "label": "Principes de conduite de l'entreprise",
+      "placeholder": "Exemple : Nous nous engageons à agir avec intégrité, à être transparents, et à respecter les droits de tous les individus.",
+      "required": true
+    },
+    {
+      "name": "axe1",
+      "type": "select",
+      "options": [
+        "Éthique",
+        "Responsabilité sociale",
+        "Durabilité",
+        "Innovation",
+        "Collaboration"
+      ],
+      "label": "Axe 1 : Qualité",
+      "placeholder": "Exemple : Éthique",
+      "required": true
+    },
+    {
+      "name": "axe2",
+      "type": "select",
+      "options": [
+        "Éthique",
+        "Responsabilité sociale",
+        "Durabilité",
+        "Innovation",
+        "Collaboration"
+      ],
+      "label": "Axe 2 : Responsabilité sociale",
+      "placeholder": "Exemple : Responsabilité sociale",
+      "required": true
+    },
+    {
+      "name": "axe3",
+      "type": "select",
+      "options": [
+        "Éthique",
+        "Responsabilité sociale",
+        "Durabilité",
+        "Innovation",
+        "Collaboration"
+      ],
+      "label": "Axe 3 : Durabilité",
+      "placeholder": "Exemple : Durabilité",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise : {entreprise}, Mission : {mission}, Valeurs : {valeurs}, Principes : {principes}, Axe 1 : {axe1}, Axe 2 : {axe2}, Axe 3 : {axe3}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

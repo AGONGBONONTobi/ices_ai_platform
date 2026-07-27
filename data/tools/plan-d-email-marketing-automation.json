@@ -1,0 +1,83 @@
+{
+  "id": "plan-d-email-marketing-automation",
+  "title": "Plan d'email marketing & automation",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "text",
+      "label": "Quel est l'objectif principal de votre campagne d'email marketing ?",
+      "placeholder": "Exemple : augmentation des ventes",
+      "required": true
+    },
+    {
+      "name": "liste-cible",
+      "type": "textarea",
+      "label": "Quelle est la liste cible que vous souhaitez atteindre ?",
+      "placeholder": "Exemple : liste de clients actuels, liste de prospects",
+      "required": true
+    },
+    {
+      "name": "contenu",
+      "type": "select",
+      "options": [
+        "Informations sur les produits",
+        "Offres spéciales",
+        "Actualités de l'entreprise"
+      ],
+      "label": "Quel type de contenu souhaitez-vous inclure dans vos emails ?",
+      "placeholder": "Exemple : informations sur les produits",
+      "required": true
+    },
+    {
+      "name": "frequence",
+      "type": "number",
+      "label": "Quelle est la fréquence de diffusion des emails ?",
+      "placeholder": "Exemple : 1 email par semaine",
+      "required": true
+    },
+    {
+      "name": "canal",
+      "type": "select",
+      "options": [
+        "Email",
+        "SMS",
+        "Réseaux sociaux"
+      ],
+      "label": "Quel canal de communication souhaitez-vous utiliser ?",
+      "placeholder": "Exemple : email",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en marketing. L'utilisateur a répondu : Objectif : {objectif}, Liste cible : {liste-cible}, Contenu : {contenu}, Fréquence : {frequence}, Canal : {canal}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

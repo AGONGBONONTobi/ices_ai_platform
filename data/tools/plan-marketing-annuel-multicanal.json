@@ -1,0 +1,81 @@
+{
+  "id": "plan-marketing-annuel-multicanal",
+  "title": "Plan marketing annuel & multicanal",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs du plan marketing annuel ?",
+      "placeholder": "Exemple : Augmenter la notoriété de la marque, accroître les ventes, etc.",
+      "required": true
+    },
+    {
+      "name": "cibles",
+      "type": "text",
+      "label": "Qui sont les cibles ciblées pour le plan marketing ?",
+      "placeholder": "Exemple : Public cible âgé de 18 à 35 ans, résidant en France, etc.",
+      "required": true
+    },
+    {
+      "name": "canaux",
+      "type": "select",
+      "options": [
+        "Réseaux sociaux",
+        "Email marketing",
+        "Publicité en ligne",
+        "Publicité en ligne",
+        "Affiliation",
+        "Autres"
+      ],
+      "label": "Quels canaux de communication seront utilisés pour le plan marketing ?",
+      "placeholder": "Sélectionnez les canaux pertinents",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué pour le plan marketing ?",
+      "placeholder": "Exemple : 10 000 €",
+      "required": true
+    },
+    {
+      "name": "indicateurs",
+      "type": "textarea",
+      "label": "Quels sont les indicateurs de performance clés pour évaluer le succès du plan marketing ?",
+      "placeholder": "Exemple : Nombre de followers, taux de conversion, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en marketing. L'utilisateur a répondu : Objectifs : {objectifs}, Cibles : {cibles}, Canaux : {canaux}, Budget : {budget}, Indicateurs : {indicateurs}. Analyse ces informations et propose un plan marketing annuel & multicanal efficace, avec des objectifs clairs, des stratégies de communication adaptées et des indicateurs de performance pertinents.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "outil-de-gestion-des-creances-et-recouvrement",
+  "title": "Outil de gestion des créances & recouvrement",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "montantCreance",
+      "type": "number",
+      "label": "Montant de la créance",
+      "placeholder": "Entrez le montant de la créance",
+      "required": true
+    },
+    {
+      "name": "dateEcheance",
+      "type": "text",
+      "label": "Date d'échéance",
+      "placeholder": "JJ/MM/AAAA",
+      "required": true
+    },
+    {
+      "name": "etatDeSolvence",
+      "type": "select",
+      "options": [
+        "Payé",
+        "En attente",
+        "Impayé"
+      ],
+      "label": "État de solvence du débiteur",
+      "placeholder": "Sélectionnez l'état de solvence",
+      "required": true
+    },
+    {
+      "name": "descriptionProbleme",
+      "type": "textarea",
+      "label": "Description du problème de recouvrement",
+      "placeholder": "Décrivez le problème de recouvrement",
+      "required": true
+    },
+    {
+      "name": "methodeDeRecouvrement",
+      "type": "select",
+      "options": [
+        "Courrier",
+        "Téléphone",
+        "Courriel"
+      ],
+      "label": "Méthode de recouvrement préférée",
+      "placeholder": "Sélectionnez la méthode de recouvrement",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des créances et recouvrement. L'utilisateur a répondu : Montant de la créance : {montantCreance}, Date d'échéance : {dateEcheance}, État de solvence du débiteur : {etatDeSolvence}, Description du problème de recouvrement : {descriptionProbleme}, Méthode de recouvrement préférée : {methodeDeRecouvrement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

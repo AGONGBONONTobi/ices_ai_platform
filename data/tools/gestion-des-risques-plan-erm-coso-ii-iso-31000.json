@@ -1,0 +1,78 @@
+{
+  "id": "gestion-des-risques-plan-erm-coso-ii-iso-31000",
+  "title": "Plan de gestion des risques (ERM — COSO II / ISO 31000)",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "risques_identifies",
+      "type": "textarea",
+      "label": "Liste des risques identifiés",
+      "placeholder": "Exemple de risques identifiés",
+      "required": true
+    },
+    {
+      "name": "probabilite_risque",
+      "type": "number",
+      "label": "Probabilité de réalisation du risque",
+      "placeholder": "Exemple de probabilité",
+      "required": true
+    },
+    {
+      "name": "impact_risque",
+      "type": "number",
+      "label": "Impact potentiel du risque",
+      "placeholder": "Exemple d'impact",
+      "required": true
+    },
+    {
+      "name": "strategie_risque",
+      "type": "select",
+      "options": [
+        "Acceptation",
+        "Mise en œuvre d'une stratégie de transfert",
+        "Mise en œuvre d'une stratégie de mitigation"
+      ],
+      "label": "Stratégie de gestion du risque",
+      "placeholder": "Exemple de stratégie",
+      "required": true
+    },
+    {
+      "name": "budget_risque",
+      "type": "number",
+      "label": "Budget alloué pour la gestion du risque",
+      "placeholder": "Exemple de budget",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Risques identifiés: {risques_identifies}, Probabilité de réalisation du risque: {probabilite_risque}, Impact potentiel du risque: {impact_risque}, Stratégie de gestion du risque: {strategie_risque}, Budget alloué pour la gestion du risque: {budget_risque}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

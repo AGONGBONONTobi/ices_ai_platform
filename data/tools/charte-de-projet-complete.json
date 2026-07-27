@@ -1,0 +1,72 @@
+{
+  "id": "charte-de-projet-complete",
+  "title": "Charte de projet complète (Project Charter)",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "objectifProjet",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal du projet ?",
+      "placeholder": "Décrivez brièvement l'objectif du projet",
+      "required": true
+    },
+    {
+      "name": "porteeProjet",
+      "type": "text",
+      "label": "Quelle est la portée du projet ?",
+      "placeholder": "Décrivez la portée du projet",
+      "required": true
+    },
+    {
+      "name": "partiesPreantes",
+      "type": "select",
+      "options": [
+        "Client",
+        "Équipe de projet",
+        "Direction",
+        "Fournisseurs",
+        "Autres"
+      ],
+      "label": "Qui sont les parties prenantes du projet ?",
+      "required": true
+    },
+    {
+      "name": "delaisProjet",
+      "type": "number",
+      "label": "Quel est le délai prévu pour le projet ?",
+      "placeholder": "En mois",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en gestion de projets. L'utilisateur a répondu : Objectif du projet : {objectifProjet}, Portée du projet : {porteeProjet}, Parties prenantes : {partiesPreantes}, Délai prévu : {delaisProjet} mois. Analyse ces informations et donne un score global sur 100, une évaluation par axe (objectif, portée, ressources, planning), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "id": "strategie-fintech-paiement-mobile-afrique",
+  "title": "Stratégie de fintech & paiement mobile (Afrique)",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "modele-économique",
+      "type": "select",
+      "options": [
+        "Modèle de croissance",
+        "Modèle de stabilité"
+      ],
+      "label": "Quel modèle économique prédomine dans le pays choisi ?",
+      "placeholder": "Sélectionnez un modèle",
+      "required": true
+    },
+    {
+      "name": "teneur-en-digitalisation",
+      "type": "number",
+      "label": "Quelle est la teneur en digitalisation de la population ?",
+      "placeholder": "Indiquez un pourcentage",
+      "required": true
+    },
+    {
+      "name": "infrastructure-paiement",
+      "type": "textarea",
+      "label": "Quelle est l'infrastructure de paiement actuelle dans le pays ?",
+      "placeholder": "Décrit l'infrastructure de paiement",
+      "required": true
+    },
+    {
+      "name": "reglementations-financieres",
+      "type": "text",
+      "label": "Quelles sont les principales réglementations financières dans le pays ?",
+      "placeholder": "Sélectionnez les réglementations",
+      "required": true
+    },
+    {
+      "name": "adoption-des-services-fintech",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quelle est l'adoption des services fintech dans le pays ?",
+      "placeholder": "Sélectionnez un niveau d'adoption",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en transformation digitale et IA. L'utilisateur a répondu : Modèle économique: {modele-économique}, Teneur en digitalisation: {teneur-en-digitalisation}%, Infrastructure de paiement: {infrastructure-paiement}, Réglementations financières: {reglementations-financieres}, Adoption des services fintech: {adoption-des-services-fintech}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

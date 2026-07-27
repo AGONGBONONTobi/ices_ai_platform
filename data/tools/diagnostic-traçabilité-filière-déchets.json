@@ -1,0 +1,80 @@
+{
+  "id": "diagnostic-traçabilité-filière-déchets",
+  "title": "Diagnostic de traçabilité filière déchets",
+  "category": "Économie Circulaire & Déchets",
+  "inputs": [
+    {
+      "name": "type_dechets",
+      "type": "select",
+      "options": [
+        "Déchets ménagers",
+        "Déchets industriels",
+        "Déchets dangereux"
+      ],
+      "label": "Quel type de déchets votre entreprise produit-elle ?",
+      "required": true
+    },
+    {
+      "name": "collecte_dechets",
+      "type": "textarea",
+      "label": "Décrivez votre processus de collecte des déchets (fréquence, conteneurs, etc.)",
+      "placeholder": "Exemple : collecte hebdomadaire, conteneurs de 1000L",
+      "required": true
+    },
+    {
+      "name": "conformite_reglementaire",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Votre entreprise est-elle en conformité avec les réglementations en vigueur concernant la gestion des déchets ?",
+      "required": true
+    },
+    {
+      "name": "documentation_bsd",
+      "type": "textarea",
+      "label": "Décrivez votre système de documentation des BSD ( Bordereaux de Suivi des Déchets )",
+      "placeholder": "Exemple : utilisation d'un logiciel de gestion des déchets",
+      "required": true
+    },
+    {
+      "name": "taux_de_valorisation",
+      "type": "number",
+      "label": "Quel est votre taux actuel de valorisation des déchets ?",
+      "placeholder": "Exemple : 80",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en gestion des déchets. L'utilisateur a répondu : Type de déchets: {type_dechets}, Collecte des déchets: {collecte_dechets}, Conformité réglementaire: {conformite_reglementaire}, Documentation BSD: {documentation_bsd}, Taux de valorisation: {taux_de_valorisation}. Évaluez la chaîne de gestion des déchets de l'entreprise selon les critères suivants : collecte, tri, transport, traitement, valorisation. Donnez un score global sur 100, une évaluation par axe (collecte, traitement, valorisation) et des recommandations prioritaires pour améliorer la traçabilité de la filière déchets.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

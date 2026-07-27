@@ -1,0 +1,85 @@
+{
+  "id": "outil-mesure-image-reputation",
+  "title": "Outil de mesure de l'image & réputation",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "nom_entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Ex: Acme Corp",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Finance",
+        "Santé",
+        "Consommation",
+        "Autre"
+      ],
+      "label": "Secteur d'activité",
+      "required": true
+    },
+    {
+      "name": "sentiment_moyen",
+      "type": "number",
+      "label": "Sentiment moyen des mentions (1-5)",
+      "placeholder": "Ex: 4.2",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Commentaires supplémentaires sur la perception publique",
+      "placeholder": "Ex: ...",
+      "required": false
+    },
+    {
+      "name": "source_principale",
+      "type": "select",
+      "options": [
+        "Médias traditionnels",
+        "Réseaux sociaux",
+        "Blogs",
+        "Forums",
+        "Autre"
+      ],
+      "label": "Source principale d'information",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom de l'entreprise: {nom_entreprise}, Secteur: {secteur}, Sentiment moyen: {sentiment_moyen}, Commentaires: {commentaires}, Source principale: {source_principale}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

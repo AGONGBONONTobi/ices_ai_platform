@@ -1,0 +1,83 @@
+{
+  "id": "outil-marketing-automation-personnalisation",
+  "title": "Outil de marketing automation & personnalisation",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "cible",
+      "type": "select",
+      "options": [
+        "Prospects",
+        "Clients existants",
+        "Abonnés"
+      ],
+      "label": "Quel est l'objectif de l'outil ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "canal",
+      "type": "select",
+      "options": [
+        "Email",
+        "Réseau social",
+        "Site web"
+      ],
+      "label": "Quel est le canal de communication préféré ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "contenu",
+      "type": "textarea",
+      "label": "Quel est le contenu de la campagne ?",
+      "placeholder": "Décrivez le contenu de la campagne",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué à la campagne ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    },
+    {
+      "name": "objectif",
+      "type": "text",
+      "label": "Quel est l'objectif de la campagne ?",
+      "placeholder": "Décrivez l'objectif de la campagne",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en marketing automation. L'utilisateur a répondu : Cible: {cible}, Canal: {canal}, Contenu: {contenu}, Budget: {budget}, Objectif: {objectif}. Analyse ces informations et propose une stratégie de marketing personnalisée pour atteindre l'objectif.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

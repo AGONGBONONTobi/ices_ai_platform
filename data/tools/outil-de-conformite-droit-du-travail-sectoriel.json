@@ -1,0 +1,76 @@
+{
+  "id": "outil-de-conformite-droit-du-travail-sectoriel",
+  "title": "Outil de conformité droit du travail sectoriel",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Agriculture",
+        "Construction",
+        "Hôtellerie",
+        "Transport"
+      ],
+      "label": "Quel est le secteur d'activité de votre entreprise ?",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "effectif",
+      "type": "number",
+      "label": "Combien d'employés avez-vous ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    },
+    {
+      "name": "contrats-collectifs",
+      "type": "textarea",
+      "label": "Avez-vous des contrats collectifs en vigueur ? Si oui, décrivez-les.",
+      "placeholder": "Exemple : Nous avons un contrat collectif avec la CGT.",
+      "required": true
+    },
+    {
+      "name": "formation",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Faites-vous régulièrement des formations sur les obligations légales ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un conseiller juridique. L'utilisateur a répondu : Secteur: {secteur}, Effectif: {effectif}, Contrats collectifs: {contrats-collectifs}, Formation: {formation}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

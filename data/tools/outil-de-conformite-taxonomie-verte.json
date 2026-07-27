@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-conformite-taxonomie-verte",
+  "title": "Outil de conformité taxonomie verte (UE/Afrique)",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "select",
+      "options": [
+        "Biodiversité",
+        "Energie renouvelable",
+        "Réduction des déchets"
+      ],
+      "label": "Quel est le principal objectif de la taxonomie verte dans votre projet ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Présentez les mesures concrètes prises pour promouvoir la biodiversité dans votre projet.",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Quel est le pourcentage d'énergie renouvelable utilisé dans votre projet ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quels sont les principaux déchets générés par votre projet et comment les avez-vous traités ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE et développement durable. L'utilisateur a répondu : Objectif principal de la taxonomie verte : {variable1}, Mesures concrètes pour la biodiversité : {variable2}, Pourcentage d'énergie renouvelable : {variable3}, Traitement des déchets : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

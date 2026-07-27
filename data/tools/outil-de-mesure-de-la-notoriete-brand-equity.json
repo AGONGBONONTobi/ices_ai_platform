@@ -1,0 +1,79 @@
+{
+  "id": "outil-de-mesure-de-la-notoriete-brand-equity",
+  "title": "Outil de mesure de la notoriété & brand equity",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "marque",
+      "type": "text",
+      "label": "Nom de la marque",
+      "placeholder": "Exemple : Nike",
+      "required": true
+    },
+    {
+      "name": "annee",
+      "type": "number",
+      "label": "Année de référence",
+      "placeholder": "Exemple : 2022",
+      "required": true
+    },
+    {
+      "name": "region",
+      "type": "select",
+      "options": [
+        "Europe",
+        "Amérique du Nord",
+        "Asie",
+        "Afrique"
+      ],
+      "label": "Région géographique",
+      "placeholder": "Exemple : Europe",
+      "required": true
+    },
+    {
+      "name": "media",
+      "type": "textarea",
+      "label": "Liste des médias utilisés pour la promotion de la marque",
+      "placeholder": "Exemple : Facebook, Instagram, TV, Presse écrite",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Budget alloué à la promotion de la marque",
+      "placeholder": "Exemple : 100 000€",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en marketing. L'utilisateur a répondu : Marque : {marque}, Année : {année}, Région : {region}, Médias : {media}, Budget : {budget}. Analyse ces informations et donne un score global de notoriété et de brand equity sur 100, une évaluation par axe (notoriété, image de marque, loyauté client), et des recommandations pour améliorer la notoriété et le brand equity de la marque.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score global de notoriété et de brand equity sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score par axe sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

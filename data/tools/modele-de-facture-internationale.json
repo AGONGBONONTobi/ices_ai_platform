@@ -1,0 +1,75 @@
+{
+  "id": "modele-de-facture-internationale",
+  "title": "Template de facture conforme & internationale",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Ex: Entreprise XYZ",
+      "required": true
+    },
+    {
+      "name": "typeFacture",
+      "type": "select",
+      "options": [
+        "Facture proforma",
+        "Facture définitive",
+        "Facture d'avoir"
+      ],
+      "label": "Type de facture",
+      "required": true
+    },
+    {
+      "name": "detailsFacture",
+      "type": "textarea",
+      "label": "Détails de la facture (produits, services, etc.)",
+      "placeholder": "Ex: Description du produit ou service, quantité, prix unitaire",
+      "required": true
+    },
+    {
+      "name": "langue",
+      "type": "select",
+      "options": [
+        "Français",
+        "Anglais",
+        "Espagnol",
+        "Autre"
+      ],
+      "label": "Langue de la facture",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en création de modèles de factures. L'utilisateur a fourni les informations suivantes : Entreprise: {entreprise}, Type de facture: {typeFacture}, Détails de la facture: {detailsFacture}, Langue: {langue}. Créez un modèle de facture conforme et international en fonction de ces détails et donnez un score global sur 100 pour la qualité du modèle, évaluez les axes tels que la conformité, la clarté et la présentation, et fournissez des recommandations pour l'amélioration.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "profil-apprenant-numerique",
+  "title": "Profil de l'apprenant numérique",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "niveau-de-connaissance-technologique",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est le niveau de connaissance technologique de l'apprenant ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "motivations-pour-apprendre",
+      "type": "textarea",
+      "label": "Quelles sont les motivations de l'apprenant pour apprendre en ligne ?",
+      "placeholder": "Exemple : Je veux améliorer mes compétences pour mon travail.",
+      "required": true
+    },
+    {
+      "name": "habitudes-d-apprentissage",
+      "type": "text",
+      "label": "Quelles sont les habitudes d'apprentissage de l'apprenant ? (ex : lecture, vidéos, podcasts)",
+      "placeholder": "Exemple : Lecture de livres et articles en ligne.",
+      "required": true
+    },
+    {
+      "name": "outils-technologiques-utilises",
+      "type": "select",
+      "options": [
+        "Tablette, ordinateur portable, smartphone"
+      ],
+      "label": "Quels outils technologiques utilise l'apprenant pour apprendre ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "problemes-de-concentration",
+      "type": "select",
+      "options": [
+        "Oui, je suis souvent distrayé",
+        "Non, je suis concentré"
+      ],
+      "label": "L'apprenant a-t-il des problèmes de concentration pendant les séances d'apprentissage ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Niveau de connaissance technologique : {niveau-de-connaissance-technologique}, Motivations pour apprendre : {motivations-pour-apprendre}, Habitudes d'apprentissage : {habitudes-d-apprentissage}, Outils technologiques utilisés : {outils-technologiques-utilises}, Problèmes de concentration : {problemes-de-concentration}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

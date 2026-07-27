@@ -1,0 +1,65 @@
+{
+  "id": "outil-gestion-cultures-calendrier-cultural",
+  "title": "Outil de gestion des cultures & calendrier cultural",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_culture",
+      "type": "select",
+      "options": [
+        "Céréales",
+        "Légumineuses",
+        "Fruits",
+        "Légumes"
+      ],
+      "label": "Quel type de culture gérez-vous ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "superficie",
+      "type": "number",
+      "label": "Quelle est la superficie de votre champ (en hectares) ?",
+      "placeholder": "10",
+      "required": true
+    },
+    {
+      "name": "description_calendrier",
+      "type": "textarea",
+      "label": "Décrivez votre calendrier cultural (dates de semis, de récolte, etc.)",
+      "placeholder": "Semis le 15 mars, récolte prévue le 20 août",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en gestion des cultures. L'utilisateur a répondu : Type de culture: {type_culture}, Superficie: {superficie} hectares, Calendrier cultural: {description_calendrier}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe (rendement, qualité, respect de l'environnement), et des recommandations pour améliorer la gestion de la culture.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

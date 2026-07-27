@@ -1,0 +1,71 @@
+{
+  "id": "audit-des-systemes-documentaires",
+  "title": "Audit des systèmes documentaires",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Présentez le contexte de l'audit et les objectifs recherchés.",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Entreprise",
+        "Département",
+        "Service"
+      ],
+      "label": "Quel est le niveau de l'audit (entreprise, département ou service)?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Combien de personnes sont impliquées dans le processus documentaire?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quels sont les principaux outils utilisés pour la gestion documentaire?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audit des systèmes documentaires. L'utilisateur a répondu : Contexte : {variable1}, Niveau d'audit : {variable2}, Nombre de personnes impliquées : {variable3}, Outils utilisés : {variable4}. Analyse ces informations et propose un plan d'action pour améliorer la conformité et la qualité des documents.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

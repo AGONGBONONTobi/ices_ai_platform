@@ -1,0 +1,72 @@
+{
+  "id": "outil-de-participation-citoyenne-numerique",
+  "title": "Outil de participation citoyenne numérique",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Décrivez l'objectif principal de votre projet de participation citoyenne numérique",
+      "placeholder": "Exemple : Améliorer la transparence des décisions municipales",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "select",
+      "options": [
+        "Citoyens",
+        "Jeunes",
+        "Personnes âgées",
+        "Organisations locales"
+      ],
+      "label": "Qui est votre public cible pour la participation citoyenne ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "canaux_utilises",
+      "type": "text",
+      "label": "Quels canaux numériques prévoyez-vous utiliser pour la participation citoyenne ?",
+      "placeholder": "Exemple : Réseaux sociaux, plateforme en ligne dédiée",
+      "required": true
+    },
+    {
+      "name": "indicateurs_suivi",
+      "type": "textarea",
+      "label": "Quels indicateurs de suivi et d'évaluation comptez-vous utiliser pour mesurer le succès de votre projet ?",
+      "placeholder": "Exemple : Taux de participation, niveau de satisfaction",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en participation citoyenne numérique. L'utilisateur a répondu : Objectif: {objectif}, Public cible: {public_cible}, Canaux utilisés: {canaux_utilises}, Indicateurs de suivi: {indicateurs_suivi}. Évaluez la pertinence et la faisabilité du projet en donnant un score global sur 100, une évaluation par axe (participation, engagement, inclusivité) et des recommandations pour améliorer le projet.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "plan-communication-crise-dark-site",
+  "title": "Plan de communication de crise & dark site",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "crisis_type",
+      "type": "select",
+      "options": [
+        "Risque de réputation",
+        "Incident financier",
+        "Cyberattaque",
+        "Autre"
+      ],
+      "label": "Quel type de crise envisagez-vous?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "dark_site_url",
+      "type": "text",
+      "label": "URL du dark site (si applicable)",
+      "placeholder": "https://exemple.com/dark",
+      "required": false
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Budget alloué (en €)",
+      "placeholder": "50000",
+      "required": true
+    },
+    {
+      "name": "stakeholders",
+      "type": "textarea",
+      "label": "Liste des parties prenantes et leurs rôles",
+      "placeholder": "Stakeholder 1: rôle\nStakeholder 2: rôle",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Crisis type: {crisis_type}, Dark site URL: {dark_site_url}, Budget: {budget}, Stakeholders: {stakeholders}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "etude-de-marche-quantitative-et-qualitative-ia",
+  "title": "Étude de marché quantitative & qualitative IA",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "number",
+      "label": "Quel est le chiffre d'affaires annuel de l'entreprise ?",
+      "placeholder": "Exemple : 1000000",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Quels sont les principaux objectifs de l'étude de marché ? (ex : segmentation de marché, analyse de concurrence, etc.)",
+      "placeholder": "Exemple : segmentation de marché, analyse de concurrence",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "select",
+      "options": [
+        "B2B",
+        "B2C",
+        "B2B et B2C"
+      ],
+      "label": "Quel est le modèle de vente de l'entreprise ?",
+      "placeholder": "Exemple : B2B",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "number",
+      "label": "Quel est le nombre de clients actuels de l'entreprise ?",
+      "placeholder": "Exemple : 1000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en marketing et en commerce. L'utilisateur a répondu : Chiffre d'affaires annuel : {variable1}, Objectifs de l'étude de marché : {variable2}, Modèle de vente : {variable3}, Nombre de clients actuels : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

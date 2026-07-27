@@ -1,0 +1,85 @@
+{
+  "id": "gestion-temoignages-cas-clients",
+  "title": "Outil de gestion des témoignages & cas clients",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "select",
+      "options": [
+        "Client satisfait",
+        "Partenariat",
+        "Étude de cas",
+        "Recommandation"
+      ],
+      "label": "Quel type de témoignage souhaitez-vous publier ?",
+      "placeholder": "Sélectionnez un type",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Décrivez brièvement le cas client",
+      "placeholder": "Exemple: ...",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "text",
+      "label": "Nom du client ou de l'entreprise",
+      "placeholder": "Exemple: Acme Corp",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "number",
+      "label": "Budget alloué pour la campagne de témoignage (en €)",
+      "placeholder": "Exemple: 5000",
+      "required": false
+    },
+    {
+      "name": "variable5",
+      "type": "select",
+      "options": [
+        "Site web",
+        "Newsletter",
+        "Réseaux sociaux",
+        "Vidéo"
+      ],
+      "label": "Canal de diffusion prévu",
+      "placeholder": "Sélectionnez un canal",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en communication. L'utilisateur a répondu : Type de témoignage : {variable1}, Description du cas client : {variable2}, Nom du client : {variable3}, Budget alloué : {variable4}, Canal de diffusion : {variable5}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (pertinence, impact, faisabilité, budget), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        },
+        "recommandations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

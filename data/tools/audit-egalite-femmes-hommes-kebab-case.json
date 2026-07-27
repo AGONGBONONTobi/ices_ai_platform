@@ -1,0 +1,78 @@
+{
+  "id": "audit-egalite-femmes-hommes-kebab-case",
+  "title": "Audit de l'égalité femmes-hommes (index Egapro)",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Présentez les objectifs de l'audit de l'égalité femmes-hommes.",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Entreprise",
+        "Établissement",
+        "Département"
+      ],
+      "label": "Quel est l'objet de l'audit ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Combien d'employés travaillent dans l'entreprise ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quels sont les principaux domaines d'activité de l'entreprise ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable5",
+      "type": "textarea",
+      "label": "Présentez les mesures déjà mises en place pour promouvoir l'égalité femmes-hommes.",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en égalité femmes-hommes. L'utilisateur a répondu : Objectifs de l'audit : {variable1}, Objet de l'audit : {variable2}, Nombre d'employés : {variable3}, Principaux domaines d'activité : {variable4}, Mesures déjà mises en place : {variable5}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

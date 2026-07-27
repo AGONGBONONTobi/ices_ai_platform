@@ -1,0 +1,70 @@
+{
+  "id": "modele-proces-verbal-entretien-professionnel",
+  "title": "Template de procès-verbal d'entretien professionnel",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Ex: Entreprise XYZ",
+      "required": true
+    },
+    {
+      "name": "poste",
+      "type": "text",
+      "label": "Poste occupé par le candidat",
+      "placeholder": "Ex: Développeur web",
+      "required": true
+    },
+    {
+      "name": "objectifEntretien",
+      "type": "select",
+      "options": [
+        "Évaluation des compétences",
+        "Évaluation de l'adéquation au poste",
+        "Développement professionnel"
+      ],
+      "label": "Objectif de l'entretien",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Commentaires et observations sur l'entretien",
+      "placeholder": "Ex: Le candidat a montré une grande motivation et des compétences exceptionnelles.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en ressources humaines. L'utilisateur a fourni les informations suivantes : Entreprise: {entreprise}, Poste: {poste}, Objectif de l'entretien: {objectifEntretien}, Commentaires: {commentaires}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (par exemple, compétences, motivation, adéquation au poste), et des recommandations pour améliorer le processus d'entretien.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

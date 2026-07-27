@@ -1,0 +1,85 @@
+{
+  "id": "reporting-reglementaire-et-conformite-automatise",
+  "title": "Reporting réglementaire & conformité automatisé",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Société XYZ",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Banque et finance",
+        "Assurance",
+        "Énergie et ressources naturelles",
+        "Services publics"
+      ],
+      "label": "Secteur d'activité",
+      "placeholder": "Exemple : Banque et finance",
+      "required": true
+    },
+    {
+      "name": "réglementations",
+      "type": "textarea",
+      "label": "Réglementations applicables",
+      "placeholder": "Exemple : Règlement GDPR, Règlement MiFID II, etc.",
+      "required": true
+    },
+    {
+      "name": "donnees_sensibles",
+      "type": "number",
+      "label": "Nombre de données sensibles traitées",
+      "placeholder": "Exemple : 100 000",
+      "required": true
+    },
+    {
+      "name": "frequentiel",
+      "type": "select",
+      "options": [
+        "Quotidien",
+        "Hebdomadaire",
+        "Mensuel",
+        "Trimestriel"
+      ],
+      "label": "Fréquence de traitement des données",
+      "placeholder": "Exemple : Quotidien",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise : {entreprise}, Secteur : {secteur}, Réglementations : {réglementations}, Données sensibles : {donnees_sensibles}, Fréquence : {frequentiel}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

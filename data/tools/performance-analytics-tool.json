@@ -1,0 +1,71 @@
+{
+  "id": "performance-analytics-tool",
+  "title": "Analytics de la performance des produits/services",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "select",
+      "options": [
+        "KPI1",
+        "KPI2",
+        "KPI3"
+      ],
+      "label": "Quel KPI souhaitez-vous analyser ?",
+      "placeholder": "Sélectionnez un KPI",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Décrivez les données collectées pour l'analyse",
+      "placeholder": "Exemple de données collectées",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Quel est le seuil de performance attendu ?",
+      "placeholder": "Exemple de seuil de performance",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quel est le périmètre de l'analyse (par exemple, mois, trimestre, année) ?",
+      "placeholder": "Exemple de périmètre",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un analyste expert. L'utilisateur a répondu : KPI: {variable1}, Données collectées: {variable2}, Seuil de performance: {variable3}, Périmètre de l'analyse: {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

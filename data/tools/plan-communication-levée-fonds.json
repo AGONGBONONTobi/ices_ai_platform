@@ -1,0 +1,71 @@
+{
+  "id": "plan-communication-levée-fonds",
+  "title": "Plan de communication pour levée de fonds",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "text",
+      "label": "Quel est l'objectif principal de la levée de fonds?",
+      "placeholder": "Ex: lever 1M€",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "select",
+      "options": [
+        "Investisseurs institutionnels",
+        "Business Angels",
+        "Crowdfunding",
+        "Autre"
+      ],
+      "label": "Quel est le public cible principal?",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué à la communication?",
+      "placeholder": "Ex: 50000",
+      "required": true
+    },
+    {
+      "name": "timeline",
+      "type": "textarea",
+      "label": "Décrivez le calendrier prévu pour les actions de communication.",
+      "placeholder": "Ex: 3 mois, 2 phases...",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en levée de fonds. L'utilisateur a répondu : Objectif: {objectif}, Public cible: {public_cible}, Budget: {budget}€, Timeline: {timeline}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (Objectif, Public cible, Budget, Timeline, Cohérence globale), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

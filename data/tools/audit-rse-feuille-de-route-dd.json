@@ -1,0 +1,81 @@
+{
+  "id": "audit-rse-feuille-de-route-dd",
+  "title": "Audit de la politique RSE & feuille de route DD",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "politique_rse_existe",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Existe-t-il une politique RSE dans l'entreprise ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "politique_rse_date_mise_en_place",
+      "type": "text",
+      "label": "Si oui, quelle date de mise en place ?",
+      "placeholder": "JJ/MM/AAAA",
+      "required": false
+    },
+    {
+      "name": "feuille_de_route_dd_existe",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Existe-t-il une feuille de route DD dans l'entreprise ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "feuille_de_route_dd_date_mise_en_place",
+      "type": "text",
+      "label": "Si oui, quelle date de mise en place ?",
+      "placeholder": "JJ/MM/AAAA",
+      "required": false
+    },
+    {
+      "name": "recommandations",
+      "type": "textarea",
+      "label": "Quelles sont les recommandations pour améliorer la politique RSE et la feuille de route DD ?",
+      "placeholder": "",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Politique RSE : {politique_rse_existe}, Date de mise en place de la politique RSE : {politique_rse_date_mise_en_place}, Feuille de route DD : {feuille_de_route_dd_existe}, Date de mise en place de la feuille de route DD : {feuille_de_route_dd_date_mise_en_place}, Recommandations : {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "gestion-de-projets-pmo-methode-agile-scrum-kanban-board",
+  "title": "Méthode Agile, Scrum & Kanban board",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "methode-preferée",
+      "type": "select",
+      "options": [
+        "Scrum",
+        "Kanban",
+        "Hybride"
+      ],
+      "label": "Quelle méthode Agile préfère-t-on utiliser dans l'équipe ?",
+      "placeholder": "Sélectionnez une méthode",
+      "required": true
+    },
+    {
+      "name": "sprint-duration",
+      "type": "number",
+      "label": "Quelle est la durée d'un sprint (en jours) ?",
+      "placeholder": "Exemple : 14",
+      "required": true
+    },
+    {
+      "name": "nombre-de-sprints",
+      "type": "number",
+      "label": "Combien de sprints sont prévus dans le projet ?",
+      "placeholder": "Exemple : 4",
+      "required": true
+    },
+    {
+      "name": "description-projet",
+      "type": "textarea",
+      "label": "Décrivez brièvement le projet et ses objectifs",
+      "placeholder": "Exemple : Développement d'une nouvelle application web",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Méthode préférée : {methode-preferée}, Durée d'un sprint : {sprint-duration} jours, Nombre de sprints : {nombre-de-sprints}, Description du projet : {description-projet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

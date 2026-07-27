@@ -1,0 +1,23 @@
+{
+  "id": "diagnostic-de-data-governance",
+  "title": "Diagnostic de data governance & qualité de données",
+  "category": "Finance",
+  "inputs": [
+    {
+      "name": "niveauDataGovernance",
+      "type": "number",
+      "label": "Niveau de data governance",
+      "placeholder": "Exemple : 5",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en diagnostic de data governance. Utilise {niveauDataGovernance} pour évaluer la data governance de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "string"
+      }
+    }
+  }
+}

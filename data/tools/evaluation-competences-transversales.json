@@ -1,0 +1,85 @@
+{
+  "id": "evaluation-competences-transversales",
+  "title": "Évaluation des compétences transversales (soft skills)",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "communication",
+      "type": "textarea",
+      "label": "La personne est-elle capable de communiquer clairement et efficacement avec les autres ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "travail-en-equipe",
+      "type": "select",
+      "options": [
+        "Très bien",
+        "Bien",
+        "Moyen",
+        "Mal"
+      ],
+      "label": "La personne travail-elle bien en équipe ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "proactivite",
+      "type": "number",
+      "label": "La personne est-elle proactive et capable de prendre l'initiative ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "flexibilite",
+      "type": "textarea",
+      "label": "La personne est-elle flexible et capable d'adapter ses habitudes pour répondre aux besoins de l'équipe ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "autonomie",
+      "type": "select",
+      "options": [
+        "Très bien",
+        "Bien",
+        "Moyen",
+        "Mal"
+      ],
+      "label": "La personne est-elle capable de travailler de manière autonome ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Communication : {communication}, Travail en équipe : {travail-en-equipe}, Proactivité : {proactivite}, Flexibilité : {flexibilite}, Autonomie : {autonomie}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

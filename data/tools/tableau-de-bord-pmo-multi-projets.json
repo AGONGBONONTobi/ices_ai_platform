@@ -1,0 +1,78 @@
+{
+  "id": "tableau-de-bord-pmo-multi-projets",
+  "title": "Tableau de bord PMO multi-projets",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "projet_principal",
+      "type": "select",
+      "options": [
+        "Projet A",
+        "Projet B",
+        "Projet C"
+      ],
+      "label": "Quel est le projet principal ?",
+      "placeholder": "Sélectionnez un projet",
+      "required": true
+    },
+    {
+      "name": "budget_total",
+      "type": "number",
+      "label": "Quel est le budget total des projets ?",
+      "placeholder": "Entrez le budget total",
+      "required": true
+    },
+    {
+      "name": "délai_total",
+      "type": "number",
+      "label": "Quel est le délai total des projets ?",
+      "placeholder": "Entrez le délai total",
+      "required": true
+    },
+    {
+      "name": "équipe_pmo",
+      "type": "textarea",
+      "label": "Quelles sont les compétences de l'équipe PMO ?",
+      "placeholder": "Entrez les compétences de l'équipe PMO",
+      "required": true
+    },
+    {
+      "name": "risques_identifiés",
+      "type": "textarea",
+      "label": "Quels sont les risques identifiés pour les projets ?",
+      "placeholder": "Entrez les risques identifiés",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Projet principal : {projet_principal}, Budget total : {budget_total}, Délai total : {délai_total}, Équipe PMO : {équipe_pmo}, Risques identifiés : {risques_identifiés}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

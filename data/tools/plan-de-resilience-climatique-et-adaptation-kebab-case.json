@@ -1,0 +1,82 @@
+{
+  "id": "plan-de-resilience-climatique-et-adaptation-kebab-case",
+  "title": "Plan de résilience climatique & adaptation (TCFD/TNFD)",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Quels sont les principaux risques climatiques identifiés par l'entreprise ?",
+      "placeholder": "Exemple : changements climatiques, sécheresse, inondations, etc.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "TCFD (Task Force on Climate-related Financial Disclosures)",
+        "TNFD (Task Force on Nature-related Financial Disclosures)",
+        "Autre"
+      ],
+      "label": "Quel est le cadre de référence choisi pour la résilience climatique et l'adaptation ?",
+      "placeholder": "Exemple : TCFD, TNFD, etc.",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Quel est le budget alloué à la résilience climatique et à l'adaptation pour les 3 prochaines années ?",
+      "placeholder": "Exemple : 100 000 €, 500 000 €, etc.",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "textarea",
+      "label": "Quelles sont les actions déjà mises en œuvre pour réduire les émissions de gaz à effet de serre et améliorer la résilience de l'entreprise ?",
+      "placeholder": "Exemple : transition énergétique, réduction des déchets, etc.",
+      "required": true
+    },
+    {
+      "name": "variable5",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "L'entreprise a-t-elle déjà établi un plan de continuité d'activité (PCA) pour les risques climatiques ?",
+      "placeholder": "Exemple : oui, non, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Risques climatiques : {variable1}, Cadre de référence : {variable2}, Budget : {variable3} €, Actions mises en œuvre : {variable4}, PCA : {variable5}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

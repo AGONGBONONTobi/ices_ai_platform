@@ -1,0 +1,72 @@
+{
+  "id": "plan-de-transport-logistique-optimise",
+  "title": "Plan de transport & logistique optimisé",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "budget_annuel",
+      "type": "number",
+      "label": "Quel est votre budget annuel pour le transport et la logistique (en €) ?",
+      "placeholder": "ex: 500000",
+      "required": true
+    },
+    {
+      "name": "volume_mensuel",
+      "type": "number",
+      "label": "Quel est le volume moyen de marchandises transportées par mois (en tonnes) ?",
+      "placeholder": "ex: 1200",
+      "required": true
+    },
+    {
+      "name": "principaux_courriers",
+      "type": "textarea",
+      "label": "Listez les principaux transporteurs ou partenaires logistiques que vous utilisez actuellement.",
+      "placeholder": "ex: DHL, UPS, etc.",
+      "required": true
+    },
+    {
+      "name": "priorites",
+      "type": "select",
+      "options": [
+        "Coût",
+        "Délais",
+        "Fiabilité",
+        "Flexibilité"
+      ],
+      "label": "Quelle est votre priorité principale pour l'optimisation du transport ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en supply chain. L'utilisateur a répondu : Budget annuel: {budget_annuel}, Volume mensuel: {volume_mensuel}, Principaux courriers: {principaux_courriers}, Priorité: {priorites}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

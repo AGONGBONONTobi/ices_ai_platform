@@ -1,0 +1,78 @@
+{
+  "id": "etude-faisabilite-cooperative",
+  "title": "Étude de faisabilité d'une coopérative",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de la coopérative?",
+      "placeholder": "Exemple: fournir des services agricoles aux membres",
+      "required": true
+    },
+    {
+      "name": "structure",
+      "type": "select",
+      "options": [
+        "Coopérative de production",
+        "Coopérative de consommation",
+        "Coopérative d'échange",
+        "Autre"
+      ],
+      "label": "Quel type de coopérative envisagez-vous?",
+      "required": true
+    },
+    {
+      "name": "ressources",
+      "type": "textarea",
+      "label": "Quelles ressources humaines et financières sont disponibles?",
+      "placeholder": "Exemple: 10 membres, 50 000 €",
+      "required": true
+    },
+    {
+      "name": "risques",
+      "type": "textarea",
+      "label": "Quels sont les principaux risques identifiés?",
+      "placeholder": "Exemple: fluctuations des prix, manque de capitaux",
+      "required": false
+    },
+    {
+      "name": "période",
+      "type": "number",
+      "label": "Durée prévue du projet en mois",
+      "placeholder": "12",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif: {objectif}, Structure: {structure}, Ressources: {ressources}, Risques: {risques}, Durée: {période}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

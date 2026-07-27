@@ -1,0 +1,71 @@
+{
+  "id": "template-contrat-commercial-b2b",
+  "title": "Template de contrat commercial B2B",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "type_de_contrat",
+      "type": "select",
+      "options": [
+        "Contrat de vente",
+        "Contrat de service",
+        "Contrat de partenariat"
+      ],
+      "label": "Quel est le type de contrat que vous souhaitez établir ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "parties_impliquees",
+      "type": "textarea",
+      "label": "Qui sont les parties impliquées dans le contrat ? (décrivez brièvement)",
+      "placeholder": "Par exemple, société X et société Y",
+      "required": true
+    },
+    {
+      "name": "duree_contrat",
+      "type": "number",
+      "label": "Quelle est la durée prévue du contrat en mois ?",
+      "placeholder": "12",
+      "required": true
+    },
+    {
+      "name": "conditions_resiliation",
+      "type": "textarea",
+      "label": "Quelles sont les conditions de résiliation du contrat ?",
+      "placeholder": "Par exemple, préavis de 30 jours",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant juridique. L'utilisateur a répondu : Type de contrat: {type_de_contrat}, Parties impliquées: {parties_impliquees}, Durée du contrat: {duree_contrat} mois, Conditions de résiliation: {conditions_resiliation}. Analysez ces informations et donnez un score global sur 100 pour la qualité du contrat, évaluez les axes tels que la clarté, la complétude et la sécurité juridique, et fournissez des recommandations pour améliorer le contrat.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

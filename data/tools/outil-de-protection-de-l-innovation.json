@@ -1,0 +1,76 @@
+{
+  "id": "outil-de-protection-de-l-innovation",
+  "title": "Outil de protection de l'innovation (brevets, marques, secrets)",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "typeDInnovation",
+      "type": "select",
+      "options": [
+        "Brevet",
+        "Marque",
+        "Secret commercial"
+      ],
+      "label": "Quel type d'innovation souhaitez-vous protéger ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "descriptionInnovation",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre innovation",
+      "placeholder": "Exemple : Un nouveau procédé de fabrication",
+      "required": true
+    },
+    {
+      "name": "paysCible",
+      "type": "select",
+      "options": [
+        "France",
+        "Europe",
+        "Monde entier"
+      ],
+      "label": "Dans quels pays souhaitez-vous protéger votre innovation ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "delaiProtection",
+      "type": "number",
+      "label": "Quel est le délai de protection souhaité (en années) ?",
+      "placeholder": "Exemple : 10",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en propriété intellectuelle. L'utilisateur a répondu : Type d'innovation : {typeDInnovation}, Description de l'innovation : {descriptionInnovation}, Pays cible : {paysCible}, Délai de protection : {delaiProtection}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (type de protection, territorialité, durée de protection), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

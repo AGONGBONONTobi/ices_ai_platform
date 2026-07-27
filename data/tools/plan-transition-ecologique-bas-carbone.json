@@ -1,0 +1,76 @@
+{
+  "id": "plan-transition-ecologique-bas-carbone",
+  "title": "Plan de transition écologique & bas-carbone",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "objectifs-ecologiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs écologiques du plan de transition ?",
+      "placeholder": "Exemple : réduction des émissions de gaz à effet de serre, amélioration de l'efficacité énergétique, etc.",
+      "required": true
+    },
+    {
+      "name": "strategie-reduction-emissions",
+      "type": "select",
+      "options": [
+        "Réduction des émissions de gaz à effet de serre",
+        "Amélioration de l'efficacité énergétique",
+        "Utilisation de sources d'énergie renouvelables"
+      ],
+      "label": "Quelle est la stratégie pour réduire les émissions de gaz à effet de serre ?",
+      "placeholder": "Exemple : réduction des émissions de gaz à effet de serre",
+      "required": true
+    },
+    {
+      "name": "budget-investissement",
+      "type": "number",
+      "label": "Quel est le budget prévu pour l'investissement dans les mesures de réduction des émissions ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "periode-realisation",
+      "type": "select",
+      "options": [
+        "Court terme (moins de 2 ans)",
+        "Moyen terme (2-5 ans)",
+        "Long terme (plus de 5 ans)"
+      ],
+      "label": "Quelle est la période de réalisation du plan de transition ?",
+      "placeholder": "Exemple : court terme",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en développement durable. L'utilisateur a répondu : Objectifs écologiques : {objectifs-ecologiques}, Stratégie de réduction des émissions : {strategie-reduction-emissions}, Budget d'investissement : {budget-investissement}, Période de réalisation : {periode-realisation}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

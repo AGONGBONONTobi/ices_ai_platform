@@ -1,0 +1,70 @@
+{
+  "id": "diagnostic-sst-iso-45001",
+  "title": "Diagnostic SST (ISO 45001)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Quels sont les principaux risques pour la santé et la sécurité des salariés ?",
+      "placeholder": "Exemple : Risques liés à la manipulation de matériaux dangereux, risques liés à la mobilité des salariés, etc.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Existe-t-il un plan d'urgence en place pour les situations d'urgence ?",
+      "placeholder": "Exemple : Plan d'urgence pour les incendies, plan d'urgence pour les évacuations, etc.",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Combien de formations en SST ont été dispensées aux salariés au cours des 12 derniers mois ?",
+      "placeholder": "Exemple : 10 formations, 20 formations, etc.",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "textarea",
+      "label": "Quels sont les principaux axes d'amélioration identifiés dans le système de gestion de la santé et de la sécurité ?",
+      "placeholder": "Exemple : Amélioration de la formation des salariés, amélioration de la communication, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Risques : {variable1}, Plan d'urgence : {variable2}, Nombre de formations : {variable3}, Axes d'amélioration : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

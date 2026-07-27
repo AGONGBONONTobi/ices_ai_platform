@@ -1,0 +1,79 @@
+{
+  "id": "plan-financier-projet-impact-social",
+  "title": "Plan financier pour projet à impact social",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "budget-projet",
+      "type": "number",
+      "label": "Quel est le budget total alloué au projet ?",
+      "placeholder": "Entrez le budget en euros",
+      "required": true
+    },
+    {
+      "name": "recettes-prevues",
+      "type": "number",
+      "label": "Quelles sont les recettes prévues pour le projet ?",
+      "placeholder": "Entrez les recettes en euros",
+      "required": true
+    },
+    {
+      "name": "depenses-prevues",
+      "type": "number",
+      "label": "Quelles sont les dépenses prévues pour le projet ?",
+      "placeholder": "Entrez les dépenses en euros",
+      "required": true
+    },
+    {
+      "name": "dette-projet",
+      "type": "number",
+      "label": "Quel est le montant de la dette liée au projet ?",
+      "placeholder": "Entrez le montant de la dette en euros",
+      "required": true
+    },
+    {
+      "name": "select-mode-impact",
+      "type": "select",
+      "options": [
+        "Soutien à des personnes vulnérables",
+        "Amélioration des infrastructures",
+        "Développement économique",
+        "Autre (décrivez)"
+      ],
+      "label": "Quel est le mode d'impact principal du projet ?",
+      "placeholder": "Sélectionnez un mode d'impact",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a répondu : Budget projet : {budget-projet}, Recettes prévues : {recettes-prevues}, Dépenses prévues : {depenses-prevues}, Dette projet : {dette-projet}, Mode d'impact principal : {select-mode-impact}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

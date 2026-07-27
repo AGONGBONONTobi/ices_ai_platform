@@ -1,0 +1,78 @@
+{
+  "id": "plan-test-validation-recette",
+  "title": "Plan de test, validation & recette",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "testCases",
+      "type": "textarea",
+      "label": "Liste des cas de test à réaliser",
+      "placeholder": "Exemple : Test du formulaire, Test de la connexion à la base de données, etc.",
+      "required": true
+    },
+    {
+      "name": "validationCriteria",
+      "type": "select",
+      "options": [
+        "Critères de validation 1",
+        "Critères de validation 2",
+        "Critères de validation 3"
+      ],
+      "label": "Critères de validation à appliquer",
+      "placeholder": "Exemple : La fonctionnalité doit être accessible en ligne",
+      "required": true
+    },
+    {
+      "name": "recetteSteps",
+      "type": "text",
+      "label": "Étapes de la recette",
+      "placeholder": "Exemple : Étape 1 : Lancer l'application, Étape 2 : Vérifier la connexion à la base de données, etc.",
+      "required": true
+    },
+    {
+      "name": "risks",
+      "type": "textarea",
+      "label": "Liste des risques identifiés",
+      "placeholder": "Exemple : Risque 1 : Perte de données, Risque 2 : Défaillance du système, etc.",
+      "required": true
+    },
+    {
+      "name": "mitigationPlans",
+      "type": "textarea",
+      "label": "Plans de mitigation pour les risques identifiés",
+      "placeholder": "Exemple : Plan de mitigation pour le risque 1 : Mettre en place un système de sauvegarde régulier, Plan de mitigation pour le risque 2 : Mettre en place un système de redondance, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion de projet. L'utilisateur a répondu : TestCases: {testCases}, ValidationCriteria: {validationCriteria}, RecetteSteps: {recetteSteps}, Risks: {risks}, MitigationPlans: {mitigationPlans}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

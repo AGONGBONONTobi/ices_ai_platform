@@ -1,0 +1,71 @@
+{
+  "id": "evaluation-maturite-numerique-kebab-case",
+  "title": "Évaluation de la maturité numérique apprenant",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "experience-numerique",
+      "type": "textarea",
+      "label": "Quel est votre niveau d'expérience avec les outils numériques ?",
+      "placeholder": "Exemple : J'ai utilisé des outils numériques pour mon travail scolaire ou professionnel.",
+      "required": true
+    },
+    {
+      "name": "connaissances-informatiques",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est votre niveau de connaissances en informatique ?",
+      "placeholder": "Exemple : Je sais utiliser des logiciels de bureautique et des navigateurs web.",
+      "required": true
+    },
+    {
+      "name": "motivation-apprendre",
+      "type": "text",
+      "label": "Qu'est-ce qui vous motive à apprendre des compétences numériques ?",
+      "placeholder": "Exemple : Je veux améliorer mes compétences pour mon travail ou pour mon avenir professionnel.",
+      "required": true
+    },
+    {
+      "name": "barriers-apprentissage",
+      "type": "textarea",
+      "label": "Quels sont les obstacles que vous rencontrez pour apprendre des compétences numériques ?",
+      "placeholder": "Exemple : Je n'ai pas accès à un ordinateur ou je n'ai pas le temps de m'entraîner.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un conseiller en formation. L'apprenant a répondu : Expérience numérique : {experience-numerique}, Connaissances informatiques : {connaissances-informatiques}, Motivation d'apprendre : {motivation-apprendre}, Barrières d'apprentissage : {barriers-apprentissage}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

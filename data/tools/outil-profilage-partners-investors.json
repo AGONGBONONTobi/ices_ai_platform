@@ -1,0 +1,72 @@
+{
+  "id": "outil-profilage-partners-investors",
+  "title": "Outil de profilage des partenaires & investisseurs",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "type_partenaire",
+      "type": "select",
+      "options": [
+        "Investisseur",
+        "Partenaire commercial",
+        "Fournisseur",
+        "Distributeur"
+      ],
+      "label": "Quel est le type de partenaire ou d'investisseur que vous souhaitez profiler ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "secteur_activite",
+      "type": "text",
+      "label": "Dans quel secteur d'activité opère ce partenaire ou investisseur ?",
+      "placeholder": "Exemple : Technologie, Santé, Finance",
+      "required": true
+    },
+    {
+      "name": "description_projet",
+      "type": "textarea",
+      "label": "Décrivez brièvement le projet ou l'opportunité que vous souhaitez présenter à ce partenaire ou investisseur",
+      "placeholder": "Exemple : Nous recherchons un investissement pour développer notre nouvelle plateforme de services...",
+      "required": true
+    },
+    {
+      "name": "budget_prevu",
+      "type": "number",
+      "label": "Quel est le budget prévu pour ce projet ou cette opportunité ?",
+      "placeholder": "Exemple : 100000",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. Vous avez les informations suivantes sur un partenaire ou investisseur potentiel : Type de partenaire : {type_partenaire}, Secteur d'activité : {secteur_activite}, Description du projet : {description_projet}, Budget prévu : {budget_prevu}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe, et des recommandations pour maximiser les chances de succès de ce partenariat ou investissement.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

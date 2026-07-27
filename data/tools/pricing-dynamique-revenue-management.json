@@ -1,0 +1,78 @@
+{
+  "id": "pricing-dynamique-revenue-management",
+  "title": "Stratégie de pricing dynamique & revenue management",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "produits-offerts",
+      "type": "textarea",
+      "label": "Quels sont les produits ou services offerts ? (liste séparée par des virgules)",
+      "placeholder": "Exemple : Produit A, Produit B, Produit C",
+      "required": true
+    },
+    {
+      "name": "cible-client",
+      "type": "text",
+      "label": "Qui est la cible client pour ces produits ou services ?",
+      "placeholder": "Exemple : Entreprises de taille moyenne",
+      "required": true
+    },
+    {
+      "name": "methode-de-prix",
+      "type": "select",
+      "options": [
+        "Prix fixe",
+        "Prix variable",
+        "Prix dynamique"
+      ],
+      "label": "Quelle est la méthode de prix utilisée ?",
+      "placeholder": "Exemple : Prix fixe",
+      "required": true
+    },
+    {
+      "name": "parametres-revenus",
+      "type": "number",
+      "label": "Quels sont les paramètres de revenus pour chaque produit ou service ? (ex : taux de conversion, coût de vente)",
+      "placeholder": "Exemple : 20%, 50€",
+      "required": true
+    },
+    {
+      "name": "objectifs-revenus",
+      "type": "number",
+      "label": "Quels sont les objectifs de revenus pour l'entreprise ? (ex : augmentation de 10%, atteindre 1 million de €)",
+      "placeholder": "Exemple : 10%",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en marketing et commercial. L'utilisateur a répondu : Produits offerts : {produits-offerts}, Cible client : {cible-client}, Méthode de prix : {methode-de-prix}, Paramètres revenus : {parametres-revenus}, Objectifs revenus : {objectifs-revenus}. Analyse ces informations et propose une stratégie de pricing dynamique et revenue management pour atteindre les objectifs de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

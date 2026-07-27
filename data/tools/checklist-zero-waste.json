@@ -1,0 +1,84 @@
+{
+  "id": "checklist-zero-waste",
+  "title": "Checklist zéro déchet (Zero Waste)",
+  "category": "Économie Circulaire & Déchets",
+  "inputs": [
+    {
+      "name": "refuser",
+      "type": "textarea",
+      "label": "Quelles actions mettez-vous en place pour refuser les déchets ?",
+      "placeholder": "Ex: refuser les sacs plastiques, les bouteilles en plastique...",
+      "required": true
+    },
+    {
+      "name": "reduire",
+      "type": "textarea",
+      "label": "Quelles actions mettez-vous en place pour réduire vos déchets ?",
+      "placeholder": "Ex: réduire la consommation de papier, utiliser des produits en vrac...",
+      "required": true
+    },
+    {
+      "name": "reutiliser",
+      "type": "textarea",
+      "label": "Quelles actions mettez-vous en place pour réutiliser les déchets ?",
+      "placeholder": "Ex: utiliser des sacs réutilisables, des contenants pour les aliments...",
+      "required": true
+    },
+    {
+      "name": "recycler",
+      "type": "textarea",
+      "label": "Quelles actions mettez-vous en place pour recycler les déchets ?",
+      "placeholder": "Ex: trier les déchets recyclables, utiliser des bacs de recyclage...",
+      "required": true
+    },
+    {
+      "name": "composter",
+      "type": "textarea",
+      "label": "Quelles actions mettez-vous en place pour composter les déchets ?",
+      "placeholder": "Ex: composter les déchets alimentaires, les feuilles mortes...",
+      "required": true
+    },
+    {
+      "name": "niveau_maturite",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est votre niveau de maturité en matière de zéro déchet ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous avez répondu : Refuser: {refuser}, Réduire: {reduire}, Réutiliser: {reutiliser}, Recycler: {recycler}, Composter: {composter}, Niveau de maturité: {niveau_maturite}. Évaluez les actions mises en place selon les 5R et estimez le taux de détournement des déchets. Donnez un score global sur 100, une évaluation par axe (Refuser, Réduire, Réutiliser, Recycler, Composter) et des recommandations prioritaires pour améliorer le taux de détournement des déchets.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

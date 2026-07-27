@@ -1,0 +1,23 @@
+{
+  "id": "diagnostic-du-portefeuille-produits",
+  "title": "Diagnostic du Portefeuille Produits/Services (Matrice BCG)",
+  "category": "RH",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Entreprise XYZ",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en diagnostic du portefeuille produits. Utilise {entreprise} pour réaliser un diagnostic du portefeuille produits/services (Matrice BCG)...",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "string"
+      }
+    }
+  }
+}

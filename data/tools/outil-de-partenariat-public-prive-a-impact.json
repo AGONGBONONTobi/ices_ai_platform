@@ -1,0 +1,72 @@
+{
+  "id": "outil-de-partenariat-public-prive-a-impact",
+  "title": "Outil de partenariat public-privé à impact (PPP)",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "objectifPartenariat",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux de votre partenariat public-privé à impact ?",
+      "placeholder": "Décrivez les buts et les résultats attendus",
+      "required": true
+    },
+    {
+      "name": "secteurActivite",
+      "type": "select",
+      "options": [
+        "Énergie renouvelable",
+        "Infrastructure",
+        "Santé",
+        "Éducation",
+        "Autre"
+      ],
+      "label": "Dans quel secteur d'activité votre partenariat sera-t-il impliqué ?",
+      "required": true
+    },
+    {
+      "name": "investissementPrevu",
+      "type": "number",
+      "label": "Quel est l'investissement prévu pour ce partenariat ?",
+      "placeholder": "En millions d'euros",
+      "required": true
+    },
+    {
+      "name": "partenairesImpliques",
+      "type": "text",
+      "label": "Qui sont les partenaires impliqués dans ce projet ?",
+      "placeholder": "Listez les organisations ou entreprises participantes",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en partenariats public-privé. L'utilisateur a répondu : Objectif du partenariat : {objectifPartenariat}, Secteur d'activité : {secteurActivite}, Investissement prévu : {investissementPrevu} millions d'euros, Partenaires impliqués : {partenairesImpliques}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (environnemental, social, économique), et des recommandations pour améliorer l'impact de ce partenariat.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "plan-cybersecurite-pme-protection-basique",
+  "title": "Plan de cybersécurité PME & protection basique",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "taille_entreprise",
+      "type": "select",
+      "options": [
+        "moins de 10 salariés",
+        "10-49 salariés",
+        "50-99 salariés",
+        "100 salariés ou plus"
+      ],
+      "label": "Quelle est la taille de votre entreprise ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "type_donnees",
+      "type": "textarea",
+      "label": "Quels types de données sensibles traitez-vous dans votre entreprise ? (clients, financières, etc.)",
+      "placeholder": "Ex: informations bancaires, données personnelles des employés",
+      "required": true
+    },
+    {
+      "name": "niveau_securite_actuel",
+      "type": "select",
+      "options": [
+        "aucune sécurité particulière",
+        "logiciels antivirus",
+        "firewall",
+        "autre"
+      ],
+      "label": "Quel est votre niveau de sécurité actuel ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs en matière de cybersécurité ?",
+      "placeholder": "Ex: protéger les données des clients, prévenir les attaques",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en cybersécurité. L'utilisateur a répondu : Taille de l'entreprise: {taille_entreprise}, Types de données: {type_donnees}, Niveau de sécurité actuel: {niveau_securite_actuel}, Objectifs: {objectif}. Élaborez un plan de cybersécurité pour cette PME en évaluant les risques, en proposant des mesures de protection et en donnant des recommandations pour améliorer la sécurité. Donnez un score global sur 100, une évaluation par axe (ex: sécurité des données, protection des accès, etc.) et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "template-resolutions-proces-verbaux-ag",
+  "title": "Template de résolutions & procès-verbaux d'AG",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "type_assemblee",
+      "type": "select",
+      "options": [
+        "Assemblée Générale Ordinaire",
+        "Assemblée Générale Extraordinaire"
+      ],
+      "label": "Quel est le type d'assemblée ?",
+      "placeholder": "Sélectionnez le type d'assemblée",
+      "required": true
+    },
+    {
+      "name": "date_assemblee",
+      "type": "text",
+      "label": "Quelle est la date de l'assemblée ?",
+      "placeholder": "JJ/MM/AAAA",
+      "required": true
+    },
+    {
+      "name": "ordre_du_jour",
+      "type": "textarea",
+      "label": "Quel est l'ordre du jour de l'assemblée ?",
+      "placeholder": "Décrivez brièvement les points à l'ordre du jour",
+      "required": true
+    },
+    {
+      "name": "nombre_actionnaires",
+      "type": "number",
+      "label": "Combien d'actionnaires sont présents ou représentés ?",
+      "placeholder": "Nombre d'actionnaires",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant juridique expert. L'utilisateur a répondu : Type d'assemblée: {type_assemblee}, Date de l'assemblée: {date_assemblee}, Ordre du jour: {ordre_du_jour}, Nombre d'actionnaires: {nombre_actionnaires}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (conformité, procédure, contenu), et des recommandations pour améliorer la qualité du procès-verbal et des résolutions.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

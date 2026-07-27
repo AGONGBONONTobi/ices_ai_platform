@@ -1,0 +1,80 @@
+{
+  "id": "strategie-communication-interculturelle",
+  "title": "Stratégie de communication interculturelle",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "public_cible",
+      "type": "text",
+      "label": "Quel est le public cible de votre communication interculturelle ?",
+      "placeholder": "Exemple: expatriés, partenaires internationaux",
+      "required": true
+    },
+    {
+      "name": "langues_principales",
+      "type": "textarea",
+      "label": "Quelles sont les langues principales à prendre en compte ?",
+      "placeholder": "Exemple: anglais, espagnol, mandarin",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux de votre stratégie ?",
+      "placeholder": "Exemple: renforcer la cohésion d'équipe, améliorer la perception de la marque",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget mensuel alloué à cette stratégie ?",
+      "placeholder": "En euros",
+      "required": true
+    },
+    {
+      "name": "canaux",
+      "type": "select",
+      "options": [
+        "réseaux sociaux",
+        "emailing",
+        "événements",
+        "publicité traditionnelle",
+        "autre"
+      ],
+      "label": "Quels canaux privilégiez-vous ?",
+      "placeholder": "Sélectionnez un ou plusieurs",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en communication interculturelle. L'utilisateur a répondu : Public cible: {public_cible}, Langues principales: {langues_principales}, Objectifs: {objectifs}, Budget: {budget}€, Canaux: {canaux}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (par ex. pertinence culturelle, clarté du message, adéquation des canaux, gestion du budget), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "template-discours-dirigeant",
+  "title": "Template de discours dirigeant",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "sujet-discours",
+      "type": "text",
+      "label": "Sujet du discours",
+      "placeholder": "Exemple : présentation de l'équipe",
+      "required": true
+    },
+    {
+      "name": "objectif-discours",
+      "type": "textarea",
+      "label": "Objectif du discours",
+      "placeholder": "Exemple : convaincre les employés de l'importance de leur rôle",
+      "required": true
+    },
+    {
+      "name": "ton-discours",
+      "type": "select",
+      "options": [
+        "formel",
+        "informel",
+        "motivant"
+      ],
+      "label": "Ton du discours",
+      "placeholder": "Exemple : formel",
+      "required": true
+    },
+    {
+      "name": "public-cible",
+      "type": "select",
+      "options": [
+        "employés",
+        "clients",
+        "partenaires"
+      ],
+      "label": "Public cible",
+      "placeholder": "Exemple : employés",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Sujet du discours : {sujet-discours}, Objectif du discours : {objectif-discours}, Ton du discours : {ton-discours}, Public cible : {public-cible}. Analyse ces informations et propose un modèle de discours dirigeant.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

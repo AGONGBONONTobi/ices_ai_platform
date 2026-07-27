@@ -1,0 +1,84 @@
+{
+  "id": "analyse-performance-fournisseurs-scorecard",
+  "title": "Analyse de la performance fournisseurs (scorecard)",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "nombre_fournisseurs",
+      "type": "number",
+      "label": "Combien de fournisseurs avez-vous évalués cette année ?",
+      "placeholder": "Ex: 15",
+      "required": true
+    },
+    {
+      "name": "criteres_prioritaires",
+      "type": "textarea",
+      "label": "Quels sont les critères prioritaires pour votre scorecard fournisseur ?",
+      "placeholder": "Ex: Qualité, délai, coût",
+      "required": true
+    },
+    {
+      "name": "niveau_de_confiance",
+      "type": "select",
+      "options": [
+        "Très élevé",
+        "Élevé",
+        "Moyen",
+        "Faible"
+      ],
+      "label": "Quel est votre niveau de confiance actuel dans vos fournisseurs ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "frequence_evaluation",
+      "type": "select",
+      "options": [
+        "Annuel",
+        "Semestriel",
+        "Trimestriel",
+        "Mensuel"
+      ],
+      "label": "À quelle fréquence évaluez-vous vos fournisseurs ?",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Commentaires supplémentaires ou observations",
+      "placeholder": "Ex: Besoin d'améliorer la communication",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nombre de fournisseurs: {nombre_fournisseurs}, Critères prioritaires: {criteres_prioritaires}, Niveau de confiance: {niveau_de_confiance}, Fréquence d'évaluation: {frequence_evaluation}, Commentaires: {commentaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

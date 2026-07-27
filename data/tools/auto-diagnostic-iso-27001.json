@@ -1,0 +1,76 @@
+{
+  "id": "auto-diagnostic-iso-27001",
+  "title": "Auto-diagnostic ISO 27001",
+  "category": "Systèmes de Management ISO",
+  "inputs": [
+    {
+      "name": "organisation",
+      "type": "text",
+      "label": "Nom de votre organisation",
+      "placeholder": "Exemple : Banque XYZ",
+      "required": true
+    },
+    {
+      "name": "secteur_activite",
+      "type": "select",
+      "options": [
+        "Établissement financier",
+        "Télécoms",
+        "Administration",
+        "Autre"
+      ],
+      "label": "Secteur d'activité",
+      "required": true
+    },
+    {
+      "name": "description_smsi",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre Système de Management de la Sécurité de l'Information (SMSI) actuel",
+      "placeholder": "Exemple : Nous avons un SMSI en place depuis 2020, basé sur l'ISO 27001...",
+      "required": true
+    },
+    {
+      "name": "niveau_conformite",
+      "type": "select",
+      "options": [
+        "0 - Inexistant",
+        "1 - Initié",
+        "2 - Formalisé",
+        "3 - Optimisé"
+      ],
+      "label": "Quel est votre niveau de conformité actuel à l'ISO 27001 ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un auditeur/consultant expert de l'ISO 27001. L'utilisateur a répondu : Organisation: {organisation}, Secteur d'activité: {secteur_activite}, Description du SMSI: {description_smsi}, Niveau de conformité: {niveau_conformite}. Analysez ces informations selon les exigences de l'ISO 27001 (114 contrôles de l'Annexe A) et évaluez le gap de conformité du SMSI. Donnez un score global sur 100, une évaluation par axe (Confidentialité, Intégrité, Disponibilité), et des recommandations prioritaires pour améliorer la conformité.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

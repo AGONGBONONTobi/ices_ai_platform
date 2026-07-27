@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-pilotage-de-la-performance-strategique",
+  "title": "Outil de pilotage de la performance stratégique",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Décrivez les objectifs stratégiques de votre entreprise",
+      "placeholder": "Exemple : Augmenter les ventes de 10% dans les 6 prochains mois",
+      "required": true
+    },
+    {
+      "name": "indicateurs-de-performance",
+      "type": "select",
+      "options": [
+        "Chiffre d'affaires",
+        "Marge bénéficiaire",
+        "Taux de croissance"
+      ],
+      "label": "Quels indicateurs de performance souhaitez-vous suivre ?",
+      "placeholder": "Sélectionnez un ou plusieurs indicateurs",
+      "required": true
+    },
+    {
+      "name": "cible-de-performance",
+      "type": "number",
+      "label": "Quelle est votre cible de performance pour l'indicateur sélectionné ?",
+      "placeholder": "Exemple : 10%",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "textarea",
+      "label": "Décrivez les ressources disponibles pour atteindre les objectifs stratégiques",
+      "placeholder": "Exemple : Équipe de vente, budget alloué, ressources technologiques",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Indicateur de performance : {indicateurs-de-performance}, Cible de performance : {cible-de-performance}, Ressources disponibles : {ressources-disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

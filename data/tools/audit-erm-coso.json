@@ -1,0 +1,78 @@
+{
+  "id": "audit-erm-coso",
+  "title": "Audit de la gestion des risques (ERM — COSO)",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "risques_identifies",
+      "type": "textarea",
+      "label": "Liste des risques identifiés",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "processus_de_gestion_des_risques",
+      "type": "select",
+      "options": [
+        "Processus défini",
+        "Processus en cours de définition",
+        "Aucun processus"
+      ],
+      "label": "Processus de gestion des risques",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "ressources_allouees",
+      "type": "number",
+      "label": "Ressources allouées pour la gestion des risques",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "resultats_attendus",
+      "type": "textarea",
+      "label": "Résultats attendus de la gestion des risques",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise: {entreprise}, Risques identifiés: {risques_identifies}, Processus de gestion des risques: {processus_de_gestion_des_risques}, Ressources allouées pour la gestion des risques: {ressources_allouees}, Résultats attendus de la gestion des risques: {resultats_attendus}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

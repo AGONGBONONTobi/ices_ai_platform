@@ -1,0 +1,76 @@
+{
+  "id": "programme-de-bien-etre-et-prevention-sante-globale",
+  "title": "Programme de bien-être & prévention santé globale",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs du programme de bien-être & prévention santé globale ?",
+      "placeholder": "Exemple : réduire les absences pour maladie, améliorer la productivité, etc.",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources disponibles pour mettre en place le programme (budget, personnel, etc.) ?",
+      "placeholder": "Exemple : 100 000 €, 2 personnes, etc.",
+      "required": true
+    },
+    {
+      "name": "mesures-preventives",
+      "type": "select",
+      "options": [
+        "formation des employés",
+        "amélioration de l'environnement de travail",
+        "système de suivi des absences"
+      ],
+      "label": "Quelles mesures preventives souhaitez-vous mettre en place ?",
+      "placeholder": "Exemple : formation des employés, amélioration de l'environnement de travail, etc.",
+      "required": true
+    },
+    {
+      "name": "objectifs-de-suivi",
+      "type": "select",
+      "options": [
+        "réduction des absences pour maladie",
+        "amélioration de la productivité",
+        "augmentation de la satisfaction des employés"
+      ],
+      "label": "Quels objectifs de suivi souhaitez-vous mettre en place ?",
+      "placeholder": "Exemple : réduction des absences pour maladie, amélioration de la productivité, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en RH. L'utilisateur a répondu : Objectifs : {objectifs}, Ressources disponibles : {ressources-disponibles}, Mesures preventives : {mesures-preventives}, Objectifs de suivi : {objectifs-de-suivi}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

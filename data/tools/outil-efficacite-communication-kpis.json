@@ -1,0 +1,87 @@
+{
+  "id": "outil-efficacite-communication-kpis",
+  "title": "Outil de mesure de l'efficacité de la communication (KPIs)",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "nombre_de_messages_envoyes",
+      "type": "number",
+      "label": "Combien de messages avez-vous envoyés au cours du dernier trimestre?",
+      "placeholder": "Exemple: 120",
+      "required": true
+    },
+    {
+      "name": "taux_de_reponse",
+      "type": "number",
+      "label": "Quel est votre taux de réponse moyen?",
+      "placeholder": "Exemple: 45%",
+      "required": true
+    },
+    {
+      "name": "qualite_des_messages",
+      "type": "select",
+      "options": [
+        "Très faible",
+        "Faible",
+        "Moyenne",
+        "Bonne",
+        "Excellente"
+      ],
+      "label": "Comment évaluez-vous la qualité de vos messages?",
+      "placeholder": "Choisissez une option",
+      "required": true
+    },
+    {
+      "name": "retours_clients",
+      "type": "textarea",
+      "label": "Quels retours qualitatifs avez-vous reçus de vos clients?",
+      "placeholder": "Exemple: Les clients apprécient la clarté",
+      "required": true
+    },
+    {
+      "name": "canaux_utilises",
+      "type": "select",
+      "options": [
+        "Email",
+        "Réseaux sociaux",
+        "Appels téléphoniques",
+        "Messagerie instantanée",
+        "Autre"
+      ],
+      "label": "Quels canaux de communication utilisez-vous principalement?",
+      "placeholder": "Choisissez un ou plusieurs",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nombre de messages envoyés: {nombre_de_messages_envoyes}, Taux de réponse: {taux_de_reponse}, Qualité des messages: {qualite_des_messages}, Retours clients: {retours_clients}, Canaux utilisés: {canaux_utilises}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

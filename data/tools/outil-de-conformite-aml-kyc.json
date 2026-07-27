@@ -1,0 +1,85 @@
+{
+  "id": "outil-de-conformite-aml-kyc",
+  "title": "Outil de conformité AML/KYC (anti-blanchiment)",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "activite",
+      "type": "select",
+      "options": [
+        "Banque",
+        "Assurance",
+        "Finance",
+        "Autre"
+      ],
+      "label": "Activité de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "pays",
+      "type": "select",
+      "options": [
+        "France",
+        "Belgique",
+        "Suisse",
+        "Autre"
+      ],
+      "label": "Pays d'implantation de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "donnees",
+      "type": "textarea",
+      "label": "Informations sur les clients (nom, prénom, adresse, etc.)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "transactions",
+      "type": "number",
+      "label": "Montant des transactions",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en conformité AML/KYC. L'utilisateur a fourni les informations suivantes : Entreprise : {entreprise}, Activité : {activite}, Pays : {pays}, Données clients : {donnees}, Montant des transactions : {transactions}. Analyse ces informations et évaluez le niveau de risque de blanchiment d'argent.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

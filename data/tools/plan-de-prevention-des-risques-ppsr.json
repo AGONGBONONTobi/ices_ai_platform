@@ -1,0 +1,71 @@
+{
+  "id": "plan-de-prevention-des-risques-ppsr",
+  "title": "Plan de prévention des risques (PPSR)",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_de_chantier",
+      "type": "select",
+      "options": [
+        "Construction",
+        "Rénovation",
+        "Démolition"
+      ],
+      "label": "Quel est le type de chantier ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_des_risques",
+      "type": "textarea",
+      "label": "Décrivez les risques identifiés sur le chantier",
+      "placeholder": "Exemple : Risque de chute d'objets, risque d'explosion, etc.",
+      "required": true
+    },
+    {
+      "name": "effectif_du_chantier",
+      "type": "number",
+      "label": "Quel est l'effectif prévu sur le chantier ?",
+      "placeholder": "100",
+      "required": true
+    },
+    {
+      "name": "date_debut_chantier",
+      "type": "text",
+      "label": "Quelle est la date prévue de début du chantier ?",
+      "placeholder": "2024-01-01",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en prévention des risques. L'utilisateur a répondu : Type de chantier : {type_de_chantier}, Description des risques : {description_des_risques}, Effectif du chantier : {effectif_du_chantier}, Date de début du chantier : {date_debut_chantier}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

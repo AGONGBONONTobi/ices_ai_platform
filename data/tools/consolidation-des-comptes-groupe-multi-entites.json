@@ -1,0 +1,73 @@
+{
+  "id": "consolidation-des-comptes-groupe-multi-entites",
+  "title": "Consolidation des comptes (groupe multi-entités)",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "entites",
+      "type": "select",
+      "options": [
+        "Entité 1",
+        "Entité 2",
+        "Entité 3",
+        "Entité 4",
+        "Entité 5"
+      ],
+      "label": "Sélectionnez les entités du groupe",
+      "placeholder": "Sélectionnez les entités",
+      "required": true
+    },
+    {
+      "name": "taux-de-consolidation",
+      "type": "number",
+      "label": "Taux de consolidation (%)",
+      "placeholder": "Entrez le taux de consolidation",
+      "required": true
+    },
+    {
+      "name": "methode-de-consolidation",
+      "type": "textarea",
+      "label": "Méthode de consolidation utilisée",
+      "placeholder": "Décrivez la méthode de consolidation utilisée",
+      "required": true
+    },
+    {
+      "name": "dossiers-financiers",
+      "type": "text",
+      "label": "Dossiers financiers à consulter",
+      "placeholder": "Listez les dossiers financiers à consulter",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a sélectionné les entités suivantes : {entites}, avec un taux de consolidation de {taux-de-consolidation}%. La méthode de consolidation utilisée est la suivante : {methode-de-consolidation}. Les dossiers financiers à consulter sont : {dossiers-financiers}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "plan-de-gestion-des-risques-de-liquidite",
+  "title": "Plan de gestion des risques de liquidité",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "type_d_institution",
+      "type": "select",
+      "options": [
+        "Banque",
+        "Assurance",
+        "Investissement"
+      ],
+      "label": "Quel est le type d'institution financière ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "actifs_liquides",
+      "type": "number",
+      "label": "Quel est le montant total des actifs liquides ?",
+      "placeholder": "Exemple : 1000000",
+      "required": true
+    },
+    {
+      "name": "strategie_de_gestion",
+      "type": "textarea",
+      "label": "Décrivez votre stratégie actuelle de gestion des risques de liquidité",
+      "placeholder": "Exemple : Nous utilisons un modèle de gestion basé sur les ratios de liquidité",
+      "required": true
+    },
+    {
+      "name": "frequence_de_revision",
+      "type": "select",
+      "options": [
+        "Trimestrielle",
+        "Semestrielle",
+        "Annuelle"
+      ],
+      "label": "Quelle est la fréquence de révision de votre plan de gestion des risques de liquidité ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en gestion des risques. L'institution a répondu : Type d'institution : {type_d_institution}, Actifs liquides : {actifs_liquides}, Stratégie de gestion : {strategie_de_gestion}, Fréquence de révision : {frequence_de_revision}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (par exemple, gestion des actifs, gestion des passifs, stratégie de financement), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

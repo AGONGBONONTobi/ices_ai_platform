@@ -1,0 +1,78 @@
+{
+  "id": "analyse-des-opportunites-de-croissance",
+  "title": "Analyse des opportunités de croissance",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Décrivez l'objectif stratégique de votre entreprise",
+      "placeholder": "Exemple : Augmenter nos ventes de 20% dans les 12 prochains mois",
+      "required": true
+    },
+    {
+      "name": "forces-competences",
+      "type": "text",
+      "label": "Listez les forces et compétences uniques de votre entreprise",
+      "placeholder": "Exemple : Expertise dans le domaine, réseau de partenaires solide",
+      "required": true
+    },
+    {
+      "name": "faiblesses-concurrents",
+      "type": "select",
+      "options": [
+        "Manque de ressources",
+        "Concurrence excessive",
+        "Tendances du marché"
+      ],
+      "label": "Quelles sont les faiblesses et les concurrents de votre entreprise ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "opportunités-marketing",
+      "type": "textarea",
+      "label": "Décrivez les opportunités de marketing pour votre entreprise",
+      "placeholder": "Exemple : Utiliser les réseaux sociaux pour augmenter la visibilité",
+      "required": true
+    },
+    {
+      "name": "barrières-financieres",
+      "type": "number",
+      "label": "Quel est le coût estimé pour mettre en œuvre votre stratégie de croissance ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Forces et compétences : {forces-competences}, Faiblesses et concurrents : {faiblesses-concurrents}, Opportunités de marketing : {opportunités-marketing}, Barrières financières : {barrières-financieres}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

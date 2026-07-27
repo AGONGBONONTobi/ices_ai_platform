@@ -1,0 +1,78 @@
+{
+  "id": "note-de-cadrage-strategique",
+  "title": "Template de note de cadrage stratégique",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Définir l'objectif stratégique clair et concis",
+      "placeholder": "Exemple : Améliorer la satisfaction client",
+      "required": true
+    },
+    {
+      "name": "criteres-de-suivi",
+      "type": "select",
+      "options": [
+        "Indicateurs financiers",
+        "Indicateurs de performance",
+        "Indicateurs de satisfaction client"
+      ],
+      "label": "Quels critères de suivi pour mesurer le progrès ?",
+      "placeholder": "Exemple : Indicateurs financiers",
+      "required": true
+    },
+    {
+      "name": "ressources-necessaires",
+      "type": "textarea",
+      "label": "Lister les ressources nécessaires pour atteindre l'objectif",
+      "placeholder": "Exemple : Personnel, budget, équipements",
+      "required": true
+    },
+    {
+      "name": "plan-d-action",
+      "type": "textarea",
+      "label": "Définir le plan d'action pour atteindre l'objectif",
+      "placeholder": "Exemple : Étape 1, Étape 2, Étape 3",
+      "required": true
+    },
+    {
+      "name": "responsabilites",
+      "type": "textarea",
+      "label": "Attribuer les responsabilités pour chaque étape du plan d'action",
+      "placeholder": "Exemple : Responsable 1, Responsable 2",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Critères de suivi : {criteres-de-suivi}, Ressources nécessaires : {ressources-necessaires}, Plan d'action : {plan-d-action}, Responsabilités : {responsabilites}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

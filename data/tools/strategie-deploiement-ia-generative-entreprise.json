@@ -1,0 +1,73 @@
+{
+  "id": "strategie-deploiement-ia-generative-entreprise",
+  "title": "Stratégie de déploiement de l'IA générative en entreprise",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de déploiement de l'IA générative dans votre entreprise ?",
+      "placeholder": "Exemple : améliorer l'efficacité opérationnelle, accroître la personnalisation du service client, etc.",
+      "required": true
+    },
+    {
+      "name": "domaines-dapplication",
+      "type": "select",
+      "options": [
+        "Marketing",
+        "Vente",
+        "Ressources Humaines",
+        "Finances",
+        "Produit"
+      ],
+      "label": "Dans quel(s) domaine(s) souhaitez-vous déployer l'IA générative ?",
+      "placeholder": "Sélectionnez les domaines pertinents",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources (humaines, financières, technologiques) disponibles pour le déploiement de l'IA générative ?",
+      "placeholder": "Exemple : nombre de développeurs, budget alloué, etc.",
+      "required": true
+    },
+    {
+      "name": "barriers-identification",
+      "type": "textarea",
+      "label": "Quels sont les principaux obstacles à l'adoption de l'IA générative dans votre entreprise ?",
+      "placeholder": "Exemple : manque de données, difficultés de mise en œuvre, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en transformation digitale et IA. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Domaines d'application : {domaines-dapplication}, Ressources disponibles : {ressources-disponibles}, Barrières d'identification : {barriers-identification}. Analyse ces informations et propose une stratégie de déploiement de l'IA générative adaptée aux besoins de l'entreprise, en tenant compte des ressources disponibles et des obstacles identifiés.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

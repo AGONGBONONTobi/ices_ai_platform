@@ -1,0 +1,78 @@
+{
+  "id": "gestion-des-incident-lessons-learned",
+  "title": "Plan de gestion des incidents & lessons learned",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "incident_type",
+      "type": "select",
+      "options": [
+        "Technique",
+        "Humain",
+        "Externe"
+      ],
+      "label": "Type d'incident",
+      "placeholder": "Exemple : panne informatique",
+      "required": true
+    },
+    {
+      "name": "impact_sur_l_entreprise",
+      "type": "textarea",
+      "label": "Impact de l'incident sur l'entreprise",
+      "placeholder": "Exemple : perte de données, indisponibilité de services",
+      "required": true
+    },
+    {
+      "name": "cause_du_probleme",
+      "type": "text",
+      "label": "Cause du problème",
+      "placeholder": "Exemple : erreur humaine, panne matérielle",
+      "required": true
+    },
+    {
+      "name": "actions_prises",
+      "type": "textarea",
+      "label": "Actions prises pour résoudre l'incident",
+      "placeholder": "Exemple : réparation de l'équipement, formation des employés",
+      "required": true
+    },
+    {
+      "name": "lesons_apprendus",
+      "type": "textarea",
+      "label": "Lessons appris",
+      "placeholder": "Exemple : importance de la formation, nécessité de réduire les risques",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Incident type : {incident_type}, Impact sur l'entreprise : {impact_sur_l_entreprise}, Cause du problème : {cause_du_probleme}, Actions prises : {actions_prises}, Lessons appris : {lesons_apprendus}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

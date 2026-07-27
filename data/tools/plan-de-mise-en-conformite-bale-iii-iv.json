@@ -1,0 +1,71 @@
+{
+  "id": "plan-de-mise-en-conformite-bale-iii-iv",
+  "title": "Plan de mise en conformité Bâle III/IV",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "niveau_actuel_conformite",
+      "type": "select",
+      "options": [
+        "Début de mise en conformité",
+        "En cours de mise en conformité",
+        "Conforme"
+      ],
+      "label": "Quel est votre niveau actuel de conformité avec Bâle III/IV ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_activites",
+      "type": "textarea",
+      "label": "Décrivez brièvement vos activités financières principales",
+      "placeholder": "Exemple : banque de détail, banque d'investissement, etc.",
+      "required": true
+    },
+    {
+      "name": "objectif_conformite",
+      "type": "number",
+      "label": "Quel est votre objectif de conformité (échelle de 1 à 5, 5 étant le plus élevé) ?",
+      "placeholder": "5",
+      "required": true
+    },
+    {
+      "name": "date_butoir",
+      "type": "text",
+      "label": "Quelle est votre date butoir pour atteindre la conformité ?",
+      "placeholder": "YYYY-MM-DD",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en conformité bancaire. L'utilisateur a répondu : Niveau actuel de conformité : {niveau_actuel_conformite}, Description des activités : {description_activites}, Objectif de conformité : {objectif_conformite}, Date butoir : {date_butoir}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe, et des recommandations pour atteindre la conformité Bâle III/IV.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

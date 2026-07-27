@@ -1,0 +1,78 @@
+{
+  "id": "analyse-de-maturite-technologique-trl-nasa-scale",
+  "title": "Analyse de maturité technologique (TRL — NASA scale)",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "TRL",
+      "type": "number",
+      "label": "Niveau de maturité technologique (TRL) selon l'échelle de la NASA",
+      "placeholder": "Entrez un nombre entre 1 et 9",
+      "required": true
+    },
+    {
+      "name": "description-technologie",
+      "type": "textarea",
+      "label": "Description de la technologie",
+      "placeholder": "Décrivez brièvement la technologie",
+      "required": true
+    },
+    {
+      "name": "avantages",
+      "type": "textarea",
+      "label": "Avantages de la technologie",
+      "placeholder": "Listez les avantages de la technologie",
+      "required": true
+    },
+    {
+      "name": "inconvénients",
+      "type": "textarea",
+      "label": "Inconvénients de la technologie",
+      "placeholder": "Listez les inconvénients de la technologie",
+      "required": true
+    },
+    {
+      "name": "select-impact-environnemental",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Impact environnemental de la technologie",
+      "placeholder": "Sélectionnez un niveau d'impact",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en innovation et R&D. L'utilisateur a répondu : TRL: {TRL}, Description de la technologie: {description-technologie}, Avantages: {avantages}, Inconvénients: {inconvénients}, Impact environnemental: {select-impact-environnemental}. Analyse ces informations et donne un score global de maturité technologique sur 100, une évaluation par axe (TRL, impact environnemental, etc.) et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

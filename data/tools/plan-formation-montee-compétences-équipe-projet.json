@@ -1,0 +1,79 @@
+{
+  "id": "plan-formation-montee-compétences-équipe-projet",
+  "title": "Plan de formation & montée en compétences équipe projet",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "objectif-projet",
+      "type": "textarea",
+      "label": "Quels sont les objectifs clés du projet ?",
+      "placeholder": "Exemple : améliorer les performances, réduire les délais, etc.",
+      "required": true
+    },
+    {
+      "name": "compétences-actuelles",
+      "type": "textarea",
+      "label": "Quelles sont les compétences actuelles de l'équipe projet ?",
+      "placeholder": "Exemple : gestion de projet, leadership, communication, etc.",
+      "required": true
+    },
+    {
+      "name": "compétences-cibles",
+      "type": "textarea",
+      "label": "Quelles sont les compétences cibles pour l'équipe projet ?",
+      "placeholder": "Exemple : gestion de projet avancée, leadership, communication, etc.",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "select",
+      "options": [
+        "formation interne",
+        "formation externe",
+        "mentorat",
+        "autres"
+      ],
+      "label": "Quelles ressources sont disponibles pour la montée en compétences ?",
+      "placeholder": "Exemple : formation interne, formation externe, mentorat, etc.",
+      "required": true
+    },
+    {
+      "name": "budget-alloué",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la formation et la montée en compétences ?",
+      "placeholder": "Exemple : 1000€, 5000€, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif projet : {objectif-projet}, Compétences actuelles : {compétences-actuelles}, Compétences cibles : {compétences-cibles}, Ressources disponibles : {ressources-disponibles}, Budget alloué : {budget-alloué}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

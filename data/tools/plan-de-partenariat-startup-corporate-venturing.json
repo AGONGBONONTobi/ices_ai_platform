@@ -1,0 +1,79 @@
+{
+  "id": "plan-de-partenariat-startup-corporate-venturing",
+  "title": "Plan de partenariat startup & corporate venturing",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "text",
+      "label": "Quel est l'objectif stratégique de ce partenariat ?",
+      "placeholder": "Exemple : accélérer l'innovation, développer de nouveaux marchés, etc.",
+      "required": true
+    },
+    {
+      "name": "domaine-d-intervention",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Marketing",
+        "Finances",
+        "Ressources Humaines"
+      ],
+      "label": "Dans quel domaine souhaitez-vous intervenir ?",
+      "placeholder": "Sélectionnez un domaine",
+      "required": true
+    },
+    {
+      "name": "description-projet",
+      "type": "textarea",
+      "label": "Décrivez brièvement le projet de partenariat",
+      "placeholder": "Exemple : développement de produit, service, etc.",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources disponibles pour ce partenariat ?",
+      "placeholder": "Exemple : budget, personnel, etc.",
+      "required": true
+    },
+    {
+      "name": "risques-identifies",
+      "type": "textarea",
+      "label": "Quels sont les risques identifiés pour ce partenariat ?",
+      "placeholder": "Exemple : risque de non-réalisation, risque de perte de contrôle, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Domaine d'intervention : {domaine-d-intervention}, Description du projet : {description-projet}, Ressources disponibles : {ressources-disponibles}, Risques identifiés : {risques-identifies}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

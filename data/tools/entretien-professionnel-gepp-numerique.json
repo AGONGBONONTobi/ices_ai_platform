@@ -1,0 +1,83 @@
+{
+  "id": "entretien-professionnel-gepp-numerique",
+  "title": "Entretien professionnel GEPP numérique",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "candidat",
+      "type": "text",
+      "label": "Nom et prénom du candidat",
+      "placeholder": "Exemple : Jean Dupont",
+      "required": true
+    },
+    {
+      "name": "poste",
+      "type": "select",
+      "options": [
+        "Développeur",
+        "Conseiller RH",
+        "Chef d'équipe"
+      ],
+      "label": "Poste pour lequel le candidat est candidat",
+      "placeholder": "Exemple : Développeur",
+      "required": true
+    },
+    {
+      "name": "experience",
+      "type": "textarea",
+      "label": "Expérience professionnelle du candidat (en mots)",
+      "placeholder": "Exemple : 5 ans d'expérience en développement web",
+      "required": true
+    },
+    {
+      "name": "competences",
+      "type": "select",
+      "options": [
+        "Langages de programmation",
+        "Bases de données",
+        "Systèmes d'exploitation"
+      ],
+      "label": "Compétences techniques du candidat",
+      "placeholder": "Exemple : Langages de programmation",
+      "required": true
+    },
+    {
+      "name": "motivation",
+      "type": "textarea",
+      "label": "Motivation du candidat pour ce poste",
+      "placeholder": "Exemple : Je suis motivé pour ce poste car je souhaite développer mes compétences en développement web",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Candidat : {candidat}, Poste : {poste}, Expérience : {experience}, Compétences : {competences}, Motivation : {motivation}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

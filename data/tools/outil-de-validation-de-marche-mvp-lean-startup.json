@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-validation-de-marche-mvp-lean-startup",
+  "title": "Outil de validation de marché (MVP & lean startup)",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "produit_description",
+      "type": "textarea",
+      "label": "Décrivez votre produit ou service",
+      "placeholder": "Description du produit",
+      "required": true
+    },
+    {
+      "name": "cible",
+      "type": "select",
+      "options": [
+        "Particuliers",
+        "Entreprises",
+        "Institutions"
+      ],
+      "label": "Quelle est votre cible principale ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "concurrentiels",
+      "type": "text",
+      "label": "Quels sont vos principaux concurrents ?",
+      "placeholder": "Liste des concurrents",
+      "required": true
+    },
+    {
+      "name": "objectif",
+      "type": "number",
+      "label": "Quel est votre objectif de part de marché ?",
+      "placeholder": "Pourcentage",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en validation de marché. L'utilisateur a répondu : Produit: {produit_description}, Cible: {cible}, Concurrents: {concurrentiels}, Objectif de part de marché: {objectif}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

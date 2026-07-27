@@ -1,0 +1,71 @@
+{
+  "id": "diagnostic-de-culture-d-entreprise",
+  "title": "Diagnostic de culture d'entreprise",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "taille_de_lentreprise",
+      "type": "select",
+      "options": [
+        "Moins de 10 employés",
+        "10-50 employés",
+        "51-200 employés",
+        "Plus de 200 employés"
+      ],
+      "label": "Quelle est la taille de votre entreprise ?",
+      "required": true
+    },
+    {
+      "name": "secteur_dactivite",
+      "type": "text",
+      "label": "Quel est le secteur d'activité de votre entreprise ?",
+      "placeholder": "Exemple : Technologie, Santé, Finance",
+      "required": true
+    },
+    {
+      "name": "description_de_la_culture",
+      "type": "textarea",
+      "label": "Décrivez la culture actuelle de votre entreprise",
+      "placeholder": "Exemple : Notre entreprise valorise l'innovation et la créativité",
+      "required": true
+    },
+    {
+      "name": "objectifs_de_lentreprise",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux de votre entreprise ?",
+      "placeholder": "Exemple : Augmenter les ventes, améliorer la satisfaction client",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en diagnostic de culture d'entreprise. L'utilisateur a répondu : Taille de l'entreprise : {taille_de_lentreprise}, Secteur d'activité : {secteur_dactivite}, Description de la culture : {description_de_la_culture}, Objectifs de l'entreprise : {objectifs_de_lentreprise}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (par exemple, leadership, communication, innovation), et des recommandations pour améliorer la culture de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

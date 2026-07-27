@@ -1,0 +1,77 @@
+{
+  "id": "plan-reduction-gaspillages-lean-5s",
+  "title": "Plan de réduction des gaspillages (Lean/5S)",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "current_waste_level",
+      "type": "number",
+      "label": "Quel est le niveau actuel de gaspillage (en %)?",
+      "placeholder": "Ex: 15",
+      "required": true
+    },
+    {
+      "name": "primary_waste_sources",
+      "type": "textarea",
+      "label": "Quelles sont les principales sources de gaspillage identifiées?",
+      "placeholder": "Ex: Temps d'attente, surproduction, etc.",
+      "required": true
+    },
+    {
+      "name": "improvement_goals",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs d'amélioration pour la réduction des gaspillages?",
+      "placeholder": "Ex: Réduire le temps d'attente de 30%",
+      "required": true
+    },
+    {
+      "name": "budget_available",
+      "type": "select",
+      "options": [
+        "Moins de 10 000 €",
+        "10 000 € à 50 000 €",
+        "Plus de 50 000 €"
+      ],
+      "label": "Quel budget est disponible pour ce projet?",
+      "required": true
+    },
+    {
+      "name": "implementation_timeframe",
+      "type": "number",
+      "label": "Quel est le délai prévu pour la mise en œuvre (en mois)?",
+      "placeholder": "Ex: 6",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Current waste level: {current_waste_level}, Primary waste sources: {primary_waste_sources}, Improvement goals: {improvement_goals}, Budget available: {budget_available}, Implementation timeframe: {implementation_timeframe}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

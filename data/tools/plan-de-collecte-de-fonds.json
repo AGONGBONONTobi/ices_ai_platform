@@ -1,0 +1,70 @@
+{
+  "id": "plan-de-collecte-de-fonds",
+  "title": "Plan de collecte de fonds & fundraising",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "text",
+      "label": "Quel est l'objectif principal de votre collecte de fonds ?",
+      "placeholder": "Exemple : Financer un projet, soutenir une cause",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "select",
+      "options": [
+        "Particuliers",
+        "Entreprises",
+        "Organisations à but non lucratif"
+      ],
+      "label": "Qui est votre public cible pour la collecte de fonds ?",
+      "required": true
+    },
+    {
+      "name": "strategie",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre stratégie de collecte de fonds",
+      "placeholder": "Exemple : Utilisation des réseaux sociaux, organisation d'événements",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la collecte de fonds ?",
+      "placeholder": "Exemple : 1000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en collecte de fonds. L'utilisateur a répondu : Objectif : {objectif}, Public cible : {public_cible}, Stratégie : {strategie}, Budget : {budget}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (objectif, public cible, stratégie, budget), et des recommandations pour améliorer le plan de collecte de fonds.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

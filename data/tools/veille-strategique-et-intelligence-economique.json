@@ -1,0 +1,78 @@
+{
+  "id": "veille-strategique-et-intelligence-economique",
+  "title": "Veille stratégique & intelligence économique",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Énergie",
+        "Finance",
+        "Industrie"
+      ],
+      "label": "Quel secteur d'activité souhaitez-vous analyser ?",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "pays",
+      "type": "select",
+      "options": [
+        "France",
+        "États-Unis",
+        "Chine",
+        "Union européenne"
+      ],
+      "label": "Quel pays souhaitez-vous analyser ?",
+      "placeholder": "Sélectionnez un pays",
+      "required": true
+    },
+    {
+      "name": "tendances",
+      "type": "textarea",
+      "label": "Quelles sont les tendances actuelles que vous avez identifiées dans le secteur et le pays sélectionnés ?",
+      "placeholder": "Décrivez les tendances",
+      "required": true
+    },
+    {
+      "name": "menaces",
+      "type": "textarea",
+      "label": "Quelles sont les menaces potentielles que vous avez identifiées dans le secteur et le pays sélectionnés ?",
+      "placeholder": "Décrivez les menaces",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en veille stratégique et intelligence économique. L'utilisateur a sélectionné le secteur {secteur} et le pays {pays}. Ils ont également identifié les tendances suivantes : {tendances} et les menaces suivantes : {menaces}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

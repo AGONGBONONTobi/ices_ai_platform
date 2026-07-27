@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-veille-reglementaire-et-juridique",
+  "title": "Outil de veille réglementaire & juridique",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteurActivite",
+      "type": "select",
+      "options": [
+        "Finance",
+        "Santé",
+        "Technologie",
+        "Énergie",
+        "Autre"
+      ],
+      "label": "Secteur d'activité de votre organisation",
+      "placeholder": "Sélectionnez votre secteur",
+      "required": true
+    },
+    {
+      "name": "zonesGeographiques",
+      "type": "textarea",
+      "label": "Zones géographiques sur lesquelles vous souhaitez effectuer une veille",
+      "placeholder": "Liste des pays ou régions",
+      "required": true
+    },
+    {
+      "name": "themesVeille",
+      "type": "textarea",
+      "label": "Thèmes sur lesquels vous souhaitez effectuer une veille (ex: réglementation, jurisprudence, etc.)",
+      "placeholder": "Liste des thèmes",
+      "required": true
+    },
+    {
+      "name": "niveauDeVeille",
+      "type": "select",
+      "options": [
+        "Locale",
+        "Nationale",
+        "Internationale"
+      ],
+      "label": "Niveau de veille souhaité",
+      "placeholder": "Sélectionnez votre niveau de veille",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en veille réglementaire et juridique. L'utilisateur a répondu : Secteur d'activité: {secteurActivite}, Zones géographiques: {zonesGeographiques}, Thèmes de veille: {themesVeille}, Niveau de veille: {niveauDeVeille}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer la veille réglementaire et juridique de l'utilisateur.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

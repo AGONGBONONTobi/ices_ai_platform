@@ -1,0 +1,73 @@
+{
+  "id": "outil-de-veille-des-tendances-consommateurs",
+  "title": "Outil de veille des tendances consommateurs",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Mode",
+        "Technologie",
+        "Alimentation",
+        "Santé",
+        "Loisirs"
+      ],
+      "label": "Dans quel secteur opèrez-vous ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_produit",
+      "type": "textarea",
+      "label": "Décrivez votre produit ou service",
+      "placeholder": "Exemple : produit cosmétique pour la peau sensible",
+      "required": true
+    },
+    {
+      "name": "cible",
+      "type": "text",
+      "label": "Quelle est votre cible (âge, sexe, etc.)",
+      "placeholder": "Exemple : femmes et hommes de 25 à 45 ans",
+      "required": true
+    },
+    {
+      "name": "concurrents",
+      "type": "textarea",
+      "label": "Listez vos principaux concurrents",
+      "placeholder": "Exemple : L'Oréal, Nuxe, etc.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un expert en veille économique. L'utilisateur opère dans le secteur {secteur} et propose le produit ou service suivant : {description_produit}. Sa cible est {cible}. Ses principaux concurrents sont {concurrents}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations pour améliorer sa veille des tendances consommateurs.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

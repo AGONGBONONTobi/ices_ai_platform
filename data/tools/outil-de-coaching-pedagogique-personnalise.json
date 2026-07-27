@@ -1,0 +1,88 @@
+{
+  "id": "outil-de-coaching-pedagogique-personnalise",
+  "title": "Outil de coaching pédagogique personnalisé",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "methode-apprentissage",
+      "type": "select",
+      "options": [
+        "Apprentissage actif",
+        "Apprentissage par projet",
+        "Apprentissage par simulation"
+      ],
+      "label": "Quelle est la méthode d'apprentissage préférée de l'apprenant ?",
+      "placeholder": "Sélectionnez une méthode",
+      "required": true
+    },
+    {
+      "name": "niveau-langue",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est le niveau de langue de l'apprenant ?",
+      "placeholder": "Sélectionnez un niveau",
+      "required": true
+    },
+    {
+      "name": "objectifs-apprentissage",
+      "type": "textarea",
+      "label": "Quels sont les objectifs d'apprentissage de l'apprenant ?",
+      "placeholder": "Décrivez les objectifs d'apprentissage",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "text",
+      "label": "Quelles ressources sont disponibles pour l'apprenant ?",
+      "placeholder": "Décrivez les ressources disponibles",
+      "required": false
+    },
+    {
+      "name": "style-apprentissage",
+      "type": "select",
+      "options": [
+        "Indépendant",
+        "Collaboratif",
+        "Hybride"
+      ],
+      "label": "Quel est le style d'apprentissage préféré de l'apprenant ?",
+      "placeholder": "Sélectionnez un style",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un coach pédagogique expert. L'utilisateur a répondu : Méthode d'apprentissage : {methode-apprentissage}, Niveau de langue : {niveau-langue}, Objectifs d'apprentissage : {objectifs-apprentissage}, Ressources disponibles : {ressources-disponibles}, Style d'apprentissage : {style-apprentissage}. Analyse ces informations et propose un plan d'action personnalisé pour améliorer l'apprentissage de l'apprenant.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

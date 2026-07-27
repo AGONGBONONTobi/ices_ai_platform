@@ -1,0 +1,72 @@
+{
+  "id": "plan-de-suivi-et-evaluation-de-projet",
+  "title": "Plan de suivi & évaluation de projet (S&E)",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "objectif_principal",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal du projet ?",
+      "placeholder": "Exemple : Améliorer la qualité de vie des habitants",
+      "required": true
+    },
+    {
+      "name": "type_de_projet",
+      "type": "select",
+      "options": [
+        "Développement durable",
+        "Infrastructure",
+        "Éducation",
+        "Santé"
+      ],
+      "label": "Quel est le type de projet ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "budget_prevu",
+      "type": "number",
+      "label": "Quel est le budget prévu pour le projet ?",
+      "placeholder": "100000",
+      "required": true
+    },
+    {
+      "name": "delais_prevus",
+      "type": "text",
+      "label": "Quels sont les délais prévus pour le projet (début et fin) ?",
+      "placeholder": "Exemple : 01/02/2024 - 31/12/2024",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en suivi et évaluation de projets. L'utilisateur a répondu : Objectif principal : {objectif_principal}, Type de projet : {type_de_projet}, Budget prévu : {budget_prevu}, Délais prévus : {delais_prevus}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

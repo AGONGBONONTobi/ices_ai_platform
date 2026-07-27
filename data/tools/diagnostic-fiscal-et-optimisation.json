@@ -1,0 +1,81 @@
+{
+  "id": "diagnostic-fiscal-et-optimisation",
+  "title": "Diagnostic fiscal & optimisation",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "revenus-bruts",
+      "type": "number",
+      "label": "Quels sont vos revenus bruts annuels ?",
+      "placeholder": "Entrez votre chiffre d'affaires",
+      "required": true
+    },
+    {
+      "name": "impots-pays",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Avez-vous des impôts à payer à l'étranger ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "depenses-professionnelles",
+      "type": "textarea",
+      "label": "Quelles sont vos dépenses professionnelles ? (ex : salaires, matériel, etc.)",
+      "placeholder": "Décrivez vos dépenses",
+      "required": true
+    },
+    {
+      "name": "avantages-sociaux",
+      "type": "number",
+      "label": "Quels sont vos avantages sociaux ?",
+      "placeholder": "Entrez votre montant d'avantages sociaux",
+      "required": true
+    },
+    {
+      "name": "autres-impots",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Avez-vous d'autres impôts à payer (ex : TVA, etc.) ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert fiscal. L'utilisateur a répondu : Revenus bruts : {revenus-bruts}, Impôts à payer à l'étranger : {impots-pays}, Dépenses professionnelles : {depenses-professionnelles}, Avantages sociaux : {avantages-sociaux}, Autres impôts : {autres-impots}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

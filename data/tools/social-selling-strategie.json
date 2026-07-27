@@ -1,0 +1,72 @@
+{
+  "id": "social-selling-strategie",
+  "title": "Stratégie de vente sociale",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "objectif_vente",
+      "type": "number",
+      "label": "Quel est votre objectif de vente mensuel ?",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    },
+    {
+      "name": "nombre_client",
+      "type": "number",
+      "label": "Combien de clients avez-vous actuellement ?",
+      "placeholder": "Exemple : 500",
+      "required": true
+    },
+    {
+      "name": "canal_de_recherche",
+      "type": "select",
+      "options": [
+        "Google Ads",
+        "Facebook Ads",
+        "Influencer Marketing",
+        "Email Marketing"
+      ],
+      "label": "Quel canal de recherche utilisez-vous actuellement ?",
+      "placeholder": "Exemple : Google Ads",
+      "required": true
+    },
+    {
+      "name": "contenu_de_recherche",
+      "type": "textarea",
+      "label": "Quel est le contenu de votre recherche actuelle ?",
+      "placeholder": "Exemple : Nous recherchons des prospects dans l'industrie de la santé",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en marketing et commercial. L'utilisateur a répondu : Objectif de vente : {objectif_vente}, Nombre de clients : {nombre_client}, Canal de recherche : {canal_de_recherche}, Contenu de recherche : {contenu_de_recherche}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

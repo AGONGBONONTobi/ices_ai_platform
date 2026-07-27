@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-suivi-budg-etat-projet-evm",
+  "title": "Outil de suivi budgétaire projet (EVM)",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "budget_initial",
+      "type": "number",
+      "label": "Budget initial du projet",
+      "placeholder": "Entrez le budget initial",
+      "required": true
+    },
+    {
+      "name": "budget_actuel",
+      "type": "number",
+      "label": "Budget actuel du projet",
+      "placeholder": "Entrez le budget actuel",
+      "required": true
+    },
+    {
+      "name": "duree_projet",
+      "type": "number",
+      "label": "Durée prévue du projet",
+      "placeholder": "Entrez la durée prévue en jours",
+      "required": true
+    },
+    {
+      "name": "duree_reelle",
+      "type": "number",
+      "label": "Durée réelle du projet",
+      "placeholder": "Entrez la durée réelle en jours",
+      "required": true
+    },
+    {
+      "name": "type_projet",
+      "type": "select",
+      "options": [
+        "Développement",
+        "Maintenance",
+        "Réalisations"
+      ],
+      "label": "Type de projet",
+      "placeholder": "Sélectionnez le type de projet",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion de projet. L'utilisateur a répondu : Budget initial : {budget_initial}, Budget actuel : {budget_actuel}, Durée prévue : {duree_projet}, Durée réelle : {duree_reelle}, Type de projet : {type_projet}. Analyse ces informations et donne un score de performance globale du projet sur 100, une évaluation par axe (budget, durée, efficacité) et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score de performance globale du projet sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score de performance par axe sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

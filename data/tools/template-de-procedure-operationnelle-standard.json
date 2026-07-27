@@ -1,0 +1,75 @@
+{
+  "id": "template-de-procedure-operationnelle-standard",
+  "title": "Template de procédure opérationnelle standard (SOP)",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "procedureName",
+      "type": "text",
+      "label": "Nom de la procédure",
+      "placeholder": "Exemple : Gestion des stocks",
+      "required": true
+    },
+    {
+      "name": "procedureDescription",
+      "type": "textarea",
+      "label": "Description de la procédure",
+      "placeholder": "Exemple : Cette procédure décrit les étapes pour gérer les stocks de produits",
+      "required": true
+    },
+    {
+      "name": "procedureType",
+      "type": "select",
+      "options": [
+        "Gestion des stocks",
+        "Gestion des ressources humaines",
+        "Gestion des finances"
+      ],
+      "label": "Type de procédure",
+      "required": true
+    },
+    {
+      "name": "frequency",
+      "type": "select",
+      "options": [
+        "Quotidien",
+        "Hebdomadaire",
+        "Mensuel",
+        "Trimestriel"
+      ],
+      "label": "Fréquence d'exécution de la procédure",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en procédures opérationnelles. L'utilisateur a fourni les informations suivantes : Nom de la procédure : {procedureName}, Description : {procedureDescription}, Type de procédure : {procedureType}, Fréquence d'exécution : {frequency}. Analysez ces informations et proposez un modèle de procédure opérationnelle standard (SOP) adapté aux besoins de l'utilisateur, en incluant un score global sur 100, une évaluation par axe (ex : efficacité, efficience, qualité) et des recommandations pour améliorer la procédure.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

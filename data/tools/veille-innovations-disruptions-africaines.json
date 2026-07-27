@@ -1,0 +1,78 @@
+{
+  "id": "veille-innovations-disruptions-africaines",
+  "title": "Veille des innovations & disruptions africaines",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Fintech",
+        "Agriculture",
+        "Énergie",
+        "Santé"
+      ],
+      "label": "Dans quel secteur souhaitez-vous suivre les innovations ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Décrivez brièvement les objectifs de votre veille :",
+      "placeholder": "Exemple : identifier les startups prometteuses, suivre les tendances...",
+      "required": true
+    },
+    {
+      "name": "pays",
+      "type": "text",
+      "label": "Quels pays africains souhaitez-vous cibler pour votre veille ?",
+      "placeholder": "Exemple : Afrique du Sud, Nigeria, Égypte",
+      "required": true
+    },
+    {
+      "name": "frequence",
+      "type": "select",
+      "options": [
+        "Hebdomadaire",
+        "Mensuelle",
+        "Trimestrielle"
+      ],
+      "label": "Quelle est la fréquence souhaitée pour les mises à jour de la veille ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur cherche à suivre les innovations et disruptions en Afrique dans le secteur {secteur}, avec les objectifs suivants : {description}. Les pays ciblés sont {pays} et la fréquence souhaitée pour les mises à jour est {frequence}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe (technologique, économique, social), et des recommandations pour une veille efficace.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

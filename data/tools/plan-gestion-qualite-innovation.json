@@ -1,0 +1,72 @@
+{
+  "id": "plan-gestion-qualite-innovation",
+  "title": "Plan de gestion de la qualité dans l'innovation",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "innovation_scope",
+      "type": "text",
+      "label": "Quel est le périmètre de l'innovation envisagée ?",
+      "placeholder": "Ex: Développement d'un nouveau produit",
+      "required": true
+    },
+    {
+      "name": "quality_standards",
+      "type": "select",
+      "options": [
+        "ISO 9001",
+        "ISO 14001",
+        "ISO 27001",
+        "Aucun"
+      ],
+      "label": "Quels standards de qualité seront appliqués ?",
+      "placeholder": "Sélectionnez un standard",
+      "required": true
+    },
+    {
+      "name": "team_experience",
+      "type": "textarea",
+      "label": "Décrivez l'expérience de l'équipe en matière de qualité et d'innovation",
+      "placeholder": "Ex: 5 ans d'expérience en gestion de projets certifiés ISO",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué à la qualité pour ce projet ?",
+      "placeholder": "Ex: 50000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Innovation Scope: {innovation_scope}, Quality Standards: {quality_standards}, Team Experience: {team_experience}, Budget: {budget}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

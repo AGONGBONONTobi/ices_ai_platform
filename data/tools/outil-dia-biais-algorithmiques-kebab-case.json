@@ -1,0 +1,84 @@
+{
+  "id": "outil-dia-biais-algorithmiques-kebab-case",
+  "title": "Outil d'IA éthique RH (biais algorithmiques)",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "type_de_donnees",
+      "type": "select",
+      "options": [
+        "donnees_personnelles",
+        "donnees_professionnelles",
+        "donnees_publiques"
+      ],
+      "label": "Quel type de données est utilisé pour l'algorithme ?",
+      "placeholder": "Sélectionnez un type de données",
+      "required": true
+    },
+    {
+      "name": "methode_d_apprentissage",
+      "type": "text",
+      "label": "Quelle méthode d'apprentissage est utilisée pour l'algorithme ?",
+      "placeholder": "Exemple : apprentissage supervisé, apprentissage non supervisé, etc.",
+      "required": true
+    },
+    {
+      "name": "donnees_manipulees",
+      "type": "textarea",
+      "label": "Quelles données sont manipulées ou sélectionnées pour l'algorithme ?",
+      "placeholder": "Exemple : données démographiques, données de comportement, etc.",
+      "required": true
+    },
+    {
+      "name": "objectif_de_l_algorithme",
+      "type": "select",
+      "options": [
+        "recrutement",
+        "prévision",
+        "détection",
+        "autre"
+      ],
+      "label": "Quel est l'objectif de l'algorithme ?",
+      "placeholder": "Sélectionnez un objectif",
+      "required": true
+    },
+    {
+      "name": "donnees_utilisees",
+      "type": "number",
+      "label": "Combien de données sont utilisées pour l'algorithme ?",
+      "placeholder": "Exemple : 1000, 5000, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en IA éthique. L'utilisateur a répondu : Type de données : {type_de_donnees}, Méthode d'apprentissage : {methode_d_apprentissage}, Données manipulées : {donnees_manipulees}, Objectif de l'algorithme : {objectif_de_l_algorithme}, Données utilisées : {donnees_utilisees}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

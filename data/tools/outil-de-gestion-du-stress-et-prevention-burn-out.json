@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-gestion-du-stress-et-prevention-burn-out",
+  "title": "Outil de gestion du stress & prévention burn-out",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "travail-heure-exercice",
+      "type": "number",
+      "label": "Combien d'heures passez-vous à travailler par semaine ?",
+      "placeholder": "Exemple : 40",
+      "required": true
+    },
+    {
+      "name": "activites-loisirs",
+      "type": "textarea",
+      "label": "Quelles activités de loisirs faites-vous régulièrement ?",
+      "placeholder": "Exemple : lecture, sport, musique",
+      "required": true
+    },
+    {
+      "name": "soutien-social",
+      "type": "select",
+      "options": [
+        "famille",
+        "amis",
+        "conseiller"
+      ],
+      "label": "Qui vous soutient dans vos moments difficiles ?",
+      "placeholder": "Exemple : famille",
+      "required": true
+    },
+    {
+      "name": "priorites-vie-personnelle",
+      "type": "text",
+      "label": "Quelles sont vos priorités en matière de vie personnelle ?",
+      "placeholder": "Exemple : santé, relations, carrière",
+      "required": true
+    },
+    {
+      "name": "premiere-reaction-stress",
+      "type": "textarea",
+      "label": "Comment réagissez-vous généralement face au stress ?",
+      "placeholder": "Exemple : je me sens anxieux, je me mettrai au travail",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Travail-heure-exercice: {travail-heure-exercice}, Activités-loisirs: {activites-loisirs}, Soutien-social: {soutien-social}, Priorites-vie-personnelle: {priorites-vie-personnelle}, Premiere-reaction-stress: {premiere-reaction-stress}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

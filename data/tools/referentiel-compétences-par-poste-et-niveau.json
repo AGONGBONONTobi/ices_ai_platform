@@ -1,0 +1,78 @@
+{
+  "id": "referentiel-compétences-par-poste-et-niveau",
+  "title": "Référentiel de compétences par poste & niveau",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "poste",
+      "type": "text",
+      "label": "Quel poste est concerné ?",
+      "placeholder": "Exemple : Chef de projet",
+      "required": true
+    },
+    {
+      "name": "niveau",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Expérimenté",
+        "Expert"
+      ],
+      "label": "Quel niveau de compétence est attendu ?",
+      "placeholder": "Exemple : Débutant",
+      "required": true
+    },
+    {
+      "name": "compétences-clés",
+      "type": "textarea",
+      "label": "Quelles sont les compétences clés requises pour ce poste ?",
+      "placeholder": "Exemple : Analyse de données, leadership, communication",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux de ce poste ?",
+      "placeholder": "Exemple : Améliorer la productivité, réduire les coûts, développer de nouvelles opportunités",
+      "required": true
+    },
+    {
+      "name": "ressources",
+      "type": "textarea",
+      "label": "Quelles ressources sont disponibles pour soutenir ce poste ?",
+      "placeholder": "Exemple : Équipe de support, outils de gestion de projet, budget alloué",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Poste: {poste}, Niveau: {niveau}, Compétences clés: {compétences-clés}, Objectifs: {objectifs}, Ressources: {ressources}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

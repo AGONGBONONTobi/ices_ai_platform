@@ -1,0 +1,77 @@
+{
+  "id": "outil-de-quantification-des-risques-monte-carlo",
+  "title": "Outil de quantification des risques (Monte Carlo)",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "nomProjet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple : Projet de développement logiciel",
+      "required": true
+    },
+    {
+      "name": "typeRisque",
+      "type": "select",
+      "options": [
+        "Risque opérationnel",
+        "Risque financier",
+        "Risque de crédit"
+      ],
+      "label": "Type de risque",
+      "required": true
+    },
+    {
+      "name": "descriptionRisque",
+      "type": "textarea",
+      "label": "Description du risque",
+      "placeholder": "Exemple : Le projet peut être retardé en raison de problèmes techniques",
+      "required": true
+    },
+    {
+      "name": "probabiliteRisque",
+      "type": "number",
+      "label": "Probabilité du risque (en %)",
+      "placeholder": "Exemple : 20",
+      "required": true
+    },
+    {
+      "name": "impactRisque",
+      "type": "number",
+      "label": "Impact du risque (en €)",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en gestion des risques. L'utilisateur a répondu : Nom du projet : {nomProjet}, Type de risque : {typeRisque}, Description du risque : {descriptionRisque}, Probabilité du risque : {probabiliteRisque}%, Impact du risque : {impactRisque}€. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

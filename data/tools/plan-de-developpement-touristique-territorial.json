@@ -1,0 +1,72 @@
+{
+  "id": "plan-de-developpement-touristique-territorial",
+  "title": "Plan de développement touristique territorial",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif_principal",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de votre plan de développement touristique territorial ?",
+      "placeholder": "Développement durable, création d'emplois, etc.",
+      "required": true
+    },
+    {
+      "name": "type_de_tourisme",
+      "type": "select",
+      "options": [
+        "Tourisme de nature",
+        "Tourisme culturel",
+        "Tourisme urbain",
+        "Tourisme rural"
+      ],
+      "label": "Quel type de tourisme souhaitez-vous développer ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "text",
+      "label": "Quelles sont les ressources disponibles pour ce projet (budget, personnel, infrastructures) ?",
+      "placeholder": "10 millions d'euros, 5 personnes, etc.",
+      "required": true
+    },
+    {
+      "name": "partenaires_cles",
+      "type": "textarea",
+      "label": "Qui sont les partenaires clés pour la réussite de ce projet ?",
+      "placeholder": "Collectivités locales, entreprises touristiques, associations, etc.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en développement touristique. L'utilisateur a répondu : Objectif principal: {objectif_principal}, Type de tourisme: {type_de_tourisme}, Ressources disponibles: {ressources_disponibles}, Partenaires clés: {partenaires_cles}. Analysez ces informations et proposez un score global sur 100, une évaluation par axe, et des recommandations pour la mise en œuvre du plan de développement touristique territorial.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

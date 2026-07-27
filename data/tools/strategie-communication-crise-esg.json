@@ -1,0 +1,86 @@
+{
+  "id": "strategie-communication-crise-esg",
+  "title": "Stratégie de communication de crise ESG",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "type_crise",
+      "type": "select",
+      "options": [
+        "Environnementale",
+        "Sociale",
+        "Gouvernance",
+        "Mixte"
+      ],
+      "label": "Quel type de crise ESG avez-vous identifié?",
+      "placeholder": "Ex: Environnementale",
+      "required": true
+    },
+    {
+      "name": "description_crise",
+      "type": "textarea",
+      "label": "Décrivez brièvement la crise et son impact.",
+      "placeholder": "Ex: Pollution d'un site industriel...",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "select",
+      "options": [
+        "Investisseurs",
+        "Clients",
+        "Employés",
+        "Communauté locale",
+        "Médias"
+      ],
+      "label": "Quel(s) public(s) cible(s) devez-vous atteindre?",
+      "placeholder": "Ex: Investisseurs et médias",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "number",
+      "label": "Combien de ressources (en heures) avez-vous alloué à la gestion de crise?",
+      "placeholder": "Ex: 120",
+      "required": true
+    },
+    {
+      "name": "plan_communication",
+      "type": "textarea",
+      "label": "Quel est votre plan de communication actuel?",
+      "placeholder": "Ex: Envoi de communiqués de presse...",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Type de crise: {type_crise}, Description: {description_crise}, Public cible: {public_cible}, Ressources disponibles: {ressources_disponibles}, Plan de communication: {plan_communication}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

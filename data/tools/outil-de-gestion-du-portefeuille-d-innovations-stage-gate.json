@@ -1,0 +1,79 @@
+{
+  "id": "outil-de-gestion-du-portefeuille-d-innovations-stage-gate",
+  "title": "Outil de gestion du portefeuille d'innovations (Stage-Gate)",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "nom_du_projet",
+      "type": "text",
+      "label": "Nom du projet d'innovation",
+      "placeholder": "Exemple : Développement d'un nouveau produit",
+      "required": true
+    },
+    {
+      "name": "objectif_du_projet",
+      "type": "textarea",
+      "label": "Objectif du projet d'innovation",
+      "placeholder": "Exemple : Améliorer la compétitivité du marché",
+      "required": true
+    },
+    {
+      "name": "étape_actuelle",
+      "type": "select",
+      "options": [
+        "Définition",
+        "Conception",
+        "Développement",
+        "Lancement"
+      ],
+      "label": "Étape actuelle du projet dans le processus Stage-Gate",
+      "placeholder": "Exemple : Définition",
+      "required": true
+    },
+    {
+      "name": "budget_alloué",
+      "type": "number",
+      "label": "Budget alloué pour le projet",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "échéancier",
+      "type": "textarea",
+      "label": "Échéancier du projet",
+      "placeholder": "Exemple : Définition : 2 semaines, Conception : 6 semaines, Développement : 12 semaines",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet : {nom_du_projet}, Objectif du projet : {objectif_du_projet}, Étape actuelle : {étape_actuelle}, Budget alloué : {budget_alloué}, Échéancier : {échéancier}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

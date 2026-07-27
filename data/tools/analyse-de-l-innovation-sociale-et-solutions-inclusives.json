@@ -1,0 +1,72 @@
+{
+  "id": "analyse-de-l-innovation-sociale-et-solutions-inclusives",
+  "title": "Analyse de l'innovation sociale & solutions inclusives",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de l'innovation sociale ?",
+      "placeholder": "Exemple : réduire les inégalités, améliorer la qualité de vie, etc.",
+      "required": true
+    },
+    {
+      "name": "cible",
+      "type": "select",
+      "options": [
+        "Jeunesse",
+        "Femmes",
+        "Personnes âgées",
+        "Handicapés"
+      ],
+      "label": "Qui est la cible de l'innovation sociale ?",
+      "placeholder": "Exemple : les jeunes",
+      "required": true
+    },
+    {
+      "name": "solution",
+      "type": "text",
+      "label": "Quelle est la solution proposée pour répondre aux besoins de la cible ?",
+      "placeholder": "Exemple : une plateforme en ligne pour les jeunes",
+      "required": true
+    },
+    {
+      "name": "impact",
+      "type": "number",
+      "label": "Quel est l'impact attendu de la solution sur la cible ?",
+      "placeholder": "Exemple : 50% de réduction des inégalités",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en innovation sociale. L'utilisateur a répondu : Objectif : {objectif}, Cible : {cible}, Solution : {solution}, Impact : {impact}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

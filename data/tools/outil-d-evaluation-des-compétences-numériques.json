@@ -1,0 +1,78 @@
+{
+  "id": "outil-d-evaluation-des-compétences-numériques",
+  "title": "Outil d'évaluation des compétences numériques (DIGCOMP)",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "niveau-de-connaissance-des-technologies",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est le niveau de connaissance des technologies de l'utilisateur ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "capacité-à-travailler-en-équipe",
+      "type": "textarea",
+      "label": "Peut-il travailler efficacement en équipe ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "capacité-à-penser-critiquement",
+      "type": "number",
+      "label": "Peut-il penser de manière critique ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "capacité-à-s'adapter",
+      "type": "text",
+      "label": "Peut-il s'adapter à de nouvelles situations ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "capacité-à-s'autoévaluer",
+      "type": "textarea",
+      "label": "Peut-il s'autoévaluer de manière efficace ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Niveau de connaissance des technologies : {niveau-de-connaissance-des-technologies}, Capacité à travailler en équipe : {capacité-à-travailler-en-équipe}, Capacité à penser de manière critique : {capacité-à-penser-critiquement}, Capacité à s'adapter : {capacité-à-s'adapter}, Capacité à s'autoévaluer : {capacité-à-s'autoévaluer}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

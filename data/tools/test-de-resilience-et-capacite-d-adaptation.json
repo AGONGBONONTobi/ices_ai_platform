@@ -1,0 +1,71 @@
+{
+  "id": "test-de-resilience-et-capacite-d-adaptation",
+  "title": "Test de résilience & capacité d'adaptation",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "niveauDeStress",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quel est votre niveau de stress actuel ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "strategieDAdaptation",
+      "type": "textarea",
+      "label": "Décrivez comment vous gérez les situations difficiles au travail ?",
+      "placeholder": "Exemple : Je prends du recul, je discute avec des collègues, etc.",
+      "required": true
+    },
+    {
+      "name": "experienceDeChangement",
+      "type": "text",
+      "label": "Avez-vous déjà vécu un changement important dans votre carrière ? Si oui, décrivez brièvement.",
+      "placeholder": "Exemple : Changement de poste, de département, etc.",
+      "required": false
+    },
+    {
+      "name": "niveauDeMotivation",
+      "type": "number",
+      "label": "Évaluez votre niveau de motivation actuel sur une échelle de 1 à 10",
+      "placeholder": "Entrez un nombre entre 1 et 10",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Niveau de stress : {niveauDeStress}, Stratégie d'adaptation : {strategieDAdaptation}, Expérience de changement : {experienceDeChangement}, Niveau de motivation : {niveauDeMotivation}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

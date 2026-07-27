@@ -1,0 +1,23 @@
+{
+  "id": "diagnostic-concurrentiel",
+  "title": "Diagnostic concurrentiel & benchmark sectoriel",
+  "category": "RH",
+  "inputs": [
+    {
+      "name": "concurrents",
+      "type": "textarea",
+      "label": "Concurrents",
+      "placeholder": "Exemple : Concurrents actuels de l'entreprise",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en diagnostic concurrentiel. Utilise {concurrents} pour évaluer la position concurrentielle de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "string"
+      }
+    }
+  }
+}

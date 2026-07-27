@@ -1,0 +1,76 @@
+{
+  "id": "outil-de-modelisation-actuarielle",
+  "title": "Outil de modélisation actuarielle",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_de_risque",
+      "type": "select",
+      "options": [
+        "Risque de marché",
+        "Risque de crédit",
+        "Risque opérationnel"
+      ],
+      "label": "Quel type de risque souhaitez-vous modéliser ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "donnees_historiques",
+      "type": "textarea",
+      "label": "Veuillez fournir des données historiques sur les événements passés liés au risque choisi (format CSV ou texte) :",
+      "placeholder": "Exemple : date;valeur\n2022-01-01;100",
+      "required": true
+    },
+    {
+      "name": "niveau_de_precision",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quel niveau de précision souhaitez-vous pour la modélisation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "horizon_de_prevision",
+      "type": "number",
+      "label": "Quel est l'horizon de prévision en mois ?",
+      "placeholder": "12",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un actuaire expert. L'utilisateur a répondu : Type de risque: {type_de_risque}, Données historiques: {donnees_historiques}, Niveau de précision: {niveau_de_precision}, Horizon de prévision: {horizon_de_prevision}. Modélise ce risque en utilisant ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

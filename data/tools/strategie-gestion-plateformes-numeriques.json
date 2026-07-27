@@ -1,0 +1,77 @@
+{
+  "id": "strategie-gestion-plateformes-numeriques",
+  "title": "Stratégie de gestion des plateformes numériques",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de la gestion des plateformes numériques ?",
+      "placeholder": "Exemple : améliorer l'expérience utilisateur, réduire les coûts de maintenance, etc.",
+      "required": true
+    },
+    {
+      "name": "technologies-utilisees",
+      "type": "select",
+      "options": [
+        "Cloud",
+        "Big Data",
+        "IA",
+        "Blockchain"
+      ],
+      "label": "Quelles technologies sont actuellement utilisées pour la gestion des plateformes numériques ?",
+      "placeholder": "Sélectionnez les technologies pertinentes",
+      "required": true
+    },
+    {
+      "name": "risques-identifies",
+      "type": "textarea",
+      "label": "Quels sont les risques identifiés dans la gestion des plateformes numériques ?",
+      "placeholder": "Exemple : sécurité des données, dépendance aux fournisseurs, etc.",
+      "required": true
+    },
+    {
+      "name": "strategie-de-maintenance",
+      "type": "select",
+      "options": [
+        "Maintenance continue",
+        "Maintenance préventive",
+        "Maintenance corrective"
+      ],
+      "label": "Quelle est la stratégie de maintenance actuellement mise en œuvre pour les plateformes numériques ?",
+      "placeholder": "Sélectionnez la stratégie pertinente",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en transformation digitale et IA. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Technologies utilisées : {technologies-utilisees}, Risques identifiés : {risques-identifies}, Stratégie de maintenance : {strategie-de-maintenance}. Analyse ces informations et propose une stratégie de gestion des plateformes numériques adaptée, avec des recommandations pour améliorer l'efficacité et la sécurité.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

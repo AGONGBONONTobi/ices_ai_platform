@@ -1,0 +1,79 @@
+{
+  "id": "plan-de-gestion-de-crise-communication",
+  "title": "Plan de gestion de crise communication",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "situation",
+      "type": "textarea",
+      "label": "Décrivez brièvement la situation de crise",
+      "placeholder": "Exemple : Incident de sécurité, problème de qualité, etc.",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs du plan de gestion de crise ?",
+      "placeholder": "Exemple : Réduire les préjudices, maintenir la confiance des clients, etc.",
+      "required": true
+    },
+    {
+      "name": "publics-cibles",
+      "type": "select",
+      "options": [
+        "Clients",
+        "Médias",
+        "Partenaires",
+        "Employés"
+      ],
+      "label": "Quels sont les publics cibles du plan de gestion de crise ?",
+      "placeholder": "Sélectionnez les publics cibles",
+      "required": true
+    },
+    {
+      "name": "stratégies",
+      "type": "textarea",
+      "label": "Quelles sont les stratégies de communication prévues pour gérer la crise ?",
+      "placeholder": "Exemple : Réponse immédiate, communication transparente, etc.",
+      "required": true
+    },
+    {
+      "name": "ressources",
+      "type": "textarea",
+      "label": "Quelles sont les ressources nécessaires pour mettre en œuvre le plan de gestion de crise ?",
+      "placeholder": "Exemple : Équipes de communication, ressources financières, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en communication. L'utilisateur a répondu : Situation : {situation}, Objectifs : {objectifs}, Publics cibles : {publics-cibles}, Stratégies : {stratégies}, Ressources : {ressources}. Analyse ces informations et propose un plan de gestion de crise efficace.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "id": "outil-de-pharmacovigilance-et-effets-indesirables",
+  "title": "Outil de pharmacovigilance & effets indésirables",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "medicament",
+      "type": "text",
+      "label": "Quel est le nom du médicament concerné ?",
+      "placeholder": "Exemple : Aspirine",
+      "required": true
+    },
+    {
+      "name": "effet_indesirable",
+      "type": "textarea",
+      "label": "Décrivez l'effet indésirable observé",
+      "placeholder": "Exemple : Éruption cutanée, troubles gastro-intestinaux",
+      "required": true
+    },
+    {
+      "name": "niveau_severite",
+      "type": "select",
+      "options": [
+        "Léger",
+        "Modéré",
+        "Sévère"
+      ],
+      "label": "Quel est le niveau de sévérité de l'effet indésirable ?",
+      "required": true
+    },
+    {
+      "name": "population_affectee",
+      "type": "select",
+      "options": [
+        "Enfants",
+        "Adultes",
+        "Personnes âgées"
+      ],
+      "label": "Quelle population est affectée par l'effet indésirable ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "En tant que spécialiste en pharmacovigilance, vous avez les informations suivantes : Médicament: {medicament}, Effet indésirable: {effet_indesirable}, Niveau de sévérité: {niveau_severite}, Population affectée: {population_affectee}. Évaluez ces informations et attribuez un score global sur 100, une évaluation par axe pertinents et formulez des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "plan-pedagogique-institutionnel-structur",
+  "title": "Plan pédagogique institutionnel structuré",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif_pedagogique",
+      "type": "textarea",
+      "label": "Quel est l'objectif pédagogique principal de votre institution ?",
+      "placeholder": "Exemple : Améliorer les compétences en mathématiques des élèves de primaire",
+      "required": true
+    },
+    {
+      "name": "niveau_scolaire",
+      "type": "select",
+      "options": [
+        "Primaire",
+        "Secondaire",
+        "Supérieur"
+      ],
+      "label": "Quel est le niveau scolaire concerné par le plan pédagogique ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "text",
+      "label": "Quelles sont les ressources disponibles pour la mise en œuvre du plan pédagogique (budget, personnel, matériel) ?",
+      "placeholder": "Exemple : 100 000 euros, 5 enseignants, 10 ordinateurs",
+      "required": true
+    },
+    {
+      "name": "delais",
+      "type": "text",
+      "label": "Quels sont les délais pour la mise en œuvre et l'évaluation du plan pédagogique ?",
+      "placeholder": "Exemple : 6 mois pour la mise en œuvre, 1 an pour l'évaluation",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en éducation. L'utilisateur a répondu : Objectif pédagogique: {objectif_pedagogique}, Niveau scolaire: {niveau_scolaire}, Ressources disponibles: {ressources_disponibles}, Délais: {delais}. Analysez ces informations et proposez un plan pédagogique institutionnel structuré. Évaluez les forces et les faiblesses de l'institution, définissez des objectifs spécifiques, mesurables, atteignables, pertinents et temporisés (SMART) et proposez des stratégies pour les atteindre. Donnez un score global sur 100, une évaluation par axe (ex : pédagogie, ressources, organisation), et des recommandations concrètes.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

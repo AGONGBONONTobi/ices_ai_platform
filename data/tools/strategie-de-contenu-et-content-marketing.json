@@ -1,0 +1,71 @@
+{
+  "id": "strategie-de-contenu-et-content-marketing",
+  "title": "Stratégie de contenu & content marketing",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de la stratégie de contenu ?",
+      "placeholder": "Exemple : augmenter la visibilité du site web, générer des leads, etc.",
+      "required": true
+    },
+    {
+      "name": "public-cible",
+      "type": "select",
+      "options": [
+        "Jeunes adultes (18-30 ans)",
+        "Adultes (31-50 ans)",
+        "Aînés (51 ans et plus)"
+      ],
+      "label": "Qui est le public cible de la stratégie de contenu ?",
+      "placeholder": "Exemple : les jeunes adultes",
+      "required": true
+    },
+    {
+      "name": "contenu-à-proposer",
+      "type": "text",
+      "label": "Quel type de contenu souhaitez-vous proposer (blog, vidéo, podcast, etc.) ?",
+      "placeholder": "Exemple : blog, vidéo",
+      "required": true
+    },
+    {
+      "name": "budget-alloué",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la stratégie de contenu ?",
+      "placeholder": "Exemple : 1000€",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en marketing digital. L'utilisateur a répondu : Objectif : {objectif}, Public cible : {public-cible}, Contenu à proposer : {contenu-à-proposer}, Budget alloué : {budget-alloué}. Analyse ces informations et propose une stratégie de contenu efficace pour atteindre les objectifs définis.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "audit-de-la-formation-professionnelle",
+  "title": "Audit de la formation professionnelle",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "objectif-de-la-formation",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de la formation professionnelle ?",
+      "placeholder": "Exemple : améliorer les compétences, adapter les méthodes de travail, etc.",
+      "required": true
+    },
+    {
+      "name": "public-cible",
+      "type": "select",
+      "options": [
+        "Équipes de direction",
+        "Équipes de terrain",
+        "Tous les employés"
+      ],
+      "label": "Qui est le public cible de la formation professionnelle ?",
+      "placeholder": "Exemple : équipes de direction",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources disponibles pour la formation professionnelle ?",
+      "placeholder": "Exemple : 5000 euros",
+      "required": true
+    },
+    {
+      "name": "méthodes-dapprentissage",
+      "type": "text",
+      "label": "Quelles méthodes d'apprentissage sont utilisées ?",
+      "placeholder": "Exemple : formation en ligne, formation en présentiel, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif de la formation : {objectif-de-la-formation}, Public cible : {public-cible}, Ressources disponibles : {ressources-disponibles}, Méthodes d'apprentissage : {méthodes-dapprentissage}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "plan-de-reforme-administrative",
+  "title": "Plan de réforme administrative",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif_reforme",
+      "type": "textarea",
+      "label": "Décrivez l'objectif principal de la réforme administrative",
+      "placeholder": "Améliorer l'efficacité du service public",
+      "required": true
+    },
+    {
+      "name": "niveau_complexite",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quel est le niveau de complexité de la réforme ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources financières disponibles pour la réforme ?",
+      "placeholder": "100000",
+      "required": true
+    },
+    {
+      "name": "parties_prenantes",
+      "type": "text",
+      "label": "Listez les principales parties prenantes impliquées",
+      "placeholder": "Ministère, collectivités locales, syndicats",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en réforme administrative. L'utilisateur a répondu : Objectif de réforme : {objectif_reforme}, Niveau de complexité : {niveau_complexite}, Ressources disponibles : {ressources_disponibles}, Parties prenantes : {parties_prenantes}. Analysez ces informations et proposez un plan de réforme détaillé avec un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

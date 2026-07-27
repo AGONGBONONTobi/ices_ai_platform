@@ -1,0 +1,85 @@
+{
+  "id": "rapport-d-audit-financier-interne-configuration",
+  "title": "Template de rapport d'audit financier interne",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Société Générale",
+      "required": true
+    },
+    {
+      "name": "periode",
+      "type": "select",
+      "options": [
+        "Année",
+        "Semestre",
+        "Trimestre"
+      ],
+      "label": "Période d'audit",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Objectifs de l'audit",
+      "placeholder": "Exemple : Vérifier la conformité aux normes comptables",
+      "required": true
+    },
+    {
+      "name": "methodologie",
+      "type": "text",
+      "label": "Méthodologie utilisée",
+      "placeholder": "Exemple : Enquête, analyse de documents",
+      "required": true
+    },
+    {
+      "name": "resultats",
+      "type": "textarea",
+      "label": "Résultats de l'audit",
+      "placeholder": "Exemple : Les résultats de l'audit ont montré des anomalies importantes",
+      "required": true
+    },
+    {
+      "name": "recommandations",
+      "type": "textarea",
+      "label": "Recommandations",
+      "placeholder": "Exemple : Mettre en place des mesures de contrôle pour prévenir les anomalies",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise : {entreprise}, Période : {periode}, Objectifs : {objectifs}, Méthodologie : {methodologie}, Résultats : {resultats}, Recommandations : {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

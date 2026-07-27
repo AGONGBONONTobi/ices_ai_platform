@@ -1,0 +1,72 @@
+{
+  "id": "plan-de-gestion-qualite-fournisseurs",
+  "title": "Plan de gestion de la qualité fournisseurs",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "nombre_fournisseurs",
+      "type": "number",
+      "label": "Nombre de fournisseurs",
+      "placeholder": "Ex: 15",
+      "required": true
+    },
+    {
+      "name": "niveau_de_conformite",
+      "type": "select",
+      "options": [
+        "Très élevé",
+        "Élevé",
+        "Moyen",
+        "Faible"
+      ],
+      "label": "Niveau de conformité",
+      "placeholder": "Sélectionnez un niveau",
+      "required": true
+    },
+    {
+      "name": "description_problemes",
+      "type": "textarea",
+      "label": "Description des problèmes rencontrés",
+      "placeholder": "Ex: Retards de livraison, défauts de qualité",
+      "required": true
+    },
+    {
+      "name": "frequence_audits",
+      "type": "number",
+      "label": "Fréquence des audits (en mois)",
+      "placeholder": "Ex: 3",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nombre de fournisseurs: {nombre_fournisseurs}, Niveau de conformité: {niveau_de_conformite}, Description des problèmes: {description_problemes}, Fréquence des audits: {frequence_audits}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

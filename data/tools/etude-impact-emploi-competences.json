@@ -1,0 +1,80 @@
+{
+  "id": "etude-impact-emploi-competences",
+  "title": "Étude d'impact sur l'emploi & les compétences",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "objectif_du_projet",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de votre projet d'impact sur l'emploi et les compétences?",
+      "placeholder": "Exemple : améliorer les compétences numériques des jeunes travailleurs",
+      "required": true
+    },
+    {
+      "name": "secteur_cible",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Santé",
+        "Éducation",
+        "Industrie",
+        "Services"
+      ],
+      "label": "Quel secteur ciblez-vous?",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "population_cible",
+      "type": "number",
+      "label": "Combien de personnes seront impactées?",
+      "placeholder": "Exemple : 500",
+      "required": true
+    },
+    {
+      "name": "durée_estimee",
+      "type": "number",
+      "label": "Durée estimée du projet (en mois)",
+      "placeholder": "Exemple : 12",
+      "required": true
+    },
+    {
+      "name": "budget_estime",
+      "type": "number",
+      "label": "Budget estimé (en euros)",
+      "placeholder": "Exemple : 200000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif du projet: {objectif_du_projet}, Secteur cible: {secteur_cible}, Population cible: {population_cible}, Durée estimée: {durée_estimee} mois, Budget estimé: {budget_estime} euros. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-veille-des-financements-disponibles",
+  "title": "Outil de veille des financements disponibles (bailleurs, fonds)",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteurActivite",
+      "type": "select",
+      "options": [
+        "Agriculture",
+        "Industrie",
+        "Services",
+        "Technologie"
+      ],
+      "label": "Secteur d'activité de votre entreprise",
+      "placeholder": "Sélectionnez votre secteur",
+      "required": true
+    },
+    {
+      "name": "typeFinancement",
+      "type": "select",
+      "options": [
+        "Subvention",
+        "Crédit",
+        "Investissement",
+        "Aide financière"
+      ],
+      "label": "Type de financement recherché",
+      "placeholder": "Sélectionnez le type de financement",
+      "required": true
+    },
+    {
+      "name": "descriptionProjet",
+      "type": "textarea",
+      "label": "Description détaillée de votre projet",
+      "placeholder": "Décrivez votre projet",
+      "required": true
+    },
+    {
+      "name": "zoneGeographique",
+      "type": "text",
+      "label": "Zone géographique ciblée",
+      "placeholder": "Région, pays, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur recherche des financements disponibles pour son projet dans le secteur de {secteurActivite} et a besoin de {typeFinancement}. Son projet consiste en {descriptionProjet} dans la zone géographique de {zoneGeographique}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe, et des recommandations pour maximiser ses chances d'obtenir le financement souhaité.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

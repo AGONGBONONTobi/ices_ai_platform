@@ -1,0 +1,85 @@
+{
+  "id": "plan-de-fidelisation-des-clients-institutionnels",
+  "title": "Plan de fidélisation des clients institutionnels",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "client_institutionnel",
+      "type": "select",
+      "options": [
+        "Banque",
+        "Assureur",
+        "Mutuelle",
+        "Autre"
+      ],
+      "label": "Quel type de client institutionnel souhaitez-vous fidéliser ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "frequentation",
+      "type": "number",
+      "label": "Quel est le niveau de frequentation actuel des clients institutionnels ? (sur 100)",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de fidélisation pour les clients institutionnels ? (ex : augmentation des ventes, amélioration de la satisfaction client)",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "stratégies",
+      "type": "select",
+      "options": [
+        "Campagnes de marketing ciblées",
+        "Programmes de fidélité personnalisés",
+        "Services premium",
+        "Autre"
+      ],
+      "label": "Quelles stratégies souhaitez-vous mettre en place pour fidéliser les clients institutionnels ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la fidélisation des clients institutionnels ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en marketing et commercial. L'utilisateur a répondu : Client institutionnel : {client_institutionnel}, Frequentation : {frequentation}, Objectifs : {objectifs}, Stratégies : {stratégies}, Budget : {budget}. Analyse ces informations et propose un plan de fidélisation personnalisé pour les clients institutionnels.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

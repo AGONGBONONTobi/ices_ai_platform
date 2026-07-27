@@ -1,0 +1,70 @@
+{
+  "id": "audit-de-la-proprieté-intellectuelle",
+  "title": "Audit de la propriété intellectuelle",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "marques-de-propriété",
+      "type": "textarea",
+      "label": "Listez les marques de propriété intellectuelle (marques de commerce, brevets, dessins et modèles, etc.) détenues par l'entreprise.",
+      "placeholder": "Exemple : Marque de commerce, Brevet de l'invention X, etc.",
+      "required": true
+    },
+    {
+      "name": "protection-internationale",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "La propriété intellectuelle est-elle protégée à l'échelle internationale ?",
+      "placeholder": "Exemple : Oui, Non",
+      "required": true
+    },
+    {
+      "name": "développement-innovation",
+      "type": "number",
+      "label": "Quel est le niveau de développement et d'innovation lié à la propriété intellectuelle ? (échelle de 1 à 10)",
+      "placeholder": "Exemple : 8",
+      "required": true
+    },
+    {
+      "name": "risques-de-contrefaçon",
+      "type": "textarea",
+      "label": "Quels sont les risques de contrefaçon liés à la propriété intellectuelle ?",
+      "placeholder": "Exemple : Risque de contrefaçon de produits, risque de contrefaçon de services, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en propriété intellectuelle. L'utilisateur a répondu : Marques de propriété : {marques-de-propriété}, Protection internationale : {protection-internationale}, Développement innovation : {développement-innovation}, Risques de contrefaçon : {risques-de-contrefaçon}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

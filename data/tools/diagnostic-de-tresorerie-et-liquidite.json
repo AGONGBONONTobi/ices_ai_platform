@@ -1,0 +1,85 @@
+{
+  "id": "diagnostic-de-tresorerie-et-liquidite",
+  "title": "Diagnostic de trésorerie & liquidité",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "duree-de-travaux",
+      "type": "number",
+      "label": "Combien de mois avez-vous besoin pour réaliser vos travaux ?",
+      "placeholder": "Exemple : 3",
+      "required": true
+    },
+    {
+      "name": "chiffre-daffaires-prevu",
+      "type": "number",
+      "label": "Quel est votre chiffre d'affaires prévu pour la période de travaux ?",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    },
+    {
+      "name": "couts-prevus",
+      "type": "number",
+      "label": "Quels sont vos coûts prévus pour la période de travaux ?",
+      "placeholder": "Exemple : 50000",
+      "required": true
+    },
+    {
+      "name": "situation-financiere",
+      "type": "textarea",
+      "label": "Décrivez votre situation financière actuelle",
+      "placeholder": "Exemple : Nous avons des dettes importantes et des ressources limitées",
+      "required": true
+    },
+    {
+      "name": "objectifs-financiers",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs financiers à court et long terme ?",
+      "placeholder": "Exemple : Nous souhaitons réduire nos dettes et augmenter nos revenus",
+      "required": true
+    },
+    {
+      "name": "type-de-projet",
+      "type": "select",
+      "options": [
+        "Construction",
+        "Réhabilitation",
+        "Développement immobilier"
+      ],
+      "label": "Quel type de projet souhaitez-vous réaliser ?",
+      "placeholder": "Exemple : Construction",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en trésorerie et liquidité. L'utilisateur a répondu : Duree de travaux : {duree-de-travaux} mois, Chiffre d'affaires prévu : {chiffre-daffaires-prevu}, Couts prévus : {couts-prevus}, Situation financière : {situation-financiere}, Objectifs financiers : {objectifs-financiers}, Type de projet : {type-de-projet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

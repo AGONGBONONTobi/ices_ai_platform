@@ -1,0 +1,76 @@
+{
+  "id": "audit-de-conformite-sectorielle",
+  "title": "Audit de conformité sectorielle (bancaire, santé, télécom, énergie)",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "bancaire",
+        "santé",
+        "télécom",
+        "énergie"
+      ],
+      "label": "Quel secteur d'activité est concerné par l'audit de conformité ?",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "type-d-audit",
+      "type": "select",
+      "options": [
+        "interne",
+        "externe"
+      ],
+      "label": "Quel type d'audit de conformité est-il effectué ?",
+      "placeholder": "Sélectionnez un type d'audit",
+      "required": true
+    },
+    {
+      "name": "resultat-de-l-audit",
+      "type": "textarea",
+      "label": "Quels sont les résultats de l'audit de conformité ?",
+      "placeholder": "Décrivez les résultats de l'audit",
+      "required": true
+    },
+    {
+      "name": "recommandations",
+      "type": "textarea",
+      "label": "Quelles sont les recommandations issues de l'audit de conformité ?",
+      "placeholder": "Décrivez les recommandations",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audit de conformité. L'utilisateur a répondu : Secteur: {secteur}, Type d'audit: {type-d-audit}, Résultat de l'audit: {resultat-de-l-audit}, Recommandations: {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

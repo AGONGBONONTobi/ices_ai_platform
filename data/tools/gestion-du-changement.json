@@ -1,0 +1,78 @@
+{
+  "id": "gestion-du-changement",
+  "title": "Gestion du changement (Kotter / ADKAR / Lewin)",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "type-de-changement",
+      "type": "select",
+      "options": [
+        "Transformation",
+        "Innovation",
+        "Amélioration continue"
+      ],
+      "label": "Quel type de changement souhaitez-vous mettre en place ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "objectif-stratégique",
+      "type": "textarea",
+      "label": "Quel est l'objectif stratégique que vous souhaitez atteindre grâce à ce changement ?",
+      "placeholder": "Exemple : Augmenter la productivité de 15% dans les prochains 6 mois",
+      "required": true
+    },
+    {
+      "name": "niveau-de-motivation",
+      "type": "number",
+      "label": "Quel est le niveau de motivation actuel des équipes concernées ? (échelle de 1 à 10)",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "text",
+      "label": "Quelles ressources (humaines, financières, matérielles) sont disponibles pour soutenir ce changement ?",
+      "placeholder": "Exemple : 2 personnes supplémentaires, 10 000 € de budget",
+      "required": true
+    },
+    {
+      "name": "barrières-identifiées",
+      "type": "textarea",
+      "label": "Quelles barrières ou obstacles avez-vous identifiés pour ce changement ?",
+      "placeholder": "Exemple : Résistance des équipes, manque de ressources",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en gestion du changement. L'utilisateur a répondu : Type de changement : {type-de-changement}, Objectif stratégique : {objectif-stratégique}, Niveau de motivation : {niveau-de-motivation}, Ressources disponibles : {ressources-disponibles}, Barrières identifiées : {barrières-identifiées}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

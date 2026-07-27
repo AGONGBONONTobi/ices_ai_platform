@@ -1,0 +1,78 @@
+{
+  "id": "template-de-plan-de-test-et-recette",
+  "title": "Template de plan de test & recette",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "nomDuSystème",
+      "type": "text",
+      "label": "Nom du système ou application à tester",
+      "placeholder": "Exemple : Application de gestion des stocks",
+      "required": true
+    },
+    {
+      "name": "objectifDeTest",
+      "type": "textarea",
+      "label": "Objectif de test (quoi tester, pourquoi et comment)",
+      "placeholder": "Exemple : Tester la fonctionnalité de gestion des stocks pour s'assurer qu'elle est fiable et sécurisée",
+      "required": true
+    },
+    {
+      "name": "scénariosDeTest",
+      "type": "textarea",
+      "label": "Scénarios de test (exemples de cas de test)",
+      "placeholder": "Exemple : Scénario 1 : Vérifier que la fonctionnalité de gestion des stocks permet d'ajouter et de supprimer des articles sans erreur, Scénario 2 : Vérifier que la fonctionnalité de gestion des stocks permet de gérer les stocks en temps réel",
+      "required": true
+    },
+    {
+      "name": "méthodologieDeTest",
+      "type": "select",
+      "options": [
+        "Black Box",
+        "White Box",
+        "Gray Box"
+      ],
+      "label": "Méthodologie de test (Black Box, White Box ou Gray Box)",
+      "placeholder": "Exemple : Black Box",
+      "required": true
+    },
+    {
+      "name": "ressourcesNécessaires",
+      "type": "textarea",
+      "label": "Ressources nécessaires pour le test (équipements, logiciels, etc.)",
+      "placeholder": "Exemple : Ordinateur portable, logiciel de test, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du système : {nomDuSystème}, Objectif de test : {objectifDeTest}, Scénarios de test : {scénariosDeTest}, Méthodologie de test : {méthodologieDeTest}, Ressources nécessaires : {ressourcesNécessaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

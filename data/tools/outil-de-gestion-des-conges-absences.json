@@ -1,0 +1,72 @@
+{
+  "id": "outil-de-gestion-des-conges-absences",
+  "title": "Outil de gestion des congés & absences",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "typeDeConge",
+      "type": "select",
+      "options": [
+        "Congé payé",
+        "Congé sans solde",
+        "Absence pour maladie",
+        "Autre"
+      ],
+      "label": "Quel est le type de congé ou d'absence?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "duree",
+      "type": "number",
+      "label": "Quelle est la durée du congé ou de l'absence en jours?",
+      "placeholder": "Ex: 10",
+      "required": true
+    },
+    {
+      "name": "motif",
+      "type": "textarea",
+      "label": "Pouvez-vous décrire brièvement le motif de votre demande de congé ou d'absence?",
+      "placeholder": "Ex: Pour raisons familiales, pour une opération médicale, etc.",
+      "required": true
+    },
+    {
+      "name": "dateDebut",
+      "type": "text",
+      "label": "Quelle est la date de début prévue pour votre congé ou absence?",
+      "placeholder": "Ex: 2024-09-15",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant RH expert. L'utilisateur a répondu : Type de congé: {typeDeConge}, Durée: {duree} jours, Motif: {motif}, Date de début: {dateDebut}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (gestion du personnel, impact sur la productivité, respect des politiques de l'entreprise), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

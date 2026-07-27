@@ -1,0 +1,72 @@
+{
+  "id": "outil-feuille-de-route-transformation-digitale",
+  "title": "Feuille de route de transformation digitale",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de la transformation digitale ?",
+      "placeholder": "Exemple : améliorer l'expérience client, augmenter la productivité, etc.",
+      "required": true
+    },
+    {
+      "name": "axes-transformation",
+      "type": "select",
+      "options": [
+        "Amélioration de l'expérience client",
+        "Augmentation de la productivité",
+        "Optimisation des processus",
+        "Développement de nouveaux produits/services"
+      ],
+      "label": "Quel est l'axe principal de la transformation digitale ?",
+      "placeholder": "Choisissez un axe",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources disponibles pour la transformation digitale (budget, personnel, etc.) ?",
+      "placeholder": "Exemple : 100 000 €, 10 personnes, etc.",
+      "required": true
+    },
+    {
+      "name": "cadrage-temporel",
+      "type": "text",
+      "label": "Quel est le cadrage temporel pour la transformation digitale (durée, échéances, etc.) ?",
+      "placeholder": "Exemple : 6 mois, 1 an, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Axe de transformation : {axes-transformation}, Ressources disponibles : {ressources-disponibles}, Cadrage temporel : {cadrage-temporel}. Analyse ces informations et propose une feuille de route de transformation digitale avec des objectifs, des indicateurs clés de performance, des actions à mettre en œuvre et des échéances.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

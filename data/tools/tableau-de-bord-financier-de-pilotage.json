@@ -1,0 +1,78 @@
+{
+  "id": "tableau-de-bord-financier-de-pilotage",
+  "title": "Tableau de bord financier de pilotage",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "bénéfice_net",
+      "type": "number",
+      "label": "Bénéfice net",
+      "placeholder": "Entrez le bénéfice net",
+      "required": true
+    },
+    {
+      "name": "chiffre_d_affaires",
+      "type": "number",
+      "label": "Chiffre d'affaires",
+      "placeholder": "Entrez le chiffre d'affaires",
+      "required": true
+    },
+    {
+      "name": "taux_de_marge",
+      "type": "number",
+      "label": "Taux de marge",
+      "placeholder": "Entrez le taux de marge",
+      "required": true
+    },
+    {
+      "name": "investissements",
+      "type": "textarea",
+      "label": "Investissements",
+      "placeholder": "Décrivez les investissements",
+      "required": true
+    },
+    {
+      "name": "stratégie_financière",
+      "type": "select",
+      "options": [
+        "Conservez",
+        "Investissez",
+        "Réduisez"
+      ],
+      "label": "Stratégie financière",
+      "placeholder": "Choisissez une stratégie",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a répondu : Bénéfice net: {bénéfice_net}, Chiffre d'affaires: {chiffre_d_affaires}, Taux de marge: {taux_de_marge}, Investissements: {investissements}, Stratégie financière: {stratégie_financière}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

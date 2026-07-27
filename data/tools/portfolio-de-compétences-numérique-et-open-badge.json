@@ -1,0 +1,76 @@
+{
+  "id": "portfolio-de-compétences-numérique-et-open-badge",
+  "title": "Portfolio de compétences numérique & open badge",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "niveau-de-compétence",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est votre niveau de compétence en numérique ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "nombre-de-badges-possédés",
+      "type": "number",
+      "label": "Combien de badges numériques avez-vous déjà obtenus ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "domaines-d'intérêt",
+      "type": "textarea",
+      "label": "Quels domaines d'intérêt numérique vous passionnent ? (séparez les réponses par des virgules)",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "outil-preféré",
+      "type": "select",
+      "options": [
+        "Logiciel A",
+        "Logiciel B",
+        "Logiciel C"
+      ],
+      "label": "Quel est votre outil de travail numérique préféré ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un conseiller en formation numérique. L'utilisateur a répondu : Niveau de compétence : {niveau-de-compétence}, Nombre de badges possédés : {nombre-de-badges-possédés}, Domaines d'intérêt : {domaines-d'intérêt}, Outil préféré : {outil-preféré}. Analyse ces informations et propose un plan de formation personnalisé pour améliorer ses compétences numériques.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

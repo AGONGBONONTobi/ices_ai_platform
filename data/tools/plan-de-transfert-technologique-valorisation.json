@@ -1,0 +1,71 @@
+{
+  "id": "plan-de-transfert-technologique-valorisation",
+  "title": "Plan de transfert technologique & valorisation",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "technologie",
+      "type": "textarea",
+      "label": "Décrivez brièvement la technologie innovante développée",
+      "placeholder": "Exemple : Développement d'un nouveau matériau",
+      "required": true
+    },
+    {
+      "name": "partenaires",
+      "type": "select",
+      "options": [
+        "Universités",
+        "Entreprises",
+        "Instituts de recherche"
+      ],
+      "label": "Quels partenaires sont impliqués dans le projet ?",
+      "placeholder": "Sélectionnez les partenaires",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs du plan de transfert technologique ?",
+      "placeholder": "Exemple : Développement commercial, Accès à de nouveaux marchés",
+      "required": true
+    },
+    {
+      "name": "barriers",
+      "type": "textarea",
+      "label": "Quels sont les principaux obstacles à la mise en œuvre du plan de transfert technologique ?",
+      "placeholder": "Exemple : Ressources insuffisantes, Connaissance limitée du marché",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en innovation et valorisation. L'utilisateur a répondu : Technologie: {technologie}, Partenaires: {partenaires}, Objectifs: {objectifs}, Barriers: {barriers}. Analyse ces informations et propose un plan de transfert technologique efficace, incluant des recommandations pour surmonter les obstacles identifiés.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

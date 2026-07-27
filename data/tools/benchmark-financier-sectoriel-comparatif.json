@@ -1,0 +1,78 @@
+{
+  "id": "benchmark-financier-sectoriel-comparatif",
+  "title": "Benchmark financier sectoriel comparatif",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "entreprise1",
+      "type": "text",
+      "label": "Nom de l'entreprise 1",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "entreprise2",
+      "type": "text",
+      "label": "Nom de l'entreprise 2",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "ratio1",
+      "type": "number",
+      "label": "Ratio financier 1 de l'entreprise 1",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "ratio2",
+      "type": "number",
+      "label": "Ratio financier 2 de l'entreprise 1",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "ratio3",
+      "type": "select",
+      "options": [
+        "Bilan",
+        "Compte de résultat",
+        "Flux de trésorerie"
+      ],
+      "label": "Ratio financier 1 de l'entreprise 2",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un analyste financier. Les utilisateurs ont répondu : Entreprise1: {entreprise1}, Entreprise2: {entreprise2}, Ratio1: {ratio1}, Ratio2: {ratio2}, Ratio3: {ratio3}. Analyse ces informations et compare les performances financières des deux entreprises en termes de ratios.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

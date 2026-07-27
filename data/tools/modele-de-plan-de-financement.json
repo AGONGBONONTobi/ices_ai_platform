@@ -1,0 +1,71 @@
+{
+  "id": "modele-de-plan-de-financement",
+  "title": "Template de plan de financement",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectif_financement",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de votre demande de financement ?",
+      "placeholder": "Décrivez brièvement l'objectif de votre demande",
+      "required": true
+    },
+    {
+      "name": "montant_demande",
+      "type": "number",
+      "label": "Quel est le montant de financement demandé ?",
+      "placeholder": "Entrez le montant en euros",
+      "required": true
+    },
+    {
+      "name": "type_financement",
+      "type": "select",
+      "options": [
+        "Prêt bancaire",
+        "Investissement",
+        "Subvention",
+        "Autre"
+      ],
+      "label": "Quel type de financement recherchez-vous ?",
+      "required": true
+    },
+    {
+      "name": "delai_remusement",
+      "type": "text",
+      "label": "Quel est le délai prévu pour le remboursement du financement ?",
+      "placeholder": "Entrez le délai en mois ou en années",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant financier expert. L'utilisateur a répondu : Objectif de financement: {objectif_financement}, Montant demandé: {montant_demande} euros, Type de financement: {type_financement}, Délai de remboursement: {delai_remusement}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (viabilité financière, potentiel de croissance, risque), et des recommandations pour améliorer le plan de financement.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

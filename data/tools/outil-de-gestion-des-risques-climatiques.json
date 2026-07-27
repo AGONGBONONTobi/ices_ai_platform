@@ -1,0 +1,85 @@
+{
+  "id": "outil-de-gestion-des-risques-climatiques",
+  "title": "Outil de gestion des risques climatiques (TCFD/TNFD)",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "zone-geographique",
+      "type": "select",
+      "options": [
+        "Europe",
+        "Amérique du Nord",
+        "Asie",
+        "Afrique",
+        "Amérique du Sud"
+      ],
+      "label": "Quelle zone géographique est-elle concernée ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "type-de-risque",
+      "type": "select",
+      "options": [
+        "Risque de changement climatique",
+        "Risque de pollution",
+        "Risque de dégradation de l'environnement"
+      ],
+      "label": "Quel type de risque est-elle concerné ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description-du-risque",
+      "type": "textarea",
+      "label": "Décrivez brièvement le risque identifié",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "mesures-de-mitigation",
+      "type": "textarea",
+      "label": "Quelles mesures de mitigation sont envisagées pour atténuer ce risque ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour ces mesures de mitigation ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des risques climatiques. L'utilisateur a répondu : Zone géographique : {zone-geographique}, Type de risque : {type-de-risque}, Description du risque : {description-du-risque}, Mesures de mitigation : {mesures-de-mitigation}, Budget alloué : {budget-alloue}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

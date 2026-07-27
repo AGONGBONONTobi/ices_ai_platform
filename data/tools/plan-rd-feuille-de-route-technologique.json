@@ -1,0 +1,72 @@
+{
+  "id": "plan-rd-feuille-de-route-technologique",
+  "title": "Plan de R&D & feuille de route technologique",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de votre entreprise en matière de R&D ?",
+      "placeholder": "Exemple : Améliorer la compétitivité, développer de nouveaux marchés, etc.",
+      "required": true
+    },
+    {
+      "name": "technologies-cle",
+      "type": "select",
+      "options": [
+        "Intelligence Artificielle",
+        "Blockchain",
+        "Internet des Objets (IoT)",
+        "Cloud Computing"
+      ],
+      "label": "Quelle technologie est considérée comme clé pour votre entreprise ?",
+      "placeholder": "Sélectionnez une technologie",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quels sont les ressources disponibles pour le projet (budget, personnel, etc.) ?",
+      "placeholder": "Exemple : 100 000 €, 5 personnes, etc.",
+      "required": true
+    },
+    {
+      "name": "délais-projet",
+      "type": "text",
+      "label": "Quels sont les délais prévus pour le projet ?",
+      "placeholder": "Exemple : 6 mois, 1 an, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Technologie clé : {technologies-cle}, Ressources disponibles : {ressources-disponibles}, Délais projet : {délais-projet}. Analyse ces informations et propose un plan de R&D et une feuille de route technologique adaptés.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "rpa-ia-strategie",
+  "title": "Stratégie d'automatisation des processus (RPA & IA)",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de l'automatisation des processus ?",
+      "placeholder": "Exemple : Améliorer l'efficacité, réduire les coûts, etc.",
+      "required": true
+    },
+    {
+      "name": "processus-cibles",
+      "type": "text",
+      "label": "Quels sont les processus cibles pour l'automatisation ?",
+      "placeholder": "Exemple : Facturation, gestion des ressources humaines, etc.",
+      "required": true
+    },
+    {
+      "name": "technologies-choisies",
+      "type": "select",
+      "options": [
+        "RPA",
+        "IA",
+        "Hybride"
+      ],
+      "label": "Quelles technologies ont été choisies pour l'automatisation ?",
+      "placeholder": "Exemple : RPA, IA, ou une combinaison des deux",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources disponibles pour l'implémentation de l'automatisation ?",
+      "placeholder": "Exemple : Effectif, budget, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en RPA & IA. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Processus cibles : {processus-cibles}, Technologies choisies : {technologies-choisies}, Ressources disponibles : {ressources-disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

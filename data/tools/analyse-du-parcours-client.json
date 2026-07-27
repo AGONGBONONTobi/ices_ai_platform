@@ -1,0 +1,79 @@
+{
+  "id": "analyse-du-parcours-client",
+  "title": "Analyse du parcours client (Customer Journey Map)",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "text",
+      "label": "Quel est l'objectif principal de votre analyse du parcours client ?",
+      "placeholder": "Exemple : Améliorer la satisfaction client",
+      "required": true
+    },
+    {
+      "name": "canal",
+      "type": "select",
+      "options": [
+        "Réseaux sociaux",
+        "Site web",
+        "Magasin physique",
+        "Téléphone",
+        "Email"
+      ],
+      "label": "Quel canal de communication utilisez-vous principalement pour interagir avec vos clients ?",
+      "required": true
+    },
+    {
+      "name": "pointsDeContact",
+      "type": "textarea",
+      "label": "Décrivez les points de contact clés entre votre entreprise et vos clients tout au long de leur parcours",
+      "placeholder": "Exemple : Première visite du site web, achat en ligne, appel téléphonique pour une question",
+      "required": true
+    },
+    {
+      "name": "defis",
+      "type": "textarea",
+      "label": "Quels sont les défis ou les points de friction que vos clients rencontrent lors de leur interaction avec votre entreprise ?",
+      "placeholder": "Exemple : Difficulté à trouver des informations sur le site web, temps d'attente long pour les réponses téléphoniques",
+      "required": true
+    },
+    {
+      "name": "objectifAmelioration",
+      "type": "text",
+      "label": "Quel est l'objectif d'amélioration spécifique que vous souhaitez atteindre grâce à cette analyse du parcours client ?",
+      "placeholder": "Exemple : Réduire le taux d'abandon des paniers d'achat",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en marketing. L'utilisateur a répondu : Objectif : {objectif}, Canal principal : {canal}, Points de contact : {pointsDeContact}, Défis : {defis}, Objectif d'amélioration : {objectifAmelioration}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (compréhension du client, efficacité du canal, qualité de l'expérience), et des recommandations pour améliorer le parcours client.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

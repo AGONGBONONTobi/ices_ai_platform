@@ -1,0 +1,84 @@
+{
+  "id": "diagnostic-conformite-reglementaire-sectorielle",
+  "title": "Diagnostic conformité réglementaire sectorielle",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de nom d'entreprise",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Banque et assurance",
+        "Énergie",
+        "Santé",
+        "Environnement"
+      ],
+      "label": "Secteur d'activité de l'entreprise",
+      "placeholder": "Choisissez un secteur",
+      "required": true
+    },
+    {
+      "name": "description_produit",
+      "type": "textarea",
+      "label": "Description du produit ou service",
+      "placeholder": "Exemple de description de produit",
+      "required": true
+    },
+    {
+      "name": "zone_geographique",
+      "type": "text",
+      "label": "Zone géographique où le produit ou service est utilisé",
+      "placeholder": "Exemple de zone géographique",
+      "required": true
+    },
+    {
+      "name": "reglement_a_appliquer",
+      "type": "select",
+      "options": [
+        "Règlement général sur la protection des données",
+        "Règlement sur les médicaments",
+        "Règlement sur la sécurité des produits"
+      ],
+      "label": "Règlement applicable au produit ou service",
+      "placeholder": "Choisissez un règlement",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en conformité réglementaire. L'utilisateur a répondu : Entreprise: {entreprise}, Secteur: {secteur}, Description du produit ou service: {description_produit}, Zone géographique: {zone_geographique}, Règlement applicable: {reglement_a_appliquer}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

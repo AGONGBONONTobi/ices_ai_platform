@@ -1,0 +1,77 @@
+{
+  "id": "audit-des-prix-de-transfert-intra-groupe",
+  "title": "Audit des prix de transfert intra-groupe",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise-mère",
+      "type": "text",
+      "label": "Nom de l'entreprise mère",
+      "placeholder": "Exemple : Société X",
+      "required": true
+    },
+    {
+      "name": "societe-fille",
+      "type": "text",
+      "label": "Nom de la société fille",
+      "placeholder": "Exemple : Société Y",
+      "required": true
+    },
+    {
+      "name": "type-de-transfert",
+      "type": "select",
+      "options": [
+        "Transfert de biens",
+        "Transfert de services"
+      ],
+      "label": "Type de transfert",
+      "placeholder": "Exemple : Transfert de biens",
+      "required": true
+    },
+    {
+      "name": "montant-de-transfert",
+      "type": "number",
+      "label": "Montant du transfert",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "periode-de-transfert",
+      "type": "textarea",
+      "label": "Période du transfert",
+      "placeholder": "Exemple : Du 01/01/2022 au 31/12/2022",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audits. L'utilisateur a répondu : Entreprise mère : {entreprise-mère}, Société fille : {societe-fille}, Type de transfert : {type-de-transfert}, Montant du transfert : {montant-de-transfert}, Période du transfert : {periode-de-transfert}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

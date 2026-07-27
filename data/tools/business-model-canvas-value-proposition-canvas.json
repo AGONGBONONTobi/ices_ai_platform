@@ -1,0 +1,79 @@
+{
+  "id": "business-model-canvas-value-proposition-canvas",
+  "title": "Business Model Canvas & Value Proposition Canvas",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "customer_segments",
+      "type": "textarea",
+      "label": "Qui sont vos clients cibles ?",
+      "placeholder": "Décrivez les caractéristiques de vos clients",
+      "required": true
+    },
+    {
+      "name": "value_propositions",
+      "type": "textarea",
+      "label": "Quelle est votre proposition de valeur ?",
+      "placeholder": "Décrivez les avantages que vous offrez à vos clients",
+      "required": true
+    },
+    {
+      "name": "channels",
+      "type": "select",
+      "options": [
+        "Réseaux sociaux",
+        "Email marketing",
+        "Publicité en ligne",
+        "Partenariats"
+      ],
+      "label": "Quels canaux utilisez-vous pour atteindre vos clients ?",
+      "placeholder": "Sélectionnez les canaux que vous utilisez",
+      "required": true
+    },
+    {
+      "name": "customer_relationships",
+      "type": "textarea",
+      "label": "Comment entretenez-vous vos relations avec vos clients ?",
+      "placeholder": "Décrivez vos stratégies de relation client",
+      "required": true
+    },
+    {
+      "name": "revenue_streams",
+      "type": "textarea",
+      "label": "Quels sont vos flux de revenus ?",
+      "placeholder": "Décrivez vos modèles de revenus",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Customer Segments: {customer_segments}, Value Propositions: {value_propositions}, Channels: {channels}, Customer Relationships: {customer_relationships}, Revenue Streams: {revenue_streams}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-mesure-de-l-engagement",
+  "title": "Outil de mesure de l'engagement (pulse survey)",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "satisfaction-globale",
+      "type": "number",
+      "label": "Sur 10, quelle est la satisfaction globale des employés ?",
+      "placeholder": "Exemple : 8",
+      "required": true
+    },
+    {
+      "name": "motivation",
+      "type": "textarea",
+      "label": "Quels sont les facteurs qui motivent les employés ?",
+      "placeholder": "Exemple : L'opportunité de croissance, le travail en équipe, etc.",
+      "required": true
+    },
+    {
+      "name": "engagement",
+      "type": "select",
+      "options": [
+        "Fonctionnel",
+        "Motivé",
+        "Engagé"
+      ],
+      "label": "Sur la base de leur comportement, comment les employés sont-ils engagés ?",
+      "placeholder": "Exemple : Engagé",
+      "required": true
+    },
+    {
+      "name": "recommandations",
+      "type": "textarea",
+      "label": "Quelles sont les recommandations pour améliorer l'engagement ?",
+      "placeholder": "Exemple : Augmenter les opportunités de formation, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Satisfaction globale : {satisfaction-globale}, Motivation : {motivation}, Engagement : {engagement}, Recommandations : {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

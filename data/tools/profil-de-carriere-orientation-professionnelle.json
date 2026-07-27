@@ -1,0 +1,71 @@
+{
+  "id": "profil-de-carriere-orientation-professionnelle",
+  "title": "Profil de carrière & orientation professionnelle",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "objectif-professionnel",
+      "type": "textarea",
+      "label": "Quel est votre objectif professionnel à court terme ?",
+      "placeholder": "Exemple : Je souhaite occuper un poste de responsable dans une entreprise de technologies",
+      "required": true
+    },
+    {
+      "name": "forces-competences",
+      "type": "textarea",
+      "label": "Quelles sont vos forces et compétences ?",
+      "placeholder": "Exemple : Je suis une personne motivée, organisée et dotée d'une excellente capacité d'écoute",
+      "required": true
+    },
+    {
+      "name": "challenges-ressources",
+      "type": "textarea",
+      "label": "Quels sont vos défis et ressources pour atteindre votre objectif ?",
+      "placeholder": "Exemple : Je dois améliorer ma communication avec mes collègues et développer mes compétences en leadership",
+      "required": true
+    },
+    {
+      "name": "orientation-professionnelle",
+      "type": "select",
+      "options": [
+        "Consultant",
+        "Responsable",
+        "Chef d'entreprise"
+      ],
+      "label": "Quelle est votre orientation professionnelle ?",
+      "placeholder": "Exemple : Je souhaite devenir consultant",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif professionnel : {objectif-professionnel}, Forces et compétences : {forces-competences}, Défis et ressources : {challenges-ressources}, Orientation professionnelle : {orientation-professionnelle}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

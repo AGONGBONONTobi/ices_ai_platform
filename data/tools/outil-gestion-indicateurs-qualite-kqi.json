@@ -1,0 +1,75 @@
+{
+  "id": "outil-gestion-indicateurs-qualite-kqi",
+  "title": "Outil de gestion des indicateurs qualité (KQI)",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "select",
+      "options": [
+        "Production",
+        "Service",
+        "Support"
+      ],
+      "label": "Quel est le domaine principal de votre activité?",
+      "placeholder": "Sélectionnez un domaine",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "number",
+      "label": "Combien d'indicateurs KQI avez-vous actuellement?",
+      "placeholder": "Ex: 12",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "textarea",
+      "label": "Décrivez brièvement les principaux défis rencontrés dans la collecte et l'analyse des KQI.",
+      "placeholder": "Ex: manque de données, etc.",
+      "required": false
+    },
+    {
+      "name": "variable4",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Disposez-vous d'un tableau de bord automatisé pour suivre les KQI?",
+      "placeholder": "Sélectionnez",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Variable1: {variable1}, Variable2: {variable2}, Variable3: {variable3}, Variable4: {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

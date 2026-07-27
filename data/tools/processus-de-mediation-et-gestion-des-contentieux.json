@@ -1,0 +1,71 @@
+{
+  "id": "processus-de-mediation-et-gestion-des-contentieux",
+  "title": "Processus de médiation & gestion des contentieux",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "parties_impliquees",
+      "type": "textarea",
+      "label": "Quelles sont les parties impliquées dans le contentieux ?",
+      "placeholder": "Exemple : Employé, Employeur, Arbitre",
+      "required": true
+    },
+    {
+      "name": "nature_contentieux",
+      "type": "select",
+      "options": [
+        "Différend salarial",
+        "Différend de gestion",
+        "Différend de harcèlement"
+      ],
+      "label": "Quelle est la nature du contentieux ?",
+      "placeholder": "Exemple : Différend salarial",
+      "required": true
+    },
+    {
+      "name": "objectifs_médiation",
+      "type": "text",
+      "label": "Quels sont les objectifs de la médiation ?",
+      "placeholder": "Exemple : Résoudre le différend, Améliorer la communication",
+      "required": true
+    },
+    {
+      "name": "resultats_attendus",
+      "type": "textarea",
+      "label": "Quels sont les résultats attendus de la médiation ?",
+      "placeholder": "Exemple : Résolution du différend, Amélioration de la communication",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en RH & CAPITAL HUMAIN. L'utilisateur a répondu : Parties impliquées : {parties_impliquees}, Nature du contentieux : {nature_contentieux}, Objectifs de la médiation : {objectifs_médiation}, Résultats attendus : {resultats_attendus}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-gestion-des-garanties-et-suretes",
+  "title": "Outil de gestion des garanties & sûretés",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "typeDeGarantie",
+      "type": "select",
+      "options": [
+        "Garantie Bancaire",
+        "Garantie de Crédit",
+        "Garantie de Performance"
+      ],
+      "label": "Quel type de garantie est-ce ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "montantDeLaGarantie",
+      "type": "number",
+      "label": "Quel est le montant de la garantie ?",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    },
+    {
+      "name": "descriptionDeLaSurete",
+      "type": "textarea",
+      "label": "Quelle est la description de la sûreté ?",
+      "placeholder": "Exemple : La sûreté est une hypothèque sur un bien immobilier.",
+      "required": true
+    },
+    {
+      "name": "dateDeFinDeLaGarantie",
+      "type": "text",
+      "label": "Quelle est la date de fin de la garantie ?",
+      "placeholder": "Exemple : 2024-12-31",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des garanties & sûretés. L'utilisateur a répondu : Type de garantie : {typeDeGarantie}, Montant de la garantie : {montantDeLaGarantie}, Description de la sûreté : {descriptionDeLaSurete}, Date de fin de la garantie : {dateDeFinDeLaGarantie}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

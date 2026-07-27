@@ -1,0 +1,72 @@
+{
+  "id": "outil-de-prevention-et-gestion-des-rps",
+  "title": "Outil de prévention & gestion des RPS",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "type-de-rps",
+      "type": "select",
+      "options": [
+        "Licenciement",
+        "Rupture du contrat",
+        "Mutation",
+        "Reconversion"
+      ],
+      "label": "Quel type de RPS souhaitez-vous gérer ?",
+      "placeholder": "Sélectionnez un type",
+      "required": true
+    },
+    {
+      "name": "motifs-de-rps",
+      "type": "textarea",
+      "label": "Quels sont les motifs de RPS ?",
+      "placeholder": "Décrivez les motifs de RPS",
+      "required": true
+    },
+    {
+      "name": "nombre-d-employes-impactes",
+      "type": "number",
+      "label": "Combien d'employés sont-ils impactés ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la gestion des RPS ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RH. L'utilisateur a répondu : Type de RPS : {type-de-rps}, Motifs de RPS : {motifs-de-rps}, Nombre d'employés impactés : {nombre-d-employes-impactes}, Budget alloué : {budget-alloue}. Analyse ces informations et proposez des recommandations pour améliorer la prévention et la gestion des RPS.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

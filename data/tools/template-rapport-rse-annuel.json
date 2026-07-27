@@ -1,0 +1,78 @@
+{
+  "id": "template-rapport-rse-annuel",
+  "title": "Template de rapport RSE annuel",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "objectifs-rse",
+      "type": "textarea",
+      "label": "Objectifs RSE de l'année",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "actions-realisees",
+      "type": "textarea",
+      "label": "Actions réalisées pour atteindre les objectifs RSE",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "resultats-obtenus",
+      "type": "textarea",
+      "label": "Résultats obtenus en matière de RSE",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "recommandations",
+      "type": "select",
+      "options": [
+        "Améliorer la communication interne",
+        "Augmenter l'engagement des employés",
+        "Renforcer la gouvernance RSE"
+      ],
+      "label": "Recommandations pour améliorer la RSE",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise: {entreprise}, Objectifs RSE: {objectifs-rse}, Actions réalisées : {actions-realisees}, Résultats obtenus : {resultats-obtenus}, Recommandations : {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

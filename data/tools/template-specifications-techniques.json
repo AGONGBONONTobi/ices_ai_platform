@@ -1,0 +1,72 @@
+{
+  "id": "template-specifications-techniques",
+  "title": "Template de spécifications techniques",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "technologie",
+      "type": "select",
+      "options": [
+        "Java",
+        "Python",
+        "C++",
+        "JavaScript"
+      ],
+      "label": "Quelle technologie est utilisée ?",
+      "placeholder": "Sélectionnez une technologie",
+      "required": true
+    },
+    {
+      "name": "détails-techniques",
+      "type": "textarea",
+      "label": "Quels sont les détails techniques de l'implémentation ?",
+      "placeholder": "Exemple : utilisation de frameworks, bibliothèques, etc.",
+      "required": true
+    },
+    {
+      "name": "contraintes",
+      "type": "text",
+      "label": "Quelles sont les contraintes techniques de l'implémentation ?",
+      "placeholder": "Exemple : limitations de performances, sécurité, etc.",
+      "required": true
+    },
+    {
+      "name": "exigences-fonctionnelles",
+      "type": "textarea",
+      "label": "Quelles sont les exigences fonctionnelles de l'implémentation ?",
+      "placeholder": "Exemple : fonctionnalités requises, interfaces utilisateur, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Technologie: {technologie}, Détails techniques: {détails-techniques}, Contraintes: {contraintes}, Exigences fonctionnelles: {exigences-fonctionnelles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

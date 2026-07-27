@@ -1,0 +1,78 @@
+{
+  "id": "template-plan-de-risques-projet",
+  "title": "Template de plan de risques projet",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "nom-projet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "description-projet",
+      "type": "textarea",
+      "label": "Description du projet",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "risques-identifies",
+      "type": "textarea",
+      "label": "Risques identifiés",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "probabilite-impact",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Probabilité et impact des risques",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "plan-action",
+      "type": "textarea",
+      "label": "Plan d'action pour atténuer les risques",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet : {nom-projet}, Description du projet : {description-projet}, Risques identifiés : {risques-identifies}, Probabilité et impact des risques : {probabilite-impact}, Plan d'action pour atténuer les risques : {plan-action}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

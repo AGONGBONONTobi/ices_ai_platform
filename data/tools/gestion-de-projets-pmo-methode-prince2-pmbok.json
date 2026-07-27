@@ -1,0 +1,78 @@
+{
+  "id": "gestion-de-projets-pmo-methode-prince2-pmbok",
+  "title": "Méthode Prince2 & PMBOK adaptées",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "type_de_projet",
+      "type": "select",
+      "options": [
+        "Projet de développement",
+        "Projet de maintenance",
+        "Projet de transformation"
+      ],
+      "label": "Quel est le type de projet ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "objectif_principal",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal du projet ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "équipe_projet",
+      "type": "number",
+      "label": "Combien d'individus sont membres de l'équipe de projet ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "budget_alloué",
+      "type": "number",
+      "label": "Quel est le budget alloué au projet ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "délai_estime",
+      "type": "number",
+      "label": "Quel est le délai estimé pour la réalisation du projet ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en gestion de projet. L'utilisateur a répondu : Type de projet : {type_de_projet}, Objectif principal : {objectif_principal}, Nombre d'individus dans l'équipe projet : {équipe_projet}, Budget alloué : {budget_alloué}, Délai estimé : {délai_estime}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

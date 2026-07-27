@@ -1,0 +1,79 @@
+{
+  "id": "outil-de-gestion-des-risques-de-credit-portefeuille",
+  "title": "Outil de gestion des risques de crédit portefeuille",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "montant-emprunteur",
+      "type": "number",
+      "label": "Montant emprunté par l'emprunteur",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    },
+    {
+      "name": "taux-d-interet",
+      "type": "number",
+      "label": "Taux d'intérêt appliqué",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "duree-emprunt",
+      "type": "number",
+      "label": "Durée de l'emprunt (en mois)",
+      "placeholder": "Exemple : 60",
+      "required": true
+    },
+    {
+      "name": "situation-financiere-emprunteur",
+      "type": "textarea",
+      "label": "Situation financière de l'emprunteur",
+      "placeholder": "Exemple : ...",
+      "required": true
+    },
+    {
+      "name": "historique-credit-emprunteur",
+      "type": "select",
+      "options": [
+        "Très bon",
+        "Bon",
+        "Moyen",
+        "Mauvais"
+      ],
+      "label": "Historique de crédit de l'emprunteur",
+      "placeholder": "Exemple : ...",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des risques de crédit. L'utilisateur a répondu : Montant emprunté : {montant-emprunteur}, Taux d'intérêt : {taux-d-interet}, Durée de l'emprunt : {duree-emprunt}, Situation financière de l'emprunteur : {situation-financiere-emprunteur}, Historique de crédit de l'emprunteur : {historique-credit-emprunteur}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

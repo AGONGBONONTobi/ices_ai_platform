@@ -1,0 +1,73 @@
+{
+  "id": "diagnostic-rh-capital-humain-complet",
+  "title": "Diagnostic RH & capital humain complet",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "taille-de-l-equipe",
+      "type": "number",
+      "label": "Combien d'employés compte votre équipe ?",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "taux-de-rotation",
+      "type": "number",
+      "label": "Quel est le taux de rotation moyen dans votre équipe en % ?",
+      "placeholder": "Exemple : 20",
+      "required": true
+    },
+    {
+      "name": "satisfaction-globale",
+      "type": "select",
+      "options": [
+        "Très satisfaits",
+        "Satisfaits",
+        "Indifférents",
+        "Dissatisfaits",
+        "Très dissatisfaits"
+      ],
+      "label": "Quel est le niveau de satisfaction globale de votre équipe ?",
+      "placeholder": "Exemple : Très satisfaits",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Quels sont les commentaires les plus fréquents de vos employés ?",
+      "placeholder": "Exemple : Manque de reconnaissance, trop de travail",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Taille de l'équipe : {taille-de-l-equipe}, Taux de rotation : {taux-de-rotation}%, Satisfaction globale : {satisfaction-globale}, Commentaires : {commentaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

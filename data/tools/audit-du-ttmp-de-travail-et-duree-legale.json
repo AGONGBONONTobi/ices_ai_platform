@@ -1,0 +1,71 @@
+{
+  "id": "audit-du-ttmp-de-travail-et-duree-legale",
+  "title": "Audit du temps de travail & durée légale",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "duree-legale",
+      "type": "number",
+      "label": "Quelle est la durée légale du temps de travail par semaine ?",
+      "placeholder": "Exemple : 35 heures",
+      "required": true
+    },
+    {
+      "name": "temps-travail-reel",
+      "type": "number",
+      "label": "Quel est le temps de travail réel des employés par semaine ?",
+      "placeholder": "Exemple : 30 heures",
+      "required": true
+    },
+    {
+      "name": "type-de-convention",
+      "type": "select",
+      "options": [
+        "Cahier des charges",
+        "Contrat de travail",
+        "Convention collective"
+      ],
+      "label": "Quel type de convention est en vigueur dans l'entreprise ?",
+      "placeholder": "Exemple : Cahier des charges",
+      "required": true
+    },
+    {
+      "name": "description-problemes",
+      "type": "textarea",
+      "label": "Quels sont les problèmes rencontrés en matière de temps de travail ?",
+      "placeholder": "Exemple : Les employés travaillent souvent plus de 35 heures par semaine sans compensation.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en ressources humaines. L'utilisateur a répondu : Duree légale : {duree-legale}, Temps travail reel : {temps-travail-reel}, Type de convention : {type-de-convention}, Description des problèmes : {description-problemes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

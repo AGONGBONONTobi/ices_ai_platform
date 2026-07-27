@@ -1,0 +1,71 @@
+{
+  "id": "diagnostic-capacite-autoformation",
+  "title": "Diagnostic de la capacité à l'autoformation",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "motivation",
+      "type": "textarea",
+      "label": "Quelles sont vos motivations pour apprendre et développer vos compétences ?",
+      "placeholder": "Exemple : Je veux améliorer mes compétences pour accéder à une promotion",
+      "required": true
+    },
+    {
+      "name": "ressources",
+      "type": "select",
+      "options": [
+        "Je dispose d'un accès à Internet et à des outils de formation en ligne",
+        "Je dispose d'un accès à des ressources pédagogiques en ligne, mais pas toujours à Internet",
+        "Je n'ai pas d'accès à Internet ou à des outils de formation en ligne"
+      ],
+      "label": "Quelles sont vos ressources pour apprendre et développer vos compétences ?",
+      "placeholder": "Exemple : Je dispose d'un ordinateur portable",
+      "required": true
+    },
+    {
+      "name": "temps",
+      "type": "number",
+      "label": "Combien de temps par semaine pouvez-vous consacrer à l'apprentissage et à la formation ?",
+      "placeholder": "Exemple : 5 heures",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs à court et à long terme en matière de formation et de développement personnel ?",
+      "placeholder": "Exemple : Je veux améliorer mes compétences en 6 mois pour accéder à une promotion",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Motivation : {motivation}, Ressources : {ressources}, Temps : {temps} heures par semaine, Objectifs : {objectifs}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

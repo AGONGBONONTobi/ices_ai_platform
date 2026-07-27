@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-gestion-des-finances-publiques-gfmis",
+  "title": "Outil de gestion des finances publiques (GFMIS)",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "budgetAnnuel",
+      "type": "number",
+      "label": "Quel est le budget annuel de votre organisation ?",
+      "placeholder": "Exemple : 1000000",
+      "required": true
+    },
+    {
+      "name": "depensesRecurrentes",
+      "type": "textarea",
+      "label": "Quelles sont les dépenses récurrentes mensuelles de votre organisation ?",
+      "placeholder": "Exemple : Loyer, Salaires, Fournitures...",
+      "required": true
+    },
+    {
+      "name": "niveauRisque",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Modéré",
+        "Élevé"
+      ],
+      "label": "Quel est le niveau de risque financier associé à votre organisation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "objectifsStrategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de votre organisation en matière de gestion financière ?",
+      "placeholder": "Exemple : Réduction des coûts, Augmentation de l'efficacité...",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en gestion financière publique. L'utilisateur a répondu : Budget annuel : {budgetAnnuel}, Dépenses récurrentes : {depensesRecurrentes}, Niveau de risque : {niveauRisque}, Objectifs stratégiques : {objectifsStrategiques}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

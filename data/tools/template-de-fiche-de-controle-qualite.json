@@ -1,0 +1,74 @@
+{
+  "id": "template-de-fiche-de-controle-qualite",
+  "title": "Template de fiche de contrôle qualité",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "nom_projet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple : Projet de développement logiciel",
+      "required": true
+    },
+    {
+      "name": "type_controle",
+      "type": "select",
+      "options": [
+        "Contrôle de qualité initial",
+        "Contrôle de qualité en cours de projet",
+        "Contrôle de qualité final"
+      ],
+      "label": "Type de contrôle de qualité",
+      "required": true
+    },
+    {
+      "name": "description_problemes",
+      "type": "textarea",
+      "label": "Description des problèmes ou des défis rencontrés",
+      "placeholder": "Décrivez les problèmes ou les défis que vous rencontrez dans le projet",
+      "required": true
+    },
+    {
+      "name": "niveau_urgence",
+      "type": "select",
+      "options": [
+        "Urgent",
+        "Important",
+        "Normal"
+      ],
+      "label": "Niveau d'urgence",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en contrôle de qualité. Le projet est intitulé {nom_projet}, le type de contrôle de qualité est {type_controle}, les problèmes ou défis rencontrés sont {description_problemes}, et le niveau d'urgence est {niveau_urgence}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

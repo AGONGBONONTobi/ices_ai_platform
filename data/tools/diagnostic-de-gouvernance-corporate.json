@@ -1,0 +1,70 @@
+{
+  "id": "diagnostic-de-gouvernance-corporate",
+  "title": "Diagnostic de gouvernance corporate & conseil d'administration",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "gouvernanceActuelle",
+      "type": "textarea",
+      "label": "Décrivez la structure actuelle de gouvernance de votre organisation",
+      "placeholder": "Exemple : Conseil d'administration, comités, etc.",
+      "required": true
+    },
+    {
+      "name": "objectifsStrategiques",
+      "type": "text",
+      "label": "Quels sont les objectifs stratégiques de votre organisation à court et moyen terme ?",
+      "placeholder": "Exemple : Augmentation des parts de marché, développement de nouveaux produits",
+      "required": true
+    },
+    {
+      "name": "compositionConseil",
+      "type": "select",
+      "options": [
+        "Moins de 5 membres",
+        "Entre 5 et 10 membres",
+        "Plus de 10 membres"
+      ],
+      "label": "Quelle est la composition du conseil d'administration ?",
+      "required": true
+    },
+    {
+      "name": "defisGouvernance",
+      "type": "textarea",
+      "label": "Quels sont les principaux défis de gouvernance que votre organisation rencontre actuellement ?",
+      "placeholder": "Exemple : Manque de diversité, conflits d'intérêts, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en gouvernance d'entreprise. L'organisation a répondu : Gouvernance actuelle : {gouvernanceActuelle}, Objectifs stratégiques : {objectifsStrategiques}, Composition du conseil : {compositionConseil}, Défis de gouvernance : {defisGouvernance}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (gouvernance, stratégie, gestion des risques), et des recommandations pour améliorer la gouvernance de l'organisation.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

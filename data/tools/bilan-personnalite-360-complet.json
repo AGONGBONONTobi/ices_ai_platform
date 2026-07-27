@@ -1,0 +1,81 @@
+{
+  "id": "bilan-personnalite-360-complet",
+  "title": "Bilan de personnalité 360° complet",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "select",
+      "options": [
+        "Extraverti",
+        "Introverti"
+      ],
+      "label": "Quelle est votre tendance naturelle en termes de communication ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Quels sont vos points forts et vos points faibles en termes de personnalité ?",
+      "placeholder": "Décrivez vos qualités et vos limites",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, comment vous sentez-vous en situation de stress ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quel est votre style de prise de décision ?",
+      "placeholder": "Exemple : spontané, réfléchi, etc.",
+      "required": true
+    },
+    {
+      "name": "variable5",
+      "type": "select",
+      "options": [
+        "Collaboratif",
+        "Indépendant"
+      ],
+      "label": "Quelle est votre tendance naturelle en termes de travail en équipe ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Communication : {variable1}, Points forts et points faibles : {variable2}, Stress : {variable3}, Style de prise de décision : {variable4}, Travail en équipe : {variable5}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

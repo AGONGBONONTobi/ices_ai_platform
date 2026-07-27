@@ -1,0 +1,91 @@
+{
+  "id": "matrice-bcg-mckinsey-ansoff",
+  "title": "Matrice BCG, McKinsey & Ansoff",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "positionnement-bcg",
+      "type": "select",
+      "options": [
+        "Croissance rapide, part de marché élevée",
+        "Croissance rapide, part de marché faible",
+        "Croissance lente, part de marché élevée",
+        "Croissance lente, part de marché faible"
+      ],
+      "label": "Positionnement de l'entreprise selon la matrice BCG",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "positionnement-mckinsey",
+      "type": "select",
+      "options": [
+        "Leader, forte croissance",
+        "Leader, faible croissance",
+        "Suivi, forte croissance",
+        "Suivi, faible croissance"
+      ],
+      "label": "Positionnement de l'entreprise selon la matrice McKinsey",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "positionnement-ansoff",
+      "type": "select",
+      "options": [
+        "Diversification radicale",
+        "Diversification ancrée",
+        "Diversification limitée",
+        "Concentration"
+      ],
+      "label": "Positionnement de l'entreprise selon la matrice Ansoff",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "forces-fortes",
+      "type": "textarea",
+      "label": "Quelles sont les forces fortes de l'entreprise ?",
+      "placeholder": "Exemple : expertise, réseau, innovation",
+      "required": true
+    },
+    {
+      "name": "forces-faibles",
+      "type": "textarea",
+      "label": "Quelles sont les forces faibles de l'entreprise ?",
+      "placeholder": "Exemple : manque de ressources, concurrence féroce",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Positionnement BCG : {positionnement-bcg}, Positionnement McKinsey : {positionnement-mckinsey}, Positionnement Ansoff : {positionnement-ansoff}, Forces fortes : {forces-fortes}, Forces faibles : {forces-faibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

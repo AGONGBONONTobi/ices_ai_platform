@@ -1,0 +1,84 @@
+{
+  "id": "analyse-des-besoins-en-formation-kebab-case",
+  "title": "Analyse des besoins en formation (ABF)",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "domaine",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Gestion",
+        "Marketing",
+        "Finances"
+      ],
+      "label": "Quel est le domaine d'activité de l'entreprise ?",
+      "placeholder": "Sélectionnez un domaine",
+      "required": true
+    },
+    {
+      "name": "niveau-de-formation",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est le niveau de formation souhaité ?",
+      "placeholder": "Sélectionnez un niveau",
+      "required": true
+    },
+    {
+      "name": "objectifs-de-formation",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de formation souhaités ?",
+      "placeholder": "Décrivez les objectifs de formation",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la formation ?",
+      "placeholder": "Entrez un montant",
+      "required": true
+    },
+    {
+      "name": "duree-de-formation",
+      "type": "number",
+      "label": "Quelle est la durée de formation souhaitée ?",
+      "placeholder": "Entrez une durée",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Domaine: {domaine}, Niveau de formation: {niveau-de-formation}, Objectifs de formation: {objectifs-de-formation}, Budget alloué: {budget-alloue}, Durée de formation: {duree-de-formation}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

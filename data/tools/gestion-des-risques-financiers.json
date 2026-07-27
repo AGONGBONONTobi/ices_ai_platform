@@ -1,0 +1,70 @@
+{
+  "id": "gestion-des-risques-financiers",
+  "title": "Gestion des risques financiers (taux, change, crédit)",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "typeDeRisque",
+      "type": "select",
+      "options": [
+        "Risque de taux",
+        "Risque de change",
+        "Risque de crédit"
+      ],
+      "label": "Quel type de risque financier souhaitez-vous évaluer ?",
+      "required": true
+    },
+    {
+      "name": "montantExposé",
+      "type": "number",
+      "label": "Quel est le montant exposé à ce risque ?",
+      "placeholder": "Exemple: 100000",
+      "required": true
+    },
+    {
+      "name": "descriptionDuRisque",
+      "type": "textarea",
+      "label": "Décrivez le contexte et les caractéristiques du risque financier que vous souhaitez évaluer",
+      "placeholder": "Exemple: Nous avons un prêt à taux variable...",
+      "required": true
+    },
+    {
+      "name": "stratégieActuelle",
+      "type": "text",
+      "label": "Quelle est votre stratégie actuelle pour gérer ce risque ?",
+      "placeholder": "Exemple: Nous utilisons des instruments de couverture",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant financier expert. L'utilisateur a répondu : Type de risque: {typeDeRisque}, Montant exposé: {montantExposé}, Description du risque: {descriptionDuRisque}, Stratégie actuelle: {stratégieActuelle}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (identification, évaluation, gestion), et des recommandations pour améliorer la gestion de ce risque.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "id": "plan-developpement-international-export",
+  "title": "Plan de développement international & export",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectifs-export",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs d'exportation ?",
+      "placeholder": "Décrivez vos objectifs en détail",
+      "required": true
+    },
+    {
+      "name": "marches-cibles",
+      "type": "select",
+      "options": [
+        "Europe",
+        "Amérique du Nord",
+        "Asie",
+        "Afrique",
+        "Amérique du Sud"
+      ],
+      "label": "Quels sont les marchés cibles pour vos produits ou services ?",
+      "placeholder": "Sélectionnez un marché",
+      "required": true
+    },
+    {
+      "name": "barrières-entrée",
+      "type": "text",
+      "label": "Quelles sont les barrières d'entrée pour votre entreprise dans les marchés cibles ?",
+      "placeholder": "Décrivez les barrières d'entrée",
+      "required": true
+    },
+    {
+      "name": "stratégies-marketing",
+      "type": "textarea",
+      "label": "Quelles sont les stratégies de marketing que vous prévoyez mettre en place pour atteindre vos objectifs d'exportation ?",
+      "placeholder": "Décrivez vos stratégies de marketing",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources disponibles pour soutenir vos efforts d'exportation ?",
+      "placeholder": "Indiquez le montant de ressources disponibles",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs d'exportation : {objectifs-export}, Marchés cibles : {marches-cibles}, Barrières d'entrée : {barrières-entrée}, Stratégies de marketing : {stratégies-marketing}, Ressources disponibles : {ressources-disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

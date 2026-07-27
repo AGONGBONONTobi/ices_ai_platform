@@ -1,0 +1,72 @@
+{
+  "id": "plan-de-developpement-de-produits-dassurance",
+  "title": "Plan de développement de produits d'assurance",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_de_produit",
+      "type": "select",
+      "options": [
+        "Assurance vie",
+        "Assurance santé",
+        "Assurance habitation",
+        "Assurance automobile"
+      ],
+      "label": "Quel type de produit d'assurance souhaitez-vous développer ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "cible",
+      "type": "textarea",
+      "label": "Décrivez la cible que vous souhaitez atteindre avec ce produit d'assurance (âge, profession, etc.)",
+      "placeholder": "Ex: 25-45 ans, actifs, etc.",
+      "required": true
+    },
+    {
+      "name": "niveau_de_prise_en_charge",
+      "type": "number",
+      "label": "Quel est le niveau de prise en charge que vous souhaitez offrir (en %)?",
+      "placeholder": "Ex: 80",
+      "required": true
+    },
+    {
+      "name": "budget_alloué",
+      "type": "number",
+      "label": "Quel est le budget alloué pour le développement de ce produit d'assurance ?",
+      "placeholder": "Ex: 100000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en assurance. L'utilisateur a répondu : Type de produit: {type_de_produit}, Cible: {cible}, Niveau de prise en charge: {niveau_de_prise_en_charge}%, Budget alloué: {budget_alloué}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations pour le développement du produit d'assurance.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

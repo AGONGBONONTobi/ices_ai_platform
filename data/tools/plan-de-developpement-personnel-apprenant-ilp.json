@@ -1,0 +1,72 @@
+{
+  "id": "plan-de-developpement-personnel-apprenant-ilp",
+  "title": "Plan de développement personnel apprenant (ILP)",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "objectifs-personnels",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs personnels pour les prochains mois ?",
+      "placeholder": "Exemple : apprendre un nouveau langage de programmation, améliorer ma productivité, etc.",
+      "required": true
+    },
+    {
+      "name": "forces-competences",
+      "type": "text",
+      "label": "Quelles sont vos forces et compétences actuelles ?",
+      "placeholder": "Exemple : communication, résolution de problèmes, travail en équipe, etc.",
+      "required": true
+    },
+    {
+      "name": "domaines-interet",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Économie",
+        "Santé",
+        "Environnement"
+      ],
+      "label": "Dans quel domaine êtes-vous le plus intéressé ?",
+      "placeholder": "Choisissez un domaine",
+      "required": true
+    },
+    {
+      "name": "motivation",
+      "type": "textarea",
+      "label": "Qu'est-ce qui vous motive à développer vos compétences et à atteindre vos objectifs ?",
+      "placeholder": "Exemple : pour améliorer ma carrière, pour aider les autres, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un conseiller en développement personnel. L'utilisateur a répondu : Objectifs personnels : {objectifs-personnels}, Forces et compétences : {forces-competences}, Domaine d'intérêt : {domaines-interet}, Motivation : {motivation}. Analyse ces informations et propose un plan de développement personnel personnalisé.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

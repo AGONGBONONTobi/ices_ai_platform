@@ -1,0 +1,71 @@
+{
+  "id": "strategie-conquete-marches-africains",
+  "title": "Stratégie de conquête des marchés africains",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de votre entreprise pour les marchés africains ?",
+      "placeholder": "Exemple : accroître nos ventes de 20% dans les 2 ans",
+      "required": true
+    },
+    {
+      "name": "forces-competitivites",
+      "type": "select",
+      "options": [
+        "ressources humaines",
+        "capacité d'innovation",
+        "réseau de partenaires"
+      ],
+      "label": "Quelle est la principale force de compétitivité de votre entreprise pour les marchés africains ?",
+      "placeholder": "Exemple : ressources humaines",
+      "required": true
+    },
+    {
+      "name": "barrières-entreprises",
+      "type": "text",
+      "label": "Quelles sont les principales barrières à l'entrée pour les entreprises qui souhaitent pénétrer les marchés africains ?",
+      "placeholder": "Exemple : réglementations complexes, infrastructures limitées",
+      "required": true
+    },
+    {
+      "name": "strategie-marketing",
+      "type": "textarea",
+      "label": "Quelle est la stratégie de marketing que votre entreprise compte mettre en œuvre pour conquérir les marchés africains ?",
+      "placeholder": "Exemple : campagnes de publicité ciblées, partenariats avec des influenceurs locaux",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Force de compétitivité : {forces-competitivites}, Barrières à l'entrée : {barrières-entreprises}, Stratégie marketing : {strategie-marketing}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

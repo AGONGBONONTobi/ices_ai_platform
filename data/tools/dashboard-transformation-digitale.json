@@ -1,0 +1,72 @@
+{
+  "id": "dashboard-transformation-digitale",
+  "title": "Dashboard de transformation digitale",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "objectif-transformation",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de la transformation digitale ?",
+      "placeholder": "Exemple : Améliorer l'efficacité, réduire les coûts, etc.",
+      "required": true
+    },
+    {
+      "name": "indicateurs-performances",
+      "type": "select",
+      "options": [
+        "Temps de réponse",
+        "Qualité des données",
+        "Coûts",
+        "Niveau de satisfaction"
+      ],
+      "label": "Quels sont les indicateurs de performance clés ?",
+      "placeholder": "Sélectionnez les indicateurs pertinents",
+      "required": true
+    },
+    {
+      "name": "donnees-disponibles",
+      "type": "text",
+      "label": "Quelles données sont disponibles pour la transformation ?",
+      "placeholder": "Exemple : Données historiques, données en temps réel, etc.",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources disponibles pour la transformation ?",
+      "placeholder": "Exemple : Nombre de personnes, budget, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif de transformation : {objectif-transformation}, Indicateurs de performance : {indicateurs-performances}, Données disponibles : {donnees-disponibles}, Ressources disponibles : {ressources-disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

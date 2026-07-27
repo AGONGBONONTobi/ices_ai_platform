@@ -1,0 +1,86 @@
+{
+  "id": "veille-reputation",
+  "title": "Outil de veille & monitoring de la réputation",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "objectif_veille",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de votre veille de réputation ?",
+      "placeholder": "Ex: surveiller la perception de la marque",
+      "required": true
+    },
+    {
+      "name": "canaux_surveille",
+      "type": "select",
+      "options": [
+        "Médias traditionnels",
+        "Réseaux sociaux",
+        "Forums en ligne",
+        "Blogs",
+        "Autres"
+      ],
+      "label": "Quels canaux souhaitez-vous surveiller ?",
+      "placeholder": "Sélectionnez un canal",
+      "required": true
+    },
+    {
+      "name": "frequence_reporting",
+      "type": "select",
+      "options": [
+        "Quotidien",
+        "Hebdomadaire",
+        "Mensuel",
+        "Trimestriel"
+      ],
+      "label": "À quelle fréquence souhaitez-vous recevoir les rapports ?",
+      "placeholder": "Sélectionnez une fréquence",
+      "required": true
+    },
+    {
+      "name": "budget_alloue",
+      "type": "number",
+      "label": "Quel budget allouez-vous à cette activité ?",
+      "placeholder": "Ex: 5000",
+      "required": true
+    },
+    {
+      "name": "langues_surveille",
+      "type": "textarea",
+      "label": "Quelles langues souhaitez-vous surveiller ?",
+      "placeholder": "Ex: Français, Anglais",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif de veille: {objectif_veille}, Canaux surveillés: {canaux_surveille}, Fréquence de reporting: {frequence_reporting}, Budget alloué: {budget_alloue}, Langues surveillées: {langues_surveille}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

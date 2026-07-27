@@ -1,0 +1,71 @@
+{
+  "id": "outil-planification-nationale-suivi-odd",
+  "title": "Outil de planification nationale & suivi des ODD",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif_national",
+      "type": "textarea",
+      "label": "Quel est l'objectif national de développement que vous souhaitez atteindre ?",
+      "placeholder": "Exemple : réduire la pauvreté, améliorer l'accès à l'éducation",
+      "required": true
+    },
+    {
+      "name": "niveau_de_mise_en_oeuvre",
+      "type": "select",
+      "options": [
+        "Début de la planification",
+        "En cours de mise en œuvre",
+        "Déjà mis en œuvre"
+      ],
+      "label": "Quel est le niveau de mise en œuvre de votre plan national ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources financières disponibles pour la mise en œuvre de votre plan ?",
+      "placeholder": "Exemple : 1000000",
+      "required": true
+    },
+    {
+      "name": "partenaires_cles",
+      "type": "text",
+      "label": "Qui sont vos partenaires clés pour la mise en œuvre de votre plan ?",
+      "placeholder": "Exemple : organisation internationale, ONG, entreprise privée",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en planification nationale et suivi des ODD. L'utilisateur a répondu : Objectif national: {objectif_national}, Niveau de mise en œuvre: {niveau_de_mise_en_oeuvre}, Ressources disponibles: {ressources_disponibles}, Partenaires clés: {partenaires_cles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (gouvernance, financement, mise en œuvre), et des recommandations pour améliorer la planification et le suivi des ODD.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

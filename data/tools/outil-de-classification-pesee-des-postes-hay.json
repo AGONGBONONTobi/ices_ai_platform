@@ -1,0 +1,88 @@
+{
+  "id": "outil-de-classification-pesee-des-postes-hay",
+  "title": "Outil de classification & pesée des postes (Hay)",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "poste",
+      "type": "text",
+      "label": "Nom du poste",
+      "placeholder": "Exemple : Ingénieur logiciel",
+      "required": true
+    },
+    {
+      "name": "responsabilites",
+      "type": "textarea",
+      "label": "Liste des responsabilités principales",
+      "placeholder": "Exemple : Développer des applications web, Gérer des équipes de développement",
+      "required": true
+    },
+    {
+      "name": "niveau-difficulte",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Niveau de difficulté",
+      "placeholder": "Exemple : Faible",
+      "required": true
+    },
+    {
+      "name": "impact-sur-resultat",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Impact sur le résultat",
+      "placeholder": "Exemple : Élevé",
+      "required": true
+    },
+    {
+      "name": "niveau-de-complexite",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Niveau de complexité",
+      "placeholder": "Exemple : Moyen",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en classification et pesée des postes. L'utilisateur a répondu : Poste : {poste}, Responsabilités : {responsabilites}, Niveau de difficulté : {niveau-difficulte}, Impact sur le résultat : {impact-sur-resultat}, Niveau de complexité : {niveau-de-complexite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

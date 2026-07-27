@@ -1,0 +1,77 @@
+{
+  "id": "methode-lean-project-management",
+  "title": "Méthode Lean Project Management",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Définir l'objectif du projet",
+      "placeholder": "Exemple : Améliorer la qualité du produit",
+      "required": true
+    },
+    {
+      "name": "équipe",
+      "type": "select",
+      "options": [
+        "Équipe existante",
+        "Nouvelle équipe"
+      ],
+      "label": "Choisir l'équipe responsable du projet",
+      "placeholder": "Exemple : Équipe existante",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Définir le budget du projet",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    },
+    {
+      "name": "délai",
+      "type": "number",
+      "label": "Définir le délai du projet",
+      "placeholder": "Exemple : 6 mois",
+      "required": true
+    },
+    {
+      "name": "risques",
+      "type": "textarea",
+      "label": "Identifier les risques du projet",
+      "placeholder": "Exemple : Risque de retard, Risque de dépassement de budget",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif: {objectif}, Équipe: {équipe}, Budget: {budget}, Délai: {délai}, Risques: {risques}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

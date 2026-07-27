@@ -1,0 +1,71 @@
+{
+  "id": "template-de-dossier-de-credit-bancaire",
+  "title": "Template de dossier de crédit bancaire",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "montantDemande",
+      "type": "number",
+      "label": "Montant de la demande de crédit",
+      "placeholder": "Exemple: 10000",
+      "required": true
+    },
+    {
+      "name": "dureeRemboursement",
+      "type": "select",
+      "options": [
+        "12 mois",
+        "24 mois",
+        "36 mois",
+        "48 mois"
+      ],
+      "label": "Durée de remboursement souhaitée",
+      "required": true
+    },
+    {
+      "name": "descriptionProjet",
+      "type": "textarea",
+      "label": "Description du projet ou de l'investissement",
+      "placeholder": "Exemple: Investissement dans une nouvelle machine pour augmenter la production",
+      "required": true
+    },
+    {
+      "name": "ratioEndettement",
+      "type": "number",
+      "label": "Ratio d'endettement actuel de l'entreprise",
+      "placeholder": "Exemple: 0,5",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant financier. L'utilisateur a répondu : Montant de la demande de crédit: {montantDemande}, Durée de remboursement souhaitée: {dureeRemboursement}, Description du projet: {descriptionProjet}, Ratio d'endettement actuel: {ratioEndettement}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (solabilité, risque, potentiel de croissance), et des recommandations pour le dossier de crédit bancaire.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

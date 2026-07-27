@@ -1,0 +1,79 @@
+{
+  "id": "diagnostic-investissements-capex",
+  "title": "Diagnostic des investissements & CAPEX",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "type_investissement",
+      "type": "select",
+      "options": [
+        "Immobilier",
+        "Mécanique",
+        "Électronique",
+        "Autres"
+      ],
+      "label": "Quel type d'investissement est-ce ?",
+      "placeholder": "Sélectionnez un type",
+      "required": true
+    },
+    {
+      "name": "montant_investi",
+      "type": "number",
+      "label": "Quel est le montant investi ?",
+      "placeholder": "Entrez le montant",
+      "required": true
+    },
+    {
+      "name": "duree_investissement",
+      "type": "number",
+      "label": "Quelle est la durée de l'investissement ?",
+      "placeholder": "Entrez la durée en années",
+      "required": true
+    },
+    {
+      "name": "risques_identifies",
+      "type": "textarea",
+      "label": "Quels risques ont été identifiés ?",
+      "placeholder": "Décrivez les risques identifiés",
+      "required": true
+    },
+    {
+      "name": "revenus_attendus",
+      "type": "number",
+      "label": "Quels sont les revenus attendus ?",
+      "placeholder": "Entrez les revenus attendus",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en investissements. L'utilisateur a répondu : Type d'investissement: {type_investissement}, Montant investi: {montant_investi}, Durée de l'investissement: {duree_investissement}, Risques identifiés: {risques_identifies}, Revenus attendus: {revenus_attendus}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-scoring-credit-et-risque-client",
+  "title": "Outil de scoring crédit & risque client",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "score_fico",
+      "type": "number",
+      "label": "Quel est le score FICO du client ?",
+      "placeholder": "Exemple : 650",
+      "required": true
+    },
+    {
+      "name": "historique_paiement",
+      "type": "select",
+      "options": [
+        "Excellent",
+        "Moyen",
+        "Médiocre"
+      ],
+      "label": "Quel est l'historique de paiement du client ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "infos_supplementaires",
+      "type": "textarea",
+      "label": "Disposez-vous d'informations supplémentaires sur le client (ex: revenus, dettes, etc.) ?",
+      "placeholder": "Exemple : Revenus : 50000, Dettes : 10000",
+      "required": false
+    },
+    {
+      "name": "duree_emprunt",
+      "type": "number",
+      "label": "Quelle est la durée de l'emprunt demandé ?",
+      "placeholder": "Exemple : 60 mois",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en crédit. L'utilisateur a répondu : Score FICO: {score_fico}, Historique de paiement: {historique_paiement}, Informations supplémentaires: {infos_supplementaires}, Durée de l'emprunt: {duree_emprunt}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

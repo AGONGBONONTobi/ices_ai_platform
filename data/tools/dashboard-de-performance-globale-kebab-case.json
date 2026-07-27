@@ -1,0 +1,78 @@
+{
+  "id": "dashboard-de-performance-globale-kebab-case",
+  "title": "Dashboard de performance globale (KPIs exécutifs)",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "kpi_ventes",
+      "type": "number",
+      "label": "Quel est le montant total des ventes enregistrées ces derniers mois ?",
+      "placeholder": "Entrez le montant total des ventes",
+      "required": true
+    },
+    {
+      "name": "taux-retournement-clients",
+      "type": "number",
+      "label": "Quel est le taux de retour des clients ces derniers mois ?",
+      "placeholder": "Entrez le taux de retour des clients",
+      "required": true
+    },
+    {
+      "name": "taux-absence",
+      "type": "number",
+      "label": "Quel est le taux d'absence des employés ces derniers mois ?",
+      "placeholder": "Entrez le taux d'absence des employés",
+      "required": true
+    },
+    {
+      "name": "select-indicateur",
+      "type": "select",
+      "options": [
+        "Indicateur 1",
+        "Indicateur 2",
+        "Indicateur 3"
+      ],
+      "label": "Quel est l'indicateur de performance le plus important pour vous ?",
+      "placeholder": "Sélectionnez l'indicateur de performance",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Quels sont les commentaires sur les performances globales ?",
+      "placeholder": "Entrez les commentaires sur les performances globales",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : KPIs Ventes : {kpi_ventes}, Taux Retournement Clients : {taux-retournement-clients}, Taux Absence : {taux-absence}, Indicateur de Performance : {select-indicateur}, Commentaires : {commentaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-gestion-des-expatries-et-mobilite-internationale",
+  "title": "Outil de gestion des expatriés & mobilité internationale",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "duree-de-l-expatriation",
+      "type": "number",
+      "label": "Durée de l'expatriation (en mois)",
+      "placeholder": "Exemple : 12",
+      "required": true
+    },
+    {
+      "name": "type-de-conge",
+      "type": "select",
+      "options": [
+        "Congé payé",
+        "Congé sans solde",
+        "Congé sabbatique"
+      ],
+      "label": "Type de congé pris par l'expatrié",
+      "placeholder": "Exemple : Congé payé",
+      "required": true
+    },
+    {
+      "name": "motifs-de-conge",
+      "type": "textarea",
+      "label": "Motifs du congé (pour les congés non payés)",
+      "placeholder": "Exemple : Motifs du congé",
+      "required": false
+    },
+    {
+      "name": "couts-de-relocation",
+      "type": "number",
+      "label": "Couts de relocation (en euros)",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    },
+    {
+      "name": "couts-de-logement",
+      "type": "number",
+      "label": "Couts de logement (en euros)",
+      "placeholder": "Exemple : 5000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un responsable RH. L'utilisateur a répondu : Durée de l'expatriation : {duree-de-l-expatriation} mois, Type de congé : {type-de-conge}, Motifs du congé : {motifs-de-conge}, Couts de relocation : {couts-de-relocation} euros, Couts de logement : {couts-de-logement} euros. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

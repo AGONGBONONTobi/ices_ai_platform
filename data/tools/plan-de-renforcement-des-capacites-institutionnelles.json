@@ -1,0 +1,71 @@
+{
+  "id": "plan-de-renforcement-des-capacites-institutionnelles",
+  "title": "Plan de renforcement des capacités institutionnelles",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de renforcement des capacités institutionnelles ?",
+      "placeholder": "Exemple : Améliorer la gouvernance, renforcer les compétences des équipes, etc.",
+      "required": true
+    },
+    {
+      "name": "niveau_de_maturite",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est le niveau de maturité actuel de votre organisation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources (budget, personnel, etc.) disponibles pour le plan de renforcement ?",
+      "placeholder": "Exemple : 100 000 $",
+      "required": true
+    },
+    {
+      "name": "defis",
+      "type": "textarea",
+      "label": "Quels sont les principaux défis auxquels votre organisation est confrontée ?",
+      "placeholder": "Exemple : Manque de compétences, processus inefficaces, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en renforcement des capacités institutionnelles. L'utilisateur a répondu : Objectif: {objectif}, Niveau de maturité: {niveau_de_maturite}, Ressources disponibles: {ressources_disponibles}, Défis: {defis}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (gouvernance, compétences, processus, etc.), et des recommandations pour améliorer les capacités institutionnelles.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

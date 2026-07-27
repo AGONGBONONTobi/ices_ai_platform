@@ -1,0 +1,71 @@
+{
+  "id": "plan-de-pilotage-des-projets-rse-et-impact",
+  "title": "Plan de pilotage des projets RSE & impact",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "objectif-projet",
+      "type": "textarea",
+      "label": "Décrivez l'objectif principal du projet RSE & impact",
+      "placeholder": "Exemple : Réduire les émissions de gaz à effet de serre de 20% dans les 2 ans",
+      "required": true
+    },
+    {
+      "name": "indicateurs-de-suivi",
+      "type": "select",
+      "options": [
+        "Indicateurs de performance",
+        "Indicateurs de satisfaction",
+        "Indicateurs de coûts"
+      ],
+      "label": "Quels types d'indicateurs de suivi souhaitez-vous utiliser pour évaluer le projet ?",
+      "placeholder": "Sélectionnez un ou plusieurs indicateurs",
+      "required": true
+    },
+    {
+      "name": "ressources-allouees",
+      "type": "number",
+      "label": "Quelles sont les ressources allouées pour le projet (en € ou en heures de travail) ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "délai-de-realisation",
+      "type": "text",
+      "label": "Quel est le délai de réalisation prévu pour le projet ?",
+      "placeholder": "Exemple : 6 mois",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif projet : {objectif-projet}, Indicateurs de suivi : {indicateurs-de-suivi}, Ressources allouées : {ressources-allouees} €, Délai de réalisation : {délai-de-realisation}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

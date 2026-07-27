@@ -1,0 +1,72 @@
+{
+  "id": "plan-de-gestion-de-la-biodiversite-et-capital-naturel",
+  "title": "Plan de gestion de la biodiversité & capital naturel",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "zone-protegee",
+      "type": "text",
+      "label": "Quelle zone protégée souhaitez-vous mettre en place ?",
+      "placeholder": "Par exemple, parc national, réserve naturelle, etc.",
+      "required": true
+    },
+    {
+      "name": "objectifs-de-reduction",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de réduction de l'impact environnemental que vous souhaitez atteindre ?",
+      "placeholder": "Décrivez les objectifs spécifiques que vous souhaitez atteindre, tels que la réduction des émissions de gaz à effet de serre, la conservation de l'eau, etc.",
+      "required": true
+    },
+    {
+      "name": "strategie-de-reduction",
+      "type": "select",
+      "options": [
+        "Réduction des émissions de gaz à effet de serre",
+        "Conservation de l'eau",
+        "Réduction des déchets",
+        "Autre"
+      ],
+      "label": "Quelle stratégie de réduction de l'impact environnemental souhaitez-vous mettre en place ?",
+      "placeholder": "Choisissez une option",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la mise en place du plan de gestion de la biodiversité & capital naturel ?",
+      "placeholder": "Indiquez le montant en euros",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en développement durable. L'utilisateur a répondu : Zone protégée : {zone-protegee}, Objectifs de réduction : {objectifs-de-reduction}, Stratégie de réduction : {strategie-de-reduction}, Budget alloué : {budget-alloue}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

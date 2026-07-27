@@ -1,0 +1,76 @@
+{
+  "id": "outil-de-blended-learning-hybridation",
+  "title": "Outil de blended learning & hybridation",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "type-d-apprentissage",
+      "type": "select",
+      "options": [
+        "En-ligne",
+        "Présentiel",
+        "Hybride"
+      ],
+      "label": "Quel type d'apprentissage préfère l'utilisateur ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "niveau-de-langue",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est le niveau de langue de l'utilisateur ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "motivation-pour-apprendre",
+      "type": "textarea",
+      "label": "Quelles sont les raisons pour lesquelles l'utilisateur souhaite apprendre ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "préférences-pédagogiques",
+      "type": "text",
+      "label": "Quelles sont les préférences pédagogiques de l'utilisateur ? (par exemple, méthode de travail, rythme d'apprentissage, etc.)",
+      "placeholder": "",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Type d'apprentissage : {type-d-apprentissage}, Niveau de langue : {niveau-de-langue}, Motivation pour apprendre : {motivation-pour-apprendre}, Préférences pédagogiques : {préférences-pédagogiques}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

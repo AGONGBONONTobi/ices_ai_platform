@@ -1,0 +1,80 @@
+{
+  "id": "roi-marketing-attribution-multicanal",
+  "title": "Mesure du ROI marketing & attribution multicanal",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "budget-total",
+      "type": "number",
+      "label": "Budget total alloué aux campagnes marketing",
+      "placeholder": "Entrez le budget total",
+      "required": true
+    },
+    {
+      "name": "revenus-attribuables",
+      "type": "number",
+      "label": "Revenus attribuables aux campagnes marketing",
+      "placeholder": "Entrez les revenus attribuables",
+      "required": true
+    },
+    {
+      "name": "canal-de-referentiel",
+      "type": "select",
+      "options": [
+        "Email",
+        "Réseaux sociaux",
+        "Publicité en ligne",
+        "Affiliation",
+        "Autre"
+      ],
+      "label": "Canal de référence pour l'attribution",
+      "placeholder": "Sélectionnez le canal de référence",
+      "required": true
+    },
+    {
+      "name": "periode-de-referentiel",
+      "type": "text",
+      "label": "Période de référence pour l'attribution",
+      "placeholder": "Entrez la période de référence",
+      "required": true
+    },
+    {
+      "name": "objectifs-de-campagne",
+      "type": "textarea",
+      "label": "Objectifs de campagne marketing",
+      "placeholder": "Décrivez les objectifs de campagne",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Budget total : {budget-total}, Revenus attribuables : {revenus-attribuables}, Canal de référence : {canal-de-referentiel}, Période de référence : {periode-de-referentiel}, Objectifs de campagne : {objectifs-de-campagne}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

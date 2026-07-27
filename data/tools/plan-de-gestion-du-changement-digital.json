@@ -1,0 +1,78 @@
+{
+  "id": "plan-de-gestion-du-changement-digital",
+  "title": "Plan de gestion du changement digital",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques que vous souhaitez atteindre grâce au changement digital ?",
+      "placeholder": "Exemple : améliorer l'efficacité opérationnelle, accroître la satisfaction client, etc.",
+      "required": true
+    },
+    {
+      "name": "risques-identifies",
+      "type": "text",
+      "label": "Quels sont les risques potentiels associés au changement digital que vous avez identifiés ?",
+      "placeholder": "Exemple : perte de données, dysfonctionnement des systèmes, etc.",
+      "required": true
+    },
+    {
+      "name": "strategie-de-mise-en-place",
+      "type": "select",
+      "options": [
+        "phased",
+        "incremental",
+        "radical"
+      ],
+      "label": "Quelle est la stratégie de mise en place que vous prévoyez pour le changement digital ?",
+      "placeholder": "Exemple : mise en place progressive, mise en place incrémentale, etc.",
+      "required": true
+    },
+    {
+      "name": "ressources-humaines",
+      "type": "textarea",
+      "label": "Quelles sont les ressources humaines nécessaires pour mettre en œuvre le plan de changement digital ?",
+      "placeholder": "Exemple : formation des employés, recrutement de nouveaux talents, etc.",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour le changement digital ?",
+      "placeholder": "Exemple : 100 000 €, 500 000 €, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Risques identifiés : {risques-identifies}, Stratégie de mise en place : {strategie-de-mise-en-place}, Ressources humaines : {ressources-humaines}, Budget alloué : {budget-alloue}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

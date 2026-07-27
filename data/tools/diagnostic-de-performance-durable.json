@@ -1,0 +1,23 @@
+{
+  "id": "diagnostic-de-performance-durable",
+  "title": "Diagnostic de la performance durable (ESG score)",
+  "category": "RH",
+  "inputs": [
+    {
+      "name": "esgScore",
+      "type": "number",
+      "label": "ESG score",
+      "placeholder": "Exemple : 70",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en diagnostic de performance durable. Utilise {esgScore} pour évaluer la performance durable de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "string"
+      }
+    }
+  }
+}

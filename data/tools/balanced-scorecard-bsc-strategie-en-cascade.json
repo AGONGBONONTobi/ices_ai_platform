@@ -1,0 +1,79 @@
+{
+  "id": "balanced-scorecard-bsc-strategie-en-cascade",
+  "title": "Balanced Scorecard (BSC) & stratégie en cascade",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de l'entreprise ?",
+      "placeholder": "Exemple : Augmenter les ventes, améliorer la qualité, etc.",
+      "required": true
+    },
+    {
+      "name": "indicateurs-performances",
+      "type": "select",
+      "options": [
+        "Ventes",
+        "Qualité",
+        "Productivité",
+        "Innovation"
+      ],
+      "label": "Quels sont les indicateurs de performance clés ?",
+      "placeholder": "Sélectionnez plusieurs options",
+      "required": true
+    },
+    {
+      "name": "strategie-en-cascade",
+      "type": "text",
+      "label": "Quelle est la stratégie en cascade mise en place pour atteindre les objectifs ?",
+      "placeholder": "Exemple : Définir des objectifs intermédiaires, établir des plans d'action, etc.",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources disponibles pour mettre en œuvre la stratégie ?",
+      "placeholder": "Exemple : Effectif, budget, équipements, etc.",
+      "required": true
+    },
+    {
+      "name": "barrières-obstacles",
+      "type": "textarea",
+      "label": "Quels sont les barrières ou obstacles potentiels à la mise en œuvre de la stratégie ?",
+      "placeholder": "Exemple : Ressources insuffisantes, opposition de certains acteurs, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Indicateurs de performance : {indicateurs-performances}, Stratégie en cascade : {strategie-en-cascade}, Ressources disponibles : {ressources-disponibles}, Barrières ou obstacles : {barrières-obstacles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

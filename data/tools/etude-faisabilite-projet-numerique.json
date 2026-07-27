@@ -1,0 +1,71 @@
+{
+  "id": "etude-faisabilite-projet-numerique",
+  "title": "Étude de faisabilité d'un projet numérique",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "nom_du_projet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple: Application mobile de gestion de tâches",
+      "required": true
+    },
+    {
+      "name": "objectif_du_projet",
+      "type": "textarea",
+      "label": "Objectif principal du projet",
+      "placeholder": "Exemple: Simplifier la gestion des tâches quotidiennes pour les équipes",
+      "required": true
+    },
+    {
+      "name": "budget_estime",
+      "type": "number",
+      "label": "Budget estimé (en €)",
+      "placeholder": "Exemple: 50000",
+      "required": true
+    },
+    {
+      "name": "complexite",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyenne",
+        "Élevée"
+      ],
+      "label": "Complexité du projet",
+      "placeholder": "Sélectionnez",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet: {nom_du_projet}, Objectif principal: {objectif_du_projet}, Budget estimé: {budget_estime}€, Complexité: {complexite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

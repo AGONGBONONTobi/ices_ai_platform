@@ -1,0 +1,70 @@
+{
+  "id": "analyse-megatendances-signaux-faibles",
+  "title": "Analyse des mégatendances & signaux faibles",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "megatendance1",
+      "type": "text",
+      "label": "Quelle est la première mégatendance identifiée ?",
+      "placeholder": "Exemple : transition numérique",
+      "required": true
+    },
+    {
+      "name": "signalFaible1",
+      "type": "textarea",
+      "label": "Quel est le premier signal faible détecté ?",
+      "placeholder": "Exemple : tendance à la réduction des coûts",
+      "required": true
+    },
+    {
+      "name": "priorite",
+      "type": "select",
+      "options": [
+        "Élevée",
+        "Moyenne",
+        "Basse"
+      ],
+      "label": "Quelle est la priorité de cette mégatendance ou signal faible ?",
+      "required": true
+    },
+    {
+      "name": "impact",
+      "type": "number",
+      "label": "Quel est l'impact potentiel de cette mégatendance ou signal faible ?",
+      "placeholder": "Exemple : 5/10",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Mégatendance 1 : {megatendance1}, Signal faible 1 : {signalFaible1}, Priorité : {priorite}, Impact : {impact}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

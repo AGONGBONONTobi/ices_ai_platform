@@ -1,0 +1,71 @@
+{
+  "id": "plan-de-transition-energetique-organisationnel",
+  "title": "Plan de transition énergétique organisationnel",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif_reduction_gaz_a_effet_serre",
+      "type": "number",
+      "label": "Quel est votre objectif de réduction des gaz à effet de serre en % par an ?",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "description_activites",
+      "type": "textarea",
+      "label": "Décrivez brièvement les activités principales de votre organisation",
+      "placeholder": "Exemple : Notre organisation est spécialisée dans la production de biens de consommation.",
+      "required": true
+    },
+    {
+      "name": "niveau_implication_transition_energetique",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est votre niveau d'implication actuel dans la transition énergétique ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "budget_allouetransition",
+      "type": "number",
+      "label": "Quel budget avez-vous alloué pour la transition énergétique cette année ?",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en transition énergétique. L'utilisateur a répondu : Objectif de réduction des gaz à effet de serre : {objectif_reduction_gaz_a_effet_serre}%, Description des activités : {description_activites}, Niveau d'implication dans la transition énergétique : {niveau_implication_transition_energetique}, Budget alloué : {budget_allouetransition}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "plan-developpement-ecosysteme-entrepreneurial-local",
+  "title": "Plan de développement d'un écosystème entrepreneurial local",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif_principal",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de votre plan de développement d'écosystème entrepreneurial local ?",
+      "placeholder": "Exemple : Créer un environnement favorable pour les startups, stimuler l'innovation...",
+      "required": true
+    },
+    {
+      "name": "type_eco",
+      "type": "select",
+      "options": [
+        "Urbain",
+        "Rural",
+        "Mixte"
+      ],
+      "label": "Quel est le type d'écosystème que vous souhaitez développer ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "text",
+      "label": "Quelles sont les ressources (financières, humaines, matérielles) actuellement disponibles pour ce projet ?",
+      "placeholder": "Exemple : 100 000 €, 2 personnes à temps plein, locaux de 100m²",
+      "required": true
+    },
+    {
+      "name": "partenaires_potentiels",
+      "type": "textarea",
+      "label": "Quels sont les partenaires potentiels (publics, privés, associatifs) que vous envisagez pour ce projet ?",
+      "placeholder": "Exemple : Mairie, CCI, incubateurs de startups, universités",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en développement d'écosystèmes entrepreneuriaux locaux. L'utilisateur a répondu : Objectif principal : {objectif_principal}, Type d'écosystème : {type_eco}, Ressources disponibles : {ressources_disponibles}, Partenaires potentiels : {partenaires_potentiels}. Analysez ces informations pour proposer un plan de développement. Donnez un score global sur 100, une évaluation par axe (au moins 3 axes pertinents), et des recommandations concrètes.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

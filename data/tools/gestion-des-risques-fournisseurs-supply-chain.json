@@ -1,0 +1,71 @@
+{
+  "id": "gestion-des-risques-fournisseurs-supply-chain",
+  "title": "Gestion des risques fournisseurs & supply chain",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "risque-financier",
+      "type": "number",
+      "label": "Quel est le niveau de risque financier actuel (sur 100) ?",
+      "placeholder": "Exemple : 50",
+      "required": true
+    },
+    {
+      "name": "situation-geopolitique",
+      "type": "textarea",
+      "label": "Quelles sont les principales menaces géopolitiques affectant la supply chain ?",
+      "placeholder": "Exemple : conflits, sanctions, etc.",
+      "required": true
+    },
+    {
+      "name": "qualite-produit",
+      "type": "select",
+      "options": [
+        "Très satisfaisant",
+        "Satisfaisant",
+        "Désatisfaisant"
+      ],
+      "label": "Quelle est la qualité globale des produits fournis par les fournisseurs ?",
+      "placeholder": "Exemple : Très satisfaisant",
+      "required": true
+    },
+    {
+      "name": "detection-incident",
+      "type": "text",
+      "label": "Comment détectez-vous les incidents de sécurité ou de non-conformité dans la supply chain ?",
+      "placeholder": "Exemple : audits, contrôles, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des risques. L'utilisateur a répondu : Risque financier : {risque-financier}, Situation géopolitique : {situation-geopolitique}, Qualité produit : {qualite-produit}, Détection incident : {detection-incident}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

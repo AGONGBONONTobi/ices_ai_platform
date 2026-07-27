@@ -1,0 +1,71 @@
+{
+  "id": "cartographie-strategique-cause-effet",
+  "title": "Cartographie stratégique cause-effet",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Décrivez l'objectif stratégique que vous souhaitez atteindre",
+      "placeholder": "Exemple : Augmenter les ventes de 20% dans les 12 prochains mois",
+      "required": true
+    },
+    {
+      "name": "causes-potentiels",
+      "type": "textarea",
+      "label": "Listez les causes potentielles qui pourraient influencer l'atteinte de l'objectif stratégique",
+      "placeholder": "Exemple : Changement de marché, augmentation des coûts, etc.",
+      "required": true
+    },
+    {
+      "name": "effets-attendus",
+      "type": "textarea",
+      "label": "Décrivez les effets attendus de l'atteinte de l'objectif stratégique",
+      "placeholder": "Exemple : Augmentation des ventes, amélioration de la notoriété, etc.",
+      "required": true
+    },
+    {
+      "name": "priorite",
+      "type": "select",
+      "options": [
+        "Haute",
+        "Moyenne",
+        "Basse"
+      ],
+      "label": "Quelle est la priorité de l'objectif stratégique ?",
+      "placeholder": "Exemple : Haute",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Causes potentielles : {causes-potentiels}, Effets attendus : {effets-attendus}, Priorité : {priorite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

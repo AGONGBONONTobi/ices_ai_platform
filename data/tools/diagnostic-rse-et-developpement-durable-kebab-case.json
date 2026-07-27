@@ -1,0 +1,71 @@
+{
+  "id": "diagnostic-rse-et-developpement-durable-kebab-case",
+  "title": "Diagnostic RSE & développement durable (GRI/ISO 26000)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Quels sont les principaux objectifs de développement durable que votre organisation souhaite atteindre ?",
+      "placeholder": "Exemple : réduction des émissions de gaz à effet de serre, protection de l'eau, etc.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "GRI",
+        "ISO 26000",
+        "Autre (spécifier)"
+      ],
+      "label": "Quel framework de référence utilise votre organisation pour son développement durable ?",
+      "placeholder": "Exemple : GRI, ISO 26000, etc.",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Quel est le pourcentage d'énergie renouvelable que votre organisation utilise ?",
+      "placeholder": "Exemple : 50%",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quels sont les principaux défis que votre organisation rencontre dans son développement durable ?",
+      "placeholder": "Exemple : coûts élevés, manque de ressources, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs de développement durable : {variable1}, Framework de référence : {variable2}, Pourcentage d'énergie renouvelable : {variable3}%, Principaux défis : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

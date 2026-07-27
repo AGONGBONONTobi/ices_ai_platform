@@ -1,0 +1,77 @@
+{
+  "id": "outil-de-veille-des-politiques-publiques-et-reformes",
+  "title": "Outil de veille des politiques publiques & réformes",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Énergie",
+        "Santé",
+        "Éducation",
+        "Transport"
+      ],
+      "label": "Secteur d'activité concerné",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "description_reforme",
+      "type": "textarea",
+      "label": "Description de la réforme ou politique publique",
+      "placeholder": "Décrivez la réforme ou politique publique",
+      "required": true
+    },
+    {
+      "name": "niveau_impact",
+      "type": "select",
+      "options": [
+        "Local",
+        "National",
+        "International"
+      ],
+      "label": "Niveau d'impact de la réforme",
+      "placeholder": "Sélectionnez un niveau d'impact",
+      "required": true
+    },
+    {
+      "name": "objectif",
+      "type": "text",
+      "label": "Objectif de la veille",
+      "placeholder": "Décrivez l'objectif de la veille",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur a répondu : Secteur: {secteur}, Description de la réforme: {description_reforme}, Niveau d'impact: {niveau_impact}, Objectif: {objectif}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

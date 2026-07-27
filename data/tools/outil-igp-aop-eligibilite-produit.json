@@ -1,0 +1,81 @@
+{
+  "id": "outil-igp-aop-eligibilite-produit",
+  "title": "Outil IGP/AOP — éligibilité produit",
+  "category": "Certification de Produits & Services",
+  "inputs": [
+    {
+      "name": "ancrage_territorial",
+      "type": "textarea",
+      "label": "Décrivez l'ancrage territorial de votre produit",
+      "placeholder": "Région, département, lien avec les producteurs locaux",
+      "required": true
+    },
+    {
+      "name": "savoir_faire",
+      "type": "textarea",
+      "label": "Décrivez le savoir-faire spécifique lié à votre produit",
+      "placeholder": "Méthodes de production, techniques traditionnelles",
+      "required": true
+    },
+    {
+      "name": "cahier_des_charges",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Disposez-vous d'un cahier des charges pour votre produit ?",
+      "required": true
+    },
+    {
+      "name": "organisation_producteurs",
+      "type": "textarea",
+      "label": "Décrivez l'organisation des producteurs associés à votre produit",
+      "placeholder": "Nombre de producteurs, structure de gestion",
+      "required": true
+    },
+    {
+      "name": "niveau_maturite",
+      "type": "select",
+      "options": [
+        "0 - Inexistant",
+        "1 - Initié",
+        "2 - Formalisé",
+        "3 - Optimisé"
+      ],
+      "label": "Quel est votre niveau de maturité concernant l'IGP/AOP ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous avez répondu : Ancrage territorial: {ancrage_territorial}, Savoir-faire: {savoir_faire}, Cahier des charges: {cahier_des_charges}, Organisation des producteurs: {organisation_producteurs}, Niveau de maturité: {niveau_maturite}. Évaluez ces informations selon les critères IGP/AOP (ancrage territorial, savoir-faire spécifique, cahier des charges, organisation de producteurs) et attribuez un score global sur 100. Évaluez également chaque axe et proposez des recommandations prioritaires.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

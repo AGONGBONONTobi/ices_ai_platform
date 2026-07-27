@@ -1,0 +1,100 @@
+{
+  "id": "audit-fiscal-optimisation-legale",
+  "title": "Audit fiscal & optimisation légale",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Société XYZ",
+      "required": true
+    },
+    {
+      "name": "secteur_activite",
+      "type": "select",
+      "options": [
+        "Industrie",
+        "Services",
+        "Commerce",
+        "Autre"
+      ],
+      "label": "Secteur d'activité",
+      "placeholder": "Exemple : Industrie",
+      "required": true
+    },
+    {
+      "name": "annee_exercice",
+      "type": "number",
+      "label": "Année d'exercice",
+      "placeholder": "Exemple : 2022",
+      "required": true
+    },
+    {
+      "name": "revenus_bruts",
+      "type": "number",
+      "label": "Revenus bruts (en €)",
+      "placeholder": "Exemple : 1000000",
+      "required": true
+    },
+    {
+      "name": "couts_fixes",
+      "type": "number",
+      "label": "Couts fixes (en €)",
+      "placeholder": "Exemple : 500000",
+      "required": true
+    },
+    {
+      "name": "couts_variables",
+      "type": "number",
+      "label": "Couts variables (en €)",
+      "placeholder": "Exemple : 200000",
+      "required": true
+    },
+    {
+      "name": "revenus_net",
+      "type": "number",
+      "label": "Revenus nets (en €)",
+      "placeholder": "Exemple : 300000",
+      "required": true
+    },
+    {
+      "name": "description_probleme",
+      "type": "textarea",
+      "label": "Description du problème fiscal ou juridique",
+      "placeholder": "Exemple : ...",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert fiscal et juridique. L'utilisateur a répondu : Entreprise : {entreprise}, Secteur d'activité : {secteur_activite}, Année d'exercice : {annee_exercice}, Revenus bruts : {revenus_bruts} €, Couts fixes : {couts_fixes} €, Couts variables : {couts_variables} €, Revenus nets : {revenus_net} €, Description du problème fiscal ou juridique : {description_probleme}. Analyse ces informations et propose une stratégie d'optimisation légale et fiscale pour améliorer les résultats financiers de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

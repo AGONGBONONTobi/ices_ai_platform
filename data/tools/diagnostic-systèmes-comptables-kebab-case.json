@@ -1,0 +1,78 @@
+{
+  "id": "diagnostic-systèmes-comptables-kebab-case",
+  "title": "Diagnostic des systèmes comptables (IFRS/OHADA/SYSCOHADA)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "système-comptable",
+      "type": "select",
+      "options": [
+        "IFRS",
+        "OHADA",
+        "SYSCOHADA"
+      ],
+      "label": "Système comptable utilisé",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "chiffre-daffaires",
+      "type": "number",
+      "label": "Chiffre d'affaires annuel",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "effectif",
+      "type": "number",
+      "label": "Effectif total",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "description-problème",
+      "type": "textarea",
+      "label": "Description du problème comptable",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert comptable. L'utilisateur a répondu : Entreprise: {entreprise}, Système comptable: {système-comptable}, Chiffre d'affaires: {chiffre-daffaires}, Effectif: {effectif}, Description du problème: {description-problème}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

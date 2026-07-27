@@ -1,0 +1,78 @@
+{
+  "id": "data-storytelling-tool",
+  "title": "Visualisation de données avancée & data storytelling",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "donnees",
+      "type": "textarea",
+      "label": "Saisir les données à visualiser",
+      "placeholder": "Exemple de données",
+      "required": true
+    },
+    {
+      "name": "type-graphique",
+      "type": "select",
+      "options": [
+        "Barre",
+        "Histogramme",
+        "Scatter Plot"
+      ],
+      "label": "Choisir le type de graphique",
+      "placeholder": "Exemple de graphique",
+      "required": true
+    },
+    {
+      "name": "axe-x",
+      "type": "text",
+      "label": "Saisir l'axe X",
+      "placeholder": "Exemple d'axe X",
+      "required": true
+    },
+    {
+      "name": "axe-y",
+      "type": "text",
+      "label": "Saisir l'axe Y",
+      "placeholder": "Exemple d'axe Y",
+      "required": true
+    },
+    {
+      "name": "donnees-complementaires",
+      "type": "textarea",
+      "label": "Saisir des données complémentaires",
+      "placeholder": "Exemple de données complémentaires",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un data storyteller expert. L'utilisateur a répondu : Donnees: {donnees}, Type de graphique: {type-graphique}, Axe X: {axe-x}, Axe Y: {axe-y}, Donnees complémentaires: {donnees-complementaires}. Crée une visualisation de données avancée et une histoire à partir de ces informations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

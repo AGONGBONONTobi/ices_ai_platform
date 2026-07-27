@@ -1,0 +1,78 @@
+{
+  "id": "template-de-protocole-d-acord-et-mou",
+  "title": "Template de protocole d'accord & MOU",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "parties",
+      "type": "textarea",
+      "label": "Liste des parties prenantes au protocole d'accord",
+      "placeholder": "Exemple : Entreprise A, Entreprise B, Entreprise C",
+      "required": true
+    },
+    {
+      "name": "objectif",
+      "type": "text",
+      "label": "Objectif du protocole d'accord",
+      "placeholder": "Exemple : Définition d'un partenariat stratégique",
+      "required": true
+    },
+    {
+      "name": "modalites",
+      "type": "textarea",
+      "label": "Modalités de mise en œuvre du protocole d'accord",
+      "placeholder": "Exemple : Calendrier de réalisation, responsabilités, etc.",
+      "required": true
+    },
+    {
+      "name": "responsabilites",
+      "type": "select",
+      "options": [
+        "Responsabilité de l'Entreprise A",
+        "Responsabilité de l'Entreprise B",
+        "Partagée"
+      ],
+      "label": "Responsabilité de chaque partie",
+      "placeholder": "Exemple : Responsabilité de l'Entreprise A",
+      "required": true
+    },
+    {
+      "name": "duree",
+      "type": "number",
+      "label": "Durée du protocole d'accord",
+      "placeholder": "Exemple : 12 mois",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un conseiller juridique. Les parties prenantes au protocole d'accord sont : {parties}. L'objectif du protocole est : {objectif}. Les modalités de mise en œuvre sont : {modalites}. La responsabilité de chaque partie est : {responsabilites}. La durée du protocole est : {duree} mois. Analyse ces informations et propose un plan d'action pour la mise en œuvre du protocole.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

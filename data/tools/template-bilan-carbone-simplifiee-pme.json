@@ -1,0 +1,72 @@
+{
+  "id": "template-bilan-carbone-simplifiee-pme",
+  "title": "Template de bilan carbone simplifié PME",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "emission-gaz-a-effect-global",
+      "type": "number",
+      "label": "Emissions de gaz à effet de serre (tonnes CO2 équivalent)",
+      "placeholder": "0",
+      "required": true
+    },
+    {
+      "name": "consommation-energie-electrique",
+      "type": "number",
+      "label": "Consommation d'énergie électrique (MWh)",
+      "placeholder": "0",
+      "required": true
+    },
+    {
+      "name": "transport-entreprise",
+      "type": "select",
+      "options": [
+        "Voiture",
+        "Camion",
+        "Avion",
+        "Bateau"
+      ],
+      "label": "Mode de transport utilisé par l'entreprise",
+      "placeholder": "Choisissez un mode de transport",
+      "required": true
+    },
+    {
+      "name": "recyclage-déchets",
+      "type": "textarea",
+      "label": "Mesures de recyclage et de gestion des déchets",
+      "placeholder": "Exemple : recyclage des déchets organiques, collecte sélective des déchets...",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en bilan carbone. L'utilisateur a répondu : Emissions de gaz à effet de serre : {emission-gaz-a-effect-global} tonnes CO2 équivalent, Consommation d'énergie électrique : {consommation-energie-electrique} MWh, Mode de transport utilisé par l'entreprise : {transport-entreprise}, Mesures de recyclage et de gestion des déchets : {recyclage-déchets}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

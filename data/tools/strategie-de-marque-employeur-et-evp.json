@@ -1,0 +1,84 @@
+{
+  "id": "strategie-de-marque-employeur-et-evp",
+  "title": "Stratégie de marque employeur & EVP",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "mission",
+      "type": "textarea",
+      "label": "Quelle est la mission de votre entreprise ?",
+      "placeholder": "Exemple : Nous sommes une entreprise de services financiers",
+      "required": true
+    },
+    {
+      "name": "valeurs",
+      "type": "select",
+      "options": [
+        "Innovation",
+        "Qualité",
+        "Sécurité",
+        "Responsabilité sociale"
+      ],
+      "label": "Quelles sont les valeurs fondatrices de votre entreprise ?",
+      "placeholder": "Exemple : Innovation",
+      "required": true
+    },
+    {
+      "name": "public-cible",
+      "type": "select",
+      "options": [
+        "Jeune public",
+        "Public familial",
+        "Public seniors"
+      ],
+      "label": "Qui est votre public cible ?",
+      "placeholder": "Exemple : Jeune public",
+      "required": true
+    },
+    {
+      "name": "avantages-employeur",
+      "type": "textarea",
+      "label": "Quels sont les avantages de travailler chez vous ?",
+      "placeholder": "Exemple : Nous offrons une rémunération attractive, des opportunités de carrière et un environnement de travail dynamique",
+      "required": true
+    },
+    {
+      "name": "avantages-employe",
+      "type": "textarea",
+      "label": "Quels sont les avantages pour l'employé de travailler chez vous ?",
+      "placeholder": "Exemple : Nous offrons une formation continue, des avantages sociaux et un environnement de travail équitable",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Mission : {mission}, Valeurs : {valeurs}, Public cible : {public-cible}, Avantages employeur : {avantages-employeur}, Avantages employé : {avantages-employe}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

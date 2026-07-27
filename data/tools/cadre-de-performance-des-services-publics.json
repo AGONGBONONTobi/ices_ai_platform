@@ -1,0 +1,72 @@
+{
+  "id": "cadre-de-performance-des-services-publics",
+  "title": "Cadre de performance des services publics",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif_strategique",
+      "type": "textarea",
+      "label": "Quel est l'objectif stratégique principal de votre service public ?",
+      "placeholder": "Exemple : Améliorer la satisfaction des usagers",
+      "required": true
+    },
+    {
+      "name": "niveau_de_satisfaction",
+      "type": "select",
+      "options": [
+        "Très satisfait",
+        "Satisfait",
+        "Moyennement satisfait",
+        "Insatisfait"
+      ],
+      "label": "Quel est le niveau de satisfaction actuel des usagers ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources (budget, personnel, etc.) actuellement disponibles pour atteindre vos objectifs ?",
+      "placeholder": "Exemple : 100 000 euros",
+      "required": true
+    },
+    {
+      "name": "defis_actuels",
+      "type": "textarea",
+      "label": "Quels sont les défis actuels auxquels votre service public est confronté ?",
+      "placeholder": "Exemple : Réduction des délais de traitement des dossiers",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en évaluation de la performance des services publics. L'utilisateur a répondu : Objectif stratégique: {objectif_strategique}, Niveau de satisfaction: {niveau_de_satisfaction}, Ressources disponibles: {ressources_disponibles}, Défis actuels: {defis_actuels}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer la performance du service public.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

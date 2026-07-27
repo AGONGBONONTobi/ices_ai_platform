@@ -1,0 +1,80 @@
+{
+  "id": "diagnostic-politique-salariale-equite-remuneration",
+  "title": "Diagnostic de la politique salariale & équité de rémunération",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "secteurActivite",
+      "type": "select",
+      "options": [
+        "Industrie",
+        "Services",
+        "Finance",
+        "Santé",
+        "Éducation"
+      ],
+      "label": "Secteur d'activité de votre entreprise",
+      "placeholder": "Sélectionnez votre secteur",
+      "required": true
+    },
+    {
+      "name": "effectif",
+      "type": "number",
+      "label": "Effectif total de votre entreprise",
+      "placeholder": "Exemple: 100",
+      "required": true
+    },
+    {
+      "name": "descriptionPolitiqueSalariale",
+      "type": "textarea",
+      "label": "Description de votre politique salariale actuelle",
+      "placeholder": "Décrivez votre politique salariale",
+      "required": true
+    },
+    {
+      "name": "niveauSatisfactionSalariés",
+      "type": "select",
+      "options": [
+        "Très satisfait",
+        "Satisfait",
+        "Neutre",
+        "Insatisfait",
+        "Très insatisfait"
+      ],
+      "label": "Niveau de satisfaction des salariés concernant leur rémunération",
+      "placeholder": "Sélectionnez le niveau de satisfaction",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en ressources humaines. L'entreprise a répondu : Secteur d'activité: {secteurActivite}, Effectif total: {effectif}, Description de la politique salariale: {descriptionPolitiqueSalariale}, Niveau de satisfaction des salariés: {niveauSatisfactionSalariés}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (politique salariale, équité de rémunération, satisfaction des salariés), et des recommandations pour améliorer la politique salariale et l'équité de rémunération.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "id": "evaluation-acquis-formation-roi-pedagogique",
+  "title": "Évaluation des acquis de formation & ROI pédagogique",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "formation",
+      "type": "text",
+      "label": "Nom de la formation suivie",
+      "placeholder": "Exemple : formation en leadership",
+      "required": true
+    },
+    {
+      "name": "duree-formation",
+      "type": "number",
+      "label": "Durée de la formation en jours",
+      "placeholder": "Exemple : 5 jours",
+      "required": true
+    },
+    {
+      "name": "cout-formation",
+      "type": "number",
+      "label": "Coût de la formation",
+      "placeholder": "Exemple : 1000€",
+      "required": true
+    },
+    {
+      "name": "gain-formation",
+      "type": "number",
+      "label": "Gain attendu après la formation",
+      "placeholder": "Exemple : 5000€",
+      "required": true
+    },
+    {
+      "name": "axe-1",
+      "type": "select",
+      "options": [
+        "Compétences techniques",
+        "Compétences sociales",
+        "Compétences leadership"
+      ],
+      "label": "Axe 1 : Compétence développée",
+      "placeholder": "Exemple : Compétences techniques",
+      "required": true
+    },
+    {
+      "name": "axe-2",
+      "type": "select",
+      "options": [
+        "Compétences techniques",
+        "Compétences sociales",
+        "Compétences leadership"
+      ],
+      "label": "Axe 2 : Compétence développée",
+      "placeholder": "Exemple : Compétences sociales",
+      "required": true
+    },
+    {
+      "name": "recommandations",
+      "type": "textarea",
+      "label": "Recommandations pour améliorer la formation",
+      "placeholder": "Exemple : Améliorer la formation en leadership",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Formation : {formation}, Durée de la formation : {duree-formation} jours, Coût de la formation : {cout-formation}€, Gain attendu après la formation : {gain-formation}€, Axe 1 : {axe-1}, Axe 2 : {axe-2}, Recommandations : {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

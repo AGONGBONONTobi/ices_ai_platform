@@ -1,0 +1,79 @@
+{
+  "id": "plan-de-gestion-de-la-diversite-generationnelle",
+  "title": "Plan de gestion de la diversité générationnelle",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "age-moyen-équipe",
+      "type": "number",
+      "label": "Quel est l'âge moyen de votre équipe ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    },
+    {
+      "name": "pourcentage-de-genre-masculin",
+      "type": "number",
+      "label": "Quel est le pourcentage de membres de sexe masculin dans votre équipe ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    },
+    {
+      "name": "experience-moyenne-en-ans",
+      "type": "number",
+      "label": "Quelle est l'expérience moyenne en années de vos employés ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    },
+    {
+      "name": "type-de-contract",
+      "type": "select",
+      "options": [
+        "CDD",
+        "CDI",
+        "Alternance",
+        "Stage"
+      ],
+      "label": "Quel type de contrat est le plus représenté dans votre équipe ?",
+      "placeholder": "Sélectionnez un type de contrat",
+      "required": true
+    },
+    {
+      "name": "description-de-la-culture-entreprise",
+      "type": "textarea",
+      "label": "Décrivez la culture de votre entreprise",
+      "placeholder": "Exemple : Nous sommes une entreprise innovante et dynamique",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Age moyen de l'équipe : {age-moyen-équipe}, Pourcentage de genre masculin : {pourcentage-de-genre-masculin}, Expérience moyenne en années : {experience-moyenne-en-ans}, Type de contrat le plus représenté : {type-de-contract}, Culture de l'entreprise : {description-de-la-culture-entreprise}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

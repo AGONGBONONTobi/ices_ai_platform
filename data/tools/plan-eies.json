@@ -1,0 +1,71 @@
+{
+  "id": "plan-eies",
+  "title": "Plan EIES (Étude d'Impact Environnemental et Social)",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "projet_description",
+      "type": "textarea",
+      "label": "Décrivez brièvement le projet",
+      "placeholder": "Exemple : construction d'une centrale solaire",
+      "required": true
+    },
+    {
+      "name": "localisation",
+      "type": "text",
+      "label": "Localisation du projet",
+      "placeholder": "Exemple : ville, pays",
+      "required": true
+    },
+    {
+      "name": "impact_type",
+      "type": "select",
+      "options": [
+        "Environnemental",
+        "Social",
+        "Les deux"
+      ],
+      "label": "Type d'impact principal",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "mesures_atténuation",
+      "type": "textarea",
+      "label": "Décrivez les mesures d'atténuation prévues",
+      "placeholder": "Exemple : mesures pour réduire les émissions de gaz à effet de serre",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en études d'impact environnemental et social. L'utilisateur a répondu : Projet description: {projet_description}, Localisation: {localisation}, Impact type: {impact_type}, Mesures atténuation: {mesures_atténuation}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

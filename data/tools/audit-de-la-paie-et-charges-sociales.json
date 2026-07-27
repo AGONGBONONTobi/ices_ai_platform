@@ -1,0 +1,71 @@
+{
+  "id": "audit-de-la-paie-et-charges-sociales",
+  "title": "Audit de la paie & charges sociales",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "periode_audit",
+      "type": "text",
+      "label": "Quelle est la période de l'audit ?",
+      "placeholder": "Exemple : Janvier 2022 à Mars 2022",
+      "required": true
+    },
+    {
+      "name": "nombre_employes",
+      "type": "number",
+      "label": "Combien d'employés sont concernés par l'audit ?",
+      "placeholder": "Exemple : 50",
+      "required": true
+    },
+    {
+      "name": "type_de_paie",
+      "type": "select",
+      "options": [
+        "Salaire",
+        "Heures supplémentaires",
+        "Indemnités"
+      ],
+      "label": "Quel type de paie est concerné par l'audit ?",
+      "placeholder": "Exemple : Salaire",
+      "required": true
+    },
+    {
+      "name": "charges_sociales_principales",
+      "type": "textarea",
+      "label": "Quelles sont les charges sociales principales concernées par l'audit ?",
+      "placeholder": "Exemple : Cotisations salariales, cotisations patronales, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Période d'audit : {periode_audit}, Nombre d'employés : {nombre_employes}, Type de paie : {type_de_paie}, Charges sociales principales : {charges_sociales_principales}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

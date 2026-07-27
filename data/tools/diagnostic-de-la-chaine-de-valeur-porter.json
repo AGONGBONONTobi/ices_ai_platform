@@ -1,0 +1,71 @@
+{
+  "id": "diagnostic-de-la-chaine-de-valeur-porter",
+  "title": "Diagnostic de la chaîne de valeur (Porter)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "activitesPrincipales",
+      "type": "textarea",
+      "label": "Décrivez les activités principales de votre entreprise",
+      "placeholder": "Exemple : production, vente, marketing",
+      "required": true
+    },
+    {
+      "name": "avantagesConcurrentiels",
+      "type": "select",
+      "options": [
+        "Coût",
+        "Différenciation",
+        "Focus",
+        "Flexibilité"
+      ],
+      "label": "Quel est votre avantage concurrentiel principal ?",
+      "required": true
+    },
+    {
+      "name": "facteursClesReussite",
+      "type": "text",
+      "label": "Quels sont les facteurs clés de réussite pour votre entreprise ?",
+      "placeholder": "Exemple : qualité des produits, service client",
+      "required": true
+    },
+    {
+      "name": "strategieEntreprise",
+      "type": "textarea",
+      "label": "Décrivez la stratégie globale de votre entreprise",
+      "placeholder": "Exemple : leadership du marché, spécialisation",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Activités principales : {activitesPrincipales}, Avantages concurrentiels : {avantagesConcurrentiels}, Facteurs clés de réussite : {facteursClesReussite}, Stratégie d'entreprise : {strategieEntreprise}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

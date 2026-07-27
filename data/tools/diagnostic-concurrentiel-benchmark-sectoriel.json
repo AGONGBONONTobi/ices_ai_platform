@@ -1,0 +1,72 @@
+{
+  "id": "diagnostic-concurrentiel-benchmark-sectoriel",
+  "title": "Diagnostic concurrentiel & benchmark sectoriel",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "secteurActivite",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Finance",
+        "Santé",
+        "Éducation"
+      ],
+      "label": "Secteur d'activité de votre entreprise",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "nombreEmployes",
+      "type": "number",
+      "label": "Nombre d'employés dans votre entreprise",
+      "placeholder": "Ex: 50",
+      "required": true
+    },
+    {
+      "name": "descriptionActivite",
+      "type": "textarea",
+      "label": "Description de l'activité principale de votre entreprise",
+      "placeholder": "Décrivez brièvement votre activité",
+      "required": true
+    },
+    {
+      "name": "objectifsStrategiques",
+      "type": "textarea",
+      "label": "Objectifs stratégiques de votre entreprise pour les 2 prochaines années",
+      "placeholder": "Listez vos objectifs clés",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en stratégie. L'entreprise opère dans le secteur {secteurActivite} avec {nombreEmployes} employés. L'activité principale est décrite comme suit : {descriptionActivite}. Les objectifs stratégiques pour les 2 prochaines années sont : {objectifsStrategiques}. Analysez ces informations pour évaluer la position concurrentielle de l'entreprise et fournir un score global sur 100, une évaluation par axe (innovation, marketing, gestion des ressources humaines, etc.), et des recommandations pour améliorer sa position sur le marché.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

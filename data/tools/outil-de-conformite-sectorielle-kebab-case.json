@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-conformite-sectorielle-kebab-case",
+  "title": "Outil de conformité sectorielle",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "bancaire",
+        "santé",
+        "énergie"
+      ],
+      "label": "Quel est le secteur d'activité ?",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "nom-entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : XYZ SA",
+      "required": true
+    },
+    {
+      "name": "adresse-entreprise",
+      "type": "textarea",
+      "label": "Adresse de l'entreprise",
+      "placeholder": "Exemple : 123, rue de la République, 75001 Paris",
+      "required": true
+    },
+    {
+      "name": "activites-principales",
+      "type": "textarea",
+      "label": "Activités principales de l'entreprise",
+      "placeholder": "Exemple : Banque, Finances, Assurance",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en conformité sectorielle. L'utilisateur a répondu : Secteur : {secteur}, Nom de l'entreprise : {nom-entreprise}, Adresse de l'entreprise : {adresse-entreprise}, Activités principales de l'entreprise : {activites-principales}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

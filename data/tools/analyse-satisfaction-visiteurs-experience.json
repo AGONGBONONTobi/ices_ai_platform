@@ -1,0 +1,72 @@
+{
+  "id": "analyse-satisfaction-visiteurs-experience",
+  "title": "Analyse de la satisfaction des visiteurs & expérience",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de votre événement ou expérience ?",
+      "placeholder": "Exemple : Festival, conférence, exposition...",
+      "required": true
+    },
+    {
+      "name": "typeExperience",
+      "type": "select",
+      "options": [
+        "Événementiel",
+        "Culturel",
+        "Sportif",
+        "Gastronomique"
+      ],
+      "label": "Quel type d'expérience proposez-vous ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre événement ou expérience",
+      "placeholder": "Exemple : Un festival de musique en plein air...",
+      "required": true
+    },
+    {
+      "name": "cible",
+      "type": "text",
+      "label": "Quelle est votre cible principale (âge, profession, centres d'intérêt) ?",
+      "placeholder": "Exemple : 18-35 ans, passionnés de musique...",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en expérience utilisateur. L'utilisateur cherche à évaluer la satisfaction des visiteurs de son événement. Voici les informations fournies : Objectif: {objectif}, Type d'expérience: {typeExperience}, Description: {description}, Cible: {cible}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (qualité de l'expérience, satisfaction générale, recommandation), et des recommandations pour améliorer l'expérience.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "id": "auto-evaluation-bcorp",
+  "title": "Auto-évaluation B Corp",
+  "category": "Labels ESG / RSE / Durabilité",
+  "inputs": [
+    {
+      "name": "entreprise_type",
+      "type": "select",
+      "options": [
+        "PME",
+        "Grande entreprise",
+        "Start-up",
+        "Association"
+      ],
+      "label": "Quel est le type de votre entreprise ?",
+      "required": true
+    },
+    {
+      "name": "effectif",
+      "type": "number",
+      "label": "Quel est l'effectif de votre entreprise ?",
+      "required": true
+    },
+    {
+      "name": "secteur_activite",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre secteur d'activité",
+      "required": true
+    },
+    {
+      "name": "niveau_responsabilite",
+      "type": "select",
+      "options": [
+        "Inexistant (0)",
+        "Initié (1)",
+        "Formalisé (2)",
+        "Optimisé (3)"
+      ],
+      "label": "Quel est votre niveau de responsabilité environnementale et sociale ?",
+      "required": true
+    },
+    {
+      "name": "pratiques_gouvernance",
+      "type": "textarea",
+      "label": "Décrivez vos pratiques de gouvernance",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert B Corp. L'utilisateur a répondu : Entreprise type: {entreprise_type}, Effectif: {effectif}, Secteur d'activité: {secteur_activite}, Niveau de responsabilité: {niveau_responsabilite}, Pratiques de gouvernance: {pratiques_gouvernance}. Évaluez ces informations selon les 5 dimensions clés du B Impact Assessment (BIA) adapté au contexte Afrique subsaharienne : gouvernance, travailleurs, communauté, environnement, clients. Donnez un score global sur 100, une évaluation par axe, et des recommandations prioritaires.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "reporting-risque-alerte-automatique",
+  "title": "Reporting de risques & alertes automatiques",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "type_risque",
+      "type": "select",
+      "options": [
+        "Cyber",
+        "Financier",
+        "Environnemental"
+      ],
+      "label": "Quel type de risque souhaitez-vous évaluer ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "severite_risque",
+      "type": "number",
+      "label": "Quelle est la sévérité du risque (échelle 1-5) ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_risque",
+      "type": "textarea",
+      "label": "Veuillez décrire le risque identifié",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "date_detection",
+      "type": "text",
+      "label": "Quand a-t-on détecté ce risque ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en reporting de risques. L'utilisateur a répondu : Type de risque : {type_risque}, Sévérité du risque : {severite_risque}, Description du risque : {description_risque}, Date de détection : {date_detection}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

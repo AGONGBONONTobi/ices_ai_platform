@@ -1,0 +1,79 @@
+{
+  "id": "benchmark-des-innovations-sectorielles",
+  "title": "Benchmark des innovations sectorielles",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Énergie",
+        "Santé",
+        "Autres"
+      ],
+      "label": "Quel secteur d'activité est concerné par l'innovation ?",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Décrivez brièvement l'innovation",
+      "placeholder": "Exemple de description",
+      "required": true
+    },
+    {
+      "name": "impact",
+      "type": "number",
+      "label": "Quel est l'impact environnemental de l'innovation (échelle de 1 à 10) ?",
+      "placeholder": "Exemple d'impact",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué à l'innovation ?",
+      "placeholder": "Exemple de budget",
+      "required": true
+    },
+    {
+      "name": "resultats",
+      "type": "textarea",
+      "label": "Quels sont les résultats attendus de l'innovation ?",
+      "placeholder": "Exemple de résultats",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en innovation et R&D. L'utilisateur a répondu : Secteur: {secteur}, Description: {description}, Impact environnemental: {impact}, Budget: {budget}, Résultats attendus: {resultats}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "plan-de-restructuration-et-accompagnement-pse",
+  "title": "Plan de restructuration & accompagnement PSE",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : XYZ Inc.",
+      "required": true
+    },
+    {
+      "name": "objectif-restructuration",
+      "type": "textarea",
+      "label": "Objectif de la restructuration",
+      "placeholder": "Exemple : Améliorer l'efficacité opérationnelle",
+      "required": true
+    },
+    {
+      "name": "nombre-employes",
+      "type": "number",
+      "label": "Nombre d'employés affectés par la restructuration",
+      "placeholder": "Exemple : 50",
+      "required": true
+    },
+    {
+      "name": "type-restructuration",
+      "type": "select",
+      "options": [
+        "Licenciement",
+        "Redeploiement",
+        "Reconversion"
+      ],
+      "label": "Type de restructuration",
+      "placeholder": "Exemple : Licenciement",
+      "required": true
+    },
+    {
+      "name": "budget-accompagnement",
+      "type": "number",
+      "label": "Budget alloué pour l'accompagnement des employés",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise : {entreprise}, Objectif de la restructuration : {objectif-restructuration}, Nombre d'employés : {nombre-employes}, Type de restructuration : {type-restructuration}, Budget d'accompagnement : {budget-accompagnement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

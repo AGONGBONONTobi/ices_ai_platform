@@ -1,0 +1,78 @@
+{
+  "id": "analyse-de-rentabilite-d-investissement",
+  "title": "Analyse de rentabilité d'investissement (ROI/TRI/VAN)",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "investissement",
+      "type": "number",
+      "label": "Montant d'investissement initial",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    },
+    {
+      "name": "revenus",
+      "type": "number",
+      "label": "Revenus générés par l'investissement",
+      "placeholder": "Exemple : 1500",
+      "required": true
+    },
+    {
+      "name": "duree-investissement",
+      "type": "number",
+      "label": "Durée de l'investissement (en années)",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "type-investissement",
+      "type": "select",
+      "options": [
+        "Actions",
+        "Obligations",
+        "Fonds communs de placement"
+      ],
+      "label": "Type d'investissement",
+      "placeholder": "Exemple : Actions",
+      "required": true
+    },
+    {
+      "name": "risques",
+      "type": "textarea",
+      "label": "Risques associés à l'investissement",
+      "placeholder": "Exemple : Risque de perte de capital, risque de fluctuation des cours",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a répondu : Investissement : {investissement}, Revenus : {revenus}, Durée d'investissement : {duree-investissement}, Type d'investissement : {type-investissement}, Risques : {risques}. Analyse ces informations et calcule le ROI/TRI/VAN, puis évalue la rentabilité de l'investissement et propose des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

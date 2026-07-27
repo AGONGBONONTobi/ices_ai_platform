@@ -1,0 +1,71 @@
+{
+  "id": "diagnostic-rentabilite-structure-marges",
+  "title": "Diagnostic de rentabilité & structure des marges",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "marge_brute",
+      "type": "number",
+      "label": "Quelle est la marge brute de votre entreprise ?",
+      "placeholder": "Entrez un chiffre",
+      "required": true
+    },
+    {
+      "name": "marge_nette",
+      "type": "number",
+      "label": "Quelle est la marge nette de votre entreprise ?",
+      "placeholder": "Entrez un chiffre",
+      "required": true
+    },
+    {
+      "name": "structure_marge",
+      "type": "textarea",
+      "label": "Comment décririez-vous la structure des marges de votre entreprise ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "activite_principal",
+      "type": "select",
+      "options": [
+        "Activité 1",
+        "Activité 2",
+        "Activité 3"
+      ],
+      "label": "Quelle est votre activité principale ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Marge brute: {marge_brute}, Marge nette: {marge_nette}, Structure de la marge: {structure_marge}, Activité principale: {activite_principal}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

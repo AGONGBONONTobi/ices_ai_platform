@@ -1,0 +1,65 @@
+{
+  "id": "outil-cartographie-opportunities-regionales",
+  "title": "Outil de cartographie des opportunités d'affaires régionales",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "region",
+      "type": "select",
+      "options": [
+        "Nord",
+        "Sud",
+        "Est",
+        "Ouest"
+      ],
+      "label": "Quelle région souhaitez-vous cartographier ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "text",
+      "label": "Quel secteur d'activité souhaitez-vous cibler ?",
+      "placeholder": "Exemple : technologie, santé, finance",
+      "required": true
+    },
+    {
+      "name": "description_opportunite",
+      "type": "textarea",
+      "label": "Décrivez brièvement l'opportunité d'affaires que vous souhaitez explorer :",
+      "placeholder": "Exemple : développement d'un nouveau produit, expansion sur un marché existant",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique. L'utilisateur a répondu : Région: {region}, Secteur: {secteur}, Description de l'opportunité: {description_opportunite}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe (potentiel de croissance, faisabilité, alignement stratégique) avec leurs scores respectifs sur 100, et des recommandations concrètes pour saisir cette opportunité.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

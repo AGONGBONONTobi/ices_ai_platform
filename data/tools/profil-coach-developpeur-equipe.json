@@ -1,0 +1,84 @@
+{
+  "id": "profil-coach-developpeur-equipe",
+  "title": "Profil de coach & développeur d'équipe",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "style-de-management",
+      "type": "select",
+      "options": [
+        "Transformationnel",
+        "Transactionnel"
+      ],
+      "label": "Quel style de management préfère-vous ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "priorites",
+      "type": "textarea",
+      "label": "Quels sont vos priorités en tant que coach et développeur d'équipe ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "approche-communication",
+      "type": "text",
+      "label": "Quelle est votre approche de la communication avec vos équipes ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "motivation",
+      "type": "number",
+      "label": "Sur 10, comment seriez-vous à motiver vos équipes ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "confiance",
+      "type": "select",
+      "options": [
+        "Très élevée",
+        "Élevée",
+        "Moyenne",
+        "Basse",
+        "Très basse"
+      ],
+      "label": "Quelle est votre niveau de confiance envers vos équipes ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Style de management : {style-de-management}, Priorités : {priorites}, Approche de communication : {approche-communication}, Motivation : {motivation}, Niveau de confiance : {confiance}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

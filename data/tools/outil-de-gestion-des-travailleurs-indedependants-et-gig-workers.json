@@ -1,0 +1,72 @@
+{
+  "id": "outil-de-gestion-des-travailleurs-indedependants-et-gig-workers",
+  "title": "Outil de gestion des travailleurs indépendants & gig workers",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "type-de-travail",
+      "type": "select",
+      "options": [
+        "Développeur",
+        "Designeur",
+        "Consultant",
+        "Autre"
+      ],
+      "label": "Quel type de travail effectuez-vous ?",
+      "placeholder": "Sélectionnez un type de travail",
+      "required": true
+    },
+    {
+      "name": "nombre-heures-travaillees",
+      "type": "number",
+      "label": "Combien d'heures travaillez-vous par semaine ?",
+      "placeholder": "Entrez le nombre d'heures",
+      "required": true
+    },
+    {
+      "name": "niveau-de-satisfaction",
+      "type": "textarea",
+      "label": "Quels sont vos points forts et faibles dans votre travail ?",
+      "placeholder": "Décrivez vos points forts et faibles",
+      "required": true
+    },
+    {
+      "name": "demandes-de-soutien",
+      "type": "textarea",
+      "label": "Avez-vous besoin de soutien ou de ressources supplémentaires ?",
+      "placeholder": "Décrivez vos besoins",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Type de travail: {type-de-travail}, Nombre d'heures travaillées: {nombre-heures-travaillees}, Niveau de satisfaction: {niveau-de-satisfaction}, Demandes de soutien: {demandes-de-soutien}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

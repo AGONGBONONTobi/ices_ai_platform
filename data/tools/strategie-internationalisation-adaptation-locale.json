@@ -1,0 +1,78 @@
+{
+  "id": "strategie-internationalisation-adaptation-locale",
+  "title": "Stratégie d'internationalisation & adaptation locale",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "cibles-geographiques",
+      "type": "select",
+      "options": [
+        "Europe",
+        "Amérique du Nord",
+        "Asie-Pacifique",
+        "Afrique"
+      ],
+      "label": "Quelles régions géographiques souhaitez-vous cibler ?",
+      "placeholder": "Sélectionnez les régions",
+      "required": true
+    },
+    {
+      "name": "produits-ou-services",
+      "type": "textarea",
+      "label": "Quels produits ou services souhaitez-vous adapter ?",
+      "placeholder": "Décrivez les produits ou services",
+      "required": true
+    },
+    {
+      "name": "barrières-languiques",
+      "type": "select",
+      "options": [
+        "Français",
+        "Anglais",
+        "Espagnol",
+        "Chinois"
+      ],
+      "label": "Quelles barrières linguistiques devez-vous surmonter ?",
+      "placeholder": "Sélectionnez les langues",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles ressources (budget, personnel, etc.) disposez-vous pour l'internationalisation ?",
+      "placeholder": "Entrez le montant",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Cibles géographiques : {cibles-geographiques}, Produits ou services : {produits-ou-services}, Barrières linguistiques : {barrières-languiques}, Ressources disponibles : {ressources-disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

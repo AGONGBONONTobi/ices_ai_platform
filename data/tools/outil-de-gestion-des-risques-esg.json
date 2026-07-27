@@ -1,0 +1,77 @@
+{
+  "id": "outil-de-gestion-des-risques-esg",
+  "title": "Outil de gestion des risques ESG",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "secteurActivite",
+      "type": "select",
+      "options": [
+        "Energie",
+        "Finance",
+        "Industrie",
+        "Technologie"
+      ],
+      "label": "Secteur d'activité de votre entreprise",
+      "placeholder": "Sélectionnez votre secteur",
+      "required": true
+    },
+    {
+      "name": "descriptionRisques",
+      "type": "textarea",
+      "label": "Description des risques ESG potentiels pour votre entreprise",
+      "placeholder": "Décrivez les risques environnementaux, sociaux et de gouvernance potentiels",
+      "required": true
+    },
+    {
+      "name": "niveauConscience",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Elevé"
+      ],
+      "label": "Niveau de conscience de vos parties prenantes sur les risques ESG",
+      "placeholder": "Sélectionnez le niveau de conscience",
+      "required": true
+    },
+    {
+      "name": "investissementESG",
+      "type": "number",
+      "label": "Montant investi dans des initiatives ESG au cours des 12 derniers mois",
+      "placeholder": "Entrez le montant en euros",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en gestion des risques ESG. L'entreprise opère dans le secteur {secteurActivite} et a décrit les risques ESG potentiels comme suit : {descriptionRisques}. Le niveau de conscience des parties prenantes sur les risques ESG est {niveauConscience}. L'entreprise a investi {investissementESG} euros dans des initiatives ESG au cours des 12 derniers mois. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (environnemental, social, gouvernance), et des recommandations pour améliorer la gestion des risques ESG.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

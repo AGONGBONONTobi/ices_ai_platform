@@ -1,0 +1,85 @@
+{
+  "id": "outil-cartographie-processus-bpmn",
+  "title": "Outil de cartographie des processus (BPMN)",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "process_name",
+      "type": "text",
+      "label": "Nom du processus",
+      "placeholder": "Exemple: Gestion des commandes",
+      "required": true
+    },
+    {
+      "name": "process_complexity",
+      "type": "select",
+      "options": [
+        "Simple",
+        "Moyen",
+        "Complexe"
+      ],
+      "label": "Complexité du processus",
+      "placeholder": "Sélectionnez",
+      "required": true
+    },
+    {
+      "name": "number_of_steps",
+      "type": "number",
+      "label": "Nombre d'étapes",
+      "placeholder": "Exemple: 12",
+      "required": true
+    },
+    {
+      "name": "process_description",
+      "type": "textarea",
+      "label": "Description détaillée du processus",
+      "placeholder": "Décrivez le processus en détail",
+      "required": true
+    },
+    {
+      "name": "current_maturity_level",
+      "type": "select",
+      "options": [
+        "Initial",
+        "Repeatable",
+        "Defined",
+        "Managed",
+        "Optimizing"
+      ],
+      "label": "Niveau de maturité actuel",
+      "placeholder": "Sélectionnez",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Process Name: {process_name}, Process Complexity: {process_complexity}, Number of Steps: {number_of_steps}, Process Description: {process_description}, Current Maturity Level: {current_maturity_level}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

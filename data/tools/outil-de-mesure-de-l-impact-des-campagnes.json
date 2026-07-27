@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-mesure-de-l-impact-des-campagnes",
+  "title": "Outil de mesure de l'impact des campagnes",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué à la campagne ?",
+      "placeholder": "Entrez le montant du budget",
+      "required": true
+    },
+    {
+      "name": "taux-de-conversion",
+      "type": "number",
+      "label": "Quel est le taux de conversion de la campagne ?",
+      "placeholder": "Entrez le taux de conversion",
+      "required": true
+    },
+    {
+      "name": "nombre-de-visiteurs",
+      "type": "number",
+      "label": "Quel est le nombre de visiteurs générés par la campagne ?",
+      "placeholder": "Entrez le nombre de visiteurs",
+      "required": true
+    },
+    {
+      "name": "type-de-campagne",
+      "type": "select",
+      "options": [
+        "Email",
+        "Réseaux sociaux",
+        "Publicité en ligne"
+      ],
+      "label": "Quel type de campagne est-ce ?",
+      "placeholder": "Sélectionnez le type de campagne",
+      "required": true
+    },
+    {
+      "name": "resultats-esperes",
+      "type": "textarea",
+      "label": "Quels sont les résultats attendus de la campagne ?",
+      "placeholder": "Décrivez les résultats attendus",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en marketing. L'utilisateur a répondu : Budget alloué : {budget-alloue}, Taux de conversion : {taux-de-conversion}, Nombre de visiteurs : {nombre-de-visiteurs}, Type de campagne : {type-de-campagne}, Résultats attendus : {resultats-esperes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

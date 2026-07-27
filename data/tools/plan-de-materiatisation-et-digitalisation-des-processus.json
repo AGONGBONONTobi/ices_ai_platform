@@ -1,0 +1,73 @@
+{
+  "id": "plan-de-materiatisation-et-digitalisation-des-processus",
+  "title": "Plan de dématérialisation & digitalisation des processus",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de la dématérialisation et de la digitalisation des processus ?",
+      "placeholder": "Exemple : Améliorer l'efficacité, réduire les coûts, etc.",
+      "required": true
+    },
+    {
+      "name": "domaines",
+      "type": "select",
+      "options": [
+        "RH",
+        "Finance",
+        "Production",
+        "Marketing",
+        "Autres"
+      ],
+      "label": "Quels sont les domaines concernés par la dématérialisation et la digitalisation ?",
+      "placeholder": "Sélectionnez les domaines pertinents",
+      "required": true
+    },
+    {
+      "name": "ressources",
+      "type": "number",
+      "label": "Quels sont les ressources nécessaires pour la mise en œuvre de la dématérialisation et de la digitalisation ?",
+      "placeholder": "Exemple : Temps, argent, personnel, etc.",
+      "required": true
+    },
+    {
+      "name": "risques",
+      "type": "textarea",
+      "label": "Quels sont les risques potentiels associés à la dématérialisation et à la digitalisation des processus ?",
+      "placeholder": "Exemple : Perte de données, sécurité, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif: {objectif}, Domaines: {domaines}, Ressources: {ressources}, Risques: {risques}. Analyse ces informations et propose un plan de dématérialisation et de digitalisation des processus qui répond aux besoins de l'entreprise, en tenant compte des ressources et des risques identifiés.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "etude-faisabilite-projet-sante",
+  "title": "Étude de faisabilité d'un projet de santé",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "project_scope",
+      "type": "textarea",
+      "label": "Décrivez le périmètre du projet",
+      "placeholder": "Exemple : mise en place d'un service de téléconsultation",
+      "required": true
+    },
+    {
+      "name": "target_population",
+      "type": "text",
+      "label": "Quelle est la population cible du projet ?",
+      "placeholder": "Exemple : patients âgés de 60 ans et plus",
+      "required": true
+    },
+    {
+      "name": "budget_estimate",
+      "type": "number",
+      "label": "Quel est le budget estimé pour le projet (en euros) ?",
+      "placeholder": "Exemple : 250000",
+      "required": true
+    },
+    {
+      "name": "regulatory_compliance",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non",
+        "En cours"
+      ],
+      "label": "Le projet est-il conforme aux réglementations sanitaires existantes ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "risk_assessment",
+      "type": "textarea",
+      "label": "Identifiez les principaux risques associés au projet",
+      "placeholder": "Exemple : retards de livraison, coûts supplémentaires",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Project Scope: {project_scope}, Target Population: {target_population}, Budget Estimate: {budget_estimate}, Regulatory Compliance: {regulatory_compliance}, Risk Assessment: {risk_assessment}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

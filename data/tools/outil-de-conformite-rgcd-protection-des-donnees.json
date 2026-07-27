@@ -1,0 +1,80 @@
+{
+  "id": "outil-de-conformite-rgcd-protection-des-donnees",
+  "title": "Outil de conformité RGPD & protection des données",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Société XYZ",
+      "required": true
+    },
+    {
+      "name": "nom-du-representant-legale",
+      "type": "text",
+      "label": "Nom du représentant légal",
+      "placeholder": "Exemple : Jean Dupont",
+      "required": true
+    },
+    {
+      "name": "type-de-donnees-traites",
+      "type": "select",
+      "options": [
+        "Données personnelles",
+        "Données sensibles",
+        "Données non sensibles"
+      ],
+      "label": "Type de données traitées",
+      "required": true
+    },
+    {
+      "name": "protection-des-donnees",
+      "type": "textarea",
+      "label": "Mesures de protection des données",
+      "placeholder": "Exemple : Nous avons mis en place un système de cryptage des données",
+      "required": true
+    },
+    {
+      "name": "formation-des-employes",
+      "type": "select",
+      "options": [
+        "Oui, tous les employés ont suivi une formation",
+        "Non, pas tous les employés ont suivi une formation"
+      ],
+      "label": "Formation des employés",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en conformité RGPD. L'utilisateur a répondu : Entreprise : {entreprise}, Nom du représentant légal : {nom-du-representant-legale}, Type de données traitées : {type-de-donnees-traites}, Mesures de protection des données : {protection-des-donnees}, Formation des employés : {formation-des-employes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

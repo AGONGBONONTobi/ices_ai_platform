@@ -1,0 +1,71 @@
+{
+  "id": "modele-lettre-avertissement-sanctions",
+  "title": "Template de lettre d'avertissement & sanctions",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "raisonAvertissement",
+      "type": "textarea",
+      "label": "Décrivez la raison de l'avertissement",
+      "placeholder": "Exemple : Non-respect des règles de sécurité",
+      "required": true
+    },
+    {
+      "name": "sanctionsPrevues",
+      "type": "select",
+      "options": [
+        "Avertissement verbal",
+        "Avertissement écrit",
+        "Suspension temporaire",
+        "Licenciement"
+      ],
+      "label": "Sélectionnez les sanctions prévues",
+      "required": true
+    },
+    {
+      "name": "delaiRespect",
+      "type": "number",
+      "label": "Définissez le délai pour respecter les exigences",
+      "placeholder": "Exemple : 30 jours",
+      "required": true
+    },
+    {
+      "name": "consequencesNonRespect",
+      "type": "textarea",
+      "label": "Décrivez les conséquences en cas de non-respect",
+      "placeholder": "Exemple : Perte de privilèges, réduction de salaire, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Créez un modèle de lettre d'avertissement et de sanctions pour un employé. La raison de l'avertissement est : {raisonAvertissement}. Les sanctions prévues sont : {sanctionsPrevues}. Le délai pour respecter les exigences est de {delaiRespect} jours. Les conséquences en cas de non-respect sont : {consequencesNonRespect}. Évaluez la situation et proposez un modèle de lettre adapté.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

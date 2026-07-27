@@ -1,0 +1,71 @@
+{
+  "id": "plan-communication-appels-projets",
+  "title": "Plan de communication pour les appels à projets",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "select",
+      "options": [
+        "Public cible interne",
+        "Public cible externe",
+        "Mixte"
+      ],
+      "label": "Quel est le public cible principal de l'appel à projets?",
+      "placeholder": "Choisissez le public cible",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Décrivez brièvement le contenu de l'appel à projets.",
+      "placeholder": "Exemple: Nous recherchons des projets innovants...",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Quel est le budget alloué à la communication?",
+      "placeholder": "En euros",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quel est le délai de mise en œuvre du plan de communication?",
+      "placeholder": "Ex: 3 mois",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Variable1: {variable1}, Variable2: {variable2}, Variable3: {variable3}, Variable4: {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

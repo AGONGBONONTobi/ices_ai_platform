@@ -1,0 +1,76 @@
+{
+  "id": "checklist-conformite-bad",
+  "title": "Checklist conformité BAD",
+  "category": "Conformité Bailleurs & Projets Financés",
+  "inputs": [
+    {
+      "name": "systeme_gestion_financiere",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Le système de gestion financière est-il en place et conforme aux exigences du BAD ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "passation_marche",
+      "type": "textarea",
+      "label": "Décrivez les procédures de passation des marchés publics utilisées dans le projet",
+      "placeholder": "Exemple : procédures de soumission, critères de sélection...",
+      "required": true
+    },
+    {
+      "name": "sauvegarde_environnementale",
+      "type": "select",
+      "options": [
+        "Niveau 0 : Inexistant",
+        "Niveau 1 : Initié",
+        "Niveau 2 : Formalisé",
+        "Niveau 3 : Optimisé"
+      ],
+      "label": "Quel est le niveau de mise en œuvre de la sauvegarde environnementale selon les politiques du BAD ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "politiques_bad",
+      "type": "textarea",
+      "label": "Quelles politiques du BAD ont été prises en compte dans la mise en œuvre du projet ?",
+      "placeholder": "Exemple : politique environnementale, politique sociale...",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un auditeur/consultant expert des politiques du BAD. L'utilisateur a répondu : Système de gestion financière : {systeme_gestion_financiere}, Procédures de passation des marchés : {passation_marche}, Niveau de sauvegarde environnementale : {sauvegarde_environnementale}, Politiques du BAD prises en compte : {politiques_bad}. Analysez ces informations selon les exigences du BAD en matière de conformité, notamment en termes de système de gestion financière, de passation des marchés publics et de sauvegarde environnementale. Évaluez le niveau de conformité du projet et donnez un score global sur 100. Évaluez également par axe (système de gestion financière, passation des marchés, sauvegarde environnementale) et formulez des recommandations prioritaires.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-gestion-des-dependances-inter-projets",
+  "title": "Outil de gestion des dépendances inter-projets",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "projet_principal",
+      "type": "text",
+      "label": "Nom du projet principal",
+      "placeholder": "Exemple : Projet X",
+      "required": true
+    },
+    {
+      "name": "projet_secondaire",
+      "type": "text",
+      "label": "Nom du projet secondaire",
+      "placeholder": "Exemple : Projet Y",
+      "required": true
+    },
+    {
+      "name": "type_de_dependance",
+      "type": "select",
+      "options": [
+        "Dépendance logicielle",
+        "Dépendance matérielle",
+        "Dépendance humaine"
+      ],
+      "label": "Type de dépendance entre les projets",
+      "placeholder": "Exemple : Dépendance logicielle",
+      "required": true
+    },
+    {
+      "name": "description_de_la_dependance",
+      "type": "textarea",
+      "label": "Description de la dépendance",
+      "placeholder": "Exemple : La dépendance est due à la nécessité de partager un code source commun",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion de projet. L'utilisateur a répondu : Projet principal : {projet_principal}, Projet secondaire : {projet_secondaire}, Type de dépendance : {type_de_dependance}, Description de la dépendance : {description_de_la_dependance}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

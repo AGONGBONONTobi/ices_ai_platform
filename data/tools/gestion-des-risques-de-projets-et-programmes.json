@@ -1,0 +1,79 @@
+{
+  "id": "gestion-des-risques-de-projets-et-programmes",
+  "title": "Gestion des risques de projets & programmes",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "type_de_risque",
+      "type": "select",
+      "options": [
+        "Technologique",
+        "Financier",
+        "Réglementaire",
+        "Opérationnel"
+      ],
+      "label": "Quel est le type de risque ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_du_risque",
+      "type": "textarea",
+      "label": "Décrivez le risque identifié",
+      "placeholder": "Exemple de description",
+      "required": true
+    },
+    {
+      "name": "probabilité_du_risque",
+      "type": "number",
+      "label": "Quelle est la probabilité du risque ? (sur 10)",
+      "placeholder": "Exemple de probabilité",
+      "required": true
+    },
+    {
+      "name": "impact_potentiel_du_risque",
+      "type": "number",
+      "label": "Quel est l'impact potentiel du risque ? (sur 10)",
+      "placeholder": "Exemple d'impact",
+      "required": true
+    },
+    {
+      "name": "mesures_de_contre_risque",
+      "type": "textarea",
+      "label": "Quelles mesures sont prises pour atténuer le risque ?",
+      "placeholder": "Exemple de mesures",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des risques. L'utilisateur a répondu : Type de risque : {type_de_risque}, Description du risque : {description_du_risque}, Probabilité du risque : {probabilité_du_risque}, Impact potentiel du risque : {impact_potentiel_du_risque}, Mesures de contre-risque : {mesures_de_contre_risque}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "template-de-charter-de-projet",
+  "title": "Template de charte de projet (Project Charter)",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "projet_nom",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple : Développement d'un nouveau produit",
+      "required": true
+    },
+    {
+      "name": "projet_objectif",
+      "type": "textarea",
+      "label": "Objectif principal du projet",
+      "placeholder": "Décrire brièvement l'objectif principal du projet",
+      "required": true
+    },
+    {
+      "name": "projet_type",
+      "type": "select",
+      "options": [
+        "Développement de produit",
+        "Amélioration de processus",
+        "Mise en place d'un nouveau système"
+      ],
+      "label": "Type de projet",
+      "required": true
+    },
+    {
+      "name": "projet_duree",
+      "type": "number",
+      "label": "Durée estimée du projet (en mois)",
+      "placeholder": "Exemple : 12",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en gestion de projet. L'utilisateur a répondu : Nom du projet : {projet_nom}, Objectif principal : {projet_objectif}, Type de projet : {projet_type}, Durée estimée : {projet_duree} mois. Analysez ces informations et donnez un score global sur 100 pour la qualité de la charte de projet, évaluez les axes clés (par exemple, la clarté de l'objectif, la faisabilité du projet, la planification) et fournissez des recommandations pour améliorer la charte de projet.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

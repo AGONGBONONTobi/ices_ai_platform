@@ -1,0 +1,75 @@
+{
+  "id": "outil-de-detection-et-prevention-de-la-fraude",
+  "title": "Outil de détection & prévention de la fraude",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "type_de_transaction",
+      "type": "select",
+      "options": [
+        "Achat",
+        "Vente",
+        "Transfert"
+      ],
+      "label": "Quel est le type de transaction suspecte ?",
+      "placeholder": "Sélectionnez le type",
+      "required": true
+    },
+    {
+      "name": "montant",
+      "type": "number",
+      "label": "Quel est le montant de la transaction suspecte ?",
+      "placeholder": "Entrez le montant",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Décrivez les circonstances de la transaction suspecte",
+      "placeholder": "Entrez une description détaillée",
+      "required": true
+    },
+    {
+      "name": "frequence",
+      "type": "select",
+      "options": [
+        "Unique",
+        "Régulière"
+      ],
+      "label": "La transaction suspecte est-elle unique ou régulière ?",
+      "placeholder": "Sélectionnez la fréquence",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des risques. L'utilisateur a répondu : Type de transaction: {type_de_transaction}, Montant: {montant}, Description: {description}, Fréquence: {frequence}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

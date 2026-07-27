@@ -1,0 +1,70 @@
+{
+  "id": "plan-de-cloture-et-retex",
+  "title": "Plan de clôture & RETEX (retour d'expérience)",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "objectifProjet",
+      "type": "textarea",
+      "label": "Quels étaient les objectifs principaux du projet ?",
+      "placeholder": "Décrivez les objectifs clés du projet",
+      "required": true
+    },
+    {
+      "name": "methodeCloture",
+      "type": "select",
+      "options": [
+        "Formelle",
+        "Informelle",
+        "Hybride"
+      ],
+      "label": "Quelle méthode de clôture du projet avez-vous utilisée ?",
+      "required": true
+    },
+    {
+      "name": "leconsTirees",
+      "type": "textarea",
+      "label": "Quelles leçons avez-vous tirées de ce projet ?",
+      "placeholder": "Décrivez les leçons apprises",
+      "required": true
+    },
+    {
+      "name": "indicateursReussite",
+      "type": "text",
+      "label": "Quels indicateurs de réussite avez-vous utilisés pour évaluer le projet ?",
+      "placeholder": "Exemple : respect du budget, respect du délai, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif du projet : {objectifProjet}, Méthode de clôture : {methodeCloture}, Leçons tirées : {leconsTirees}, Indicateurs de réussite : {indicateursReussite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

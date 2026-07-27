@@ -1,0 +1,78 @@
+{
+  "id": "template-contrat-de-travail",
+  "title": "Template de contrat de travail (CDI/CDD/Intérim)",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "type_contrat",
+      "type": "select",
+      "options": [
+        "CDI",
+        "CDD",
+        "Intérim"
+      ],
+      "label": "Quel type de contrat est-ce ?",
+      "placeholder": "Sélectionnez un type de contrat",
+      "required": true
+    },
+    {
+      "name": "nom_employeur",
+      "type": "text",
+      "label": "Nom de l'employeur",
+      "placeholder": "Exemple : Société XYZ",
+      "required": true
+    },
+    {
+      "name": "nom_travailleur",
+      "type": "text",
+      "label": "Nom du travailleur",
+      "placeholder": "Exemple : Jean Dupont",
+      "required": true
+    },
+    {
+      "name": "description_fonction",
+      "type": "textarea",
+      "label": "Description de la fonction",
+      "placeholder": "Exemple : Responsable de projet",
+      "required": true
+    },
+    {
+      "name": "durée_contrat",
+      "type": "number",
+      "label": "Durée du contrat (en mois)",
+      "placeholder": "Exemple : 12",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un juriste expert. L'utilisateur a répondu : Type de contrat : {type_contrat}, Nom de l'employeur : {nom_employeur}, Nom du travailleur : {nom_travailleur}, Description de la fonction : {description_fonction}, Durée du contrat : {durée_contrat}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

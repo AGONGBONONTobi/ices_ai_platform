@@ -1,0 +1,78 @@
+{
+  "id": "plan-de-succesion-et-gestion-des-hauts-potentiels",
+  "title": "Plan de succession & gestion des hauts potentiels",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : XYZ SA",
+      "required": true
+    },
+    {
+      "name": "nom_directeur",
+      "type": "text",
+      "label": "Nom du directeur actuel",
+      "placeholder": "Exemple : Pierre Dupont",
+      "required": true
+    },
+    {
+      "name": "periode_de_succesion",
+      "type": "number",
+      "label": "Période de succession prévue (en mois)",
+      "placeholder": "Exemple : 12",
+      "required": true
+    },
+    {
+      "name": "strategie_de_succesion",
+      "type": "select",
+      "options": [
+        "Internalisation",
+        "Externalisation",
+        "Partenariat"
+      ],
+      "label": "Stratégie de succession préférée",
+      "placeholder": "Exemple : Internalisation",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Commentaires supplémentaires",
+      "placeholder": "Exemple : Le directeur actuel souhaite passer la main à un membre de la famille",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise : {entreprise}, Nom du directeur actuel : {nom_directeur}, Période de succession prévue : {periode_de_succesion} mois, Stratégie de succession préférée : {strategie_de_succesion}, Commentaires supplémentaires : {commentaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

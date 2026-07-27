@@ -1,0 +1,78 @@
+{
+  "id": "plan-de-continuité-d-activité-pca-bcp",
+  "title": "Plan de continuité d'activité (PCA/BCP)",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "nom_de_l_entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Société XYZ",
+      "required": true
+    },
+    {
+      "name": "description_de_l_entreprise",
+      "type": "textarea",
+      "label": "Description de l'entreprise",
+      "placeholder": "Exemple : Nous sommes une entreprise de services",
+      "required": true
+    },
+    {
+      "name": "risques_identifiés",
+      "type": "select",
+      "options": [
+        "Perte de données",
+        "Interruption de service",
+        "Problèmes de sécurité"
+      ],
+      "label": "Risques identifiés",
+      "placeholder": "Exemple : Perte de données",
+      "required": true
+    },
+    {
+      "name": "stratégie_de_contournement",
+      "type": "textarea",
+      "label": "Stratégie de contournement",
+      "placeholder": "Exemple : Nous allons utiliser un système de sauvegarde en ligne",
+      "required": true
+    },
+    {
+      "name": "équipe_de_gestion_de_crise",
+      "type": "text",
+      "label": "Équipe de gestion de crise",
+      "placeholder": "Exemple : Équipe de gestion de crise de l'entreprise",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom de l'entreprise : {nom_de_l_entreprise}, Description de l'entreprise : {description_de_l_entreprise}, Risques identifiés : {risques_identifiés}, Stratégie de contournement : {stratégie_de_contournement}, Équipe de gestion de crise : {équipe_de_gestion_de_crise}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

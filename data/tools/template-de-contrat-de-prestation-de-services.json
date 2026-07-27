@@ -1,0 +1,78 @@
+{
+  "id": "template-de-contrat-de-prestation-de-services",
+  "title": "Template de contrat de prestation de services",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "nomDuClient",
+      "type": "text",
+      "label": "Nom du client",
+      "placeholder": "Exemple : Jean Dupont",
+      "required": true
+    },
+    {
+      "name": "nomDeLaSociete",
+      "type": "text",
+      "label": "Nom de la société",
+      "placeholder": "Exemple : Société X",
+      "required": true
+    },
+    {
+      "name": "adresseDuClient",
+      "type": "textarea",
+      "label": "Adresse du client",
+      "placeholder": "Exemple : 12 rue de la République, 75001 Paris",
+      "required": true
+    },
+    {
+      "name": "typeDeContrat",
+      "type": "select",
+      "options": [
+        "Contrat de prestation de services",
+        "Contrat de travail",
+        "Contrat de location"
+      ],
+      "label": "Type de contrat",
+      "placeholder": "Exemple : Contrat de prestation de services",
+      "required": true
+    },
+    {
+      "name": "dureeDeLaPrestation",
+      "type": "number",
+      "label": "Durée de la prestation",
+      "placeholder": "Exemple : 12",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un juriste expert. Le client a fourni les informations suivantes : Nom du client : {nomDuClient}, Nom de la société : {nomDeLaSociete}, Adresse du client : {adresseDuClient}, Type de contrat : {typeDeContrat}, Durée de la prestation : {dureeDeLaPrestation}. Analyse ces informations et propose un modèle de contrat de prestation de services adapté.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

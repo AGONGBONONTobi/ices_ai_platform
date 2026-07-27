@@ -1,0 +1,71 @@
+{
+  "id": "plan-decarbonation-et-trajectoire-sbti",
+  "title": "Plan de décarbonation & trajectoire SBTi",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "objectifs-sbti",
+      "type": "textarea",
+      "label": "Quels sont les objectifs SBTi définis par votre entreprise ?",
+      "placeholder": "Exemple : réduction des émissions de gaz à effet de serre de 50% d'ici 2030",
+      "required": true
+    },
+    {
+      "name": "moyens-de-reduction",
+      "type": "text",
+      "label": "Quels sont les moyens mis en place pour atteindre ces objectifs ?",
+      "placeholder": "Exemple : mise en place d'un système de comptage des émissions, réduction de la consommation d'énergie",
+      "required": true
+    },
+    {
+      "name": "indicateurs-de-suivi",
+      "type": "select",
+      "options": [
+        "émissions de gaz à effet de serre",
+        "consommation d'énergie",
+        "émissions de polluants"
+      ],
+      "label": "Quels indicateurs de suivi choisissez-vous pour mesurer votre progrès ?",
+      "placeholder": "Sélectionnez un ou plusieurs indicateurs",
+      "required": true
+    },
+    {
+      "name": "challenges-et-contraintes",
+      "type": "textarea",
+      "label": "Quels sont les défis et contraintes que vous rencontrez pour atteindre vos objectifs de décarbonation ?",
+      "placeholder": "Exemple : coûts élevés, manque de ressources, opposition de certains acteurs",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en RSE & Développement Durable. L'utilisateur a répondu : Objectifs SBTi : {objectifs-sbti}, Moyens de réduction : {moyens-de-reduction}, Indicateurs de suivi : {indicateurs-de-suivi}, Challenges et contraintes : {challenges-et-contraintes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

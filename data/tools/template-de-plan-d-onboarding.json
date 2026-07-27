@@ -1,0 +1,71 @@
+{
+  "id": "template-de-plan-d-onboarding",
+  "title": "Template de plan d'onboarding",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "nomDuNouvelEmploye",
+      "type": "text",
+      "label": "Quel est le nom du nouvel employé ?",
+      "placeholder": "Exemple : Jean Dupont",
+      "required": true
+    },
+    {
+      "name": "posteOccupe",
+      "type": "select",
+      "options": [
+        "Développeur",
+        "Designer",
+        "Commercial",
+        "Manager"
+      ],
+      "label": "Quel est le poste occupé par le nouvel employé ?",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux du nouvel employé pour les premiers mois ?",
+      "placeholder": "Exemple : Apprendre les processus internes, développer de nouvelles compétences, atteindre des objectifs de vente",
+      "required": true
+    },
+    {
+      "name": "ressourcesNecessaires",
+      "type": "textarea",
+      "label": "Quelles ressources le nouvel employé aura-t-il besoin pour réussir dans son rôle ?",
+      "placeholder": "Exemple : Formation, équipement, logiciel, accès à certaines bases de données",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en onboarding. Le nouvel employé s'appelle {nomDuNouvelEmploye} et occupera le poste de {posteOccupe}. Ses objectifs principaux pour les premiers mois sont : {objectifs}. Il aura besoin des ressources suivantes pour réussir : {ressourcesNecessaires}. Analyse ces informations et donne un score global sur 100 pour l'efficacité du plan d'onboarding, une évaluation par axe (par exemple, intégration dans l'équipe, compréhension des processus, atteinte des objectifs), et des recommandations pour améliorer le plan.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

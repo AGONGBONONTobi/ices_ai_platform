@@ -1,0 +1,77 @@
+{
+  "id": "template-contrat-commercial",
+  "title": "Template de contrat commercial (B2B/B2C)",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise_client",
+      "type": "text",
+      "label": "Nom de l'entreprise du client",
+      "placeholder": "Exemple : Société Générale",
+      "required": true
+    },
+    {
+      "name": "adresse_client",
+      "type": "textarea",
+      "label": "Adresse du client",
+      "placeholder": "Exemple : 123 rue de la République, 75001 Paris",
+      "required": true
+    },
+    {
+      "name": "type_contrat",
+      "type": "select",
+      "options": [
+        "B2B",
+        "B2C"
+      ],
+      "label": "Type de contrat",
+      "placeholder": "Exemple : B2B",
+      "required": true
+    },
+    {
+      "name": "duree_contrat",
+      "type": "number",
+      "label": "Durée du contrat (en mois)",
+      "placeholder": "Exemple : 12",
+      "required": true
+    },
+    {
+      "name": "conditions_payement",
+      "type": "textarea",
+      "label": "Conditions de paiement",
+      "placeholder": "Exemple : Paiement à la livraison",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un juriste expert. L'utilisateur a répondu : Entreprise client : {entreprise_client}, Adresse client : {adresse_client}, Type de contrat : {type_contrat}, Durée du contrat : {duree_contrat}, Conditions de paiement : {conditions_payement}. Analyse ces informations et propose un modèle de contrat commercial adapté.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

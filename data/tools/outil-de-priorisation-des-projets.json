@@ -1,0 +1,79 @@
+{
+  "id": "outil-de-priorisation-des-projets",
+  "title": "Outil de priorisation des projets (MoSCoW, scoring)",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "nom-projet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple : Développement d'une nouvelle plateforme",
+      "required": true
+    },
+    {
+      "name": "objectifs-projet",
+      "type": "textarea",
+      "label": "Objectifs du projet",
+      "placeholder": "Exemple : Améliorer la performance, réduire les coûts, etc.",
+      "required": true
+    },
+    {
+      "name": "risques-projet",
+      "type": "textarea",
+      "label": "Risques associés au projet",
+      "placeholder": "Exemple : Problèmes de sécurité, difficultés de mise en œuvre, etc.",
+      "required": true
+    },
+    {
+      "name": "priorite-moscow",
+      "type": "select",
+      "options": [
+        "Must-Haves",
+        "Should-Haves",
+        "Could-Haves",
+        "Won't-Haves"
+      ],
+      "label": "Priorité MoSCoW",
+      "placeholder": "Exemple : Must-Haves",
+      "required": true
+    },
+    {
+      "name": "score-projet",
+      "type": "number",
+      "label": "Score du projet (1-10)",
+      "placeholder": "Exemple : 8",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet : {nom-projet}, Objectifs du projet : {objectifs-projet}, Risques associés au projet : {risques-projet}, Priorité MoSCoW : {priorite-moscow}, Score du projet : {score-projet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

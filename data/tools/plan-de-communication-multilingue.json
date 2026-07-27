@@ -1,0 +1,88 @@
+{
+  "id": "plan-de-communication-multilingue",
+  "title": "Plan de communication multilingue (20 langues)",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "langues",
+      "type": "select",
+      "options": [
+        "Français",
+        "Anglais",
+        "Espagnol",
+        "Chinois",
+        "Arabe",
+        "Portugais",
+        "Italien",
+        "Allemand",
+        "Russe",
+        "Japonais",
+        "Coréen",
+        "Vietnamien",
+        "Polonais",
+        "Turc",
+        "Néerlandais",
+        "Suédois",
+        "Finnois",
+        "Grec",
+        "Hindi",
+        "Indonésien"
+      ],
+      "label": "Quelles langues souhaitez-vous inclure dans le plan de communication ?",
+      "placeholder": "Sélectionnez les langues",
+      "required": true
+    },
+    {
+      "name": "cible",
+      "type": "textarea",
+      "label": "Qui est votre cible pour ce plan de communication ? (décrivez les caractéristiques de votre public cible)",
+      "placeholder": "Exemple : professionnels, consommateurs, étudiants, etc.",
+      "required": true
+    },
+    {
+      "name": "contenu",
+      "type": "text",
+      "label": "Quel type de contenu souhaitez-vous inclure dans le plan de communication ? (ex : textes, images, vidéos, etc.)",
+      "placeholder": "Exemple : textes, images, vidéos, etc.",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est votre budget pour ce plan de communication ?",
+      "placeholder": "Exemple : 1000€, 5000€, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en marketing et communication. L'utilisateur a répondu : Langues: {langues}, Cible: {cible}, Contenu: {contenu}, Budget: {budget}. Analyse ces informations et propose un plan de communication multilingue efficace pour atteindre les objectifs de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-prevision-de-la-demande-forecasting-ia",
+  "title": "Outil de prévision de la demande (forecasting IA)",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "periode-de-referance",
+      "type": "number",
+      "label": "Quelle est la période de référence pour la prévision (en mois) ?",
+      "placeholder": "Exemple : 12",
+      "required": true
+    },
+    {
+      "name": "serie-historique",
+      "type": "textarea",
+      "label": "Veuillez fournir la série historique de ventes (format CSV) :",
+      "placeholder": "Exemple : date,quantite\n2022-01,100\n2022-02,120\n2022-03,110",
+      "required": true
+    },
+    {
+      "name": "modele-de-prevision",
+      "type": "select",
+      "options": [
+        "ARIMA",
+        "Extrapolation linéaire",
+        "Extrapolation exponentielle"
+      ],
+      "label": "Quel modèle de prévision souhaitez-vous utiliser ?",
+      "placeholder": "Exemple : ARIMA",
+      "required": true
+    },
+    {
+      "name": "horizon-de-prevision",
+      "type": "number",
+      "label": "Quel est l'horizon de prévision (en mois) ?",
+      "placeholder": "Exemple : 6",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en prévision de la demande. L'utilisateur a fourni les informations suivantes : Période de référence : {periode-de-referance}, Série historique : {serie-historique}, Modèle de prévision : {modele-de-prevision}, Horizon de prévision : {horizon-de-prevision}. Analyse ces informations et fournis une prévision de la demande pour les prochains {horizon-de-prevision} mois.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

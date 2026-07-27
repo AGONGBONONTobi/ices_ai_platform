@@ -1,0 +1,70 @@
+{
+  "id": "template-compte-rendu-reunion-copil",
+  "title": "Template de compte-rendu de réunion & COPIL",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectifReunion",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de la réunion ?",
+      "placeholder": "Décrivez brièvement l'objectif de la réunion",
+      "required": true
+    },
+    {
+      "name": "participants",
+      "type": "text",
+      "label": "Qui sont les participants à la réunion ?",
+      "placeholder": "Listez les noms et les postes des participants",
+      "required": true
+    },
+    {
+      "name": "typeReunion",
+      "type": "select",
+      "options": [
+        "Réunion de travail",
+        "Réunion d'information",
+        "Réunion de décision"
+      ],
+      "label": "Quel est le type de réunion ?",
+      "required": true
+    },
+    {
+      "name": "decisionsPrises",
+      "type": "textarea",
+      "label": "Quelles sont les décisions prises lors de la réunion ?",
+      "placeholder": "Décrivez les décisions prises et les responsables",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert. L'utilisateur a répondu : Objectif de la réunion : {objectifReunion}, Participants : {participants}, Type de réunion : {typeReunion}, Décisions prises : {decisionsPrises}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer la qualité des comptes-rendus de réunion et la mise en œuvre des décisions prises.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

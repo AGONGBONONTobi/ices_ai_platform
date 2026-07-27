@@ -1,0 +1,81 @@
+{
+  "id": "reporting-consolide-groupe-multi-entites",
+  "title": "Reporting consolidé groupe (multi-entités)",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "entites",
+      "type": "select",
+      "options": [
+        "Entité 1",
+        "Entité 2",
+        "Entité 3"
+      ],
+      "label": "Sélectionnez les entités à inclure dans le reporting",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "periode",
+      "type": "select",
+      "options": [
+        "Mois en cours",
+        "Mois précédent",
+        "Année en cours"
+      ],
+      "label": "Sélectionnez la période de reporting",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "indicateurs",
+      "type": "textarea",
+      "label": "Listez les indicateurs clés à inclure dans le reporting",
+      "placeholder": "Exemple : chiffre d'affaires, marge bénéficiaire, etc.",
+      "required": true
+    },
+    {
+      "name": "format",
+      "type": "select",
+      "options": [
+        "Tableau de bord",
+        "Rapport PDF",
+        "Fichier Excel"
+      ],
+      "label": "Sélectionnez le format de sortie du reporting",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entités: {entites}, Période: {periode}, Indicateurs: {indicateurs}, Format: {format}. Analyse ces informations et propose un plan de reporting consolidé pour le groupe, incluant les indicateurs clés et le format de sortie choisis.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

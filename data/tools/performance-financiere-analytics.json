@@ -1,0 +1,77 @@
+{
+  "id": "performance-financiere-analytics",
+  "title": "Analytics de la performance financière",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "revenusAnnuels",
+      "type": "number",
+      "label": "Quels sont vos revenus annuels ?",
+      "placeholder": "Entrez un chiffre",
+      "required": true
+    },
+    {
+      "name": "coutsFixes",
+      "type": "number",
+      "label": "Quels sont vos coûts fixes ?",
+      "placeholder": "Entrez un chiffre",
+      "required": true
+    },
+    {
+      "name": "tauxDeCroissance",
+      "type": "number",
+      "label": "Quel est votre taux de croissance attendu ?",
+      "placeholder": "Entrez un chiffre",
+      "required": true
+    },
+    {
+      "name": "modeleDeCroissance",
+      "type": "select",
+      "options": [
+        "Linéaire",
+        "Exponentiel"
+      ],
+      "label": "Quel modèle de croissance est le plus approprié ?",
+      "placeholder": "Sélectionnez un modèle",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Avez-vous des commentaires supplémentaires ?",
+      "placeholder": "Entrez vos commentaires",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un analyste financier expert. L'utilisateur a répondu : Revenus annuels: {revenusAnnuels}, Coûts fixes: {coutsFixes}, Taux de croissance: {tauxDeCroissance}, Modèle de croissance: {modeleDeCroissance}, Commentaires: {commentaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

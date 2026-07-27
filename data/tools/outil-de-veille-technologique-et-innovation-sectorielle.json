@@ -1,0 +1,85 @@
+{
+  "id": "outil-de-veille-technologique-et-innovation-sectorielle",
+  "title": "Outil de veille technologique & innovation sectorielle",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "secteurs-interessants",
+      "type": "select",
+      "options": [
+        "Technologie de l'information",
+        "Énergie renouvelable",
+        "Médecine personnalisée",
+        "Transport intelligents"
+      ],
+      "label": "Quels secteurs technologiques ou d'innovation sectorielle vous intéressent ?",
+      "placeholder": "Sélectionnez les secteurs qui vous intéressent",
+      "required": true
+    },
+    {
+      "name": "technologies-emergentes",
+      "type": "textarea",
+      "label": "Quelles technologies émergentes pensez-vous être les plus prometteuses ?",
+      "placeholder": "Exemple : Intelligence artificielle, réalité virtuelle, etc.",
+      "required": true
+    },
+    {
+      "name": "innovations-exemples",
+      "type": "textarea",
+      "label": "Pouvez-vous donner des exemples d'innovations récentes qui vous ont marqué ?",
+      "placeholder": "Exemple : Projet de recherche, produit innovant, etc.",
+      "required": true
+    },
+    {
+      "name": "challenges-a-ressoudre",
+      "type": "textarea",
+      "label": "Quels sont les principaux défis que vous pensez être nécessaires à résoudre dans le domaine de l'innovation et de la R&D ?",
+      "placeholder": "Exemple : Défis environnementaux, sociaux, économiques, etc.",
+      "required": true
+    },
+    {
+      "name": "ressources-necessaires",
+      "type": "select",
+      "options": [
+        "Financement",
+        "Personnel qualifié",
+        "Infrastructure",
+        "Partenariats"
+      ],
+      "label": "Quelles ressources pensez-vous être nécessaires pour développer des innovations et des technologies émergentes ?",
+      "placeholder": "Sélectionnez les ressources nécessaires",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en veille technologique et innovation sectorielle. L'utilisateur a répondu : Secteurs intéressants : {secteurs-interessants}, Technologies émergentes : {technologies-emergentes}, Innovations exemples : {innovations-exemples}, Challenges à résoudre : {challenges-a-ressoudre}, Ressources nécessaires : {ressources-necessaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

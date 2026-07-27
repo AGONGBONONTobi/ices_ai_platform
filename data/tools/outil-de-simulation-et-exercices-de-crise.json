@@ -1,0 +1,72 @@
+{
+  "id": "outil-de-simulation-et-exercices-de-crise",
+  "title": "Outil de simulation & exercices de crise",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "scenario",
+      "type": "textarea",
+      "label": "Décrivez le scénario de crise",
+      "placeholder": "Exemple : perte de données importantes",
+      "required": true
+    },
+    {
+      "name": "impact-financier",
+      "type": "number",
+      "label": "Quel est l'impact financier potentiel de la crise ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "type-de-crise",
+      "type": "select",
+      "options": [
+        "Technologique",
+        "Humain",
+        "Environnemental",
+        "Économique"
+      ],
+      "label": "Quel est le type de crise ?",
+      "placeholder": "Exemple : technologique",
+      "required": true
+    },
+    {
+      "name": "mesures-de-prevention",
+      "type": "textarea",
+      "label": "Quelles mesures de prévention avez-vous mises en place ?",
+      "placeholder": "Exemple : formation des employés, mise à jour des systèmes de sécurité",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Scénario : {scenario}, Impact financier : {impact-financier}, Type de crise : {type-de-crise}, Mesures de prévention : {mesures-de-prevention}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

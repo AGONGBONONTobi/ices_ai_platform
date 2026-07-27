@@ -1,0 +1,79 @@
+{
+  "id": "modele-logique-projet-approche-resultats",
+  "title": "Modèle logique de projet (approche par les résultats)",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "objectif_principal",
+      "type": "textarea",
+      "label": "Objectif principal du projet",
+      "placeholder": "Exemple d'objectif",
+      "required": true
+    },
+    {
+      "name": "indicateurs_kpi",
+      "type": "textarea",
+      "label": "Indicateurs de performance clés (KPIs)",
+      "placeholder": "Exemple d'indicateur",
+      "required": true
+    },
+    {
+      "name": "resultats_attendus",
+      "type": "textarea",
+      "label": "Principaux résultats attendus",
+      "placeholder": "Exemple de résultat",
+      "required": true
+    },
+    {
+      "name": "ressources_necessaires",
+      "type": "textarea",
+      "label": "Ressources nécessaires",
+      "placeholder": "Exemple de ressource",
+      "required": true
+    },
+    {
+      "name": "type_projet",
+      "type": "select",
+      "options": [
+        "Infrastructure",
+        "Technologique",
+        "Social",
+        "Environnemental"
+      ],
+      "label": "Type de projet",
+      "placeholder": "Sélectionnez un type",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif principal : {objectif_principal}, Indicateurs de performance clés : {indicateurs_kpi}, Résultats attendus : {resultats_attendus}, Ressources nécessaires : {ressources_necessaires}, Type de projet : {type_projet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

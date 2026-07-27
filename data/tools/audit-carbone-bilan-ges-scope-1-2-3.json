@@ -1,0 +1,84 @@
+{
+  "id": "audit-carbone-bilan-ges-scope-1-2-3",
+  "title": "Audit carbone & bilan GES (Scope 1, 2, 3 — GHG Protocol)",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "scope",
+      "type": "select",
+      "options": [
+        "Scope 1",
+        "Scope 2",
+        "Scope 3"
+      ],
+      "label": "Quel(s) scope(s) souhaitez-vous inclure dans l'audit ?",
+      "placeholder": "Sélectionnez un scope",
+      "required": true
+    },
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Société Générale",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Industrie",
+        "Services",
+        "Agriculture",
+        "Autre"
+      ],
+      "label": "Quel est le secteur d'activité de l'entreprise ?",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "emissions-ges",
+      "type": "textarea",
+      "label": "Quelles sont les principales sources d'émissions de GES de l'entreprise ?",
+      "placeholder": "Exemple : énergies fossiles, transports, etc.",
+      "required": true
+    },
+    {
+      "name": "objectifs-reduction",
+      "type": "text",
+      "label": "Quels sont les objectifs de réduction des émissions de GES de l'entreprise ?",
+      "placeholder": "Exemple : réduction de 10% d'émissions en 2025",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audit carbone et bilan GES. L'utilisateur a répondu : Scope : {scope}, Entreprise : {entreprise}, Secteur : {secteur}, Emissions GES : {emissions-ges}, Objectifs de réduction : {objectifs-reduction}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "analyse-de-risques-fournisseurs-supply-chain",
+  "title": "Analyse de risques fournisseurs & supply chain",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "risque-financier",
+      "type": "number",
+      "label": "Quel est le niveau de risque financier associé à ce fournisseur ? (0-100)",
+      "placeholder": "Exemple : 50",
+      "required": true
+    },
+    {
+      "name": "risque-environnemental",
+      "type": "textarea",
+      "label": "Quels sont les risques environnementaux associés à ce fournisseur ? (ex : émissions de gaz à effet de serre, déchets toxiques, etc.)",
+      "placeholder": "Exemple : émissions de gaz à effet de serre",
+      "required": true
+    },
+    {
+      "name": "risque-social",
+      "type": "select",
+      "options": [
+        "faible",
+        "moyen",
+        "élevé"
+      ],
+      "label": "Quel est le niveau de risque social associé à ce fournisseur ?",
+      "placeholder": "Exemple : faible",
+      "required": true
+    },
+    {
+      "name": "recommandations",
+      "type": "textarea",
+      "label": "Quelles sont les recommandations pour améliorer la gestion des risques associés à ce fournisseur ?",
+      "placeholder": "Exemple : mettre en place un système de suivi des émissions de gaz à effet de serre",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en supply chain. L'utilisateur a répondu : Risque financier : {risque-financier}, Risque environnemental : {risque-environnemental}, Risque social : {risque-social}, Recommandations : {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

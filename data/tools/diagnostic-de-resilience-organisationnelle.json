@@ -1,0 +1,72 @@
+{
+  "id": "diagnostic-de-resilience-organisationnelle",
+  "title": "Diagnostic de résilience organisationnelle",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "description_probleme",
+      "type": "textarea",
+      "label": "Décrivez le problème ou le défi que votre organisation rencontre actuellement",
+      "placeholder": "Exemple : Nous rencontrons des difficultés à gérer les changements dans notre environnement",
+      "required": true
+    },
+    {
+      "name": "niveau_resilience",
+      "type": "select",
+      "options": [
+        "Très faible",
+        "Faible",
+        "Moyen",
+        "Élevé",
+        "Très élevé"
+      ],
+      "label": "Évaluez le niveau de résilience de votre organisation",
+      "required": true
+    },
+    {
+      "name": "strategie_adaptation",
+      "type": "text",
+      "label": "Quelles sont les stratégies d'adaptation que votre organisation a mises en place pour faire face aux défis ?",
+      "placeholder": "Exemple : Nous avons mis en place une équipe de gestion de crise",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "textarea",
+      "label": "Quelles sont les ressources (financières, humaines, matérielles) dont dispose votre organisation pour faire face aux défis ?",
+      "placeholder": "Exemple : Nous disposons d'un budget dédié à la gestion de crise et d'une équipe de professionnels",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en résilience organisationnelle. L'utilisateur a répondu : Description du problème : {description_probleme}, Niveau de résilience : {niveau_resilience}, Stratégie d'adaptation : {strategie_adaptation}, Ressources disponibles : {ressources_disponibles}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (stratégie, ressources, gestion de crise), et des recommandations pour améliorer la résilience de l'organisation.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

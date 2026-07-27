@@ -1,0 +1,71 @@
+{
+  "id": "indicateurs-de-performance-de-projet",
+  "title": "Indicateurs de performance de projet (KPIs projets)",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "objectif_principal",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de votre projet ?",
+      "placeholder": "Exemple : Augmenter la production de 20% en 6 mois",
+      "required": true
+    },
+    {
+      "name": "delai_prevu",
+      "type": "number",
+      "label": "Quel est le délai prévu pour la réalisation du projet ?",
+      "placeholder": "Exemple : 12 mois",
+      "required": true
+    },
+    {
+      "name": "budget_alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour le projet ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "niveau_complexite",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quel est le niveau de complexité du projet ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en gestion de projet. L'utilisateur a répondu : Objectif principal : {objectif_principal}, Délai prévu : {delai_prevu} mois, Budget alloué : {budget_alloue} €, Niveau de complexité : {niveau_complexite}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

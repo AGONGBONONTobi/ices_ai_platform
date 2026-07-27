@@ -1,0 +1,71 @@
+{
+  "id": "auto-diagnostic-iso-50001",
+  "title": "Auto-diagnostic ISO 50001",
+  "category": "Systèmes de Management ISO",
+  "inputs": [
+    {
+      "name": "UES_identifies",
+      "type": "textarea",
+      "label": "Quels sont les usages énergétiques significatifs (UES) identifiés dans votre organisation ?",
+      "placeholder": "Ex: consommation électrique des bâtiments, utilisation de gaz pour la production",
+      "required": true
+    },
+    {
+      "name": "revue_energetique",
+      "type": "textarea",
+      "label": "Décrivez la revue énergétique initiale menée dans votre organisation",
+      "placeholder": "Ex: analyse des consommations énergétiques, identification des opportunités d'amélioration",
+      "required": true
+    },
+    {
+      "name": "niveau_maturite",
+      "type": "select",
+      "options": [
+        "0 - Inexistant",
+        "1 - Initié",
+        "2 - Formalisé",
+        "3 - Optimisé"
+      ],
+      "label": "Quel est le niveau de maturité de votre organisation en matière de management de l'énergie ?",
+      "required": true
+    },
+    {
+      "name": "plan_actions",
+      "type": "textarea",
+      "label": "Décrivez le plan d'actions d'efficacité énergétique mis en place",
+      "placeholder": "Ex: réduction de la consommation électrique, amélioration de l'efficacité des équipements",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous avez répondu : UES_identifies: {UES_identifies}, revue_energetique: {revue_energetique}, niveau_maturite: {niveau_maturite}, plan_actions: {plan_actions}. En tant qu'auditeur expert du référentiel ISO 50001, évaluez ces informations selon les exigences du standard (revue énergétique initiale, identification des UES, plan d'actions d'efficacité énergétique) et attribuez un score global sur 100. Évaluez également les axes suivants : Revue énergétique, Identification des UES, Plan d'actions. Fournissez des recommandations prioritaires pour améliorer la conformité et l'efficacité du système de management de l'énergie.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

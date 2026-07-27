@@ -1,0 +1,71 @@
+{
+  "id": "diagnostic-cybersécurité-iso-27001",
+  "title": "Diagnostic cybersécurité (ISO 27001)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "risques_identifiés",
+      "type": "textarea",
+      "label": "Quels sont les principaux risques identifiés pour la cybersécurité de l'organisation ?",
+      "placeholder": "Exemple : perte de données, violation de la vie privée, etc.",
+      "required": true
+    },
+    {
+      "name": "mesures_prises",
+      "type": "textarea",
+      "label": "Quelles mesures ont été prises pour atténuer ces risques ?",
+      "placeholder": "Exemple : mise en place de la politique de sécurité, formation des employés, etc.",
+      "required": true
+    },
+    {
+      "name": "contrôles_en_place",
+      "type": "select",
+      "options": [
+        "Contrôles de sécurité mis en place",
+        "Contrôles de sécurité en cours de mise en place",
+        "Aucun contrôle de sécurité"
+      ],
+      "label": "Quels contrôles de sécurité sont en place pour prévenir les attaques ?",
+      "placeholder": "Exemple : authentification, autorisation, etc.",
+      "required": true
+    },
+    {
+      "name": "incidents_récents",
+      "type": "textarea",
+      "label": "Quels incidents de cybersécurité ont eu lieu récemment ?",
+      "placeholder": "Exemple : intrusion, ransomware, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en cybersécurité. L'utilisateur a répondu : Risques identifiés : {risques_identifiés}, Mesures prises : {mesures_prises}, Contrôles en place : {contrôles_en_place}, Incidents récents : {incidents_récents}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

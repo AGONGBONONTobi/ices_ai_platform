@@ -1,0 +1,78 @@
+{
+  "id": "plan-reduction-couts-achats",
+  "title": "Plan de réduction des coûts achats",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "budget_achats_annuel",
+      "type": "number",
+      "label": "Budget annuel des achats (en €)",
+      "placeholder": "ex. 1 200 000",
+      "required": true
+    },
+    {
+      "name": "objectif_reduction",
+      "type": "number",
+      "label": "Objectif de réduction des coûts (% de réduction)",
+      "placeholder": "ex. 15",
+      "required": true
+    },
+    {
+      "name": "principaux_fournisseurs",
+      "type": "textarea",
+      "label": "Principaux fournisseurs (liste ou description)",
+      "placeholder": "ex. Fournisseur A, Fournisseur B, ...",
+      "required": true
+    },
+    {
+      "name": "niveau_de_collaboration_fournisseurs",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Niveau de collaboration avec les fournisseurs",
+      "placeholder": "Sélectionnez",
+      "required": true
+    },
+    {
+      "name": "principales_catégories_de_produits",
+      "type": "textarea",
+      "label": "Principales catégories de produits achetés",
+      "placeholder": "ex. Matériaux de construction, Équipements informatiques, ...",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Budget annuel des achats: {budget_achats_annuel}, Objectif de réduction: {objectif_reduction}%, Principaux fournisseurs: {principaux_fournisseurs}, Niveau de collaboration avec les fournisseurs: {niveau_de_collaboration_fournisseurs}, Principales catégories de produits: {principales_catégories_de_produits}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

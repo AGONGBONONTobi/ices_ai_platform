@@ -1,0 +1,71 @@
+{
+  "id": "audit-investissements-et-capex",
+  "title": "Audit des investissements & CAPEX",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Présentez les objectifs de l'audit des investissements et CAPEX.",
+      "placeholder": "Exemple : identifier les opportunités d'amélioration, évaluer les risques, etc.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Analyse financière",
+        "Analyse technique",
+        "Analyse stratégique"
+      ],
+      "label": "Quel type d'analyse souhaitez-vous effectuer ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Quel est le montant total des investissements à auditer ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quels sont les principaux critères d'évaluation pour les investissements ?",
+      "placeholder": "Exemple : rentabilité, impact environnemental, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audit des investissements et CAPEX. L'utilisateur a répondu : Objectifs de l'audit : {variable1}, Type d'analyse : {variable2}, Montant total des investissements : {variable3}, Critères d'évaluation : {variable4}. Analyse ces informations et proposez un plan d'action pour améliorer les investissements et CAPEX de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

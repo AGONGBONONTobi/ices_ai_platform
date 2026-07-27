@@ -1,0 +1,72 @@
+{
+  "id": "template-politique-diversite-inclusion",
+  "title": "Template de politique diversité & inclusion",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Définir les objectifs de la politique de diversité et inclusion",
+      "placeholder": "Exemple : Promouvoir une culture d'inclusion et de respect",
+      "required": true
+    },
+    {
+      "name": "principes",
+      "type": "text",
+      "label": "Définir les principes de la politique de diversité et inclusion",
+      "placeholder": "Exemple : Égalité des chances, respect de la diversité, etc.",
+      "required": true
+    },
+    {
+      "name": "mesures",
+      "type": "textarea",
+      "label": "Décrire les mesures à mettre en place pour atteindre les objectifs",
+      "placeholder": "Exemple : Formation sur la diversité, création d'un comité d'inclusion, etc.",
+      "required": true
+    },
+    {
+      "name": "responsabilités",
+      "type": "select",
+      "options": [
+        "Direction",
+        "HR",
+        "Equipe de gestion",
+        "Autres"
+      ],
+      "label": "Définir les responsabilités de chaque partie prenante",
+      "placeholder": "Exemple : La direction est responsable de la mise en place de la politique",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs : {objectifs}, Principes : {principes}, Mesures : {mesures}, Responsabilités : {responsabilités}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

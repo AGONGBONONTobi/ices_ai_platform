@@ -1,0 +1,77 @@
+{
+  "id": "plan-de-financement-import-export-trade-finance",
+  "title": "Plan de financement import-export & trade finance",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "montant-import",
+      "type": "number",
+      "label": "Montant d'import",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "montant-export",
+      "type": "number",
+      "label": "Montant d'export",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "type-de-financement",
+      "type": "select",
+      "options": [
+        "Financement à court terme",
+        "Financement à long terme"
+      ],
+      "label": "Type de financement",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "description-projet",
+      "type": "textarea",
+      "label": "Description du projet",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a répondu : Entreprise: {entreprise}, Montant d'import: {montant-import}, Montant d'export: {montant-export}, Type de financement: {type-de-financement}, Description du projet: {description-projet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-capitalisation-des-experiences-de-projet",
+  "title": "Outil de capitalisation des expériences de projet",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "objectif_projet",
+      "type": "textarea",
+      "label": "Quel était l'objectif principal du projet ?",
+      "placeholder": "Exemple : Améliorer la satisfaction client",
+      "required": true
+    },
+    {
+      "name": "resultat_obtenu",
+      "type": "text",
+      "label": "Quels résultats avez-vous obtenus ?",
+      "placeholder": "Exemple : Augmentation de 15% de la satisfaction client",
+      "required": true
+    },
+    {
+      "name": "difficultes_rencontrees",
+      "type": "textarea",
+      "label": "Quelles difficultés avez-vous rencontrées lors du projet ?",
+      "placeholder": "Exemple : Problèmes de communication avec l'équipe",
+      "required": true
+    },
+    {
+      "name": "succes_mesures",
+      "type": "select",
+      "options": [
+        "Indicateurs de performance clés (KPI)",
+        "Retour sur investissement (ROI)",
+        "Taux de satisfaction"
+      ],
+      "label": "Comment mesurez-vous le succès du projet ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous avez répondu : Objectif du projet : {objectif_projet}, Résultat obtenu : {resultat_obtenu}, Difficultés rencontrées : {difficultes_rencontrees}, Succès mesuré par : {succes_mesures}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

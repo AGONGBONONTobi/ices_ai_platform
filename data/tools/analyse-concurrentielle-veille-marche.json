@@ -1,0 +1,78 @@
+{
+  "id": "analyse-concurrentielle-veille-marche",
+  "title": "Analyse concurrentielle & veille marché",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "entreprise-concurrente",
+      "type": "text",
+      "label": "Nom de l'entreprise concurrente",
+      "placeholder": "Exemple : Amazon",
+      "required": true
+    },
+    {
+      "name": "strategie-marche",
+      "type": "textarea",
+      "label": "Stratégie de marché de l'entreprise concurrente",
+      "placeholder": "Exemple : ...",
+      "required": true
+    },
+    {
+      "name": "pays-cible",
+      "type": "select",
+      "options": [
+        "France",
+        "Europe",
+        "Monde"
+      ],
+      "label": "Pays cible de l'entreprise concurrente",
+      "placeholder": "Exemple : France",
+      "required": true
+    },
+    {
+      "name": "budget-publicite",
+      "type": "number",
+      "label": "Budget publicité de l'entreprise concurrente",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    },
+    {
+      "name": "positionnement-marque",
+      "type": "textarea",
+      "label": "Positionnement de la marque de l'entreprise concurrente",
+      "placeholder": "Exemple : ...",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise concurrente: {entreprise-concurrente}, Stratégie de marché : {strategie-marche}, Pays cible : {pays-cible}, Budget publicité : {budget-publicite}, Positionnement de la marque : {positionnement-marque}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

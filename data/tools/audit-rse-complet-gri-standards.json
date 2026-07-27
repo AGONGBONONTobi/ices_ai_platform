@@ -1,0 +1,78 @@
+{
+  "id": "audit-rse-complet-gri-standards",
+  "title": "Audit RSE complet (GRI Standards)",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Société Générale",
+      "required": true
+    },
+    {
+      "name": "annee",
+      "type": "number",
+      "label": "Année de l'audit",
+      "placeholder": "Exemple : 2022",
+      "required": true
+    },
+    {
+      "name": "type-activite",
+      "type": "select",
+      "options": [
+        "Industrie",
+        "Services",
+        "Finances"
+      ],
+      "label": "Type d'activité de l'entreprise",
+      "placeholder": "Exemple : Industrie",
+      "required": true
+    },
+    {
+      "name": "impact-environnemental",
+      "type": "textarea",
+      "label": "Impact environnemental de l'entreprise (ex : émissions de gaz à effet de serre, consommation d'eau, déchets)",
+      "placeholder": "Exemple : L'entreprise émet 10 000 tonnes de CO2 par an et consomme 50 000 mètres cubes d'eau par mois.",
+      "required": true
+    },
+    {
+      "name": "impact-social",
+      "type": "textarea",
+      "label": "Impact social de l'entreprise (ex : droits de l'homme, équité salariale, santé et sécurité au travail)",
+      "placeholder": "Exemple : L'entreprise a mis en place un programme de formation pour les employés et a signé une charte des droits de l'homme.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE. L'utilisateur a répondu : Entreprise : {entreprise}, Année : {annee}, Type d'activité : {type-activite}, Impact environnemental : {impact-environnemental}, Impact social : {impact-social}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (environnemental et social) et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

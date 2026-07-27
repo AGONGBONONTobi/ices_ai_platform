@@ -1,0 +1,72 @@
+{
+  "id": "audit-contrats-et-obligations-juridiques",
+  "title": "Audit des contrats & obligations juridiques",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "type_contrat",
+      "type": "select",
+      "options": [
+        "Contrat de travail",
+        "Contrat de service",
+        "Contrat de licence",
+        "Autre"
+      ],
+      "label": "Quel type de contrat est-ce ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "duree_contrat",
+      "type": "number",
+      "label": "Quelle est la durée du contrat en mois ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "obligations_juridiques",
+      "type": "textarea",
+      "label": "Quelles sont les obligations juridiques spécifiques du contrat ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "risques_identifies",
+      "type": "text",
+      "label": "Quels risques ont été identifiés dans le cadre de ce contrat ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en droit. L'utilisateur a répondu : Type de contrat: {type_contrat}, Durée du contrat: {duree_contrat} mois, Obligations juridiques spécifiques: {obligations_juridiques}, Risques identifiés: {risques_identifies}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

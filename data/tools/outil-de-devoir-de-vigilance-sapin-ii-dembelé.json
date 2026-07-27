@@ -1,0 +1,85 @@
+{
+  "id": "outil-de-devoir-de-vigilance-sapin-ii-dembelé",
+  "title": "Outil de devoir de vigilance (Sapin II / Dembélé)",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Société Générale",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "BTP",
+        "Énergie",
+        "Finance",
+        "Technologie"
+      ],
+      "label": "Secteur d'activité",
+      "placeholder": "Exemple : BTP",
+      "required": true
+    },
+    {
+      "name": "région",
+      "type": "select",
+      "options": [
+        "Europe",
+        "Afrique",
+        "Asie",
+        "Amérique du Nord"
+      ],
+      "label": "Région géographique",
+      "placeholder": "Exemple : Europe",
+      "required": true
+    },
+    {
+      "name": "risques_identifiés",
+      "type": "textarea",
+      "label": "Risques identifiés dans le pays concerné",
+      "placeholder": "Exemple : Corruption, exploitation des travailleurs",
+      "required": true
+    },
+    {
+      "name": "mesures_prises",
+      "type": "textarea",
+      "label": "Mesures prises pour atténuer ces risques",
+      "placeholder": "Exemple : Contrôle interne, formation des employés",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en devoir de vigilance. L'utilisateur a répondu : Entreprise : {entreprise}, Secteur : {secteur}, Région : {région}, Risques identifiés : {risques_identifiés}, Mesures prises : {mesures_prises}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

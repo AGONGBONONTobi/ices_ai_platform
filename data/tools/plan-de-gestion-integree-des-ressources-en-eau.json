@@ -1,0 +1,71 @@
+{
+  "id": "plan-de-gestion-integree-des-ressources-en-eau",
+  "title": "Plan de gestion intégrée des ressources en eau",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources en eau disponibles sur le site ?",
+      "placeholder": "Exemple : 1000 m3/jour",
+      "required": true
+    },
+    {
+      "name": "consommation-actuelle",
+      "type": "number",
+      "label": "Quelle est la consommation actuelle d'eau sur le site ?",
+      "placeholder": "Exemple : 500 m3/jour",
+      "required": true
+    },
+    {
+      "name": "objectifs-de-reduction",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de réduction de la consommation d'eau sur le site ?",
+      "placeholder": "Exemple : Réduire la consommation d'eau de 20% d'ici 2 ans",
+      "required": true
+    },
+    {
+      "name": "methodes-de-reduction",
+      "type": "select",
+      "options": [
+        "Réduction de la consommation d'eau par les appareils",
+        "Utilisation de systèmes de récupération d'eau de pluie",
+        "Autres"
+      ],
+      "label": "Quelles sont les méthodes de réduction de la consommation d'eau prévues ?",
+      "placeholder": "Exemple : Réduction de la consommation d'eau par les appareils",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Ressources disponibles : {ressources-disponibles} m3/jour, Consommation actuelle : {consommation-actuelle} m3/jour, Objectifs de réduction : {objectifs-de-reduction}, Méthodes de réduction : {methodes-de-reduction}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

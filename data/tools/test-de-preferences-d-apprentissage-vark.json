@@ -1,0 +1,79 @@
+{
+  "id": "test-de-preferences-d-apprentissage-vark",
+  "title": "Test de préférences d'apprentissage (VARK)",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "mode-preference",
+      "type": "select",
+      "options": [
+        "Visual",
+        "Auditive",
+        "Kinesthésique",
+        "Résultat"
+      ],
+      "label": "Quel mode de préférence d'apprentissage est le plus adapté à votre style de travail ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "situations-visual",
+      "type": "textarea",
+      "label": "Quelles sont les situations dans lesquelles vous préférez apprendre de manière visuelle ?",
+      "placeholder": "Exemple : lors de présentations, lors de la lecture de graphiques, etc.",
+      "required": true
+    },
+    {
+      "name": "situations-auditive",
+      "type": "textarea",
+      "label": "Quelles sont les situations dans lesquelles vous préférez apprendre de manière auditive ?",
+      "placeholder": "Exemple : lors de conférences, lors de la lecture de podcasts, etc.",
+      "required": true
+    },
+    {
+      "name": "situations-kinesthésique",
+      "type": "textarea",
+      "label": "Quelles sont les situations dans lesquelles vous préférez apprendre de manière kinesthésique ?",
+      "placeholder": "Exemple : lors de travaux pratiques, lors de la réalisation de projets, etc.",
+      "required": true
+    },
+    {
+      "name": "situations-resultat",
+      "type": "textarea",
+      "label": "Quelles sont les situations dans lesquelles vous préférez apprendre en fonction des résultats ?",
+      "placeholder": "Exemple : lors de l'analyse de données, lors de la réalisation de tests, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Mode préférence : {mode-preference}, Situations visuelles : {situations-visual}, Situations auditives : {situations-auditive}, Situations kinesthésiques : {situations-kinesthésique}, Situations en fonction des résultats : {situations-resultat}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

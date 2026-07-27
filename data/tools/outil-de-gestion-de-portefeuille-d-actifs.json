@@ -1,0 +1,72 @@
+{
+  "id": "outil-de-gestion-de-portefeuille-d-actifs",
+  "title": "Outil de gestion de portefeuille d'actifs",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "type_d_actif",
+      "type": "select",
+      "options": [
+        "Actions",
+        "Obligations",
+        "Fonds communs de placement",
+        "Immobilier"
+      ],
+      "label": "Quel type d'actif est-ce ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "montant_investi",
+      "type": "number",
+      "label": "Quel est le montant investi ?",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    },
+    {
+      "name": "taux_de_retour",
+      "type": "number",
+      "label": "Quel est le taux de retour attendu ?",
+      "placeholder": "Exemple : 5%",
+      "required": true
+    },
+    {
+      "name": "risque_assume",
+      "type": "textarea",
+      "label": "Quel est le niveau de risque que vous êtes prêt à assumer ?",
+      "placeholder": "Exemple : Faible, Moyen, Élevé",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un conseiller financier expert. L'utilisateur a répondu : Type d'actif : {type_d_actif}, Montant investi : {montant_investi}, Taux de retour attendu : {taux_de_retour}, Niveau de risque : {risque_assume}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

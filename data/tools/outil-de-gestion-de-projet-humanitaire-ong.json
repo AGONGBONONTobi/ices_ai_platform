@@ -1,0 +1,79 @@
+{
+  "id": "outil-de-gestion-de-projet-humanitaire-ong",
+  "title": "Outil de gestion de projet humanitaire & ONG (PCM/LFA)",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "objectif_projet",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal du projet ?",
+      "placeholder": "Exemple : Réduction de la pauvreté dans la région",
+      "required": true
+    },
+    {
+      "name": "budget_alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour le projet ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "type_ONG",
+      "type": "select",
+      "options": [
+        "Humanitaire",
+        "Développement",
+        "Éducation",
+        "Santé"
+      ],
+      "label": "Quel est le type d'ONG ?",
+      "placeholder": "Exemple : Humanitaire",
+      "required": true
+    },
+    {
+      "name": "nombre_equipes",
+      "type": "number",
+      "label": "Combien d'équipes sont impliquées dans le projet ?",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "duree_projet",
+      "type": "number",
+      "label": "Quelle est la durée prévue du projet ?",
+      "placeholder": "Exemple : 12 mois",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif projet : {objectif_projet}, Budget alloué : {budget_alloue} €, Type ONG : {type_ONG}, Nombre d'équipes : {nombre_equipes}, Durée projet : {duree_projet} mois. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

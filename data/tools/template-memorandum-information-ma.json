@@ -1,0 +1,70 @@
+{
+  "id": "template-memorandum-information-ma",
+  "title": "Template de mémorandum d'information (IM) M&A",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "entreprise_cible",
+      "type": "text",
+      "label": "Nom de l'entreprise cible",
+      "placeholder": "Exemple : Entreprise XYZ",
+      "required": true
+    },
+    {
+      "name": "objectif_acquisition",
+      "type": "textarea",
+      "label": "Objectif de l'acquisition",
+      "placeholder": "Décrivez les objectifs de l'acquisition",
+      "required": true
+    },
+    {
+      "name": "type_acquisition",
+      "type": "select",
+      "options": [
+        "Achat d'actions",
+        "Achat d'actifs",
+        "Fusion"
+      ],
+      "label": "Type d'acquisition",
+      "required": true
+    },
+    {
+      "name": "valeur_acquisition",
+      "type": "number",
+      "label": "Valeur de l'acquisition (en millions d'euros)",
+      "placeholder": "Exemple : 100",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en fusions et acquisitions. L'utilisateur a fourni les informations suivantes : Entreprise cible : {entreprise_cible}, Objectif de l'acquisition : {objectif_acquisition}, Type d'acquisition : {type_acquisition}, Valeur de l'acquisition : {valeur_acquisition} millions d'euros. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe (stratégique, financier, opérationnel) et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

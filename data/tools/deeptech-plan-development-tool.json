@@ -1,0 +1,79 @@
+{
+  "id": "deeptech-plan-development-tool",
+  "title": "Plan de développement d'une deeptech",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "nom_projet",
+      "type": "text",
+      "label": "Nom du projet deeptech",
+      "placeholder": "Exemple : Projet Alpha",
+      "required": true
+    },
+    {
+      "name": "domaine_appli",
+      "type": "select",
+      "options": [
+        "Santé",
+        "Énergie",
+        "Logistique",
+        "Finances"
+      ],
+      "label": "Domaine d'application du projet deeptech",
+      "placeholder": "Exemple : Santé",
+      "required": true
+    },
+    {
+      "name": "description_projet",
+      "type": "textarea",
+      "label": "Description détaillée du projet deeptech",
+      "placeholder": "Exemple : Le projet consiste à développer une technologie innovante pour améliorer la santé des patients.",
+      "required": true
+    },
+    {
+      "name": "equipe_projet",
+      "type": "number",
+      "label": "Effectif de l'équipe de développement du projet deeptech",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "budget_projet",
+      "type": "number",
+      "label": "Budget alloué au projet deeptech",
+      "placeholder": "Exemple : 1000000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet : {nom_projet}, Domaine d'application : {domaine_appli}, Description détaillée du projet : {description_projet}, Effectif de l'équipe de développement : {equipe_projet}, Budget alloué au projet : {budget_projet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

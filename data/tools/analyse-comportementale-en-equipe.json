@@ -1,0 +1,77 @@
+{
+  "id": "analyse-comportementale-en-equipe",
+  "title": "Analyse comportementale en équipe (Team dynamics)",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "roleDansLEquipe",
+      "type": "select",
+      "options": [
+        "Leader",
+        "Membre",
+        "Facilitateur"
+      ],
+      "label": "Quel est votre rôle dans l'équipe ?",
+      "placeholder": "Sélectionnez votre rôle",
+      "required": true
+    },
+    {
+      "name": "descriptionDuProbleme",
+      "type": "textarea",
+      "label": "Décrivez les défis ou les problèmes que vous rencontrez dans votre équipe",
+      "placeholder": "Décrivez les difficultés que vous rencontrez",
+      "required": true
+    },
+    {
+      "name": "niveauDeCommunication",
+      "type": "select",
+      "options": [
+        "Très ouvert",
+        "Ouvert",
+        "Fermer",
+        "Très fermer"
+      ],
+      "label": "Quel est le niveau de communication au sein de votre équipe ?",
+      "placeholder": "Sélectionnez le niveau de communication",
+      "required": true
+    },
+    {
+      "name": "objectifsDeLEquipe",
+      "type": "text",
+      "label": "Quels sont les objectifs principaux de votre équipe ?",
+      "placeholder": "Listez les objectifs principaux",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en dynamique d'équipe. L'utilisateur a répondu : Role dans l'équipe: {roleDansLEquipe}, Description du problème: {descriptionDuProbleme}, Niveau de communication: {niveauDeCommunication}, Objectifs de l'équipe: {objectifsDeLEquipe}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (leadership, communication, objectifs), et des recommandations pour améliorer la dynamique de l'équipe.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

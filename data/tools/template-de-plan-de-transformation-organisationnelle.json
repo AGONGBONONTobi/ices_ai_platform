@@ -1,0 +1,72 @@
+{
+  "id": "template-de-plan-de-transformation-organisationnelle",
+  "title": "Template de plan de transformation organisationnelle",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectifsStrategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de votre organisation pour les prochaines années ?",
+      "placeholder": "Décrivez les objectifs clés de votre organisation",
+      "required": true
+    },
+    {
+      "name": "domainesDaction",
+      "type": "select",
+      "options": [
+        "Amélioration de la qualité",
+        "Réduction des coûts",
+        "Développement de nouveaux produits ou services",
+        "Amélioration de l'expérience client",
+        "Autre"
+      ],
+      "label": "Quels sont les principaux domaines d'action pour votre plan de transformation ?",
+      "required": true
+    },
+    {
+      "name": "ressourcesNecessaires",
+      "type": "text",
+      "label": "Quelles sont les ressources nécessaires pour mettre en œuvre votre plan de transformation ?",
+      "placeholder": "Décrivez les ressources nécessaires (financières, humaines, technologiques, etc.)",
+      "required": true
+    },
+    {
+      "name": "delaiMiseEnOeuvre",
+      "type": "number",
+      "label": "Quel est le délai prévu pour la mise en œuvre de votre plan de transformation ?",
+      "placeholder": "Indiquez le nombre de mois",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques: {objectifsStrategiques}, Domaines d'action: {domainesDaction}, Ressources nécessaires: {ressourcesNecessaires}, Délai de mise en œuvre: {delaiMiseEnOeuvre} mois. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

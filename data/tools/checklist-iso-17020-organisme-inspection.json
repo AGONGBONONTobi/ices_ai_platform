@@ -1,0 +1,76 @@
+{
+  "id": "checklist-iso-17020-organisme-inspection",
+  "title": "Checklist ISO 17020 — organisme d'inspection",
+  "category": "Inspection Technique & Vérification",
+  "inputs": [
+    {
+      "name": "structure",
+      "type": "text",
+      "label": "Quelle est la structure de votre organisme d'inspection ?",
+      "placeholder": "Exemple : Entreprise, Association, etc.",
+      "required": true
+    },
+    {
+      "name": "experience",
+      "type": "number",
+      "label": "Combien d'années d'expérience avez-vous dans le domaine de l'inspection ?",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "impartiality",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Votre organisme d'inspection est-il impartial ?",
+      "required": true
+    },
+    {
+      "name": "competence",
+      "type": "textarea",
+      "label": "Décrivez les compétences de vos inspecteurs",
+      "placeholder": "Exemple : Nos inspecteurs ont une formation spécifique en...",
+      "required": true
+    },
+    {
+      "name": "procedures",
+      "type": "textarea",
+      "label": "Décrivez vos procédures d'inspection",
+      "placeholder": "Exemple : Nous suivons une procédure stricte pour chaque inspection...",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous avez répondu : Structure: {structure}, Expérience: {experience} ans, Impartialité: {impartiality}, Compétence: {competence}, Procédures: {procedures}. Évaluez la conformité de cet organisme d'inspection selon les exigences de la norme ISO 17020 en termes d'impartialité, de compétence et de procédures. Donnez un score global sur 100, une évaluation par axe (impartialité, compétence, procédures) avec un niveau de maturité (0=Inexistant, 1=Initié, 2=Formalisé, 3=Optimisé) et des recommandations priorisées.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

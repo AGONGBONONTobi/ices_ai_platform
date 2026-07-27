@@ -1,0 +1,84 @@
+{
+  "id": "outil-de-gestion-de-la-blockchain-en-entreprise",
+  "title": "Outil de gestion de la blockchain en entreprise",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Société Générale",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Finance",
+        "Logistique",
+        "Énergie",
+        "Santé"
+      ],
+      "label": "Secteur d'activité de l'entreprise",
+      "placeholder": "Choisissez un secteur",
+      "required": true
+    },
+    {
+      "name": "probleme",
+      "type": "textarea",
+      "label": "Problème que la blockchain résout pour l'entreprise",
+      "placeholder": "Exemple : Améliorer la traçabilité des transactions",
+      "required": true
+    },
+    {
+      "name": "benefice",
+      "type": "number",
+      "label": "Avantage financier attendu de l'utilisation de la blockchain",
+      "placeholder": "Exemple : 10%",
+      "required": true
+    },
+    {
+      "name": "risque",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Niveau de risque associé à l'utilisation de la blockchain",
+      "placeholder": "Choisissez un niveau de risque",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en blockchain. L'utilisateur a répondu : Entreprise : {entreprise}, Secteur : {secteur}, Problème : {probleme}, Avantage financier attendu : {benefice}, Niveau de risque : {risque}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

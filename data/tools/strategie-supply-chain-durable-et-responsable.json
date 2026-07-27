@@ -1,0 +1,71 @@
+{
+  "id": "strategie-supply-chain-durable-et-responsable",
+  "title": "Stratégie de supply chain durable & responsable",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Quel est le nom de l'entreprise ?",
+      "placeholder": "Exemple : Amazon",
+      "required": true
+    },
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de la stratégie de supply chain durable & responsable de l'entreprise ?",
+      "placeholder": "Exemple : Réduire les émissions de gaz à effet de serre, améliorer les conditions de travail des employés, etc.",
+      "required": true
+    },
+    {
+      "name": "approches",
+      "type": "select",
+      "options": [
+        "Approche de la chaîne d'approvisionnement",
+        "Approche de la durabilité",
+        "Approche de la responsabilité sociale"
+      ],
+      "label": "Quelle approche la stratégie de supply chain durable & responsable de l'entreprise met-elle en œuvre ?",
+      "placeholder": "Exemple : Approche de la chaîne d'approvisionnement",
+      "required": true
+    },
+    {
+      "name": "resultats",
+      "type": "textarea",
+      "label": "Quels sont les résultats attendus de la stratégie de supply chain durable & responsable de l'entreprise ?",
+      "placeholder": "Exemple : Réduction des émissions de gaz à effet de serre de 10%, amélioration des conditions de travail des employés, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise : {entreprise}, Objectif : {objectif}, Approche : {approches}, Résultats : {resultats}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

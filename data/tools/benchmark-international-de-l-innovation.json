@@ -1,0 +1,80 @@
+{
+  "id": "benchmark-international-de-l-innovation",
+  "title": "Benchmark international de l'innovation",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "pays",
+      "type": "select",
+      "options": [
+        "États-Unis",
+        "Chine",
+        "Allemagne",
+        "France",
+        "Japon"
+      ],
+      "label": "Quel est le pays dans lequel vous souhaitez évaluer l'innovation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "industrie",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Énergie",
+        "Santé",
+        "Transport",
+        "Agriculture"
+      ],
+      "label": "Quelle est l'industrie dans laquelle vous souhaitez évaluer l'innovation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "score-innovation",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, comment évaluez-vous la capacité de l'innovation dans ce pays/industrie ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "challenges",
+      "type": "textarea",
+      "label": "Quels sont les principaux défis à relever pour accélérer l'innovation dans ce pays/industrie ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en innovation. L'utilisateur a répondu : Pays: {pays}, Industrie: {industrie}, Score innovation: {score-innovation}, Challenges: {challenges}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

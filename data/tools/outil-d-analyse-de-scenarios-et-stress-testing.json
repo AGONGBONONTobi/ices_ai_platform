@@ -1,0 +1,71 @@
+{
+  "id": "outil-d-analyse-de-scenarios-et-stress-testing",
+  "title": "Outil d'analyse de scénarios & stress testing",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "scenarios",
+      "type": "textarea",
+      "label": "Décrivez les scénarios de stress testing",
+      "placeholder": "Exemple : perte de données, panne informatique, etc.",
+      "required": true
+    },
+    {
+      "name": "risques_identifies",
+      "type": "select",
+      "options": [
+        "Perte de données",
+        "Panne informatique",
+        "Problèmes de sécurité"
+      ],
+      "label": "Quels risques avez-vous identifiés ?",
+      "placeholder": "Sélectionnez les risques pertinents",
+      "required": true
+    },
+    {
+      "name": "impact_potentiel",
+      "type": "number",
+      "label": "Quel est l'impact potentiel de ces risques ?",
+      "placeholder": "Sur une échelle de 1 à 10",
+      "required": true
+    },
+    {
+      "name": "probabilite_occurrence",
+      "type": "number",
+      "label": "Quelle est la probabilité d'occurrence de ces risques ?",
+      "placeholder": "Sur une échelle de 1 à 10",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des risques. L'utilisateur a répondu : Scénarios : {scenarios}, Risques identifiés : {risques_identifies}, Impact potentiel : {impact_potentiel}, Probabilité d'occurrence : {probabilite_occurrence}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

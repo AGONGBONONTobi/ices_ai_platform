@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-simulation-et-mise-en-situation-pedagogique",
+  "title": "Outil de simulation & mise en situation pédagogique",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "age",
+      "type": "number",
+      "label": "Quel est l'âge de l'apprenant ?",
+      "placeholder": "Saisir l'âge de l'apprenant",
+      "required": true
+    },
+    {
+      "name": "niveau-scolaire",
+      "type": "select",
+      "options": [
+        "CE1",
+        "CE2",
+        "CM1",
+        "CM2",
+        "6e",
+        "5e",
+        "4e",
+        "3e",
+        "2e",
+        "1e"
+      ],
+      "label": "Quel est le niveau scolaire de l'apprenant ?",
+      "placeholder": "Sélectionner le niveau scolaire",
+      "required": true
+    },
+    {
+      "name": "motivation",
+      "type": "textarea",
+      "label": "Quelles sont les motivations de l'apprenant ?",
+      "placeholder": "Saisir les motivations de l'apprenant",
+      "required": true
+    },
+    {
+      "name": "difficultes",
+      "type": "textarea",
+      "label": "Quelles sont les difficultés de l'apprenant ?",
+      "placeholder": "Saisir les difficultés de l'apprenant",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un enseignant expérimenté. L'apprenant a  {age} ans et est au {niveau-scolaire}. Ses motivations sont : {motivation} et il rencontre les difficultés suivantes : {difficultes}. Analyse ces informations et propose une stratégie pédagogique pour aider l'apprenant à progresser.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

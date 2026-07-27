@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-gestion-des-fonds-de-capital-risque",
+  "title": "Outil de gestion des fonds de capital-risque",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "investissementInitial",
+      "type": "number",
+      "label": "Investissement initial (en millions d'euros)",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "tauxDeRendement",
+      "type": "number",
+      "label": "Taux de rendement attendu (en %)",
+      "placeholder": "Exemple : 8",
+      "required": true
+    },
+    {
+      "name": "periodeInvestissement",
+      "type": "select",
+      "options": [
+        "Court terme (moins de 5 ans)",
+        "Moyen terme (5-10 ans)",
+        "Long terme (plus de 10 ans)"
+      ],
+      "label": "Période d'investissement",
+      "placeholder": "Exemple : Court terme",
+      "required": true
+    },
+    {
+      "name": "risquesAssumes",
+      "type": "textarea",
+      "label": "Risques assumés (liste séparée par des points)",
+      "placeholder": "Exemple : Risque de marché, Risque de liquidité, Risque de crédit",
+      "required": true
+    },
+    {
+      "name": "objectifsInvestissement",
+      "type": "textarea",
+      "label": "Objectifs d'investissement (liste séparée par des points)",
+      "placeholder": "Exemple : Génération de revenus, Croissance du capital, Diversification du portefeuille",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion de fonds de capital-risque. L'utilisateur a répondu : Investissement initial : {investissementInitial} millions d'euros, Taux de rendement attendu : {tauxDeRendement} %, Période d'investissement : {periodeInvestissement}, Risques assumés : {risquesAssumes}, Objectifs d'investissement : {objectifsInvestissement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

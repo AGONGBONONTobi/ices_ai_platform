@@ -1,0 +1,71 @@
+{
+  "id": "plan-de-developpement-du-leadership-feminin",
+  "title": "Plan de développement du leadership féminin",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de l'organisation pour le développement du leadership féminin ?",
+      "placeholder": "Exemple : Améliorer la représentation féminine au sein des équipes de direction",
+      "required": true
+    },
+    {
+      "name": "barriers-a-l-ascension",
+      "type": "select",
+      "options": [
+        "Manque de confiance en soi",
+        "Manque de soutien de l'équipe",
+        "Manque de ressources pour la formation"
+      ],
+      "label": "Quels sont les principaux obstacles à l'ascension des femmes dans l'organisation ?",
+      "placeholder": "Sélectionnez les options qui s'appliquent",
+      "required": true
+    },
+    {
+      "name": "strategie-de-developpement",
+      "type": "text",
+      "label": "Quelle est la stratégie de développement que vous proposez pour améliorer le leadership féminin ?",
+      "placeholder": "Exemple : Formation en leadership, mentorat, création d'un réseau de femmes leaders",
+      "required": true
+    },
+    {
+      "name": "indicateurs-de-suivi",
+      "type": "textarea",
+      "label": "Quels sont les indicateurs de suivi que vous proposez pour mesurer l'efficacité du plan de développement du leadership féminin ?",
+      "placeholder": "Exemple : Nombre de femmes promues au sein de l'organisation, taux de satisfaction des femmes dans leur rôle",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en développement du leadership féminin. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Barriers à l'ascension : {barriers-a-l-ascension}, Stratégie de développement : {strategie-de-developpement}, Indicateurs de suivi : {indicateurs-de-suivi}. Analyse ces informations et propose un plan de développement du leadership féminin complet, avec des recommandations spécifiques pour l'organisation.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

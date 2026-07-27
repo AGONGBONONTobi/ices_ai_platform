@@ -1,0 +1,72 @@
+{
+  "id": "strategie-plateforme-marketplace-api",
+  "title": "Stratégie de plateforme, marketplace & API",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de la plateforme, du marketplace et de l'API ?",
+      "placeholder": "Exemple : Augmenter les ventes, améliorer l'expérience utilisateur, etc.",
+      "required": true
+    },
+    {
+      "name": "cible-public",
+      "type": "select",
+      "options": [
+        "Consommateurs",
+        "Professionnels",
+        "Entreprises",
+        "Autres"
+      ],
+      "label": "Qui est la cible publique de la plateforme, du marketplace et de l'API ?",
+      "placeholder": "Exemple : Consommateurs",
+      "required": true
+    },
+    {
+      "name": "avantages-competitifs",
+      "type": "text",
+      "label": "Quels sont les avantages compétitifs de la plateforme, du marketplace et de l'API par rapport aux concurrents ?",
+      "placeholder": "Exemple : Prix compétitif, qualité de service exceptionnelle, etc.",
+      "required": true
+    },
+    {
+      "name": "risques-stratégiques",
+      "type": "textarea",
+      "label": "Quels sont les risques stratégiques potentiels de la plateforme, du marketplace et de l'API ?",
+      "placeholder": "Exemple : Perte de marché partage, concurrence accrue, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Cible publique : {cible-public}, Avantages compétitifs : {avantages-competitifs}, Risques stratégiques : {risques-stratégiques}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

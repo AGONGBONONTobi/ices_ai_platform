@@ -1,0 +1,80 @@
+{
+  "id": "outil-production-contenu-ia-assiste",
+  "title": "Outil de production de contenu IA-assisté",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "select",
+      "options": [
+        "Article de blog",
+        "Post LinkedIn",
+        "Newsletter",
+        "Vidéo script",
+        "Infographie"
+      ],
+      "label": "Quel type de contenu souhaitez-vous produire ?",
+      "placeholder": "Sélectionnez un type",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de ce contenu ?",
+      "placeholder": "Ex: augmenter la notoriété, générer des leads, éduquer",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "text",
+      "label": "À qui s'adresse ce contenu ?",
+      "placeholder": "Ex: décideurs, clients, partenaires",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "number",
+      "label": "Quel budget avez-vous alloué à la création de ce contenu ?",
+      "placeholder": "Ex: 500",
+      "required": false
+    },
+    {
+      "name": "variable5",
+      "type": "textarea",
+      "label": "Y a-t-il des contraintes particulières ou des exigences spécifiques à respecter ?",
+      "placeholder": "Ex: ton de voix, longueur, format",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Variable1: {variable1}, Variable2: {variable2}, Variable3: {variable3}, Variable4: {variable4}, Variable5: {variable5}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

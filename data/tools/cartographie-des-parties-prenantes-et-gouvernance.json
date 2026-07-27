@@ -1,0 +1,72 @@
+{
+  "id": "cartographie-des-parties-prenantes-et-gouvernance",
+  "title": "Cartographie des parties prenantes & gouvernance",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "partiesPrenantes",
+      "type": "textarea",
+      "label": "Listez les parties prenantes clés (organisations, individus, groupes) impliquées dans le projet ou l'initiative.",
+      "placeholder": "Exemple : Client, Fournisseur, Équipe de projet, etc.",
+      "required": true
+    },
+    {
+      "name": "responsabilites",
+      "type": "select",
+      "options": [
+        "Définition des objectifs",
+        "Définition des rôles et responsabilités",
+        "Définition des indicateurs de performance",
+        "Autre"
+      ],
+      "label": "Quel est le niveau de responsabilité des parties prenantes dans la gouvernance du projet ou de l'initiative ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "indicateursDePerformance",
+      "type": "text",
+      "label": "Quels sont les indicateurs de performance clés pour mesurer la réussite du projet ou de l'initiative ?",
+      "placeholder": "Exemple : Taux de satisfaction, Indicateur de performance clé (KPI), etc.",
+      "required": true
+    },
+    {
+      "name": "recapitulatif",
+      "type": "textarea",
+      "label": "Résumez les principaux points issus de la cartographie des parties prenantes et de la gouvernance.",
+      "placeholder": "Exemple : La gouvernance du projet est assurée par une équipe de projet composée de représentants de chaque partie prenante.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en stratégie et management. L'utilisateur a répondu : Parties prenantes : {partiesPrenantes}, Responsabilités : {responsabilites}, Indicateurs de performance : {indicateursDePerformance}, Recapitulatif : {recapitulatif}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

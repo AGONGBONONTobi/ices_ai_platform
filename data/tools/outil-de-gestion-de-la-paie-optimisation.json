@@ -1,0 +1,77 @@
+{
+  "id": "outil-de-gestion-de-la-paie-optimisation",
+  "title": "Outil de gestion de la paie & optimisation",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "salaire_brut",
+      "type": "number",
+      "label": "Quel est le salaire brut mensuel de l'employé ?",
+      "placeholder": "Exemple : 3000",
+      "required": true
+    },
+    {
+      "name": "taux_impot",
+      "type": "number",
+      "label": "Quel est le taux d'imposition de l'employé ?",
+      "placeholder": "Exemple : 20",
+      "required": true
+    },
+    {
+      "name": "frais_transport",
+      "type": "number",
+      "label": "Quels sont les frais de transport mensuels de l'employé ?",
+      "placeholder": "Exemple : 100",
+      "required": true
+    },
+    {
+      "name": "frais_repas",
+      "type": "number",
+      "label": "Quels sont les frais de repas mensuels de l'employé ?",
+      "placeholder": "Exemple : 50",
+      "required": true
+    },
+    {
+      "name": "choix_type_contrat",
+      "type": "select",
+      "options": [
+        "CDD",
+        "CDI"
+      ],
+      "label": "Quel type de contrat a l'employé ?",
+      "placeholder": "Exemple : CDD",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion de la paie. L'utilisateur a répondu : Salaire brut : {salaire_brut}, Taux d'imposition : {taux_impot}%, Frais de transport : {frais_transport}, Frais de repas : {frais_repas}, Type de contrat : {choix_type_contrat}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

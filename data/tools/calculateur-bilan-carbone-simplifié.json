@@ -1,0 +1,73 @@
+{
+  "id": "calculateur-bilan-carbone-simplifié",
+  "title": "Calculateur bilan carbone simplifié",
+  "category": "Labels ESG / RSE / Durabilité",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Industrie",
+        "Transport",
+        "Agriculture",
+        "Bâtiment",
+        "Services"
+      ],
+      "label": "Secteur d'activité",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "consommation_energie",
+      "type": "number",
+      "label": "Consommation d'énergie (kWh)",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    },
+    {
+      "name": "emissions_directes",
+      "type": "number",
+      "label": "Émissions directes de gaz à effet de serre (tCO2e)",
+      "placeholder": "Exemple : 500",
+      "required": true
+    },
+    {
+      "name": "description_activite",
+      "type": "textarea",
+      "label": "Description de votre activité",
+      "placeholder": "Exemple : description de votre activité",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en bilan carbone. L'utilisateur a répondu : Secteur: {secteur}, Consommation d'énergie: {consommation_energie} kWh, Émissions directes: {emissions_directes} tCO2e, Description de l'activité: {description_activite}. Estimez les émissions de gaz à effet de serre pour les scopes 1, 2 et 3 selon le secteur et les informations fournies. Fournissez un score global sur 100, une évaluation par axe (scopes 1, 2 et 3) avec leur score, et des recommandations prioritaires pour réduire les émissions et atteindre les objectifs de certification CDP ou d'engagement Net Zero.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "id": "plan-maintenance-totale-tpm",
+  "title": "Plan de maintenance totale (TPM)",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "nombre_equipes",
+      "type": "number",
+      "label": "Nombre d'équipes dédiées à la TPM",
+      "placeholder": "Ex: 5",
+      "required": true
+    },
+    {
+      "name": "taux_maintenance_preventive",
+      "type": "number",
+      "label": "Taux de maintenance préventive (%)",
+      "placeholder": "Ex: 75",
+      "required": true
+    },
+    {
+      "name": "temps_moyen_reparation",
+      "type": "number",
+      "label": "Temps moyen de réparation (heures)",
+      "placeholder": "Ex: 2.5",
+      "required": true
+    },
+    {
+      "name": "niveau_qualite",
+      "type": "select",
+      "options": [
+        "Excellent",
+        "Bon",
+        "Moyen",
+        "Faible"
+      ],
+      "label": "Niveau de qualité actuel",
+      "placeholder": "Choisissez une option",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Commentaires supplémentaires",
+      "placeholder": "Ex: Problèmes récurrents",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nombre d'équipes: {nombre_equipes}, Taux de maintenance préventive: {taux_maintenance_preventive}%, Temps moyen de réparation: {temps_moyen_reparation}h, Niveau de qualité: {niveau_qualite}, Commentaires: {commentaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

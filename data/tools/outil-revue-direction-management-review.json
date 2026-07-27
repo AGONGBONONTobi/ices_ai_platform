@@ -1,0 +1,78 @@
+{
+  "id": "outil-revue-direction-management-review",
+  "title": "Outil de revue de direction & management review",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "review_name",
+      "type": "text",
+      "label": "Nom de la revue",
+      "placeholder": "Ex: Revue de direction Q3 2024",
+      "required": true
+    },
+    {
+      "name": "frequency",
+      "type": "select",
+      "options": [
+        "Mensuelle",
+        "Trimestrielle",
+        "Annuelle"
+      ],
+      "label": "Fréquence de la revue",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "performance_scale",
+      "type": "number",
+      "label": "Échelle de performance (1-10)",
+      "placeholder": "Ex: 8",
+      "required": true
+    },
+    {
+      "name": "observations",
+      "type": "textarea",
+      "label": "Observations générales",
+      "placeholder": "Ex: Les objectifs ont été atteints...",
+      "required": false
+    },
+    {
+      "name": "review_date",
+      "type": "text",
+      "label": "Date de la revue",
+      "placeholder": "Ex: 15/09/2024",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en qualité et excellence opérationnelle. L'utilisateur a répondu : Review Name: {review_name}, Frequency: {frequency}, Performance Scale: {performance_scale}, Observations: {observations}, Review Date: {review_date}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (ex: Objectifs, Processus, Résultats, Leadership), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

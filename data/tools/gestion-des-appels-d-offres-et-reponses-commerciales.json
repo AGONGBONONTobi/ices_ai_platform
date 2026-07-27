@@ -1,0 +1,82 @@
+{
+  "id": "gestion-des-appels-d-offres-et-reponses-commerciales",
+  "title": "Gestion des appels d'offres & réponses commerciales",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "type-d-offre",
+      "type": "select",
+      "options": [
+        "Appel d'offre",
+        "Réponse commerciale"
+      ],
+      "label": "Quel type d'offre est-ce ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "nom-de-l-offre",
+      "type": "text",
+      "label": "Quel est le nom de l'offre ?",
+      "placeholder": "Exemple : Projet XYZ",
+      "required": true
+    },
+    {
+      "name": "description-de-l-offre",
+      "type": "textarea",
+      "label": "Quelle est la description de l'offre ?",
+      "placeholder": "Exemple : Nous proposons un service de conseil en marketing pour aider l'entreprise à atteindre ses objectifs.",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour l'offre ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "duree-de-l-offre",
+      "type": "select",
+      "options": [
+        "Court terme",
+        "Moyen terme",
+        "Long terme"
+      ],
+      "label": "Quelle est la durée de l'offre ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Type d'offre : {type-d-offre}, Nom de l'offre : {nom-de-l-offre}, Description de l'offre : {description-de-l-offre}, Budget alloué : {budget-alloue} €, Durée de l'offre : {duree-de-l-offre}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

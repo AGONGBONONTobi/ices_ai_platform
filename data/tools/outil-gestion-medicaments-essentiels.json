@@ -1,0 +1,72 @@
+{
+  "id": "outil-gestion-medicaments-essentiels",
+  "title": "Outil de gestion des médicaments essentiels",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "pathologie",
+      "type": "select",
+      "options": [
+        "Diabète",
+        "Hhypertension",
+        "Asthme",
+        "Maladie cardiaque"
+      ],
+      "label": "Quelle est la pathologie principale du patient ?",
+      "placeholder": "Sélectionnez une pathologie",
+      "required": true
+    },
+    {
+      "name": "medicamentsActuels",
+      "type": "textarea",
+      "label": "Quels sont les médicaments actuellement pris par le patient ?",
+      "placeholder": "Liste des médicaments",
+      "required": true
+    },
+    {
+      "name": "allergies",
+      "type": "text",
+      "label": "Le patient a-t-il des allergies ?",
+      "placeholder": "Description des allergies",
+      "required": false
+    },
+    {
+      "name": "agePatient",
+      "type": "number",
+      "label": "Quel est l'âge du patient ?",
+      "placeholder": "Âge du patient",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un pharmacologue. Le patient a {agePatient} ans, il est atteint de {pathologie}, il prend actuellement les médicaments suivants : {medicamentsActuels} et a des allergies : {allergies}. Évaluez la nécessité de ces médicaments et donnez un score global sur 100. Proposez une évaluation par axe (efficacité, sécurité, observance) et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "audit-securite-physique-protection-des-biens",
+  "title": "Audit de sécurité physique & protection des biens",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "zone-geographique",
+      "type": "text",
+      "label": "Quelle est la zone géographique où se situe l'installation ou le site à auditer ?",
+      "placeholder": "Exemple : Europe, Amérique du Nord, etc.",
+      "required": true
+    },
+    {
+      "name": "type-d-installation",
+      "type": "select",
+      "options": [
+        "Bâtiment industriel",
+        "Bâtiment administratif",
+        "Site de stockage",
+        "Autre"
+      ],
+      "label": "Quel est le type d'installation ou de site à auditer ?",
+      "placeholder": "Sélectionnez un type d'installation",
+      "required": true
+    },
+    {
+      "name": "description-des-mesures-de-securite",
+      "type": "textarea",
+      "label": "Quelles sont les mesures de sécurité physiques actuellement en place pour protéger les biens et les personnes sur le site ?",
+      "placeholder": "Exemple : caméras de surveillance, portes de sécurité, etc.",
+      "required": true
+    },
+    {
+      "name": "description-des-menaces-potentiels",
+      "type": "textarea",
+      "label": "Quelles sont les menaces potentielles pour la sécurité physique et la protection des biens sur le site ?",
+      "placeholder": "Exemple : vandalisme, incendie, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en sécurité physique. L'utilisateur a répondu : Zone géographique : {zone-geographique}, Type d'installation : {type-d-installation}, Mesures de sécurité actuelles : {description-des-mesures-de-securite}, Menaces potentielles : {description-des-menaces-potentiels}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "id": "etude-faisabilite-projet-energetique",
+  "title": "Étude de faisabilité d'un projet énergétique",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "nom_projet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple: Projet SolarVille",
+      "required": true
+    },
+    {
+      "name": "budget_estime",
+      "type": "number",
+      "label": "Budget estimé (en €)",
+      "placeholder": "Exemple: 500000",
+      "required": true
+    },
+    {
+      "name": "type_projet",
+      "type": "select",
+      "options": [
+        "Production d'électricité",
+        "Stockage d'énergie",
+        "Efficacité énergétique",
+        "Autre"
+      ],
+      "label": "Type de projet énergétique",
+      "placeholder": "Sélectionnez un type",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Objectifs principaux",
+      "placeholder": "Exemple: Réduire les émissions de CO2 de 20%",
+      "required": true
+    },
+    {
+      "name": "contraintes",
+      "type": "textarea",
+      "label": "Contraintes réglementaires",
+      "placeholder": "Exemple: Normes ISO 50001",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet: {nom_projet}, Budget estimé: {budget_estime}, Type de projet: {type_projet}, Objectifs principaux: {objectifs}, Contraintes réglementaires: {contraintes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

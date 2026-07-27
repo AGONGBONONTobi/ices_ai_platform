@@ -1,0 +1,76 @@
+{
+  "id": "diagnostic-transformation-agile",
+  "title": "Diagnostic de la transformation agile",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "niveauDeMaturite",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est votre niveau de maturité actuel en termes de transformation agile ?",
+      "placeholder": "Sélectionnez votre niveau de maturité",
+      "required": true
+    },
+    {
+      "name": "objectifsStrategiques",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs stratégiques pour la transformation agile ?",
+      "placeholder": "Décrivez vos objectifs stratégiques",
+      "required": true
+    },
+    {
+      "name": "nombreDEquipes",
+      "type": "number",
+      "label": "Combien d'équipes seront concernées par la transformation agile ?",
+      "placeholder": "Entrez le nombre d'équipes",
+      "required": true
+    },
+    {
+      "name": "frequenceDeRetrospectives",
+      "type": "select",
+      "options": [
+        "Hebdomadaire",
+        "Mensuelle",
+        "Trimestrielle"
+      ],
+      "label": "Quelle est la fréquence des rétrospectives dans vos équipes ?",
+      "placeholder": "Sélectionnez la fréquence des rétrospectives",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Niveau de maturité : {niveauDeMaturite}, Objectifs stratégiques : {objectifsStrategiques}, Nombre d'équipes : {nombreDEquipes}, Fréquence de rétrospectives : {frequenceDeRetrospectives}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

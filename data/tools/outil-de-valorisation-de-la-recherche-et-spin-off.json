@@ -1,0 +1,79 @@
+{
+  "id": "outil-de-valorisation-de-la-recherche-et-spin-off",
+  "title": "Outil de valorisation de la recherche & spin-off",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "nom-projet",
+      "type": "text",
+      "label": "Nom du projet de recherche ou spin-off",
+      "placeholder": "Exemple : Projet XYZ",
+      "required": true
+    },
+    {
+      "name": "domaine-recherche",
+      "type": "select",
+      "options": [
+        "Biologie",
+        "Physique",
+        "Informatique",
+        "Autres"
+      ],
+      "label": "Domaine de recherche du projet",
+      "placeholder": "Exemple : Biologie",
+      "required": true
+    },
+    {
+      "name": "description-projet",
+      "type": "textarea",
+      "label": "Description détaillée du projet",
+      "placeholder": "Exemple : Le projet XYZ vise à développer une nouvelle technologie pour la santé.",
+      "required": true
+    },
+    {
+      "name": "impact-économique",
+      "type": "number",
+      "label": "Impact économique potentiel du projet",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "partenariats",
+      "type": "textarea",
+      "label": "Partenariats potentiels pour le projet",
+      "placeholder": "Exemple : Partenariats avec des entreprises de la région.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un expert en valorisation de la recherche. L'utilisateur a répondu : Nom du projet : {nom-projet}, Domaine de recherche : {domaine-recherche}, Description du projet : {description-projet}, Impact économique potentiel : {impact-économique}, Partenariats potentiels : {partenariats}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

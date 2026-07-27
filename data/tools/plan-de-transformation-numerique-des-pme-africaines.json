@@ -1,0 +1,72 @@
+{
+  "id": "plan-de-transformation-numerique-des-pme-africaines",
+  "title": "Plan de transformation numérique des PME africaines",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de la transformation numérique de votre PME ?",
+      "placeholder": "Exemple : Améliorer la compétitivité, accroître la productivité, etc.",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources (humaines, financières, matérielles) disponibles pour la transformation numérique ?",
+      "placeholder": "Exemple : 10 employés, 100 000 euros, etc.",
+      "required": true
+    },
+    {
+      "name": "technologies-soutenues",
+      "type": "select",
+      "options": [
+        "IA",
+        "Blockchain",
+        "Internet des Objets (IoT)",
+        "Cloud Computing"
+      ],
+      "label": "Quelles technologies soutiendront la transformation numérique de votre PME ?",
+      "placeholder": "Sélectionnez les technologies pertinentes",
+      "required": true
+    },
+    {
+      "name": "challenges-prevus",
+      "type": "textarea",
+      "label": "Quels sont les défis potentiels que vous prévoyez rencontrer pendant la transformation numérique ?",
+      "placeholder": "Exemple : Résistance à l'innovation, manque de compétences, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en transformation numérique. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Ressources disponibles : {ressources-disponibles}, Technologies soutenues : {technologies-soutenues}, Défis prévus : {challenges-prevus}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

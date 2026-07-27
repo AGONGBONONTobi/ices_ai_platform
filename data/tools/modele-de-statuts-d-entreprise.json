@@ -1,0 +1,73 @@
+{
+  "id": "modele-de-statuts-d-entreprise",
+  "title": "Template de statuts d'entreprise (SARL, SA, SAS...)",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "forme_juridique",
+      "type": "select",
+      "options": [
+        "SARL",
+        "SA",
+        "SAS",
+        "SASU",
+        "EURL"
+      ],
+      "label": "Quelle est la forme juridique de votre entreprise ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "raison_sociale",
+      "type": "text",
+      "label": "Quelle est la raison sociale de votre entreprise ?",
+      "placeholder": "Exemple : Entreprise XYZ",
+      "required": true
+    },
+    {
+      "name": "siege_social",
+      "type": "textarea",
+      "label": "Quel est l'adresse du siège social de votre entreprise ?",
+      "placeholder": "Exemple : 12 rue de l'entreprise, 75001 Paris",
+      "required": true
+    },
+    {
+      "name": "capital_social",
+      "type": "number",
+      "label": "Quel est le capital social de votre entreprise ?",
+      "placeholder": "Exemple : 1000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant juridique expert. L'utilisateur a répondu : Forme juridique : {forme_juridique}, Raison sociale : {raison_sociale}, Siège social : {siege_social}, Capital social : {capital_social}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (conformité, fiscalité, etc.), et des recommandations pour la création de statuts d'entreprise adaptés.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

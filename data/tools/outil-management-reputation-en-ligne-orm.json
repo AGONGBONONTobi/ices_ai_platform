@@ -1,0 +1,80 @@
+{
+  "id": "outil-management-reputation-en-ligne-orm",
+  "title": "Outil de management de la réputation en ligne (ORM)",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple: Acme Corp",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Principaux canaux de communication (ex: réseaux sociaux, blogs, forums)",
+      "placeholder": "Exemple: LinkedIn, Twitter, Medium",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "textarea",
+      "label": "Objectifs de réputation (ex: augmenter la visibilité, gérer les crises)",
+      "placeholder": "Exemple: Augmenter la visibilité de 20% en 6 mois",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "select",
+      "options": [
+        "Très satisfait",
+        "Satisfait",
+        "Neutre",
+        "Insatisfait",
+        "Très insatisfait"
+      ],
+      "label": "Niveau de satisfaction actuel vis-à-vis de la réputation en ligne",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "variable5",
+      "type": "number",
+      "label": "Budget mensuel alloué à la gestion de la réputation (en €)",
+      "placeholder": "Exemple: 5000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Variable1: {variable1}, Variable2: {variable2}, Variable3: {variable3}, Variable4: {variable4}, Variable5: {variable5}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

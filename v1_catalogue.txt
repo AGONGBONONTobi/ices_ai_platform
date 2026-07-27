@@ -1,0 +1,3338 @@
+🌐  CATALOGUE COMPLET DE LA PLATEFORME IA
+
+Outils Automatisés · Dashboards Analytics · IA Intégrée
+
+
+
+🔧 1 030Fonctions
+
+
+
+🏭 212Secteurs
+
+
+
+📂 22Catégories
+
+
+
+🌍 20Langues
+
+
+
+
+
+Plateforme intégrant l'IA · Prête à l'emploi · Mise à jour continueDisponible dans les 20 langues professionnelles les plus parlées (dont 15 en Afrique)
+
+
+
+
+
+PARTIE I — CATALOGUE DES OUTILS & FONCTIONS
+
+22 catégories · 1 030 fonctions · Tous secteurs confondus · Intégration IA 100%
+
+
+
+
+
+  🔍  CAT. 01 — DIAGNOSTICS & ÉVALUATIONS  (73 fonctions)
+
+
+
+A. Diagnostics Organisationnels
+
+1. Diagnostic organisationnel 360°
+
+2. Diagnostic de maturité digitale (DMI)
+
+3. Diagnostic de performance globale (BSC)
+
+4. Diagnostic de culture d'entreprise
+
+5. Diagnostic de gouvernance corporate & conseil d'administration
+
+6. Diagnostic de capacité institutionnelle
+
+7. Diagnostic des processus métiers (BPM)
+
+8. Diagnostic des systèmes d'information (SI/DSI)
+
+9. Diagnostic de la chaîne de valeur (Porter)
+
+10. Diagnostic concurrentiel & benchmark sectoriel
+
+11. Diagnostic stratégique (SWOT augmenté IA)
+
+12. Diagnostic des parties prenantes (stakeholder mapping)
+
+13. Diagnostic de résilience organisationnelle
+
+14. Diagnostic de la performance commerciale
+
+15. Diagnostic de satisfaction client (NPS, CSAT, CES)
+
+16. Diagnostic de l'innovation & de la créativité
+
+17. Diagnostic de la transformation agile
+
+18. Diagnostic du business model (BMC)
+
+19. Diagnostic de data governance & qualité de données
+
+20. Diagnostic de maturité IA & intelligence artificielle
+
+21. Diagnostic de l'impact sociétal & des externalités
+
+22. Diagnostic de la performance durable (ESG score)
+
+23. Diagnostic de l'expérience client omnicanal
+
+24. Diagnostic du portefeuille produits/services (matrice BCG)
+
+25. Diagnostic de la propriété intellectuelle & brevets
+
+26. Diagnostic de maturité PM & gouvernance projets
+
+B. Diagnostics RH
+
+27. Diagnostic RH & capital humain complet
+
+28. Diagnostic des compétences (skills mapping IA)
+
+29. Diagnostic du climat social & cohésion interne
+
+30. Diagnostic des risques psychosociaux (RPS)
+
+31. Diagnostic de l'engagement collaborateurs
+
+32. Diagnostic de la diversité, équité & inclusion (DEI)
+
+33. Diagnostic de la politique salariale & équité de rémunération
+
+34. Diagnostic de la gestion des talents & hauts potentiels
+
+35. Diagnostic de la formation & développement des compétences
+
+36. Diagnostic du leadership & styles managériaux
+
+37. Diagnostic de la culture managériale
+
+38. Diagnostic de la marque employeur
+
+39. Diagnostic de l'expérience collaborateur (EX)
+
+40. Diagnostic de la communication interne
+
+41. Diagnostic du bien-être au travail (QVT/QVCT)
+
+42. Diagnostic de la GPEC/GEPP
+
+43. Diagnostic de mobilité interne & succession
+
+44. Diagnostic de la performance des équipes
+
+C. Diagnostics Financiers
+
+45. Diagnostic financier complet (santé financière)
+
+46. Diagnostic de trésorerie & liquidité
+
+47. Diagnostic de solvabilité & endettement
+
+48. Diagnostic de rentabilité & structure des marges
+
+49. Diagnostic fiscal & optimisation
+
+50. Diagnostic du contrôle de gestion
+
+51. Diagnostic des investissements & CAPEX
+
+52. Diagnostic de la gestion du BFR
+
+53. Diagnostic de la structure financière & du capital
+
+54. Diagnostic des risques financiers
+
+55. Diagnostic des systèmes comptables (IFRS/OHADA/SYSCOHADA)
+
+56. Diagnostic de l'accès au financement (PME/startup)
+
+D. Diagnostics Normes & Conformité
+
+57. Diagnostic qualité (ISO 9001)
+
+58. Diagnostic environnemental (ISO 14001)
+
+59. Diagnostic SST (ISO 45001)
+
+60. Diagnostic énergétique (ISO 50001)
+
+61. Diagnostic cybersécurité (ISO 27001)
+
+62. Diagnostic continuité d'activité (ISO 22301)
+
+63. Diagnostic RSE & développement durable (GRI/ISO 26000)
+
+64. Diagnostic conformité réglementaire sectorielle
+
+65. Diagnostic ESG complet (Environnement, Social, Gouvernance)
+
+66. Diagnostic de la supply chain durable
+
+67. Diagnostic anti-corruption (ISO 37001)
+
+68. Diagnostic de conformité RGPD & protection des données
+
+69. Diagnostic de la chaîne logistique & approvisionnement
+
+70. Diagnostic de la politique achats & procurement
+
+71. Diagnostic de l'innovation frugale & inclusive
+
+
+
+
+
+  📋  CAT. 02 — AUDITS & CONFORMITÉ  (70 fonctions)
+
+
+
+A. Audits RSE & Durabilité
+
+1. Audit RSE complet (GRI Standards)
+
+2. Audit carbone & bilan GES (Scope 1, 2, 3 — GHG Protocol)
+
+3. Audit de durabilité (CSRD/DPEF/reporting extra-financier)
+
+4. Audit de la politique RSE & feuille de route DD
+
+5. Audit des achats responsables & supply chain
+
+6. Audit d'impact social (SROI & évaluation du bien commun)
+
+7. Audit de la biodiversité & capital naturel
+
+8. Audit de l'économie circulaire
+
+9. Audit du reporting extra-financier
+
+10. Audit ESG pour investisseurs & agences de notation
+
+11. Audit des droits humains (devoir de vigilance)
+
+12. Audit de l'égalité femmes-hommes (index Egapro)
+
+13. Audit ODD & contribution aux SDG
+
+14. Audit de la politique communication RSE
+
+B. Audits Qualité
+
+15. Audit qualité interne (ISO 9001)
+
+16. Audit qualité fournisseurs & sous-traitants
+
+17. Audit de processus & procédures
+
+18. Audit des systèmes documentaires
+
+19. Audit satisfaction client & expérience
+
+20. Audit de conformité produits & services
+
+21. Audit de traçabilité & chaîne de contrôle
+
+22. Audit de management intégré (IMS)
+
+23. Audit de maturité ISO (pré-certification)
+
+C. Audits Financiers & Comptables
+
+24. Audit légal & commissariat aux comptes
+
+25. Audit interne financier
+
+26. Audit fiscal & optimisation légale
+
+27. Audit des états financiers (IFRS/OHADA/SYSCOHADA)
+
+28. Audit de fraude, forensic & investigation
+
+29. Audit de trésorerie & cash management
+
+30. Audit des investissements & CAPEX
+
+31. Audit des marchés publics & commande publique
+
+32. Audit de la gestion budgétaire & prévisionnelle
+
+33. Audit des subventions & financements publics
+
+34. Audit de la gestion patrimoniale
+
+35. Audit des prix de transfert intra-groupe
+
+D. Audits RH & Social
+
+36. Audit RH complet & social
+
+37. Audit de la paie & charges sociales
+
+38. Audit des contrats de travail & règlement intérieur
+
+39. Audit de la formation professionnelle
+
+40. Audit des processus de recrutement
+
+41. Audit de la GPEC/GEPP
+
+42. Audit des politiques diversité & inclusion
+
+43. Audit du temps de travail & durée légale
+
+44. Audit de la santé & sécurité au travail (SST)
+
+E. Audits Techniques & Sécurité
+
+45. Audit cybersécurité & tests d'intrusion (pentest)
+
+46. Audit de l'infrastructure IT & systèmes
+
+47. Audit de la protection des données (RGPD/PDCP)
+
+48. Audit de sécurité physique & protection des biens
+
+49. Audit des équipements, maintenance & GMAO
+
+50. Audit énergétique complet (bâtiment & process)
+
+51. Audit des risques industriels & SEVESO
+
+52. Audit des procédés de fabrication
+
+F. Audits Gouvernance & Conformité
+
+53. Audit de gouvernance & conseil d'administration
+
+54. Audit de la gestion des risques (ERM — COSO)
+
+55. Audit de la communication interne & externe
+
+56. Audit des contrats & obligations juridiques
+
+57. Audit de conformité réglementaire sectorielle
+
+58. Audit anti-corruption (ISO 37001 & loi Sapin II)
+
+59. Audit de la chaîne logistique
+
+60. Audit de la transformation digitale
+
+61. Audit des SIG & systèmes d'information de gestion
+
+62. Audit de continuité d'activité (PCA/PRA)
+
+63. Audit de conformité AML/KYC (anti-blanchiment)
+
+64. Audit de gouvernance des données
+
+65. Audit de la propriété intellectuelle
+
+66. Audit de conformité sectorielle (bancaire, santé, télécom, énergie)
+
+67. Audit de la gouvernance des IA en entreprise (AI Act)
+
+68. Audit de conformité OHADA & droit des affaires africain
+
+
+
+
+
+  📊  CAT. 03 — REPORTING & ANALYTICS DASHBOARD  (48 fonctions)
+
+
+
+1. Dashboard de performance globale (KPIs exécutifs)
+
+2. Reporting financier mensuel automatisé
+
+3. Reporting RH & social automatisé
+
+4. Reporting RSE & développement durable
+
+5. Reporting commercial & force de vente
+
+6. Reporting opérationnel & production
+
+7. Reporting de trésorerie en temps réel
+
+8. Reporting de risques & alertes automatiques
+
+9. Reporting réglementaire & conformité automatisé
+
+10. Reporting ESG pour investisseurs & rating agencies
+
+11. Reporting de gestion de projets & portefeuille
+
+12. Reporting supply chain & logistique
+
+13. Reporting marketing & acquisition digitale
+
+14. Reporting de satisfaction client (NPS, CSAT)
+
+15. Reporting de formation & compétences
+
+16. Reporting d'audit interne
+
+17. Reporting carbone & empreinte GES
+
+18. Dashboard exécutif Comité de direction
+
+19. Analytics prédictif des ventes
+
+20. People analytics & RH data-driven
+
+21. Analytics client & segmentation comportementale
+
+22. Analytics de la chaîne logistique
+
+23. Analytics des risques & indicateurs KRI
+
+24. Analytics de la performance financière
+
+25. Visualisation de données avancée & data storytelling
+
+26. Rapports de gestion automatisés (MIS)
+
+27. Scorecard stratégique (Balanced Scorecard)
+
+28. Reporting de gouvernance & CA
+
+29. Rapport d'activité annuel automatisé
+
+30. Reporting d'impact social & sociétal
+
+31. Analytics de l'expérience client (CX analytics)
+
+32. Analytics de l'engagement collaborateurs
+
+33. Reporting de cybersécurité & incidents
+
+34. Reporting R&D & innovation
+
+35. Dashboard ODD & contribution SDG Nations Unies
+
+36. Reporting consolidé groupe (multi-entités)
+
+37. Analytics de la performance des produits/services
+
+38. Reporting de veille concurrentielle
+
+39. Analytics de la performance marketing (ROI)
+
+40. Reporting de la performance achats
+
+41. Reporting du capital immatériel
+
+42. Dashboard de pilotage des coûts
+
+43. Analytics de la sinistralité (assurance)
+
+44. Dashboard de transformation digitale
+
+45. Reporting de la performance logistique
+
+46. Analytics pédagogiques (EdTech/LMS)
+
+47. Reporting de la performance du réseau de distribution
+
+48. Dashboard de pilotage des ODD par secteur
+
+
+
+
+
+  👥  CAT. 04 — RH & CAPITAL HUMAIN  (67 fonctions)
+
+
+
+A. Recrutement & Attraction
+
+1. Outil de sourcing & chasse de têtes IA-augmenté
+
+2. Analyse de CV & présélection automatisée (ATS IA)
+
+3. Outil d'entretien structuré & scoring comportemental
+
+4. Référentiel de compétences par poste & niveau
+
+5. Grille d'évaluation des candidats multicritères
+
+6. Outil de détection des biais au recrutement
+
+7. Plan & processus d'onboarding digital 30-60-90 jours
+
+8. Outil de cooptation & referral program
+
+9. Stratégie de marque employeur & EVP
+
+10. Outil de mesure de l'attractivité employeur
+
+11. Processus de recrutement inclusif & DEI
+
+B. Formation & Développement
+
+12. Analyse des besoins en formation (ABF)
+
+13. Plan de développement individuel (PDI/IDP)
+
+14. Outil de gestion des formations (LMS intégré)
+
+15. Évaluation des acquis de formation & ROI pédagogique
+
+16. Cartographie dynamique des compétences
+
+17. Bilan de compétences professionnel digital
+
+18. Plan de succession & gestion des hauts potentiels
+
+19. Programme de mentorat & coaching interne
+
+20. Parcours de montée en compétences individualisé
+
+21. Outil de micro-learning & learning nuggets
+
+22. Programme de leadership development
+
+23. Plan de cross-fonctionnalité & mobilité interne
+
+24. Programme de reverse mentoring
+
+C. Performance & Évaluation
+
+25. Outil d'évaluation de la performance 360°
+
+26. Entretien annuel structuré (smart evaluation)
+
+27. Entretien professionnel GEPP numérique
+
+28. Fixation d'objectifs (OKR / SMART / BHAG)
+
+29. Plan d'amélioration de la performance (PIP)
+
+30. Outil de gestion continue des performances (CPM)
+
+31. Grille de rémunération & classification des postes
+
+D. Bien-être & Engagement
+
+32. Baromètre social & enquête de climat
+
+33. Outil de prévention & gestion des RPS
+
+34. Programme QVT/QVCT structuré
+
+35. Plan de gestion des conflits & médiation
+
+36. Politique télétravail, flex-office & remote
+
+37. Outil de mesure de l'engagement (pulse survey)
+
+38. Programme de reconnaissance & récompense
+
+39. Outil de gestion du stress & prévention burn-out
+
+40. Programme de santé au travail & sport en entreprise
+
+E. Administration & Conformité RH
+
+41. Outil de gestion des congés & absences
+
+42. Gestion des temps & activités (GTA/SIRH)
+
+43. Tableau de bord social & BDES/BDESE
+
+44. Bilan social automatisé & préparation NAO
+
+45. Outil de gestion de la paie & optimisation
+
+46. Politique de diversité, équité & inclusion (DEI)
+
+47. Outil de veille juridique RH & droit du travail
+
+48. Processus de gestion des départs & offboarding
+
+49. Plan de restructuration & accompagnement PSE
+
+50. Gestion prévisionnelle des emplois & compétences (GEPP)
+
+51. Outil de gestion des expatriés & mobilité internationale
+
+52. Processus de médiation & gestion des contentieux
+
+53. Outil de classification & pesée des postes (Hay)
+
+54. Programme de bien-être & prévention santé globale
+
+55. Outil de gestion des avantages sociaux
+
+F. RH Avancé & Futur du Travail
+
+56. Outil de People Analytics avancé
+
+57. Plan de transformation culturelle
+
+58. Outil de pilotage des NAO
+
+59. Plan de gestion de la diversité générationnelle
+
+60. Outil de gestion des compétences critiques & rares
+
+61. Plan de développement du leadership féminin
+
+62. Outil de gestion des travailleurs indépendants & gig workers
+
+63. Plan de résilience organisationnelle RH
+
+64. Outil d'IA éthique RH (biais algorithmiques)
+
+65. Programme de reskilling & upskilling massif
+
+66. Outil de suivi de la santé mentale en entreprise
+
+67. Plan de gestion des talents en Afrique & pays émergents
+
+
+
+
+
+  💰  CAT. 05 — FINANCE & GESTION  (55 fonctions)
+
+
+
+1. Business plan complet IA-assisté
+
+2. Modèle financier prévisionnel (3-5-10 ans)
+
+3. Plan de financement & structuration du capital
+
+4. Analyse de rentabilité d'investissement (ROI/TRI/VAN)
+
+5. Budget annuel & pluriannuel participatif
+
+6. Contrôle budgétaire & analyse des écarts
+
+7. Tableau de bord financier de pilotage
+
+8. Analyse des coûts, pricing & politique tarifaire
+
+9. Optimisation & prévision de trésorerie
+
+10. Plan de gestion du cash & du BFR
+
+11. Analyse et optimisation du besoin en fonds de roulement
+
+12. Valorisation d'entreprise (DCF, comparables, actif net)
+
+13. Due diligence financière & d'investissement
+
+14. Plan de restructuration & redressement financier
+
+15. Ingénierie financière & montages complexes
+
+16. Gestion des risques financiers (taux, change, crédit)
+
+17. Analyse des investissements & décisions CAPEX
+
+18. Reporting IFRS / OHADA / SYSCOHADA / normes locales
+
+19. Dossier de levée de fonds & relations investisseurs
+
+20. Pitch deck financier pour investisseurs
+
+21. Analyse de sensibilité & simulation de scénarios
+
+22. Optimisation fiscale légale & niches fiscales
+
+23. Gestion de la dette & refinancement bancaire
+
+24. Analyse des flux de trésorerie (Cash flow statement)
+
+25. Tableau de financement & plan de financement
+
+26. Analyse de la structure du capital (WACC, levier financier)
+
+27. Comptabilité analytique & centres de coûts
+
+28. Consolidation des comptes (groupe multi-entités)
+
+29. Gestion des actifs & politique d'amortissement
+
+30. Analyse de la performance économique (EVA, EBITDA)
+
+31. Outil de gestion des subventions, aides & dossiers
+
+32. Simulation de fusion-acquisition (M&A)
+
+33. Analyse coût-volume-profit & seuil de rentabilité
+
+34. Modèle de scoring crédit & risque client
+
+35. Outil de gestion des créances & recouvrement
+
+36. Plan d'affaires pour coopérative & ESS
+
+37. Analyse de rentabilité par segment/produit/marché
+
+38. Benchmark financier sectoriel comparatif
+
+39. Modèle économique & business case d'innovation
+
+40. Plan de financement import-export & trade finance
+
+41. Outil de gestion des garanties & sûretés
+
+42. Modèle de prix de transfert intra-groupe
+
+43. Outil de modélisation des risques actuariels
+
+44. Plan financier pour projet à impact social
+
+45. Modèle de financement de projet (Project Finance/PPP)
+
+46. Plan de financement d'énergie renouvelable (PPA)
+
+47. Outil de gestion de portefeuille d'actifs
+
+48. Analyse de la dette publique & financement souverain
+
+49. Plan d'accès au financement BAD, BCEAO, BEAC, Fonds africains
+
+50. Outil de gestion des fonds de capital-risque
+
+51. Modèle de financement d'infrastructure publique
+
+52. Plan de gestion des risques de liquidité PME
+
+53. Outil de simulation de politique dividende
+
+54. Analyse financière des coopératives & mutuelles
+
+55. Plan de gestion financière d'une ONG & rapport bailleurs
+
+
+
+
+
+  🎯  CAT. 06 — STRATÉGIE & MANAGEMENT  (40 fonctions)
+
+
+
+1. Analyse stratégique PESTEL augmentée IA
+
+2. Analyse des 5 forces de Porter & intensité concurrentielle
+
+3. Analyse SWOT/TOWS croisée
+
+4. Plan stratégique à 3-5-10 ans
+
+5. Balanced Scorecard (BSC) & stratégie en cascade
+
+6. OKR (Objectives & Key Results) & pilotage agile
+
+7. Cartographie stratégique cause-effet
+
+8. Analyse du positionnement concurrentiel
+
+9. Étude de marché & analyse sectorielle
+
+10. Veille stratégique & intelligence économique
+
+11. Analyse de la chaîne de valeur
+
+12. Matrice BCG, McKinsey & Ansoff
+
+13. Analyse des scénarios prospectifs & futurs possibles
+
+14. Plan de transformation organisationnelle
+
+15. Gestion du changement (Kotter / ADKAR / Lewin)
+
+16. Plan de développement international & export
+
+17. Analyse des opportunités de croissance
+
+18. Stratégie d'innovation (incrémentale vs disruptive)
+
+19. Stratégie de diversification & de pivot
+
+20. Stratégie d'alliance, JV & partenariat stratégique
+
+21. Plan de cession & exit strategy
+
+22. Analyse de l'écosystème de valeur étendu
+
+23. Design thinking & innovation centrée usage (HCD)
+
+24. Cartographie des parties prenantes & gouvernance
+
+25. Analyse de la disruption & réponse stratégique
+
+26. Stratégie de plateforme, marketplace & API
+
+27. Outil de priorisation stratégique (MoSCoW, scoring)
+
+28. Analyse des mégatendances & signaux faibles
+
+29. Gouvernance d'entreprise, éthique & compliance
+
+30. Plan de croissance externe (M&A) & intégration
+
+31. Stratégie de coopétition & écosystème
+
+32. Analyse de la compétitivité nationale & territoriale
+
+33. Plan stratégique de développement territorial
+
+34. Feuille de route de la transition durable
+
+35. Outil de pilotage de la performance stratégique
+
+36. Stratégie de résilience & antifragilité organisationnelle
+
+37. Outil de facilitation stratégique (workshop & CODIR)
+
+38. Plan de développement d'une franchise
+
+39. Stratégie de conquête des marchés africains
+
+40. Modèle de gouvernance pour groupes panafricains
+
+
+
+
+
+  📣  CAT. 07 — MARKETING & COMMERCIAL  (53 fonctions)
+
+
+
+1. Étude de marché quantitative & qualitative IA
+
+2. Segmentation, ciblage & positionnement (STP)
+
+3. Plan marketing annuel & multicanal
+
+4. Stratégie de contenu & content marketing
+
+5. Stratégie de médias sociaux & community management
+
+6. Plan d'acquisition & génération de leads
+
+7. Stratégie de fidélisation client (CRM & loyalty)
+
+8. Analyse du parcours client (Customer Journey Map)
+
+9. Persona & profil client idéal (ICP & Buyer Persona)
+
+10. Plan de lancement de produit/service (GTM)
+
+11. Stratégie de prix & architecture tarifaire
+
+12. Outil de mesure de la notoriété & brand equity
+
+13. Plan de communication 360° intégré
+
+14. Stratégie de marketing digital & inbound
+
+15. Audit SEO & stratégie de référencement naturel
+
+16. Stratégie SEA, paid media & programmatique
+
+17. Plan d'email marketing & automation
+
+18. Stratégie d'influence marketing & partenariats
+
+19. Analyse concurrentielle & veille marché
+
+20. Mesure du ROI marketing & attribution multicanal
+
+21. Outil de scoring, qualification & nurturing des leads
+
+22. Plan de développement commercial & growth hacking
+
+23. Prospection, pipeline & CRM commercial
+
+24. Script de vente, argumentation & gestion des objections
+
+25. Gestion des appels d'offres & réponses commerciales
+
+26. Techniques de négociation commerciale avancée
+
+27. Stratégie de distribution, canaux & partenaires
+
+28. Mesure de la satisfaction & expérience client
+
+29. Programme de fidélité & ambassadeurs
+
+30. Stratégie d'internationalisation & adaptation locale
+
+31. Outil de brand management & identité de marque
+
+32. Plan de gestion de crise communication
+
+33. Benchmark des meilleures pratiques marketing
+
+34. Outil d'analyse de la data client (CDP)
+
+35. Stratégie de vente sociale (social selling)
+
+36. Plan de co-marketing & co-branding
+
+37. Outil de marketing automation & personnalisation
+
+38. Analyse du cycle de vie produit (PLC)
+
+39. Stratégie de pricing dynamique & revenue management
+
+40. Plan de trade marketing & merchandising
+
+41. Stratégie d'e-commerce & vente en ligne
+
+42. Outil de mesure d'audience & web analytics
+
+43. Plan de lancement sur marchés émergents africains
+
+44. Stratégie de communication mobile & USSD (Afrique)
+
+45. Outil de gestion de la réputation en ligne (ORM)
+
+46. Stratégie de marketing sensoriel & expérientiel
+
+47. Plan de marketing B2G (entreprise vers gouvernement)
+
+48. Outil de mesure de l'impact des campagnes
+
+49. Stratégie de marketing inclusif & diversité
+
+50. Plan de communication multilingue (20 langues)
+
+51. Outil de personnalisation IA des offres
+
+52. Stratégie de monétisation des contenus
+
+53. Plan de fidélisation des clients institutionnels
+
+
+
+
+
+  ⚖️  CAT. 08 — JURIDIQUE & CONFORMITÉ  (34 fonctions)
+
+
+
+1. Template de contrat commercial (B2B/B2C)
+
+2. Template de contrat de travail (CDI/CDD/Intérim)
+
+3. Template de contrat de prestation de services
+
+4. Template de NDA & accord de confidentialité
+
+5. Template de conditions générales de vente (CGV/CGA)
+
+6. Template de statuts d'entreprise (SARL, SA, SAS...)
+
+7. Template de pacte d'associés & shareholders agreement
+
+8. Outil de veille juridique sectorielle automatisée
+
+9. Outil de conformité RGPD & protection des données
+
+10. Outil de conformité AML/KYC (anti-blanchiment)
+
+11. Outil de conformité anti-corruption (ISO 37001)
+
+12. Outil de gestion des contrats (CLM — lifecycle)
+
+13. Analyse juridique des risques & due diligence légale
+
+14. Outil de conformité droit du travail sectoriel
+
+15. Outil de protection de la propriété intellectuelle
+
+16. Outil de gestion des litiges & contentieux
+
+17. Due diligence juridique M&A
+
+18. Rédaction d'actes, procédures & délibérations
+
+19. Outil de conformité sectorielle (bancaire, santé, énergie)
+
+20. Politique de gouvernance & charte éthique
+
+21. Outil de devoir de vigilance (Sapin II / Dembélé)
+
+22. Checklist de conformité légale par pays
+
+23. Guide des obligations réglementaires sectorielles
+
+24. Outil de conformité marchés publics & OHADA
+
+25. Template de protocole d'accord & MOU
+
+26. Template de procuration & délégation de pouvoir
+
+27. Registre des traitements RGPD automatisé
+
+28. Outil de conformité droit de la concurrence
+
+29. Guide de conformité fiscale internationale
+
+30. Outil de gestion des droits d'auteur & licences
+
+31. Outil de compliance CIMA, UEMOA, CEMAC, OHADA
+
+32. Template de résolutions & procès-verbaux d'AG
+
+33. Outil de conformité AI Act & régulation de l'IA
+
+34. Guide de conformité aux lois données personnelles africaines
+
+
+
+
+
+  🏗️  CAT. 09 — GESTION DE PROJETS & PMO  (40 fonctions)
+
+
+
+1. Charte de projet complète (Project Charter)
+
+2. Plan de projet détaillé (WBS & Gantt interactif)
+
+3. Matrice des risques projet (RACI + heat map)
+
+4. Plan de gestion des parties prenantes
+
+5. Outil de suivi budgétaire projet (EVM)
+
+6. Rapport d'avancement automatisé (RAG status)
+
+7. Plan de communication projet
+
+8. Analyse de faisabilité & étude d'opportunité
+
+9. Méthode Agile, Scrum & Kanban board
+
+10. Méthode Prince2 & PMBOK adaptées
+
+11. Outil de gestion du changement projet
+
+12. Plan de clôture & RETEX (retour d'expérience)
+
+13. Outil de priorisation des projets (MoSCoW, scoring)
+
+14. Gestion & optimisation du portefeuille de projets
+
+15. Outil de calcul & suivi du ROI projet
+
+16. Plan de gestion des ressources & capacité
+
+17. Outil de gestion des livrables & jalons
+
+18. Plan d'assurance qualité projet (QA/QC)
+
+19. Outil de benchmark & maturité PM (OPM3)
+
+20. Plan de déploiement & mise en production
+
+21. Outil de gestion de la connaissance projet (KB)
+
+22. Analyse post-mortem & leçons apprises
+
+23. Outil d'évaluation de la maturité PMO
+
+24. Plan de continuité des opérations projet
+
+25. Template de réponse à appel d'offres projet
+
+26. Outil de gestion des dépendances inter-projets
+
+27. Plan de test, validation & recette
+
+28. Outil d'escalade & gestion des issues projet
+
+29. Tableau de bord PMO multi-projets
+
+30. Outil de gestion des contrats projet
+
+31. Plan de formation & montée en compétences équipe projet
+
+32. Méthode Lean Project Management
+
+33. Outil de gestion de projet humanitaire & ONG (PCM/LFA)
+
+34. Plan de gestion de projet infrastructure publique
+
+35. Outil de gestion de projets d'innovation (Stage-Gate)
+
+36. Plan de déploiement de projet à l'international
+
+37. Outil de gestion des projets de transformation digitale
+
+38. Plan de pilotage des projets RSE & impact
+
+39. Outil de gestion des projets de construction (BTP)
+
+40. Plan de gestion des projets de développement territorial
+
+
+
+
+
+  🧠  CAT. 10 — PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL  (42 fonctions)
+
+
+
+1. Test MBTI professionnel (16 profils)
+
+2. Test DISC professionnel (4 styles comportementaux)
+
+3. Test Big Five OCEAN professionnel
+
+4. Test d'intelligence émotionnelle (EQ-i 2.0)
+
+5. Test des valeurs professionnelles (Schwartz/Graves)
+
+6. Test de styles de leadership (Situational Leadership)
+
+7. Test de styles de communication & influence
+
+8. Test de styles cognitifs & préférences mentales
+
+9. Test de gestion du stress & régulation émotionnelle
+
+10. Test de résilience & capacité d'adaptation
+
+11. Test d'assertivité & affirmation de soi
+
+12. Test de créativité & pensée divergente
+
+13. Test de styles de prise de décision
+
+14. Test de gestion des conflits (TKI — Thomas-Kilmann)
+
+15. Test d'aptitudes managériales & leadership
+
+16. Test d'intelligence culturelle (CQ)
+
+17. Test de maturité émotionnelle & sociale
+
+18. Test de motivations & drivers professionnels (MVPI)
+
+19. Test de potentiel de leadership (HPI/HDS)
+
+20. Test de préférences d'apprentissage (VARK)
+
+21. Test d'agilité cognitive & learning agility
+
+22. Test de profil entrepreneurial & goût du risque
+
+23. Test d'intégrité & éthique professionnelle
+
+24. Profil de carrière & orientation professionnelle
+
+25. Bilan de personnalité 360° complet
+
+26. Analyse comportementale en équipe (Team dynamics)
+
+27. Profil entrepreneurial & capacité à innover
+
+28. Profil négociateur & influence
+
+29. Profil créateur & intrapreneuriat
+
+30. Profil analytique & data-driven mindset
+
+31. Profil de coach & développeur d'équipe
+
+32. Profil de mentor & transmission des savoirs
+
+33. Outil de développement du leadership authentique
+
+34. Outil de connaissance de soi (Fenêtre de Johari)
+
+35. Cartographie des forces (CliftonStrengths)
+
+36. Profil de gestion du changement & transformation
+
+37. Profil de performance sous pression
+
+38. Assessment center & mise en situation professionnelle
+
+39. Profil de l'intelligence interculturelle
+
+40. Outil de développement de la pensée systémique
+
+41. Profil de la prise de risque calculée
+
+42. Étude du profil de l'innovateur social
+
+
+
+
+
+  📚  CAT. 11 — PROFILS APPRENANTS & PÉDAGOGIE  (35 fonctions)
+
+
+
+1. Diagnostic des styles d'apprentissage (Kolb/Honey-Mumford)
+
+2. Test de préférences sensorielles VARK
+
+3. Évaluation des acquis préalables & positionnement
+
+4. Cartographie des compétences à développer
+
+5. Plan de développement personnel apprenant (ILP)
+
+6. Profil de l'apprenant numérique
+
+7. Évaluation du niveau de maîtrise (taxonomie Bloom révisée)
+
+8. Test de motivation intrinsèque & extrinsèque
+
+9. Diagnostic de la capacité à l'autoformation
+
+10. Design du parcours d'apprentissage individualisé
+
+11. Profil des barrières & freins à l'apprentissage
+
+12. Évaluation des compétences transversales (soft skills)
+
+13. Outil de reconnaissance des acquis (VAE/RNCP)
+
+14. Portfolio de compétences numérique & open badge
+
+15. Outil de feedback pédagogique 360°
+
+16. Évaluation de la maturité numérique apprenant
+
+17. Profil de l'apprenant adulte (andragogie — Knowles)
+
+18. Test d'adéquation formation-poste & gap analysis
+
+19. Plan de remédiation & soutien pédagogique
+
+20. Outil de gamification & apprentissage par le jeu
+
+21. Évaluation en situation de travail (EST)
+
+22. Bilan de compétences numérique interactif
+
+23. Outil de mentorat inversé & reverse mentoring
+
+24. Tableau de bord apprenant & learning analytics
+
+25. Design pédagogique (instructional design) IA-assisté
+
+26. Outil de social learning & apprentissage collaboratif
+
+27. Programme de micro-certification & badging
+
+28. Analyse de l'efficacité des dispositifs de formation
+
+29. Outil de blended learning & hybridation
+
+30. Profil apprenant en situation de handicap
+
+31. Outil de coaching pédagogique personnalisé
+
+32. Analyse des données d'apprentissage (xAPI/SCORM)
+
+33. Outil de simulation & mise en situation pédagogique
+
+34. Profil de l'apprenant en formation duale (alternance)
+
+35. Outil d'évaluation des compétences numériques (DIGCOMP)
+
+
+
+
+
+  💡  CAT. 12 — INNOVATION & R&D  (34 fonctions)
+
+
+
+1. Outil de veille technologique & innovation sectorielle
+
+2. Matrice d'ambidextrie stratégique (exploration/exploitation)
+
+3. Atelier de design thinking structuré (5 étapes)
+
+4. Business Model Canvas & Value Proposition Canvas
+
+5. Analyse des tendances & détection de signaux faibles
+
+6. Outil de co-création avec parties prenantes
+
+7. Plan de R&D & feuille de route technologique
+
+8. Outil de gestion des idées (Ideation management)
+
+9. Analyse de maturité technologique (TRL — NASA scale)
+
+10. Outil de protection de l'innovation (brevets, marques, secrets)
+
+11. Plan d'open innovation & partenariats R&D
+
+12. Analyse des disruptions & réponse stratégique
+
+13. Outil de test & validation MVP (Lean Startup)
+
+14. Canvas de la proposition de valeur
+
+15. Benchmark des innovations sectorielles
+
+16. Outil de gestion du portefeuille d'innovations (Stage-Gate)
+
+17. Plan de transfert technologique & valorisation
+
+18. Analyse de l'écosystème d'innovation local & global
+
+19. Facilitation d'hackathon & sprint créatif
+
+20. Mesure de l'impact de l'innovation (ROI innovation)
+
+21. Outil d'intelligence collective & crowdsourcing
+
+22. Plan de partenariat startup & corporate venturing
+
+23. Analyse des brevets & de la propriété intellectuelle
+
+24. Outil de scenario planning & futurs possibles
+
+25. Méthode TRIZ & inventique systématique
+
+26. Plan de diffusion de l'innovation (Rogers)
+
+27. Outil de gestion de l'innovation frugale & jugaad
+
+28. Analyse de l'innovation sociale & solutions inclusives
+
+29. Benchmark international de l'innovation
+
+30. Programme d'intrapreneuriat & ventures internes
+
+31. Outil de gestion de la dette technologique
+
+32. Plan de déploiement de l'IA générative en innovation
+
+33. Outil de valorisation de la recherche & spin-off
+
+34. Plan de développement d'une deeptech
+
+
+
+
+
+  🌍  CAT. 13 — RSE & DÉVELOPPEMENT DURABLE  (42 fonctions)
+
+
+
+1. Bilan carbone complet (Scope 1, 2, 3 — GHG Protocol)
+
+2. Plan de réduction des émissions GES & neutralité carbone
+
+3. Stratégie RSE globale & politique de développement durable
+
+4. Plan d'action RSE annuel & priorités
+
+5. Rapport RSE complet (GRI, CSRD, DPEF, B-Corp)
+
+6. Outil de mesure & gestion de l'impact social (SROI)
+
+7. Analyse de matérialité des enjeux ESG
+
+8. Outil d'évaluation & notation ESG
+
+9. Plan de transition écologique & bas-carbone
+
+10. Stratégie d'économie circulaire & réduction des déchets
+
+11. Outil de traçabilité & supply chain responsable
+
+12. Plan de gestion de la biodiversité & capital naturel
+
+13. Outil de compensation carbone & marchés volontaires
+
+14. Politique d'achats responsables & critères RSE fournisseurs
+
+15. Rapport d'impact annuel & communication RSE
+
+16. Plan de gestion intégrée des ressources en eau
+
+17. Audit des parties prenantes & engagement stakeholders
+
+18. Plan de formation & sensibilisation RSE
+
+19. Label & certification RSE, B-Corp, ISO 26000
+
+20. Outil de mesure de la valeur partagée (CSV — Porter)
+
+21. Plan de gestion des déchets & économie des matières
+
+22. Stratégie d'investissement responsable (ISR/ESG)
+
+23. Outil de due diligence en droits humains & travail
+
+24. Reporting ODD & contribution aux SDG de l'ONU
+
+25. Outil de calcul de l'empreinte eau & biodiversité
+
+26. Plan de décarbonation & trajectoire SBTi
+
+27. Outil de financement vert (Green Bonds, Sustainability Linked)
+
+28. Outil de conformité taxonomie verte (UE/Afrique)
+
+29. Programme de volontariat & engagement collaborateurs
+
+30. Plan d'accès universel aux services & inclusion
+
+31. Outil de partenariat public-privé à impact (PPP)
+
+32. Programme d'entrepreneuriat social & intrapreneuriat RSE
+
+33. Outil de calcul de l'impact économique local
+
+34. Dashboard RSE & pilotage des engagements
+
+35. Plan de résilience climatique & adaptation (TCFD/TNFD)
+
+36. Outil de gestion des risques physiques & climatiques
+
+37. Plan de gestion des risques ESG dans la supply chain
+
+38. Outil de communication RSE auprès des communautés locales
+
+39. Programme RSE adapté aux contextes africains
+
+40. Outil de mesure de l'accès à l'énergie & inclusion énergétique
+
+41. Plan de protection des droits des peuples autochtones
+
+42. Outil de reporting unifié RSE multi-référentiels
+
+
+
+
+
+  ⚠️  CAT. 14 — GESTION DES RISQUES  (37 fonctions)
+
+
+
+1. Cartographie des risques (Risk mapping interactif)
+
+2. Plan de gestion des risques (ERM — COSO II / ISO 31000)
+
+3. Analyse de risques FMEA/AMDEC sectorielle
+
+4. Plan de continuité d'activité (PCA/BCP)
+
+5. Plan de reprise d'activité (PRA/DRP)
+
+6. Gestion des risques de projets & programmes
+
+7. Analyse des risques cybersécurité & menaces
+
+8. Plan de gestion & communication de crise
+
+9. Outil de simulation & exercices de crise
+
+10. Analyse des risques de réputation & e-réputation
+
+11. Outil de gestion des risques climatiques (TCFD/TNFD)
+
+12. Analyse des risques de conformité & réglementaires
+
+13. Gestion des risques fournisseurs & supply chain
+
+14. Plan de gestion des risques financiers & marché
+
+15. Outil d'analyse de scénarios & stress testing
+
+16. Registre des risques automatisé
+
+17. Indicateurs clés de risque (KRI) & alertes
+
+18. Plan de gestion des incidents & lessons learned
+
+19. Outil de communication de crise multicanal
+
+20. Stratégie d'assurance & couverture optimale des risques
+
+21. Analyse des risques liés à l'IA & technologies émergentes
+
+22. Outil de veille des risques géopolitiques
+
+23. Plan de gestion des risques sanitaires & pandémiques
+
+24. Analyse de la dépendance critique aux fournisseurs
+
+25. Outil de gestion des risques pays & de change
+
+26. Plan de gestion des risques de liquidité
+
+27. Outil de détection & prévention de la fraude
+
+28. Analyse des risques de transformation organisationnelle
+
+29. Cartographie des risques opérationnels (ORM)
+
+30. Outil de quantification des risques (Monte Carlo)
+
+31. Outil de gestion des risques ESG
+
+32. Plan de gestion des risques de projet de construction
+
+33. Outil de gestion des risques de réputation numérique
+
+34. Plan de gestion des risques liés aux données
+
+35. Outil de gestion des risques d'innovation technologique
+
+36. Plan de gestion des risques de sécurité alimentaire
+
+37. Outil de gestion des risques de crédit portefeuille
+
+
+
+
+
+  🖥️  CAT. 15 — TRANSFORMATION DIGITALE & IA  (37 fonctions)
+
+
+
+1. Diagnostic de maturité digitale (Digital Maturity Model)
+
+2. Feuille de route de transformation digitale
+
+3. Stratégie cloud, migration & architecture
+
+4. Outil de gouvernance des données (Data Governance)
+
+5. Plan d'adoption de l'IA en entreprise (AI Strategy)
+
+6. Stratégie d'automatisation des processus (RPA & IA)
+
+7. Outil d'analyse de la donnée & Business Intelligence (BI)
+
+8. Plan de cybersécurité & sécurité by design
+
+9. Stratégie de gestion des plateformes numériques
+
+10. Outil de design UX/UI centré utilisateur
+
+11. Plan de dématérialisation & digitalisation des processus
+
+12. Stratégie d'API, microservices & interopérabilité
+
+13. Plan de gestion du changement digital
+
+14. Outil de mesure du ROI de la transformation digitale
+
+15. Stratégie IoT, données temps réel & edge computing
+
+16. Plan de gestion de la donnée client (CDP & CRM)
+
+17. Audit & modernisation des systèmes legacy
+
+18. Plan de formation & upskilling numérique
+
+19. Stratégie marketplace & distribution digitale
+
+20. Gouvernance de l'IA éthique & responsable (AI Ethics)
+
+21. Plan de déploiement ERP & SIRH intégré
+
+22. Stratégie de données ouvertes (Open Data)
+
+23. Plan d'accessibilité numérique (RGAA/WCAG)
+
+24. Outil d'automatisation du reporting (ETL/BI)
+
+25. Stratégie de gestion des identités & accès (IAM)
+
+26. Plan de souveraineté numérique & des données
+
+27. Stratégie de monétisation des données
+
+28. Outil de conformité AI Act & régulation de l'IA
+
+29. Stratégie de déploiement de l'IA générative en entreprise
+
+30. Plan de transformation numérique des PME africaines
+
+31. Outil de gestion de la transition numérique du secteur public
+
+32. Stratégie de fintech & paiement mobile (Afrique)
+
+33. Plan de déploiement de solutions off-grid & low-tech
+
+34. Outil de gestion de la blockchain en entreprise
+
+35. Plan de développement d'une plateforme SaaS
+
+36. Stratégie de cybersécurité pour infrastructures critiques
+
+37. Outil de gestion des jumeaux numériques (digital twins)
+
+
+
+
+
+  📝  CAT. 16 — TEMPLATES & MODÈLES PRÊTS À L'EMPLOI  (73 fonctions)
+
+
+
+1. Template de plan stratégique pluriannuel
+
+2. Template de note de cadrage stratégique
+
+3. Template de mémo de décision executive
+
+4. Template de compte-rendu de réunion & COPIL
+
+5. Template de plan de transformation organisationnelle
+
+6. Template de charte d'équipe & règles de fonctionnement
+
+7. Template de fiche de poste (compétences & responsabilités)
+
+8. Template d'offre d'emploi inclusive & attractive
+
+9. Template de grille d'entretien de recrutement
+
+10. Template d'évaluation annuelle de performance
+
+11. Template de plan de formation individuel
+
+12. Template de règlement intérieur
+
+13. Template de charte télétravail & flex-office
+
+14. Template de politique diversité & inclusion
+
+15. Template de plan d'onboarding
+
+16. Template de lettre d'avertissement & sanctions
+
+17. Template de procès-verbal d'entretien professionnel
+
+18. Template de plan de succession
+
+19. Template de budget prévisionnel
+
+20. Template de business plan (startup/PME)
+
+21. Template de note de synthèse financière
+
+22. Template de rapport d'audit financier interne
+
+23. Template de tableau de bord de trésorerie
+
+24. Template de dossier de crédit bancaire
+
+25. Template de plan de financement
+
+26. Template de rapport de commissaire aux comptes
+
+27. Template de proposition commerciale gagnante
+
+28. Template de contrat commercial B2B
+
+29. Template de bon de commande
+
+30. Template de devis professionnel
+
+31. Template de facture conforme & internationale
+
+32. Template de plan de compte grand client
+
+33. Template de plan marketing annuel
+
+34. Template de charte de projet (Project Charter)
+
+35. Template de cahier des charges fonctionnel
+
+36. Template de spécifications techniques
+
+37. Template de rapport de projet (mensuel)
+
+38. Template de retour d'expérience (RETEX)
+
+39. Template de plan de risques projet
+
+40. Template de plan de communication projet
+
+41. Template de plan de test & recette
+
+42. Template de rapport RSE annuel
+
+43. Template de politique RSE & DD
+
+44. Template de charte éthique & code de conduite
+
+45. Template de plan d'action développement durable
+
+46. Template de rapport d'impact annuel
+
+47. Template de bilan carbone simplifié PME
+
+48. Template de communiqué de presse
+
+49. Template de plan de communication annuel
+
+50. Template de plan de gestion de crise
+
+51. Template de kit de communication interne
+
+52. Template de newsletter interne mensuelle
+
+53. Template de discours dirigeant
+
+54. Template de présentation Comité de direction
+
+55. Template de procédure opérationnelle standard (SOP)
+
+56. Template de plan d'action corrective (PDCA/8D)
+
+57. Template de rapport de non-conformité
+
+58. Template de fiche de contrôle qualité
+
+59. Template de plan de maintenance préventive
+
+60. Template de dossier de financement bancaire
+
+61. Template de dossier de subvention & aide publique
+
+62. Template de réponse à appel d'offres
+
+63. Template de présentation investisseurs (pitch deck)
+
+64. Template de rapport d'activité annuel (board deck)
+
+65. Template de mémorandum d'information (IM) M&A
+
+66. Template de term sheet & lettre d'intention
+
+67. Template de cadre logique (matrice logique ONG)
+
+68. Template de théorie du changement
+
+69. Template de rapport de mission humanitaire
+
+70. Template de plan pédagogique annuel
+
+71. Template de plan d'affaires social (ESS)
+
+72. Template de plan de développement territorial
+
+73. Template de plan de gestion d'une coopérative
+
+
+
+
+
+  🚚  CAT. 17 — SUPPLY CHAIN & ACHATS  (34 fonctions)
+
+
+
+1. Cartographie & audit de la supply chain
+
+2. Outil d'optimisation de la chaîne d'approvisionnement
+
+3. Stratégie achats & politique d'achat
+
+4. Outil de qualification & évaluation des fournisseurs
+
+5. Plan de réduction des coûts achats
+
+6. Outil de gestion des stocks & optimisation des niveaux
+
+7. Plan de gestion des approvisionnements
+
+8. Analyse de risques fournisseurs & supply chain
+
+9. Outil de négociation & contractualisation achats
+
+10. Plan de sourcing international & multi-sourcing
+
+11. Stratégie de supply chain durable & responsable
+
+12. Outil de traçabilité & transparence chaîne logistique
+
+13. Plan de transport & logistique optimisé
+
+14. Outil de gestion des entrepôts (WMS)
+
+15. Analyse de la performance fournisseurs (scorecard)
+
+16. Plan de digitalisation de la supply chain
+
+17. Outil de prévision de la demande (forecasting IA)
+
+18. Stratégie de résilience & diversification fournisseurs
+
+19. Outil d'appel d'offres & e-procurement
+
+20. Plan de réduction des délais (Lead Time reduction)
+
+21. Analyse coût total d'acquisition (TCO)
+
+22. Outil de gestion de la relation fournisseurs (SRM)
+
+23. Plan de gestion des retours & flux inverses
+
+24. Analyse de la valeur & value engineering achats
+
+25. Outil de conformité fournisseurs (RSE, qualité, légal)
+
+26. Stratégie de co-innovation avec fournisseurs clés
+
+27. Plan de continuité fournisseur & backup sourcing
+
+28. Benchmark des prix & analyse de marché achats
+
+29. Plan de décarbonation de la supply chain
+
+30. Outil de gestion des zones franches & entrepôts sous douane
+
+31. Outil d'optimisation portuaire & fret maritime
+
+32. Plan de gestion de la chaîne du froid
+
+33. Outil de traçabilité des produits agricoles & certifications
+
+34. Plan de gestion des stocks de médicaments & consommables
+
+
+
+
+
+  🗣️  CAT. 18 — COMMUNICATION & RELATIONS EXTÉRIEURES  (33 fonctions)
+
+
+
+1. Stratégie de communication corporate globale
+
+2. Plan de communication interne annuel
+
+3. Stratégie de relations médias & presse
+
+4. Plan de communication de crise & dark site
+
+5. Stratégie de communication digitale (social media)
+
+6. Plan de communication RSE & impact
+
+7. Outil de mesure de l'image & réputation
+
+8. Stratégie de lobbying & affaires publiques
+
+9. Plan de communication financière & relations investisseurs
+
+10. Outil de management de la réputation en ligne (ORM)
+
+11. Stratégie de storytelling & narrative de marque
+
+12. Plan d'engagement des parties prenantes
+
+13. Outil de production de contenu IA-assisté
+
+14. Stratégie de communication de crise ESG
+
+15. Plan de communication événementiel
+
+16. Outil de mesure de l'efficacité de la communication (KPIs)
+
+17. Stratégie d'ambassadeur & porte-parole
+
+18. Plan de communication du changement organisationnel
+
+19. Outil de veille & monitoring de la réputation
+
+20. Stratégie de communication interculturelle
+
+21. Plan de communication produit & lancement
+
+22. Stratégie de communication B2B & thought leadership
+
+23. Plan de communication RH & employer branding
+
+24. Stratégie de communication post-crise & reconstruction
+
+25. Plan de communication pour levée de fonds
+
+26. Outil de gestion des témoignages & cas clients
+
+27. Stratégie de communication en langues africaines locales
+
+28. Plan de communication pour les ODD & impact sociétal
+
+29. Outil de gestion des médias communautaires (radio, presse locale)
+
+30. Stratégie de communication institutionnelle pour ONG
+
+31. Plan de communication pour les appels à projets
+
+32. Outil de communication de la transformation digitale
+
+33. Stratégie de communication multilingue (20 langues)
+
+
+
+
+
+  ✅  CAT. 19 — QUALITÉ & EXCELLENCE OPÉRATIONNELLE  (34 fonctions)
+
+
+
+1. Plan de mise en place d'un SMQ (ISO 9001)
+
+2. Outil de gestion des non-conformités & CAPA
+
+3. Plan d'amélioration continue (Kaizen & Lean)
+
+4. Outil de cartographie des processus (BPMN)
+
+5. Analyse des causes racines (Ishikawa / 5 Pourquoi)
+
+6. Plan de réduction des gaspillages (Lean/5S)
+
+7. Outil de management visuel & tableau de bord opérationnel
+
+8. Plan de gestion de la qualité fournisseurs
+
+9. Outil de mesure de la performance des processus (SPC)
+
+10. Plan de maintenance totale (TPM)
+
+11. Outil Six Sigma & démarche DMAIC
+
+12. Plan d'accréditation & certification internationale
+
+13. Outil de gestion des réclamations clients
+
+14. Plan de déploiement des bonnes pratiques
+
+15. Outil de gestion des risques qualité (FMEA)
+
+16. Plan de formation & sensibilisation qualité
+
+17. Outil de revue de direction & management review
+
+18. Plan d'audit interne qualité
+
+19. Outil de gestion des indicateurs qualité (KQI)
+
+20. Programme 5S & organisation des espaces de travail
+
+21. Outil de gestion du changement processus
+
+22. Plan de réduction des délais (Time to Market)
+
+23. Plan de certification & renouvellement des certifications
+
+24. Outil de gestion de la documentation qualité (DMS)
+
+25. Analyse de la valeur & optimisation des coûts qualité
+
+26. Outil de suivi des actions correctives & préventives
+
+27. Plan de benchmarking qualité sectoriel
+
+28. Outil de management de la qualité en projet (QAP)
+
+29. Plan de gestion de la qualité dans l'innovation
+
+30. Outil de mesure de la satisfaction interne (collaborateurs)
+
+31. Plan de management de la qualité dans les services publics
+
+32. Outil de gestion de la qualité dans l'enseignement
+
+33. Plan de gestion de la qualité des données (Data Quality)
+
+34. Outil de gestion de la qualité en santé (accréditation HAS/JCI)
+
+
+
+
+
+  🔬  CAT. 20 — ÉTUDES DE PROJETS & FAISABILITÉ  (32 fonctions)
+
+
+
+1. Étude de faisabilité technique & économique
+
+2. Étude d'impact environnemental & social (EIES)
+
+3. Étude de préfaisabilité d'investissement
+
+4. Analyse coût-bénéfice (ACB) de projet public
+
+5. Étude de marché pour nouveau projet
+
+6. Étude de rentabilité financière de projet
+
+7. Étude de capacité institutionnelle
+
+8. Étude des risques et opportunités d'un projet
+
+9. Étude d'impact sur l'emploi & les compétences
+
+10. Étude d'impact sur le genre & l'inclusion
+
+11. Étude de faisabilité d'un projet agricole
+
+12. Étude de faisabilité d'un projet énergétique
+
+13. Étude de faisabilité d'une infrastructure publique
+
+14. Étude de faisabilité d'un projet de santé
+
+15. Étude de faisabilité d'un projet éducatif
+
+16. Étude de faisabilité d'un projet numérique
+
+17. Étude de faisabilité d'une start-up
+
+18. Étude de faisabilité d'une coopérative
+
+19. Étude de faisabilité d'un projet immobilier
+
+20. Étude de faisabilité d'un projet touristique
+
+21. Analyse multicritères de sélection de projet
+
+22. Modèle logique de projet (approche par les résultats)
+
+23. Théorie du changement appliquée au projet
+
+24. Plan de suivi & évaluation de projet (S&E)
+
+25. Indicateurs de performance de projet (KPIs projets)
+
+26. Outil de simulation financière de projet PPP
+
+27. Étude de l'acceptabilité sociale d'un projet
+
+28. Étude de la viabilité d'un projet en zone rurale africaine
+
+29. Analyse de la chaîne de valeur d'un projet sectoriel
+
+30. Étude de la complémentarité inter-projets
+
+31. Plan de valorisation des résultats d'un projet
+
+32. Outil de capitalisation des expériences de projet
+
+
+
+
+
+  🔎  CAT. 21 — INTELLIGENCE ÉCONOMIQUE & VEILLE  (30 fonctions)
+
+
+
+1. Outil de veille stratégique sectorielle IA
+
+2. Outil de veille concurrentielle automatisée
+
+3. Outil de veille technologique & innovation
+
+4. Outil de veille réglementaire & juridique
+
+5. Outil de veille des risques géopolitiques
+
+6. Outil de veille des marchés financiers & matières premières
+
+7. Outil de veille des tendances consommateurs
+
+8. Outil de veille des appels d'offres & marchés publics
+
+9. Outil de veille des brevets & propriété intellectuelle
+
+10. Outil de monitoring des réseaux sociaux & e-réputation
+
+11. Analyse des données macro-économiques sectorielles
+
+12. Outil de cartographie des acteurs & réseaux d'influence
+
+13. Outil de benchmarking sectoriel international
+
+14. Outil d'analyse des données open source (OSINT)
+
+15. Rapport de veille hebdomadaire automatisé
+
+16. Outil d'alerte précoce (early warning system)
+
+17. Analyse des chaînes de valeur mondiales
+
+18. Outil de veille des prix & indices sectoriels
+
+19. Analyse des flux commerciaux & trade intelligence
+
+20. Outil de cartographie des risques pays & géopolitiques
+
+21. Veille des innovations & disruptions africaines
+
+22. Outil de veille des politiques publiques & réformes
+
+23. Analyse des tendances démographiques & sociales
+
+24. Outil de suivi des mégatendances mondiales
+
+25. Rapport de positionnement concurrentiel
+
+26. Outil de profilage des partenaires & investisseurs
+
+27. Analyse des marchés émergents africains
+
+28. Outil de veille des financements disponibles (bailleurs, fonds)
+
+29. Analyse de l'écosystème startup africain
+
+30. Outil de cartographie des opportunités d'affaires régionales
+
+
+
+
+
+  🏭  CAT. 22 — OUTILS SECTORIELS SPÉCIALISÉS  (87 fonctions)
+
+
+
+Agriculture & Agroalimentaire
+
+1. Plan d'affaires agricole & étude de faisabilité
+
+2. Outil de gestion des cultures & calendrier cultural
+
+3. Analyse de rentabilité agricole & prix de revient
+
+4. Plan de gestion des intrants & des ressources agricoles
+
+5. Outil de certification bio & standards internationaux
+
+6. Plan de développement d'une coopérative agricole
+
+7. Outil d'analyse de marché & prix des commodités
+
+8. Plan de gestion de la chaîne de valeur agricole
+
+Santé & Sciences de la Vie
+
+9. Outil d'analyse épidémiologique & surveillance sanitaire
+
+10. Plan de gestion hospitalière & efficience clinique
+
+11. Audit des pratiques médicales & des protocoles
+
+12. Outil de pharmacovigilance & effets indésirables
+
+13. Plan de développement de l'offre de soins
+
+14. Outil de mesure de la qualité des soins (accréditation HAS/JCI)
+
+15. Plan de santé communautaire
+
+16. Outil de gestion des médicaments essentiels
+
+Finance, Banque & Assurance
+
+17. Outil de scoring crédit & risque client
+
+18. Modèle de risque de portefeuille bancaire
+
+19. Plan de portefeuille d'investissement & allocation d'actifs
+
+20. Outil d'analyse des marchés financiers
+
+21. Plan de mise en conformité Bâle III/IV
+
+22. Outil de gestion actif-passif (ALM)
+
+23. Plan de développement de produits d'assurance
+
+24. Outil de modélisation actuarielle
+
+Éducation & Formation
+
+25. Plan pédagogique institutionnel structuré
+
+26. Outil d'évaluation des apprentissages
+
+27. Analyse des résultats scolaires & tableaux de bord
+
+28. Plan de développement institutionnel (PDI)
+
+29. Outil de gestion des établissements scolaires
+
+30. Plan d'éducation inclusive & besoins spéciaux
+
+31. Outil de design de parcours de formation
+
+32. Plan de financement d'établissement d'enseignement
+
+Énergie & Mines
+
+33. Audit énergétique bâtiment & process industriel
+
+34. Plan de transition énergétique organisationnel
+
+35. Modèle de financement d'énergie renouvelable (PPA, lease)
+
+36. Outil de gestion des ressources minières
+
+37. Plan EIES (Étude d'Impact Environnemental et Social)
+
+38. Outil de conformité ITIE (transparence minière)
+
+39. Plan de développement d'un mini-réseau solaire
+
+40. Outil de mesure de l'accès à l'énergie
+
+Construction & Immobilier
+
+41. Plan de projet BTP (budget, délais, qualité)
+
+42. Analyse de risques chantier & HSE
+
+43. Outil de suivi & reporting chantier
+
+44. Plan de prévention des risques (PPSR)
+
+45. Outil de gestion immobilière & valorisation
+
+46. Plan de projet de construction verte (HQE/BREEAM)
+
+Transport & Logistique
+
+47. Outil d'optimisation des tournées & routage IA
+
+48. Analyse de la performance de flotte
+
+49. Plan de maintenance préventive des véhicules
+
+50. Outil de gestion des flux douaniers & transitaires
+
+51. Plan de développement d'une chaîne logistique africaine
+
+Tourisme & Hôtellerie
+
+52. Plan de développement touristique territorial
+
+53. Outil de gestion hôtelière & RevPAR
+
+54. Analyse de la satisfaction des visiteurs & expérience
+
+55. Plan de marketing touristique digital
+
+Secteur Public & Gouvernance
+
+56. Plan d'action gouvernemental & suivi des réformes
+
+57. Outil d'évaluation des politiques publiques
+
+58. Cadre de performance des services publics
+
+59. Outil de participation citoyenne numérique
+
+60. Plan de réforme administrative
+
+61. Outil de gestion des finances publiques (GFMIS)
+
+62. Plan de décentralisation & gouvernance locale
+
+63. Outil de planification nationale & suivi des ODD
+
+ONG & Développement
+
+64. Théorie du changement & modèle logique
+
+65. Cadre logique de projet (PCM/LFA)
+
+66. Outil de mesure d'impact ONG & SROI
+
+67. Rapport d'activité pour bailleurs de fonds (USAID, UE, BAD...)
+
+68. Plan de collecte de fonds & fundraising
+
+69. Outil de gestion de programmes humanitaires (4W/5W)
+
+70. Plan de renforcement des capacités institutionnelles
+
+Startups & PME Africaines
+
+71. Outil de validation de marché (MVP & lean startup)
+
+72. Plan de croissance startup & métriques north star
+
+73. Outil de fundraising & gestion des relations investisseurs
+
+74. Plan d'internationalisation PME africaine
+
+75. Outil de conformité OHADA & droit des affaires africain
+
+76. Guide d'accès aux marchés régionaux (CEDEAO, UA, ZLECAf)
+
+77. Outil de transition numérique TPE/PME
+
+78. Plan d'accès au financement BAD, BCEAO, BEAC, Fonds africains
+
+79. Outil de formalisation d'entreprise informelle
+
+80. Plan de développement d'un écosystème entrepreneurial local
+
+Technologies & Numérique
+
+81. Outil de gestion produit (Product roadmap & backlog)
+
+82. Plan de déploiement SaaS & go-to-market tech
+
+83. Outil de conformité lois données personnelles africaines
+
+84. Plan de cybersécurité PME & protection basique
+
+85. Outil d'audit de l'accessibilité numérique
+
+86. Plan de développement d'une plateforme de paiement mobile
+
+87. Outil de gestion de l'identité numérique (KYC digital)
+
+
+
+
+
+RÉCAPITULATIF — CATALOGUE DES FONCTIONS
+
+#
+
+Catégorie
+
+Fonctions
+
+01
+
+Diagnostics & Évaluations
+
+73
+
+02
+
+Audits & Conformité
+
+70
+
+03
+
+Reporting & Analytics Dashboard
+
+48
+
+04
+
+RH & Capital Humain
+
+67
+
+05
+
+Finance & Gestion
+
+55
+
+06
+
+Stratégie & Management
+
+40
+
+07
+
+Marketing & Commercial
+
+53
+
+08
+
+Juridique & Conformité
+
+34
+
+09
+
+Gestion de Projets & PMO
+
+40
+
+10
+
+Personnalité & Comportement Professionnel
+
+42
+
+11
+
+Profils Apprenants & Pédagogie
+
+35
+
+12
+
+Innovation & R&D
+
+34
+
+13
+
+RSE & Développement Durable
+
+42
+
+14
+
+Gestion des Risques
+
+37
+
+15
+
+Transformation Digitale & IA
+
+37
+
+16
+
+Templates & Modèles Prêts à l'Emploi
+
+73
+
+17
+
+Supply Chain & Achats
+
+34
+
+18
+
+Communication & Relations Extérieures
+
+33
+
+19
+
+Qualité & Excellence Opérationnelle
+
+34
+
+20
+
+Études de Projets & Faisabilité
+
+32
+
+21
+
+Intelligence Économique & Veille
+
+30
+
+22
+
+Outils Sectoriels Spécialisés
+
+87
+
+TOTAL
+
+22 catégories
+
+1 030 fonctions
+
+
+
+
+
+PARTIE II — 212 SECTEURS COUVERTS
+
+22 macro-secteurs · 212 secteurs · Outils transversaux + spécialisés pour chacun
+
+
+
+
+
+  🌾  MACRO-SECTEUR 01 — Agriculture & Agroalimentaire  (12 secteurs fonctions)
+
+
+
+001. Agriculture vivrière & céréalière
+
+002. Agriculture d'exportation & cultures de rente
+
+003. Élevage & productions animales
+
+004. Pêche & aquaculture
+
+005. Sylviculture & exploitation forestière
+
+006. Agro-industrie & transformation alimentaire
+
+007. Agri-Tech & agriculture de précision
+
+008. Horticulture & maraîchage
+
+009. Viticulture & œnologie
+
+010. Agriculture biologique & durable
+
+011. Coopératives agricoles
+
+012. Intrants agricoles & semences
+
+
+
+  ⛏️  MACRO-SECTEUR 02 — Mines & Ressources Naturelles  (8 secteurs fonctions)
+
+
+
+013. Extraction minière (or, diamant, coltan, bauxite, lithium)
+
+014. Pétrole & gaz (upstream)
+
+015. Pétrole & gaz (midstream & downstream)
+
+016. Phosphates, fertilisants & produits chimiques miniers
+
+017. Industrie extractive artisanale & à petite échelle
+
+018. Minéraux critiques, terres rares & transition énergétique
+
+019. Carrières, granulats & matériaux de construction
+
+020. Gestion & valorisation des ressources naturelles
+
+
+
+  ☀️  MACRO-SECTEUR 03 — Énergie & Transition Énergétique  (10 secteurs fonctions)
+
+
+
+021. Énergie solaire photovoltaïque & thermique
+
+022. Énergie éolienne (on-shore & off-shore)
+
+023. Hydroélectricité & énergie hydraulique
+
+024. Énergie thermique, nucléaire & géothermique
+
+025. Biomasse, biogaz & bioénergie
+
+026. Réseaux électriques intelligents (Smart Grid)
+
+027. Stockage d'énergie & batteries avancées
+
+028. Efficacité énergétique & sobriété énergétique
+
+029. Hydrogène vert & nouvelles énergies
+
+030. Off-grid & mini-réseaux (accès énergie rurale)
+
+
+
+  🏗️  MACRO-SECTEUR 04 — Construction & BTP  (9 secteurs fonctions)
+
+
+
+031. Construction résidentielle & habitat
+
+032. Bâtiments commerciaux, tertiaires & industriels
+
+033. Infrastructures publiques (routes, ponts, ports, aéroports)
+
+034. Génie civil & grands travaux
+
+035. Construction durable, verte & bâtiment bas carbone
+
+036. Architecture, urbanisme & design
+
+037. Matériaux de construction & négoce
+
+038. PropTech, BIM & digitalisation du BTP
+
+039. Promotion immobilière & lotissement
+
+
+
+  ⚙️  MACRO-SECTEUR 05 — Industrie Manufacturière  (15 secteurs fonctions)
+
+
+
+040. Industrie textile, confection & habillement
+
+041. Industrie automobile & mobilité
+
+042. Industrie électronique & semi-conducteurs
+
+043. Industrie chimique & pétrochimique
+
+044. Industrie pharmaceutique & biotechnologie
+
+045. Industrie aéronautique, spatiale & défense
+
+046. Industrie du bois, papier & emballage
+
+047. Industrie plastique & matières composites
+
+048. Industrie métallurgique, sidérurgie & fonderie
+
+049. Industrie agroalimentaire, boissons & tabac
+
+050. Industrie cosmétique, hygiène & parfumerie
+
+051. Industrie du luxe & produits premium
+
+052. Impression 3D & fabrication additive
+
+053. Robotique & automatisation industrielle
+
+054. Électroménager & équipements du foyer
+
+
+
+  💻  MACRO-SECTEUR 06 — Technologies & Numérique  (16 secteurs fonctions)
+
+
+
+055. Développement logiciel, SaaS & services IT
+
+056. Intelligence Artificielle & Machine Learning
+
+057. Cybersécurité & protection des données
+
+058. Cloud computing, infrastructure & DevOps
+
+059. Internet des objets (IoT) & systèmes embarqués
+
+060. Blockchain, Web3 & cryptomonnaies
+
+061. Télécommunications, réseaux & fibre optique
+
+062. Fintech, paiement digital & néobanques
+
+063. EdTech & plateformes d'apprentissage digital
+
+064. HealthTech, MedTech & santé numérique
+
+065. AgriTech, FoodTech & CleanTech
+
+066. GovTech & administration digitale
+
+067. LegalTech & RegTech
+
+068. Réalité virtuelle, augmentée & mixte (XR)
+
+069. Jeux vidéo, gaming & divertissement numérique
+
+070. Data centers, big data & cloud souverain
+
+
+
+  🏦  MACRO-SECTEUR 07 — Finance & Assurance  (12 secteurs fonctions)
+
+
+
+071. Banques commerciales & retail banking
+
+072. Banques d'investissement & marchés de capitaux
+
+073. Microfinance, finance inclusive & tontines formalisées
+
+074. Assurance vie, prévoyance & retraite
+
+075. Assurance IARD (non-vie) & réassurance
+
+076. Gestion d'actifs, fonds d'investissement & OPCVM
+
+077. Private equity, capital-risque & business angels
+
+078. Bourses & marchés des valeurs mobilières
+
+079. Finance islamique & Takaful
+
+080. Audit, expertise comptable & commissariat
+
+081. Conseil financier, patrimoine & fiscalité
+
+082. Transferts d'argent, remittances & paiement mobile
+
+
+
+  🏥  MACRO-SECTEUR 08 — Santé & Sciences de la Vie  (11 secteurs fonctions)
+
+
+
+083. Hôpitaux, cliniques & centres de santé
+
+084. Médecine de ville, généralistes & spécialistes
+
+085. Pharmacies & distribution pharmaceutique
+
+086. Industrie pharmaceutique & biologie médicale
+
+087. Dispositifs médicaux & équipements de santé
+
+088. Santé mentale, psychologie & bien-être
+
+089. Médecine traditionnelle, phytothérapie & médecines complémentaires
+
+090. Santé publique, épidémiologie & prévention
+
+091. Recherche médicale, essais cliniques & R&D santé
+
+092. Télémédecine, santé connectée & e-santé
+
+093. Nutrition, diététique & sécurité alimentaire
+
+
+
+  🎓  MACRO-SECTEUR 09 — Éducation & Formation  (9 secteurs fonctions)
+
+
+
+094. Enseignement préscolaire & primaire
+
+095. Enseignement secondaire & lycées
+
+096. Enseignement supérieur, universités & grandes écoles
+
+097. Formation professionnelle, technique & apprentissage
+
+098. Formation continue, CPF & développement professionnel
+
+099. E-learning, MOOC & plateformes EdTech
+
+100. Éducation spécialisée, inclusive & besoins spéciaux
+
+101. Coaching, mentorat & développement personnel
+
+102. Écoles de management, MBA & executive education
+
+
+
+  🛒  MACRO-SECTEUR 10 — Commerce & Distribution  (8 secteurs fonctions)
+
+
+
+103. Grande distribution, supermarchés & hypermarchés
+
+104. Commerce de détail, boutiques & spécialistes
+
+105. E-commerce, marketplace & commerce social
+
+106. Commerce de gros, négoce & import-export
+
+107. Franchise & réseaux de distribution
+
+108. Commerce de proximité, informel & marchés locaux
+
+109. Quick commerce, livraison express & dark stores
+
+110. Commerce équitable & circuits courts
+
+
+
+  ✈️  MACRO-SECTEUR 11 — Transport & Logistique  (10 secteurs fonctions)
+
+
+
+111. Transport aérien, aviation commerciale & fret aérien
+
+112. Transport maritime, fluvial & ports
+
+113. Transport ferroviaire & rail
+
+114. Transport routier, camionnage & messagerie
+
+115. Logistique, supply chain & entreposage
+
+116. Infrastructures portuaires & terminaux à conteneurs
+
+117. Mobilité urbaine, transports en commun & BHNS
+
+118. Livraison dernier kilomètre & logistique urbaine
+
+119. Véhicules électriques, mobilité verte & VTOL
+
+120. Drones commerciaux & transport autonome
+
+
+
+  🏨  MACRO-SECTEUR 12 — Tourisme & Hôtellerie  (8 secteurs fonctions)
+
+
+
+121. Hôtellerie, hébergement & resorts
+
+122. Restauration, fast food & food service
+
+123. Agences de voyage, tour-opérateurs & OTA
+
+124. Tourisme écologique, durable & de nature
+
+125. Tourisme médical, de bien-être & de santé
+
+126. Tourisme culturel, patrimonial & de savoir-faire
+
+127. Événementiel MICE, congrès & salons professionnels
+
+128. Tourisme de luxe & expériences premium
+
+
+
+  📺  MACRO-SECTEUR 13 — Médias & Communication  (8 secteurs fonctions)
+
+
+
+129. Presse écrite, édition & magazines
+
+130. Radio, podcasting & audio digital
+
+131. Télévision, streaming & production vidéo
+
+132. Médias sociaux, influenceurs & content creators
+
+133. Publicité, agences créatives & marketing digital
+
+134. Relations publiques, communication corporate & lobbying
+
+135. Production audiovisuelle, cinéma & jeux
+
+136. Imprimerie, signalétique & communication visuelle
+
+
+
+  🏢  MACRO-SECTEUR 14 — Immobilier & Urbanisme  (7 secteurs fonctions)
+
+
+
+137. Promotion immobilière résidentielle
+
+138. Immobilier commercial, bureaux & retail
+
+139. Gestion locative & property management
+
+140. Foncier, lotissement & aménagement
+
+141. Investissement immobilier, REIT & foncières
+
+142. Smart cities, urbanisme durable & villes intelligentes
+
+143. Immobilier logistique & entrepôts
+
+
+
+  🤝  MACRO-SECTEUR 15 — Services aux Entreprises  (11 secteurs fonctions)
+
+
+
+144. Conseil en stratégie & management
+
+145. Ressources humaines, recrutement & intérim
+
+146. Droit des affaires, juridique & compliance
+
+147. Marketing, études de marché & publicité
+
+148. Comptabilité, gestion & expertise financière
+
+149. Informatique, ESN & services numériques (DSI)
+
+150. Facility management & services généraux
+
+151. Sécurité privée & gardiennage
+
+152. Nettoyage, propreté & hygiène
+
+153. Bureau d'études, ingénierie & assistance technique
+
+154. Centre d'appels, BPO & externalisation
+
+
+
+  🏛️  MACRO-SECTEUR 16 — Secteur Public & Gouvernance  (9 secteurs fonctions)
+
+
+
+155. Administrations centrales, ministères & services d'État
+
+156. Collectivités locales, mairies & décentralisation
+
+157. Services publics, utilities & entreprises d'État
+
+158. Forces de défense, sécurité nationale & gendarmerie
+
+159. Justice, tribunaux & institutions judiciaires
+
+160. Diplomatie, coopération internationale & OI
+
+161. Fiscalité, douanes & régies financières
+
+162. Planification nationale, développement & investissement
+
+163. Régulation, autorités indépendantes & supervision
+
+
+
+  ❤️  MACRO-SECTEUR 17 — ONG, Société Civile & Secteur Social  (8 secteurs fonctions)
+
+
+
+164. ONG humanitaires & réponse d'urgence
+
+165. ONG de développement & coopération
+
+166. Fondations philanthropiques & mécénat
+
+167. Économie sociale & solidaire (ESS)
+
+168. Associations professionnelles, syndicats & chambres consulaires
+
+169. Protection sociale, aide sociale & protection enfance
+
+170. Organisations religieuses, cultes & spiritualité
+
+171. Jeunesse, genre & droits humains
+
+
+
+  🎨  MACRO-SECTEUR 18 — Art, Culture & Créativité  (7 secteurs fonctions)
+
+
+
+172. Arts visuels, galeries & arts plastiques
+
+173. Musique, spectacle vivant & industrie musicale
+
+174. Littérature, édition & bibliothèques
+
+175. Artisanat, savoir-faire traditionnel & art populaire
+
+176. Patrimoine culturel, musées & archéologie
+
+177. Mode, textile créatif & design
+
+178. Danse, théâtre, cirque & arts de la scène
+
+
+
+  ⚽  MACRO-SECTEUR 19 — Sport, Loisirs & Bien-être  (6 secteurs fonctions)
+
+
+
+179. Sport professionnel, fédérations & ligues
+
+180. Infrastructures sportives, stades & équipements
+
+181. Fitness, bien-être, yoga & sports santé
+
+182. eSport, gaming compétitif & streaming
+
+183. Parcs d'attraction, loisirs & divertissement familial
+
+184. Sports de nature, aventure & tourisme sportif
+
+
+
+  ♻️  MACRO-SECTEUR 20 — Environnement & Développement Durable  (8 secteurs fonctions)
+
+
+
+185. Gestion des déchets, recyclage & économie circulaire
+
+186. Eau, assainissement & traitement (WASH)
+
+187. Conservation de la biodiversité & aires protégées
+
+188. Lutte contre la désertification & dégradation des sols
+
+189. Finance verte, obligations vertes & taxonomie
+
+190. Pollution atmosphérique, marine & contamination
+
+191. Adaptation & résilience climatique
+
+192. Éco-construction & bâtiment durable
+
+
+
+  🚀  MACRO-SECTEUR 21 — Secteurs Émergents & Innovation  (11 secteurs fonctions)
+
+
+
+193. Intelligence artificielle générative & LLM
+
+194. Biotechnologie, génie génétique & biologie de synthèse
+
+195. Nanotechnologie & matériaux avancés
+
+196. Informatique quantique
+
+197. Économie des données, data brokers & analytique avancée
+
+198. Économie spatiale & NewSpace
+
+199. Métaverse, mondes virtuels & XR immersif
+
+200. Creator economy & économie des créateurs
+
+201. Gig economy, plateformes & travail indépendant
+
+202. Impact investing, blended finance & finance à impact
+
+203. Économie des femmes & gender finance
+
+
+
+  🌍  MACRO-SECTEUR 22 — Secteurs Spécifiques Afrique & Pays Émergents  (9 secteurs fonctions)
+
+
+
+204. Diaspora africaine, remittances & investissements
+
+205. Zone de libre-échange continentale africaine (ZLECAf)
+
+206. Économie informelle & formalisation des entreprises
+
+207. Téléphonie mobile, Mobile money & USSD
+
+208. PME, entrepreneuriat africain & startup ecosystems
+
+209. Coopération Sud-Sud & triangulaire
+
+210. Accès aux services de base & infrastructure rurale
+
+211. Industries culturelles & créatives africaines
+
+212. Marchés publics africains & commande publique régionale
+
+
+
+
+
+PARTIE III — 20 LANGUES PROFESSIONNELLES
+
+15 premières langues africaines + 5 langues mondiales complémentaires
+
+
+
+
+
+A. 15 Langues Africaines Prioritaires
+
+#
+
+Langue
+
+Famille
+
+Locuteurs
+
+Zones clés
+
+1
+
+Français
+
+Romance
+
+~300 M
+
+Afrique de l'Ouest, Centrale, Maghreb, Océan Indien
+
+2
+
+Arabe
+
+Sémitique
+
+~420 M
+
+Maghreb, Afrique du Nord, Corne de l'Afrique, Sahel
+
+3
+
+Anglais
+
+Germanique
+
+~250 M
+
+Afrique de l'Est, Australe, Nigéria, Ghana, Kenya
+
+4
+
+Swahili (Kiswahili)
+
+Bantoue
+
+~200 M
+
+Kenya, Tanzanie, Ouganda, RDC, Rwanda, Burundi
+
+5
+
+Haoussa
+
+Afro-asiatique
+
+~90 M
+
+Nigéria nord, Niger, Ghana, Tchad, Soudan
+
+6
+
+Yoruba
+
+Niger-Congo
+
+~55 M
+
+Nigéria sud-ouest, Bénin, Togo
+
+7
+
+Igbo
+
+Niger-Congo
+
+~45 M
+
+Nigéria sud-est
+
+8
+
+Amharique
+
+Sémitique
+
+~60 M
+
+Éthiopie (langue officielle)
+
+9
+
+Oromo
+
+Cushitique
+
+~45 M
+
+Éthiopie, Kenya
+
+10
+
+Zulu
+
+Bantoue
+
+~27 M
+
+Afrique du Sud
+
+11
+
+Portugais
+
+Romance
+
+~60 M
+
+Angola, Mozambique, Cap-Vert, Guinée-Bissau, São Tomé
+
+12
+
+Somali
+
+Cushitique
+
+~25 M
+
+Somalie, Djibouti, Kenya, Éthiopie
+
+13
+
+Lingala
+
+Bantoue
+
+~40 M
+
+RDC, Congo-Brazzaville, Angola
+
+14
+
+Malgache
+
+Austronésienne
+
+~25 M
+
+Madagascar
+
+15
+
+Wolof
+
+Niger-Congo
+
+~12 M
+
+Sénégal, Gambie, Mauritanie
+
+
+
+B. 5 Langues Professionnelles Mondiales Complémentaires
+
+#
+
+Langue
+
+Famille
+
+Intérêt professionnel
+
+16
+
+Mandarin (Chinois)
+
+Sino-tibétaine
+
+1er partenaire commercial de l'Afrique — investissements chinois
+
+17
+
+Espagnol
+
+Romance
+
+Amérique latine, Espagne, Guinée équatoriale, diaspora
+
+18
+
+Hindi
+
+Indo-iranienne
+
+Partenariats Inde-Afrique, diaspora indienne, JICA/TICAD
+
+19
+
+Allemand
+
+Germanique
+
+Investissements UE, coopération technique, GIZ, KfW
+
+20
+
+Japonais
+
+Isolée
+
+Partenariats TICAD, JICA, constructeurs Toyota/Honda/Kawasaki
+
+
+
+SYNTHÈSE GLOBALE DE LA PLATEFORME
+
+
+
+Dimension
+
+Valeur
+
+Détail
+
+Fonctions totales
+
+1 030
+
+22 catégories d'outils transversaux
+
+Secteurs couverts
+
+212
+
+22 macro-secteurs mondiaux & africains
+
+Langues disponibles
+
+20
+
+15 africaines + 5 mondiales
+
+Intégration IA
+
+100%
+
+Tous les outils intègrent l'intelligence artificielle
+
+Mode de déploiement
+
+Prêt à l'emploi
+
+Dashboards analytics inclus pour chaque secteur
+
+Mise à jour
+
+Continue & automatisée
+
+Alignée sur les mutations réglementaires et technologiques
+
+Référentiels intégrés
+
+50+
+
+GRI, CSRD, ISO, OHADA, IFRS, SDG, AI Act, ZLECAf...
+
+Cible géographique
+
+Mondiale
+
+Focus Afrique & marchés émergents
+
+Architecture
+
+Multi-entités
+
+Groupes, PME, ONG, secteur public, startups
+
+Personnalisation IA
+
+Contextuelle
+
+Adaptation sectorielle, linguistique & réglementaire automatique
+
+
+
+Chaque secteur active les 22 catégories d'outils transversaux + ses outils sectoriels dédiés.
+
+La plateforme évolue en continu pour intégrer les nouvelles normes : CSRD, AI Act, ZLECAf, Agenda 2063...
+

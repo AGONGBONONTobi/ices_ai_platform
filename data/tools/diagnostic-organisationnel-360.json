@@ -1,0 +1,71 @@
+{
+  "id": "diagnostic-organisationnel-360",
+  "title": "Diagnostic organisationnel 360°",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "nomEntreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Entreprise XYZ",
+      "required": true
+    },
+    {
+      "name": "tailleEntreprise",
+      "type": "select",
+      "options": [
+        "Moins de 10 employés",
+        "10-50 employés",
+        "51-200 employés",
+        "Plus de 200 employés"
+      ],
+      "label": "Taille de l'entreprise",
+      "required": true
+    },
+    {
+      "name": "objectifsStrategiques",
+      "type": "textarea",
+      "label": "Objectifs stratégiques de l'entreprise",
+      "placeholder": "Exemple : Développer une nouvelle ligne de produits, augmenter la présence en ligne, etc.",
+      "required": true
+    },
+    {
+      "name": "defisActuels",
+      "type": "textarea",
+      "label": "Défis actuels de l'entreprise",
+      "placeholder": "Exemple : Concurrence accrue, difficultés à recruter du personnel qualifié, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en diagnostic organisationnel. L'entreprise {nomEntreprise} de taille {tailleEntreprise} a pour objectifs stratégiques : {objectifsStrategiques}. Elle est actuellement confrontée à ces défis : {defisActuels}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (stratégie, organisation, ressources humaines, finances), et des recommandations pour améliorer la performance globale de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

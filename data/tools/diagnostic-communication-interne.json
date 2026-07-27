@@ -1,0 +1,83 @@
+{
+  "id": "diagnostic-communication-interne",
+  "title": "Diagnostic de la communication interne",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "type-de-communication",
+      "type": "select",
+      "options": [
+        "Oral",
+        "Écrit",
+        "Mixte"
+      ],
+      "label": "Quel type de communication utilisez-vous principalement ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "frequentation-des-reunions",
+      "type": "number",
+      "label": "Combien de réunions internes avez-vous par semaine ?",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "qualite-des-reunions",
+      "type": "textarea",
+      "label": "Quelle est la qualité générale des réunions internes ? (ex : organisation, participation, résultats)",
+      "placeholder": "Exemple : Les réunions sont bien organisées, mais les participants ne sont pas toujours préparés.",
+      "required": true
+    },
+    {
+      "name": "utilisation-des-outils-de-communication",
+      "type": "select",
+      "options": [
+        "Oui, régulièrement",
+        "Oui, occasionnellement",
+        "Non"
+      ],
+      "label": "Utilisez-vous régulièrement des outils de communication (ex : Slack, Trello, email) ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "satisfaction-des-employes",
+      "type": "number",
+      "label": "Sur 10, quelle est la satisfaction générale des employés en ce qui concerne la communication interne ?",
+      "placeholder": "Exemple : 7",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Type de communication : {type-de-communication}, Fréquentation des réunions : {frequentation-des-reunions}, Qualité des réunions : {qualite-des-reunions}, Utilisation des outils de communication : {utilisation-des-outils-de-communication}, Satisfaction des employés : {satisfaction-des-employes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

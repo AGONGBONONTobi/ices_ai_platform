@@ -1,0 +1,71 @@
+{
+  "id": "strategie-medias-sociaux-community-management",
+  "title": "Stratégie de médias sociaux & community management",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "objectif-marketing",
+      "type": "select",
+      "options": [
+        "Augmenter la visibilité",
+        "Augmenter les ventes",
+        "Améliorer l'image de la marque"
+      ],
+      "label": "Quel est l'objectif principal de la stratégie de médias sociaux ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "public-cible",
+      "type": "textarea",
+      "label": "Qui est le public cible de la stratégie de médias sociaux ?",
+      "placeholder": "Exemple : Jeunes adultes entre 18 et 35 ans",
+      "required": true
+    },
+    {
+      "name": "contenu-strategie",
+      "type": "text",
+      "label": "Quel type de contenu souhaitez-vous partager sur les médias sociaux ?",
+      "placeholder": "Exemple : Actualités, promotions, conseils",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la stratégie de médias sociaux ?",
+      "placeholder": "Exemple : 1000€",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en marketing. L'utilisateur a répondu : Objectif marketing : {objectif-marketing}, Public cible : {public-cible}, Contenu de la stratégie : {contenu-strategie}, Budget alloué : {budget-alloue}. Analyse ces informations et propose une stratégie de médias sociaux et de community management efficace.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

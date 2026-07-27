@@ -1,0 +1,83 @@
+{
+  "id": "diagnostic-de-maturite-pm-et-gouvernance-projets",
+  "title": "Diagnostic de maturité PM & gouvernance projets",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "maturite-gestion-projet",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est le niveau de maturité de la gestion de projet dans votre organisation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "gouvernance-projet",
+      "type": "textarea",
+      "label": "Pouvez-vous décrire la gouvernance projet mise en place dans votre organisation ?",
+      "placeholder": "Exemple :",
+      "required": true
+    },
+    {
+      "name": "methodologie-projet",
+      "type": "select",
+      "options": [
+        "Agile",
+        "Waterfall",
+        "Hybride"
+      ],
+      "label": "Quelle méthode de projet est utilisée dans votre organisation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "ressources-projet",
+      "type": "number",
+      "label": "Quel est le nombre de ressources affectées aux projets dans votre organisation ?",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "budget-projet",
+      "type": "number",
+      "label": "Quel est le budget alloué aux projets dans votre organisation ?",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Maturité gestion projet : {maturite-gestion-projet}, Gouvernance projet : {gouvernance-projet}, Méthodologie projet : {methodologie-projet}, Ressources projet : {ressources-projet}, Budget projet : {budget-projet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

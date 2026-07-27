@@ -1,0 +1,87 @@
+{
+  "id": "test-de-gestion-des-conflits-tki",
+  "title": "Test de gestion des conflits (TKI — Thomas-Kilmann)",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "conflit-type",
+      "type": "select",
+      "options": [
+        "Conflit interne",
+        "Conflit externe"
+      ],
+      "label": "Quel type de conflit souhaitez-vous analyser ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "conflit-urgence",
+      "type": "select",
+      "options": [
+        "Élevée",
+        "Moyenne",
+        "Basse"
+      ],
+      "label": "Quelle est l'urgence du conflit ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "conflit-importance",
+      "type": "select",
+      "options": [
+        "Élevée",
+        "Moyenne",
+        "Basse"
+      ],
+      "label": "Quelle est l'importance du conflit ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "conflit-resolution",
+      "type": "textarea",
+      "label": "Comment avez-vous résolu le conflit ?",
+      "placeholder": "Décrivez les étapes que vous avez suivies pour résoudre le conflit",
+      "required": true
+    },
+    {
+      "name": "conflit-resultat",
+      "type": "textarea",
+      "label": "Quel est le résultat du conflit ?",
+      "placeholder": "Décrivez les conséquences du conflit",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Conflit-type: {conflit-type}, Conflit-urgence: {conflit-urgence}, Conflit-importance: {conflit-importance}, Conflit-resolution: {conflit-resolution}, Conflit-resultat: {conflit-resultat}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

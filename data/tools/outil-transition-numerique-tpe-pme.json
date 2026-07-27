@@ -1,0 +1,72 @@
+{
+  "id": "outil-transition-numerique-tpe-pme",
+  "title": "Outil de transition numérique TPE/PME",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "effectif",
+      "type": "number",
+      "label": "Quel est l'effectif de votre entreprise ?",
+      "placeholder": "Exemple : 50",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Industrie",
+        "Commerce",
+        "Services",
+        "Autres"
+      ],
+      "label": "Dans quel secteur d'activité votre entreprise opère-t-elle ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_projet",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre projet de transition numérique",
+      "placeholder": "Exemple : mise en place d'un nouveau système de gestion de la relation client",
+      "required": true
+    },
+    {
+      "name": "budget_prevu",
+      "type": "number",
+      "label": "Quel est le budget prévu pour votre projet de transition numérique ?",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en transition numérique. L'utilisateur a répondu : Effectif: {effectif}, Secteur: {secteur}, Description du projet: {description_projet}, Budget prévu: {budget_prevu}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour la réussite de la transition numérique de cette TPE/PME.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

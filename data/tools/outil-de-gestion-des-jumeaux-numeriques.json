@@ -1,0 +1,70 @@
+{
+  "id": "outil-de-gestion-des-jumeaux-numeriques",
+  "title": "Outil de gestion des jumeaux numériques (digital twins)",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "nom_projet",
+      "type": "text",
+      "label": "Nom du projet de jumeau numérique",
+      "placeholder": "Exemple : Projet de simulation de processus",
+      "required": true
+    },
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Objectif principal du jumeau numérique",
+      "placeholder": "Exemple : Améliorer l'efficacité énergétique d'un processus industriel",
+      "required": true
+    },
+    {
+      "name": "type_jumeau",
+      "type": "select",
+      "options": [
+        "Jumeau numérique de processus",
+        "Jumeau numérique de produit",
+        "Jumeau numérique de système"
+      ],
+      "label": "Type de jumeau numérique",
+      "required": true
+    },
+    {
+      "name": "technologies_utilisees",
+      "type": "textarea",
+      "label": "Technologies et outils utilisés pour le développement du jumeau numérique",
+      "placeholder": "Exemple : IoT, IA, simulations numériques",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en transformation digitale et IA. L'utilisateur a répondu : Nom du projet : {nom_projet}, Objectif principal : {objectif}, Type de jumeau numérique : {type_jumeau}, Technologies utilisées : {technologies_utilisees}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (technologie, processus, organisation), et des recommandations pour améliorer la mise en œuvre du jumeau numérique.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "template-de-presentation-investisseurs",
+  "title": "Template de présentation investisseurs (pitch deck)",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "probleme",
+      "type": "textarea",
+      "label": "Décrivez le problème que votre produit ou service résout",
+      "placeholder": "Exemple : Le manque d'accès aux soins de santé de qualité pour les communautés rurales",
+      "required": true
+    },
+    {
+      "name": "solution",
+      "type": "textarea",
+      "label": "Présentez votre solution",
+      "placeholder": "Exemple : Une plateforme de téléconsultation pour les communautés rurales",
+      "required": true
+    },
+    {
+      "name": "modele_economique",
+      "type": "select",
+      "options": [
+        "Abonnement",
+        "Achat unique",
+        "Publicité",
+        "Frais de transaction"
+      ],
+      "label": "Quel est votre modèle économique ?",
+      "required": true
+    },
+    {
+      "name": "objectif_levée_fonds",
+      "type": "number",
+      "label": "Quel est votre objectif de levée de fonds ?",
+      "placeholder": "Exemple : 1 000 000 $",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en création d'entreprise. L'utilisateur a répondu : Probleme: {probleme}, Solution: {solution}, Modèle économique: {modele_economique}, Objectif de levée de fonds: {objectif_levée_fonds}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (problème, solution, modèle économique, objectif de levée de fonds), et des recommandations pour améliorer le pitch deck.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

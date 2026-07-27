@@ -1,0 +1,72 @@
+{
+  "id": "diagnostic-acces-financement-pme-startup",
+  "title": "Diagnostic de l'accès au financement (PME/startup)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "revenus-annuels",
+      "type": "number",
+      "label": "Quels sont vos revenus annuels ?",
+      "placeholder": "Entrez vos revenus annuels",
+      "required": true
+    },
+    {
+      "name": "couts-fixes",
+      "type": "number",
+      "label": "Quels sont vos coûts fixes ?",
+      "placeholder": "Entrez vos coûts fixes",
+      "required": true
+    },
+    {
+      "name": "projet-financement",
+      "type": "textarea",
+      "label": "Présentez votre projet de financement : objectifs, besoins, plan d'action",
+      "placeholder": "Décrivez votre projet de financement",
+      "required": true
+    },
+    {
+      "name": "type-de-financement",
+      "type": "select",
+      "options": [
+        "Prêt",
+        "Investissement",
+        "Subvention",
+        "Autre"
+      ],
+      "label": "Quel type de financement recherchez-vous ?",
+      "placeholder": "Sélectionnez un type de financement",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Revenus annuels: {revenus-annuels}, Couts fixes: {couts-fixes}, Projet de financement: {projet-financement}, Type de financement: {type-de-financement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

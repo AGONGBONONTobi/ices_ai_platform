@@ -1,0 +1,78 @@
+{
+  "id": "performance-marketing-roi-analytics",
+  "title": "Analytics de la performance marketing (ROI)",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Budget alloué pour la campagne",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    },
+    {
+      "name": "revenus",
+      "type": "number",
+      "label": "Revenus générés par la campagne",
+      "placeholder": "Exemple : 15000",
+      "required": true
+    },
+    {
+      "name": "marge",
+      "type": "number",
+      "label": "Marge bénéficiaire de la campagne",
+      "placeholder": "Exemple : 5000",
+      "required": true
+    },
+    {
+      "name": "canal-de-revenus",
+      "type": "select",
+      "options": [
+        "Email",
+        "Réseaux sociaux",
+        "Publicité en ligne"
+      ],
+      "label": "Canal de revenus principal",
+      "placeholder": "Exemple : Email",
+      "required": true
+    },
+    {
+      "name": "commentaires-client",
+      "type": "textarea",
+      "label": "Commentaires des clients sur la campagne",
+      "placeholder": "Exemple : Les clients ont apprécié la campagne",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Analyse de la performance marketing (ROI) : Tu es un expert en marketing. L'utilisateur a répondu : Budget : {budget}, Revenus : {revenus}, Marge : {marge}, Canal de revenus principal : {canal-de-revenus}, Commentaires des clients : {commentaires-client}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

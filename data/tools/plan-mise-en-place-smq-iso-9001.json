@@ -1,0 +1,79 @@
+{
+  "id": "plan-mise-en-place-smq-iso-9001",
+  "title": "Plan de mise en place d'un SMQ (ISO 9001)",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "organisation_size",
+      "type": "number",
+      "label": "Taille de l'organisation (nombre d'employés)",
+      "placeholder": "Ex: 150",
+      "required": true
+    },
+    {
+      "name": "existing_processes",
+      "type": "textarea",
+      "label": "Décrivez les processus existants liés à la qualité",
+      "placeholder": "Ex: Processus de contrôle qualité, gestion des non-conformités, etc.",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Budget alloué au SMQ (en euros)",
+      "placeholder": "Ex: 50000",
+      "required": true
+    },
+    {
+      "name": "timeline",
+      "type": "select",
+      "options": [
+        "Moins de 3 mois",
+        "3 à 6 mois",
+        "6 à 12 mois",
+        "Plus de 12 mois"
+      ],
+      "label": "Délai de mise en place souhaité",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "training_needed",
+      "type": "textarea",
+      "label": "Quels types de formation sont nécessaires pour le personnel?",
+      "placeholder": "Ex: Formation ISO 9001, ateliers de gestion des risques, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Organisation size: {organisation_size}, Existing processes: {existing_processes}, Budget: {budget}, Timeline: {timeline}, Training needed: {training_needed}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "id": "plan-digitalisation-supply-chain",
+  "title": "Plan de digitalisation de la supply chain",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "niveau_actuel",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quel est le niveau actuel de digitalisation de votre supply chain?",
+      "placeholder": "Sélectionnez un niveau",
+      "required": true
+    },
+    {
+      "name": "principaux_but",
+      "type": "textarea",
+      "label": "Quels sont les principaux objectifs de votre plan de digitalisation?",
+      "placeholder": "Exemple: améliorer la visibilité, réduire les coûts",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué à ce projet (en €)?",
+      "placeholder": "Exemple: 500000",
+      "required": true
+    },
+    {
+      "name": "duree",
+      "type": "number",
+      "label": "Quelle est la durée prévue pour la mise en œuvre (en mois)?",
+      "placeholder": "Exemple: 12",
+      "required": true
+    },
+    {
+      "name": "enjeux",
+      "type": "select",
+      "options": [
+        "Gestion des risques",
+        "Optimisation des coûts",
+        "Amélioration de la satisfaction client",
+        "Conformité réglementaire"
+      ],
+      "label": "Quels sont les enjeux prioritaires?",
+      "placeholder": "Sélectionnez un enjeu",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Niveau actuel: {niveau_actuel}, Objectifs: {principaux_but}, Budget: {budget}€, Durée: {duree} mois, Enjeux: {enjeux}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

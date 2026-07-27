@@ -1,0 +1,74 @@
+{
+  "id": "profil-des-barrieres-et-freins-a-l-apprentissage",
+  "title": "Profil des barrières & freins à l'apprentissage",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "barriere-financiere",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Existe-t-il des barrières financières (coûts, ressources, etc.) qui empêchent l'apprentissage?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "frein-organisationnel",
+      "type": "textarea",
+      "label": "Quels sont les freins organisationnels (ressources, temps, etc.) qui empêchent l'apprentissage?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "barriere-technologique",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Existe-t-il des barrières technologiques (accès, compétences, etc.) qui empêchent l'apprentissage?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "frein-personnel",
+      "type": "textarea",
+      "label": "Quels sont les freins personnels (motivation, confiance, etc.) qui empêchent l'apprentissage?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Barrière financière: {barriere-financiere}, Frein organisationnel: {frein-organisationnel}, Barrière technologique: {barriere-technologique}, Frein personnel: {frein-personnel}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

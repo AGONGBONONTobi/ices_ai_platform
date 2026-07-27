@@ -1,0 +1,65 @@
+{
+  "id": "plan-de-maintenance-preventive-des-vehicules",
+  "title": "Plan de maintenance préventive des véhicules",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_vehicule",
+      "type": "select",
+      "options": [
+        "Voitures particulières",
+        "Véhicules utilitaires légers",
+        "Véhicules utilitaires lourds",
+        "Deux-roues"
+      ],
+      "label": "Quel est le type de véhicule concerné ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "kilometrage_annuel",
+      "type": "number",
+      "label": "Quel est le kilométrage annuel estimé du véhicule ?",
+      "placeholder": "Exemple : 20000",
+      "required": true
+    },
+    {
+      "name": "conditions_utilisation",
+      "type": "textarea",
+      "label": "Décrivez les conditions d'utilisation du véhicule (environnement, usage, etc.)",
+      "placeholder": "Exemple : Utilisation en ville, transport de marchandises légères",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un spécialiste en maintenance automobile. L'utilisateur a répondu : Type de véhicule : {type_vehicule}, Kilométrage annuel : {kilometrage_annuel} km, Conditions d'utilisation : {conditions_utilisation}. Établis un plan de maintenance préventive adapté et donne un score global de préparation sur 100, une évaluation par axe (mécanique, pneumatiques, sécurité), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

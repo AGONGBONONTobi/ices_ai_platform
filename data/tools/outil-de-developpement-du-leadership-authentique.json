@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-developpement-du-leadership-authentique",
+  "title": "Outil de développement du leadership authentique",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "motivation",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, comment vous sentez-vous motivé(e) pour atteindre vos objectifs professionnels ?",
+      "placeholder": "Exemple : 7",
+      "required": true
+    },
+    {
+      "name": "communication",
+      "type": "textarea",
+      "label": "Quelles sont vos forces et faiblesses en matière de communication avec vos collègues et supérieurs ?",
+      "placeholder": "Exemple : Je suis une personne ouverte et claire dans mes communications, mais je peux parfois avoir du mal à écouter attentivement les autres.",
+      "required": true
+    },
+    {
+      "name": "empathie",
+      "type": "select",
+      "options": [
+        "Tout à fait d'accord",
+        "Partiellement d'accord",
+        "Pas du tout d'accord"
+      ],
+      "label": "Je pense que l'empathie est un trait de caractère important pour un leader. Je suis d'accord avec l'affirmation suivante :",
+      "placeholder": "Exemple : Tout à fait d'accord",
+      "required": true
+    },
+    {
+      "name": "responsabilite",
+      "type": "text",
+      "label": "Qu'est-ce que vous faites pour prendre en compte vos erreurs et les corriger ?",
+      "placeholder": "Exemple : Je prends le temps de réfléchir à ce qui s'est passé et je m'engage à faire mieux la prochaine fois.",
+      "required": true
+    },
+    {
+      "name": "vision",
+      "type": "textarea",
+      "label": "Quelle est votre vision pour votre carrière professionnelle à court et long terme ?",
+      "placeholder": "Exemple : Je vois moi-même en tant que leader dans une organisation où je peux faire une différence positive et contribuer à la réussite de l'équipe.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Motivation: {motivation}, Communication: {communication}, Empathie: {empathie}, Responsabilité: {responsabilite}, Vision: {vision}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

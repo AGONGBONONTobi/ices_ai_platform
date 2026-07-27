@@ -1,0 +1,71 @@
+{
+  "id": "outil-escalade-gestion-issues-projet",
+  "title": "Outil d'escalade & gestion des issues projet",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "priorite",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Elevé"
+      ],
+      "label": "Quelle est la priorité de l'issue ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description-issue",
+      "type": "textarea",
+      "label": "Décrivez brièvement l'issue",
+      "placeholder": "Exemple de description",
+      "required": true
+    },
+    {
+      "name": "responsable",
+      "type": "text",
+      "label": "Qui est responsable de l'issue ?",
+      "placeholder": "Exemple de responsable",
+      "required": true
+    },
+    {
+      "name": "deadline",
+      "type": "number",
+      "label": "Quel est le délai pour résoudre l'issue ?",
+      "placeholder": "Exemple de délai",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Priorité: {priorite}, Description de l'issue: {description-issue}, Responsable: {responsable}, Délai: {deadline}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

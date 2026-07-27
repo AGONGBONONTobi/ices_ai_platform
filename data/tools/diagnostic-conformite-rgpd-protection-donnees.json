@@ -1,0 +1,78 @@
+{
+  "id": "diagnostic-conformite-rgpd-protection-donnees",
+  "title": "Diagnostic de conformité RGPD & protection des données",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "nom-du-representant",
+      "type": "text",
+      "label": "Nom du représentant de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "type-de-donnees-collectees",
+      "type": "select",
+      "options": [
+        "Données personnelles",
+        "Données sensibles",
+        "Données financières"
+      ],
+      "label": "Type de données collectées",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "procedures-de-collecte",
+      "type": "textarea",
+      "label": "Procedures de collecte de données",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "procedures-de-stockage",
+      "type": "textarea",
+      "label": "Procedures de stockage de données",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en RGPD. L'utilisateur a répondu : Entreprise: {entreprise}, Nom du représentant: {nom-du-representant}, Type de données collectées: {type-de-donnees-collectees}, Procedures de collecte: {procedures-de-collecte}, Procedures de stockage: {procedures-de-stockage}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

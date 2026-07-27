@@ -1,0 +1,73 @@
+{
+  "id": "plan-de-gestion-des-talents-en-afrique-et-pays-emergents",
+  "title": "Plan de gestion des talents en Afrique & pays émergents",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "pays",
+      "type": "select",
+      "options": [
+        "Afrique du Sud",
+        "Égypte",
+        "Maroc",
+        "Nigéria",
+        "Tunisie"
+      ],
+      "label": "Quel pays choisissez-vous pour votre projet ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "text",
+      "label": "Quel secteur d'activité est concerné par votre projet ?",
+      "placeholder": "Exemple : Technologie, Santé, Énergie",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs spécifiques de votre projet en matière de gestion des talents ?",
+      "placeholder": "Exemple : Améliorer la rétention des employés, Augmenter la productivité",
+      "required": true
+    },
+    {
+      "name": "ressources",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la gestion des talents dans votre projet ?",
+      "placeholder": "Exemple : 100 000 $",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Pays: {pays}, Secteur: {secteur}, Objectifs: {objectifs}, Ressources: {ressources}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

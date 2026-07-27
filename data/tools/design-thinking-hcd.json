@@ -1,0 +1,71 @@
+{
+  "id": "design-thinking-hcd",
+  "title": "Design thinking & innovation centrée usage (HCD)",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "probleme_identifie",
+      "type": "textarea",
+      "label": "Quel problème ou opportunité avez-vous identifié ?",
+      "placeholder": "Décrivez le problème ou l'opportunité que vous souhaitez résoudre",
+      "required": true
+    },
+    {
+      "name": "cible_identifiee",
+      "type": "text",
+      "label": "Qui est votre cible ou utilisateur cible ?",
+      "placeholder": "Décrivez la cible ou l'utilisateur cible",
+      "required": true
+    },
+    {
+      "name": "objectif_innovation",
+      "type": "select",
+      "options": [
+        "Renouveler un produit existant",
+        "Lancer un nouveau produit",
+        "Améliorer une expérience utilisateur"
+      ],
+      "label": "Quel est l'objectif de l'innovation ?",
+      "placeholder": "Choisissez l'objectif de l'innovation",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "number",
+      "label": "Quelles ressources (temps, budget, personnel) disposez-vous pour réaliser l'innovation ?",
+      "placeholder": "Entrez le nombre de ressources disponibles",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en design thinking & innovation centrée usage (HCD). L'utilisateur a répondu : Problème identifié : {probleme_identifie}, Cible identifiée : {cible_identifiee}, Objectif innovation : {objectif_innovation}, Ressources disponibles : {ressources_disponibles}. Analyse ces informations et propose un plan d'action pour l'innovation.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

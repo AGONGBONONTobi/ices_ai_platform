@@ -1,0 +1,71 @@
+{
+  "id": "profil-negociateur-et-influence",
+  "title": "Profil négociateur & influence",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "style-negociation",
+      "type": "select",
+      "options": [
+        "Confrontatif",
+        "Collaboratif",
+        "Compromettant"
+      ],
+      "label": "Quel est votre style de négociation préféré ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "motivations",
+      "type": "textarea",
+      "label": "Quels sont vos principaux facteurs de motivation pour négocier ?",
+      "placeholder": "Exemple : atteindre un objectif, résoudre un problème, etc.",
+      "required": true
+    },
+    {
+      "name": "strategie-influence",
+      "type": "text",
+      "label": "Quelle est votre stratégie pour influencer les autres dans un contexte de négociation ?",
+      "placeholder": "Exemple : écouter activement, utiliser des arguments logiques, etc.",
+      "required": true
+    },
+    {
+      "name": "exemples-reussis",
+      "type": "textarea",
+      "label": "Pouvez-vous donner des exemples de situations où vous avez réussi à négocier ou à influencer les autres ?",
+      "placeholder": "Exemple : une transaction commerciale, un conflit résolu, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en négociation et en influence. L'utilisateur a répondu : Style de négociation : {style-negociation}, Motivations : {motivations}, Stratégie d'influence : {strategie-influence}, Exemples de réussites : {exemples-reussis}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

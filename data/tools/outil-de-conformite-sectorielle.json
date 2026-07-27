@@ -1,0 +1,74 @@
+{
+  "id": "outil-de-conformite-sectorielle",
+  "title": "Outil de conformité sectorielle (bancaire, santé, énergie)",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Banque",
+        "Santé",
+        "Énergie"
+      ],
+      "label": "Sélectionnez votre secteur d'activité",
+      "required": true
+    },
+    {
+      "name": "descriptionActivite",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre activité",
+      "placeholder": "Exemple : Nous sommes une banque spécialisée dans les services financiers",
+      "required": true
+    },
+    {
+      "name": "nombreEmployes",
+      "type": "number",
+      "label": "Nombre d'employés dans votre organisation",
+      "required": true
+    },
+    {
+      "name": "normesReglementaires",
+      "type": "select",
+      "options": [
+        "GDPR",
+        "HIPAA",
+        "Sarbanes-Oxley",
+        "Autre"
+      ],
+      "label": "Quelles sont les normes réglementaires que vous devez suivre ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en conformité sectorielle. L'utilisateur a répondu : Secteur: {secteur}, Description de l'activité: {descriptionActivite}, Nombre d'employés: {nombreEmployes}, Normes réglementaires: {normesReglementaires}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (respect des normes, gestion des risques, etc.), et des recommandations pour améliorer la conformité de l'organisation.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

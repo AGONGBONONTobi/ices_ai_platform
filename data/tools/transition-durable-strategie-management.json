@@ -1,0 +1,71 @@
+{
+  "id": "transition-durable-strategie-management",
+  "title": "Feuille de route de la transition durable",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de la transition durable ?",
+      "placeholder": "Exemple : réduire les émissions de gaz à effet de serre, atteindre la neutralité carbone, etc.",
+      "required": true
+    },
+    {
+      "name": "indicateurs-de-suivi",
+      "type": "select",
+      "options": [
+        "Émissions de gaz à effet de serre",
+        "Consommation d'énergie",
+        "Gestion des déchets"
+      ],
+      "label": "Quels sont les indicateurs de suivi pour mesurer la transition durable ?",
+      "placeholder": "Sélectionnez les indicateurs pertinents",
+      "required": true
+    },
+    {
+      "name": "ressources-necessaires",
+      "type": "number",
+      "label": "Quelles sont les ressources nécessaires pour atteindre les objectifs de transition durable ?",
+      "placeholder": "Exemple : budget, personnel, équipements, etc.",
+      "required": true
+    },
+    {
+      "name": "barrières-a-l-adoption",
+      "type": "textarea",
+      "label": "Quelles sont les barrières à l'adoption de la transition durable ?",
+      "placeholder": "Exemple : manque de connaissances, manque de ressources, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Indicateurs de suivi : {indicateurs-de-suivi}, Ressources nécessaires : {ressources-necessaires}, Barrières à l'adoption : {barrières-a-l-adoption}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

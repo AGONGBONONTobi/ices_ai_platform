@@ -1,0 +1,72 @@
+{
+  "id": "programme-de-fidelite-et-ambassadeurs",
+  "title": "Programme de fidélité & ambassadeurs",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "nombre-de-client-fidelises",
+      "type": "number",
+      "label": "Combien de clients avez-vous fidélisés ces derniers mois ?",
+      "placeholder": "Saisissez un nombre",
+      "required": true
+    },
+    {
+      "name": "budget-alloue-fidelite",
+      "type": "number",
+      "label": "Quel est votre budget alloué au programme de fidélité ?",
+      "placeholder": "Saisissez un montant",
+      "required": true
+    },
+    {
+      "name": "type-de-programme-fidelite",
+      "type": "select",
+      "options": [
+        "Points fidélité",
+        "Réduction",
+        "Accès à des événements",
+        "Autre"
+      ],
+      "label": "Quel type de programme de fidélité avez-vous mis en place ?",
+      "placeholder": "Sélectionnez un type",
+      "required": true
+    },
+    {
+      "name": "description-ambassadeurs",
+      "type": "textarea",
+      "label": "Comment décririez-vous vos ambassadeurs ?",
+      "placeholder": "Saisissez une description",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en marketing. L'utilisateur a répondu : Nombre de clients fidélisés : {nombre-de-client-fidelises}, Budget alloué à la fidélité : {budget-alloue-fidelite}, Type de programme de fidélité : {type-de-programme-fidelite}, Description des ambassadeurs : {description-ambassadeurs}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "audit-fraude-forensic-investigation",
+  "title": "Audit de fraude, forensic & investigation",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "description_evenement",
+      "type": "textarea",
+      "label": "Décrivez l'événement ou la situation qui a déclenché l'audit",
+      "placeholder": "Exemple : Désistement d'un employé",
+      "required": true
+    },
+    {
+      "name": "type_fraude",
+      "type": "select",
+      "options": [
+        "Fraude financière",
+        "Fraude administrative",
+        "Autre"
+      ],
+      "label": "Quel type de fraude est suspecté ?",
+      "placeholder": "Exemple : Fraude financière",
+      "required": true
+    },
+    {
+      "name": "déroulement_evenement",
+      "type": "text",
+      "label": "Décrivez le déroulement de l'événement",
+      "placeholder": "Exemple : L'employé a désisté après avoir été soupçonné de fraude",
+      "required": true
+    },
+    {
+      "name": "premiers_signes",
+      "type": "textarea",
+      "label": "Quels sont les premiers signes qui ont déclenché l'audit ?",
+      "placeholder": "Exemple : Un employé a signalé une anomalie dans les comptes",
+      "required": true
+    },
+    {
+      "name": "actions_prises",
+      "type": "textarea",
+      "label": "Quelles actions ont été prises pour enquêter sur l'événement ?",
+      "placeholder": "Exemple : Les comptes ont été vérifiés, des entretiens ont été menés avec les employés concernés",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audit de fraude, forensic et investigation. L'utilisateur a répondu : Description de l'événement : {description_evenement}, Type de fraude suspecté : {type_fraude}, Déroulement de l'événement : {déroulement_evenement}, Premiers signes : {premiers_signes}, Actions prises : {actions_prises}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

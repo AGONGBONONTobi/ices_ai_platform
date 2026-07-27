@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-gestion-des-subventions-aides-et-dossiers",
+  "title": "Outil de gestion des subventions, aides & dossiers",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "montant-demande",
+      "type": "number",
+      "label": "Montant de la demande de subvention ou aide",
+      "placeholder": "Entrez le montant exact",
+      "required": true
+    },
+    {
+      "name": "type-subvention",
+      "type": "select",
+      "options": [
+        "Subvention de recherche",
+        "Aide à l'innovation",
+        "Autre"
+      ],
+      "label": "Type de subvention ou aide demandée",
+      "placeholder": "Sélectionnez le type",
+      "required": true
+    },
+    {
+      "name": "description-projet",
+      "type": "textarea",
+      "label": "Description du projet ou de l'activité financée",
+      "placeholder": "Décrivez le projet ou l'activité",
+      "required": true
+    },
+    {
+      "name": "dossier-complet",
+      "type": "text",
+      "label": "Dossier complet (lien ou pièce jointe)",
+      "placeholder": "Insérer le lien ou télécharger la pièce jointe",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion financière. L'utilisateur a répondu : Montant de la demande : {montant-demande}, Type de subvention : {type-subvention}, Description du projet : {description-projet}, Dossier complet : {dossier-complet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

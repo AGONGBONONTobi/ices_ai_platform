@@ -1,0 +1,79 @@
+{
+  "id": "diagnostic-solvabilite-endettement",
+  "title": "Diagnostic de solvabilité & endettement",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "revenus-mensuels",
+      "type": "number",
+      "label": "Quels sont vos revenus mensuels ?",
+      "placeholder": "Exemple : 5000",
+      "required": true
+    },
+    {
+      "name": "dettes-mensuelles",
+      "type": "number",
+      "label": "Quels sont vos dettes mensuelles ?",
+      "placeholder": "Exemple : 2000",
+      "required": true
+    },
+    {
+      "name": "type-dette",
+      "type": "select",
+      "options": [
+        "Prêt immobilier",
+        "Prêt personnel",
+        "Carte de crédit",
+        "Autre"
+      ],
+      "label": "Quel type de dette avez-vous ?",
+      "placeholder": "Exemple : Prêt immobilier",
+      "required": true
+    },
+    {
+      "name": "taux-dette",
+      "type": "number",
+      "label": "Quel est le taux d'intérêt de votre dette ?",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "autres-depenses",
+      "type": "textarea",
+      "label": "Avez-vous d'autres dépenses importantes (frais de santé, frais de scolarité, etc.) ?",
+      "placeholder": "Exemple : Frais de santé",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un conseiller financier. L'utilisateur a répondu : Revenus mensuels : {revenus-mensuels}, Dettes mensuelles : {dettes-mensuelles}, Type de dette : {type-dette}, Taux de dette : {taux-dette}, Autres dépenses : {autres-depenses}. Analyse ces informations et donne un score de solvabilité sur 100, une évaluation par axe (endettement, liquidité, etc.) et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score de solvabilité sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

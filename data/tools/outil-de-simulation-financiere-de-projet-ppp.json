@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-simulation-financiere-de-projet-ppp",
+  "title": "Outil de simulation financière de projet PPP",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "type_de_projet",
+      "type": "select",
+      "options": [
+        "Infrastructure routière",
+        "Infrastructure énergétique",
+        "Infrastructure de santé"
+      ],
+      "label": "Type de projet PPP",
+      "placeholder": "Sélectionnez le type de projet",
+      "required": true
+    },
+    {
+      "name": "cout_initial",
+      "type": "number",
+      "label": "Coût initial du projet",
+      "placeholder": "1000000",
+      "required": true
+    },
+    {
+      "name": "description_projet",
+      "type": "textarea",
+      "label": "Description détaillée du projet",
+      "placeholder": "Veuillez décrire le projet",
+      "required": true
+    },
+    {
+      "name": "duree_projet",
+      "type": "number",
+      "label": "Durée du projet en mois",
+      "placeholder": "24",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en simulation financière de projets PPP. L'utilisateur a répondu : Type de projet : {type_de_projet}, Coût initial : {cout_initial}, Description du projet : {description_projet}, Durée du projet : {duree_projet} mois. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

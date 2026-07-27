@@ -1,0 +1,76 @@
+{
+  "id": "outil-d-automatisation-du-reporting-kebab-case",
+  "title": "Outil d'automatisation du reporting (ETL/BI)",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "type_de_reporting",
+      "type": "select",
+      "options": [
+        "Rapports mensuels",
+        "Rapports trimestriels",
+        "Rapports annuels"
+      ],
+      "label": "Quel type de reporting souhaitez-vous automatiser ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "sources_de_donnees",
+      "type": "textarea",
+      "label": "Quelles sont les sources de données que vous souhaitez intégrer ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "outils_utilises",
+      "type": "select",
+      "options": [
+        "Tableau",
+        "Power BI",
+        "QlikView"
+      ],
+      "label": "Quels outils BI utilisez-vous actuellement ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "complexite_des_donnees",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, quelle est la complexité des données que vous souhaitez traiter ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en transformation digitale et IA. L'utilisateur a répondu : Type de reporting : {type_de_reporting}, Sources de données : {sources_de_donnees}, Outils utilisés : {outils_utilises}, Complexité des données : {complexite_des_donnees}. Analyse ces informations et proposez une stratégie d'automatisation du reporting efficace.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

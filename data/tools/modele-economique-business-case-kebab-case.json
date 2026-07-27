@@ -1,0 +1,78 @@
+{
+  "id": "modele-economique-business-case-kebab-case",
+  "title": "Modèle économique & business case d'innovation",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "investissement_initial",
+      "type": "number",
+      "label": "Investissement initial prévu",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "revenus_attendus",
+      "type": "number",
+      "label": "Revenus attendus par an",
+      "placeholder": "Exemple : 50 000 €",
+      "required": true
+    },
+    {
+      "name": "duree_projet",
+      "type": "number",
+      "label": "Durée du projet (en années)",
+      "placeholder": "Exemple : 3 ans",
+      "required": true
+    },
+    {
+      "name": "risques_identifies",
+      "type": "textarea",
+      "label": "Risques identifiés et leur impact potentiel",
+      "placeholder": "Exemple : Risque de retard de livraison, impact potentiel : 20%",
+      "required": true
+    },
+    {
+      "name": "strategie_financiere",
+      "type": "select",
+      "options": [
+        "Financement par l'entreprise",
+        "Financement par un investisseur",
+        "Financement par un prêt bancaire"
+      ],
+      "label": "Stratégie financière retenue",
+      "placeholder": "Exemple : Financement par l'entreprise",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a répondu : Investissement initial : {investissement_initial}, Revenus attendus : {revenus_attendus}, Durée du projet : {duree_projet}, Risques identifiés : {risques_identifies}, Stratégie financière : {strategie_financiere}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

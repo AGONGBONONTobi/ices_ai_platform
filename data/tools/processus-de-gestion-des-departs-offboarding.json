@@ -1,0 +1,72 @@
+{
+  "id": "processus-de-gestion-des-departs-offboarding",
+  "title": "Processus de gestion des départs & offboarding",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "raisonDepart",
+      "type": "select",
+      "options": [
+        "Départ à la retraite",
+        "Démission",
+        "Licenciement",
+        "Autre"
+      ],
+      "label": "Quelle est la raison du départ de l'employé ?",
+      "placeholder": "Sélectionnez une raison",
+      "required": true
+    },
+    {
+      "name": "dureePreavis",
+      "type": "number",
+      "label": "Quelle est la durée du préavis de l'employé ?",
+      "placeholder": "Nombre de jours",
+      "required": true
+    },
+    {
+      "name": "tachesTransfert",
+      "type": "textarea",
+      "label": "Quelles sont les tâches que l'employé doit transférer à son départ ?",
+      "placeholder": "Décrivez les tâches à transférer",
+      "required": true
+    },
+    {
+      "name": "formationRemplacement",
+      "type": "text",
+      "label": "Quelle formation ou accompagnement doit recevoir le remplaçant ?",
+      "placeholder": "Décrivez la formation ou l'accompagnement",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en RH. L'utilisateur a répondu : Raison du départ : {raisonDepart}, Durée du préavis : {dureePreavis} jours, Tâches à transférer : {tachesTransfert}, Formation pour le remplaçant : {formationRemplacement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (gestion des départs, transfert des tâches, formation du remplaçant), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

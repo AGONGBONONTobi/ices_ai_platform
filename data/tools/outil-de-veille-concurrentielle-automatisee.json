@@ -1,0 +1,77 @@
+{
+  "id": "outil-de-veille-concurrentielle-automatisee",
+  "title": "Outil de veille concurrentielle automatisée",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Finance",
+        "Santé",
+        "Énergie"
+      ],
+      "label": "Secteur d'activité",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "concurrents",
+      "type": "textarea",
+      "label": "Liste des principaux concurrents (nom des entreprises)",
+      "placeholder": "Entrez les noms des concurrents, séparés par des virgules",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "text",
+      "label": "Objectifs de la veille concurrentielle",
+      "placeholder": "Décrivez les objectifs de votre veille",
+      "required": true
+    },
+    {
+      "name": "periode",
+      "type": "select",
+      "options": [
+        "Mensuel",
+        "Trimestriel",
+        "Semestriel"
+      ],
+      "label": "Période de la veille",
+      "placeholder": "Sélectionnez une période",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique. L'utilisateur a répondu : Secteur: {secteur}, Concurrents: {concurrents}, Objectifs: {objectifs}, Période: {periode}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer la veille concurrentielle.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "diagnostic-esg-complet",
+  "title": "Diagnostic ESG complet (Environnement, Social, Gouvernance)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "emissions-gaz-a-effet-de-serre",
+      "type": "number",
+      "label": "Emissions de gaz à effet de serre (tonnes CO2 équivalent)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "diversité-équipe",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Elevé"
+      ],
+      "label": "Niveau de diversité dans l'équipe",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "transparence-financière",
+      "type": "textarea",
+      "label": "Transparence financière (description de la politique de transparence)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "engagement-climat",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Elevé"
+      ],
+      "label": "Niveau d'engagement climatique",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise: {entreprise}, Emissions de gaz à effet de serre : {emissions-gaz-a-effet-de-serre}, Diversité de l'équipe : {diversité-équipe}, Transparence financière : {transparence-financière}, Engagement climatique : {engagement-climat}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (Environnement, Social, Gouvernance), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

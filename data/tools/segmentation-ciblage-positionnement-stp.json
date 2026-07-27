@@ -1,0 +1,73 @@
+{
+  "id": "segmentation-ciblage-positionnement-stp",
+  "title": "Segmentation, ciblage & positionnement (STP)",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "public_cible",
+      "type": "text",
+      "label": "Qui est votre public cible ? (décrivez les caractéristiques de votre audience idéale)",
+      "placeholder": "Exemple : professionnels de 25 à 45 ans, intéressés par les nouvelles technologies",
+      "required": true
+    },
+    {
+      "name": "avantages_uniques",
+      "type": "textarea",
+      "label": "Quels sont les avantages uniques que vous offrez à votre public cible ?",
+      "placeholder": "Exemple : notre produit est plus efficace, plus durable et plus abordable que les alternatives",
+      "required": true
+    },
+    {
+      "name": "strategie_de_ciblage",
+      "type": "select",
+      "options": [
+        "Réseaux sociaux",
+        "Email marketing",
+        "Publicité en ligne",
+        "Événements",
+        "Autre"
+      ],
+      "label": "Quelle est votre stratégie de ciblage pour atteindre votre public cible ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "positionnement_comparatif",
+      "type": "text",
+      "label": "Comment positionnez-vous votre produit ou service par rapport à la concurrence ?",
+      "placeholder": "Exemple : nous sommes plus innovants, plus flexibles et plus proches de nos clients que nos concurrents",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en marketing. L'utilisateur a répondu : Public cible : {public_cible}, Avantages uniques : {avantages_uniques}, Stratégie de ciblage : {strategie_de_ciblage}, Positionnement comparatif : {positionnement_comparatif}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

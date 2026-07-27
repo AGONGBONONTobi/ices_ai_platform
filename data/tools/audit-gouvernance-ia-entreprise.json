@@ -1,0 +1,69 @@
+{
+  "id": "audit-gouvernance-ia-entreprise",
+  "title": "Audit de la gouvernance des IA en entreprise (AI Act)",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "text",
+      "label": "Quel est le type d'IA utilisé dans l'entreprise ?",
+      "placeholder": "Exemple : Intelligence Artificielle, Apprentissage Automatique, etc.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Présentez les mesures actuelles de gouvernance des IA en entreprise.",
+      "placeholder": "Exemple : Politiques de données, éthique, etc.",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "L'entreprise dispose-t-elle d'un responsable de la gouvernance des IA ?",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "number",
+      "label": "Quel est le pourcentage d'employés formés à la gouvernance des IA ?",
+      "placeholder": "Exemple : 50%",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gouvernance des IA. L'utilisateur a répondu : Type d'IA : {variable1}, Mesures actuelles de gouvernance : {variable2}, Responsable de la gouvernance : {variable3}, Pourcentage d'employés formés : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

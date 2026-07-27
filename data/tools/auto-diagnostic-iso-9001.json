@@ -1,0 +1,79 @@
+{
+  "id": "auto-diagnostic-iso-9001",
+  "title": "Auto-diagnostic ISO 9001",
+  "category": "Systèmes de Management ISO",
+  "inputs": [
+    {
+      "name": "contexte_organisationnel",
+      "type": "textarea",
+      "label": "Décrivez brièvement le contexte organisationnel et les parties intéressées",
+      "placeholder": "Ex: Secteur d'activité, produits/services, clients principaux",
+      "required": true
+    },
+    {
+      "name": "niveau_maturite",
+      "type": "select",
+      "options": [
+        "Inexistant (0)",
+        "Initié (1)",
+        "Formalisé (2)",
+        "Optimisé (3)"
+      ],
+      "label": "Quel est votre niveau de maturité actuel selon vous ?",
+      "required": true
+    },
+    {
+      "name": "chapitres_evaluation",
+      "type": "select",
+      "options": [
+        "Contexte",
+        "Leadership",
+        "Planification",
+        "Support",
+        "Réalisation",
+        "Évaluation",
+        "Amélioration"
+      ],
+      "label": "Quels chapitres de la norme ISO 9001 souhaitez-vous évaluer en priorité ?",
+      "required": true
+    },
+    {
+      "name": "description_processus",
+      "type": "textarea",
+      "label": "Décrivez les processus actuels de gestion de la qualité",
+      "placeholder": "Ex: Processus de planification, de réalisation, de suivi",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous avez répondu : Contexte organisationnel: {contexte_organisationnel}, Niveau de maturité: {niveau_maturite}, Chapitres à évaluer: {chapitres_evaluation}, Description des processus: {description_processus}. Évaluez ces informations selon les exigences des 7 chapitres de la norme ISO 9001 (contexte, leadership, planification, support, réalisation, évaluation, amélioration) et donnez un score global sur 100, une évaluation par axe (contexte, leadership, planification, support, réalisation, évaluation, amélioration) et des recommandations prioritaires pour combler les écarts.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

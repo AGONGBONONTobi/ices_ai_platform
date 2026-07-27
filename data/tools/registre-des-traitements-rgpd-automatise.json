@@ -1,0 +1,78 @@
+{
+  "id": "registre-des-traitements-rgpd-automatise",
+  "title": "Registre des traitements RGPD automatisé",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "type_traitement",
+      "type": "select",
+      "options": [
+        "Traitement de données personnelles",
+        "Traitement de données sensibles",
+        "Traitement de données confidentielles"
+      ],
+      "label": "Type de traitement RGPD",
+      "placeholder": "Sélectionnez le type de traitement",
+      "required": true
+    },
+    {
+      "name": "nom_entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Entrez le nom de l'entreprise",
+      "required": true
+    },
+    {
+      "name": "description_traitement",
+      "type": "textarea",
+      "label": "Description du traitement",
+      "placeholder": "Décrivez le traitement RGPD",
+      "required": true
+    },
+    {
+      "name": "responsable_traitement",
+      "type": "text",
+      "label": "Responsable du traitement",
+      "placeholder": "Entrez le nom du responsable",
+      "required": true
+    },
+    {
+      "name": "date_traitement",
+      "type": "text",
+      "label": "Date de début du traitement",
+      "placeholder": "Entrez la date de début",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RGPD. L'utilisateur a répondu : Type de traitement : {type_traitement}, Nom de l'entreprise : {nom_entreprise}, Description du traitement : {description_traitement}, Responsable du traitement : {responsable_traitement}, Date de début du traitement : {date_traitement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

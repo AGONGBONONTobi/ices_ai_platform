@@ -1,12 +1,24 @@
 # Build outputs
+.next/
+out/
 react-app/dist/
+tsconfig.tsbuildinfo
+next_dev.log
 
 # Dependencies
+node_modules/
 react-app/node_modules/
+
+# Python (backend FastAPI)
+fast_api/.venv/
+__pycache__/
+*.py[cod]
 
 # Environment files
 react-app/.env*
 .env*
+!.env.example
+!fast_api/.env.example
 
 # Editor
 .vscode/

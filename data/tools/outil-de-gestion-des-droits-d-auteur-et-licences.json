@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-gestion-des-droits-d-auteur-et-licences",
+  "title": "Outil de gestion des droits d'auteur & licences",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "type_de_contenu",
+      "type": "select",
+      "options": [
+        "Logiciel",
+        "Musique",
+        "Littérature",
+        "Art visuel"
+      ],
+      "label": "Quel est le type de contenu que vous souhaitez protéger ou utiliser ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "description_du_contenu",
+      "type": "textarea",
+      "label": "Décrivez brièvement le contenu que vous souhaitez protéger ou utiliser",
+      "placeholder": "Exemple : Un logiciel de gestion de projet",
+      "required": true
+    },
+    {
+      "name": "objectif_de_l_utilisation",
+      "type": "text",
+      "label": "Quel est l'objectif de l'utilisation de ce contenu ?",
+      "placeholder": "Exemple : Utilisation commerciale",
+      "required": true
+    },
+    {
+      "name": "pays_d_exploitation",
+      "type": "select",
+      "options": [
+        "France",
+        "États-Unis",
+        "Royaume-Uni",
+        "Autre"
+      ],
+      "label": "Dans quel pays le contenu sera-t-il exploité ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en droit d'auteur et en licences. L'utilisateur a répondu : Type de contenu : {type_de_contenu}, Description du contenu : {description_du_contenu}, Objectif de l'utilisation : {objectif_de_l_utilisation}, Pays d'exploitation : {pays_d_exploitation}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (conformité légale, respect des droits d'auteur, etc.) et des recommandations pour une gestion efficace des droits d'auteur et des licences.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

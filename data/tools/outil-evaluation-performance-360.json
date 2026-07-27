@@ -1,0 +1,78 @@
+{
+  "id": "outil-evaluation-performance-360",
+  "title": "Outil d'évaluation de la performance 360°",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "manager-score",
+      "type": "number",
+      "label": "Note attribuée par le manager",
+      "placeholder": "Saisir une note entre 1 et 5",
+      "required": true
+    },
+    {
+      "name": "collègues-score",
+      "type": "number",
+      "label": "Note attribuée par les collègues",
+      "placeholder": "Saisir une note entre 1 et 5",
+      "required": true
+    },
+    {
+      "name": "supérieur-score",
+      "type": "number",
+      "label": "Note attribuée par le supérieur hiérarchique",
+      "placeholder": "Saisir une note entre 1 et 5",
+      "required": true
+    },
+    {
+      "name": "objectifs-atteints",
+      "type": "textarea",
+      "label": "Liste des objectifs atteints",
+      "placeholder": "Saisir les objectifs atteints",
+      "required": true
+    },
+    {
+      "name": "domaines-développement",
+      "type": "select",
+      "options": [
+        "Communication",
+        "Leadership",
+        "Organisation"
+      ],
+      "label": "Domaines de développement",
+      "placeholder": "Sélectionner les domaines de développement",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Manager score: {manager-score}, Collègues score: {collègues-score}, Supérieur score: {supérieur-score}, Objectifs atteints: {objectifs-atteints}, Domaines de développement: {domaines-développement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

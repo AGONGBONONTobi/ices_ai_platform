@@ -1,0 +1,75 @@
+{
+  "id": "reporting-de-formation-et-compétences",
+  "title": "Reporting de formation & compétences",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "typeDeFormation",
+      "type": "select",
+      "options": [
+        "En ligne",
+        "Présentiel",
+        "Hybride"
+      ],
+      "label": "Quel type de formation a été suivie ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "dureeFormation",
+      "type": "number",
+      "label": "Combien de jours a duré la formation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "compétencesAcquises",
+      "type": "textarea",
+      "label": "Quelles compétences ont été acquises pendant la formation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "évaluationSatisfait",
+      "type": "select",
+      "options": [
+        "Satisfait",
+        "Insatisfait"
+      ],
+      "label": "A-t-on été satisfait de la formation ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Type de formation : {typeDeFormation}, Durée de la formation : {dureeFormation} jours, Compétences acquises : {compétencesAcquis}, Évaluation satisfait : {évaluationSatisfait}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

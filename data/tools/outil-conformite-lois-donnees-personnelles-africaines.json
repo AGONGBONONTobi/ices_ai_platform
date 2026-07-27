@@ -1,0 +1,83 @@
+{
+  "id": "outil-conformite-lois-donnees-personnelles-africaines",
+  "title": "Outil de conformité lois données personnelles africaines",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "pays",
+      "type": "select",
+      "options": [
+        "Afrique du Sud",
+        "Maroc",
+        "Égypte",
+        "Nigeria",
+        "Autres"
+      ],
+      "label": "Dans quel pays opère votre organisation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "type_organisation",
+      "type": "select",
+      "options": [
+        "Entreprise privée",
+        "Organisation publique",
+        "ONG",
+        "Autre"
+      ],
+      "label": "Quel est le type d'organisation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_traitement",
+      "type": "textarea",
+      "label": "Décrivez brièvement les données personnelles que votre organisation collecte et traite",
+      "placeholder": "Ex: noms, adresses e-mail, informations de paiement...",
+      "required": true
+    },
+    {
+      "name": "existence_rgpd",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Votre organisation est-elle déjà en conformité avec le RGPD ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en conformité des lois sur les données personnelles. L'utilisateur a répondu : Pays: {pays}, Type d'organisation: {type_organisation}, Description du traitement: {description_traitement}, Existence RGPD: {existence_rgpd}. Évaluez la conformité de cette organisation aux lois africaines sur les données personnelles et fournissez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

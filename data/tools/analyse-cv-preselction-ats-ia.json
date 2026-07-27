@@ -1,0 +1,81 @@
+{
+  "id": "analyse-cv-preselction-ats-ia",
+  "title": "Analyse de CV & présélection automatisée (ATS IA)",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "experience-professionnelle",
+      "type": "textarea",
+      "label": "Veuillez décrire votre expérience professionnelle (postes, responsabilités, réalisations)",
+      "placeholder": "Exemple : 5 ans d'expérience en gestion de projet, 3 ans en leadership",
+      "required": true
+    },
+    {
+      "name": "compétences-informatiques",
+      "type": "select",
+      "options": [
+        "Excel",
+        "PowerPoint",
+        "Word",
+        "Python",
+        "JavaScript",
+        "Autre"
+      ],
+      "label": "Quelles compétences informatiques possédez-vous ?",
+      "placeholder": "Sélectionnez les compétences pertinentes",
+      "required": true
+    },
+    {
+      "name": "formation-éducation",
+      "type": "textarea",
+      "label": "Veuillez décrire vos formations et diplômes (niveau, domaine, établissement)",
+      "placeholder": "Exemple : Diplôme d'ingénieur en informatique, Master en gestion de projet",
+      "required": true
+    },
+    {
+      "name": "langues",
+      "type": "select",
+      "options": [
+        "Français",
+        "Anglais",
+        "Espagnol",
+        "Allemand",
+        "Autre"
+      ],
+      "label": "Quelles langues parlez-vous couramment ?",
+      "placeholder": "Sélectionnez les langues pertinentes",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Expérience professionnelle : {experience-professionnelle}, Compétences informatiques : {compétences-informatiques}, Formation éducation : {formation-éducation}, Langues : {langues}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

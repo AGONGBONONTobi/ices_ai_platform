@@ -1,0 +1,71 @@
+{
+  "id": "cybersecurite-et-securite-by-design",
+  "title": "Plan de cybersécurité & sécurité by design",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "risques_identifies",
+      "type": "textarea",
+      "label": "Quels sont les risques identifiés pour l'organisation ?",
+      "placeholder": "Exemple : perte de données, violation de la vie privée, etc.",
+      "required": true
+    },
+    {
+      "name": "mesures_prises",
+      "type": "textarea",
+      "label": "Quelles mesures ont été prises pour atténuer ces risques ?",
+      "placeholder": "Exemple : mise en place de protocoles de sécurité, formation des employés, etc.",
+      "required": true
+    },
+    {
+      "name": "niveau_de_sécurité",
+      "type": "select",
+      "options": [
+        "Bas",
+        "Moyen",
+        "Elevé"
+      ],
+      "label": "Quel est le niveau de sécurité actuel de l'organisation ?",
+      "placeholder": "Choisissez un niveau",
+      "required": true
+    },
+    {
+      "name": "objectifs_de_securite",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de sécurité à atteindre dans les prochains mois ?",
+      "placeholder": "Exemple : mise en place d'un système de gestion de la sécurité, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en cybersécurité & sécurité by design. L'utilisateur a répondu : Risques identifiés : {risques_identifies}, Mesures prises : {mesures_prises}, Niveau de sécurité : {niveau_de_securite}, Objectifs de sécurité : {objectifs_de_securite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

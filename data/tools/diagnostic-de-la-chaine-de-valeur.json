@@ -1,0 +1,23 @@
+{
+  "id": "diagnostic-de-la-chaine-de-valeur",
+  "title": "Diagnostic de la chaîne de valeur (Porter)",
+  "category": "Finance",
+  "inputs": [
+    {
+      "name": "chaineValeur",
+      "type": "textarea",
+      "label": "Chaîne de valeur",
+      "placeholder": "Exemple : Chaîne de valeur actuelle de l'entreprise",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en diagnostic de la chaîne de valeur. Utilise {chaineValeur} pour évaluer la chaîne de valeur de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "string"
+      }
+    }
+  }
+}

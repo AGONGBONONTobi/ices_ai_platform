@@ -1,0 +1,105 @@
+{
+  "id": "analyse-des-5-forces-de-porter-et-intensite-concurrentielle",
+  "title": "Analyse des 5 forces de Porter & intensité concurrentielle",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "forces",
+      "type": "textarea",
+      "label": "Décrivez les 5 forces de Porter (barrières à l'entrée, barrières à la sortie, puissance des acheteurs, puissance des vendeurs, concurrence directe)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "concurrence-directe",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quelle est l'intensité de la concurrence directe ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "puissance-acheteurs",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quelle est la puissance des acheteurs ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "puissance-vendeurs",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quelle est la puissance des vendeurs ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "barrieres-entrée",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quelle est la facilité d'entrée sur le marché ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "barrieres-sortie",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quelle est la facilité de sortie du marché ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Forces de Porter : {forces}, Concurrence directe : {concurrence-directe}, Puissance des acheteurs : {puissance-acheteurs}, Puissance des vendeurs : {puissance-vendeurs}, Barrières d'entrée : {barrieres-entrée}, Barrières de sortie : {barrieres-sortie}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

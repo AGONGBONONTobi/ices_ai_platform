@@ -1,0 +1,71 @@
+{
+  "id": "analyse-multicritere-de-selection-de-projet",
+  "title": "Analyse multicritères de sélection de projet",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "nom_projet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple : Projet de développement d'un nouveau logiciel",
+      "required": true
+    },
+    {
+      "name": "objectif_projet",
+      "type": "textarea",
+      "label": "Objectif du projet",
+      "placeholder": "Décrivez les objectifs principaux du projet",
+      "required": true
+    },
+    {
+      "name": "type_projet",
+      "type": "select",
+      "options": [
+        "Développement de logiciel",
+        "Construction de bâtiment",
+        "Développement de produit",
+        "Autre"
+      ],
+      "label": "Type de projet",
+      "required": true
+    },
+    {
+      "name": "budget_projet",
+      "type": "number",
+      "label": "Budget du projet",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet : {nom_projet}, Objectif du projet : {objectif_projet}, Type de projet : {type_projet}, Budget du projet : {budget_projet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

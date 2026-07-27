@@ -1,0 +1,78 @@
+{
+  "id": "plan-de-restructuration-et-redressement-financier",
+  "title": "Plan de restructuration & redressement financier",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : XYZ Inc.",
+      "required": true
+    },
+    {
+      "name": "situation-financiere",
+      "type": "textarea",
+      "label": "Description de la situation financière actuelle",
+      "placeholder": "Exemple : Nous avons des difficultés à rembourser nos dettes et nous risquons de faillite.",
+      "required": true
+    },
+    {
+      "name": "objectifs-restructuration",
+      "type": "select",
+      "options": [
+        "Réduction des dettes",
+        "Augmentation des revenus",
+        "Amélioration de la rentabilité"
+      ],
+      "label": "Quels sont les objectifs de la restructuration financière ?",
+      "placeholder": "Exemple : Réduction des dettes",
+      "required": true
+    },
+    {
+      "name": "strategie-redressement",
+      "type": "textarea",
+      "label": "Quelle est la stratégie de redressement financière proposée ?",
+      "placeholder": "Exemple : Nous proposons de réduire nos dettes en négociant avec nos créanciers et en augmentant nos revenus en développant de nouvelles activités.",
+      "required": true
+    },
+    {
+      "name": "budget-restructuration",
+      "type": "number",
+      "label": "Quel est le budget alloué à la restructuration financière ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise : {entreprise}, Situation financière : {situation-financiere}, Objectifs de restructuration : {objectifs-restructuration}, Stratégie de redressement : {strategie-redressement}, Budget de restructuration : {budget-restructuration}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

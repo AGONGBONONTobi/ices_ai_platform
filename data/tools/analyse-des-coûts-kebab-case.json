@@ -1,0 +1,71 @@
+{
+  "id": "analyse-des-coûts-kebab-case",
+  "title": "Analyse des coûts, pricing & politique tarifaire",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "text",
+      "label": "Quel est le chiffre d'affaires annuel de votre entreprise ?",
+      "placeholder": "Entrez le chiffre d'affaires annuel",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "number",
+      "label": "Quel est le pourcentage de marge bénéficiaire actuelle ?",
+      "placeholder": "Entrez le pourcentage de marge bénéficiaire",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "textarea",
+      "label": "Quels sont les principaux facteurs de coûts pour votre entreprise ?",
+      "placeholder": "Exemple : salaires, matières premières, locaux, etc.",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "select",
+      "options": [
+        "Prix fixe",
+        "Prix variable",
+        "Prix à la demande"
+      ],
+      "label": "Quelle est la politique tarifaire actuelle de votre entreprise ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a répondu : Chiffre d'affaires annuel : {variable1}, Pourcentage de marge bénéficiaire : {variable2}, Principaux facteurs de coûts : {variable3}, Politique tarifaire actuelle : {variable4}. Analyse ces informations et propose une nouvelle politique tarifaire pour améliorer les marges bénéficiaires de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

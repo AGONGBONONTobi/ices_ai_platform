@@ -1,0 +1,70 @@
+{
+  "id": "diagnostic-de-capacite-institutionnelle",
+  "title": "Diagnostic de capacité institutionnelle",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "nom_institution",
+      "type": "text",
+      "label": "Nom de l'institution",
+      "placeholder": "Exemple : Ministère de l'Éducation",
+      "required": true
+    },
+    {
+      "name": "type_institution",
+      "type": "select",
+      "options": [
+        "Gouvernemental",
+        "Non gouvernemental",
+        "Privé"
+      ],
+      "label": "Type d'institution",
+      "required": true
+    },
+    {
+      "name": "objectifs_institution",
+      "type": "textarea",
+      "label": "Objectifs principaux de l'institution",
+      "placeholder": "Décrivez les objectifs de l'institution",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "text",
+      "label": "Ressources disponibles (financières, humaines, matérielles)",
+      "placeholder": "Exemple : 100 employés, 1 million d'euros",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert. L'institution a répondu : Nom de l'institution: {nom_institution}, Type d'institution: {type_institution}, Objectifs principaux: {objectifs_institution}, Ressources disponibles: {ressources_disponibles}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

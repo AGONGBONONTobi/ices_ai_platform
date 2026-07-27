@@ -1,0 +1,77 @@
+{
+  "id": "contrôle-budgétaire-et-analyse-des-écarts",
+  "title": "Contrôle budgétaire & analyse des écarts",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "budget_initial",
+      "type": "number",
+      "label": "Quel est le budget initial alloué pour l'année ?",
+      "placeholder": "Entrez le montant en euros",
+      "required": true
+    },
+    {
+      "name": "recettes_reelles",
+      "type": "number",
+      "label": "Quelles sont les recettes réelles encaissées jusqu'à présent ?",
+      "placeholder": "Entrez le montant en euros",
+      "required": true
+    },
+    {
+      "name": "depenses_reelles",
+      "type": "number",
+      "label": "Quelles sont les dépenses réelles engagées jusqu'à présent ?",
+      "placeholder": "Entrez le montant en euros",
+      "required": true
+    },
+    {
+      "name": "type_dépense",
+      "type": "select",
+      "options": [
+        "Fixes",
+        "Variables"
+      ],
+      "label": "Quel type de dépense est-ce ?",
+      "placeholder": "Choisissez un type de dépense",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Avez-vous des commentaires supplémentaires sur la situation budgétaire ?",
+      "placeholder": "Entrez vos commentaires",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a répondu : Budget initial : {budget_initial}, Recettes réelles : {recettes_reelles}, Dépenses réelles : {depenses_reelles}, Type de dépense : {type_dépense}, Commentaires : {commentaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

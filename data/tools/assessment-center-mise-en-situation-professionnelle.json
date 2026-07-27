@@ -1,0 +1,85 @@
+{
+  "id": "assessment-center-mise-en-situation-professionnelle",
+  "title": "Assessment center & mise en situation professionnelle",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "contexte-pro",
+      "type": "textarea",
+      "label": "Présentez-vous en quelques lignes et expliquez pourquoi vous souhaitez intégrer cette entreprise.",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "motivation",
+      "type": "text",
+      "label": "Quels sont vos principaux objectifs professionnels à court et à long terme ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "communication",
+      "type": "select",
+      "options": [
+        "Très efficace",
+        "Efficace",
+        "Moyen",
+        "Peu efficace"
+      ],
+      "label": "Comment évaluez-vous votre capacité à communiquer avec vos collègues et vos supérieurs ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "leadership",
+      "type": "textarea",
+      "label": "Présentez un exemple où vous avez exercé un leadership ou une responsabilité importante dans votre précédent poste.",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "collaboration",
+      "type": "select",
+      "options": [
+        "Très efficace",
+        "Efficace",
+        "Moyen",
+        "Peu efficace"
+      ],
+      "label": "Comment évaluez-vous votre capacité à travailler en équipe et à collaborer avec vos collègues ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Contexte-pro: {contexte-pro}, Motivation: {motivation}, Communication: {communication}, Leadership: {leadership}, Collaboration: {collaboration}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (personnalité, comportement professionnel, leadership, collaboration), et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

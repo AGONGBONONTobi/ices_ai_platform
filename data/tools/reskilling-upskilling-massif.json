@@ -1,0 +1,79 @@
+{
+  "id": "reskilling-upskilling-massif",
+  "title": "Programme de reskilling & upskilling massif",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "domaine",
+      "type": "select",
+      "options": [
+        "Informatique",
+        "Finance",
+        "Marketing",
+        "Gestion"
+      ],
+      "label": "Quel est le domaine d'activité du programme ?",
+      "placeholder": "Sélectionnez un domaine",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux du programme de reskilling & upskilling ?",
+      "placeholder": "Décrivez les objectifs du programme",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué au programme de reskilling & upskilling ?",
+      "placeholder": "Entrez le budget en euros",
+      "required": true
+    },
+    {
+      "name": "duree",
+      "type": "number",
+      "label": "Quelle est la durée prévue du programme de reskilling & upskilling ?",
+      "placeholder": "Entrez la durée en mois",
+      "required": true
+    },
+    {
+      "name": "partenaires",
+      "type": "text",
+      "label": "Quels sont les partenaires impliqués dans le programme de reskilling & upskilling ?",
+      "placeholder": "Entrez les noms des partenaires",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Domaine: {domaine}, Objectifs: {objectifs}, Budget: {budget} euros, Durée: {duree} mois, Partenaires: {partenaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

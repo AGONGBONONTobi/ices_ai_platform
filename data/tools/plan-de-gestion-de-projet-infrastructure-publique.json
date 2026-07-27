@@ -1,0 +1,78 @@
+{
+  "id": "plan-de-gestion-de-projet-infrastructure-publique",
+  "title": "Plan de gestion de projet infrastructure publique",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "objectif_projet",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal du projet ?",
+      "placeholder": "Exemple : Améliorer l'efficacité des infrastructures publiques",
+      "required": true
+    },
+    {
+      "name": "budget_alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour le projet ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "duree_projet",
+      "type": "number",
+      "label": "Quelle est la durée prévue pour le projet ?",
+      "placeholder": "Exemple : 12 mois",
+      "required": true
+    },
+    {
+      "name": "methodologie_utilisee",
+      "type": "select",
+      "options": [
+        "Agile",
+        "Waterfall",
+        "Hybride"
+      ],
+      "label": "Quelle méthode de gestion de projet est utilisée ?",
+      "placeholder": "Exemple : Agile",
+      "required": true
+    },
+    {
+      "name": "equipe_projet",
+      "type": "textarea",
+      "label": "Qui fait partie de l'équipe de projet ?",
+      "placeholder": "Exemple : Liste des membres de l'équipe",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif projet : {objectif_projet}, Budget alloué : {budget_alloue} €, Durée projet : {duree_projet} mois, Méthodologie utilisée : {methodologie_utilisee}, Équipe projet : {equipe_projet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

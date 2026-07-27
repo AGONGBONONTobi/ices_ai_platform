@@ -1,0 +1,77 @@
+{
+  "id": "strategie-marketing-inclusif-et-diversite",
+  "title": "Stratégie de marketing inclusif & diversité",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "public-cible",
+      "type": "select",
+      "options": [
+        "Jeunes adultes",
+        "Adultes",
+        "Senior"
+      ],
+      "label": "Quel public cible souhaitez-vous atteindre ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "canal-de-communication",
+      "type": "select",
+      "options": [
+        "Réseaux sociaux",
+        "Email marketing",
+        "Publicité en ligne",
+        "Publicité en ligne avec ciblage précis"
+      ],
+      "label": "Quel canal de communication préférez-vous pour atteindre votre public ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "contenu-marketing",
+      "type": "textarea",
+      "label": "Quel contenu de marketing souhaitez-vous créer pour atteindre votre public ?",
+      "placeholder": "Exemple : campagne de publicité, contenu de blog, etc.",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est votre budget alloué pour cette campagne de marketing ?",
+      "placeholder": "Exemple : 1000€, 5000€, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en marketing. L'utilisateur a répondu : Public cible : {public-cible}, Canal de communication : {canal-de-communication}, Contenu marketing : {contenu-marketing}, Budget alloué : {budget-alloue}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

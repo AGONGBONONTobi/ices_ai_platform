@@ -1,0 +1,78 @@
+{
+  "id": "dossier-de-levee-de-fonds-et-relations-investisseurs",
+  "title": "Dossier de levée de fonds & relations investisseurs",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "objectif-de-financement",
+      "type": "number",
+      "label": "Quel est l'objectif de financement de votre entreprise ? (en millions d'euros)",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "duree-de-financement",
+      "type": "number",
+      "label": "Quelle est la durée de financement souhaitée ? (en mois)",
+      "placeholder": "Exemple : 12",
+      "required": true
+    },
+    {
+      "name": "type-d-action",
+      "type": "select",
+      "options": [
+        "Placement de capital",
+        "Emprunt",
+        "Autre"
+      ],
+      "label": "Quel type d'action souhaitez-vous mettre en place ?",
+      "placeholder": "Exemple : Placement de capital",
+      "required": true
+    },
+    {
+      "name": "description-de-projet",
+      "type": "textarea",
+      "label": "Présentez brièvement votre projet et ses objectifs",
+      "placeholder": "Exemple : Notre projet vise à développer une nouvelle technologie qui révolutionnera l'industrie.",
+      "required": true
+    },
+    {
+      "name": "risques-et-contraintes",
+      "type": "textarea",
+      "label": "Quels sont les principaux risques et contraintes liés à votre projet ?",
+      "placeholder": "Exemple : Le principal risque est la concurrence avec d'autres entreprises similaires.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif de financement : {objectif-de-financement} millions d'euros, Durée de financement : {duree-de-financement} mois, Type d'action : {type-d-action}, Description de projet : {description-de-projet}, Risques et contraintes : {risques-et-contraintes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

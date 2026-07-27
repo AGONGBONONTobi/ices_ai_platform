@@ -1,0 +1,72 @@
+{
+  "id": "outil-de-design-ux-ui-centre-utilisateur",
+  "title": "Outil de design UX/UI centré utilisateur",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de votre projet de design UX/UI ?",
+      "placeholder": "Par exemple, améliorer l'expérience utilisateur ou augmenter les ventes",
+      "required": true
+    },
+    {
+      "name": "public-cible",
+      "type": "select",
+      "options": [
+        "Jeunes adultes",
+        "Adultes",
+        "Aînés",
+        "Enfants"
+      ],
+      "label": "Qui est votre public cible ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "fonctionnalites-esperées",
+      "type": "text",
+      "label": "Quelles fonctionnalités votre public cible attend-il de votre produit ou service ?",
+      "placeholder": "Par exemple, recherche, paiement en ligne, etc.",
+      "required": true
+    },
+    {
+      "name": "compétiteurs",
+      "type": "textarea",
+      "label": "Qui sont vos principaux concurrents et comment leur produit ou service répond-il aux besoins de votre public cible ?",
+      "placeholder": "Par exemple, liste des concurrents et de leurs fonctionnalités",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un designer UX/UI expert. L'utilisateur a répondu : Objectif: {objectif}, Public cible: {public-cible}, Fonctionnalités attendues: {fonctionnalités-esperées}, Compétiteurs: {compétiteurs}. Analyse ces informations et propose un design UX/UI centré utilisateur qui répond aux besoins de votre public cible et se démarque des concurrents.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

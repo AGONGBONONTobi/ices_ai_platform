@@ -1,0 +1,80 @@
+{
+  "id": "grille-de-remuneration-et-classification-des-postes",
+  "title": "Grille de rémunération & classification des postes",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de nom d'entreprise",
+      "required": true
+    },
+    {
+      "name": "poste",
+      "type": "text",
+      "label": "Nom du poste",
+      "placeholder": "Exemple de nom de poste",
+      "required": true
+    },
+    {
+      "name": "niveau-de-qualification",
+      "type": "select",
+      "options": [
+        "Bac+2",
+        "Bac+3",
+        "Bac+4",
+        "Master",
+        "Doctorat"
+      ],
+      "label": "Niveau de qualification",
+      "placeholder": "Exemple de niveau de qualification",
+      "required": true
+    },
+    {
+      "name": "experience-professionnelle",
+      "type": "number",
+      "label": "Expérience professionnelle en années",
+      "placeholder": "Exemple d'expérience professionnelle",
+      "required": true
+    },
+    {
+      "name": "responsabilites",
+      "type": "textarea",
+      "label": "Responsabilités du poste",
+      "placeholder": "Exemple de responsabilités",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RH. L'utilisateur a répondu : Entreprise: {entreprise}, Poste: {poste}, Niveau de qualification: {niveau-de-qualification}, Expérience professionnelle: {experience-professionnelle} ans, Responsabilités: {responsabilites}. Analyse ces informations et propose une grille de rémunération et une classification des postes.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

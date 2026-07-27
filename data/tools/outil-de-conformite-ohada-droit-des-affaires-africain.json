@@ -1,0 +1,99 @@
+{
+  "id": "outil-de-conformite-ohada-droit-des-affaires-africain",
+  "title": "Outil de conformité OHADA & droit des affaires africain",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "pays_implantation",
+      "type": "select",
+      "options": [
+        "Bénin",
+        "Burkina Faso",
+        "Cameroun",
+        "République Centrafricaine",
+        "Tchad",
+        "Comores",
+        "Côte d'Ivoire",
+        "Djibouti",
+        "Gabon",
+        "Guinée",
+        "Guinée-Bissau",
+        "Guinée Équatoriale",
+        "Mali",
+        "Mauritanie",
+        "Niger",
+        "République du Congo",
+        "République Démocratique du Congo",
+        "Sénégal",
+        "Seychelles",
+        "Sierra Leone",
+        "Togo"
+      ],
+      "label": "Dans quel pays votre entreprise est-elle implantée ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "type_entreprise",
+      "type": "select",
+      "options": [
+        "PME",
+        "Grande entreprise",
+        "Start-up",
+        "Autre"
+      ],
+      "label": "Quel est le type d'entreprise ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_activite",
+      "type": "textarea",
+      "label": "Décrivez brièvement l'activité principale de votre entreprise :",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "existence_conventions_collectives",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Existe-t-il des conventions collectives applicables à votre entreprise ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en droit des affaires africain et en conformité OHADA. L'utilisateur a répondu : Pays d'implantation: {pays_implantation}, Type d'entreprise: {type_entreprise}, Description de l'activité: {description_activite}, Existence de conventions collectives: {existence_conventions_collectives}. Évaluez la conformité de l'entreprise aux exigences OHADA et au droit des affaires local. Donnez un score global sur 100, une évaluation par axe (par exemple, gouvernance, ressources humaines, fiscalité), et des recommandations pour améliorer la conformité.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "outil-evaluation-des-apprentissages",
+  "title": "Outil d'évaluation des apprentissages",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "niveauEtude",
+      "type": "select",
+      "options": [
+        "Primaire",
+        "Secondaire",
+        "Supérieur"
+      ],
+      "label": "Quel est votre niveau d'étude actuel ?",
+      "placeholder": "Sélectionnez votre niveau d'étude",
+      "required": true
+    },
+    {
+      "name": "domaineEtude",
+      "type": "text",
+      "label": "Quel est votre domaine d'étude ?",
+      "placeholder": "Exemple : Mathématiques, Sciences, Lettres",
+      "required": true
+    },
+    {
+      "name": "objectifsApprentissage",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs d'apprentissage pour les prochains mois ?",
+      "placeholder": "Décrivez vos objectifs en quelques lignes",
+      "required": true
+    },
+    {
+      "name": "methodeApprentissage",
+      "type": "select",
+      "options": [
+        "En ligne",
+        "En présentiel",
+        "Auto-formation"
+      ],
+      "label": "Quelle méthode d'apprentissage préférez-vous ?",
+      "placeholder": "Sélectionnez votre méthode préférée",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant pédagogique. L'utilisateur a répondu : Niveau d'étude : {niveauEtude}, Domaine d'étude : {domaineEtude}, Objectifs d'apprentissage : {objectifsApprentissage}, Méthode d'apprentissage préférée : {methodeApprentissage}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (connaissances, compétences, attitudes), et des recommandations pour améliorer son apprentissage.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

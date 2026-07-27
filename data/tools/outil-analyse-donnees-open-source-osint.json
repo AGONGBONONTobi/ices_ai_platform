@@ -1,0 +1,71 @@
+{
+  "id": "outil-analyse-donnees-open-source-osint",
+  "title": "Outil d'analyse des données open source (OSINT)",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "select",
+      "options": [
+        "Recherche d'information sur une entreprise",
+        "Analyse de la concurrence",
+        "Veille technologique"
+      ],
+      "label": "Quel est l'objectif de votre analyse OSINT ?",
+      "placeholder": "Sélectionnez un objectif",
+      "required": true
+    },
+    {
+      "name": "sources",
+      "type": "textarea",
+      "label": "Quelles sources de données open source souhaitez-vous utiliser (réseaux sociaux, sites web, forums, etc.) ?",
+      "placeholder": "Liste des sources",
+      "required": true
+    },
+    {
+      "name": "periode",
+      "type": "text",
+      "label": "Quelle est la période de l'analyse ?",
+      "placeholder": "Format : JJ/MM/AAAA - JJ/MM/AAAA",
+      "required": true
+    },
+    {
+      "name": "mots-cles",
+      "type": "text",
+      "label": "Quels sont les mots-clés associés à votre recherche ?",
+      "placeholder": "Liste des mots-clés séparés par des virgules",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur cherche à effectuer une analyse OSINT avec les informations suivantes : Objectif : {objectif}, Sources : {sources}, Période : {periode}, Mots-clés : {mots-cles}. Analysez ces données et fournissez un score global sur 100, une évaluation par axe pertinent pour l'OSINT (par exemple, présence en ligne, réputation, menaces potentielles), et des recommandations pour améliorer la stratégie de veille.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

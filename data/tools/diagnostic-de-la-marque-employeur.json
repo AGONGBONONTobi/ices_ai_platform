@@ -1,0 +1,73 @@
+{
+  "id": "diagnostic-de-la-marque-employeur",
+  "title": "Diagnostic de la marque employeur",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "image-de-la-marque",
+      "type": "textarea",
+      "label": "Quelle est l'image que la marque employeur projette ?",
+      "placeholder": "Exemple : dynamique, innovante, etc.",
+      "required": true
+    },
+    {
+      "name": "valeurs-de-la-marque",
+      "type": "select",
+      "options": [
+        "Responsabilité",
+        "Innovation",
+        "Qualité",
+        "Sécurité",
+        "Sociétal"
+      ],
+      "label": "Quelles sont les valeurs clés de la marque employeur ?",
+      "placeholder": "Sélectionnez les valeurs pertinentes",
+      "required": true
+    },
+    {
+      "name": "communication-interne",
+      "type": "text",
+      "label": "Comment la marque employeur se communique-t-elle avec ses employés ?",
+      "placeholder": "Exemple : newsletters, réunions, etc.",
+      "required": true
+    },
+    {
+      "name": "engagement-des-employés",
+      "type": "number",
+      "label": "Sur 10, quel est le niveau d'engagement des employés ?",
+      "placeholder": "Exemple : 8/10",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Image de la marque : {image-de-la-marque}, Valeurs de la marque : {valeurs-de-la-marque}, Communication interne : {communication-interne}, Engagement des employés : {engagement-des-employés}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

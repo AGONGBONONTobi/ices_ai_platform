@@ -1,0 +1,90 @@
+{
+  "id": "analyse-swot-tows-croisee",
+  "title": "Analyse SWOT/TOWS croisée",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "forces",
+      "type": "textarea",
+      "label": "Liste des forces internes de l'entreprise",
+      "placeholder": "Exemple : expertise, ressources, etc.",
+      "required": true
+    },
+    {
+      "name": "faiblesses",
+      "type": "textarea",
+      "label": "Liste des faiblesses internes de l'entreprise",
+      "placeholder": "Exemple : manque de ressources, etc.",
+      "required": true
+    },
+    {
+      "name": "opportunités",
+      "type": "textarea",
+      "label": "Liste des opportunités externes de l'entreprise",
+      "placeholder": "Exemple : marché en croissance, etc.",
+      "required": true
+    },
+    {
+      "name": "menaces",
+      "type": "textarea",
+      "label": "Liste des menaces externes de l'entreprise",
+      "placeholder": "Exemple : concurrence, etc.",
+      "required": true
+    },
+    {
+      "name": "strategie-forces-opportunes",
+      "type": "select",
+      "options": [
+        "Développer les forces",
+        "Utiliser les opportunités",
+        "Combinez les deux"
+      ],
+      "label": "Quelle stratégie pour les forces et les opportunités ?",
+      "placeholder": "Exemple : développer les forces",
+      "required": true
+    },
+    {
+      "name": "strategie-faiblesses-menaces",
+      "type": "select",
+      "options": [
+        "Améliorer les faiblesses",
+        "Éviter les menaces",
+        "Combinez les deux"
+      ],
+      "label": "Quelle stratégie pour les faiblesses et les menaces ?",
+      "placeholder": "Exemple : améliorer les faiblesses",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Forces : {forces}, Faiblesses : {faiblesses}, Opportunités : {opportunités}, Menaces : {menaces}, Stratégie forces-opportunités : {strategie-forces-opportunes}, Stratégie faiblesses-menaces : {strategie-faiblesses-menaces}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

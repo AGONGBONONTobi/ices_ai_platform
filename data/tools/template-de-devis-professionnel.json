@@ -1,0 +1,70 @@
+{
+  "id": "template-de-devis-professionnel",
+  "title": "Template de devis professionnel",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Entreprise XYZ",
+      "required": true
+    },
+    {
+      "name": "typeDeDevis",
+      "type": "select",
+      "options": [
+        "Devis pour travaux de construction",
+        "Devis pour services de consulting",
+        "Devis pour vente de produits"
+      ],
+      "label": "Type de devis",
+      "required": true
+    },
+    {
+      "name": "descriptionDuProjet",
+      "type": "textarea",
+      "label": "Description du projet",
+      "placeholder": "Exemple : Description détaillée du projet, y compris les objectifs et les deliverables",
+      "required": true
+    },
+    {
+      "name": "delaiDeRealisation",
+      "type": "number",
+      "label": "Délai de réalisation (en jours)",
+      "placeholder": "Exemple : 30",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en création de devis professionnels. L'entreprise {entreprise} a besoin d'un devis pour un {typeDeDevis}. Le projet consiste en {descriptionDuProjet}. Le délai de réalisation est de {delaiDeRealisation} jours. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe (qualité du projet, délai, coût), et des recommandations pour améliorer le devis.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

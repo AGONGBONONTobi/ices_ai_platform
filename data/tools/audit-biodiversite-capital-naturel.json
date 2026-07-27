@@ -1,0 +1,79 @@
+{
+  "id": "audit-biodiversite-capital-naturel",
+  "title": "Audit de la biodiversité & capital naturel",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "zone-geographique",
+      "type": "text",
+      "label": "Quelle est la zone géographique étudiée ?",
+      "placeholder": "Exemple : région, département, etc.",
+      "required": true
+    },
+    {
+      "name": "type-d'habitat",
+      "type": "select",
+      "options": [
+        "Forêt",
+        "Pré",
+        "Marais",
+        "Autres"
+      ],
+      "label": "Quel type d'habitat est étudié ?",
+      "placeholder": "Exemple : forêt, pré, marais, etc.",
+      "required": true
+    },
+    {
+      "name": "biodiversite-observée",
+      "type": "textarea",
+      "label": "Quelles espèces de biodiversité ont été observées ?",
+      "placeholder": "Exemple : oiseaux, insectes, plantes, etc.",
+      "required": true
+    },
+    {
+      "name": "menaces-pour-la-biodiversite",
+      "type": "text",
+      "label": "Quelles menaces pour la biodiversité ont été identifiées ?",
+      "placeholder": "Exemple : pollution, déforestation, etc.",
+      "required": true
+    },
+    {
+      "name": "actions-pour-mieux-protéger-la-biodiversite",
+      "type": "textarea",
+      "label": "Quelles actions peuvent être prises pour mieux protéger la biodiversité ?",
+      "placeholder": "Exemple : création de zones protégées, réduction de la pollution, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en biodiversité. L'utilisateur a répondu : Zone géographique : {zone-geographique}, Type d'habitat : {type-d'habitat}, Biodiversité observée : {biodiversite-observée}, Menaces pour la biodiversité : {menaces-pour-la-biodiversite}, Actions pour mieux protéger la biodiversité : {actions-pour-mieux-protéger-la-biodiversite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

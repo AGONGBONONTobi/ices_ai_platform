@@ -1,0 +1,80 @@
+{
+  "id": "business-plan-complet-ia-assiste",
+  "title": "Business plan complet IA-assisté",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de nom d'entreprise",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Finance",
+        "Santé",
+        "Énergie",
+        "Autres"
+      ],
+      "label": "Secteur d'activité de l'entreprise",
+      "placeholder": "Choisissez un secteur",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Description de l'entreprise",
+      "placeholder": "Exemple de description de l'entreprise",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Objectifs de l'entreprise",
+      "placeholder": "Exemple d'objectifs de l'entreprise",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Budget initial de l'entreprise",
+      "placeholder": "Exemple de budget initial",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en finance et gestion. L'utilisateur a fourni les informations suivantes : Entreprise : {entreprise}, Secteur : {secteur}, Description : {description}, Objectifs : {objectifs}, Budget : {budget}. Analyse ces informations et propose un plan d'affaires complet avec des recommandations pour atteindre les objectifs de l'entreprise.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

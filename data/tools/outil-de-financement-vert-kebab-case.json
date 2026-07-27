@@ -1,0 +1,76 @@
+{
+  "id": "outil-de-financement-vert-kebab-case",
+  "title": "Outil de financement vert (Green Bonds, Sustainability Linked)",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "objectif-financement",
+      "type": "select",
+      "options": [
+        "Renouvelables",
+        "Efficacité énergétique",
+        "Biodiversité",
+        "Réduction des émissions de gaz à effet de serre"
+      ],
+      "label": "Quel est l'objectif principal du financement vert ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "montant-financement",
+      "type": "number",
+      "label": "Quel est le montant du financement vert ?",
+      "placeholder": "Exemple : 10 millions d'euros",
+      "required": true
+    },
+    {
+      "name": "periode-financement",
+      "type": "textarea",
+      "label": "Quelle est la période de financement ?",
+      "placeholder": "Exemple : 5 ans",
+      "required": true
+    },
+    {
+      "name": "methode-evaluation",
+      "type": "select",
+      "options": [
+        "Green Bond Principles",
+        "Sustainability Linked Bond Principles"
+      ],
+      "label": "Quelle est la méthode d'évaluation utilisée pour le financement vert ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en financement vert. L'utilisateur a répondu : Objectif-financement: {objectif-financement}, Montant-financement: {montant-financement}, Période-financement: {periode-financement}, Méthode d'évaluation: {methode-evaluation}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "analyse-chaine-valeur-projet-sectoriel",
+  "title": "Analyse de la chaîne de valeur d'un projet sectoriel",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "objectif_principal",
+      "type": "textarea",
+      "label": "Décrivez l'objectif principal du projet",
+      "placeholder": "Exemple : développer un nouveau produit",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Industrie manufacturière",
+        "Services",
+        "Agriculture",
+        "Technologie"
+      ],
+      "label": "Sélectionnez le secteur d'activité du projet",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "acteurs_cles",
+      "type": "text",
+      "label": "Listez les acteurs clés impliqués dans le projet",
+      "placeholder": "Exemple : entreprise A, fournisseur B",
+      "required": true
+    },
+    {
+      "name": "ressources_alloues",
+      "type": "number",
+      "label": "Indiquez le montant des ressources allouées au projet",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en stratégie. L'utilisateur a répondu : Objectif principal : {objectif_principal}, Secteur : {secteur}, Acteurs clés : {acteurs_cles}, Ressources allouées : {ressources_alloues}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe de la chaîne de valeur, ainsi que des recommandations pour améliorer la valeur du projet.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

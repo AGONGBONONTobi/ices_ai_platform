@@ -1,0 +1,76 @@
+{
+  "id": "marketing-sensoriel-et-expérientiel",
+  "title": "Stratégie de marketing sensoriel & expérientiel",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "produits-cibles",
+      "type": "select",
+      "options": [
+        "Produits de luxe",
+        "Produits de masse",
+        "Produits biologiques"
+      ],
+      "label": "Quels types de produits souhaitez-vous cibler ?",
+      "placeholder": "Sélectionnez les produits cibles",
+      "required": true
+    },
+    {
+      "name": "canal-de-distribution",
+      "type": "select",
+      "options": [
+        "Canal de vente en ligne",
+        "Canal de vente en magasin",
+        "Canal de vente en direct"
+      ],
+      "label": "Quel canal de distribution souhaitez-vous utiliser ?",
+      "placeholder": "Sélectionnez le canal de distribution",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est votre budget alloué pour la stratégie de marketing sensoriel & expérientiel ?",
+      "placeholder": "Entrez le budget alloué",
+      "required": true
+    },
+    {
+      "name": "objectifs-de-ventes",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs de ventes pour la prochaine période ?",
+      "placeholder": "Décrivez vos objectifs de ventes",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Produits cibles : {produits-cibles}, Canal de distribution : {canal-de-distribution}, Budget alloué : {budget-alloue}, Objectifs de ventes : {objectifs-de-ventes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

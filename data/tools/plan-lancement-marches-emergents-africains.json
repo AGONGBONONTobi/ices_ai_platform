@@ -1,0 +1,73 @@
+{
+  "id": "plan-lancement-marches-emergents-africains",
+  "title": "Plan de lancement sur marchés émergents africains",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "marches-cibles",
+      "type": "select",
+      "options": [
+        "Afrique du Sud",
+        "Nigéria",
+        "Égypte",
+        "Maroc",
+        "Côte d'Ivoire"
+      ],
+      "label": "Quels marchés émergents africains souhaitez-vous cibler ?",
+      "placeholder": "Sélectionnez les marchés",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est votre budget alloué pour le lancement sur ces marchés ?",
+      "placeholder": "Entrez le budget",
+      "required": true
+    },
+    {
+      "name": "strategie-marketing",
+      "type": "textarea",
+      "label": "Quelle est votre stratégie de marketing pour ces marchés ?",
+      "placeholder": "Décrivez votre stratégie",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "text",
+      "label": "Quelles ressources (humaines, matérielles, financières) disposez-vous pour le lancement sur ces marchés ?",
+      "placeholder": "Décrivez les ressources",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en marketing commercial. L'utilisateur a répondu : Marches cibles : {marches-cibles}, Budget alloué : {budget-alloue}, Stratégie marketing : {strategie-marketing}, Ressources disponibles : {ressources-disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

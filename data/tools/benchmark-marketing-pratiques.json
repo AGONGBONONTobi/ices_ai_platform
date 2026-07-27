@@ -1,0 +1,73 @@
+{
+  "id": "benchmark-marketing-pratiques",
+  "title": "Benchmark des meilleures pratiques marketing",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "budget-marketing",
+      "type": "number",
+      "label": "Quel est votre budget annuel pour le marketing ?",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    },
+    {
+      "name": "taux-conversion",
+      "type": "number",
+      "label": "Quel est votre taux de conversion actuel ?",
+      "placeholder": "Exemple : 2%",
+      "required": true
+    },
+    {
+      "name": "canal-marketing-préféré",
+      "type": "select",
+      "options": [
+        "Email marketing",
+        "Réseaux sociaux",
+        "Publicité en ligne",
+        "Evénements",
+        "Contenu de qualité"
+      ],
+      "label": "Quel est votre canal marketing préféré ?",
+      "placeholder": "Exemple : Email marketing",
+      "required": true
+    },
+    {
+      "name": "description-projet",
+      "type": "textarea",
+      "label": "Veuillez décrire votre projet marketing actuel.",
+      "placeholder": "Exemple : Nous lançons une nouvelle campagne de publicité en ligne pour promouvoir notre nouveau produit.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Budget marketing : {budget-marketing}, Taux de conversion : {taux-conversion}, Canal marketing préféré : {canal-marketing-préféré}, Description du projet : {description-projet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

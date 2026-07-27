@@ -1,0 +1,71 @@
+{
+  "id": "audit-contrats-travail-reglement-interieur",
+  "title": "Audit des contrats de travail & règlement intérieur",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "typeEntreprise",
+      "type": "select",
+      "options": [
+        "PMI",
+        "PME",
+        "Grand groupe"
+      ],
+      "label": "Quel est le type d'entreprise ?",
+      "placeholder": "Sélectionnez le type d'entreprise",
+      "required": true
+    },
+    {
+      "name": "nbSalaries",
+      "type": "number",
+      "label": "Combien de salariés compte l'entreprise ?",
+      "placeholder": "Entrez le nombre de salariés",
+      "required": true
+    },
+    {
+      "name": "descriptionContrats",
+      "type": "textarea",
+      "label": "Décrivez les contrats de travail actuellement en vigueur dans l'entreprise",
+      "placeholder": "Entrez une description détaillée des contrats de travail",
+      "required": true
+    },
+    {
+      "name": "reglementInterieur",
+      "type": "text",
+      "label": "L'entreprise dispose-t-elle d'un règlement intérieur ?",
+      "placeholder": "Oui/Non",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en audits et conformité. L'utilisateur a répondu : Type d'entreprise : {typeEntreprise}, Nombre de salariés : {nbSalaries}, Description des contrats de travail : {descriptionContrats}, Règlement intérieur : {reglementInterieur}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

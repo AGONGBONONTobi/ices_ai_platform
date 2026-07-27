@@ -1,0 +1,78 @@
+{
+  "id": "template-pacte-associes-shareholders-agreement",
+  "title": "Template de pacte d'associés & shareholders agreement",
+  "category": "JURIDIQUE & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "nom_entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Société XYZ",
+      "required": true
+    },
+    {
+      "name": "nom_socle",
+      "type": "text",
+      "label": "Nom du socle",
+      "placeholder": "Exemple : ABC",
+      "required": true
+    },
+    {
+      "name": "pourcentage_participation",
+      "type": "number",
+      "label": "Pourcentage de participation du socle",
+      "placeholder": "Exemple : 60",
+      "required": true
+    },
+    {
+      "name": "droits_socle",
+      "type": "textarea",
+      "label": "Droits du socle (ex : droits de vote, droits de gestion, etc.)",
+      "placeholder": "Exemple : Droits de vote, droits de gestion, etc.",
+      "required": true
+    },
+    {
+      "name": "droits_associes",
+      "type": "select",
+      "options": [
+        "Droits de vote",
+        "Droits de gestion",
+        "Droits de répartition des bénéfices"
+      ],
+      "label": "Droits des associés (ex : droits de vote, droits de gestion, etc.)",
+      "placeholder": "Exemple : Droits de vote, droits de gestion, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un avocat expert. L'utilisateur a répondu : Nom de l'entreprise : {nom_entreprise}, Nom du socle : {nom_socle}, Pourcentage de participation du socle : {pourcentage_participation}%, Droits du socle : {droits_socle}, Droits des associés : {droits_associes}. Analyse ces informations et propose un template de pacte d'associés & shareholders agreement.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

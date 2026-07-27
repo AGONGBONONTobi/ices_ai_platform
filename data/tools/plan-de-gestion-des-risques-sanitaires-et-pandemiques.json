@@ -1,0 +1,80 @@
+{
+  "id": "plan-de-gestion-des-risques-sanitaires-et-pandemiques",
+  "title": "Plan de gestion des risques sanitaires & pandémiques",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "zone-geographique",
+      "type": "select",
+      "options": [
+        "Europe",
+        "Amérique du Nord",
+        "Asie",
+        "Afrique",
+        "Océanie"
+      ],
+      "label": "Quelle zone géographique est-elle concernée par le plan de gestion des risques ?",
+      "placeholder": "Sélectionnez une zone",
+      "required": true
+    },
+    {
+      "name": "type-d-activite",
+      "type": "select",
+      "options": [
+        "Industrie",
+        "Services",
+        "Commerce",
+        "Agriculture",
+        "Autres"
+      ],
+      "label": "Quel type d'activité est-elle concernée par le plan de gestion des risques ?",
+      "placeholder": "Sélectionnez un type d'activité",
+      "required": true
+    },
+    {
+      "name": "nombre-de-personnes",
+      "type": "number",
+      "label": "Combien de personnes sont-elles présentes sur le site ou dans l'entreprise ?",
+      "placeholder": "Saisissez un nombre",
+      "required": true
+    },
+    {
+      "name": "mesures-de-protection",
+      "type": "textarea",
+      "label": "Quelles mesures de protection sont déjà en place pour prévenir la propagation des risques sanitaires et pandémiques ?",
+      "placeholder": "Décrit les mesures de protection actuelles",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des risques. L'utilisateur a répondu : Zone géographique : {zone-geographique}, Type d'activité : {type-d-activite}, Nombre de personnes : {nombre-de-personnes}, Mesures de protection : {mesures-de-protection}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

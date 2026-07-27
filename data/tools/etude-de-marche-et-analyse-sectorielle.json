@@ -1,0 +1,72 @@
+{
+  "id": "etude-de-marche-et-analyse-sectorielle",
+  "title": "Étude de marché & analyse sectorielle",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Finance",
+        "Énergie",
+        "Autres"
+      ],
+      "label": "Quel est le secteur d'activité de l'entreprise ?",
+      "placeholder": "Sélectionner un secteur",
+      "required": true
+    },
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de l'entreprise pour les prochaines 6 mois ?",
+      "placeholder": "Décrire les objectifs stratégiques",
+      "required": true
+    },
+    {
+      "name": "concurrence",
+      "type": "number",
+      "label": "Quel est le nombre de concurrents dans le secteur ?",
+      "placeholder": "Saisir un nombre",
+      "required": true
+    },
+    {
+      "name": "tendance-marche",
+      "type": "text",
+      "label": "Quelle est la tendance actuelle du marché ?",
+      "placeholder": "Décrire la tendance du marché",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Secteur: {secteur}, Objectif stratégique: {objectif-strategique}, Nombre de concurrents: {concurrence}, Tendance du marché: {tendance-marche}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

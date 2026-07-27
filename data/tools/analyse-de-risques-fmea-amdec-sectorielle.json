@@ -1,0 +1,78 @@
+{
+  "id": "analyse-de-risques-fmea-amdec-sectorielle",
+  "title": "Analyse de risques FMEA/AMDEC sectorielle",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "nom_du_projet",
+      "type": "text",
+      "label": "Nom du projet ou activité",
+      "placeholder": "Exemple : Développement d'un nouveau produit",
+      "required": true
+    },
+    {
+      "name": "description_du_projet",
+      "type": "textarea",
+      "label": "Description du projet ou activité",
+      "placeholder": "Exemple : Développement d'un nouveau produit pour le marché européen",
+      "required": true
+    },
+    {
+      "name": "type_du_risque",
+      "type": "select",
+      "options": [
+        "Technique",
+        "Humain",
+        "Environnemental"
+      ],
+      "label": "Type de risque",
+      "placeholder": "Exemple : Technique",
+      "required": true
+    },
+    {
+      "name": "cause_risque",
+      "type": "textarea",
+      "label": "Cause du risque",
+      "placeholder": "Exemple : Erreur de conception du produit",
+      "required": true
+    },
+    {
+      "name": "effet_risque",
+      "type": "textarea",
+      "label": "Effet du risque",
+      "placeholder": "Exemple : Perte de confiance des clients",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion des risques. L'utilisateur a répondu : Nom du projet : {nom_du_projet}, Description du projet : {description_du_projet}, Type de risque : {type_du_risque}, Cause du risque : {cause_risque}, Effet du risque : {effet_risque}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

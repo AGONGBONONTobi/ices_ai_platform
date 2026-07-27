@@ -1,0 +1,71 @@
+{
+  "id": "gestion-optimisation-portefeuille-projects",
+  "title": "Gestion & optimisation du portefeuille de projets",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "nombreProjets",
+      "type": "number",
+      "label": "Combien de projets avez-vous actuellement dans votre portefeuille ?",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "budgetTotal",
+      "type": "number",
+      "label": "Quel est votre budget total pour les projets ?",
+      "placeholder": "Exemple : 100000",
+      "required": true
+    },
+    {
+      "name": "prioriteProjets",
+      "type": "select",
+      "options": [
+        "Urgent",
+        "Moyen",
+        "Faible"
+      ],
+      "label": "Quelle est la priorité des projets dans votre portefeuille ?",
+      "placeholder": "Exemple : Urgent",
+      "required": true
+    },
+    {
+      "name": "risquesIdentifies",
+      "type": "textarea",
+      "label": "Quels sont les risques les plus importants identifiés dans vos projets ?",
+      "placeholder": "Exemple : Risque de retard, risque de dépassement de budget",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nombre de projets : {nombreProjets}, Budget total : {budgetTotal}, Priorité des projets : {prioriteProjets}, Risques identifiés : {risquesIdentifies}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

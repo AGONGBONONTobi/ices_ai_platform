@@ -1,0 +1,78 @@
+{
+  "id": "gestion-de-projets-pmo-project-charter",
+  "title": "Charte de projet complète",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "nom-projet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple : Développement d'un nouveau produit",
+      "required": true
+    },
+    {
+      "name": "objectif-projet",
+      "type": "textarea",
+      "label": "Objectif du projet",
+      "placeholder": "Exemple : Améliorer la productivité et la qualité des produits",
+      "required": true
+    },
+    {
+      "name": "équipe-projet",
+      "type": "select",
+      "options": [
+        "Équipe interne",
+        "Équipe externe",
+        "Partenariat"
+      ],
+      "label": "Équipe responsable du projet",
+      "placeholder": "Exemple : Équipe interne",
+      "required": true
+    },
+    {
+      "name": "budget-projet",
+      "type": "number",
+      "label": "Budget alloué au projet",
+      "placeholder": "Exemple : 100 000€",
+      "required": true
+    },
+    {
+      "name": "délai-projet",
+      "type": "text",
+      "label": "Délai de réalisation du projet",
+      "placeholder": "Exemple : 6 mois",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet : {nom-projet}, Objectif du projet : {objectif-projet}, Équipe responsable du projet : {équipe-projet}, Budget alloué au projet : {budget-projet}, Délai de réalisation du projet : {délai-projet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

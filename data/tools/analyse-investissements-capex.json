@@ -1,0 +1,80 @@
+{
+  "id": "analyse-investissements-capex",
+  "title": "Analyse des investissements & décisions CAPEX",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "montant-investi",
+      "type": "number",
+      "label": "Montant investi dans le projet CAPEX",
+      "placeholder": "Entrez le montant investi",
+      "required": true
+    },
+    {
+      "name": "taux-de-retour",
+      "type": "number",
+      "label": "Taux de retour attendu sur l'investissement",
+      "placeholder": "Entrez le taux de retour attendu",
+      "required": true
+    },
+    {
+      "name": "periode-de-retour",
+      "type": "select",
+      "options": [
+        "1 an",
+        "2 ans",
+        "3 ans",
+        "4 ans",
+        "5 ans"
+      ],
+      "label": "Période de retour attendue sur l'investissement",
+      "placeholder": "Sélectionnez la période de retour",
+      "required": true
+    },
+    {
+      "name": "risques-associes",
+      "type": "textarea",
+      "label": "Risques associés à l'investissement",
+      "placeholder": "Décrivez les risques associés à l'investissement",
+      "required": true
+    },
+    {
+      "name": "strategie-de-gestion",
+      "type": "text",
+      "label": "Stratégie de gestion des risques associés",
+      "placeholder": "Décrivez la stratégie de gestion des risques",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a répondu : Montant investi : {montant-investi}, Taux de retour attendu : {taux-de-retour}, Période de retour attendue : {periode-de-retour}, Risques associés : {risques-associes}, Stratégie de gestion : {strategie-de-gestion}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

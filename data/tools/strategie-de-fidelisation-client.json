@@ -1,0 +1,77 @@
+{
+  "id": "strategie-de-fidelisation-client",
+  "title": "Stratégie de fidélisation client (CRM & loyalty)",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "typeClient",
+      "type": "select",
+      "options": [
+        "Particulier",
+        "Entreprise",
+        "Institution"
+      ],
+      "label": "Quel est le type de client ciblé par votre stratégie de fidélisation ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "objectifsFidelisation",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux de votre stratégie de fidélisation client ?",
+      "placeholder": "Décrivez vos objectifs",
+      "required": true
+    },
+    {
+      "name": "canalCommunication",
+      "type": "select",
+      "options": [
+        "Email",
+        "Téléphone",
+        "Réseaux sociaux",
+        "Publicité en ligne"
+      ],
+      "label": "Quel canal de communication préférez-vous pour votre stratégie de fidélisation ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "budgetFidelisation",
+      "type": "number",
+      "label": "Quel est le budget alloué pour votre stratégie de fidélisation client ?",
+      "placeholder": "Entrez un montant",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en marketing. L'utilisateur a répondu : Type de client : {typeClient}, Objectifs de fidélisation : {objectifsFidelisation}, Canal de communication : {canalCommunication}, Budget pour la fidélisation : {budgetFidelisation}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (par exemple, stratégie, communication, budget), et des recommandations pour améliorer la stratégie de fidélisation client.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

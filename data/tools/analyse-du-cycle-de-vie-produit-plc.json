@@ -1,0 +1,78 @@
+{
+  "id": "analyse-du-cycle-de-vie-produit-plc",
+  "title": "Analyse du cycle de vie produit (PLC)",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "duree_de_vie",
+      "type": "number",
+      "label": "Quelle est la durée de vie estimée du produit ?",
+      "placeholder": "En années",
+      "required": true
+    },
+    {
+      "name": "cout_de_recherche_et_developpement",
+      "type": "number",
+      "label": "Quel est le coût de recherche et développement du produit ?",
+      "placeholder": "En euros",
+      "required": true
+    },
+    {
+      "name": "cout_de_production",
+      "type": "number",
+      "label": "Quel est le coût de production du produit ?",
+      "placeholder": "En euros",
+      "required": true
+    },
+    {
+      "name": "methode_de_production",
+      "type": "select",
+      "options": [
+        "Fabrication locale",
+        "Fabrication à l'étranger",
+        "Assemblage"
+      ],
+      "label": "Quelle est la méthode de production utilisée ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_de_la_fabrication",
+      "type": "textarea",
+      "label": "Veuillez décrire la fabrication du produit",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Durée de vie : {duree_de_vie} ans, Coût de recherche et développement : {cout_de_recherche_et_developpement} euros, Coût de production : {cout_de_production} euros, Méthode de production : {methode_de_production}, Description de la fabrication : {description_de_la_fabrication}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

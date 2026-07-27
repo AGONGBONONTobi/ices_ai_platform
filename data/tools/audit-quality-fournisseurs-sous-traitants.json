@@ -1,0 +1,71 @@
+{
+  "id": "audit-quality-fournisseurs-sous-traitants",
+  "title": "Audit qualité fournisseurs & sous-traitants",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "score-qualite-procédure",
+      "type": "number",
+      "label": "Score de qualité de la procédure de gestion de la qualité",
+      "placeholder": "Exemple : 80",
+      "required": true
+    },
+    {
+      "name": "score-qualite-contrôle",
+      "type": "number",
+      "label": "Score de qualité des contrôles qualité mis en place",
+      "placeholder": "Exemple : 90",
+      "required": true
+    },
+    {
+      "name": "recommandations-qualite",
+      "type": "textarea",
+      "label": "Recommandations pour améliorer la qualité",
+      "placeholder": "Exemple : Mettre en place un système de gestion de la qualité...",
+      "required": true
+    },
+    {
+      "name": "type-de-certification",
+      "type": "select",
+      "options": [
+        "ISO 9001",
+        "ISO 14001",
+        "ISO 45001"
+      ],
+      "label": "Type de certification qualité du fournisseur",
+      "placeholder": "Exemple : ISO 9001",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en qualité. L'utilisateur a répondu : Score qualité procédure : {score-qualite-procédure}, Score qualité contrôle : {score-qualite-contrôle}, Recommandations qualité : {recommandations-qualite}, Type de certification qualité : {type-de-certification}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

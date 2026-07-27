@@ -1,0 +1,72 @@
+{
+  "id": "plan-d-affaires-agricole-etude-de-faisabilite",
+  "title": "Plan d'affaires agricole & étude de faisabilité",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "superficie_exploitation",
+      "type": "number",
+      "label": "Quelle est la superficie de votre exploitation agricole (en hectares) ?",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "type_culture",
+      "type": "select",
+      "options": [
+        "Céréales",
+        "Fruits et légumes",
+        "Vignes et vin",
+        "Élevage"
+      ],
+      "label": "Quel type de culture ou d'élevage prévoyez-vous ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_projet",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre projet agricole (objectifs, moyens, etc.)",
+      "placeholder": "Exemple de description",
+      "required": true
+    },
+    {
+      "name": "budget_prevu",
+      "type": "number",
+      "label": "Quel est le budget prévu pour votre projet (en milliers d'euros) ?",
+      "placeholder": "Exemple : 100",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en agriculture. L'utilisateur a répondu : Superficie de l'exploitation : {superficie_exploitation} hectares, Type de culture : {type_culture}, Description du projet : {description_projet}, Budget prévu : {budget_prevu} milliers d'euros. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe, et des recommandations pour la viabilité de ce projet agricole.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

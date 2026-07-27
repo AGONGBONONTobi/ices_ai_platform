@@ -1,0 +1,71 @@
+{
+  "id": "dashboard-comite-de-direction",
+  "title": "Dashboard exécutif Comité de direction",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "number",
+      "label": "Quel est le taux de croissance du chiffre d'affaires par rapport à l'année précédente ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "textarea",
+      "label": "Quelles sont les principales tendances observées dans les données financières ?",
+      "placeholder": "Décrivez les tendances",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "select",
+      "options": [
+        "Bénéfice",
+        "Chiffre d'affaires",
+        "Effectif"
+      ],
+      "label": "Quel est l'indicateur clé de performance à suivre pour le Comité de direction ?",
+      "placeholder": "Sélectionnez un indicateur",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quel est le pourcentage d'objectifs atteints pour le trimestre en cours ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Taux de croissance du chiffre d'affaires : {variable1}, Tendances observées dans les données financières : {variable2}, Indicateur clé de performance : {variable3}, Pourcentage d'objectifs atteints : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

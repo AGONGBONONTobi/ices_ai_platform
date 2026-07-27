@@ -1,0 +1,73 @@
+{
+  "id": "plan-de-developpement-commercial-growth-hacking",
+  "title": "Plan de développement commercial & growth hacking",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Quels sont les objectifs clés de votre stratégie de développement commercial ?",
+      "placeholder": "Exemple : augmentation des ventes, développement de nouveaux marchés, etc.",
+      "required": true
+    },
+    {
+      "name": "cible",
+      "type": "text",
+      "label": "Qui est votre cible idéale ? (décrivez leur profil, leurs besoins, etc.)",
+      "placeholder": "Exemple : entreprise de taille moyenne, secteur de la technologie, etc.",
+      "required": true
+    },
+    {
+      "name": "canal",
+      "type": "select",
+      "options": [
+        "Réseaux sociaux",
+        "Email marketing",
+        "Publicité en ligne",
+        "Événements",
+        "Autre"
+      ],
+      "label": "Quel est votre principal canal de communication avec la cible ?",
+      "placeholder": "Exemple : réseaux sociaux",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est votre budget alloué pour le développement commercial ?",
+      "placeholder": "Exemple : 10 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs : {objectifs}, Cible : {cible}, Canal : {canal}, Budget : {budget}. Analyse ces informations et propose un plan de développement commercial et de growth hacking personnalisé pour atteindre les objectifs fixés.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

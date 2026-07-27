@@ -1,0 +1,71 @@
+{
+  "id": "strategie-resilience-antifragilite",
+  "title": "Stratégie de résilience & antifragilité organisationnelle",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "label": "Décrivez le contexte actuel de votre organisation",
+      "placeholder": "Exemple : Nous sommes en pleine crise économique",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "text",
+      "label": "Quels sont les objectifs clés de votre stratégie de résilience ?",
+      "placeholder": "Exemple : Améliorer la flexibilité, réduire les coûts",
+      "required": true
+    },
+    {
+      "name": "axes",
+      "type": "select",
+      "options": [
+        "Humain",
+        "Technologique",
+        "Financier"
+      ],
+      "label": "Quels axes souhaitez-vous prioriser pour votre stratégie de résilience ?",
+      "placeholder": "Choisissez un axe",
+      "required": true
+    },
+    {
+      "name": "indicateurs",
+      "type": "text",
+      "label": "Quels indicateurs souhaitez-vous utiliser pour mesurer la performance de votre stratégie de résilience ?",
+      "placeholder": "Exemple : Taux de satisfaction des employés, taux de rétention des clients",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Contexte : {contexte}, Objectifs : {objectifs}, Axes : {axes}, Indicateurs : {indicateurs}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

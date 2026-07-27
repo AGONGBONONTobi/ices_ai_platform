@@ -1,0 +1,77 @@
+{
+  "id": "diagnostic-innovation-creativite",
+  "title": "Diagnostic de l'innovation & de la créativité",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "niveauInnovation",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est votre niveau d'innovation actuel ?",
+      "placeholder": "Sélectionnez votre niveau",
+      "required": true
+    },
+    {
+      "name": "descriptionProjet",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre projet ou idée innovante",
+      "placeholder": "Exemple : Développement d'un nouveau produit",
+      "required": true
+    },
+    {
+      "name": "budgetAlloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour votre projet d'innovation ?",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    },
+    {
+      "name": "delaiRealisation",
+      "type": "select",
+      "options": [
+        "Moins de 6 mois",
+        "6 mois à 1 an",
+        "1 an à 2 ans",
+        "Plus de 2 ans"
+      ],
+      "label": "Quel est le délai de réalisation prévu pour votre projet ?",
+      "placeholder": "Sélectionnez le délai",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en innovation. L'utilisateur a répondu : Niveau d'innovation : {niveauInnovation}, Description du projet : {descriptionProjet}, Budget alloué : {budgetAlloue}, Délai de réalisation : {delaiRealisation}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (innovation, créativité, faisabilité), et des recommandations pour améliorer le projet.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

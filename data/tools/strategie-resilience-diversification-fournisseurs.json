@@ -1,0 +1,78 @@
+{
+  "id": "strategie-resilience-diversification-fournisseurs",
+  "title": "Stratégie de résilience & diversification fournisseurs",
+  "category": "SUPPLY CHAIN & ACHATS",
+  "inputs": [
+    {
+      "name": "nombre_fournisseurs_actuels",
+      "type": "number",
+      "label": "Combien de fournisseurs avez-vous actuellement pour chaque catégorie de produit?",
+      "placeholder": "Ex: 5",
+      "required": true
+    },
+    {
+      "name": "niveau_de_risque",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quel est votre niveau de risque actuel en matière d'approvisionnement?",
+      "placeholder": "Sélectionnez",
+      "required": true
+    },
+    {
+      "name": "stratégie_actuelle",
+      "type": "textarea",
+      "label": "Décrivez votre stratégie actuelle de gestion des fournisseurs.",
+      "placeholder": "Ex: Nous utilisons principalement des fournisseurs locaux.",
+      "required": true
+    },
+    {
+      "name": "budget_alloué",
+      "type": "number",
+      "label": "Quel budget annuel avez-vous alloué à la diversification des fournisseurs?",
+      "placeholder": "Ex: 50000",
+      "required": false
+    },
+    {
+      "name": "objectifs_stratégie",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs principaux pour la stratégie de résilience?",
+      "placeholder": "Ex: Réduire les délais de livraison de 20%.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nombre de fournisseurs actuels: {nombre_fournisseurs_actuels}, Niveau de risque: {niveau_de_risque}, Stratégie actuelle: {stratégie_actuelle}, Budget alloué: {budget_alloué}, Objectifs stratégie: {objectifs_stratégie}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

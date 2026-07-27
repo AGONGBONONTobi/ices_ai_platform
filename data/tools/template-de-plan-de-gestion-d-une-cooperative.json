@@ -1,0 +1,71 @@
+{
+  "id": "template-de-plan-de-gestion-d-une-cooperative",
+  "title": "Template de plan de gestion d'une coopérative",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectifCooperative",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux de votre coopérative ?",
+      "placeholder": "Décrivez les buts et les objectifs de votre coopérative",
+      "required": true
+    },
+    {
+      "name": "membresActuels",
+      "type": "number",
+      "label": "Combien de membres actuels compte votre coopérative ?",
+      "placeholder": "Entrez le nombre de membres",
+      "required": true
+    },
+    {
+      "name": "secteurActivite",
+      "type": "select",
+      "options": [
+        "Agriculture",
+        "Services",
+        "Industrie",
+        "Commerce"
+      ],
+      "label": "Quel est le secteur d'activité de votre coopérative ?",
+      "required": true
+    },
+    {
+      "name": "ressourcesFinancieres",
+      "type": "text",
+      "label": "Quelles sont les ressources financières actuelles de votre coopérative ?",
+      "placeholder": "Décrivez les ressources financières disponibles",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en gestion de coopératives. L'utilisateur a répondu : Objectif de la coopérative : {objectifCooperative}, Nombre de membres actuels : {membresActuels}, Secteur d'activité : {secteurActivite}, Ressources financières : {ressourcesFinancieres}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (gouvernance, stratégie, finances, ressources humaines), et des recommandations pour améliorer la gestion de la coopérative.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

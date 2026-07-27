@@ -1,0 +1,77 @@
+{
+  "id": "diagnostic-business-model",
+  "title": "Diagnostic du business model (BMC)",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "descriptionEntreprise",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre entreprise et son secteur d'activité",
+      "placeholder": "Exemple : Entreprise de services dans le domaine de la technologie",
+      "required": true
+    },
+    {
+      "name": "segmentClient",
+      "type": "select",
+      "options": [
+        "Grand public",
+        "Entreprises",
+        "Institutions",
+        "Autres"
+      ],
+      "label": "Quel est le segment de client que vous ciblez ?",
+      "required": true
+    },
+    {
+      "name": "canalVente",
+      "type": "select",
+      "options": [
+        "En ligne",
+        "En magasin",
+        "Téléphone",
+        "Réseaux sociaux",
+        "Autres"
+      ],
+      "label": "Quels canaux de vente utilisez-vous pour atteindre vos clients ?",
+      "required": true
+    },
+    {
+      "name": "strategiePrix",
+      "type": "text",
+      "label": "Quelle est votre stratégie de fixation des prix ?",
+      "placeholder": "Exemple : Prix compétitif, prix premium",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en stratégie d'entreprise. L'entreprise a répondu : Description de l'entreprise : {descriptionEntreprise}, Segment de client : {segmentClient}, Canal de vente : {canalVente}, Stratégie de prix : {strategiePrix}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (par exemple, offre produit, chaîne de valeur, relations avec les clients, etc.), et des recommandations pour améliorer le business model.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

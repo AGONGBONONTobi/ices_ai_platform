@@ -1,0 +1,86 @@
+{
+  "id": "auto-diagnostic-iso-14001",
+  "title": "Auto-diagnostic ISO 14001",
+  "category": "Systèmes de Management ISO",
+  "inputs": [
+    {
+      "name": "aspectEnvironnemental",
+      "type": "select",
+      "options": [
+        "Déchets",
+        "Émissions",
+        "Eau",
+        "Énergie",
+        "Autres"
+      ],
+      "label": "Quels aspects environnementaux sont les plus critiques pour votre organisation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "conformiteLegale",
+      "type": "textarea",
+      "label": "Décrivez vos processus pour assurer la conformité aux exigences légales environnementales",
+      "placeholder": "Ex: suivi réglementaire, audits internes",
+      "required": true
+    },
+    {
+      "name": "objectifsVerts",
+      "type": "text",
+      "label": "Quels sont vos objectifs environnementaux principaux (ex: réduction des émissions, amélioration de l'efficacité énergétique) ?",
+      "placeholder": "Ex: réduire les émissions de CO2 de 10% d'ici 2025",
+      "required": true
+    },
+    {
+      "name": "bilanCarbone",
+      "type": "number",
+      "label": "Quel est votre bilan carbone actuel (en tonnes de CO2 équivalent) ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "niveauMaturite",
+      "type": "select",
+      "options": [
+        "0 - Inexistant",
+        "1 - Initié",
+        "2 - Formalisé",
+        "3 - Optimisé"
+      ],
+      "label": "Quel est votre niveau de maturité actuel en matière de management environnemental ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un auditeur expert du référentiel ISO 14001. L'utilisateur a répondu : Aspect environnemental: {aspectEnvironnemental}, Conformité légale: {conformiteLegale}, Objectifs verts: {objectifsVerts}, Bilan carbone: {bilanCarbone}, Niveau de maturité: {niveauMaturite}. Analysez ces informations selon les chapitres clés du référentiel ISO 14001 (engagement, planification, support, opération, performance) et évaluez le niveau de conformité. Donnez un score global sur 100, une évaluation par axe (engagement, planification, support, opération, performance) avec un score sur 100, et des recommandations prioritaires pour améliorer la performance environnementale.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

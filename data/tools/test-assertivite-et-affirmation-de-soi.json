@@ -1,0 +1,71 @@
+{
+  "id": "test-assertivite-et-affirmation-de-soi",
+  "title": "Test d'assertivité & affirmation de soi",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "assertivite",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, comment évaluez-vous votre niveau d'assertivité ?",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "affirmation_de_soi",
+      "type": "textarea",
+      "label": "Quels sont les aspects de votre personnalité que vous appréciez le plus ?",
+      "placeholder": "Exemple : Je suis une personne très créative et je me sens très confiante dans mes capacités.",
+      "required": true
+    },
+    {
+      "name": "situation_difficile",
+      "type": "select",
+      "options": [
+        "Conflit avec un collègue",
+        "Présentation en public",
+        "Réception d'un feedback négatif"
+      ],
+      "label": "Quelle est la situation la plus difficile que vous avez rencontrée récemment ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "reponse_a_la_situation_difficile",
+      "type": "textarea",
+      "label": "Comment avez-vous réagi à cette situation ?",
+      "placeholder": "Exemple : J'ai pris le temps de réfléchir à la situation et j'ai trouvé une solution qui a permis de résoudre le conflit.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Assertivité : {assertivite}, Affirmation de soi : {affirmation_de_soi}, Situation difficile : {situation_difficile}, Réponse à la situation difficile : {reponse_a_la_situation_difficile}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

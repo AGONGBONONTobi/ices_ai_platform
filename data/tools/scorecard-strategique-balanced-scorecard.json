@@ -1,0 +1,72 @@
+{
+  "id": "scorecard-strategique-balanced-scorecard",
+  "title": "Scorecard stratégique (Balanced Scorecard)",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "objectif-strategique",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de l'entreprise ?",
+      "placeholder": "Exemple : Augmenter les ventes, améliorer la qualité des produits",
+      "required": true
+    },
+    {
+      "name": "indicateurs-performances",
+      "type": "select",
+      "options": [
+        "Revenus",
+        "Coûts",
+        "Qualité",
+        "Temps de réponse"
+      ],
+      "label": "Quels sont les indicateurs de performance à suivre ?",
+      "placeholder": "Exemple : Revenus, Coûts",
+      "required": true
+    },
+    {
+      "name": "cible-score",
+      "type": "number",
+      "label": "Quel est le score cible pour chaque indicateur de performance ?",
+      "placeholder": "Exemple : 80",
+      "required": true
+    },
+    {
+      "name": "periode-echantillon",
+      "type": "text",
+      "label": "Quelle est la période d'échantillonnage pour les données ?",
+      "placeholder": "Exemple : Mois précédent",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Indicateurs de performance : {indicateurs-performances}, Cible score : {cible-score}, Période d'échantillonnage : {periode-echantillon}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

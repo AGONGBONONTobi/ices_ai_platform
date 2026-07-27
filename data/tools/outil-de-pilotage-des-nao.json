@@ -1,0 +1,71 @@
+{
+  "id": "outil-de-pilotage-des-nao",
+  "title": "Outil de pilotage des NAO",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "nao_score",
+      "type": "number",
+      "label": "Score de performance des NAO",
+      "placeholder": "Entrez le score de performance",
+      "required": true
+    },
+    {
+      "name": "taux_absentisme",
+      "type": "number",
+      "label": "Taux d'absentéisme des NAO",
+      "placeholder": "Entrez le taux d'absentéisme",
+      "required": true
+    },
+    {
+      "name": "recommandations",
+      "type": "textarea",
+      "label": "Recommandations pour améliorer la performance des NAO",
+      "placeholder": "Entrez vos recommandations",
+      "required": true
+    },
+    {
+      "name": "axe_performance",
+      "type": "select",
+      "options": [
+        "Qualité de travail",
+        "Productivité",
+        "Qualité de service"
+      ],
+      "label": "Axe de performance à améliorer",
+      "placeholder": "Choisissez l'axe de performance",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : NAO score: {nao_score}, Taux d'absentéisme: {taux_absentisme}, Recommandations: {recommandations}, Axe de performance à améliorer: {axe_performance}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

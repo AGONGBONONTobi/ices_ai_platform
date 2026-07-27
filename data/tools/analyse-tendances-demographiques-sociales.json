@@ -1,0 +1,73 @@
+{
+  "id": "analyse-tendances-demographiques-sociales",
+  "title": "Analyse des tendances démographiques & sociales",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Santé",
+        "Éducation",
+        "Emploi",
+        "Logement",
+        "Environnement"
+      ],
+      "label": "Dans quel secteur souhaitez-vous analyser les tendances démographiques et sociales ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description",
+      "type": "textarea",
+      "label": "Décrivez brièvement les tendances démographiques et sociales que vous observez ou que vous souhaitez analyser :",
+      "placeholder": "Exemple : Augmentation de la population urbaine, vieillissement de la population, etc.",
+      "required": true
+    },
+    {
+      "name": "periode",
+      "type": "text",
+      "label": "Quelle est la période sur laquelle vous souhaitez analyser ces tendances ?",
+      "placeholder": "Exemple : 2020-2030",
+      "required": true
+    },
+    {
+      "name": "objectif",
+      "type": "text",
+      "label": "Quel est l'objectif principal de cette analyse ?",
+      "placeholder": "Exemple : Identifier les opportunités de croissance, anticiper les défis sociaux, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en intelligence économique et veille. L'utilisateur a répondu : Secteur: {secteur}, Description des tendances: {description}, Période: {periode}, Objectif: {objectif}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

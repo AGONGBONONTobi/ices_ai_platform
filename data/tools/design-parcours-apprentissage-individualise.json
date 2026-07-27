@@ -1,0 +1,83 @@
+{
+  "id": "design-parcours-apprentissage-individualise",
+  "title": "Design du parcours d'apprentissage individualisé",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "objectifs-apprentissage",
+      "type": "textarea",
+      "label": "Quels sont les objectifs d'apprentissage pour les étudiants ?",
+      "placeholder": "Exemple : Acquérir des compétences en développement web",
+      "required": true
+    },
+    {
+      "name": "niveau-competence",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Intermédiaire",
+        "Avancé"
+      ],
+      "label": "Quel est le niveau de compétence des étudiants ?",
+      "placeholder": "Choisissez un niveau",
+      "required": true
+    },
+    {
+      "name": "contenu-parcours",
+      "type": "text",
+      "label": "Quels sont les contenus du parcours d'apprentissage ?",
+      "placeholder": "Exemple : Programmation, bases de données, etc.",
+      "required": true
+    },
+    {
+      "name": "methode-apprentissage",
+      "type": "select",
+      "options": [
+        "Apprentissage en ligne",
+        "Apprentissage en classe",
+        "Apprentissage mixte"
+      ],
+      "label": "Quelle est la méthode d'apprentissage préférée des étudiants ?",
+      "placeholder": "Choisissez une méthode",
+      "required": true
+    },
+    {
+      "name": "ressources-educatives",
+      "type": "textarea",
+      "label": "Quelles ressources éducatives sont disponibles pour les étudiants ?",
+      "placeholder": "Exemple : Livres, vidéos, tutoriels, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un designer d'apprentissage expert. Les étudiants ont répondu : Objectifs d'apprentissage : {objectifs-apprentissage}, Niveau de compétence : {niveau-competence}, Contenu du parcours : {contenu-parcours}, Méthode d'apprentissage : {methode-apprentissage}, Ressources éducatives : {ressources-educatives}. Analyse ces informations et propose un parcours d'apprentissage individualisé personnalisé.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

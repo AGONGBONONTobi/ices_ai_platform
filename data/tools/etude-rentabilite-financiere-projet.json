@@ -1,0 +1,78 @@
+{
+  "id": "etude-rentabilite-financiere-projet",
+  "title": "Étude de rentabilité financière de projet",
+  "category": "ÉTUDES DE PROJETS & FAISABILITÉ",
+  "inputs": [
+    {
+      "name": "project_name",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple : Projet X",
+      "required": true
+    },
+    {
+      "name": "project_description",
+      "type": "textarea",
+      "label": "Description du projet",
+      "placeholder": "Décrivez brièvement le projet",
+      "required": true
+    },
+    {
+      "name": "initial_investment",
+      "type": "number",
+      "label": "Investissement initial (en €)",
+      "placeholder": "Exemple : 500000",
+      "required": true
+    },
+    {
+      "name": "expected_annual_cash_flow",
+      "type": "number",
+      "label": "Flux de trésorerie annuel attendu (en €)",
+      "placeholder": "Exemple : 120000",
+      "required": true
+    },
+    {
+      "name": "risk_factor",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Facteur de risque du projet",
+      "placeholder": "Sélectionnez un niveau",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Project Name: {project_name}, Project Description: {project_description}, Initial Investment: {initial_investment}, Expected Annual Cash Flow: {expected_annual_cash_flow}, Risk Factor: {risk_factor}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

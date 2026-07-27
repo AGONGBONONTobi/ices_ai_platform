@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-reconnaissance-des-acquis-vae-rncp",
+  "title": "Outil de reconnaissance des acquis (VAE/RNCP)",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "niveauEtude",
+      "type": "select",
+      "options": [
+        "Bac",
+        "Bac+2",
+        "Bac+3",
+        "Bac+5",
+        "Supérieur à Bac+5"
+      ],
+      "label": "Quel est votre niveau d'étude actuel ?",
+      "placeholder": "Sélectionnez votre niveau d'étude",
+      "required": true
+    },
+    {
+      "name": "experienceProfessionnelle",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre expérience professionnelle",
+      "placeholder": "Exemple : 5 ans dans le domaine de la formation",
+      "required": true
+    },
+    {
+      "name": "competencesAcquises",
+      "type": "text",
+      "label": "Quelles sont les compétences que vous avez acquises au cours de votre carrière ?",
+      "placeholder": "Exemple : gestion d'équipe, communication",
+      "required": true
+    },
+    {
+      "name": "objectifReconnaissance",
+      "type": "select",
+      "options": [
+        "Obtenir une certification",
+        "Valider des acquis",
+        "Reconnaître des compétences"
+      ],
+      "label": "Quel est votre objectif de reconnaissance des acquis ?",
+      "placeholder": "Sélectionnez votre objectif",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en reconnaissance des acquis. L'utilisateur a répondu : Niveau d'étude : {niveauEtude}, Expérience professionnelle : {experienceProfessionnelle}, Compétences acquises : {competencesAcquises}, Objectif de reconnaissance : {objectifReconnaissance}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "reporting-commercial-force-de-vente",
+  "title": "Reporting commercial & force de vente",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "objectif-commercial",
+      "type": "textarea",
+      "label": "Quels sont les objectifs commerciaux de l'entreprise ?",
+      "placeholder": "Exemple : augmentation des ventes, développement de nouveaux marchés",
+      "required": true
+    },
+    {
+      "name": "indicateurs-performances",
+      "type": "select",
+      "options": [
+        "Ventes",
+        "Marge bénéficiaire",
+        "Taux de croissance"
+      ],
+      "label": "Quels sont les indicateurs de performance clés pour évaluer la force de vente ?",
+      "placeholder": "Sélectionnez un indicateur",
+      "required": true
+    },
+    {
+      "name": "challenges-vente",
+      "type": "text",
+      "label": "Quels sont les principaux défis rencontrés par la force de vente ?",
+      "placeholder": "Exemple : concurrence, changement de marché",
+      "required": false
+    },
+    {
+      "name": "stratégies-vente",
+      "type": "textarea",
+      "label": "Quelles sont les stratégies de vente mises en place pour relever les défis ?",
+      "placeholder": "Exemple : amélioration de la communication, développement de nouveaux produits",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quels sont les ressources disponibles pour la force de vente (budget, personnel, etc.) ?",
+      "placeholder": "Exemple : 100 000 €, 10 personnes",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif commercial : {objectif-commercial}, Indicateur de performance : {indicateurs-performances}, Challenges vente : {challenges-vente}, Stratégies vente : {stratégies-vente}, Ressources disponibles : {ressources-disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

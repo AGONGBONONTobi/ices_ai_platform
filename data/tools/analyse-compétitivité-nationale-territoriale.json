@@ -1,0 +1,81 @@
+{
+  "id": "analyse-compétitivité-nationale-territoriale",
+  "title": "Analyse de la compétitivité nationale & territoriale",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "pays",
+      "type": "text",
+      "label": "Quel pays souhaitez-vous analyser ?",
+      "placeholder": "Exemple : France",
+      "required": true
+    },
+    {
+      "name": "région",
+      "type": "select",
+      "options": [
+        "Europe de l'Ouest",
+        "Europe de l'Est",
+        "Amérique du Nord",
+        "Amérique du Sud",
+        "Asie",
+        "Afrique"
+      ],
+      "label": "Quelle région géographique correspond à votre pays ?",
+      "placeholder": "Sélectionnez une région",
+      "required": true
+    },
+    {
+      "name": "industrie",
+      "type": "textarea",
+      "label": "Quelles sont les principales industries présentes dans votre pays ?",
+      "placeholder": "Exemple : technologie, énergie, agriculture, etc.",
+      "required": true
+    },
+    {
+      "name": "score-innovation",
+      "type": "number",
+      "label": "Quel est le score d'innovation de votre pays (sur 100) ?",
+      "placeholder": "Exemple : 80",
+      "required": true
+    },
+    {
+      "name": "score-investissement",
+      "type": "number",
+      "label": "Quel est le score d'investissement de votre pays (sur 100) ?",
+      "placeholder": "Exemple : 70",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Pays: {pays}, Région: {région}, Industries: {industrie}, Score innovation: {score-innovation}, Score investissement: {score-investissement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

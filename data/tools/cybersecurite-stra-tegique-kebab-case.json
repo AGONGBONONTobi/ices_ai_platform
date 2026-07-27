@@ -1,0 +1,76 @@
+{
+  "id": "cybersecurite-stra-tegique-kebab-case",
+  "title": "Stratégie de cybersécurité pour infrastructures critiques",
+  "category": "TRANSFORMATION DIGITALE & IA",
+  "inputs": [
+    {
+      "name": "risque_informatique",
+      "type": "number",
+      "label": "Quel est le niveau de risque informatique actuel ? (1-10)",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "protection_actuelle",
+      "type": "textarea",
+      "label": "Décrivez la protection actuelle des infrastructures critiques (firewalls, antivirus, etc.)",
+      "placeholder": "Exemple : Nous avons mis en place un système de détection d'intrusion et un système d'antivirus",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "select",
+      "options": [
+        "Insuffisantes",
+        "Suffisantes",
+        "Abondantes"
+      ],
+      "label": "Quelles sont les ressources disponibles pour mettre en œuvre une stratégie de cybersécurité ?",
+      "placeholder": "Exemple : Suffisantes",
+      "required": true
+    },
+    {
+      "name": "priorite_urgence",
+      "type": "select",
+      "options": [
+        "Élevée",
+        "Moyenne",
+        "Basse"
+      ],
+      "label": "Quelle est la priorité de l'urgence de la mise en œuvre d'une stratégie de cybersécurité ?",
+      "placeholder": "Exemple : Élevée",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Risque informatique : {risque_informatique}, Protection actuelle : {protection_actuelle}, Ressources disponibles : {ressources_disponibles}, Priorité d'urgence : {priorite_urgence}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

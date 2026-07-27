@@ -1,0 +1,78 @@
+{
+  "id": "test-disc-professionnel-styles-comportementaux",
+  "title": "Test DISC professionnel (4 styles comportementaux)",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "style-d",
+      "type": "select",
+      "options": [
+        "Extraverti",
+        "Introverti"
+      ],
+      "label": "Quel est votre style de communication ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "style-i",
+      "type": "select",
+      "options": [
+        "Conformiste",
+        "Non-conformiste"
+      ],
+      "label": "Quel est votre style de prise de décision ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "style-s",
+      "type": "select",
+      "options": [
+        "Sensible",
+        "Tactique"
+      ],
+      "label": "Quel est votre style de prise de décision ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "style-c",
+      "type": "textarea",
+      "label": "Quels sont vos objectifs professionnels à court et long terme ?",
+      "placeholder": "Décrivez vos objectifs professionnels",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Style D: {style-d}, Style I: {style-i}, Style S: {style-s}, Objectifs professionnels : {style-c}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

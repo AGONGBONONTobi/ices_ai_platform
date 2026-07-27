@@ -1,0 +1,79 @@
+{
+  "id": "entreprise-gouvernance-et-ethique-compliance",
+  "title": "Gouvernance d'entreprise, éthique & compliance",
+  "category": "STRATÉGIE & MANAGEMENT",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "domaine",
+      "type": "select",
+      "options": [
+        "Finance",
+        "RH",
+        "Marketing",
+        "R&D"
+      ],
+      "label": "Domaine d'activité",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "challenges",
+      "type": "textarea",
+      "label": "Description des défis rencontrés en matière de gouvernance, éthique et compliance",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Objectifs de mise en place d'une gouvernance, éthique et compliance",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "ressources",
+      "type": "number",
+      "label": "Nombre de ressources allouées pour la mise en place d'une gouvernance, éthique et compliance",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise: {entreprise}, Domaine: {domaine}, Challenges: {challenges}, Objectifs: {objectifs}, Ressources: {ressources}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "audit-ohada-droit-des-affaires-africain",
+  "title": "Audit de conformité OHADA & droit des affaires africain",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Banque et finance",
+        "Assurance",
+        "Énergie",
+        "Construction",
+        "Autres"
+      ],
+      "label": "Secteur d'activité",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "objectifs",
+      "type": "textarea",
+      "label": "Objectifs de l'audit",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "réglementations",
+      "type": "select",
+      "options": [
+        "OHADA",
+        "Droit des affaires africain",
+        "Autres"
+      ],
+      "label": "Réglementations applicables",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise: {entreprise}, Secteur: {secteur}, Objectifs: {objectifs}, Réglementations: {réglementations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

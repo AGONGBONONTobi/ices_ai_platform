@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "brand": "AI 平台",
+    "toolsCount": "个工具可用",
+    "back": "返回目录"
+  },
+  "hero": {
+    "badge": "由顶级大语言模型驱动",
+    "title": "您的专业 AI 工具",
+    "titleHighlight": "全套目录",
+    "subtitle": "一键获取 AI 诊断、审计、分析和内容生成工具。每个工具都能在几秒钟内生成专业报告。"
+  },
+  "catalog": {
+    "searchPlaceholder": "搜索 AI 工具... (如: 审计, 合同, 战略)",
+    "filterAll": "全部",
+    "resultCount": "个工具",
+    "resultCountPlural": "个工具",
+    "resultIn": "在",
+    "empty": {
+      "title": "未找到工具",
+      "subtitle": "请尝试其他关键词或类别。"
+    },
+    "emptyDb": {
+      "title": "数据库为空。",
+      "subtitle": "运行摄取脚本以填充目录。"
+    }
+  },
+  "tool": {
+    "launch": "启动工具",
+    "generate": "生成结果",
+    "generating": "生成中...",
+    "result": "已生成结果",
+    "restart": "重新启动工具",
+    "downloadPdf": "下载报告 (PDF)",
+    "error": "发生错误"
+  },
+  "language": "语言"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "template-newsletter-interne-mensuelle",
+  "title": "Template de newsletter interne mensuelle",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "sujet",
+      "type": "text",
+      "label": "Sujet de la newsletter",
+      "placeholder": "Exemple : Actualités du mois",
+      "required": true
+    },
+    {
+      "name": "contenu-principal",
+      "type": "textarea",
+      "label": "Contenu principal de la newsletter",
+      "placeholder": "Exemple : Présentation des dernières actualités de l'entreprise",
+      "required": true
+    },
+    {
+      "name": "événement-important",
+      "type": "text",
+      "label": "Événement important à signaler",
+      "placeholder": "Exemple : Conférence à venir",
+      "required": false
+    },
+    {
+      "name": "lien-vers-le-site",
+      "type": "text",
+      "label": "Lien vers le site internet de l'entreprise",
+      "placeholder": "Exemple : https://entreprise.com",
+      "required": false
+    },
+    {
+      "name": "image-de-fond",
+      "type": "select",
+      "options": [
+        "image1",
+        "image2",
+        "image3"
+      ],
+      "label": "Image de fond de la newsletter",
+      "placeholder": "Choisissez une image",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Sujet: {sujet}, Contenu principal: {contenu-principal}, Événement important: {événement-important}, Lien vers le site: {lien-vers-le-site}, Image de fond: {image-de-fond}. Analyse ces informations et propose un modèle de newsletter interne mensuelle efficace.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

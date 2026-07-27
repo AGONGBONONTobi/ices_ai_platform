@@ -1,0 +1,72 @@
+{
+  "id": "cadre-logique-de-projet-pcm-lfa",
+  "title": "Cadre logique de projet (PCM/LFA)",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif_principal",
+      "type": "textarea",
+      "label": "Décrivez l'objectif principal du projet",
+      "placeholder": "Exemple : Améliorer l'accès à l'eau potable dans une communauté rurale",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "select",
+      "options": [
+        "Communauté rurale",
+        "Communauté urbaine",
+        "Organisation gouvernementale",
+        "Organisation non gouvernementale"
+      ],
+      "label": "Sélectionnez le public cible du projet",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "text",
+      "label": "Décrivez les ressources disponibles pour le projet (budget, personnel, équipement)",
+      "placeholder": "Exemple : 100 000 $ de budget, 5 membres de personnel, 2 véhicules",
+      "required": true
+    },
+    {
+      "name": "resultats_attendus",
+      "type": "textarea",
+      "label": "Décrivez les résultats attendus du projet",
+      "placeholder": "Exemple : Réduction de 20% de la prévalence de la maladie dans la communauté",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un spécialiste en développement de projet. L'utilisateur a répondu : Objectif principal : {objectif_principal}, Public cible : {public_cible}, Ressources disponibles : {ressources_disponibles}, Résultats attendus : {resultats_attendus}. Évaluez la logique du projet et fournissez un score global sur 100, une évaluation par axe et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

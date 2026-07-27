@@ -1,0 +1,83 @@
+{
+  "id": "outil-de-sourcing-et-chasse-de-tetes-ia-augmente",
+  "title": "Outil de sourcing & chasse de têtes IA-augmenté",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : Google",
+      "required": true
+    },
+    {
+      "name": "poste_a_rechercher",
+      "type": "text",
+      "label": "Poste à rechercher",
+      "placeholder": "Exemple : Chef de projet",
+      "required": true
+    },
+    {
+      "name": "niveau_d_expertise",
+      "type": "select",
+      "options": [
+        "Débutant",
+        "Expérimenté",
+        "Expert"
+      ],
+      "label": "Niveau d'expertise requis",
+      "placeholder": "Choisissez un niveau",
+      "required": true
+    },
+    {
+      "name": "domaine",
+      "type": "select",
+      "options": [
+        "Développement web",
+        "Marketing",
+        "Finance"
+      ],
+      "label": "Domaine d'expertise",
+      "placeholder": "Choisissez un domaine",
+      "required": true
+    },
+    {
+      "name": "description_de_l_offre",
+      "type": "textarea",
+      "label": "Description de l'offre",
+      "placeholder": "Exemple : Recherchez un chef de projet expérimenté en développement web pour un projet de 6 mois.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en sourcing & chasse de têtes. L'utilisateur a répondu : Entreprise : {entreprise}, Poste à rechercher : {poste_a_rechercher}, Niveau d'expertise : {niveau_d_expertise}, Domaine : {domaine}, Description de l'offre : {description_de_l_offre}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

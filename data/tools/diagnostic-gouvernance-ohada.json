@@ -1,0 +1,74 @@
+{
+  "id": "diagnostic-gouvernance-ohada",
+  "title": "Diagnostic gouvernance OHADA",
+  "category": "Gouvernance, Éthique & Anti-Corruption",
+  "inputs": [
+    {
+      "name": "structure_juridique",
+      "type": "select",
+      "options": [
+        "SA (Société Anonyme)",
+        "SARL (Société à Responsabilité Limitée)"
+      ],
+      "label": "Quelle est la structure juridique de votre organisation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "systeme_comptable",
+      "type": "select",
+      "options": [
+        "SYSCOHADA",
+        "Autre"
+      ],
+      "label": "Quel système comptable utilisez-vous ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_activites",
+      "type": "textarea",
+      "label": "Décrivez brièvement les activités principales de votre organisation",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "organes_gouvernance",
+      "type": "textarea",
+      "label": "Décrivez les organes de gouvernance actuels (direction, conseil d'administration, etc.)",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en gouvernance OHADA. L'utilisateur a répondu : Structure juridique: {structure_juridique}, Système comptable: {systeme_comptable}, Activités: {description_activites}, Organes de gouvernance: {organes_gouvernance}. Évaluez la conformité de cette organisation aux règles OHADA en matière de droit des affaires, de comptabilité SYSCOHADA et de gouvernance pour les SA/SARL. Identifiez les écarts et donnez un score global sur 100. Évaluez les axes suivants : Gouvernance, Comptabilité, Conformité juridique. Proposez des recommandations prioritaires.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

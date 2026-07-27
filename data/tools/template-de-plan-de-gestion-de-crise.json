@@ -1,0 +1,78 @@
+{
+  "id": "template-de-plan-de-gestion-de-crise",
+  "title": "Template de plan de gestion de crise",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "urgence",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quel est le niveau d'urgence de la situation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description-probleme",
+      "type": "textarea",
+      "label": "Décrivez brièvement le problème ou l'événement qui a déclenché la crise.",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "objectifs-crise",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de la gestion de crise ? (par exemple, sauver des vies, minimiser les dommages, etc.)",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "equipe-de-reponse",
+      "type": "text",
+      "label": "Qui fait partie de l'équipe de réponse à la crise ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "textarea",
+      "label": "Quelles ressources sont disponibles pour gérer la crise ? (par exemple, personnel, équipement, finances, etc.)",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en gestion de crise. L'utilisateur a répondu : Urgence: {urgence}, Description du problème: {description-probleme}, Objectifs de la crise: {objectifs-crise}, Équipe de réponse: {equipe-de-reponse}, Ressources disponibles: {ressources-disponibles}. Analyse ces informations et propose un plan de gestion de crise détaillé.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "template-plan-d-action-developpement-durable",
+  "title": "Template de plan d'action développement durable",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Définir les objectifs stratégiques du plan d'action développement durable",
+      "placeholder": "Exemple : réduire les émissions de gaz à effet de serre de 50% d'ici 5 ans",
+      "required": true
+    },
+    {
+      "name": "indicateurs-de-suivi",
+      "type": "text",
+      "label": "Lister les indicateurs de suivi pour mesurer le progrès vers les objectifs",
+      "placeholder": "Exemple : réduction des émissions de gaz à effet de serre, augmentation de la consommation d'énergie renouvelable",
+      "required": true
+    },
+    {
+      "name": "ressources-necessaires",
+      "type": "textarea",
+      "label": "Décrire les ressources nécessaires pour mettre en œuvre le plan d'action",
+      "placeholder": "Exemple : personnel, budget, équipements, partenariats",
+      "required": true
+    },
+    {
+      "name": "responsabilites",
+      "type": "select",
+      "options": [
+        "Responsable de la stratégie",
+        "Responsable de l'exécution",
+        "Responsable de la surveillance"
+      ],
+      "label": "Attribuer les responsabilités pour chaque tâche",
+      "placeholder": "Exemple : Responsable de la stratégie : [Nom du responsable]",
+      "required": true
+    },
+    {
+      "name": "deadlines",
+      "type": "number",
+      "label": "Définir les délais pour chaque tâche",
+      "placeholder": "Exemple : 3 mois pour la mise en œuvre de la première phase",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Indicateurs de suivi : {indicateurs-de-suivi}, Ressources nécessaires : {ressources-necessaires}, Responsabilités : {responsabilites}, Délais : {deadlines}. Analyse ces informations et propose un plan d'action développement durable complet, avec des objectifs clairs, des indicateurs de suivi pertinents, des ressources nécessaires bien définies, des responsabilités claires et des délais respectés.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

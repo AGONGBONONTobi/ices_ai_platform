@@ -1,0 +1,72 @@
+{
+  "id": "strategie-rse-globale-et-politique-de-developpement-durable",
+  "title": "Stratégie RSE globale & politique de développement durable",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "objectifs-rse",
+      "type": "textarea",
+      "label": "Quels sont les principaux objectifs de la stratégie RSE ?",
+      "placeholder": "Exemple : réduire nos émissions de gaz à effet de serre, améliorer la gestion des déchets, etc.",
+      "required": true
+    },
+    {
+      "name": "indicateurs-suivi",
+      "type": "select",
+      "options": [
+        "Émissions de gaz à effet de serre",
+        "Consommation d'énergie",
+        "Gestion des déchets",
+        "Impact sur l'environnement"
+      ],
+      "label": "Quels sont les indicateurs de suivi pour mesurer l'efficacité de la stratégie RSE ?",
+      "placeholder": "Sélectionnez les indicateurs pertinents",
+      "required": true
+    },
+    {
+      "name": "actions-concrètes",
+      "type": "textarea",
+      "label": "Quelles sont les actions concrètes mises en place pour atteindre les objectifs de la stratégie RSE ?",
+      "placeholder": "Exemple : mise en place d'un système de gestion des déchets, formation des employés, etc.",
+      "required": true
+    },
+    {
+      "name": "budget-alloué",
+      "type": "number",
+      "label": "Quel est le budget alloué pour la mise en œuvre de la stratégie RSE ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE. L'utilisateur a répondu : Objectifs RSE : {objectifs-rse}, Indicateurs de suivi : {indicateurs-suivi}, Actions concrètes : {actions-concrètes}, Budget alloué : {budget-alloué}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

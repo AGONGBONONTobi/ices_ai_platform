@@ -1,0 +1,78 @@
+{
+  "id": "plan-communication-changement-organisationnel",
+  "title": "Plan de communication du changement organisationnel",
+  "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal du plan de communication?",
+      "placeholder": "Ex: Informer les employés sur la nouvelle structure organisationnelle",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "select",
+      "options": [
+        "Public interne",
+        "Public externe",
+        "Mix"
+      ],
+      "label": "Quel est le public cible?",
+      "placeholder": "Sélectionnez",
+      "required": true
+    },
+    {
+      "name": "canaux",
+      "type": "textarea",
+      "label": "Quels canaux de communication envisagez-vous d'utiliser?",
+      "placeholder": "Ex: Email, réunions, intranet",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "type": "number",
+      "label": "Quel est le budget alloué (en €)?",
+      "placeholder": "Ex: 5000",
+      "required": true
+    },
+    {
+      "name": "timeline",
+      "type": "textarea",
+      "label": "Quel est le calendrier prévu pour le déploiement du plan?",
+      "placeholder": "Ex: 3 mois, phases 1-3",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif: {objectif}, Public cible: {public_cible}, Canaux: {canaux}, Budget: {budget}, Timeline: {timeline}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

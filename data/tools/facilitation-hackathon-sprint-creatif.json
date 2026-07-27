@@ -1,0 +1,78 @@
+{
+  "id": "facilitation-hackathon-sprint-creatif",
+  "title": "Facilitation d'hackathon & sprint créatif",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "objectif-hackathon",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de l'hackathon ?",
+      "placeholder": "Exemple : Développer une nouvelle fonctionnalité pour améliorer l'expérience utilisateur",
+      "required": true
+    },
+    {
+      "name": "equipe-hackathon",
+      "type": "number",
+      "label": "Combien de personnes participent à l'hackathon ?",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "duree-hackathon",
+      "type": "number",
+      "label": "Combien de jours dure l'hackathon ?",
+      "placeholder": "Exemple : 2",
+      "required": true
+    },
+    {
+      "name": "type-projet",
+      "type": "select",
+      "options": [
+        "Développement de produit",
+        "Amélioration de processus",
+        "Création de service"
+      ],
+      "label": "Quel type de projet est développé pendant l'hackathon ?",
+      "placeholder": "Exemple : Développement de produit",
+      "required": true
+    },
+    {
+      "name": "resultat-espere",
+      "type": "textarea",
+      "label": "Quels sont les résultats attendus de l'hackathon ?",
+      "placeholder": "Exemple : Une nouvelle fonctionnalité, une amélioration de l'expérience utilisateur, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif hackathon : {objectif-hackathon}, Nombre d'équipes : {equipe-hackathon}, Durée hackathon : {duree-hackathon}, Type de projet : {type-projet}, Résultats attendus : {resultat-espere}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

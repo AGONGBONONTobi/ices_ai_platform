@@ -1,0 +1,76 @@
+{
+  "id": "cartographie-des-risques-operationnels-orm",
+  "title": "Cartographie des risques opérationnels (ORM)",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "type_d_organisation",
+      "type": "select",
+      "options": [
+        "Entreprise publique",
+        "Entreprise privée",
+        "Organisation à but non lucratif"
+      ],
+      "label": "Quel est le type d'organisation que vous représentez ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "description_processus",
+      "type": "textarea",
+      "label": "Décrivez les processus opérationnels clés de votre organisation",
+      "placeholder": "Décrivez les étapes clés et les responsables",
+      "required": true
+    },
+    {
+      "name": "niveau_de_risque",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Quel est le niveau de risque que vous associez à vos processus opérationnels ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "mesures_de_controle",
+      "type": "text",
+      "label": "Quelles mesures de contrôle avez-vous mises en place pour gérer les risques opérationnels ?",
+      "placeholder": "Listez les mesures clés",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en gestion des risques. L'organisation a répondu : Type d'organisation: {type_d_organisation}, Description des processus: {description_processus}, Niveau de risque: {niveau_de_risque}, Mesures de contrôle: {mesures_de_controle}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer la cartographie des risques opérationnels.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

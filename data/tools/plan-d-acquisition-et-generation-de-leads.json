@@ -1,0 +1,72 @@
+{
+  "id": "plan-d-acquisition-et-generation-de-leads",
+  "title": "Plan d'acquisition & génération de leads",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "objectif-commercial",
+      "type": "textarea",
+      "label": "Quels sont les objectifs commerciaux de l'entreprise ?",
+      "placeholder": "Exemple : augmenter les ventes de 20% dans les 6 prochains mois",
+      "required": true
+    },
+    {
+      "name": "cible",
+      "type": "text",
+      "label": "Qui est la cible idéale pour l'entreprise ?",
+      "placeholder": "Exemple : professionnels de 25-45 ans, intéressés par les produits numériques",
+      "required": true
+    },
+    {
+      "name": "canal-de-communication",
+      "type": "select",
+      "options": [
+        "Email",
+        "Réseaux sociaux",
+        "Publicité en ligne",
+        "Événements"
+      ],
+      "label": "Quel est le principal canal de communication pour atteindre la cible ?",
+      "placeholder": "Choisissez un canal",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour l'acquisition et la génération de leads ?",
+      "placeholder": "Exemple : 10 000 €",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif commercial : {objectif-commercial}, Cible : {cible}, Canal de communication : {canal-de-communication}, Budget alloué : {budget-alloue}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

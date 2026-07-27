@@ -1,0 +1,84 @@
+{
+  "id": "audit-seo-et-strategie-de-reference-ment-naturel",
+  "title": "Audit SEO & stratégie de référencement naturel",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "domaine",
+      "type": "text",
+      "label": "Entrer le nom de domaine de votre site web",
+      "placeholder": "Exemple : exemple.com",
+      "required": true
+    },
+    {
+      "name": "motsCles",
+      "type": "textarea",
+      "label": "Lister les mots-clés cibles pour votre site web",
+      "placeholder": "Exemple : marketing, e-commerce, référencement naturel",
+      "required": true
+    },
+    {
+      "name": "typeDeContenu",
+      "type": "select",
+      "options": [
+        "Blog",
+        "E-commerce",
+        "Portefolio",
+        "Autre"
+      ],
+      "label": "Quel type de contenu votre site web propose-t-il ?",
+      "required": true
+    },
+    {
+      "name": "nombreDePages",
+      "type": "number",
+      "label": "Combien de pages votre site web comporte-t-il ?",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "outilUtilise",
+      "type": "select",
+      "options": [
+        "Google Search Console",
+        "Google Analytics",
+        "SEMrush",
+        "Ahrefs",
+        "Autre"
+      ],
+      "label": "Quel outil utilisez-vous pour la référencement naturel ?",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en référencement naturel. L'utilisateur a répondu : Domaine : {domaine}, Mots-clés : {motsCles}, Type de contenu : {typeDeContenu}, Nombre de pages : {nombreDePages}, Outil utilisé : {outilUtilise}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "template-de-rapport-d-impact-annuel",
+  "title": "Template de rapport d'impact annuel",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "objectifs-stratégiques",
+      "type": "textarea",
+      "label": "Présenter les objectifs stratégiques de l'année",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "résultats-attendus",
+      "type": "number",
+      "label": "Indiquer les résultats attendus en termes de chiffres clés",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "chiffres-clés",
+      "type": "select",
+      "options": [
+        "Croissance des ventes",
+        "Augmentation de la clientèle",
+        "Amélioration de la satisfaction client"
+      ],
+      "label": "Sélectionner les chiffres clés les plus importants",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "évaluation-de-l-impact",
+      "type": "textarea",
+      "label": "Analyser l'impact de l'année sur l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-stratégiques}, Résultats attendus : {résultats-attendus}, Chiffres clés : {chiffres-clés}, Évaluation de l'impact : {évaluation-de-l-impact}. Analyse ces informations et présente un rapport d'impact annuel complet.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

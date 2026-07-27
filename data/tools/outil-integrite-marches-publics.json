@@ -1,0 +1,77 @@
+{
+  "id": "outil-integrite-marches-publics",
+  "title": "Outil intégrité marchés publics",
+  "category": "Gouvernance, Éthique & Anti-Corruption",
+  "inputs": [
+    {
+      "name": "type_de_marche",
+      "type": "select",
+      "options": [
+        "Marché de travaux",
+        "Marché de services",
+        "Marché de fournitures"
+      ],
+      "label": "Quel est le type de marché que vous gérez ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "conflits_interets",
+      "type": "textarea",
+      "label": "Décrivez les mesures prises pour gérer les conflits d'intérêts lors de la passation des marchés",
+      "placeholder": "Ex: procédures de déclaration, règles de déontologie...",
+      "required": true
+    },
+    {
+      "name": "transparence_decisions",
+      "type": "text",
+      "label": "Comment assurez-vous la transparence des décisions de passation des marchés ?",
+      "placeholder": "Ex: publication des critères de sélection, comptes rendus de réunions...",
+      "required": true
+    },
+    {
+      "name": "niveau_maturite",
+      "type": "select",
+      "options": [
+        "0 - Inexistant",
+        "1 - Initié",
+        "2 - Formalisé",
+        "3 - Optimisé"
+      ],
+      "label": "Quel est votre niveau de maturité en matière d'intégrité des marchés publics ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous avez répondu : Type de marché: {type_de_marche}, Mesures pour gérer les conflits d'intérêts: {conflits_interets}, Transparence des décisions: {transparence_decisions} et Niveau de maturité: {niveau_maturite}. Évaluez ces informations selon les exigences des marchés publics (transparence, égalité de traitement, prévention de la corruption) et donnez un score global sur 100, une évaluation par axe (transparence, gestion des conflits d'intérêts, prévention de la corruption) et des recommandations priorisées.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

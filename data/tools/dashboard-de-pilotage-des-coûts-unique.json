@@ -1,0 +1,71 @@
+{
+  "id": "dashboard-de-pilotage-des-coûts-unique",
+  "title": "Dashboard de pilotage des coûts",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "budget_alloue",
+      "type": "number",
+      "label": "Budget alloué pour l'année en cours",
+      "placeholder": "Entrez le budget alloué",
+      "required": true
+    },
+    {
+      "name": "depenses_reelles",
+      "type": "number",
+      "label": "Dépenses réelles pour l'année en cours",
+      "placeholder": "Entrez les dépenses réelles",
+      "required": true
+    },
+    {
+      "name": "tendances_budgetaires",
+      "type": "select",
+      "options": [
+        "Croissante",
+        "Stable",
+        "Décroissante"
+      ],
+      "label": "Tendances budgétaires",
+      "placeholder": "Sélectionnez une tendance",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Commentaires sur les coûts",
+      "placeholder": "Ajoutez des commentaires",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un analyste financier. L'utilisateur a répondu : Budget alloué : {budget_alloue}, Dépenses réelles : {depenses_reelles}, Tendances budgétaires : {tendances_budgetaires}, Commentaires : {commentaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

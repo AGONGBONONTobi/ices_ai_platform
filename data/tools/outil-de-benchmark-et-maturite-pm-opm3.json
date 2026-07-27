@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-benchmark-et-maturite-pm-opm3",
+  "title": "Outil de benchmark & maturité PM (OPM3)",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "methode-agile",
+      "type": "select",
+      "options": [
+        "Scrum",
+        "Kanban",
+        "Lean",
+        "Hybride"
+      ],
+      "label": "Quelle méthode agile est utilisée dans votre organisation ?",
+      "placeholder": "Choisissez une méthode",
+      "required": true
+    },
+    {
+      "name": "outil-de-gestion-projet",
+      "type": "select",
+      "options": [
+        "MS Project",
+        "Asana",
+        "Trello",
+        "Jira"
+      ],
+      "label": "Quel outil de gestion de projet est utilisé dans votre organisation ?",
+      "placeholder": "Choisissez un outil",
+      "required": true
+    },
+    {
+      "name": "taux-d-adoption-des-mesures-de-maturite",
+      "type": "number",
+      "label": "Quel est le taux d'adoption des mesures de maturité dans votre organisation ?",
+      "placeholder": "Entrez un pourcentage",
+      "required": true
+    },
+    {
+      "name": "description-de-l-experience-de-formation-en-pmo",
+      "type": "textarea",
+      "label": "Veuillez décrire l'expérience de formation en PMO dans votre organisation.",
+      "placeholder": "Décrivez l'expérience de formation",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Méthode agile : {methode-agile}, Outil de gestion de projet : {outil-de-gestion-projet}, Taux d'adoption des mesures de maturité : {taux-d-adoption-des-mesures-de-maturite}%, Description de l'expérience de formation en PMO : {description-de-l-experience-de-formation-en-pmo}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

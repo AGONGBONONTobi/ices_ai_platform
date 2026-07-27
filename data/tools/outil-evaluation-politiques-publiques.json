@@ -1,0 +1,72 @@
+{
+  "id": "outil-evaluation-politiques-publiques",
+  "title": "Outil d'évaluation des politiques publiques",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de la politique publique évaluée ?",
+      "placeholder": "Exemple : Améliorer la santé publique",
+      "required": true
+    },
+    {
+      "name": "public_cible",
+      "type": "select",
+      "options": [
+        "Population générale",
+        "Jeunes",
+        "Seniors",
+        "Entreprises"
+      ],
+      "label": "Quelle est la population cible de cette politique publique ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "budget_alloué",
+      "type": "number",
+      "label": "Quel est le budget alloué à cette politique publique ?",
+      "placeholder": "1000000",
+      "required": true
+    },
+    {
+      "name": "resultats_attendus",
+      "type": "textarea",
+      "label": "Quels sont les résultats attendus de cette politique publique ?",
+      "placeholder": "Exemple : Réduction de la mortalité, amélioration de la qualité de vie",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en évaluation de politiques publiques. L'utilisateur a répondu : Objectif: {objectif}, Population cible: {public_cible}, Budget alloué: {budget_alloué}, Résultats attendus: {resultats_attendus}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

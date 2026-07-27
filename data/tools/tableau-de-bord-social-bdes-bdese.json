@@ -1,0 +1,73 @@
+{
+  "id": "tableau-de-bord-social-bdes-bdese",
+  "title": "Tableau de bord social & BDES/BDESE",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "salaire_moyen",
+      "type": "number",
+      "label": "Quel est le salaire moyen de vos employés ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    },
+    {
+      "name": "taux_absentisme",
+      "type": "number",
+      "label": "Quel est le taux d'absentisme moyen de vos employés ?",
+      "placeholder": "Entrez un nombre",
+      "required": true
+    },
+    {
+      "name": "satisfaction_employes",
+      "type": "select",
+      "options": [
+        "Très satisfaits",
+        "Satisfaits",
+        "Indifférents",
+        "Dissatisfaits",
+        "Très dissatisfaits"
+      ],
+      "label": "Quel est le niveau de satisfaction des employés ?",
+      "placeholder": "Sélectionnez une option",
+      "required": true
+    },
+    {
+      "name": "commentaires",
+      "type": "textarea",
+      "label": "Quels sont les commentaires des employés sur leur environnement de travail ?",
+      "placeholder": "Entrez vos commentaires",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un responsable RH. L'utilisateur a répondu : Salaire moyen : {salaire_moyen}, Taux d'absentisme : {taux_absentisme}, Niveau de satisfaction : {satisfaction_employes}, Commentaires : {commentaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

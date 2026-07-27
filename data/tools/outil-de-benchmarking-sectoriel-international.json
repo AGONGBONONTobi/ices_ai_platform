@@ -1,0 +1,66 @@
+{
+  "id": "outil-de-benchmarking-sectoriel-international",
+  "title": "Outil de benchmarking sectoriel international",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Santé",
+        "Finance",
+        "Industrie",
+        "Services"
+      ],
+      "label": "Sélectionnez le secteur d'activité",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "pays",
+      "type": "text",
+      "label": "Indiquez les pays à comparer (séparés par des virgules)",
+      "placeholder": "Exemple : France, Allemagne, États-Unis",
+      "required": true
+    },
+    {
+      "name": "critères",
+      "type": "textarea",
+      "label": "Décrivez les critères de comparaison que vous souhaitez utiliser (ex : coût du travail, innovation, infrastructures)",
+      "placeholder": "Exemple : coût du travail, niveau de qualification de la main-d'œuvre",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en intelligence économique. L'utilisateur a sélectionné le secteur {secteur} et souhaite comparer les pays suivants : {pays}. Les critères de comparaison sont : {critères}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe pertinent, et des recommandations pour améliorer la position concurrentielle.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

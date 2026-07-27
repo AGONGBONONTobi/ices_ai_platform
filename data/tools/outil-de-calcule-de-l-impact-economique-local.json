@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-calcule-de-l-impact-economique-local",
+  "title": "Outil de calcul de l'impact économique local",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "co2-économisé",
+      "type": "number",
+      "label": "Quantité de CO2 économisée en tonnes",
+      "placeholder": "Exemple : 10",
+      "required": true
+    },
+    {
+      "name": "économies-d-argent",
+      "type": "number",
+      "label": "Économies d'argent en euros",
+      "placeholder": "Exemple : 50000",
+      "required": true
+    },
+    {
+      "name": "émissions-de-gaz-à-effet-de-serre",
+      "type": "number",
+      "label": "Émissions de gaz à effet de serre en tonnes",
+      "placeholder": "Exemple : 20",
+      "required": true
+    },
+    {
+      "name": "type-d-énergie",
+      "type": "select",
+      "options": [
+        "Énergie solaire",
+        "Énergie éolienne",
+        "Énergie nucléaire"
+      ],
+      "label": "Type d'énergie utilisée",
+      "placeholder": "Exemple : Énergie solaire",
+      "required": true
+    },
+    {
+      "name": "surface-terre-occupée",
+      "type": "number",
+      "label": "Surface de terre occupée en hectares",
+      "placeholder": "Exemple : 5",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RSE & Développement Durable. L'utilisateur a répondu : CO2 économisé : {co2-économisé} tonnes, Économies d'argent : {économies-d-argent} euros, Émissions de gaz à effet de serre : {émissions-de-gaz-à-effet-de-serre} tonnes, Type d'énergie : {type-d-énergie}, Surface de terre occupée : {surface-terre-occupée} hectares. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

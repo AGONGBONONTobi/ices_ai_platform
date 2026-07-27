@@ -1,0 +1,71 @@
+{
+  "id": "plan-de-trade-marketing-merchandising",
+  "title": "Plan de trade marketing & merchandising",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "objectif-vendu",
+      "type": "number",
+      "label": "Quel est l'objectif de vente attendu pour le prochain trimestre ?",
+      "placeholder": "Exemple : 100 000 €",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Quel est le budget alloué pour le marketing et la merchandising ?",
+      "placeholder": "Exemple : 50 000 €",
+      "required": true
+    },
+    {
+      "name": "strategie-marketing",
+      "type": "textarea",
+      "label": "Quelle est la stratégie de marketing mise en place pour atteindre l'objectif de vente ?",
+      "placeholder": "Exemple : campagnes publicitaires, emailing, etc.",
+      "required": true
+    },
+    {
+      "name": "outil-merchandising",
+      "type": "select",
+      "options": [
+        "PIM",
+        "ERP",
+        "Autre"
+      ],
+      "label": "Quel outil de merchandising est utilisé pour gérer les produits ?",
+      "placeholder": "Exemple : PIM",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif vendu : {objectif-vendu} €, Budget alloué : {budget-alloue} €, Stratégie marketing : {strategie-marketing}, Outil merchandising : {outil-merchandising}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

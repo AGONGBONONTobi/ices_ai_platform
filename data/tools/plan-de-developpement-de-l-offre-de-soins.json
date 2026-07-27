@@ -1,0 +1,71 @@
+{
+  "id": "plan-de-developpement-de-l-offre-de-soins",
+  "title": "Plan de développement de l'offre de soins",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "objectif_principal",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de votre plan de développement de l'offre de soins ?",
+      "placeholder": "Améliorer la qualité des soins, augmenter la capacité d'accueil, etc.",
+      "required": true
+    },
+    {
+      "name": "type_de_soins",
+      "type": "select",
+      "options": [
+        "Soins de santé primaire",
+        "Soins de santé spécialisés",
+        "Soins de réadaptation"
+      ],
+      "label": "Quel type de soins souhaitez-vous développer ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "text",
+      "label": "Quelles sont les ressources disponibles pour ce projet (budget, personnel, équipements) ?",
+      "placeholder": "10 millions d'euros, 20 personnes, 5 équipements",
+      "required": true
+    },
+    {
+      "name": "delais",
+      "type": "text",
+      "label": "Quels sont les délais prévus pour la mise en œuvre de ce plan ?",
+      "placeholder": "6 mois, 1 an, 2 ans",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant en soins de santé. L'utilisateur a répondu : Objectif principal: {objectif_principal}, Type de soins: {type_de_soins}, Ressources disponibles: {ressources_disponibles}, Délais: {delais}. Analysez ces informations et proposez un plan de développement de l'offre de soins avec un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

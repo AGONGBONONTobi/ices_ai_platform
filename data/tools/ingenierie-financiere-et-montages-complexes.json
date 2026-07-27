@@ -1,0 +1,72 @@
+{
+  "id": "ingenierie-financiere-et-montages-complexes",
+  "title": "Ingénierie financière & montages complexes",
+  "category": "FINANCE & GESTION",
+  "inputs": [
+    {
+      "name": "montant-investi",
+      "type": "number",
+      "label": "Montant investi dans le projet",
+      "placeholder": "Entrez le montant investi",
+      "required": true
+    },
+    {
+      "name": "taux-interet",
+      "type": "number",
+      "label": "Taux d'intérêt appliqué",
+      "placeholder": "Entrez le taux d'intérêt",
+      "required": true
+    },
+    {
+      "name": "periode-investissement",
+      "type": "select",
+      "options": [
+        "Moins de 1 an",
+        "1-3 ans",
+        "3-5 ans",
+        "Plus de 5 ans"
+      ],
+      "label": "Durée de l'investissement",
+      "placeholder": "Sélectionnez la durée de l'investissement",
+      "required": true
+    },
+    {
+      "name": "risques-associes",
+      "type": "textarea",
+      "label": "Risques associés à l'investissement",
+      "placeholder": "Décrivez les risques associés à l'investissement",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en ingénierie financière. L'utilisateur a répondu : Montant investi : {montant-investi}, Taux d'intérêt : {taux-interet}, Durée de l'investissement : {periode-investissement}, Risques associés : {risques-associes}. Analyse ces informations et propose un plan d'action pour optimiser les résultats financiers.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

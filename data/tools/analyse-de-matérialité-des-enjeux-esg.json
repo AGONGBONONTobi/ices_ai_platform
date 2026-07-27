@@ -1,0 +1,70 @@
+{
+  "id": "analyse-de-matérialité-des-enjeux-esg",
+  "title": "Analyse de matérialité des enjeux ESG",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "enjeux-esg",
+      "type": "textarea",
+      "label": "Listez les enjeux ESG pertinents pour votre organisation",
+      "placeholder": "Exemple : impact environnemental, droits de l'homme, etc.",
+      "required": true
+    },
+    {
+      "name": "matérialité-impact",
+      "type": "select",
+      "options": [
+        "faible",
+        "moyen",
+        "élevé"
+      ],
+      "label": "Quel est le niveau de matérialité de l'impact ESG sur votre organisation ?",
+      "required": true
+    },
+    {
+      "name": "stratégie-esg",
+      "type": "text",
+      "label": "Quelle est votre stratégie ESG actuelle ?",
+      "placeholder": "Exemple : engagement à atteindre des objectifs de réduction des émissions de CO2, etc.",
+      "required": true
+    },
+    {
+      "name": "ressources-dédiées",
+      "type": "number",
+      "label": "Quelles sont les ressources dédiées à la gestion des enjeux ESG ?",
+      "placeholder": "Exemple : nombre d'employés, budget alloué, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Enjeux ESG : {enjeux-esg}, Matérialité-impact : {matérialité-impact}, Stratégie ESG : {stratégie-esg}, Ressources dédiées : {ressources-dédiées}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "guide-acces-marches-regionaux",
+  "title": "Guide d'accès aux marchés régionaux (CEDEAO, UA, ZLECAf)",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_produit",
+      "type": "select",
+      "options": [
+        "Agricole",
+        "Manufacturé",
+        "Service"
+      ],
+      "label": "Quel est le type de produit ou de service que vous souhaitez exporter ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "pays_cible",
+      "type": "select",
+      "options": [
+        "Bénin",
+        "Togo",
+        "Ghana",
+        "Nigeria",
+        "Sénégal",
+        "Mali",
+        "Guinée",
+        "Côte d'Ivoire"
+      ],
+      "label": "Quel est le pays ou la région cible pour votre exportation ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description_produit",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre produit ou service :",
+      "placeholder": "Caractéristiques, avantages, etc.",
+      "required": true
+    },
+    {
+      "name": "experience_export",
+      "type": "number",
+      "label": "Quelle est votre expérience actuelle dans l'exportation (évaluez en années) ?",
+      "placeholder": "",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en commerce international. L'utilisateur cherche à accéder aux marchés régionaux avec son produit ou service. Voici les informations fournies : Type de produit : {type_produit}, Pays cible : {pays_cible}, Description du produit : {description_produit}, Expérience dans l'exportation : {experience_export} années. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe (facilité d'accès, demande potentielle, concurrence, barrières réglementaires), et des recommandations spécifiques pour améliorer les chances de succès.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

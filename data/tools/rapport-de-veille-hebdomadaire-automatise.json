@@ -1,0 +1,77 @@
+{
+  "id": "rapport-de-veille-hebdomadaire-automatise",
+  "title": "Rapport de veille hebdomadaire automatisé",
+  "category": "INTELLIGENCE ÉCONOMIQUE & VEILLE",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Technologie",
+        "Finance",
+        "Santé",
+        "Énergie"
+      ],
+      "label": "Secteur d'activité",
+      "placeholder": "Sélectionnez un secteur",
+      "required": true
+    },
+    {
+      "name": "concurrents",
+      "type": "textarea",
+      "label": "Liste des concurrents à surveiller (séparés par des virgules)",
+      "placeholder": "Exemple : Google, Microsoft, Amazon",
+      "required": true
+    },
+    {
+      "name": "sources",
+      "type": "text",
+      "label": "Sources d'information à consulter (URLs ou noms de sites)",
+      "placeholder": "Exemple : https://www.example.com, Reuters",
+      "required": true
+    },
+    {
+      "name": "periode",
+      "type": "select",
+      "options": [
+        "Hebdomadaire",
+        "Bi-hebdomadaire",
+        "Mensuelle"
+      ],
+      "label": "Période de la veille",
+      "placeholder": "Sélectionnez une période",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un spécialiste en intelligence économique. L'utilisateur a répondu : Secteur: {secteur}, Concurrents: {concurrents}, Sources: {sources}, Période: {periode}. Générez un rapport de veille hebdomadaire automatisé avec un score global sur 100, une évaluation par axe (pertinence, fiabilité, couverture), et des recommandations pour améliorer la veille.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

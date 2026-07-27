@@ -1,0 +1,71 @@
+{
+  "id": "modele-financement-energie-renouvelable",
+  "title": "Modèle de financement d'énergie renouvelable (PPA, lease)",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_de_financement",
+      "type": "select",
+      "options": [
+        "PPA (Power Purchase Agreement)",
+        "Lease",
+        "Autre"
+      ],
+      "label": "Quel type de financement d'énergie renouvelable envisagez-vous ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "puissance_de_l_infrastructure",
+      "type": "number",
+      "label": "Quelle est la puissance prévue de l'infrastructure d'énergie renouvelable (en MW) ?",
+      "placeholder": "Exemple : 5",
+      "required": true
+    },
+    {
+      "name": "description_du_projet",
+      "type": "textarea",
+      "label": "Veuillez fournir une brève description du projet d'énergie renouvelable",
+      "placeholder": "Exemple : Installation de panneaux solaires sur un site industriel",
+      "required": true
+    },
+    {
+      "name": "duree_de_financement",
+      "type": "number",
+      "label": "Quelle est la durée prévue du financement (en années) ?",
+      "placeholder": "Exemple : 10",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en financement d'énergie renouvelable. L'utilisateur a répondu : Type de financement: {type_de_financement}, Puissance de l'infrastructure: {puissance_de_l_infrastructure} MW, Description du projet: {description_du_projet}, Durée de financement: {duree_de_financement} ans. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

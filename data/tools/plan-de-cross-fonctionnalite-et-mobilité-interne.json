@@ -1,0 +1,79 @@
+{
+  "id": "plan-de-cross-fonctionnalite-et-mobilité-interne",
+  "title": "Plan de cross-fonctionnalité & mobilité interne",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "equipes-implicitees",
+      "type": "select",
+      "options": [
+        "Développement",
+        "Marketing",
+        "Vente",
+        "Support"
+      ],
+      "label": "Quelles équipes seront-elles impliquées dans ce plan ?",
+      "placeholder": "Sélectionnez les équipes",
+      "required": true
+    },
+    {
+      "name": "objectifs-stratégiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques que ce plan de cross-fonctionnalité et de mobilité interne vise à atteindre ?",
+      "placeholder": "Décrivez les objectifs",
+      "required": true
+    },
+    {
+      "name": "barrières-actuelles",
+      "type": "text",
+      "label": "Quelles sont les barrières actuelles à la mobilité interne et à la cross-fonctionnalité ?",
+      "placeholder": "Décrivez les barrières",
+      "required": true
+    },
+    {
+      "name": "actions-proposées",
+      "type": "textarea",
+      "label": "Quelles actions proposez-vous pour surmonter ces barrières et faciliter la mobilité interne et la cross-fonctionnalité ?",
+      "placeholder": "Décrivez les actions",
+      "required": true
+    },
+    {
+      "name": "indicateurs-de-suivi",
+      "type": "text",
+      "label": "Quels indicateurs de suivi proposez-vous pour évaluer le succès de ce plan ?",
+      "placeholder": "Décrivez les indicateurs",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Équipes impliquées : {equipes-implicitees}, Objectifs stratégiques : {objectifs-stratégiques}, Barrières actuelles : {barrières-actuelles}, Actions proposées : {actions-proposées}, Indicateurs de suivi : {indicateurs-de-suivi}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

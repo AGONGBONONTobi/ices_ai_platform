@@ -1,0 +1,71 @@
+{
+  "id": "outil-gestion-hoteliere-revpar",
+  "title": "Outil de gestion hôtelière & RevPAR",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "taux-occupation",
+      "type": "number",
+      "label": "Quel est le taux d'occupation moyen de votre hôtel ?",
+      "placeholder": "Exemple : 80",
+      "required": true
+    },
+    {
+      "name": "tarif-moyen",
+      "type": "number",
+      "label": "Quel est le tarif moyen par nuitée de votre hôtel ?",
+      "placeholder": "Exemple : 120",
+      "required": true
+    },
+    {
+      "name": "periode-evaluation",
+      "type": "select",
+      "options": [
+        "Mensuelle",
+        "Trimestrielle",
+        "Annuelle"
+      ],
+      "label": "Quelle est la période d'évaluation que vous souhaitez analyser ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "description-activites",
+      "type": "textarea",
+      "label": "Décrivez les activités et services proposés par votre hôtel (ex: piscine, restaurant, service de chambre, etc.)",
+      "placeholder": "Exemple : Piscine, restaurant gastronomique, service de chambre 24h/24",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Vous êtes un expert en gestion hôtelière. L'utilisateur a répondu : Taux d'occupation : {taux-occupation}, Tarif moyen : {tarif-moyen}, Période d'évaluation : {periode-evaluation}, Description des activités : {description-activites}. Analysez ces informations pour fournir un score global sur 100, une évaluation par axe, et des recommandations pour améliorer le RevPAR de l'hôtel.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

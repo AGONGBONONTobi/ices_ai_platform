@@ -1,0 +1,83 @@
+{
+  "id": "programme-de-leadership-development",
+  "title": "Programme de leadership development",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "objectifs-strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques du programme de leadership development ?",
+      "placeholder": "Exemple : Améliorer la capacité de prise de décision, développer les compétences de leadership",
+      "required": true
+    },
+    {
+      "name": "cible-public",
+      "type": "select",
+      "options": [
+        "Dirigeants",
+        "Cadres",
+        "Jeunes professionnels"
+      ],
+      "label": "Qui est la cible du programme de leadership development ?",
+      "placeholder": "Exemple : Dirigeants",
+      "required": true
+    },
+    {
+      "name": "methode-dapprentissage",
+      "type": "select",
+      "options": [
+        "Formation en classe",
+        "Apprentissage en ligne",
+        "Mentorat"
+      ],
+      "label": "Quelle est la méthode d'apprentissage retenue pour le programme de leadership development ?",
+      "placeholder": "Exemple : Formation en classe",
+      "required": true
+    },
+    {
+      "name": "ressources-budgetaires",
+      "type": "number",
+      "label": "Quel est le budget alloué au programme de leadership development ?",
+      "placeholder": "Exemple : 10000",
+      "required": true
+    },
+    {
+      "name": "resultat-esperes",
+      "type": "textarea",
+      "label": "Quels sont les résultats attendus du programme de leadership development ?",
+      "placeholder": "Exemple : Améliorer la satisfaction des employés, augmenter la productivité",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Cible publique : {cible-public}, Méthode d'apprentissage : {methode-dapprentissage}, Ressources budgétaires : {ressources-budgetaires}, Résultats attendus : {resultat-esperes}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

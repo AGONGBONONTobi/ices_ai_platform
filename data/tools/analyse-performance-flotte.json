@@ -1,0 +1,64 @@
+{
+  "id": "analyse-performance-flotte",
+  "title": "Analyse de la performance de flotte",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_de_vehicule",
+      "type": "select",
+      "options": [
+        "Camion",
+        "Véhicule léger",
+        "Véhicule utilitaire"
+      ],
+      "label": "Quel est le type de véhicule principal de votre flotte ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "nombre_de_vehicules",
+      "type": "number",
+      "label": "Combien de véhicules votre flotte compte-t-elle ?",
+      "placeholder": "100",
+      "required": true
+    },
+    {
+      "name": "description_flotte",
+      "type": "textarea",
+      "label": "Décrivez brièvement votre flotte et son utilisation (type de marchandises transportées, zones géographiques couvertes, etc.)",
+      "placeholder": "Transport de marchandises diverses en Europe",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en gestion de flotte. L'utilisateur a répondu : Type de véhicule: {type_de_vehicule}, Nombre de véhicules: {nombre_de_vehicules}, Description de la flotte: {description_flotte}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (par exemple, efficacité énergétique, maintenance, utilisation), et des recommandations pour améliorer la performance de la flotte.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

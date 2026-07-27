@@ -1,0 +1,71 @@
+{
+  "id": "diagnostic-engagement-collaborateurs",
+  "title": "Diagnostic de l'engagement collaborateurs",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Quels sont les principaux défis rencontrés par les collaborateurs ?",
+      "placeholder": "Exemple : manque de ressources, mauvaise communication, etc.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Manque de reconnaissance",
+        "Mauvaise communication",
+        "Absence de visibilité sur les objectifs"
+      ],
+      "label": "Quel est le principal facteur de démotivation identifié par les collaborateurs ?",
+      "placeholder": "Sélectionnez un facteur",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Sur 10, quelle est la moyenne de satisfaction des collaborateurs en termes de travail ?",
+      "placeholder": "Exemple : 6/10",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quelles sont les actions envisagées pour améliorer l'engagement collaborateurs ?",
+      "placeholder": "Exemple : formation, réorganisation des équipes, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Défis : {variable1}, Facteur de démotivation : {variable2}, Satisfaction moyenne : {variable3}, Actions envisagées : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

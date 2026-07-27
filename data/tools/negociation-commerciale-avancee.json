@@ -1,0 +1,78 @@
+{
+  "id": "negociation-commerciale-avancee",
+  "title": "Techniques de négociation commerciale avancée",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "objectif-negociation",
+      "type": "textarea",
+      "label": "Quel est l'objectif principal de la négociation ?",
+      "placeholder": "Exemple : obtenir un nouveau contrat",
+      "required": true
+    },
+    {
+      "name": "partenaire-negociation",
+      "type": "select",
+      "options": [
+        "Client existant",
+        "Fournisseur",
+        "Partenaire stratégique"
+      ],
+      "label": "Qui est le partenaire avec lequel vous allez négocier ?",
+      "placeholder": "Exemple : Client existant",
+      "required": true
+    },
+    {
+      "name": "avantages-negociation",
+      "type": "text",
+      "label": "Quels sont les principaux avantages que vous souhaitez obtenir de la négociation ?",
+      "placeholder": "Exemple : réduction de prix, augmentation de la durée du contrat",
+      "required": true
+    },
+    {
+      "name": "risques-negociation",
+      "type": "textarea",
+      "label": "Quels sont les principaux risques que vous identifiez dans la négociation ?",
+      "placeholder": "Exemple : perte de la relation, augmentation des coûts",
+      "required": true
+    },
+    {
+      "name": "stratégie-negociation",
+      "type": "text",
+      "label": "Quelle est votre stratégie de négociation ?",
+      "placeholder": "Exemple : approche collaborative, approche transactionnelle",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en négociation commerciale. L'utilisateur a répondu : Objectif de négociation : {objectif-negociation}, Partenaire de négociation : {partenaire-negociation}, Avantages de négociation : {avantages-negociation}, Risques de négociation : {risques-negociation}, Stratégie de négociation : {stratégie-negociation}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

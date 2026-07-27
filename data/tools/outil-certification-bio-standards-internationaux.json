@@ -1,0 +1,76 @@
+{
+  "id": "outil-certification-bio-standards-internationaux",
+  "title": "Outil de certification bio & standards internationaux",
+  "category": "OUTILS SECTORIELS SPÉCIALISÉS",
+  "inputs": [
+    {
+      "name": "type_produit",
+      "type": "select",
+      "options": [
+        "Fruits et légumes",
+        "Produits laitiers",
+        "Viandes et poissons",
+        "Produits transformés"
+      ],
+      "label": "Quel est le type de produit que vous souhaitez certifier ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "superficie_exploitation",
+      "type": "number",
+      "label": "Quelle est la superficie de votre exploitation (en hectares) ?",
+      "placeholder": "10",
+      "required": true
+    },
+    {
+      "name": "description_processus",
+      "type": "textarea",
+      "label": "Décrivez votre processus de production et de transformation :",
+      "placeholder": "Description détaillée",
+      "required": true
+    },
+    {
+      "name": "existence_documentation",
+      "type": "select",
+      "options": [
+        "Oui",
+        "Non"
+      ],
+      "label": "Existe-t-il une documentation disponible sur vos pratiques agricoles et de transformation ?",
+      "placeholder": "",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Vous êtes un consultant expert en certification bio et standards internationaux. L'utilisateur a répondu : Type de produit: {type_produit}, Superficie de l'exploitation: {superficie_exploitation} hectares, Processus de production et transformation: {description_processus}, Existence de documentation: {existence_documentation}. Analysez ces informations et attribuez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer la certification.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

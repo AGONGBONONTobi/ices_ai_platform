@@ -1,0 +1,83 @@
+{
+  "id": "outil-de-brand-management-et-identite-de-marque",
+  "title": "Outil de brand management & identité de marque",
+  "category": "MARKETING & COMMERCIAL",
+  "inputs": [
+    {
+      "name": "nom-de-la-marque",
+      "type": "text",
+      "label": "Nom de la marque",
+      "placeholder": "Exemple : Nike",
+      "required": true
+    },
+    {
+      "name": "description-de-la-marque",
+      "type": "textarea",
+      "label": "Description de la marque",
+      "placeholder": "Exemple : Marque de sportswear",
+      "required": true
+    },
+    {
+      "name": "objectifs-de-la-marque",
+      "type": "select",
+      "options": [
+        "Augmenter la visibilité",
+        "Améliorer l'image de la marque",
+        "Augmenter les ventes"
+      ],
+      "label": "Objectifs de la marque",
+      "placeholder": "Choisissez un objectif",
+      "required": true
+    },
+    {
+      "name": "cibles-de-la-marque",
+      "type": "textarea",
+      "label": "Cibles de la marque",
+      "placeholder": "Exemple : Les jeunes adultes",
+      "required": true
+    },
+    {
+      "name": "stratégies-de-marquage",
+      "type": "select",
+      "options": [
+        "Marketing numérique",
+        "Publicité traditionnelle",
+        "Partenariats"
+      ],
+      "label": "Stratégies de marquage",
+      "placeholder": "Choisissez une stratégie",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en marketing. L'utilisateur a répondu : Nom de la marque : {nom-de-la-marque}, Description de la marque : {description-de-la-marque}, Objectifs de la marque : {objectifs-de-la-marque}, Cibles de la marque : {cibles-de-la-marque}, Stratégies de marquage : {stratégies-de-marquage}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

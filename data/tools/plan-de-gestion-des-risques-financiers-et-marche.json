@@ -1,0 +1,71 @@
+{
+  "id": "plan-de-gestion-des-risques-financiers-et-marche",
+  "title": "Plan de gestion des risques financiers & marché",
+  "category": "GESTION DES RISQUES",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Quels sont les principaux risques financiers identifiés ?",
+      "placeholder": "Exemple : risque de liquidité, risque de crédit, etc.",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Risque de taux d'intérêt",
+        "Risque de change",
+        "Risque de marché"
+      ],
+      "label": "Quel est le principal risque de marché identifié ?",
+      "placeholder": "Sélectionnez un choix",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Quel est le montant maximum autorisé pour les investissements risqués ?",
+      "placeholder": "Exemple : 10%",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quels sont les indicateurs clés de performance (KPI) utilisés pour mesurer les risques financiers ?",
+      "placeholder": "Exemple : taux de retour sur investissement, taux de risque, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en gestion des risques financiers. L'utilisateur a répondu : Risques financiers : {variable1}, Principal risque de marché : {variable2}, Montant maximum autorisé pour les investissements risqués : {variable3}%, Indicateurs clés de performance : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

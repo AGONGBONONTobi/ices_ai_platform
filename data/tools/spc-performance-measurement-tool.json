@@ -1,0 +1,79 @@
+{
+  "id": "spc-performance-measurement-tool",
+  "title": "Outil de mesure de la performance des processus (SPC)",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "inputs": [
+    {
+      "name": "sample_size",
+      "type": "number",
+      "label": "Taille de l'échantillon",
+      "placeholder": "Ex. 500",
+      "required": true
+    },
+    {
+      "name": "process_type",
+      "type": "select",
+      "options": [
+        "Manufacturing",
+        "Service",
+        "Logistics",
+        "Software Development"
+      ],
+      "label": "Type de processus",
+      "placeholder": "Sélectionnez un type",
+      "required": true
+    },
+    {
+      "name": "defect_rate",
+      "type": "number",
+      "label": "Taux de défauts (%)",
+      "placeholder": "Ex. 2.5",
+      "required": true
+    },
+    {
+      "name": "cycle_time",
+      "type": "number",
+      "label": "Temps de cycle (minutes)",
+      "placeholder": "Ex. 15",
+      "required": true
+    },
+    {
+      "name": "comments",
+      "type": "textarea",
+      "label": "Commentaires supplémentaires",
+      "placeholder": "Entrez vos observations",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Sample Size: {sample_size}, Process Type: {process_type}, Defect Rate: {defect_rate}%, Cycle Time: {cycle_time} minutes, Comments: {comments}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

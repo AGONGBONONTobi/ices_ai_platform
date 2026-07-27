@@ -1,0 +1,78 @@
+{
+  "id": "audit-management-integre-ims",
+  "title": "Audit de management intégré (IMS)",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "objectif_audit",
+      "type": "textarea",
+      "label": "Quels sont les objectifs de l'audit ?",
+      "placeholder": "Exemple : améliorer la qualité des processus",
+      "required": true
+    },
+    {
+      "name": "domaines_audits",
+      "type": "select",
+      "options": [
+        "Gestion de projet",
+        "Gestion des ressources humaines",
+        "Gestion financière"
+      ],
+      "label": "Quels domaines sont concernés par l'audit ?",
+      "placeholder": "Sélectionnez les domaines pertinents",
+      "required": true
+    },
+    {
+      "name": "methodologie_utilisee",
+      "type": "text",
+      "label": "Quelle méthode d'audit a été utilisée ?",
+      "placeholder": "Exemple : ISO 9001",
+      "required": true
+    },
+    {
+      "name": "resultats_attendus",
+      "type": "textarea",
+      "label": "Quels sont les résultats attendus de l'audit ?",
+      "placeholder": "Exemple : améliorer la qualité des processus et réduire les coûts",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources disponibles pour l'audit ?",
+      "placeholder": "Exemple : 10 personnes",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en audit. L'utilisateur a répondu : Objectif de l'audit : {objectif_audit}, Domaines concernés : {domaines_audits}, Méthodologie utilisée : {methodologie_utilisee}, Résultats attendus : {resultats_attendus}, Ressources disponibles : {ressources_disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
