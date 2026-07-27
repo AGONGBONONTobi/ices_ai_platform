@@ -38,6 +38,8 @@ cp .env.example .env      # renseigner Supabase / Groq / Stripe
 uvicorn app.main:app --reload --port 8000
 ```
 
+Guide complet de lancement : [`LAUNCH.md`](LAUNCH.md).
+
 Détails, liste des endpoints et variables d'environnement :
 [`fast_api/README.md`](fast_api/README.md).
 
