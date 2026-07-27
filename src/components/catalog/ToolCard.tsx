@@ -1,31 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Sparkles, Zap } from "lucide-react";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { ToolConfig } from "@/lib/schema/tool-schema";
 import { Locale } from "@/lib/i18n/getDictionary";
 import { Badge } from "@/components/ui/badge";
+import { getCategoryStyle } from "@/lib/categoryStyles";
 import { motion } from "framer-motion";
-
-// Map catégories → icône gradient CSS
-const CATEGORY_COLORS: Record<string, { from: string; to: string; icon: string }> = {
-  "DIAGNOSTICS & ÉVALUATIONS": { from: "#7c3aed", to: "#4f46e5", icon: "🩺" },
-  "STRATÉGIE & MANAGEMENT":    { from: "#4f46e5", to: "#0ea5e9", icon: "🧭" },
-  "MARKETING & COMMERCIAL":    { from: "#db2777", to: "#f97316", icon: "📊" },
-  "RH & MANAGEMENT":           { from: "#059669", to: "#0ea5e9", icon: "👥" },
-  "FINANCE & CONTRÔLE":        { from: "#d97706", to: "#dc2626", icon: "💰" },
-  "INNOVATION & DIGITAL":      { from: "#7c3aed", to: "#db2777", icon: "🚀" },
-  "JURIDIQUE & COMPLIANCE":    { from: "#4f46e5", to: "#059669", icon: "⚖️" },
-  "OPÉRATIONS & SUPPLY CHAIN": { from: "#0ea5e9", to: "#059669", icon: "⚙️" },
-  "RSE & DÉVELOPPEMENT DURABLE":{ from: "#059669", to: "#34d399", icon: "🌱" },
-};
-
-function getCategoryStyle(category: string) {
-  const key = Object.keys(CATEGORY_COLORS).find((k) =>
-    category.toUpperCase().includes(k.split(" ")[0])
-  );
-  return CATEGORY_COLORS[key || ""] || { from: "#7c3aed", to: "#4f46e5", icon: "🔧" };
-}
 
 interface ToolCardProps {
   tool: Pick<ToolConfig, "id" | "title" | "category">;
@@ -36,6 +17,7 @@ interface ToolCardProps {
 
 export function ToolCard({ tool, lang, dict, index }: ToolCardProps) {
   const style = getCategoryStyle(tool.category);
+  const CategoryIcon = style.icon;
 
   return (
     <motion.div
@@ -60,10 +42,10 @@ export function ToolCard({ tool, lang, dict, index }: ToolCardProps) {
           <div>
             <div className="flex items-start justify-between gap-2 mb-3">
               <div
-                className="flex items-center justify-center w-10 h-10 rounded-xl text-xl shrink-0 shadow-sm"
+                className="flex items-center justify-center w-10 h-10 rounded-xl shrink-0 shadow-sm"
                 style={{ background: `linear-gradient(135deg, ${style.from}22, ${style.to}22)` }}
               >
-                {style.icon}
+                <CategoryIcon className="w-5 h-5" style={{ color: style.from }} weight="bold" />
               </div>
               <Badge
                 className="font-medium text-[10px] uppercase tracking-wider border-0 shrink"

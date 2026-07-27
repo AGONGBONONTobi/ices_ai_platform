@@ -23,10 +23,19 @@ export async function fetchProfile(
 }
 
 /** Crée une session Stripe Checkout et renvoie l'URL vers laquelle rediriger. */
-export async function createCheckoutSession(token: string): Promise<string> {
-  const { url } = await apiFetch<{ url: string }>("/api/stripe/checkout", {
-    method: "POST",
-    token,
-  });
+export async function createCheckoutSession(token: string, lang: string): Promise<string> {
+  const { url } = await apiFetch<{ url: string }>(
+    `/api/stripe/checkout?lang=${encodeURIComponent(lang)}`,
+    { method: "POST", token }
+  );
+  return url;
+}
+
+/** Crée une session Stripe Billing Portal (gestion/résiliation de l'abonnement). */
+export async function createPortalSession(token: string, lang: string): Promise<string> {
+  const { url } = await apiFetch<{ url: string }>(
+    `/api/stripe/portal?lang=${encodeURIComponent(lang)}`,
+    { method: "POST", token }
+  );
   return url;
 }

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ToolConfig } from "@/lib/schema/tool-schema";
 import { InputFactory } from "./InputFactory";
-import { Sparkles, Wand2 } from "lucide-react";
+import { Tag, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 interface DynamicToolFormProps {
   tool: ToolConfig;
@@ -28,7 +28,7 @@ export function DynamicToolForm({ tool, onSubmit, isLoading = false }: DynamicTo
       {/* Tool header */}
       <div className="mb-8">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-violet-50 border border-violet-200/60 text-xs font-semibold text-violet-600 mb-4">
-          <Sparkles className="w-3 h-3" />
+          <Tag className="w-3 h-3" weight="fill" />
           {tool.category}
         </div>
         <h1 className="text-2xl font-bold text-slate-900 leading-tight mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>
@@ -98,14 +98,13 @@ export function DynamicToolForm({ tool, onSubmit, isLoading = false }: DynamicTo
               </>
             ) : (
               <>
-                <Wand2 className="w-5 h-5" />
                 <span>Générer l&apos;analyse IA</span>
-                <Sparkles className="w-4 h-4 opacity-80" />
+                <ArrowRight className="w-4 h-4" weight="bold" />
               </>
             )}
           </button>
           <p className="text-center text-xs text-slate-400 mt-3">
-            Propulsé par Llama 3 · Résultats en quelques secondes
+            Résultats en quelques secondes
           </p>
         </div>
       </form>

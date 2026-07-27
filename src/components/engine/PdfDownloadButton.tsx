@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { GenericReportDocument, GenericReportProps } from "../pdf/GenericReportDocument";
 import { Button } from "@/components/ui/button";
-import { Download, Loader2 } from "lucide-react";
+import { DownloadSimple, CircleNotch } from "@phosphor-icons/react/dist/ssr";
 
 export function PdfDownloadButton(props: GenericReportProps) {
   const [isClient, setIsClient] = useState(false);
@@ -29,12 +29,12 @@ export function PdfDownloadButton(props: GenericReportProps) {
         >
           {loading ? (
             <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              <CircleNotch className="mr-2 h-4 w-4 animate-spin" />
               Génération du PDF...
             </>
           ) : (
             <>
-              <Download className="mr-2 h-4 w-4" />
+              <DownloadSimple className="mr-2 h-4 w-4" />
               Télécharger le Rapport Complet (PDF)
             </>
           )}

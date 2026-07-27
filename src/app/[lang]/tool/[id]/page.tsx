@@ -3,7 +3,7 @@ import { getDictionary, Locale } from "@/lib/i18n/getDictionary";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Cpu } from "lucide-react";
+import { ArrowLeft, Diamond } from "@phosphor-icons/react/dist/ssr";
 import ToolExecutor from "./ToolExecutor";
 
 interface ToolPageProps {
@@ -45,7 +45,7 @@ export default async function ToolPage({ params }: ToolPageProps) {
                 className="w-7 h-7 rounded-lg flex items-center justify-center"
                 style={{ background: "linear-gradient(135deg, #7c3aed, #4f46e5)" }}
               >
-                <Cpu className="w-3.5 h-3.5 text-white" />
+                <Diamond className="w-3.5 h-3.5 text-white" weight="fill" />
               </div>
               <span className="font-bold text-sm text-slate-900">{dict.nav.brand}</span>
             </div>

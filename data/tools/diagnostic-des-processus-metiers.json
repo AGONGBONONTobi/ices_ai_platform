@@ -1,7 +1,7 @@
 {
   "id": "diagnostic-des-processus-metiers",
   "title": "Diagnostic des processus métiers (BPM)",
-  "category": "Finance",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
   "inputs": [
     {
       "name": "processusMetiers",

@@ -3,10 +3,11 @@
 import logging
 from datetime import datetime, timezone
 
-from fastapi import APIRouter, HTTPException, Request, Response, status
+from fastapi import APIRouter, HTTPException, Query, Request, Response, status
 
 from app.config import get_settings
 from app.deps import CurrentProfile
+from app.i18n import DEFAULT_LOCALE, normalize_locale
 from app.schemas import CheckoutResponse
 from app.services.stripe_client import get_stripe
 from app.services.supabase_client import get_supabase_admin
@@ -23,11 +24,42 @@ def _period_end_iso(subscription) -> str | None:
     return datetime.fromtimestamp(timestamp, tz=timezone.utc).isoformat()
 
 
+def _get_or_create_customer_id(profile: CurrentProfile) -> str:
+    """Le stripe_customer_id est stocké sur le profil ; on le crée au besoin."""
+    stripe = get_stripe()
+    admin = get_supabase_admin()
+
+    stored = (
+        admin.table("profiles")
+        .select("stripe_customer_id")
+        .eq("id", profile.id)
+        .maybe_single()
+        .execute()
+    )
+    customer_id = (stored.data or {}).get("stripe_customer_id") if stored else None
+
+    if not customer_id:
+        customer = stripe.Customer.create(
+            email=profile.email,
+            name=profile.full_name,
+            metadata={"supabase_user_id": profile.id},
+        )
+        customer_id = customer.id
+        admin.table("profiles").update({"stripe_customer_id": customer_id}).eq(
+            "id", profile.id
+        ).execute()
+
+    return customer_id
+
+
 @router.post("/checkout", response_model=CheckoutResponse)
-def create_checkout_session(profile: CurrentProfile) -> CheckoutResponse:
+def create_checkout_session(
+    profile: CurrentProfile, lang: str = Query(DEFAULT_LOCALE)
+) -> CheckoutResponse:
     """Crée une session Checkout et renvoie son URL (le frontend redirige)."""
     settings = get_settings()
     stripe = get_stripe()
+    lang = normalize_locale(lang)
 
     if not settings.stripe_pro_price_id:
         logger.warning("STRIPE_PRO_PRICE_ID n'est pas défini.")
@@ -37,42 +69,65 @@ def create_checkout_session(profile: CurrentProfile) -> CheckoutResponse:
         )
 
     try:
-        admin = get_supabase_admin()
-
-        # Le stripe_customer_id est stocké sur le profil ; on le crée au besoin.
-        stored = (
-            admin.table("profiles")
-            .select("stripe_customer_id")
-            .eq("id", profile.id)
-            .maybe_single()
-            .execute()
-        )
-        customer_id = (stored.data or {}).get("stripe_customer_id") if stored else None
-
-        if not customer_id:
-            customer = stripe.Customer.create(
-                email=profile.email,
-                name=profile.full_name,
-                metadata={"supabase_user_id": profile.id},
-            )
-            customer_id = customer.id
-            admin.table("profiles").update({"stripe_customer_id": customer_id}).eq(
-                "id", profile.id
-            ).execute()
+        customer_id = _get_or_create_customer_id(profile)
 
         session = stripe.checkout.Session.create(
             customer=customer_id,
             mode="subscription",
             payment_method_types=["card"],
             line_items=[{"price": settings.stripe_pro_price_id, "quantity": 1}],
-            success_url=f"{settings.frontend_url}/fr?success=true",
-            cancel_url=f"{settings.frontend_url}/fr/pricing?canceled=true",
+            success_url=f"{settings.frontend_url}/{lang}?success=true",
+            cancel_url=f"{settings.frontend_url}/{lang}/pricing?canceled=true",
             metadata={"supabase_user_id": profile.id},
         )
     except HTTPException:
         raise
     except Exception as error:  # noqa: BLE001
         logger.exception("Stripe Checkout Error")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Internal Error"
+        ) from error
+
+    return CheckoutResponse(url=session.url)
+
+
+@router.post("/portal", response_model=CheckoutResponse)
+def create_portal_session(
+    profile: CurrentProfile, lang: str = Query(DEFAULT_LOCALE)
+) -> CheckoutResponse:
+    """Crée une session Stripe Billing Portal (gestion/résiliation de l'abonnement).
+
+    Conformité "résiliation en 3 clics" (art. L215-1-1 s. du Code de la
+    consommation) : le portail Stripe permet à l'abonné de résilier sans
+    contacter le support.
+    """
+    settings = get_settings()
+    stripe = get_stripe()
+    lang = normalize_locale(lang)
+
+    admin = get_supabase_admin()
+    stored = (
+        admin.table("profiles")
+        .select("stripe_customer_id")
+        .eq("id", profile.id)
+        .maybe_single()
+        .execute()
+    )
+    customer_id = (stored.data or {}).get("stripe_customer_id") if stored else None
+
+    if not customer_id:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail={"error": "no_subscription"},
+        )
+
+    try:
+        session = stripe.billing_portal.Session.create(
+            customer=customer_id,
+            return_url=f"{settings.frontend_url}/{lang}/pricing",
+        )
+    except Exception as error:  # noqa: BLE001
+        logger.exception("Stripe Billing Portal Error")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Internal Error"
         ) from error

@@ -1,6 +1,6 @@
 import { AuthForm } from "@/components/auth/AuthForm";
 import { getDictionary, Locale } from "@/lib/i18n/getDictionary";
-import { Cpu, Sparkles } from "lucide-react";
+import { Diamond, HandWaving, Wrench, WarningCircle } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { fetchToolCount } from "@/lib/api/tools";
 
@@ -27,7 +27,7 @@ export default async function LoginPage({ params, searchParams }: LoginPageProps
         <div className="flex justify-center mb-8">
           <Link href={`/${lang}`} className="flex items-center gap-2.5 group">
             <div className="w-10 h-10 rounded-2xl flex items-center justify-center shadow-lg" style={{ background: "linear-gradient(135deg, #7c3aed, #4f46e5)" }}>
-              <Cpu className="w-5 h-5 text-white" />
+              <Diamond className="w-5 h-5 text-white" weight="fill" />
             </div>
             <span className="font-bold text-xl text-slate-900 group-hover:text-violet-700 transition-colors" style={{ fontFamily: "Outfit, sans-serif" }}>
               Plateforme IA
@@ -40,11 +40,12 @@ export default async function LoginPage({ params, searchParams }: LoginPageProps
           {/* Header */}
           <div className="text-center mb-7">
             <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-50 border border-violet-200/60 text-xs font-semibold text-violet-700 mb-4">
-              <Sparkles className="w-3 h-3" />
+              <Wrench className="w-3 h-3" />
               Accès à {toolCount} outils IA
             </div>
-            <h1 className="text-2xl font-bold text-slate-900 mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>
-              Bon retour ! 👋
+            <h1 className="flex items-center justify-center gap-2 text-2xl font-bold text-slate-900 mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>
+              Bon retour !
+              <HandWaving className="w-6 h-6 text-amber-500" weight="fill" />
             </h1>
             <p className="text-sm text-slate-500">
               Connectez-vous pour accéder à votre espace
@@ -54,7 +55,7 @@ export default async function LoginPage({ params, searchParams }: LoginPageProps
           {/* Error from OAuth */}
           {searchParams.error && (
             <div className="mb-5 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm flex gap-2">
-              <span>⚠️</span>
+              <WarningCircle className="w-4 h-4 shrink-0 mt-0.5" weight="fill" />
               Erreur lors de la connexion. Veuillez réessayer.
             </div>
           )}

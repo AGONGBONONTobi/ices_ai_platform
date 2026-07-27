@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
 import { useRouter } from "next/navigation";
-import { LogOut, User, ChevronDown } from "lucide-react";
+import { SignOut, User, CaretDown } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 
 interface UserMenuProps {
@@ -54,7 +54,7 @@ export function UserMenu({ user, lang }: UserMenuProps) {
         <span className="hidden sm:block text-sm font-medium text-slate-700 max-w-[120px] truncate">
           {user.full_name || user.email}
         </span>
-        <ChevronDown className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
+        <CaretDown className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
       </button>
 
       {/* Dropdown */}
@@ -95,7 +95,7 @@ export function UserMenu({ user, lang }: UserMenuProps) {
                 id="signout-btn"
                 className="w-full flex items-center gap-2.5 px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors disabled:opacity-60"
               >
-                <LogOut className="w-4 h-4" />
+                <SignOut className="w-4 h-4" />
                 {isLoading ? "Déconnexion..." : "Se déconnecter"}
               </button>
             </div>

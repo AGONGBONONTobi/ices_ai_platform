@@ -1,7 +1,7 @@
 {
   "id": "evaluation-candidats-kebab-case",
   "title": "Grille d'évaluation des candidats multicritères",
-  "category": "RH & CAPITAL HUMAN",
+  "category": "RH & CAPITAL HUMAIN",
   "inputs": [
     {
       "name": "compétence-technique",

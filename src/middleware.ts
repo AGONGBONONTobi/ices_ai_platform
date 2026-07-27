@@ -25,10 +25,13 @@ function getLocale(request: NextRequest): string {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Ignorer les fichiers statiques et les routes API
+  // Ignorer les fichiers statiques, les routes API et les routes d'auth
+  // (`/auth/callback`, `/auth/signout` vivent hors de `[lang]` : Google OAuth et
+  // les liens de confirmation email y redirigent sans préfixe de locale).
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
+    pathname.startsWith("/auth") ||
     pathname.startsWith("/favicon") ||
     pathname.includes(".")
   ) {

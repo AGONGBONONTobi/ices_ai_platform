@@ -115,6 +115,16 @@
   .pulse-ring {
     animation: pulse-ring 2s infinite;
   }
+
+  /* Barre défilante sans scrollbar visible (ex: rangée de filtres) */
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer base {

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
-import { Loader2, Mail, Lock, User, Eye, EyeOff } from "lucide-react";
+import { CircleNotch, EnvelopeSimple, Lock, User, Eye, EyeSlash, WarningCircle, CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 
 interface AuthFormProps {
@@ -98,7 +98,7 @@ export function AuthForm({ mode, lang, redirectTo }: AuthFormProps) {
         className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm font-medium text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-all duration-200 shadow-sm disabled:opacity-60"
       >
         {isGoogleLoading ? (
-          <Loader2 className="w-4 h-4 animate-spin" />
+          <CircleNotch className="w-4 h-4 animate-spin" />
         ) : (
           <svg className="w-4 h-4" viewBox="0 0 24 24">
             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -137,7 +137,7 @@ export function AuthForm({ mode, lang, redirectTo }: AuthFormProps) {
 
         {/* Email */}
         <div className="relative">
-          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+          <EnvelopeSimple className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
           <input
             id="email-input"
             type="email"
@@ -167,20 +167,20 @@ export function AuthForm({ mode, lang, redirectTo }: AuthFormProps) {
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors"
           >
-            {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+            {showPassword ? <EyeSlash className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
           </button>
         </div>
 
         {/* Error / Success messages */}
         {error && (
           <div className="flex items-start gap-2 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
-            <span className="text-base shrink-0">⚠️</span>
+            <WarningCircle className="w-4 h-4 shrink-0 mt-0.5" weight="fill" />
             {error}
           </div>
         )}
         {success && (
           <div className="flex items-start gap-2 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm">
-            <span className="text-base shrink-0">✅</span>
+            <CheckCircle className="w-4 h-4 shrink-0 mt-0.5" weight="fill" />
             {success}
           </div>
         )}
@@ -194,7 +194,7 @@ export function AuthForm({ mode, lang, redirectTo }: AuthFormProps) {
           style={{ background: "linear-gradient(135deg, #7c3aed 0%, #4f46e5 60%, #0ea5e9 100%)" }}
         >
           {isLoading ? (
-            <Loader2 className="w-4 h-4 animate-spin" />
+            <CircleNotch className="w-4 h-4 animate-spin" />
           ) : null}
           {isLoading
             ? "Chargement..."

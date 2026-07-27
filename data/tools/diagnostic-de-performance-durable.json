@@ -1,7 +1,7 @@
 {
   "id": "diagnostic-de-performance-durable",
   "title": "Diagnostic de la performance durable (ESG score)",
-  "category": "RH",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
   "inputs": [
     {
       "name": "esgScore",

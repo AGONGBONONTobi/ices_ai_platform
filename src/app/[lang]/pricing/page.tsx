@@ -1,17 +1,20 @@
 import { Locale } from "@/lib/i18n/getDictionary";
-import { CheckCircle2, Zap } from "lucide-react";
+import { CheckCircle, Star } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { createSupabaseServerClient, getAccessToken } from "@/lib/supabase/server";
 import { fetchProfile } from "@/lib/api/account";
 import { CheckoutButton } from "@/components/billing/CheckoutButton";
+import { ManageSubscriptionButton } from "@/components/billing/ManageSubscriptionButton";
+import { CheckoutStatusBanner } from "@/components/billing/CheckoutStatusBanner";
 
 interface PricingPageProps {
   params: { lang: Locale };
+  searchParams: { canceled?: string };
 }
 
 export const dynamic = "force-dynamic";
 
-export default async function PricingPage({ params }: PricingPageProps) {
+export default async function PricingPage({ params, searchParams }: PricingPageProps) {
   const { lang } = params;
   const supabase = createSupabaseServerClient();
   const { data: { user } } = await supabase.auth.getUser();
@@ -23,9 +26,11 @@ export default async function PricingPage({ params }: PricingPageProps) {
   return (
     <div className="min-h-screen mesh-bg py-20 px-4">
       <div className="max-w-5xl mx-auto">
+        <CheckoutStatusBanner canceled={searchParams.canceled === "true"} />
+
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-slate-900 mb-4" style={{ fontFamily: "Outfit, sans-serif" }}>
-            Passez à la vitesse supérieure 🚀
+            Passez à la vitesse supérieure
           </h1>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto">
             Débloquez la puissance totale de nos outils d&apos;analyse IA. Plus de limites, plus de résultats, plus d&apos;impact.
@@ -44,15 +49,15 @@ export default async function PricingPage({ params }: PricingPageProps) {
             
             <ul className="space-y-4 mb-8 flex-1">
               <li className="flex items-start gap-3 text-sm text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-slate-400 shrink-0" />
+                <CheckCircle className="w-5 h-5 text-slate-400 shrink-0" weight="fill" />
                 <span>3 exécutions d&apos;outils par mois</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-slate-400 shrink-0" />
+                <CheckCircle className="w-5 h-5 text-slate-400 shrink-0" weight="fill" />
                 <span>Accès à l&apos;ensemble du catalogue</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-slate-400 shrink-0" />
+                <CheckCircle className="w-5 h-5 text-slate-400 shrink-0" weight="fill" />
                 <span>Résultats standards</span>
               </li>
             </ul>
@@ -69,7 +74,7 @@ export default async function PricingPage({ params }: PricingPageProps) {
           <div className="relative glass-light rounded-3xl p-8 border-2 border-violet-400 shadow-2xl shadow-violet-200/50 flex flex-col transform md:-translate-y-4">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
               <span className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider flex items-center gap-1.5 shadow-lg">
-                <Zap className="w-3.5 h-3.5" /> Recommandé
+                <Star className="w-3.5 h-3.5" weight="fill" /> Recommandé
               </span>
             </div>
 
@@ -82,20 +87,24 @@ export default async function PricingPage({ params }: PricingPageProps) {
             
             <ul className="space-y-4 mb-8 flex-1">
               <li className="flex items-start gap-3 text-sm text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-violet-600 shrink-0" />
+                <CheckCircle className="w-5 h-5 text-violet-600 shrink-0" weight="fill" />
                 <span className="font-semibold text-violet-900">Exécutions illimitées</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-violet-600 shrink-0" />
+                <CheckCircle className="w-5 h-5 text-violet-600 shrink-0" weight="fill" />
                 <span>Accès en avant-première aux nouveaux outils</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-slate-700">
-                <CheckCircle2 className="w-5 h-5 text-violet-600 shrink-0" />
+                <CheckCircle className="w-5 h-5 text-violet-600 shrink-0" weight="fill" />
                 <span>Support prioritaire</span>
               </li>
             </ul>
 
-            <CheckoutButton lang={lang} isPro={isPro} />
+            {isPro ? (
+              <ManageSubscriptionButton lang={lang} />
+            ) : (
+              <CheckoutButton lang={lang} />
+            )}
           </div>
         </div>
       </div>

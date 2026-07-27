@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ToolConfig } from "@/lib/schema/tool-schema";
 import { DynamicToolForm } from "@/components/engine/DynamicToolForm";
 import { PdfDownloadButton } from "@/components/engine/PdfDownloadButton";
-import { CheckCircle2, RefreshCw, TrendingUp, Lightbulb, BarChart3 } from "lucide-react";
+import { CheckCircle, ArrowClockwise, TrendUp, Lightbulb, ChartBar, WarningCircle } from "@phosphor-icons/react/dist/ssr";
 import { Locale } from "@/lib/i18n/getDictionary";
 import { executeTool } from "@/lib/api/tools";
 import { ApiError } from "@/lib/api/client";
@@ -152,7 +152,7 @@ export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
       >
         {/* Success header */}
         <div className="flex items-center gap-3 p-4 rounded-2xl bg-emerald-50 border border-emerald-200">
-          <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+          <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" weight="fill" />
           <div>
             <p className="text-sm font-semibold text-emerald-800">{dict.tool.result}</p>
             <p className="text-xs text-emerald-600">Analyse générée par IA — {new Date().toLocaleTimeString()}</p>
@@ -177,7 +177,7 @@ export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
                 <div className="absolute -right-8 -top-8 w-32 h-32 rounded-full opacity-10 blur-2xl" style={{ background: scoreInfo?.color }} />
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <TrendingUp className="w-4 h-4" style={{ color: scoreInfo?.color }} />
+                    <TrendUp className="w-4 h-4" style={{ color: scoreInfo?.color }} weight="bold" />
                     <h3 className="text-lg font-bold text-slate-800" style={{ fontFamily: "Outfit, sans-serif" }}>Score Global</h3>
                   </div>
                   <p className="text-sm text-slate-500">Évaluation globale de votre situation</p>
@@ -193,7 +193,7 @@ export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
             {result.axes && Array.isArray(result.axes) && result.axes.length > 0 && (
               <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
                 <div className="flex items-center gap-2 mb-4">
-                  <BarChart3 className="w-4 h-4 text-violet-600" />
+                  <ChartBar className="w-4 h-4 text-violet-600" weight="bold" />
                   <h3 className="text-base font-bold text-slate-800" style={{ fontFamily: "Outfit, sans-serif" }}>Analyse par axe</h3>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -221,7 +221,7 @@ export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
             {result.recommandations && Array.isArray(result.recommandations) && result.recommandations.length > 0 && (
               <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}>
                 <div className="flex items-center gap-2 mb-4">
-                  <Lightbulb className="w-4 h-4 text-amber-500" />
+                  <Lightbulb className="w-4 h-4 text-amber-500" weight="fill" />
                   <h3 className="text-base font-bold text-slate-800" style={{ fontFamily: "Outfit, sans-serif" }}>Recommandations stratégiques</h3>
                 </div>
                 <div className="rounded-2xl border border-amber-100 bg-gradient-to-br from-amber-50/80 to-orange-50/30 p-5">
@@ -255,7 +255,7 @@ export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
             onClick={() => setResult(null)}
             className="gap-2 rounded-xl border-slate-200 hover:border-violet-300 hover:text-violet-700 hover:bg-violet-50 transition-all"
           >
-            <RefreshCw className="w-4 h-4" />
+            <ArrowClockwise className="w-4 h-4" />
             {dict.tool.restart}
           </Button>
         </div>
@@ -268,7 +268,7 @@ export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
     <div className="space-y-4">
       {error && (
         <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm font-medium flex gap-2">
-          <span>⚠️</span>
+          <WarningCircle className="w-4 h-4 shrink-0 mt-0.5" weight="fill" />
           {error}
         </div>
       )}

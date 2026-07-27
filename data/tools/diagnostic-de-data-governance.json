@@ -1,7 +1,7 @@
 {
   "id": "diagnostic-de-data-governance",
   "title": "Diagnostic de data governance & qualité de données",
-  "category": "Finance",
+  "category": "TRANSFORMATION DIGITALE & IA",
   "inputs": [
     {
       "name": "niveauDataGovernance",
