@@ -10,6 +10,9 @@ from app.services.translation import get_cached_translations, translate_tool_con
 
 router = APIRouter(prefix="/tools", tags=["tools"])
 
+# Taille de page pour la lecture du catalogue (limite PostgREST : 1000 lignes)
+PAGE_SIZE = 1000
+
 
 @router.get("", response_model=list[ToolSummary])
 def list_tools(lang: str = Query(DEFAULT_LOCALE)) -> list[ToolSummary]:
@@ -21,14 +24,27 @@ def list_tools(lang: str = Query(DEFAULT_LOCALE)) -> list[ToolSummary]:
     """
     lang = normalize_locale(lang)
 
-    response = (
-        get_supabase_anon()
-        .table("tools")
-        .select("id, title, category")
-        .order("category", desc=False)
-        .execute()
-    )
-    tools = [ToolSummary(**row) for row in (response.data or [])]
+    # PostgREST plafonne les réponses à 1000 lignes : on pagine pour ne pas
+    # tronquer silencieusement le catalogue.
+    client = get_supabase_anon()
+    tools: list[ToolSummary] = []
+    offset = 0
+
+    while True:
+        response = (
+            client.table("tools")
+            .select("id, title, category")
+            .order("category", desc=False)
+            .order("id", desc=False)
+            .range(offset, offset + PAGE_SIZE - 1)
+            .execute()
+        )
+        page = response.data or []
+        tools.extend(ToolSummary(**row) for row in page)
+
+        if len(page) < PAGE_SIZE:
+            break
+        offset += PAGE_SIZE
 
     if lang != DEFAULT_LOCALE and tools:
         translations = get_cached_translations(lang)

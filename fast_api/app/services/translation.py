@@ -28,18 +28,32 @@ Règles strictes :
 
 
 def get_cached_translations(lang: str) -> dict[str, dict]:
-    """Traductions en cache pour tout le catalogue, indexées par `tool_id`."""
+    """Traductions en cache pour tout le catalogue, indexées par `tool_id`.
+
+    Le cache est optionnel : si la table `tool_translations` est absente ou
+    injoignable, on renvoie un dictionnaire vide et le catalogue s'affiche en
+    français, plutôt que de faire échouer la page entière.
+    """
     lang = normalize_locale(lang)
     if lang == DEFAULT_LOCALE:
         return {}
 
-    response = (
-        get_supabase_anon()
-        .table("tool_translations")
-        .select("tool_id, title, category")
-        .eq("lang", lang)
-        .execute()
-    )
+    try:
+        response = (
+            get_supabase_anon()
+            .table("tool_translations")
+            .select("tool_id, title, category")
+            .eq("lang", lang)
+            .execute()
+        )
+    except Exception:  # noqa: BLE001
+        logger.warning(
+            "Cache de traduction indisponible pour la locale %s "
+            "(la table tool_translations existe-t-elle ? cf. setup_translations.sql)",
+            lang,
+        )
+        return {}
+
     return {row["tool_id"]: row for row in (response.data or [])}
 
 
