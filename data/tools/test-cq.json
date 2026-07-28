@@ -1,0 +1,78 @@
+{
+  "id": "test-cq",
+  "title": "Test d'intelligence culturelle (CQ)",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "variable1",
+      "type": "textarea",
+      "label": "Quel est votre comportement face à un conflit avec un collègue ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable2",
+      "type": "select",
+      "options": [
+        "Je reste calme et je cherche une solution",
+        "Je m'offense et je réagis de manière agressive",
+        "Je me retire et je laisse les choses se calmer"
+      ],
+      "label": "Quelle est votre attitude face à un changement important dans l'entreprise ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable3",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, comment vous sentez-vous lorsque vous recevez des critiques constructives ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable4",
+      "type": "text",
+      "label": "Quel est votre style de communication préféré ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "variable5",
+      "type": "textarea",
+      "label": "Quelles sont vos forces et vos faiblesses en termes de communication ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Variable1: {variable1}, Variable2: {variable2}, Variable3: {variable3}, Variable4: {variable4}, Variable5: {variable5}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

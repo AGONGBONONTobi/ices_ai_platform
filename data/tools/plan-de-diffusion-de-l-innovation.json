@@ -1,0 +1,83 @@
+{
+  "id": "plan-de-diffusion-de-l-innovation",
+  "title": "Plan de diffusion de l'innovation (Rogers)",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "type-de-changement",
+      "type": "select",
+      "options": [
+        "Technologique",
+        "Procedurale",
+        "Organisationnelle"
+      ],
+      "label": "Quel est le type de changement que vous souhaitez diffuser ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "niveau-de-complexite",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Elevé"
+      ],
+      "label": "Quel est le niveau de complexité du changement que vous souhaitez diffuser ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "periode-de-diffusion",
+      "type": "number",
+      "label": "Quelle est la période de diffusion prévue pour le changement ?",
+      "placeholder": "En années",
+      "required": true
+    },
+    {
+      "name": "strategie-de-diffusion",
+      "type": "textarea",
+      "label": "Quelle est votre stratégie de diffusion pour le changement ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "number",
+      "label": "Quelles sont les ressources disponibles pour la diffusion du changement ?",
+      "placeholder": "Exemple : budget, personnel, équipement",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en innovation. L'utilisateur a répondu : Type de changement : {type-de-changement}, Niveau de complexité : {niveau-de-complexite}, Période de diffusion : {periode-de-diffusion} ans, Stratégie de diffusion : {strategie-de-diffusion}, Ressources disponibles : {ressources-disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

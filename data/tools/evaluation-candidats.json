@@ -1,0 +1,79 @@
+{
+  "id": "evaluation-candidats",
+  "title": "Grille d'évaluation des candidats multicritères",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "compétence-technique",
+      "type": "number",
+      "label": "Compétence technique (évaluation sur 10)",
+      "placeholder": "Exemple de note",
+      "required": true
+    },
+    {
+      "name": "expérience-professionnelle",
+      "type": "textarea",
+      "label": "Expérience professionnelle (détails)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "aptitude-communication",
+      "type": "select",
+      "options": [
+        "Très bonne",
+        "Bonne",
+        "Moyenne",
+        "Mauvaise"
+      ],
+      "label": "Aptitude à la communication (évaluation)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "engagement-professionnel",
+      "type": "text",
+      "label": "Engagement professionnel (détails)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "adaptabilité",
+      "type": "number",
+      "label": "Adaptabilité (évaluation sur 10)",
+      "placeholder": "Exemple de note",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en RH. L'utilisateur a répondu : Compétence technique: {compétence-technique}, Expérience professionnelle: {expérience-professionnelle}, Aptitude à la communication: {aptitude-communication}, Engagement professionnel: {engagement-professionnel}, Adaptabilité: {adaptabilité}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

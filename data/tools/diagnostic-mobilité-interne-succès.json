@@ -1,0 +1,79 @@
+{
+  "id": "diagnostic-mobilité-interne-succès",
+  "title": "Diagnostic de mobilité interne & succession",
+  "category": "DIAGNOSTICS & ÉVALUATIONS",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple : XYZ Inc.",
+      "required": true
+    },
+    {
+      "name": "nombre-de-employés",
+      "type": "number",
+      "label": "Nombre d'employés",
+      "placeholder": "Exemple : 500",
+      "required": true
+    },
+    {
+      "name": "secteur-d'activité",
+      "type": "select",
+      "options": [
+        "Finance",
+        "Technologie",
+        "Santé",
+        "Énergie"
+      ],
+      "label": "Secteur d'activité",
+      "placeholder": "Exemple : Finance",
+      "required": true
+    },
+    {
+      "name": "objectifs-stratégiques",
+      "type": "textarea",
+      "label": "Objectifs stratégiques",
+      "placeholder": "Exemple : Augmenter la croissance, améliorer la compétitivité",
+      "required": true
+    },
+    {
+      "name": "challenges-actuels",
+      "type": "textarea",
+      "label": "Challenges actuels",
+      "placeholder": "Exemple : Pénurie de talents, difficultés de communication",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise : {entreprise}, Nombre d'employés : {nombre-de-employés}, Secteur d'activité : {secteur-d'activité}, Objectifs stratégiques : {objectifs-stratégiques}, Challenges actuels : {challenges-actuels}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

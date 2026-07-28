@@ -1,0 +1,85 @@
+{
+  "id": "audit-des-droits-humains",
+  "title": "Audit des droits humains (devoir de vigilance)",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Minerais",
+        "Matières premières",
+        "Énergie",
+        "Autre"
+      ],
+      "label": "Secteur d'activité de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "pays_d_operation",
+      "type": "select",
+      "options": [
+        "Pays 1",
+        "Pays 2",
+        "Pays 3",
+        "Autre"
+      ],
+      "label": "Pays où l'entreprise opère",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "risques_identifies",
+      "type": "textarea",
+      "label": "Risques identifiés liés aux droits humains",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "mesures_prises",
+      "type": "textarea",
+      "label": "Mesures prises pour atténuer les risques identifiés",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en droits humains. L'utilisateur a répondu : Entreprise: {entreprise}, Secteur: {secteur}, Pays d'opération: {pays_d_operation}, Risques identifiés: {risques_identifies}, Mesures prises: {mesures_prises}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

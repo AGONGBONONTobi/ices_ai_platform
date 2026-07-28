@@ -1,0 +1,78 @@
+{
+  "id": "entretien-annuel-structure",
+  "title": "Entretien annuel structuré (smart evaluation)",
+  "category": "RH & CAPITAL HUMAIN",
+  "inputs": [
+    {
+      "name": "objectifs-annuels",
+      "type": "textarea",
+      "label": "Quels sont les objectifs annuels fixés pour cette personne ?",
+      "placeholder": "Exemple : Améliorer les compétences en leadership, augmenter les ventes de 15%",
+      "required": true
+    },
+    {
+      "name": "forces-competences",
+      "type": "text",
+      "label": "Quelles sont les forces et compétences de cette personne ?",
+      "placeholder": "Exemple : Excellente communication, leadership, capacité à travailler en équipe",
+      "required": true
+    },
+    {
+      "name": "faiblesses-competences",
+      "type": "text",
+      "label": "Quelles sont les faiblesses et compétences à améliorer de cette personne ?",
+      "placeholder": "Exemple : Besoin de formation en gestion de projet, difficulté à prendre des décisions",
+      "required": true
+    },
+    {
+      "name": "plan-daction",
+      "type": "textarea",
+      "label": "Quel plan d'action proposez-vous pour améliorer les compétences et atteindre les objectifs ?",
+      "placeholder": "Exemple : Formation en gestion de projet, accompagnement pour la prise de décision",
+      "required": true
+    },
+    {
+      "name": "evaluation-finale",
+      "type": "select",
+      "options": [
+        "Très satisfait",
+        "Satisfait",
+        "Insatisfait"
+      ],
+      "label": "Quelle est votre évaluation finale de cette personne ?",
+      "placeholder": "Exemple : Très satisfait",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs annuels : {objectifs-annuels}, Forces et compétences : {forces-competences}, Faiblesses et compétences à améliorer : {faiblesses-competences}, Plan d'action : {plan-daction}, Évaluation finale : {evaluation-finale}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

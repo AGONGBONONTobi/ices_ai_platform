@@ -1,0 +1,86 @@
+{
+  "id": "profil-apprenant-handicap",
+  "title": "Profil apprenant en situation de handicap",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "handicap",
+      "type": "select",
+      "options": [
+        "Trouble du spectre de l'autisme",
+        "Trouble de l'enfance",
+        "Surdité",
+        "Maladie de Parkinson",
+        "Autre"
+      ],
+      "label": "Quel est le handicap de l'apprenant ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "niveau-ecole",
+      "type": "select",
+      "options": [
+        "Primaire",
+        "Collège",
+        "Lycée",
+        "Université"
+      ],
+      "label": "Quel est le niveau d'école de l'apprenant ?",
+      "placeholder": "",
+      "required": true
+    },
+    {
+      "name": "defis-ecolier",
+      "type": "textarea",
+      "label": "Quels sont les défis écoliers que rencontre l'apprenant ?",
+      "placeholder": "Exemple : difficultés de concentration, besoin de temps supplémentaire, etc.",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "textarea",
+      "label": "Quelles ressources sont disponibles pour l'apprenant ?",
+      "placeholder": "Exemple : aide d'un accompagnateur, matériel spécialisé, etc.",
+      "required": true
+    },
+    {
+      "name": "objectifs-pédagogiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs pédagogiques pour l'apprenant ?",
+      "placeholder": "Exemple : améliorer la lecture, développer les compétences en mathématiques, etc.",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert en inclusion scolaire. L'utilisateur a répondu : Handicap: {handicap}, Niveau d'école: {niveau-ecole}, Défis écoliers: {defis-ecolier}, Ressources disponibles: {ressources-disponibles}, Objectifs pédagogiques: {objectifs-pédagogiques}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

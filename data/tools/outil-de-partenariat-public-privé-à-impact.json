@@ -1,0 +1,72 @@
+{
+  "id": "outil-de-partenariat-public-privé-à-impact",
+  "title": "Outil de partenariat public-privé à impact",
+  "category": "RSE & DÉVELOPPEMENT DURABLE",
+  "inputs": [
+    {
+      "name": "impact_envIRONnemental",
+      "type": "number",
+      "label": "Quel est l'impact environnemental attendu du projet ? (sur 100)",
+      "placeholder": "Exemple : réduction des émissions de gaz à effet de serre",
+      "required": true
+    },
+    {
+      "name": "partenaires_publics",
+      "type": "select",
+      "options": [
+        "État",
+        "Communes",
+        "Régions",
+        "Autres"
+      ],
+      "label": "Quels partenaires publics sont impliqués dans le projet ?",
+      "placeholder": "Exemple : État et régions",
+      "required": true
+    },
+    {
+      "name": "objectifs_sociaux",
+      "type": "textarea",
+      "label": "Quels objectifs sociaux sont visés par le projet ?",
+      "placeholder": "Exemple : création d'emplois, amélioration des conditions de vie",
+      "required": true
+    },
+    {
+      "name": "financement_privé",
+      "type": "number",
+      "label": "Quel est le montant de financement privé mobilisé pour le projet ?",
+      "placeholder": "Exemple : 50 millions d'euros",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en partenariat public-privé. L'utilisateur a répondu : Impact environnemental : {impact_envIRONnemental}, Partenaires publics : {partenaires_publics}, Objectifs sociaux : {objectifs_sociaux}, Financement privé : {financement_privé}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

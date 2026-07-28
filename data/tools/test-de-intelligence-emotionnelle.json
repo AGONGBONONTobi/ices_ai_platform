@@ -1,0 +1,79 @@
+{
+  "id": "test-de-intelligence-emotionnelle",
+  "title": "Test d'intelligence émotionnelle (EQ-i 2.0)",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "empathie",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 5, comment vous sentez-vous lorsque vous voyez quelqu'un pleurer ?",
+      "placeholder": "1 (très mal) à 5 (très bien)",
+      "required": true
+    },
+    {
+      "name": "gestion-des-émois",
+      "type": "textarea",
+      "label": "Décrivez une situation où vous avez dû gérer vos émotions de manière efficace.",
+      "placeholder": "Exemple :",
+      "required": true
+    },
+    {
+      "name": "communication-avec-autrui",
+      "type": "select",
+      "options": [
+        "Toujours",
+        "Souvent",
+        "Rarement",
+        "Jamais"
+      ],
+      "label": "Comment vous sentez-vous lorsque vous devez communiquer avec quelqu'un qui a une opinion différente de la vôtre ?",
+      "placeholder": "Exemple :",
+      "required": true
+    },
+    {
+      "name": "prise-de-décision",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 5, comment vous sentez-vous lorsque vous devez prendre une décision importante ?",
+      "placeholder": "1 (très mal) à 5 (très bien)",
+      "required": true
+    },
+    {
+      "name": "ressources-émotionnelles",
+      "type": "textarea",
+      "label": "Décrivez une situation où vous avez dû utiliser vos ressources émotionnelles pour résoudre un problème.",
+      "placeholder": "Exemple :",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Empathie: {empathie}, Gestion des émois : {gestion-des-émois}, Communication avec autrui : {communication-avec-autrui}, Prise de décision : {prise-de-décision}, Ressources émotionnelles : {ressources-émotionnelles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

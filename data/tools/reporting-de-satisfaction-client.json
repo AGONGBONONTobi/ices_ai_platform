@@ -1,0 +1,73 @@
+{
+  "id": "reporting-de-satisfaction-client",
+  "title": "Reporting de satisfaction client (NPS, CSAT)",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "nps_score",
+      "type": "number",
+      "label": "Score NPS moyen sur 100",
+      "placeholder": "Exemple de score",
+      "required": true
+    },
+    {
+      "name": "csat_score",
+      "type": "number",
+      "label": "Score CSAT moyen sur 100",
+      "placeholder": "Exemple de score",
+      "required": true
+    },
+    {
+      "name": "nps_pourcentage_recommander",
+      "type": "number",
+      "label": "Pourcentage de clients recommandant la marque",
+      "placeholder": "Exemple de pourcentage",
+      "required": true
+    },
+    {
+      "name": "csat_pourcentage_satisfait",
+      "type": "number",
+      "label": "Pourcentage de clients satisfaits",
+      "placeholder": "Exemple de pourcentage",
+      "required": true
+    },
+    {
+      "name": "commentaires_client",
+      "type": "textarea",
+      "label": "Commentaires des clients",
+      "placeholder": "Exemple de commentaires",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Tu es un analyste de données. L'utilisateur a répondu : NPS Score: {nps_score}, CSAT Score: {csat_score}, Pourcentage de clients recommandant la marque: {nps_pourcentage_recommander}, Pourcentage de clients satisfaits: {csat_pourcentage_satisfait}, Commentaires des clients: {commentaires_client}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

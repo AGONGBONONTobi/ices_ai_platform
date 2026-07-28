@@ -44,7 +44,7 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise : {entreprise}, Description de la politique de RSE : {description-rse}, Objectifs de la politique de DD : {objectifs-dd}, Stratégie de mise en œuvre de la politique de DD : {stratégie-dd}, Ressources nécessaires : {ressources}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Entreprise : {entreprise}, Description de la politique de RSE : {description-rse}, Objectifs de la politique de DD : {objectifs-dd}, Stratégie de mise en œuvre de la politique de DD : {strategie-dd}, Ressources nécessaires : {ressources}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
   "outputSchema": {
     "type": "object",
     "properties": {

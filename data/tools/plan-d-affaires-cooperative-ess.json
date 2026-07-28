@@ -44,7 +44,7 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique : {objectif-stratégique}, Cible clientèle : {cible-clientele}, Ressources financières : {ressources-financieres}, Plan marketing : {plan-marketing}, Plan financier : {plan-financier}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Cible clientèle : {cible-clientele}, Ressources financières : {ressources-financieres}, Plan marketing : {plan-marketing}, Plan financier : {plan-financier}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
   "outputSchema": {
     "type": "object",
     "properties": {

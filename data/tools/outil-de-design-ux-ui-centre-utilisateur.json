@@ -38,7 +38,7 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un designer UX/UI expert. L'utilisateur a répondu : Objectif: {objectif}, Public cible: {public-cible}, Fonctionnalités attendues: {fonctionnalités-esperées}, Compétiteurs: {compétiteurs}. Analyse ces informations et propose un design UX/UI centré utilisateur qui répond aux besoins de votre public cible et se démarque des concurrents.",
+  "promptTemplate": "Tu es un designer UX/UI expert. L'utilisateur a répondu : Objectif: {objectif}, Public cible: {public-cible}, Fonctionnalités attendues: {fonctionnalites-esperées}, Compétiteurs: {compétiteurs}. Analyse ces informations et propose un design UX/UI centré utilisateur qui répond aux besoins de votre public cible et se démarque des concurrents.",
   "outputSchema": {
     "type": "object",
     "properties": {

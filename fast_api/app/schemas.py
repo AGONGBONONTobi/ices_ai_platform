@@ -43,7 +43,8 @@ class ToolSummary(BaseModel):
 
 
 class ExecuteRequest(BaseModel):
-    toolConfig: ToolConfig
+    # Seul l'identifiant transite : la fiche (et donc le prompt) est relue en base.
+    toolId: str = Field(min_length=1)
     userInputs: dict[str, Any]
     lang: str = "fr"
 

@@ -29,7 +29,7 @@
       "required": true
     },
     {
-      "name": " calendrierProjet",
+      "name": "calendrierProjet",
       "type": "textarea",
       "label": "Décrivez le calendrier prévisionnel de votre projet",
       "placeholder": "Exemple : Les travaux de recherche seront effectués entre janvier et juin, suivis d'une phase de développement jusqu'en décembre",

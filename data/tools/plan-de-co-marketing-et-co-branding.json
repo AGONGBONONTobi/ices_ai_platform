@@ -45,7 +45,7 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en marketing & commercial. L'utilisateur a répondu : Objectif: {objectif}, Partenaire: {partenaire}, Stratégie: {stratégie}, Budget: {budget}, Délai: {délai}. Analyse ces informations et propose un plan de co-marketing & co-branding efficace, en tenant compte des objectifs, du partenaire, de la stratégie, du budget et du délai.",
+  "promptTemplate": "Tu es un expert en marketing & commercial. L'utilisateur a répondu : Objectif: {objectif}, Partenaire: {partenaire}, Stratégie: {strategie}, Budget: {budget}, Délai: {délai}. Analyse ces informations et propose un plan de co-marketing & co-branding efficace, en tenant compte des objectifs, du partenaire, de la stratégie, du budget et du délai.",
   "outputSchema": {
     "type": "object",
     "properties": {

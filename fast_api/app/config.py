@@ -33,6 +33,17 @@ class Settings(BaseSettings):
     # --- Quotas ---
     free_tier_limit: int = 3
 
+    # --- Limitation de débit ---
+    # Complète le quota : protège contre les rafales, avant toute dépense LLM.
+    rate_limit_enabled: bool = True
+    execute_rate_limit: str = "10/minute"
+    catalog_rate_limit: str = "120/minute"
+
+    # --- Observabilité ---
+    # Vide = Sentry désactivé (développement local).
+    sentry_dsn: str = ""
+    environment: str = "development"
+
     @property
     def cors_origin_list(self) -> list[str]:
         return [o.strip() for o in self.cors_origins.split(",") if o.strip()]

@@ -65,16 +65,33 @@ L'application est servie sur <http://localhost:3000>, l'API sur
 
 ## Base de données
 
-Scripts SQL à exécuter dans le SQL Editor de Supabase :
+Scripts SQL à exécuter dans le SQL Editor de Supabase, **dans cet ordre** :
 
+- `supabase/tools_schema.sql` — table `tools` et cycle de vie `draft`/`published` ;
 - `supabase/setup_auth.sql` — table `profiles`, RLS et trigger d'inscription ;
 - `supabase/stripe_schema.sql` — colonnes Stripe sur `profiles` ;
 - `setup_translations.sql` — table `tool_translations` (cache de traduction).
 
-Le catalogue (`data/tools/*.json`) est généré et importé par les scripts de
-`scripts/` (`npx tsx scripts/generate_tools_from_catalog_v2.ts`).
+## Catalogue d'outils
 
-## Autres dossiers
+Les fiches vivent dans `data/tools/*.json` et sont la source de vérité :
 
-- `react-app/` — application Vite indépendante (site vitrine).
-- `index.html`, `css/`, `js/`, `assets/` — ancienne version statique du site.
+```bash
+npx tsx scripts/validate_tools.ts      # contrôle qualité (bloquant en CI)
+npx tsx scripts/sync_tools_to_db.ts    # aperçu de la synchronisation
+npx tsx scripts/sync_tools_to_db.ts --write
+```
+
+`validate_tools.ts` vérifie notamment que chaque variable `{…}` du
+`promptTemplate` correspond à un input déclaré. C'est bloquant : le template
+étant injecté dans l'appel LLM, une variable inconnue fuiterait telle quelle
+dans le prompt.
+
+Seuls les outils en statut `published` sont servis par l'API.
+
+## Tests
+
+```bash
+cd fast_api && python -m pytest -q     # backend
+npx tsc --noEmit && npm run lint       # frontend
+```

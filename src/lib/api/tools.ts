@@ -48,8 +48,12 @@ export interface ExecuteResult {
   result: any;
 }
 
+/**
+ * Le backend relit la fiche en base à partir de `toolId` : le client ne transmet
+ * jamais le prompt, sans quoi n'importe qui pourrait faire exécuter le sien.
+ */
 export async function executeTool(
-  payload: { toolConfig: ToolConfig; userInputs: Record<string, any>; lang: Locale },
+  payload: { toolId: string; userInputs: Record<string, any>; lang: Locale },
   token: string
 ): Promise<any> {
   const { result } = await apiFetch<ExecuteResult>("/api/execute", {

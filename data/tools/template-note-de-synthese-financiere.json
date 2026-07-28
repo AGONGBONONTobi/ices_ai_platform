@@ -37,7 +37,7 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant financier. L'utilisateur a répondu : Bilan comptable: {bilan-comptable}, Flux de trésorerie: {flux-de-tresorerie}, Ratio financiers: {ratio-financiers}, Recommandations: {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant financier. L'utilisateur a répondu : Bilan comptable: {bilan-comptable}, Flux de trésorerie: {flux-de-trésorerie}, Ratio financiers: {ratio-financiers}, Recommandations: {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
   "outputSchema": {
     "type": "object",
     "properties": {

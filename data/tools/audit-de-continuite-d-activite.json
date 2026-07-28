@@ -1,0 +1,79 @@
+{
+  "id": "audit-de-continuite-d-activite",
+  "title": "Audit de continuité d'activité (PCA/PRA)",
+  "category": "AUDITS & CONFORMITÉ",
+  "inputs": [
+    {
+      "name": "entreprise",
+      "type": "text",
+      "label": "Nom de l'entreprise",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "domaine-activite",
+      "type": "select",
+      "options": [
+        "Finance",
+        "Technologie",
+        "Santé",
+        "Autres"
+      ],
+      "label": "Domaine d'activité",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "risques-identifies",
+      "type": "textarea",
+      "label": "Risques identifiés",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "mesures-mises-en-place",
+      "type": "textarea",
+      "label": "Mesures mises en place pour atténuer les risques",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "budget-alloue",
+      "type": "number",
+      "label": "Budget alloué pour la continuité d'activité",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en continuité d'activité. L'utilisateur a répondu : Entreprise: {entreprise}, Domaine d'activité: {domaine-activite}, Risques identifiés: {risques-identifies}, Mesures mises en place: {mesures-mises-en-place}, Budget alloué: {budget-alloue}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

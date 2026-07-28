@@ -134,14 +134,19 @@ Le catalogue doit afficher le nombre d'outils dans l'en-tête. S'il affiche
 
 À exécuter une fois dans le **SQL Editor** de Supabase, dans cet ordre :
 
-1. `supabase/setup_auth.sql` — table `profiles`, RLS, trigger d'inscription
-2. `supabase/stripe_schema.sql` — colonnes Stripe sur `profiles`
-3. `setup_translations.sql` — table `tool_translations` (cache de traduction)
+1. `supabase/tools_schema.sql` — table `tools`, statut `draft`/`published`, RLS
+2. `supabase/setup_auth.sql` — table `profiles`, RLS, trigger d'inscription
+3. `supabase/stripe_schema.sql` — colonnes Stripe sur `profiles`
+4. `setup_translations.sql` — table `tool_translations` (cache de traduction)
 
-Pour remplir le catalogue d'outils :
+> `tools_schema.sql` doit passer **en premier** : `setup_translations.sql`
+> déclare une clé étrangère vers `tools(id)`.
+
+Pour remplir le catalogue d'outils depuis `data/tools/` :
 
 ```bash
-npx tsx scripts/generate_tools_from_catalog_v2.ts
+npx tsx scripts/validate_tools.ts        # doit sortir sans erreur
+npx tsx scripts/sync_tools_to_db.ts --write
 ```
 
 ---

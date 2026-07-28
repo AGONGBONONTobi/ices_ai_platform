@@ -1,0 +1,85 @@
+{
+  "id": "retour-d-experience-template",
+  "title": "Template de retour d'expérience (RETEX)",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "periode-travail",
+      "type": "number",
+      "label": "Durée de votre période de travail (en mois)",
+      "placeholder": "Exemple : 12",
+      "required": true
+    },
+    {
+      "name": "satisfaction-professionnelle",
+      "type": "select",
+      "options": [
+        "Très satisfaite",
+        "Satisfaite",
+        "Satisfaite mais avec des réserves",
+        "Dissatisfaite",
+        "Très dissatisfaite"
+      ],
+      "label": "Quelle est votre satisfaction professionnelle ?",
+      "placeholder": "Choisissez une option",
+      "required": true
+    },
+    {
+      "name": "commentaires-positifs",
+      "type": "textarea",
+      "label": "Quels sont les points positifs de votre expérience ?",
+      "placeholder": "Exemple : Les collègues sont très accueillants, l'environnement de travail est agréable, etc.",
+      "required": true
+    },
+    {
+      "name": "commentaires-negatifs",
+      "type": "textarea",
+      "label": "Quels sont les points négatifs de votre expérience ?",
+      "placeholder": "Exemple : Le manque de ressources, les longues heures de travail, etc.",
+      "required": true
+    },
+    {
+      "name": "recommandation",
+      "type": "select",
+      "options": [
+        "Je recommande vivement cette entreprise",
+        "Je recommande avec des réserves",
+        "Je ne recommande pas"
+      ],
+      "label": "Voudriez-vous recommander cette entreprise ?",
+      "placeholder": "Choisissez une option",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : PeriodeTravail: {periode-travail}, SatisfactionProfessionnelle: {satisfaction-professionnelle}, CommentairesPositifs: {commentaires-positifs}, CommentairesNegatifs: {commentaires-negatifs}, Recommandation: {recommandation}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -49,7 +49,7 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Encadrant: {encadrreur}, Domaine: {domaine}, Commentaire: {commentaire}, Score: {score}, Recommandations: {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Encadrant: {encadreur}, Domaine: {domaine}, Commentaire: {commentaire}, Score: {score}, Recommandations: {recommandations}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
   "outputSchema": {
     "type": "object",
     "properties": {

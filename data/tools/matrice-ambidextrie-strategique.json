@@ -1,0 +1,71 @@
+{
+  "id": "matrice-ambidextrie-strategique",
+  "title": "Matrice d'ambidextrie stratégique (exploration/exploitation)",
+  "category": "INNOVATION & R&D",
+  "inputs": [
+    {
+      "name": "priorite_exploration",
+      "type": "number",
+      "label": "Quel est le niveau de priorité accordé à l'exploration ? (sur 100)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "ressources_disponibles",
+      "type": "textarea",
+      "label": "Quelles sont les ressources disponibles pour l'exploitation ? (listez-les)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "risques_associes",
+      "type": "select",
+      "options": [
+        "Faibles",
+        "Moyens",
+        "Élevés"
+      ],
+      "label": "Quels sont les risques associés à l'exploitation ?",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "objectifs_strategiques",
+      "type": "textarea",
+      "label": "Quels sont les objectifs stratégiques de l'entreprise ? (listez-les)",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Priorité exploration : {priorite_exploration}, Ressources disponibles : {ressources_disponibles}, Risques associés : {risques_associes}, Objectifs stratégiques : {objectifs_strategiques}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

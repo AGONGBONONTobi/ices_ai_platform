@@ -1,0 +1,78 @@
+{
+  "id": "evaluation-en-situation-de-travail",
+  "title": "Évaluation en situation de travail (EST)",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "contexte-travail",
+      "type": "textarea",
+      "label": "Décrivez le contexte de travail dans lequel l'apprenant est actuellement impliqué.",
+      "placeholder": "Exemple : travail en équipe, travail en autonomie, etc.",
+      "required": true
+    },
+    {
+      "name": "objectifs-travail",
+      "type": "textarea",
+      "label": "Quels sont les objectifs principaux du travail de l'apprenant ?",
+      "placeholder": "Exemple : atteindre un résultat, résoudre un problème, etc.",
+      "required": true
+    },
+    {
+      "name": "ressources-disponibles",
+      "type": "textarea",
+      "label": "Quelles ressources (humaines, matérielles, financières, etc.) sont disponibles pour l'apprenant pour atteindre ses objectifs ?",
+      "placeholder": "Exemple : équipe de soutien, outils de travail, etc.",
+      "required": true
+    },
+    {
+      "name": "choix-methodologie",
+      "type": "select",
+      "options": [
+        "Approche projet",
+        "Approche par compétence",
+        "Approche par objectif"
+      ],
+      "label": "Quelle méthode d'apprentissage est utilisée par l'apprenant pour atteindre ses objectifs ?",
+      "placeholder": "Sélectionnez une méthode",
+      "required": true
+    },
+    {
+      "name": "score-autonomie",
+      "type": "number",
+      "label": "Sur une échelle de 1 à 10, comment évaluez-vous l'autonomie de l'apprenant dans son travail ?",
+      "placeholder": "Exemple : 5",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Contexte de travail : {contexte-travail}, Objectifs du travail : {objectifs-travail}, Ressources disponibles : {ressources-disponibles}, Méthode d'apprentissage : {choix-methodologie}, Autonomie : {score-autonomie}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

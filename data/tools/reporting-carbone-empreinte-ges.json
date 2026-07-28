@@ -28,7 +28,7 @@
       "required": true
     },
     {
-      "name": "emission_de_gaz_a effet_de_serre",
+      "name": "emission_de_gaz_a_effet_de_serre",
       "type": "textarea",
       "label": "Quelles sont les principales émissions de gaz à effet de serre que vous avez identifiées ?",
       "placeholder": "Exemple : émissions de CO2, CH4, N2O, etc.",

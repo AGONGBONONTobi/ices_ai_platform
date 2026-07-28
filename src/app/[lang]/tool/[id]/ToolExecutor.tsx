@@ -54,14 +54,74 @@ function getScoreColor(score: number) {
   return { color: "#dc2626", label: "À améliorer" };
 }
 
+/** Blocs que cette vue sait rendre nativement (score, axes, recommandations). */
+function hasDiagnosticShape(result: any) {
+  return (
+    result?.score_global !== undefined ||
+    Array.isArray(result?.axes) ||
+    Array.isArray(result?.recommandations)
+  );
+}
+
+/**
+ * Repli pour les outils dont l'`outputSchema` ne suit pas la forme diagnostic
+ * (ex. `{ result: string }`). Sans lui, un résultat parfaitement valide
+ * s'afficherait comme un succès vide.
+ */
+function GenericResult({ result }: { result: Record<string, any> }) {
+  return (
+    <div className="space-y-4">
+      {Object.entries(result).map(([key, value]) => (
+        <div key={key} className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+          <h3
+            className="text-sm font-bold text-slate-800 mb-2 capitalize"
+            style={{ fontFamily: "Outfit, sans-serif" }}
+          >
+            {key.replace(/_/g, " ")}
+          </h3>
+          {typeof value === "string" ? (
+            <div className="prose prose-slate max-w-none text-sm leading-relaxed">
+              <ReactMarkdown>{value}</ReactMarkdown>
+            </div>
+          ) : Array.isArray(value) ? (
+            <ul className="space-y-2 text-sm text-slate-700">
+              {value.map((item, idx) => (
+                <li key={idx} className="flex gap-2">
+                  <span className="text-violet-400">•</span>
+                  {typeof item === "object" ? JSON.stringify(item) : String(item)}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm text-slate-700">{String(value)}</p>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
   const [isGenerating, setIsGenerating] = useState(false);
   const [result, setResult] = useState<any | null>(null);
+  const [answers, setAnswers] = useState<{ label: string; value: string }[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (userInputs: Record<string, any>) => {
     setIsGenerating(true);
     setError(null);
+
+    // Le rapport PDF rappelle les éléments déclarés : sans eux, le score ne se
+    // rattache à rien de vérifiable.
+    setAnswers(
+      tool.inputs.map((input) => ({
+        label: input.question || input.label || input.name,
+        value:
+          userInputs[input.name] === undefined || userInputs[input.name] === ""
+            ? ""
+            : String(userInputs[input.name]),
+      }))
+    );
 
     try {
       // Le backend FastAPI authentifie via le jeton Supabase du navigateur
@@ -74,7 +134,7 @@ export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
       }
 
       const aiResult = await executeTool(
-        { toolConfig: tool, userInputs, lang },
+        { toolId: tool.id, userInputs, lang },
         session.access_token
       );
       setResult(aiResult);
@@ -135,11 +195,9 @@ export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
   }
 
   if (result) {
-    const pdfText = typeof result === "string"
-      ? result
-      : `# Score Global: ${result.score_global || 0} / 100\n\n## Axes d'analyse\n${(result.axes || []).map((a: any) => `- **${a.axe}**: ${a.score}/100`).join("\n")}\n\n## Recommandations\n${(result.recommandations || []).map((r: string) => `- ${r}`).join("\n")}`;
+    const isDiagnostic = typeof result !== "string" && hasDiagnosticShape(result);
 
-    const scoreInfo = typeof result !== "string" && result.score_global !== undefined
+    const scoreInfo = isDiagnostic && result.score_global !== undefined
       ? getScoreColor(result.score_global)
       : null;
 
@@ -163,6 +221,8 @@ export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
           <div className="prose prose-slate max-w-none text-sm leading-relaxed p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
             <ReactMarkdown>{result}</ReactMarkdown>
           </div>
+        ) : !isDiagnostic ? (
+          <GenericResult result={result} />
         ) : (
           <div className="space-y-6">
             {/* Global Score */}
@@ -249,7 +309,13 @@ export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
 
         {/* Action buttons */}
         <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-slate-100">
-          <PdfDownloadButton toolTitle={tool.title} category={tool.category} resultText={pdfText} />
+          <PdfDownloadButton
+            toolTitle={tool.title}
+            category={tool.category}
+            result={result}
+            answers={answers}
+            lang={lang}
+          />
           <Button
             variant="outline"
             onClick={() => setResult(null)}

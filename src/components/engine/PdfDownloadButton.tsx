@@ -19,7 +19,7 @@ export function PdfDownloadButton(props: GenericReportProps) {
   return (
     <PDFDownloadLink
       document={<GenericReportDocument {...props} />}
-      fileName={`Rapport_${props.toolTitle.replace(/\s+/g, "_")}.pdf`}
+      fileName={`Rapport_${props.toolTitle.replace(/[^0-9A-Za-zÀ-ÿ]+/g, "_").replace(/^_+|_+$/g, "")}_${new Date().toISOString().slice(0, 10)}.pdf`}
       className="w-full"
     >
       {({ blob, url, loading, error }) =>

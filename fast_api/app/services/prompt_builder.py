@@ -1,4 +1,14 @@
-"""Construction des prompts — portage de src/lib/engine/prompt-builder.ts."""
+"""Construction des prompts envoyés au LLM.
+
+Le `promptTemplate` de la fiche d'outil est la seule chose qui distingue un outil
+d'un autre : il porte le métier (posture de l'expert, méthodologie, axes
+d'analyse). Il est donc interpolé avec les réponses de l'utilisateur puis placé
+en tête du message utilisateur.
+
+Le prompt système ne porte que les règles transverses (langue, format), et décrit
+le format attendu à partir de l'`outputSchema` **de l'outil**, jamais d'un schéma
+codé en dur.
+"""
 
 import json
 import re
@@ -39,21 +49,40 @@ def build_input_lines(tool: ToolConfig, user_inputs: dict[str, Any]) -> str:
 
 
 def build_system_prompt(tool: ToolConfig, lang: str) -> str:
-    return f"""You are an elite Management & Strategy Consultant.
+    """Règles transverses uniquement — le métier vit dans le promptTemplate de l'outil."""
+    return f"""You are an expert consultant executing one specific professional tool.
 Tool: "{tool.title}" | Category: "{tool.category}"
 
 STRICT RULES:
 1. LANGUAGE: Respond entirely in {language_name(lang)}. No exceptions.
 2. OUTPUT FORMAT: Return ONLY a raw valid JSON object matching this exact schema:
-   {json.dumps(tool.outputSchema, indent=2, ensure_ascii=False)}
-   - "score_global": integer 0–100 reflecting overall maturity
-   - "axes": array of {{axe: string, score: number (0–100)}} — one per dimension assessed
-   - "recommandations": array of at least 5 detailed, actionable strings
-3. NO markdown outside the JSON. NO explanations. NO code blocks. ONLY the JSON."""
+{json.dumps(tool.outputSchema, indent=2, ensure_ascii=False)}
+   Every property declared above must be present. Respect the declared types
+   exactly: a "number" must be a JSON number, never a string nor a range.
+3. Follow the tool instructions given in the user message. Base your answer on the
+   facts provided; do not invent facts that were not given.
+4. NO markdown outside the JSON. NO explanations. NO code blocks. ONLY the JSON."""
 
 
 def build_user_prompt(tool: ToolConfig, user_inputs: dict[str, Any]) -> str:
-    return f"""Here are the factual answers provided by the company representative:
+    """Instruction métier de l'outil (promptTemplate interpolé) + rappel factuel des réponses."""
+    instructions = build_prompt(tool.promptTemplate, user_inputs)
+
+    return f"""{instructions}
+
+--- Réponses fournies par l'utilisateur ---
 {build_input_lines(tool, user_inputs)}
 
-Based on these factual observations, generate the diagnostic result now."""
+Génère maintenant le résultat, en respectant strictement le schéma de sortie."""
+
+
+def build_retry_prompt(previous_answer: str, validation_error: str) -> str:
+    """Correction réinjectée quand la sortie ne respecte pas l'outputSchema (cf. A3)."""
+    return f"""Your previous answer did not match the required JSON schema.
+
+Validation error: {validation_error}
+
+Your previous answer was:
+{previous_answer}
+
+Return the corrected JSON object only. No markdown, no explanation."""

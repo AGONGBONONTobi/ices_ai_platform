@@ -1,0 +1,78 @@
+{
+  "id": "outil-de-gestion-de-la-connaissance-projet",
+  "title": "Outil de gestion de la connaissance projet (KB)",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "nomDuProjet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple : Projet XYZ",
+      "required": true
+    },
+    {
+      "name": "descriptionDuProjet",
+      "type": "textarea",
+      "label": "Description du projet",
+      "placeholder": "Exemple : Projet de développement d'une nouvelle application",
+      "required": true
+    },
+    {
+      "name": "responsableDuProjet",
+      "type": "text",
+      "label": "Responsable du projet",
+      "placeholder": "Exemple : John Doe",
+      "required": true
+    },
+    {
+      "name": "prioriteDuProjet",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Elevé"
+      ],
+      "label": "Priorité du projet",
+      "placeholder": "Exemple : Faible",
+      "required": true
+    },
+    {
+      "name": "dureeEstimeeDuProjet",
+      "type": "number",
+      "label": "Durée estimée du projet",
+      "placeholder": "Exemple : 12",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet : {nomDuProjet}, Description du projet : {descriptionDuProjet}, Responsable du projet : {responsableDuProjet}, Priorité du projet : {prioriteDuProjet}, Durée estimée du projet : {dureeEstimeeDuProjet}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

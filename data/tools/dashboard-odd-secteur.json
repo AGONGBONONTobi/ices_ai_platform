@@ -1,0 +1,80 @@
+{
+  "id": "dashboard-odd-secteur",
+  "title": "Dashboard de pilotage des ODD par secteur",
+  "category": "REPORTING & ANALYTICS DASHBOARD",
+  "inputs": [
+    {
+      "name": "secteur",
+      "type": "select",
+      "options": [
+        "Éducation",
+        "Énergie",
+        "Eau",
+        "Santé",
+        "Développement économique"
+      ],
+      "label": "Sélectionner le secteur",
+      "placeholder": "Sélectionner un secteur",
+      "required": true
+    },
+    {
+      "name": "annee",
+      "type": "number",
+      "label": "Année de référence",
+      "placeholder": "Exemple : 2022",
+      "required": true
+    },
+    {
+      "name": "indicatif",
+      "type": "textarea",
+      "label": "Indicateur de performance",
+      "placeholder": "Exemple : Taux de scolarisation",
+      "required": true
+    },
+    {
+      "name": "cible",
+      "type": "number",
+      "label": "Cible à atteindre",
+      "placeholder": "Exemple : 90%",
+      "required": true
+    },
+    {
+      "name": "resultat",
+      "type": "number",
+      "label": "Résultat actuel",
+      "placeholder": "Exemple : 85%",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un expert en développement durable. L'utilisateur a sélectionné le secteur {secteur}, l'année de référence {annee}, l'indicateur de performance {indicatif}, la cible à atteindre {cible} et le résultat actuel {resultat}. Analyse ces informations et propose un plan d'action pour atteindre la cible.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

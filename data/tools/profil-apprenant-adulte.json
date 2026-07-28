@@ -1,0 +1,80 @@
+{
+  "id": "profil-apprenant-adulte",
+  "title": "Profil de l'apprenant adulte (andragogie — Knowles)",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "age",
+      "type": "number",
+      "label": "Âge de l'apprenant",
+      "placeholder": "Âge en années",
+      "required": true
+    },
+    {
+      "name": "niveauEtude",
+      "type": "select",
+      "options": [
+        "Secondaire",
+        "Bac+2",
+        "Bac+3",
+        "Bac+4",
+        "Bac+5 ou plus"
+      ],
+      "label": "Niveau d'études de l'apprenant",
+      "placeholder": "Choisissez un niveau",
+      "required": true
+    },
+    {
+      "name": "motivation",
+      "type": "textarea",
+      "label": "Motivation de l'apprenant",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "expérienceProfessionnelle",
+      "type": "textarea",
+      "label": "Expérience professionnelle de l'apprenant",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    },
+    {
+      "name": "objectifsApprentissage",
+      "type": "textarea",
+      "label": "Objectifs d'apprentissage de l'apprenant",
+      "placeholder": "Exemple de réponse",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Âge: {age}, Niveau d'études: {niveauEtude}, Motivation: {motivation}, Expérience professionnelle: {expérienceProfessionnelle}, Objectifs d'apprentissage: {objectifsApprentissage}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

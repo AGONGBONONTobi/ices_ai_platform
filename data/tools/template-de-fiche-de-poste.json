@@ -1,0 +1,80 @@
+{
+  "id": "template-de-fiche-de-poste",
+  "title": "Template de fiche de poste (compétences & responsabilités)",
+  "category": "TEMPLATES & MODÈLES PRÊTS À L'EMPLOI",
+  "inputs": [
+    {
+      "name": "nom-poste",
+      "type": "text",
+      "label": "Nom du poste",
+      "placeholder": "Exemple : Responsable RH",
+      "required": true
+    },
+    {
+      "name": "competences",
+      "type": "textarea",
+      "label": "Compétences requises",
+      "placeholder": "Exemple : gestion du temps, leadership, communication",
+      "required": true
+    },
+    {
+      "name": "responsabilites",
+      "type": "textarea",
+      "label": "Responsabilités du poste",
+      "placeholder": "Exemple : gérer les équipes, suivre les projets, analyser les données",
+      "required": true
+    },
+    {
+      "name": "niveau-formation",
+      "type": "select",
+      "options": [
+        "Bac +2",
+        "Bac +3",
+        "Bac +5",
+        "Master",
+        "Doctorat"
+      ],
+      "label": "Niveau de formation requis",
+      "placeholder": "Exemple : Bac +2",
+      "required": true
+    },
+    {
+      "name": "experience",
+      "type": "number",
+      "label": "Expérience requise (en années)",
+      "placeholder": "Exemple : 3 ans",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du poste : {nom-poste}, Compétences requises : {competences}, Responsabilités du poste : {responsabilites}, Niveau de formation requis : {niveau-formation}, Expérience requise : {experience} années. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

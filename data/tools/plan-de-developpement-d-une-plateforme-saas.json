@@ -49,7 +49,7 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en transformation digitale et IA. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Cible entreprise : {cible-entreprise}, Fonctionnalités attendues : {fonctionnalités-esperées}, Ressources disponibles : {ressources-disponibles}, Période de lancement : {periode-de-lancement}. Analyse ces informations et propose un plan de développement détaillé pour la plateforme SaaS, y compris les étapes clés, les ressources nécessaires et les délais prévus.",
+  "promptTemplate": "Tu es un consultant expert en transformation digitale et IA. L'utilisateur a répondu : Objectif stratégique : {objectif-strategique}, Cible entreprise : {cible-entreprise}, Fonctionnalités attendues : {fonctionnalites-esperées}, Ressources disponibles : {ressources-disponibles}, Période de lancement : {periode-de-lancement}. Analyse ces informations et propose un plan de développement détaillé pour la plateforme SaaS, y compris les étapes clés, les ressources nécessaires et les délais prévus.",
   "outputSchema": {
     "type": "object",
     "properties": {

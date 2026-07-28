@@ -8,19 +8,29 @@ import logging
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from slowapi.errors import RateLimitExceeded
+from slowapi.middleware import SlowAPIMiddleware
 
 from app.config import get_settings
+from app.observability import init_sentry
+from app.rate_limit import limiter, rate_limit_handler
 from app.routers import execute, profile, stripe_routes, tools
 
 logging.basicConfig(level=logging.INFO)
 
 settings = get_settings()
 
+init_sentry()
+
 app = FastAPI(
     title="Plateforme IA — API",
     version="0.1.0",
     description="Backend des outils d'analyse IA (catalogue, exécution LLM, facturation).",
 )
+
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, rate_limit_handler)
+app.add_middleware(SlowAPIMiddleware)
 
 app.add_middleware(
     CORSMiddleware,

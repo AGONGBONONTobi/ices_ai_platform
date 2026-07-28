@@ -1,0 +1,83 @@
+{
+  "id": "matrice-des-risques-projet",
+  "title": "Matrice des risques projet (RACI + heat map)",
+  "category": "GESTION DE PROJETS & PMO",
+  "inputs": [
+    {
+      "name": "nom_projet",
+      "type": "text",
+      "label": "Nom du projet",
+      "placeholder": "Exemple : Développement d'un nouveau produit",
+      "required": true
+    },
+    {
+      "name": "equipe_responsable",
+      "type": "textarea",
+      "label": "Équipe responsable du projet",
+      "placeholder": "Exemple : Équipe de développement, Équipe de test, etc.",
+      "required": true
+    },
+    {
+      "name": "risques_identifies",
+      "type": "textarea",
+      "label": "Risques identifiés",
+      "placeholder": "Exemple : Perte de données, Retard de livraison, etc.",
+      "required": true
+    },
+    {
+      "name": "impact_risque",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Impact du risque",
+      "placeholder": "Exemple : Faible, Moyen, Élevé",
+      "required": true
+    },
+    {
+      "name": "probabilite_risque",
+      "type": "select",
+      "options": [
+        "Faible",
+        "Moyen",
+        "Élevé"
+      ],
+      "label": "Probabilité du risque",
+      "placeholder": "Exemple : Faible, Moyen, Élevé",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Nom du projet : {nom_projet}, Équipe responsable du projet : {equipe_responsable}, Risques identifiés : {risques_identifies}, Impact du risque : {impact_risque}, Probabilité du risque : {probabilite_risque}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          }
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
