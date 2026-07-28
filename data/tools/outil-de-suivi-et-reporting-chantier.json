@@ -37,35 +37,30 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en gestion de projet. L'utilisateur a répondu : Nom du chantier : {nom_chantier}, État d'avancement : {etat_avancement}, Commentaires : {commentaires}, Budget alloué : {budget_alloué}. Évalue l'avancement du chantier et propose un score global sur 100, une évaluation par axe (respect du budget, respect des délais, qualité des travaux), et des recommandations.",
+  "promptTemplate": "Tu es un expert en gestion de projet. L'utilisateur a répondu : Nom du chantier : {nom_chantier}, État d'avancement : {etat_avancement}, Commentaires : {commentaires}, Budget alloué : {budget_alloué}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
-      },
-      "axes": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "axe": {
-              "type": "string"
-            },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
-            }
-          }
-        }
-      },
-      "recommandations": {
+      "colonnes": {
         "type": "array",
         "items": {
           "type": "string"
         }
+      },
+      "lignes": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    }
-  }
+    },
+    "required": [
+      "colonnes",
+      "lignes"
+    ]
+  },
+  "output_kind": "table"
 }

@@ -42,35 +42,30 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en reporting carbone & empreinte GES. L'utilisateur a répondu : Methode de calcul : {methode_de_calcule}, Scopes de calcul : {scopes_de_calcule}, Emissions de gaz à effet de serre : {emission_de_gaz_a_effet_de_serre}, Objectifs de réduction : {objectifs_de_reduction}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un expert en reporting carbone & empreinte GES. L'utilisateur a répondu : Methode de calcul : {methode_de_calcule}, Scopes de calcul : {scopes_de_calcule}, Emissions de gaz à effet de serre : {emission_de_gaz_a_effet_de_serre}, Objectifs de réduction : {objectifs_de_reduction}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
-      },
-      "axes": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "axe": {
-              "type": "string"
-            },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
-            }
-          }
-        }
-      },
-      "recommandations": {
+      "colonnes": {
         "type": "array",
         "items": {
           "type": "string"
         }
+      },
+      "lignes": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    }
-  }
+    },
+    "required": [
+      "colonnes",
+      "lignes"
+    ]
+  },
+  "output_kind": "table"
 }

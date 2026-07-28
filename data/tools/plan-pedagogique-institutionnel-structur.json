@@ -37,35 +37,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant en éducation. L'utilisateur a répondu : Objectif pédagogique: {objectif_pedagogique}, Niveau scolaire: {niveau_scolaire}, Ressources disponibles: {ressources_disponibles}, Délais: {delais}. Analysez ces informations et proposez un plan pédagogique institutionnel structuré. Évaluez les forces et les faiblesses de l'institution, définissez des objectifs spécifiques, mesurables, atteignables, pertinents et temporisés (SMART) et proposez des stratégies pour les atteindre. Donnez un score global sur 100, une évaluation par axe (ex : pédagogie, ressources, organisation), et des recommandations concrètes.",
+  "promptTemplate": "Vous êtes un consultant en éducation. L'utilisateur a répondu : Objectif pédagogique: {objectif_pedagogique}, Niveau scolaire: {niveau_scolaire}, Ressources disponibles: {ressources_disponibles}, Délais: {delais}. Analysez ces informations et proposez un plan pédagogique institutionnel structuré. Évaluez les forces et les faiblesses de l'institution, définissez des objectifs spécifiques, mesurables, atteignables, pertinents et temporisés (SMART) et proposez des stratégies pour les atteindre.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

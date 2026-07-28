@@ -38,35 +38,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant expert en mesure d'impact. L'utilisateur a répondu : Objectif: {objectif}, Type d'impact: {type_impact}, Budget: {budget}, Résultats attendus: {resultats_attendus}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer l'impact de l'ONG.",
+  "promptTemplate": "Vous êtes un consultant expert en mesure d'impact. L'utilisateur a répondu : Objectif: {objectif}, Type d'impact: {type_impact}, Budget: {budget}, Résultats attendus: {resultats_attendus}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

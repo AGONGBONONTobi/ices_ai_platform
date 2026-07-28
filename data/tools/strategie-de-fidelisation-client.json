@@ -43,35 +43,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant en marketing. L'utilisateur a répondu : Type de client : {typeClient}, Objectifs de fidélisation : {objectifsFidelisation}, Canal de communication : {canalCommunication}, Budget pour la fidélisation : {budgetFidelisation}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (par exemple, stratégie, communication, budget), et des recommandations pour améliorer la stratégie de fidélisation client.",
+  "promptTemplate": "Vous êtes un consultant en marketing. L'utilisateur a répondu : Type de client : {typeClient}, Objectifs de fidélisation : {objectifsFidelisation}, Canal de communication : {canalCommunication}, Budget pour la fidélisation : {budgetFidelisation}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

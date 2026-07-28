@@ -40,35 +40,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en gestion de la qualité en santé. L'utilisateur a répondu : Nom de l'établissement : {nom_de_l_etablissement}, Type d'accréditation visée : {type_d_accreditation}, Description des processus de gestion de la qualité : {description_des_processus}, Niveau de maturité : {niveau_de_maturite}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert en gestion de la qualité en santé. L'utilisateur a répondu : Nom de l'établissement : {nom_de_l_etablissement}, Type d'accréditation visée : {type_d_accreditation}, Description des processus de gestion de la qualité : {description_des_processus}, Niveau de maturité : {niveau_de_maturite}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

@@ -49,35 +49,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en sourcing & chasse de têtes. L'utilisateur a répondu : Entreprise : {entreprise}, Poste à rechercher : {poste_a_rechercher}, Niveau d'expertise : {niveau_d_expertise}, Domaine : {domaine}, Description de l'offre : {description_de_l_offre}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert en sourcing & chasse de têtes. L'utilisateur a répondu : Entreprise : {entreprise}, Poste à rechercher : {poste_a_rechercher}, Niveau d'expertise : {niveau_d_expertise}, Domaine : {domaine}, Description de l'offre : {description_de_l_offre}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

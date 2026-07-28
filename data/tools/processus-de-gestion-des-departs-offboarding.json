@@ -38,35 +38,43 @@
       "required": false
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en RH. L'utilisateur a répondu : Raison du départ : {raisonDepart}, Durée du préavis : {dureePreavis} jours, Tâches à transférer : {tachesTransfert}, Formation pour le remplaçant : {formationRemplacement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (gestion des départs, transfert des tâches, formation du remplaçant), et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert en RH. L'utilisateur a répondu : Raison du départ : {raisonDepart}, Durée du préavis : {dureePreavis} jours, Tâches à transférer : {tachesTransfert}, Formation pour le remplaçant : {formationRemplacement}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

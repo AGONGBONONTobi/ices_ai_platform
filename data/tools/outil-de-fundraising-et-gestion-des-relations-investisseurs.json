@@ -38,35 +38,43 @@
       "required": false
     }
   ],
-  "promptTemplate": "Vous êtes un expert en fundraising et gestion des relations investisseurs. L'utilisateur a répondu : Objectif financier: {objectif_financier}, Type d'investisseurs: {type_investisseurs}, Description du projet: {description_projet}, Stratégie de communication: {strategie_communication}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Vous êtes un expert en fundraising et gestion des relations investisseurs. L'utilisateur a répondu : Objectif financier: {objectif_financier}, Type d'investisseurs: {type_investisseurs}, Description du projet: {description_projet}, Stratégie de communication: {strategie_communication}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

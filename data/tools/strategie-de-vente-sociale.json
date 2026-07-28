@@ -37,35 +37,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en marketing. L'utilisateur a répondu : Objectif de vente : {objectifVente}, Canal social : {canalSocial}, Public cible : {publicCible}, Contenu proposé : {contenuPropose}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (par exemple, qualité du contenu, pertinence du public cible, efficacité du canal social), et des recommandations pour améliorer la stratégie de vente sociale.",
+  "promptTemplate": "Tu es un consultant expert en marketing. L'utilisateur a répondu : Objectif de vente : {objectifVente}, Canal social : {canalSocial}, Public cible : {publicCible}, Contenu proposé : {contenuPropose}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

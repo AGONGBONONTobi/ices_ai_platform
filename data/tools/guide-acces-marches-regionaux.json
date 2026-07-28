@@ -47,35 +47,43 @@
       "required": false
     }
   ],
-  "promptTemplate": "Vous êtes un expert en commerce international. L'utilisateur cherche à accéder aux marchés régionaux avec son produit ou service. Voici les informations fournies : Type de produit : {type_produit}, Pays cible : {pays_cible}, Description du produit : {description_produit}, Expérience dans l'exportation : {experience_export} années. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe (facilité d'accès, demande potentielle, concurrence, barrières réglementaires), et des recommandations spécifiques pour améliorer les chances de succès.",
+  "promptTemplate": "Vous êtes un expert en commerce international. L'utilisateur cherche à accéder aux marchés régionaux avec son produit ou service. Voici les informations fournies : Type de produit : {type_produit}, Pays cible : {pays_cible}, Description du produit : {description_produit}, Expérience dans l'exportation : {experience_export} années.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

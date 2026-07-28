@@ -37,35 +37,43 @@
       "required": false
     }
   ],
-  "promptTemplate": "Vous êtes un expert en gestion hôtelière. L'utilisateur a répondu : Taux d'occupation : {taux-occupation}, Tarif moyen : {tarif-moyen}, Période d'évaluation : {periode-evaluation}, Description des activités : {description-activites}. Analysez ces informations pour fournir un score global sur 100, une évaluation par axe, et des recommandations pour améliorer le RevPAR de l'hôtel.",
+  "promptTemplate": "Vous êtes un expert en gestion hôtelière. L'utilisateur a répondu : Taux d'occupation : {taux-occupation}, Tarif moyen : {tarif-moyen}, Période d'évaluation : {periode-evaluation}, Description des activités : {description-activites}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

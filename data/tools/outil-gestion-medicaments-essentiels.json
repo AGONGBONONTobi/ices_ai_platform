@@ -38,35 +38,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un pharmacologue. Le patient a {agePatient} ans, il est atteint de {pathologie}, il prend actuellement les médicaments suivants : {medicamentsActuels} et a des allergies : {allergies}. Évaluez la nécessité de ces médicaments et donnez un score global sur 100. Proposez une évaluation par axe (efficacité, sécurité, observance) et des recommandations.",
+  "promptTemplate": "Vous êtes un pharmacologue. Le patient a {agePatient} ans, il est atteint de {pathologie}, il prend actuellement les médicaments suivants : {medicamentsActuels} et a des allergies : {allergies}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

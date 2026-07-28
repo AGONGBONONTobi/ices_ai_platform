@@ -15,9 +15,41 @@
   "outputSchema": {
     "type": "object",
     "properties": {
-      "result": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          },
+          "required": [
+            "axe",
+            "score"
+          ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
-    }
-  }
+    },
+    "required": [
+      "score_global",
+      "axes",
+      "recommandations"
+    ]
+  },
+  "output_kind": "assessment"
 }

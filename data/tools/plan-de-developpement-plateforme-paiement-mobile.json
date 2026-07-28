@@ -37,35 +37,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant en développement de plateformes de paiement mobile. L'utilisateur a répondu : Objectif: {objectif}, Public cible: {publicCible}, Fonctionnalités: {fonctionnalites}, Budget: {budget}. Analysez ces informations pour proposer un plan de développement. Évaluez la faisabilité du projet et donnez un score global sur 100. Proposez une évaluation par axe (sécurité, expérience utilisateur, fonctionnalités) et des recommandations pour améliorer le projet.",
+  "promptTemplate": "Vous êtes un consultant en développement de plateformes de paiement mobile. L'utilisateur a répondu : Objectif: {objectif}, Public cible: {publicCible}, Fonctionnalités: {fonctionnalites}, Budget: {budget}. Analysez ces informations pour proposer un plan de développement.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

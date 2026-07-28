@@ -49,35 +49,48 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Méthode d'apprentissage : {methode-apprentissage}, Niveau d'apprentissage : {niveau-apprentissage}, Motivations d'apprentissage : {motivation-apprentissage}, Objectifs d'apprentissage : {objectifs-apprentissage}, Ressources disponibles : {ressources-disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Méthode d'apprentissage : {methode-apprentissage}, Niveau d'apprentissage : {niveau-apprentissage}, Motivations d'apprentissage : {motivation-apprentissage}, Objectifs d'apprentissage : {objectifs-apprentissage}, Ressources disponibles : {ressources-disponibles}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "dimensions": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "dimension": {
               "type": "string"
             },
-            "score": {
+            "intensite": {
               "type": "number",
-              "description": "Score sur 100"
+              "description": "Intensité de 0 à 100 — une mesure, pas une note"
+            },
+            "interpretation": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "dimension",
+            "intensite",
+            "interpretation"
+          ]
         }
       },
-      "recommandations": {
+      "pistes": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "dimensions",
+      "pistes"
+    ]
+  },
+  "output_kind": "profile"
 }

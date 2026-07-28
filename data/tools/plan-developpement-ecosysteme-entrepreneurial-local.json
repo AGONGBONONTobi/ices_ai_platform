@@ -37,35 +37,36 @@
       "required": false
     }
   ],
-  "promptTemplate": "Vous êtes un expert en développement d'écosystèmes entrepreneuriaux locaux. L'utilisateur a répondu : Objectif principal : {objectif_principal}, Type d'écosystème : {type_eco}, Ressources disponibles : {ressources_disponibles}, Partenaires potentiels : {partenaires_potentiels}. Analysez ces informations pour proposer un plan de développement. Donnez un score global sur 100, une évaluation par axe (au moins 3 axes pertinents), et des recommandations concrètes.",
+  "promptTemplate": "Vous êtes un expert en développement d'écosystèmes entrepreneuriaux locaux. L'utilisateur a répondu : Objectif principal : {objectif_principal}, Type d'écosystème : {type_eco}, Ressources disponibles : {ressources_disponibles}, Partenaires potentiels : {partenaires_potentiels}. Analysez ces informations pour proposer un plan de développement.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

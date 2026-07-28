@@ -42,35 +42,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant expert en certification bio et standards internationaux. L'utilisateur a répondu : Type de produit: {type_produit}, Superficie de l'exploitation: {superficie_exploitation} hectares, Processus de production et transformation: {description_processus}, Existence de documentation: {existence_documentation}. Analysez ces informations et attribuez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer la certification.",
+  "promptTemplate": "Vous êtes un consultant expert en certification bio et standards internationaux. L'utilisateur a répondu : Type de produit: {type_produit}, Superficie de l'exploitation: {superficie_exploitation} hectares, Processus de production et transformation: {description_processus}, Existence de documentation: {existence_documentation}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

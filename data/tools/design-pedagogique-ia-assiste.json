@@ -49,35 +49,48 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un designer pédagogique expert. L'utilisateur a répondu : Objectifs : {objectifs}, Public cible : {public-cible}, Contenu d'apprentissage : {contenu-apprentissage}, Méthode d'apprentissage : {méthode-apprentissage}, Ressources disponibles : {ressources-disponibles}. Analyse ces informations et propose un plan de design pédagogique personnalisé, incluant un score global sur 100, une évaluation par axe et des recommandations pour améliorer l'apprentissage.",
+  "promptTemplate": "Tu es un designer pédagogique expert. L'utilisateur a répondu : Objectifs : {objectifs}, Public cible : {public-cible}, Contenu d'apprentissage : {contenu-apprentissage}, Méthode d'apprentissage : {méthode-apprentissage}, Ressources disponibles : {ressources-disponibles}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "dimensions": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "dimension": {
               "type": "string"
             },
-            "score": {
+            "intensite": {
               "type": "number",
-              "description": "Score sur 100"
+              "description": "Intensité de 0 à 100 — une mesure, pas une note"
+            },
+            "interpretation": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "dimension",
+            "intensite",
+            "interpretation"
+          ]
         }
       },
-      "recommandations": {
+      "pistes": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "dimensions",
+      "pistes"
+    ]
+  },
+  "output_kind": "profile"
 }

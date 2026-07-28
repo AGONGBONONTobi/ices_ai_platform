@@ -61,35 +61,43 @@
       "required": false
     }
   ],
-  "promptTemplate": "Tu es un expert en finance. L'utilisateur a sélectionné le segment {segment}, le produit {produit} et le marché {marche}. Les revenus totaux sont de {revenus} et les coûts totaux sont de {couts}. Analyse ces informations et donne un score global de rentabilité sur 100, une évaluation par axe (revenus, coûts, rentabilité) et des recommandations.",
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a sélectionné le segment {segment}, le produit {produit} et le marché {marche}. Les revenus totaux sont de {revenus} et les coûts totaux sont de {couts}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

@@ -39,35 +39,43 @@
       "required": false
     }
   ],
-  "promptTemplate": "Tu es un expert en veille économique. L'utilisateur opère dans le secteur {secteur} et propose le produit ou service suivant : {description_produit}. Sa cible est {cible}. Ses principaux concurrents sont {concurrents}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations pour améliorer sa veille des tendances consommateurs.",
+  "promptTemplate": "Tu es un expert en veille économique. L'utilisateur opère dans le secteur {secteur} et propose le produit ou service suivant : {description_produit}. Sa cible est {cible}. Ses principaux concurrents sont {concurrents}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

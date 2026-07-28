@@ -37,35 +37,48 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant expert en négociation et en influence. L'utilisateur a répondu : Style de négociation : {style-negociation}, Motivations : {motivations}, Stratégie d'influence : {strategie-influence}, Exemples de réussites : {exemples-reussis}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Vous êtes un consultant expert en négociation et en influence. L'utilisateur a répondu : Style de négociation : {style-negociation}, Motivations : {motivations}, Stratégie d'influence : {strategie-influence}, Exemples de réussites : {exemples-reussis}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "dimensions": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "dimension": {
               "type": "string"
             },
-            "score": {
+            "intensite": {
               "type": "number",
-              "description": "Score sur 100"
+              "description": "Intensité de 0 à 100 — une mesure, pas une note"
+            },
+            "interpretation": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "dimension",
+            "intensite",
+            "interpretation"
+          ]
         }
       },
-      "recommandations": {
+      "pistes": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "dimensions",
+      "pistes"
+    ]
+  },
+  "output_kind": "profile"
 }

@@ -37,35 +37,48 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en gamification. L'utilisateur a répondu : Objectif pédagogique : {objectif_pédagogique}, Type de jeu : {type_de_jeu}, Niveau de difficulté : {niveau_de_difficulte}, Public cible : {public_cible}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (pédagogie, engagement, difficulté), et des recommandations pour améliorer l'expérience de gamification.",
+  "promptTemplate": "Tu es un consultant expert en gamification. L'utilisateur a répondu : Objectif pédagogique : {objectif_pédagogique}, Type de jeu : {type_de_jeu}, Niveau de difficulté : {niveau_de_difficulte}, Public cible : {public_cible}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "dimensions": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "dimension": {
               "type": "string"
             },
-            "score": {
+            "intensite": {
               "type": "number",
-              "description": "Score sur 100"
+              "description": "Intensité de 0 à 100 — une mesure, pas une note"
+            },
+            "interpretation": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "dimension",
+            "intensite",
+            "interpretation"
+          ]
         }
       },
-      "recommandations": {
+      "pistes": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "dimensions",
+      "pistes"
+    ]
+  },
+  "output_kind": "profile"
 }

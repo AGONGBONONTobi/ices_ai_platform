@@ -42,35 +42,30 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un auditeur/consultant expert des politiques du BAD. L'utilisateur a répondu : Système de gestion financière : {systeme_gestion_financiere}, Procédures de passation des marchés : {passation_marche}, Niveau de sauvegarde environnementale : {sauvegarde_environnementale}, Politiques du BAD prises en compte : {politiques_bad}. Analysez ces informations selon les exigences du BAD en matière de conformité, notamment en termes de système de gestion financière, de passation des marchés publics et de sauvegarde environnementale. Évaluez le niveau de conformité du projet et donnez un score global sur 100. Évaluez également par axe (système de gestion financière, passation des marchés, sauvegarde environnementale) et formulez des recommandations prioritaires.",
+  "promptTemplate": "Vous êtes un auditeur/consultant expert des politiques du BAD. L'utilisateur a répondu : Système de gestion financière : {systeme_gestion_financiere}, Procédures de passation des marchés : {passation_marche}, Niveau de sauvegarde environnementale : {sauvegarde_environnementale}, Politiques du BAD prises en compte : {politiques_bad}. Analysez ces informations selon les exigences du BAD en matière de conformité, notamment en termes de système de gestion financière, de passation des marchés publics et de sauvegarde environnementale.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
-      },
-      "axes": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "axe": {
-              "type": "string"
-            },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
-            }
-          }
-        }
-      },
-      "recommandations": {
+      "colonnes": {
         "type": "array",
         "items": {
           "type": "string"
         }
+      },
+      "lignes": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    }
-  }
+    },
+    "required": [
+      "colonnes",
+      "lignes"
+    ]
+  },
+  "output_kind": "table"
 }

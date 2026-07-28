@@ -32,35 +32,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en analyse de marché des commodités. L'utilisateur a répondu : Type de commodité: {type_commodite}, Volume de production: {volume_production}, Description du marché: {description_marche}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (demande, offre, géopolitique), et des recommandations.",
+  "promptTemplate": "Tu es un expert en analyse de marché des commodités. L'utilisateur a répondu : Type de commodité: {type_commodite}, Volume de production: {volume_production}, Description du marché: {description_marche}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

@@ -44,35 +44,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en RSE & Développement Durable. L'utilisateur a répondu : CO2 économisé : {co2-économisé} tonnes, Économies d'argent : {économies-d-argent} euros, Émissions de gaz à effet de serre : {émissions-de-gaz-à-effet-de-serre} tonnes, Type d'énergie : {type-d-énergie}, Surface de terre occupée : {surface-terre-occupée} hectares. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un expert en RSE & Développement Durable. L'utilisateur a répondu : CO2 économisé : {co2-économisé} tonnes, Économies d'argent : {économies-d-argent} euros, Émissions de gaz à effet de serre : {émissions-de-gaz-à-effet-de-serre} tonnes, Type d'énergie : {type-d-énergie}, Surface de terre occupée : {surface-terre-occupée} hectares.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

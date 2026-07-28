@@ -38,35 +38,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant expert en évaluation de la performance des services publics. L'utilisateur a répondu : Objectif stratégique: {objectif_strategique}, Niveau de satisfaction: {niveau_de_satisfaction}, Ressources disponibles: {ressources_disponibles}, Défis actuels: {defis_actuels}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer la performance du service public.",
+  "promptTemplate": "Vous êtes un consultant expert en évaluation de la performance des services publics. L'utilisateur a répondu : Objectif stratégique: {objectif_strategique}, Niveau de satisfaction: {niveau_de_satisfaction}, Ressources disponibles: {ressources_disponibles}, Défis actuels: {defis_actuels}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

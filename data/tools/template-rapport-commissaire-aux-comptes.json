@@ -47,35 +47,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un commissaire aux comptes chargé de rédiger un rapport pour l'entreprise {entreprise} sur la période {periode}. L'objectif de ce rapport est de {objectif}. Pour cela, vous avez utilisé la méthode d'analyse {methode}. Sur la base de vos constatations, vous avez établi une conclusion préliminaire comme suit : {conclusion}. Évaluez la situation financière de l'entreprise, donnez un score global sur 100, évaluez les axes clés et fournissez des recommandations.",
+  "promptTemplate": "Vous êtes un commissaire aux comptes chargé de rédiger un rapport pour l'entreprise {entreprise} sur la période {periode}. L'objectif de ce rapport est de {objectif}. Pour cela, vous avez utilisé la méthode d'analyse {methode}. Sur la base de vos constatations, vous avez établi une conclusion préliminaire comme suit : {conclusion}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

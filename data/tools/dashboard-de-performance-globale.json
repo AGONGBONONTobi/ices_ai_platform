@@ -44,35 +44,30 @@
       "required": false
     }
   ],
-  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : KPIs Ventes : {kpi_ventes}, Taux Retournement Clients : {taux-retournement-clients}, Taux Absence : {taux-absence}, Indicateur de Performance : {select-indicateur}, Commentaires : {commentaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : KPIs Ventes : {kpi_ventes}, Taux Retournement Clients : {taux-retournement-clients}, Taux Absence : {taux-absence}, Indicateur de Performance : {select-indicateur}, Commentaires : {commentaires}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
-      },
-      "axes": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "axe": {
-              "type": "string"
-            },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
-            }
-          }
-        }
-      },
-      "recommandations": {
+      "colonnes": {
         "type": "array",
         "items": {
           "type": "string"
         }
+      },
+      "lignes": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    }
-  }
+    },
+    "required": [
+      "colonnes",
+      "lignes"
+    ]
+  },
+  "output_kind": "table"
 }

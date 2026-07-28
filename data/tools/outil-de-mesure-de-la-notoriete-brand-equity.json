@@ -45,35 +45,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en marketing. L'utilisateur a répondu : Marque : {marque}, Année : {annee}, Région : {region}, Médias : {media}, Budget : {budget}. Analyse ces informations et donne un score global de notoriété et de brand equity sur 100, une évaluation par axe (notoriété, image de marque, loyauté client), et des recommandations pour améliorer la notoriété et le brand equity de la marque.",
+  "promptTemplate": "Tu es un expert en marketing. L'utilisateur a répondu : Marque : {marque}, Année : {annee}, Région : {region}, Médias : {media}, Budget : {budget}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score global de notoriété et de brand equity sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score par axe sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

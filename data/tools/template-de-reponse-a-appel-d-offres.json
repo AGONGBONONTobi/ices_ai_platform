@@ -36,35 +36,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant expert. L'entreprise {entreprise} a répondu à un appel d'offres pour le projet {description_projet}. Le type d'offre est {type_offre} et le délai de livraison est de {delai_livraison} jours. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Vous êtes un consultant expert. L'entreprise {entreprise} a répondu à un appel d'offres pour le projet {description_projet}. Le type d'offre est {type_offre} et le délai de livraison est de {delai_livraison} jours.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

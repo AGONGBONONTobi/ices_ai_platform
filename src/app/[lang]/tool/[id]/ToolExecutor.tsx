@@ -4,15 +4,14 @@ import { useState } from "react";
 import { ToolConfig } from "@/lib/schema/tool-schema";
 import { DynamicToolForm } from "@/components/engine/DynamicToolForm";
 import { PdfDownloadButton } from "@/components/engine/PdfDownloadButton";
-import { CheckCircle, ArrowClockwise, TrendUp, Lightbulb, ChartBar, WarningCircle } from "@phosphor-icons/react/dist/ssr";
+import { ResultView } from "@/components/engine/ResultView";
+import { CheckCircle, ArrowClockwise, WarningCircle } from "@phosphor-icons/react/dist/ssr";
 import { Locale } from "@/lib/i18n/getDictionary";
 import { executeTool } from "@/lib/api/tools";
 import { ApiError } from "@/lib/api/client";
 import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
-import ReactMarkdown from "react-markdown";
 import { Button } from "@/components/ui/button";
-import CircularProgress from "@/components/ui/circular-progress";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface ToolExecutorProps {
   tool: ToolConfig;
@@ -48,58 +47,8 @@ function ResultSkeleton() {
   );
 }
 
-function getScoreColor(score: number) {
-  if (score >= 75) return { color: "#059669", label: "Excellent" };
-  if (score >= 55) return { color: "#d97706", label: "Bon" };
-  return { color: "#dc2626", label: "À améliorer" };
-}
 
-/** Blocs que cette vue sait rendre nativement (score, axes, recommandations). */
-function hasDiagnosticShape(result: any) {
-  return (
-    result?.score_global !== undefined ||
-    Array.isArray(result?.axes) ||
-    Array.isArray(result?.recommandations)
-  );
-}
 
-/**
- * Repli pour les outils dont l'`outputSchema` ne suit pas la forme diagnostic
- * (ex. `{ result: string }`). Sans lui, un résultat parfaitement valide
- * s'afficherait comme un succès vide.
- */
-function GenericResult({ result }: { result: Record<string, any> }) {
-  return (
-    <div className="space-y-4">
-      {Object.entries(result).map(([key, value]) => (
-        <div key={key} className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
-          <h3
-            className="text-sm font-bold text-slate-800 mb-2 capitalize"
-            style={{ fontFamily: "Outfit, sans-serif" }}
-          >
-            {key.replace(/_/g, " ")}
-          </h3>
-          {typeof value === "string" ? (
-            <div className="prose prose-slate max-w-none text-sm leading-relaxed">
-              <ReactMarkdown>{value}</ReactMarkdown>
-            </div>
-          ) : Array.isArray(value) ? (
-            <ul className="space-y-2 text-sm text-slate-700">
-              {value.map((item, idx) => (
-                <li key={idx} className="flex gap-2">
-                  <span className="text-violet-400">•</span>
-                  {typeof item === "object" ? JSON.stringify(item) : String(item)}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="text-sm text-slate-700">{String(value)}</p>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-}
 
 export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
   const [isGenerating, setIsGenerating] = useState(false);
@@ -195,12 +144,6 @@ export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
   }
 
   if (result) {
-    const isDiagnostic = typeof result !== "string" && hasDiagnosticShape(result);
-
-    const scoreInfo = isDiagnostic && result.score_global !== undefined
-      ? getScoreColor(result.score_global)
-      : null;
-
     return (
       <motion.div
         className="space-y-6"
@@ -217,95 +160,7 @@ export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
           </div>
         </div>
 
-        {typeof result === "string" ? (
-          <div className="prose prose-slate max-w-none text-sm leading-relaxed p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
-            <ReactMarkdown>{result}</ReactMarkdown>
-          </div>
-        ) : !isDiagnostic ? (
-          <GenericResult result={result} />
-        ) : (
-          <div className="space-y-6">
-            {/* Global Score */}
-            {result.score_global !== undefined && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.1 }}
-                className="relative overflow-hidden rounded-2xl border p-6 flex items-center justify-between"
-                style={{ borderColor: `${scoreInfo?.color}30`, background: `linear-gradient(135deg, ${scoreInfo?.color}08 0%, #4f46e508 100%)` }}
-              >
-                <div className="absolute -right-8 -top-8 w-32 h-32 rounded-full opacity-10 blur-2xl" style={{ background: scoreInfo?.color }} />
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <TrendUp className="w-4 h-4" style={{ color: scoreInfo?.color }} weight="bold" />
-                    <h3 className="text-lg font-bold text-slate-800" style={{ fontFamily: "Outfit, sans-serif" }}>Score Global</h3>
-                  </div>
-                  <p className="text-sm text-slate-500">Évaluation globale de votre situation</p>
-                  <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border" style={{ color: scoreInfo?.color, borderColor: `${scoreInfo?.color}40`, backgroundColor: `${scoreInfo?.color}10` }}>
-                    {scoreInfo?.label}
-                  </div>
-                </div>
-                <CircularProgress value={result.score_global} size={90} strokeWidth={9} />
-              </motion.div>
-            )}
-
-            {/* Axes */}
-            {result.axes && Array.isArray(result.axes) && result.axes.length > 0 && (
-              <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-                <div className="flex items-center gap-2 mb-4">
-                  <ChartBar className="w-4 h-4 text-violet-600" weight="bold" />
-                  <h3 className="text-base font-bold text-slate-800" style={{ fontFamily: "Outfit, sans-serif" }}>Analyse par axe</h3>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {result.axes.map((axe: any, idx: number) => {
-                    const axeInfo = getScoreColor(axe.score);
-                    return (
-                      <motion.div
-                        key={idx}
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.25 + idx * 0.06 }}
-                        className="flex justify-between items-center p-4 rounded-xl border bg-white shadow-sm hover:shadow-md transition-shadow duration-200"
-                        style={{ borderColor: `${axeInfo.color}20` }}
-                      >
-                        <span className="text-sm font-medium text-slate-700 pr-3 leading-snug">{axe.axe}</span>
-                        <CircularProgress value={axe.score} size={52} strokeWidth={5} />
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            )}
-
-            {/* Recommandations */}
-            {result.recommandations && Array.isArray(result.recommandations) && result.recommandations.length > 0 && (
-              <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}>
-                <div className="flex items-center gap-2 mb-4">
-                  <Lightbulb className="w-4 h-4 text-amber-500" weight="fill" />
-                  <h3 className="text-base font-bold text-slate-800" style={{ fontFamily: "Outfit, sans-serif" }}>Recommandations stratégiques</h3>
-                </div>
-                <div className="rounded-2xl border border-amber-100 bg-gradient-to-br from-amber-50/80 to-orange-50/30 p-5">
-                  <ul className="space-y-3">
-                    {result.recommandations.map((rec: string, idx: number) => (
-                      <motion.li
-                        key={idx}
-                        initial={{ opacity: 0, x: -8 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.4 + idx * 0.07 }}
-                        className="flex gap-3 text-sm text-slate-700 leading-relaxed"
-                      >
-                        <span className="mt-0.5 flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-amber-100 text-amber-600 text-xs font-bold">
-                          {idx + 1}
-                        </span>
-                        {rec}
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            )}
-          </div>
-        )}
+        <ResultView tool={tool} result={result} />
 
         {/* Action buttons */}
         <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-slate-100">
@@ -314,6 +169,7 @@ export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
             category={tool.category}
             result={result}
             answers={answers}
+            outputKind={tool.output_kind}
             lang={lang}
           />
           <Button

@@ -39,35 +39,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en finance. L'utilisateur a sélectionné les entités suivantes : {entites}, avec un taux de consolidation de {taux-de-consolidation}%. La méthode de consolidation utilisée est la suivante : {methode-de-consolidation}. Les dossiers financiers à consulter sont : {dossiers-financiers}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a sélectionné les entités suivantes : {entites}, avec un taux de consolidation de {taux-de-consolidation}%. La méthode de consolidation utilisée est la suivante : {methode-de-consolidation}. Les dossiers financiers à consulter sont : {dossiers-financiers}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

@@ -36,35 +36,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un analyste de données expert. L'utilisateur a répondu : Nombre de clients actuels : {variable1}, Principaux critères de décision : {variable2}, A-t-il déjà acheté auprès de notre entreprise ? : {variable3}, Budget moyen par client : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un analyste de données expert. L'utilisateur a répondu : Nombre de clients actuels : {variable1}, Principaux critères de décision : {variable2}, A-t-il déjà acheté auprès de notre entreprise ? : {variable3}, Budget moyen par client : {variable4}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

@@ -49,35 +49,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en gestion des créances et recouvrement. L'utilisateur a répondu : Montant de la créance : {montantCreance}, Date d'échéance : {dateEcheance}, État de solvence du débiteur : {etatDeSolvence}, Description du problème de recouvrement : {descriptionProbleme}, Méthode de recouvrement préférée : {methodeDeRecouvrement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un expert en gestion des créances et recouvrement. L'utilisateur a répondu : Montant de la créance : {montantCreance}, Date d'échéance : {dateEcheance}, État de solvence du débiteur : {etatDeSolvence}, Description du problème de recouvrement : {descriptionProbleme}, Méthode de recouvrement préférée : {methodeDeRecouvrement}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

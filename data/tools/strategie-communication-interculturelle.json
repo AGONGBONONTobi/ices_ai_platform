@@ -46,35 +46,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en communication interculturelle. L'utilisateur a répondu : Public cible: {public_cible}, Langues principales: {langues_principales}, Objectifs: {objectifs}, Budget: {budget}€, Canaux: {canaux}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (par ex. pertinence culturelle, clarté du message, adéquation des canaux, gestion du budget), et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert en communication interculturelle. L'utilisateur a répondu : Public cible: {public_cible}, Langues principales: {langues_principales}, Objectifs: {objectifs}, Budget: {budget}€, Canaux: {canaux}. pertinence culturelle, clarté du message, adéquation des canaux, gestion du budget), et des recommandations.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

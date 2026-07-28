@@ -37,35 +37,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant en soins de santé. L'utilisateur a répondu : Objectif principal: {objectif_principal}, Type de soins: {type_de_soins}, Ressources disponibles: {ressources_disponibles}, Délais: {delais}. Analysez ces informations et proposez un plan de développement de l'offre de soins avec un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Vous êtes un consultant en soins de santé. L'utilisateur a répondu : Objectif principal: {objectif_principal}, Type de soins: {type_de_soins}, Ressources disponibles: {ressources_disponibles}, Délais: {delais}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

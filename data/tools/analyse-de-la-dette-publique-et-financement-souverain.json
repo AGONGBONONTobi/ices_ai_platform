@@ -42,35 +42,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en finance publique. L'utilisateur a répondu : Montant de la dette : {montant-de-la-dette} milliards d'euros, Taux d'intérêt : {taux-d-interet} %, Revenus de l'État : {revenus-de-l-etat} milliards d'euros, Recommandations financières : {recommandations-financieres}, Modèle de financement : {modele-de-financement}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un expert en finance publique. L'utilisateur a répondu : Montant de la dette : {montant-de-la-dette} milliards d'euros, Taux d'intérêt : {taux-d-interet} %, Revenus de l'État : {revenus-de-l-etat} milliards d'euros, Recommandations financières : {recommandations-financieres}, Modèle de financement : {modele-de-financement}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

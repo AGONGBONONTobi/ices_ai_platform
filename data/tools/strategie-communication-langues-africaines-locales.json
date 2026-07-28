@@ -46,35 +46,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant en communication expert. L'utilisateur a répondu : Langue cible: {langue_cible}, Objectif de communication: {objectif_communication}, Public cible: {public_cible}, Canal préféré: {canal_preferer}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (par exemple, pertinence de la langue cible, clarté de l'objectif, adéquation du public cible et du canal), et des recommandations pour améliorer la stratégie de communication.",
+  "promptTemplate": "Vous êtes un consultant en communication expert. L'utilisateur a répondu : Langue cible: {langue_cible}, Objectif de communication: {objectif_communication}, Public cible: {public_cible}, Canal préféré: {canal_preferer}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

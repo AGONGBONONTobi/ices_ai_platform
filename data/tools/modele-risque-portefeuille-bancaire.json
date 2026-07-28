@@ -42,35 +42,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en gestion de portefeuille bancaire. L'utilisateur a fourni les informations suivantes : Type de portefeuille : {type_de_portefeuille}, Montant du portefeuille : {montant_du_portefeuille}, Description du portefeuille : {description_du_portefeuille}, Horizon de temps : {horizon_de_temps}. Veuillez analyser ces informations et fournir un score global de risque sur 100, une évaluation des risques par axe, et des recommandations pour gérer ces risques.",
+  "promptTemplate": "Vous êtes un expert en gestion de portefeuille bancaire. L'utilisateur a fourni les informations suivantes : Type de portefeuille : {type_de_portefeuille}, Montant du portefeuille : {montant_du_portefeuille}, Description du portefeuille : {description_du_portefeuille}, Horizon de temps : {horizon_de_temps}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score de risque global sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score de risque sur 100 pour cet axe"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

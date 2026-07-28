@@ -41,35 +41,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en création de modèles de factures. L'utilisateur a fourni les informations suivantes : Entreprise: {entreprise}, Type de facture: {typeFacture}, Détails de la facture: {detailsFacture}, Langue: {langue}. Créez un modèle de facture conforme et international en fonction de ces détails et donnez un score global sur 100 pour la qualité du modèle, évaluez les axes tels que la conformité, la clarté et la présentation, et fournissez des recommandations pour l'amélioration.",
+  "promptTemplate": "Vous êtes un expert en création de modèles de factures. L'utilisateur a fourni les informations suivantes : Entreprise: {entreprise}, Type de facture: {typeFacture}, Détails de la facture: {detailsFacture}, Langue: {langue}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

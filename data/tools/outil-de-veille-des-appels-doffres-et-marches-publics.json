@@ -38,35 +38,43 @@
       "required": false
     }
   ],
-  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur a répondu : Secteur: {secteur}, Description: {description}, Date limite: {date_limite}, Budget: {budget}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour maximiser les chances de succès dans cet appel d'offre ou marché public.",
+  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur a répondu : Secteur: {secteur}, Description: {description}, Date limite: {date_limite}, Budget: {budget}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

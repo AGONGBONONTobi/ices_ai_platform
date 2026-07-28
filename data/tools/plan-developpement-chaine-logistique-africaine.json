@@ -38,35 +38,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en développement de chaînes logistiques en Afrique. L'utilisateur cherche à établir un plan pour améliorer son processus d'acheminement de {type_de_bien} depuis {pays_de_depart}. Il est confronté aux {description_challenges}. Son objectif en termes de qualité de service est {objectif_qualite_service}. Analysez ces informations et proposez un plan de développement incluant un score global sur 100, une évaluation par axe (ex: infrastructure, gestion des risques, technologie), et des recommandations spécifiques.",
+  "promptTemplate": "Vous êtes un expert en développement de chaînes logistiques en Afrique. L'utilisateur cherche à établir un plan pour améliorer son processus d'acheminement de {type_de_bien} depuis {pays_de_depart}. Il est confronté aux {description_challenges}. Son objectif en termes de qualité de service est {objectif_qualite_service}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

@@ -20,6 +20,26 @@ export const toolInputSchema = z.object({
   required: z.boolean().default(true),
 });
 
+/**
+ * Nature du livrable produit par l'outil. Détermine le schéma de sortie, les
+ * consignes envoyées au modèle et le mode de rendu (interface et PDF).
+ *
+ * `profile` mesure des dimensions (personnalité, style d'apprentissage) : on y
+ * parle d'intensité, jamais de score, et le rendu n'applique aucun code couleur
+ * de valeur.
+ */
+export const outputKinds = [
+  "assessment",
+  "analysis",
+  "document",
+  "table",
+  "profile",
+] as const;
+
+export type OutputKind = (typeof outputKinds)[number];
+
+export const DEFAULT_OUTPUT_KIND: OutputKind = "analysis";
+
 export const toolSchema = z.object({
   id: z.string().min(1),
   title: z.string().min(1),
@@ -27,6 +47,8 @@ export const toolSchema = z.object({
   inputs: z.array(toolInputSchema),
   promptTemplate: z.string().min(1),
   outputSchema: z.record(z.string(), z.any()),
+  // Absent des fiches antérieures au typage des sorties : on retombe sur le défaut.
+  output_kind: z.enum(outputKinds).default(DEFAULT_OUTPUT_KIND),
 });
 
 export type ToolSelectOption = z.infer<typeof toolSelectOptionSchema>;

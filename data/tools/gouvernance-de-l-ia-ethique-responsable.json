@@ -43,35 +43,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en gouvernance de l'IA éthique et responsable. L'utilisateur a répondu : Niveau de conscience : {niveau_de_conscience}, Objectifs d'IA : {objectifs_ia}, Types de données : {types_de_donnees}, Mesures de sécurité : {mesures_de_securite}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (par exemple, transparence, responsabilité, confidentialité), et des recommandations pour améliorer la gouvernance de l'IA éthique et responsable.",
+  "promptTemplate": "Vous êtes un expert en gouvernance de l'IA éthique et responsable. L'utilisateur a répondu : Niveau de conscience : {niveau_de_conscience}, Objectifs d'IA : {objectifs_ia}, Types de données : {types_de_donnees}, Mesures de sécurité : {mesures_de_securite}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

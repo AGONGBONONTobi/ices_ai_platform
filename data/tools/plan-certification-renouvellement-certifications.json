@@ -45,29 +45,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : current_certifications: {current_certifications}, certification_goals: {certification_goals}, renewal_schedule: {renewal_schedule}, budget_available: {budget_available}, responsible_person: {responsible_person}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : current_certifications: {current_certifications}, certification_goals: {certification_goals}, renewal_schedule: {renewal_schedule}, budget_available: {budget_available}, responsible_person: {responsible_person}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

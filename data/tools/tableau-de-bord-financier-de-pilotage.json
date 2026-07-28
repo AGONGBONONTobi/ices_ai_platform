@@ -44,35 +44,30 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en finance. L'utilisateur a répondu : Bénéfice net: {bénéfice_net}, Chiffre d'affaires: {chiffre_d_affaires}, Taux de marge: {taux_de_marge}, Investissements: {investissements}, Stratégie financière: {stratégie_financière}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un expert en finance. L'utilisateur a répondu : Bénéfice net: {bénéfice_net}, Chiffre d'affaires: {chiffre_d_affaires}, Taux de marge: {taux_de_marge}, Investissements: {investissements}, Stratégie financière: {stratégie_financière}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
-      },
-      "axes": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "axe": {
-              "type": "string"
-            },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
-            }
-          }
-        }
-      },
-      "recommandations": {
+      "colonnes": {
         "type": "array",
         "items": {
           "type": "string"
         }
+      },
+      "lignes": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    }
-  }
+    },
+    "required": [
+      "colonnes",
+      "lignes"
+    ]
+  },
+  "output_kind": "table"
 }

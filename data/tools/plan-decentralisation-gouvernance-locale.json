@@ -37,35 +37,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en gouvernance locale. L'utilisateur a répondu : Niveau de décentralisation actuel : {niveau_decentralisation_actuel}, Objectifs pour la gouvernance locale : {objectifs_gouvernance}, Budget alloué : {budget_alloué}, Parties prenantes impliquées : {parties_prenantes_impliquées}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Vous êtes un expert en gouvernance locale. L'utilisateur a répondu : Niveau de décentralisation actuel : {niveau_decentralisation_actuel}, Objectifs pour la gouvernance locale : {objectifs_gouvernance}, Budget alloué : {budget_alloué}, Parties prenantes impliquées : {parties_prenantes_impliquées}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

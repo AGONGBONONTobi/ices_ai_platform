@@ -51,35 +51,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en communication. L'utilisateur a répondu : Type de témoignage : {variable1}, Description du cas client : {variable2}, Nom du client : {variable3}, Budget alloué : {variable4}, Canal de diffusion : {variable5}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (pertinence, impact, faisabilité, budget), et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert en communication. L'utilisateur a répondu : Type de témoignage : {variable1}, Description du cas client : {variable2}, Nom du client : {variable3}, Budget alloué : {variable4}, Canal de diffusion : {variable5}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        },
-        "recommandations": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

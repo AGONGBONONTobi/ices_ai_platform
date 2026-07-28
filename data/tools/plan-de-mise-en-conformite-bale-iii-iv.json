@@ -37,35 +37,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en conformité bancaire. L'utilisateur a répondu : Niveau actuel de conformité : {niveau_actuel_conformite}, Description des activités : {description_activites}, Objectif de conformité : {objectif_conformite}, Date butoir : {date_butoir}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe, et des recommandations pour atteindre la conformité Bâle III/IV.",
+  "promptTemplate": "Vous êtes un expert en conformité bancaire. L'utilisateur a répondu : Niveau actuel de conformité : {niveau_actuel_conformite}, Description des activités : {description_activites}, Objectif de conformité : {objectif_conformite}, Date butoir : {date_butoir}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

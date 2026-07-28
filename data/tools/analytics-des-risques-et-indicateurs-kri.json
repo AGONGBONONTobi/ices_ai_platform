@@ -37,35 +37,30 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un analyste expert. L'utilisateur a répondu : Nombre de KRI identifiés : {variable1}, Principaux risques identifiés : {variable2}, État actuel des actions correctives : {variable3}, Pourcentage de KRI atteints : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un analyste expert. L'utilisateur a répondu : Nombre de KRI identifiés : {variable1}, Principaux risques identifiés : {variable2}, État actuel des actions correctives : {variable3}, Pourcentage de KRI atteints : {variable4}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
-      },
-      "axes": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "axe": {
-              "type": "string"
-            },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
-            }
-          }
-        }
-      },
-      "recommandations": {
+      "colonnes": {
         "type": "array",
         "items": {
           "type": "string"
         }
+      },
+      "lignes": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    }
-  }
+    },
+    "required": [
+      "colonnes",
+      "lignes"
+    ]
+  },
+  "output_kind": "table"
 }

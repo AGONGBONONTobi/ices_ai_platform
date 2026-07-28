@@ -47,35 +47,30 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en supply chain. L'entreprise {nomEntreprise} a une supply chain de type {typeDeSupplyChain}. La description de la supply chain actuelle est : {descriptionDeLaSupplyChain}. Les objectifs de l'audit sont : {objectifsDeLAudit}. La fréquence des livraisons est {frequenceDesLivraisons}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (qualité, coûts, rapidité de livraison), et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert en supply chain. L'entreprise {nomEntreprise} a une supply chain de type {typeDeSupplyChain}. La description de la supply chain actuelle est : {descriptionDeLaSupplyChain}. Les objectifs de l'audit sont : {objectifsDeLAudit}. La fréquence des livraisons est {frequenceDesLivraisons}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
-      },
-      "axes": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "axe": {
-              "type": "string"
-            },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
-            }
-          }
-        }
-      },
-      "recommandations": {
+      "colonnes": {
         "type": "array",
         "items": {
           "type": "string"
         }
+      },
+      "lignes": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    }
-  }
+    },
+    "required": [
+      "colonnes",
+      "lignes"
+    ]
+  },
+  "output_kind": "table"
 }

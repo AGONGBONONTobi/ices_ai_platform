@@ -37,35 +37,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur cherche à effectuer une analyse OSINT avec les informations suivantes : Objectif : {objectif}, Sources : {sources}, Période : {periode}, Mots-clés : {mots-cles}. Analysez ces données et fournissez un score global sur 100, une évaluation par axe pertinent pour l'OSINT (par exemple, présence en ligne, réputation, menaces potentielles), et des recommandations pour améliorer la stratégie de veille.",
+  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur cherche à effectuer une analyse OSINT avec les informations suivantes : Objectif : {objectif}, Sources : {sources}, Période : {periode}, Mots-clés : {mots-cles}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

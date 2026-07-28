@@ -38,35 +38,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant en transition numérique. L'utilisateur a répondu : Effectif: {effectif}, Secteur: {secteur}, Description du projet: {description_projet}, Budget prévu: {budget_prevu}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour la réussite de la transition numérique de cette TPE/PME.",
+  "promptTemplate": "Vous êtes un consultant en transition numérique. L'utilisateur a répondu : Effectif: {effectif}, Secteur: {secteur}, Description du projet: {description_projet}, Budget prévu: {budget_prevu}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

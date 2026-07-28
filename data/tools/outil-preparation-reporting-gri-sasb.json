@@ -44,35 +44,30 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un spécialiste du reporting GRI/SASB. L'utilisateur a répondu : Secteur d'activité: {secteurActivite}, Objectifs de reporting: {objectifReporting}, Données disponibles: {donneesDisponibles}, Niveau de transparence: {niveauTransparence}. Analysez ces informations pour identifier les indicateurs GRI pertinents pour leur secteur d'activité et évaluez leur niveau de préparation au reporting. Fournissez un score global sur 100, une évaluation par axe (gouvernance, stratégie, performance) et des recommandations prioritaires pour améliorer leur reporting.",
+  "promptTemplate": "Vous êtes un spécialiste du reporting GRI/SASB. L'utilisateur a répondu : Secteur d'activité: {secteurActivite}, Objectifs de reporting: {objectifReporting}, Données disponibles: {donneesDisponibles}, Niveau de transparence: {niveauTransparence}. Analysez ces informations pour identifier les indicateurs GRI pertinents pour leur secteur d'activité et évaluez leur niveau de préparation au reporting.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
-      },
-      "axes": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "axe": {
-              "type": "string"
-            },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
-            }
-          }
-        }
-      },
-      "recommandations": {
+      "colonnes": {
         "type": "array",
         "items": {
           "type": "string"
         }
+      },
+      "lignes": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    }
-  }
+    },
+    "required": [
+      "colonnes",
+      "lignes"
+    ]
+  },
+  "output_kind": "table"
 }

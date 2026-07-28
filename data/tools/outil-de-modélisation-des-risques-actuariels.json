@@ -44,35 +44,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en modélisation des risques actuariels. L'utilisateur a répondu : Type de risque : {type_de_risque}, Taux d'intérêt : {taux_d_interet}%, Montant investi : {montant_investi} €, Période d'investissement : {periode_d_investissement} ans, Description du risque : {description_de_la_risque}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un expert en modélisation des risques actuariels. L'utilisateur a répondu : Type de risque : {type_de_risque}, Taux d'intérêt : {taux_d_interet}%, Montant investi : {montant_investi} €, Période d'investissement : {periode_d_investissement} ans, Description du risque : {description_de_la_risque}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

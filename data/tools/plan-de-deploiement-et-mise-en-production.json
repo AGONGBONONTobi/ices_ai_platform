@@ -36,35 +36,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en gestion de projets. L'utilisateur a répondu : Objectif du projet: {objectif_projet}, Type de déploiement: {type_deployment}, Durée du projet: {duree_projet} semaines, Ressources disponibles: {ressources_disponibles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (planification, ressources, déploiement), et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert en gestion de projets. L'utilisateur a répondu : Objectif du projet: {objectif_projet}, Type de déploiement: {type_deployment}, Durée du projet: {duree_projet} semaines, Ressources disponibles: {ressources_disponibles}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

@@ -44,35 +44,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant en cybersécurité. L'utilisateur a répondu : Taille de l'entreprise: {taille_entreprise}, Types de données: {type_donnees}, Niveau de sécurité actuel: {niveau_securite_actuel}, Objectifs: {objectif}. Élaborez un plan de cybersécurité pour cette PME en évaluant les risques, en proposant des mesures de protection et en donnant des recommandations pour améliorer la sécurité. Donnez un score global sur 100, une évaluation par axe (ex: sécurité des données, protection des accès, etc.) et des recommandations.",
+  "promptTemplate": "Vous êtes un consultant en cybersécurité. L'utilisateur a répondu : Taille de l'entreprise: {taille_entreprise}, Types de données: {type_donnees}, Niveau de sécurité actuel: {niveau_securite_actuel}, Objectifs: {objectif}. Élaborez un plan de cybersécurité pour cette PME en évaluant les risques, en proposant des mesures de protection et en donnant des recommandations pour améliorer la sécurité.) et des recommandations.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

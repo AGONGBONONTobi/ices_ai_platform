@@ -44,35 +44,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en gestion de projet. L'utilisateur a répondu : Budget initial : {budget_initial}, Budget actuel : {budget_actuel}, Durée prévue : {duree_projet}, Durée réelle : {duree_reelle}, Type de projet : {type_projet}. Analyse ces informations et donne un score de performance globale du projet sur 100, une évaluation par axe (budget, durée, efficacité) et des recommandations.",
+  "promptTemplate": "Tu es un expert en gestion de projet. L'utilisateur a répondu : Budget initial : {budget_initial}, Budget actuel : {budget_actuel}, Durée prévue : {duree_projet}, Durée réelle : {duree_reelle}, Type de projet : {type_projet}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score de performance globale du projet sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score de performance par axe sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

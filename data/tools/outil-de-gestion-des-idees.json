@@ -42,35 +42,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en innovation. L'utilisateur a répondu : Idée: {idee}, Domaine: {domaine}, Objectif: {objectif}, Public cible: {public_cible}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (innovation, faisabilité, impact), et des recommandations pour améliorer cette idée.",
+  "promptTemplate": "Vous êtes un expert en innovation. L'utilisateur a répondu : Idée: {idee}, Domaine: {domaine}, Objectif: {objectif}, Public cible: {public_cible}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

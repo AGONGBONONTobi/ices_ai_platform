@@ -38,35 +38,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant expert en agriculture. L'utilisateur a répondu : Superficie exploitée : {superficieExploitee} ha, Type de culture : {typeCulture}, Description de l'activité : {descriptionActivite}, Coûts annuels : {coutsAnnuel} milliers d'euros. Analysez ces informations pour déterminer la rentabilité de l'exploitation et estimez le prix de revient par unité de produit. Fournissez un score global de rentabilité sur 100, une évaluation par axe (efficacité de la production, gestion des coûts, etc.) avec des scores sur 100, et des recommandations concrètes pour améliorer la rentabilité.",
+  "promptTemplate": "Vous êtes un consultant expert en agriculture. L'utilisateur a répondu : Superficie exploitée : {superficieExploitee} ha, Type de culture : {typeCulture}, Description de l'activité : {descriptionActivite}, Coûts annuels : {coutsAnnuel} milliers d'euros. Analysez ces informations pour déterminer la rentabilité de l'exploitation et estimez le prix de revient par unité de produit.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

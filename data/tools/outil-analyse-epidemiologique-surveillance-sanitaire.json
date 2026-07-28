@@ -38,35 +38,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un épidémiologiste. L'utilisateur a fourni les informations suivantes : Région: {region}, Période: {periode}, Description des indicateurs: {description}, Taille de la population: {population}. Analysez ces données pour fournir un score global sur 100 de l'état sanitaire de la région durant cette période, une évaluation par axe (prévalence, incidence, etc.), et des recommandations pour améliorer la surveillance sanitaire.",
+  "promptTemplate": "Vous êtes un épidémiologiste. L'utilisateur a fourni les informations suivantes : Région: {region}, Période: {periode}, Description des indicateurs: {description}, Taille de la population: {population}.), et des recommandations pour améliorer la surveillance sanitaire.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

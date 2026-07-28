@@ -37,35 +37,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en prévention des risques. L'utilisateur a répondu : Type de chantier : {type_de_chantier}, Description des risques : {description_des_risques}, Effectif du chantier : {effectif_du_chantier}, Date de début du chantier : {date_debut_chantier}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Vous êtes un expert en prévention des risques. L'utilisateur a répondu : Type de chantier : {type_de_chantier}, Description des risques : {description_des_risques}, Effectif du chantier : {effectif_du_chantier}, Date de début du chantier : {date_debut_chantier}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

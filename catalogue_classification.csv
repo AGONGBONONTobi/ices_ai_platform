@@ -1,0 +1,1081 @@
+id,titre,categorie,output_kind,source
+ai-ethics-governance,Gouvernance de l'IA éthique & responsable,TRANSFORMATION DIGITALE & IA,analysis,heuristique
+analyse-brevets-et-propriete-intellectuelle,Analyse des brevets & de la propriété intellectuelle,INNOVATION & R&D,analysis,heuristique
+analyse-causes-racines-ishikawa-5-why,Analyse des causes racines (Ishikawa / 5 Pourquoi),QUALITÉ & EXCELLENCE OPÉRATIONNELLE,analysis,heuristique
+analyse-chaine-valeur-projet-sectoriel,Analyse de la chaîne de valeur d'un projet sectoriel,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+analyse-chaînes-de-valeur-mondiales,Analyse des chaînes de valeur mondiales,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+analyse-comportementale-en-equipe,Analyse comportementale en équipe (Team dynamics),PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+analyse-compétitivité-nationale-territoriale,Analyse de la compétitivité nationale & territoriale,STRATÉGIE & MANAGEMENT,analysis,heuristique
+analyse-concurrentielle-veille-marche,Analyse concurrentielle & veille marché,MARKETING & COMMERCIAL,analysis,heuristique
+analyse-cout-benefice-projet-public,Analyse coût-bénéfice (ACB) de projet public,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+analyse-cout-total-d-acquisition-tco,Analyse coût total d'acquisition (TCO),SUPPLY CHAIN & ACHATS,analysis,heuristique
+analyse-cout-volume-profit-seuil-de-rentabilite,Analyse coût-volume-profit & seuil de rentabilité,FINANCE & GESTION,analysis,heuristique
+analyse-cv-preselction-ats-ia,Analyse de CV & présélection automatisée (ATS IA),RH & CAPITAL HUMAIN,analysis,heuristique
+analyse-de-faisabilite-et-etude-d-opportunite,Analyse de faisabilité & étude d'opportunité,GESTION DE PROJETS & PMO,analysis,heuristique
+analyse-de-l-innovation-sociale-et-solutions-inclusives,Analyse de l'innovation sociale & solutions inclusives,INNOVATION & R&D,analysis,heuristique
+analyse-de-la-chaine-de-valeur,Analyse de la chaîne de valeur,STRATÉGIE & MANAGEMENT,analysis,heuristique
+analyse-de-la-dette-publique-et-financement-souverain,Analyse de la dette publique & financement souverain,FINANCE & GESTION,analysis,heuristique
+analyse-de-la-disruption-et-reponse-strategique,Analyse de la disruption & réponse stratégique,STRATÉGIE & MANAGEMENT,analysis,heuristique
+analyse-de-la-performance-economique,"Analyse de la performance économique (EVA, EBITDA)",FINANCE & GESTION,analysis,heuristique
+analyse-de-la-structure-du-capital,"Analyse de la structure du capital (WACC, levier financier)",FINANCE & GESTION,analysis,heuristique
+analyse-de-maturite-technologique-trl-nasa-scale,Analyse de maturité technologique (TRL — NASA scale),INNOVATION & R&D,assessment,heuristique
+analyse-de-matérialité-des-enjeux-esg,Analyse de matérialité des enjeux ESG,RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+analyse-de-rentabilite-d-investissement,Analyse de rentabilité d'investissement (ROI/TRI/VAN),FINANCE & GESTION,analysis,heuristique
+analyse-de-risques-chantier-et-hse,Analyse de risques chantier & HSE,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+analyse-de-risques-fmea-amdec-sectorielle,Analyse de risques FMEA/AMDEC sectorielle,GESTION DES RISQUES,analysis,heuristique
+analyse-de-risques-fournisseurs-supply-chain,Analyse de risques fournisseurs & supply chain,SUPPLY CHAIN & ACHATS,analysis,heuristique
+analyse-de-sensibilite-et-simulation-de-scenarios,Analyse de sensibilité & simulation de scénarios,FINANCE & GESTION,analysis,heuristique
+analyse-dependance-critique-aux-fournisseurs,Analyse de la dépendance critique aux fournisseurs,GESTION DES RISQUES,analysis,heuristique
+analyse-des-5-forces-de-porter-et-intensite-concurrentielle,Analyse des 5 forces de Porter & intensité concurrentielle,STRATÉGIE & MANAGEMENT,analysis,heuristique
+analyse-des-besoins-en-formation,Analyse des besoins en formation (ABF),RH & CAPITAL HUMAIN,analysis,heuristique
+analyse-des-coûts,"Analyse des coûts, pricing & politique tarifaire",FINANCE & GESTION,analysis,heuristique
+analyse-des-donnees-d-apprentissage,Analyse des données d'apprentissage (xAPI/SCORM),PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+analyse-des-flux-de-tresorerie,Analyse des flux de trésorerie (Cash flow statement),FINANCE & GESTION,analysis,heuristique
+analyse-des-marches-emergents-africains,Analyse des marchés émergents africains,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+analyse-des-opportunites-de-croissance,Analyse des opportunités de croissance,STRATÉGIE & MANAGEMENT,analysis,heuristique
+analyse-des-risques-cybersecurite-et-menaces,Analyse des risques cybersécurité & menaces,GESTION DES RISQUES,analysis,heuristique
+analyse-des-risques-de-conformite-et-reglementaires,Analyse des risques de conformité & réglementaires,GESTION DES RISQUES,assessment,heuristique
+analyse-des-risques-de-reputation-et-e-reputation,Analyse des risques de réputation & e-réputation,GESTION DES RISQUES,analysis,heuristique
+analyse-des-risques-de-transformation-organisationnelle,Analyse des risques de transformation organisationnelle,GESTION DES RISQUES,analysis,heuristique
+analyse-des-risques-lies-a-la-ia-et-technologies-emergentes,Analyse des risques liés à l'IA & technologies émergentes,GESTION DES RISQUES,analysis,heuristique
+analyse-des-tendances-et-detection-de-signaux-faibles,Analyse des tendances & détection de signaux faibles,INNOVATION & R&D,analysis,heuristique
+analyse-dispositifs-formation,Analyse de l'efficacité des dispositifs de formation,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+analyse-disruptions-reponse-strategique,Analyse des disruptions & réponse stratégique,INNOVATION & R&D,analysis,heuristique
+analyse-donnees-macro-economiques-sectorielles,Analyse des données macro-économiques sectorielles,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+analyse-du-cycle-de-vie-produit-plc,Analyse du cycle de vie produit (PLC),MARKETING & COMMERCIAL,analysis,heuristique
+analyse-du-parcours-client,Analyse du parcours client (Customer Journey Map),MARKETING & COMMERCIAL,analysis,heuristique
+analyse-ecosysteme-startup-africain,Analyse de l'écosystème startup africain,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+analyse-ecosysteme-valeur-etendu,Analyse de l'écosystème de valeur étendu,STRATÉGIE & MANAGEMENT,analysis,heuristique
+analyse-ecosysteme,Analyse de l'écosystème d'innovation local & global,INNOVATION & R&D,analysis,heuristique
+analyse-et-optimisation-du-besoin-en-fonds-de-roulement,Analyse et optimisation du besoin en fonds de roulement,FINANCE & GESTION,analysis,heuristique
+analyse-financiere-cooperatives-mutuelles,Analyse financière des coopératives & mutuelles,FINANCE & GESTION,analysis,heuristique
+analyse-flux-commerciaux-trade-intelligence,Analyse des flux commerciaux & trade intelligence,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+analyse-investissements-capex,Analyse des investissements & décisions CAPEX,FINANCE & GESTION,analysis,heuristique
+analyse-juridique-des-risques-due-diligence-legale,Analyse juridique des risques & due diligence légale,JURIDIQUE & CONFORMITÉ,analysis,heuristique
+analyse-megatendances-signaux-faibles,Analyse des mégatendances & signaux faibles,STRATÉGIE & MANAGEMENT,analysis,heuristique
+analyse-multicritere-de-selection-de-projet,Analyse multicritères de sélection de projet,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+analyse-performance-flotte,Analyse de la performance de flotte,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+analyse-performance-fournisseurs-scorecard,Analyse de la performance fournisseurs (scorecard),SUPPLY CHAIN & ACHATS,analysis,heuristique
+analyse-positionnement-concurrentiel,Analyse du positionnement concurrentiel,STRATÉGIE & MANAGEMENT,analysis,heuristique
+analyse-post-mortem-lecons-apprises,Analyse post-mortem & leçons apprises,GESTION DE PROJETS & PMO,analysis,heuristique
+analyse-rentabilite-agricole-prix-revient,Analyse de rentabilité agricole & prix de revient,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+analyse-rentabilite-segment-produit-marche,Analyse de rentabilité par segment/produit/marché,FINANCE & GESTION,analysis,heuristique
+analyse-resultats-scolaires-tableaux-bord,Analyse des résultats scolaires & tableaux de bord,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+analyse-satisfaction-visiteurs-experience,Analyse de la satisfaction des visiteurs & expérience,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+analyse-scenarios,Analyse des scénarios prospectifs & futurs possibles,STRATÉGIE & MANAGEMENT,analysis,heuristique
+analyse-strategique-pestel-augmente-ia,Analyse stratégique PESTEL augmentée IA,STRATÉGIE & MANAGEMENT,analysis,heuristique
+analyse-swot-tows-croisee,Analyse SWOT/TOWS croisée,STRATÉGIE & MANAGEMENT,analysis,heuristique
+analyse-tendances-demographiques-sociales,Analyse des tendances démographiques & sociales,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+analyse-valeur-optimisation-couts-qualite,Analyse de la valeur & optimisation des coûts qualité,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,analysis,heuristique
+analyse-valeur-value-engineering-achats,Analyse de la valeur & value engineering achats,SUPPLY CHAIN & ACHATS,analysis,heuristique
+analytics-des-risques-et-indicateurs-kri,Analytics des risques & indicateurs KRI,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+analytics-pedagogiques,Analytics pédagogiques (EdTech/LMS),REPORTING & ANALYTICS DASHBOARD,table,heuristique
+analytics-predictif-des-ventes,Analytics prédictif des ventes,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+api-strategie-microservices-interop,"Stratégie d'API, microservices & interopérabilité",TRANSFORMATION DIGITALE & IA,analysis,heuristique
+assessment-center-mise-en-situation-professionnelle,Assessment center & mise en situation professionnelle,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+assurance-sinistralite-analytics,Analytics de la sinistralité (assurance),REPORTING & ANALYTICS DASHBOARD,table,heuristique
+atelier-design-thinking-structure,Atelier de design thinking structuré (5 étapes),INNOVATION & R&D,analysis,heuristique
+audit-achats-responsables-supply-chain,Audit des achats responsables & supply chain,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-anti-corruption,Audit anti-corruption (ISO 37001 & loi Sapin II),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-biodiversite-capital-naturel,Audit de la biodiversité & capital naturel,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-carbone-bilan-ges-scope-1-2-3,"Audit carbone & bilan GES (Scope 1, 2, 3 — GHG Protocol)",AUDITS & CONFORMITÉ,assessment,heuristique
+audit-communication-interne-externe,Audit de la communication interne & externe,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-conformite-aml-kyc,Audit de conformité AML/KYC (anti-blanchiment),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-conformite-produits-services,Audit de conformité produits & services,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-contrats-et-obligations-juridiques,Audit des contrats & obligations juridiques,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-contrats-travail-reglement-interieur,Audit des contrats de travail & règlement intérieur,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-cybersecurite-pentest,Audit cybersécurité & tests d'intrusion (pentest),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-de-conformite-reglementaire-sectorielle,Audit de conformité réglementaire sectorielle,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-de-conformite-sectorielle,"Audit de conformité sectorielle (bancaire, santé, télécom, énergie)",AUDITS & CONFORMITÉ,assessment,heuristique
+audit-de-continuite-d-activite,Audit de continuité d'activité (PCA/PRA),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-de-durabilite,Audit de durabilité (CSRD/DPEF/reporting extra-financier),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-de-gouvernance-des-donnees,Audit de gouvernance des données,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-de-la-chaine-logistique,Audit de la chaîne logistique,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-de-la-formation-professionnelle,Audit de la formation professionnelle,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-de-la-paie-et-charges-sociales,Audit de la paie & charges sociales,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-de-la-proprieté-intellectuelle,Audit de la propriété intellectuelle,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-de-tresorerie-cash-management,Audit de trésorerie & cash management,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-des-droits-humains,Audit des droits humains (devoir de vigilance),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-des-marches-publics-et-commande-publique,Audit des marchés publics & commande publique,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-des-parties-prenantes-et-engagement-stakeholders,Audit des parties prenantes & engagement stakeholders,RSE & DÉVELOPPEMENT DURABLE,assessment,heuristique
+audit-des-prix-de-transfert-intra-groupe,Audit des prix de transfert intra-groupe,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-des-procedes-de-fabrication,Audit des procédés de fabrication,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-des-processus-de-recrutement,Audit des processus de recrutement,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-des-systemes-documentaires,Audit des systèmes documentaires,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-du-ttmp-de-travail-et-duree-legale,Audit du temps de travail & durée légale,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-economie-circulaire,Audit de l'économie circulaire,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-egalite-femmes-hommes,Audit de l'égalité femmes-hommes (index Egapro),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-energetique-batiment-process-industriel,Audit énergétique bâtiment & process industriel,OUTILS SECTORIELS SPÉCIALISÉS,assessment,heuristique
+audit-energetique-complet,Audit énergétique complet (bâtiment & process),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-equipements-maintenance-gmao,"Audit des équipements, maintenance & GMAO",AUDITS & CONFORMITÉ,assessment,heuristique
+audit-erm-coso,Audit de la gestion des risques (ERM — COSO),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-esg,Audit ESG pour investisseurs & agences de notation,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-et-modernisation-des-systèmes-legacy,Audit & modernisation des systèmes legacy,TRANSFORMATION DIGITALE & IA,assessment,heuristique
+audit-etats-financiers,Audit des états financiers (IFRS/OHADA/SYSCOHADA),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-fiscal-optimisation-legale,Audit fiscal & optimisation légale,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-fraude-forensic-investigation,"Audit de fraude, forensic & investigation",AUDITS & CONFORMITÉ,assessment,heuristique
+audit-gestion-budg-et-prev,Audit de la gestion budgétaire & prévisionnelle,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-gestion-patrimoniale-unique,Audit de la gestion patrimoniale,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-gouvernance-et-conseil-d-administration,Audit de gouvernance & conseil d'administration,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-gouvernance-ia-entreprise,Audit de la gouvernance des IA en entreprise (AI Act),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-gpec-gepp,Audit de la GPEC/GEPP,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-impact-social,Audit d'impact social (SROI & évaluation du bien commun),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-infrastructure-it-systèmes,Audit de l'infrastructure IT & systèmes,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-interne-financier-unique,Audit interne financier,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-investissements-et-capex,Audit des investissements & CAPEX,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-legal-et-commissariat-aux-comptes,Audit légal & commissariat aux comptes,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-management-integre-ims,Audit de management intégré (IMS),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-maturite-iso-unique,Audit de maturité ISO (pré-certification),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-odd-et-contribution-aux-sdg,Audit ODD & contribution aux SDG,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-ohada-droit-des-affaires-africain,Audit de conformité OHADA & droit des affaires africain,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-politique-communication-rse,Audit de la politique communication RSE,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-politiques-diversite-inclusion,Audit des politiques diversité & inclusion,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-pratiques-medicales-et-protocoles,Audit des pratiques médicales & des protocoles,OUTILS SECTORIELS SPÉCIALISÉS,assessment,heuristique
+audit-processus-procedures,Audit de processus & procédures,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-protection-donnees-rgpd-pdcp,Audit de la protection des données (RGPD/PDCP),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-qualite-interne-iso-9001,Audit qualité interne (ISO 9001),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-quality-fournisseurs-sous-traitants,Audit qualité fournisseurs & sous-traitants,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-reporting-extra-financier,Audit du reporting extra-financier,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-rh-complet-social,Audit RH complet & social,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-risques-industriels-seveso,Audit des risques industriels & SEVESO,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-rse-complet-gri-standards,Audit RSE complet (GRI Standards),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-rse-feuille-de-route-dd,Audit de la politique RSE & feuille de route DD,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-satisfaction-client-et-experience,Audit satisfaction client & expérience,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-securite-physique-protection-des-biens,Audit de sécurité physique & protection des biens,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-seo-et-strategie-de-reference-ment-naturel,Audit SEO & stratégie de référencement naturel,MARKETING & COMMERCIAL,assessment,heuristique
+audit-sig-et-sig-conformite,Audit des SIG & systèmes d'information de gestion,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-sst,Audit de la santé & sécurité au travail (SST),AUDITS & CONFORMITÉ,assessment,heuristique
+audit-subventions-financements-publics,Audit des subventions & financements publics,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-transformation-digitale,Audit de la transformation digitale,AUDITS & CONFORMITÉ,assessment,heuristique
+audit-traçabilité-chaîne-de-contrôle,Audit de traçabilité & chaîne de contrôle,AUDITS & CONFORMITÉ,assessment,heuristique
+auto-diagnostic-ces-esf-banque-mondiale,Auto-diagnostic CES/ESF Banque Mondiale,Conformité Bailleurs & Projets Financés,assessment,heuristique
+auto-diagnostic-csrd-readiness,Auto-diagnostic CSRD readiness,Labels ESG / RSE / Durabilité,assessment,heuristique
+auto-diagnostic-iso-14001,Auto-diagnostic ISO 14001,Systèmes de Management ISO,assessment,heuristique
+auto-diagnostic-iso-22000-haccp,Auto-diagnostic ISO 22000 / HACCP,Systèmes de Management ISO,assessment,heuristique
+auto-diagnostic-iso-27001,Auto-diagnostic ISO 27001,Systèmes de Management ISO,assessment,heuristique
+auto-diagnostic-iso-37001-smac,Auto-diagnostic ISO 37001 — SMAC,"Gouvernance, Éthique & Anti-Corruption",assessment,heuristique
+auto-diagnostic-iso-37001,Auto-diagnostic ISO 37001,Systèmes de Management ISO,assessment,heuristique
+auto-diagnostic-iso-45001,Auto-diagnostic ISO 45001,Systèmes de Management ISO,assessment,heuristique
+auto-diagnostic-iso-50001,Auto-diagnostic ISO 50001,Systèmes de Management ISO,assessment,heuristique
+auto-diagnostic-iso-9001,Auto-diagnostic ISO 9001,Systèmes de Management ISO,assessment,heuristique
+auto-diagnostic-smi-integre,Auto-diagnostic SMI intégré,Systèmes de Management ISO,assessment,heuristique
+auto-evaluation-bcorp,Auto-évaluation B Corp,Labels ESG / RSE / Durabilité,assessment,heuristique
+auto-evaluation-conformite-halal,Auto-évaluation conformité Halal,Certification de Produits & Services,assessment,heuristique
+auto-evaluation-dpo,Auto-évaluation DPO (Délégué Protection Données),Certification de Compétences & Personnes,assessment,heuristique
+auto-evaluation-economie-circulaire-xp-x30-901,Auto-évaluation Économie Circulaire (XP X30-901),Économie Circulaire & Déchets,assessment,heuristique
+auto-positionnement-six-sigma-lean,Auto-positionnement Six Sigma / Lean,Certification de Compétences & Personnes,assessment,heuristique
+balanced-scorecard-bsc-strategie-en-cascade,Balanced Scorecard (BSC) & stratégie en cascade,STRATÉGIE & MANAGEMENT,analysis,heuristique
+barometre-social-et-enquete-de-climat,Baromètre social & enquête de climat,RH & CAPITAL HUMAIN,analysis,heuristique
+benchmark-des-innovations-sectorielles,Benchmark des innovations sectorielles,INNOVATION & R&D,analysis,heuristique
+benchmark-financier-sectoriel-comparatif,Benchmark financier sectoriel comparatif,FINANCE & GESTION,analysis,heuristique
+benchmark-international-de-l-innovation,Benchmark international de l'innovation,INNOVATION & R&D,analysis,heuristique
+benchmark-marketing-pratiques,Benchmark des meilleures pratiques marketing,MARKETING & COMMERCIAL,analysis,heuristique
+benchmark-prix-analyse-marche-achats,Benchmark des prix & analyse de marché achats,SUPPLY CHAIN & ACHATS,analysis,heuristique
+bilan-carbone-complet-scope-1-2-3-ghg-protocol,"Bilan carbone complet (Scope 1, 2, 3 — GHG Protocol)",RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+bilan-compétences-numérique,Bilan de compétences numérique interactif,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+bilan-compétences-professionnel-digital,Bilan de compétences professionnel digital,RH & CAPITAL HUMAIN,profile,heuristique
+bilan-personnalite-360-complet,Bilan de personnalité 360° complet,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+bilan-social-automatise-preparation-nao,Bilan social automatisé & préparation NAO,RH & CAPITAL HUMAIN,analysis,heuristique
+budget-annuel-et-pluriannuel-participatif,Budget annuel & pluriannuel participatif,FINANCE & GESTION,analysis,heuristique
+business-model-canvas-value-proposition-canvas,Business Model Canvas & Value Proposition Canvas,INNOVATION & R&D,analysis,heuristique
+business-plan-complet-ia-assiste,Business plan complet IA-assisté,FINANCE & GESTION,document,heuristique
+cadre-de-performance-des-services-publics,Cadre de performance des services publics,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+cadre-logique-de-projet-pcm-lfa,Cadre logique de projet (PCM/LFA),OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+calculateur-bilan-carbone-simplifié,Calculateur bilan carbone simplifié,Labels ESG / RSE / Durabilité,assessment,heuristique
+canvas-proposition-de-valeur,Canvas de la proposition de valeur,INNOVATION & R&D,analysis,heuristique
+cartographie-audit-de-la-supply-chain,Cartographie & audit de la supply chain,SUPPLY CHAIN & ACHATS,table,heuristique
+cartographie-competences-developper,Cartographie des compétences à développer,PROFILS APPRENANTS & PÉDAGOGIE,table,heuristique
+cartographie-des-forces-cliftonstrengths,Cartographie des forces (CliftonStrengths),PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,table,heuristique
+cartographie-des-parties-prenantes-et-gouvernance,Cartographie des parties prenantes & gouvernance,STRATÉGIE & MANAGEMENT,table,heuristique
+cartographie-des-risques-operationnels-orm,Cartographie des risques opérationnels (ORM),GESTION DES RISQUES,table,heuristique
+cartographie-dynamique-des-compétences,Cartographie dynamique des compétences,RH & CAPITAL HUMAIN,table,heuristique
+cartographie-strategique-cause-effet,Cartographie stratégique cause-effet,STRATÉGIE & MANAGEMENT,table,heuristique
+charte-de-projet-complete,Charte de projet complète (Project Charter),GESTION DE PROJETS & PMO,document,heuristique
+checklist-conformite-agroalimentaire,Checklist conformité agroalimentaire (BRC/IFS/SQF),Certification de Produits & Services,table,heuristique
+checklist-conformite-bad,Checklist conformité BAD,Conformité Bailleurs & Projets Financés,table,heuristique
+checklist-conformite-legale-par-pays,Checklist de conformité légale par pays,JURIDIQUE & CONFORMITÉ,table,heuristique
+checklist-iso-17020-organisme-inspection,Checklist ISO 17020 — organisme d'inspection,Inspection Technique & Vérification,table,heuristique
+checklist-zero-waste,Checklist zéro déchet (Zero Waste),Économie Circulaire & Déchets,table,heuristique
+client-segmentation-analytics,Analytics client & segmentation comportementale,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+collaborateur-engagement-analytics,Analytics de l'engagement collaborateurs,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+comptabilite-analytique-centres-de-couts,Comptabilité analytique & centres de coûts,FINANCE & GESTION,analysis,heuristique
+consolidation-des-comptes-groupe-multi-entites,Consolidation des comptes (groupe multi-entités),FINANCE & GESTION,analysis,heuristique
+contrôle-budgétaire-et-analyse-des-écarts,Contrôle budgétaire & analyse des écarts,FINANCE & GESTION,analysis,heuristique
+cx-analytics,Analytics de l'expérience client (CX analytics),REPORTING & ANALYTICS DASHBOARD,table,heuristique
+cybersecurite-et-securite-by-design,Plan de cybersécurité & sécurité by design,TRANSFORMATION DIGITALE & IA,document,heuristique
+cybersecurite-stra-tegique,Stratégie de cybersécurité pour infrastructures critiques,TRANSFORMATION DIGITALE & IA,analysis,heuristique
+dash-rse-pilotage,Dashboard RSE & pilotage des engagements,RSE & DÉVELOPPEMENT DURABLE,table,heuristique
+dashboard-comite-de-direction,Dashboard exécutif Comité de direction,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+dashboard-de-performance-globale,Dashboard de performance globale (KPIs exécutifs),REPORTING & ANALYTICS DASHBOARD,table,heuristique
+dashboard-de-pilotage-des-coûts-unique,Dashboard de pilotage des coûts,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+dashboard-odd-contribution-sdg-nations-unies,Dashboard ODD & contribution SDG Nations Unies,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+dashboard-odd-secteur,Dashboard de pilotage des ODD par secteur,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+dashboard-transformation-digitale,Dashboard de transformation digitale,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+data-storytelling-tool,Visualisation de données avancée & data storytelling,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+deeptech-plan-development-tool,Plan de développement d'une deeptech,INNOVATION & R&D,document,heuristique
+design-parcours-apprentissage-individualise,Design du parcours d'apprentissage individualisé,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+design-pedagogique-ia-assiste,Design pédagogique (instructional design) IA-assisté,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+design-thinking-hcd,Design thinking & innovation centrée usage (HCD),STRATÉGIE & MANAGEMENT,analysis,heuristique
+diagnostic-acces-financement-pme-startup,Diagnostic de l'accès au financement (PME/startup),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-achats-procurement,Diagnostic de la politique achats & procurement,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-anti-corruption,Diagnostic anti-corruption (ISO 37001),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-bfr,Diagnostic de la gestion du BFR,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-bien-etre-au-travail,Diagnostic du bien-être au travail (QVT/QVCT),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-business-model,Diagnostic du business model (BMC),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-capacite-autoformation,Diagnostic de la capacité à l'autoformation,PROFILS APPRENANTS & PÉDAGOGIE,assessment,heuristique
+diagnostic-certification-bio-ecocert-ab,Diagnostic certification Bio (Ecocert/AB),Certification de Produits & Services,assessment,heuristique
+diagnostic-climat-social-et-cohesion-interne,Diagnostic du climat social & cohésion interne,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-communication-interne,Diagnostic de la communication interne,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-competences-management-de-projet,Diagnostic compétences management de projet (PMP/Prince2),Certification de Compétences & Personnes,assessment,heuristique
+diagnostic-concurrentiel-benchmark-sectoriel,Diagnostic concurrentiel & benchmark sectoriel,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-concurrentiel,Diagnostic concurrentiel & benchmark sectoriel,STRATÉGIE & MANAGEMENT,assessment,heuristique
+diagnostic-conformite-laboratoire-iso-17025,Diagnostic conformité laboratoire (ISO 17025),Inspection Technique & Vérification,assessment,heuristique
+diagnostic-conformite-medicaments-iso-13485,Diagnostic conformité médicaments (ISO 13485),Certification de Produits & Services,assessment,heuristique
+diagnostic-conformite-reglementaire-sectorielle,Diagnostic conformité réglementaire sectorielle,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-conformite-rgpd-protection-donnees,Diagnostic de conformité RGPD & protection des données,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-continuite-activite-iso-22301,Diagnostic continuité d'activité (ISO 22301),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-controle-de-gestion,Diagnostic du contrôle de gestion,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-culture-managériale,Diagnostic de la culture managériale,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-cybersécurité-iso-27001,Diagnostic cybersécurité (ISO 27001),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-de-capacite-institutionnelle,Diagnostic de capacité institutionnelle,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-de-culture-d-entreprise,Diagnostic de culture d'entreprise,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-de-data-governance,Diagnostic de data governance & qualité de données,TRANSFORMATION DIGITALE & IA,assessment,heuristique
+diagnostic-de-gouvernance-corporate,Diagnostic de gouvernance corporate & conseil d'administration,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-de-l-experience-client,Diagnostic de l'expérience client omnicanal,MARKETING & COMMERCIAL,assessment,heuristique
+diagnostic-de-l-impact-societal,Diagnostic de l'impact sociétal & des externalités,RSE & DÉVELOPPEMENT DURABLE,assessment,heuristique
+diagnostic-de-l-innovation,Diagnostic de l'innovation & de la créativité,INNOVATION & R&D,assessment,heuristique
+diagnostic-de-la-chaine-de-valeur-porter,Diagnostic de la chaîne de valeur (Porter),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-de-la-chaine-de-valeur,Diagnostic de la chaîne de valeur (Porter),STRATÉGIE & MANAGEMENT,assessment,heuristique
+diagnostic-de-la-marque-employeur,Diagnostic de la marque employeur,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-de-la-performance-commerciale,Diagnostic de la performance commerciale,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-de-maturite-digitale-dmi,Diagnostic de maturité digitale (DMI),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-de-maturite-digitale,Diagnostic de maturité digitale (DMI),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-de-maturite-ia,Diagnostic de maturité IA & intelligence artificielle,TRANSFORMATION DIGITALE & IA,assessment,heuristique
+diagnostic-de-maturite-pm-et-gouvernance-projets,Diagnostic de maturité PM & gouvernance projets,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-de-performance-commerciale,Diagnostic de performance commerciale,MARKETING & COMMERCIAL,assessment,heuristique
+diagnostic-de-performance-durable,Diagnostic de la performance durable (ESG score),RSE & DÉVELOPPEMENT DURABLE,assessment,heuristique
+diagnostic-de-performance-globale-bsc,Diagnostic de performance globale (BSC),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-de-performance-globale,Diagnostic de performance globale (BSC),STRATÉGIE & MANAGEMENT,assessment,heuristique
+diagnostic-de-resilience-organisationnelle,Diagnostic de résilience organisationnelle,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-de-satisfaction-client,"Diagnostic de satisfaction client (NPS, CSAT, CES)",DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-de-transformation-agile,Diagnostic de la transformation agile,GESTION DE PROJETS & PMO,assessment,heuristique
+diagnostic-de-tresorerie-et-liquidite,Diagnostic de trésorerie & liquidité,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-dei,"Diagnostic de la diversité, équité & inclusion (DEI)",DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-des-parties-prenantes,Diagnostic des parties prenantes (stakeholder mapping),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-des-processus-metiers-bpm,Diagnostic des processus métiers (BPM),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-des-processus-metiers,Diagnostic des processus métiers (BPM),QUALITÉ & EXCELLENCE OPÉRATIONNELLE,assessment,heuristique
+diagnostic-des-risques-financiers,Diagnostic des risques financiers,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-des-risques-psychosociaux,Diagnostic des risques psychosociaux (RPS),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-des-systemes-d-information,Diagnostic des systèmes d'information (SI/DSI),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-du-business-model,Diagnostic du business model (BMC),STRATÉGIE & MANAGEMENT,assessment,heuristique
+diagnostic-du-portefeuille-produits,Diagnostic du Portefeuille Produits/Services (Matrice BCG),STRATÉGIE & MANAGEMENT,assessment,heuristique
+diagnostic-energetique-iso-50001,Diagnostic énergétique (ISO 50001),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-engagement-collaborateurs,Diagnostic de l'engagement collaborateurs,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-environnemental-iso-14001,Diagnostic environnemental (ISO 14001),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-esg-complet,"Diagnostic ESG complet (Environnement, Social, Gouvernance)",DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-experience-collaborateur,Diagnostic de l'expérience collaborateur (EX),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-financier-complet,Diagnostic financier complet (santé financière),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-fiscal-et-optimisation,Diagnostic fiscal & optimisation,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-formation-competences,Diagnostic de la formation & développement des compétences,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-gouvernance-ohada,Diagnostic gouvernance OHADA,"Gouvernance, Éthique & Anti-Corruption",assessment,heuristique
+diagnostic-gpec-gepp,Diagnostic de la GPEC/GEPP,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-innovation-creativite,Diagnostic de l'innovation & de la créativité,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-innovation-frugale-inclusive,Diagnostic de l'innovation frugale & inclusive,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-investissements-capex,Diagnostic des investissements & CAPEX,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-leadership-styles-managers,Diagnostic du leadership & styles managériaux,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-logistique-approvisionnement,Diagnostic de la chaîne logistique & approvisionnement,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-mobilité-interne-succès,Diagnostic de mobilité interne & succession,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-organisationnel-360,Diagnostic organisationnel 360°,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-performance-equipes,Diagnostic de la performance des équipes,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-politique-salariale-equite-remuneration,Diagnostic de la politique salariale & équité de rémunération,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-proprietes-intellectuelles-brevets,Diagnostic de la propriété intellectuelle & brevets,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-qualite-iso-9001,Diagnostic qualité (ISO 9001),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-rentabilite-structure-marges,Diagnostic de rentabilité & structure des marges,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-rh-capital-humain-complet,Diagnostic RH & capital humain complet,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-rse-et-developpement-durable,Diagnostic RSE & développement durable (GRI/ISO 26000),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-rse-iso-26000,Diagnostic RSE ISO 26000,Labels ESG / RSE / Durabilité,assessment,heuristique
+diagnostic-skills-mapping-ia,Diagnostic des compétences (skills mapping IA),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-solvabilite-endettement,Diagnostic de solvabilité & endettement,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-sst-iso-45001,Diagnostic SST (ISO 45001),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-strategique-swot-augmente-ia,Diagnostic stratégique (SWOT augmenté IA),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-strategique,Diagnostic stratégique (SWOT augmenté IA),STRATÉGIE & MANAGEMENT,assessment,heuristique
+diagnostic-structure-financiere-capital,Diagnostic de la structure financière & du capital,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-styles-apprentissage,Diagnostic des styles d'apprentissage (Kolb/Honey-Mumford),PROFILS APPRENANTS & PÉDAGOGIE,assessment,heuristique
+diagnostic-supply-chain-durable,Diagnostic de la supply chain durable,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-systèmes-comptables,Diagnostic des systèmes comptables (IFRS/OHADA/SYSCOHADA),DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-talents-hauts-potentiels,Diagnostic de la gestion des talents & hauts potentiels,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-transformation-agile,Diagnostic de la transformation agile,DIAGNOSTICS & ÉVALUATIONS,assessment,heuristique
+diagnostic-traçabilité-filière-déchets,Diagnostic de traçabilité filière déchets,Économie Circulaire & Déchets,assessment,heuristique
+diagnostic-unite-de-gestion-de-projets,Diagnostic Unité de Gestion de Projets (UGP),Conformité Bailleurs & Projets Financés,assessment,heuristique
+digital-maturity-model,Diagnostic de maturité digitale (Digital Maturity Model),TRANSFORMATION DIGITALE & IA,assessment,heuristique
+dossier-de-levee-de-fonds-et-relations-investisseurs,Dossier de levée de fonds & relations investisseurs,FINANCE & GESTION,analysis,heuristique
+due-diligence-financiere-et-d-investissement,Due diligence financière & d'investissement,FINANCE & GESTION,analysis,heuristique
+due-diligence-juridique-m-a,Due Diligence Juridique M&A,JURIDIQUE & CONFORMITÉ,analysis,heuristique
+ecommerce-strategie-vente-en-ligne,Stratégie d'e-commerce & vente en ligne,MARKETING & COMMERCIAL,analysis,heuristique
+eies-etude-impact-environnemental-social,Étude d'impact environnemental & social (EIES),ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+entreprise-gouvernance-et-ethique-compliance,"Gouvernance d'entreprise, éthique & compliance",STRATÉGIE & MANAGEMENT,analysis,heuristique
+entreprise-statuts,Template de statuts d'entreprise,JURIDIQUE & CONFORMITÉ,document,heuristique
+entreprise-valorisation,"Valorisation d'entreprise (DCF, comparables, actif net)",FINANCE & GESTION,analysis,heuristique
+entretien-annuel-structure,Entretien annuel structuré (smart evaluation),RH & CAPITAL HUMAIN,analysis,heuristique
+entretien-professionnel-gepp-numerique,Entretien professionnel GEPP numérique,RH & CAPITAL HUMAIN,analysis,heuristique
+etude-acceptabilite-sociale-projet,Étude de l'acceptabilité sociale d'un projet,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-capacite-institutionnelle,Étude de capacité institutionnelle,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-complementarite-inter-projets,Étude de la complémentarité inter-projets,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-de-marche-et-analyse-sectorielle,Étude de marché & analyse sectorielle,STRATÉGIE & MANAGEMENT,analysis,heuristique
+etude-de-marche-quantitative-et-qualitative-ia,Étude de marché quantitative & qualitative IA,MARKETING & COMMERCIAL,analysis,heuristique
+etude-faisabilite-cooperative,Étude de faisabilité d'une coopérative,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-faisabilite-infrastructure-publique,Étude de faisabilité d'une infrastructure publique,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-faisabilite-projet-agricole,Étude de faisabilité d'un projet agricole,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-faisabilite-projet-educatif,Étude de faisabilité d'un projet éducatif,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-faisabilite-projet-energetique,Étude de faisabilité d'un projet énergétique,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-faisabilite-projet-immobilier,Étude de faisabilité d'un projet immobilier,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-faisabilite-projet-numerique,Étude de faisabilité d'un projet numérique,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-faisabilite-projet-sante,Étude de faisabilité d'un projet de santé,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-faisabilite-projet-touristique,Étude de faisabilité d'un projet touristique,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-faisabilite-startup,Étude de faisabilité d'une start-up,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-faisabilite-technique-economique,Étude de faisabilité technique & économique,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-impact-emploi-competences,Étude d'impact sur l'emploi & les compétences,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-impact-genre-inclusion,Étude d'impact sur le genre & l'inclusion,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-marche-nouveau-projet,Étude de marché pour nouveau projet,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-prefaisabilite-investissement,Étude de préfaisabilité d'investissement,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-profil-innovateur-social,Étude du profil de l'innovateur social,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+etude-rentabilite-financiere-projet,Étude de rentabilité financière de projet,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-risques-opportunites-projet,Étude des risques et opportunités d'un projet,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+etude-viabilite-projet-zone-rurale-africaine,Étude de la viabilité d'un projet en zone rurale africaine,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+evaluation-acquis-formation-roi-pedagogique,Évaluation des acquis de formation & ROI pédagogique,RH & CAPITAL HUMAIN,assessment,heuristique
+evaluation-acquis-prealables-positionnement,Évaluation des acquis préalables & positionnement,PROFILS APPRENANTS & PÉDAGOGIE,assessment,heuristique
+evaluation-annuelle-de-performance,Template d'évaluation annuelle de performance,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+evaluation-candidats,Grille d'évaluation des candidats multicritères,RH & CAPITAL HUMAIN,table,heuristique
+evaluation-competences-transversales,Évaluation des compétences transversales (soft skills),PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+evaluation-en-situation-de-travail,Évaluation en situation de travail (EST),PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+evaluation-maturite-numerique,Évaluation de la maturité numérique apprenant,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+evaluation-niveau-maîtrise,Évaluation du niveau de maîtrise (taxonomie Bloom révisée),PROFILS APPRENANTS & PÉDAGOGIE,assessment,heuristique
+facilitation-hackathon-sprint-creatif,Facilitation d'hackathon & sprint créatif,INNOVATION & R&D,analysis,heuristique
+fixation-objectifs,Fixation d'objectifs (OKR / SMART / BHAG),RH & CAPITAL HUMAIN,analysis,heuristique
+formation-poste-gap-analysis,Test d'adéquation formation-poste & gap analysis,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+gestion-de-la-dette-et-refinancement-bancaire,Gestion de la dette & refinancement bancaire,FINANCE & GESTION,analysis,heuristique
+gestion-de-projets-pmo-methode-agile-scrum-kanban-board,"Méthode Agile, Scrum & Kanban board",GESTION DE PROJETS & PMO,analysis,heuristique
+gestion-de-projets-pmo-methode-prince2-pmbok,Méthode Prince2 & PMBOK adaptées,GESTION DE PROJETS & PMO,analysis,heuristique
+gestion-de-projets-pmo-plan-de-communication-projet,Plan de communication projet,GESTION DE PROJETS & PMO,document,heuristique
+gestion-de-projets-pmo-project-charter,Charte de projet complète,GESTION DE PROJETS & PMO,document,heuristique
+gestion-des-actifs-et-politique-d-amortissement,Gestion des actifs & politique d'amortissement,FINANCE & GESTION,document,heuristique
+gestion-des-appels-d-offres-et-reponses-commerciales,Gestion des appels d'offres & réponses commerciales,MARKETING & COMMERCIAL,analysis,heuristique
+gestion-des-incident-lessons-learned,Plan de gestion des incidents & lessons learned,GESTION DES RISQUES,document,heuristique
+gestion-des-livrables-et-jalons,Outil de gestion des livrables & jalons,GESTION DE PROJETS & PMO,analysis,heuristique
+gestion-des-parties-prenantes,Plan de gestion des parties prenantes,GESTION DE PROJETS & PMO,document,heuristique
+gestion-des-risques-de-projets-et-programmes,Gestion des risques de projets & programmes,GESTION DES RISQUES,analysis,heuristique
+gestion-des-risques-financiers,"Gestion des risques financiers (taux, change, crédit)",FINANCE & GESTION,analysis,heuristique
+gestion-des-risques-fournisseurs-supply-chain,Gestion des risques fournisseurs & supply chain,GESTION DES RISQUES,analysis,heuristique
+gestion-des-risques-plan-erm-coso-ii-iso-31000,Plan de gestion des risques (ERM — COSO II / ISO 31000),GESTION DES RISQUES,document,heuristique
+gestion-des-temps-et-activites,Gestion des temps & activités (GTA/SIRH),RH & CAPITAL HUMAIN,analysis,heuristique
+gestion-du-changement,Gestion du changement (Kotter / ADKAR / Lewin),STRATÉGIE & MANAGEMENT,analysis,heuristique
+gestion-du-stress-et-regulation-emotionnelle,Test de gestion du stress & régulation émotionnelle,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+gestion-identites-acces,Stratégie de gestion des identités & accès (IAM),TRANSFORMATION DIGITALE & IA,analysis,heuristique
+gestion-optimisation-portefeuille-projects,Gestion & optimisation du portefeuille de projets,GESTION DE PROJETS & PMO,analysis,heuristique
+gestion-previsionnelle-des-emplois-et-compétences-gepp,Gestion prévisionnelle des emplois & compétences (GEPP),RH & CAPITAL HUMAIN,analysis,heuristique
+gestion-temoignages-cas-clients,Outil de gestion des témoignages & cas clients,COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+gestion-zones-franches-entrepots-sous-douane,Outil de gestion des zones franches & entrepôts sous douane,SUPPLY CHAIN & ACHATS,analysis,heuristique
+gouvernance-de-l-ia-ethique-responsable,Gouvernance de l'IA éthique & responsable (AI Ethics),TRANSFORMATION DIGITALE & IA,analysis,heuristique
+gouvernance-et-ethique,Politique de gouvernance & charte éthique,JURIDIQUE & CONFORMITÉ,document,heuristique
+grille-de-remuneration-et-classification-des-postes,Grille de rémunération & classification des postes,RH & CAPITAL HUMAIN,table,heuristique
+guide-acces-marches-regionaux,"Guide d'accès aux marchés régionaux (CEDEAO, UA, ZLECAf)",OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+guide-conformite-fiscale-internationale,Guide de conformité fiscale internationale,JURIDIQUE & CONFORMITÉ,assessment,heuristique
+guide-conformite-lois-donnees-personnelles-africaines,Guide de conformité aux lois données personnelles africaines,JURIDIQUE & CONFORMITÉ,assessment,heuristique
+guide-des-obligations-reglementaires-sectorielles,Guide des obligations réglementaires sectorielles,JURIDIQUE & CONFORMITÉ,analysis,heuristique
+ideation-management-tool,Outil de gestion des idées,INNOVATION & R&D,analysis,heuristique
+indicateurs-clés-de-risque-et-alertes,Indicateurs clés de risque (KRI) & alertes,GESTION DES RISQUES,analysis,heuristique
+indicateurs-de-performance-de-projet,Indicateurs de performance de projet (KPIs projets),ÉTUDES DE PROJETS & FAISABILITÉ,table,heuristique
+ingenierie-financiere-et-montages-complexes,Ingénierie financière & montages complexes,FINANCE & GESTION,analysis,heuristique
+iot-strategie-edge-computing,"Stratégie IoT, données temps réel & edge computing",TRANSFORMATION DIGITALE & IA,analysis,heuristique
+label-certification-rse-b-corp-iso-26000,"Label & certification RSE, B-Corp, ISO 26000",RSE & DÉVELOPPEMENT DURABLE,assessment,heuristique
+logistique-chaîne-analytics,Analytics de la chaîne logistique,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+marketing-sensoriel-et-expérientiel,Stratégie de marketing sensoriel & expérientiel,MARKETING & COMMERCIAL,analysis,heuristique
+matrice-ambidextrie-strategique,Matrice d'ambidextrie stratégique (exploration/exploitation),INNOVATION & R&D,table,heuristique
+matrice-bcg-mckinsey-ansoff,"Matrice BCG, McKinsey & Ansoff",STRATÉGIE & MANAGEMENT,table,heuristique
+matrice-des-risques-projet,Matrice des risques projet (RACI + heat map),GESTION DE PROJETS & PMO,table,heuristique
+merger-acquisition-simulation,Simulation de fusion-acquisition (M&A),FINANCE & GESTION,analysis,heuristique
+methode-lean-project-management,Méthode Lean Project Management,GESTION DE PROJETS & PMO,analysis,heuristique
+methode-triz-et-inventique-systematique,Méthode TRIZ & inventique systématique,INNOVATION & R&D,analysis,heuristique
+modele-de-facture-internationale,Template de facture conforme & internationale,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+modele-de-financement-d-infrastructure-publique,Modèle de financement d'infrastructure publique,FINANCE & GESTION,document,heuristique
+modele-de-financement-de-projet,Modèle de financement de projet (Project Finance/PPP),FINANCE & GESTION,document,heuristique
+modele-de-gouvernance-pour-groupes-panafricains,Modèle de gouvernance pour groupes panafricains,STRATÉGIE & MANAGEMENT,document,heuristique
+modele-de-plan-de-financement,Template de plan de financement,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+modele-de-statuts-d-entreprise,"Template de statuts d'entreprise (SARL, SA, SAS...)",JURIDIQUE & CONFORMITÉ,document,heuristique
+modele-economique-business-case,Modèle économique & business case d'innovation,FINANCE & GESTION,document,heuristique
+modele-financement-energie-renouvelable,"Modèle de financement d'énergie renouvelable (PPA, lease)",OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+modele-financier-previsionnel,Modèle financier prévisionnel (3-5-10 ans),FINANCE & GESTION,document,heuristique
+modele-lettre-avertissement-sanctions,Template de lettre d'avertissement & sanctions,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+modele-logique-projet-approche-resultats,Modèle logique de projet (approche par les résultats),ÉTUDES DE PROJETS & FAISABILITÉ,document,heuristique
+modele-prix-de-transfert-intra-groupe,Modèle de prix de transfert intra-groupe,FINANCE & GESTION,document,heuristique
+modele-proces-verbal-entretien-professionnel,Template de procès-verbal d'entretien professionnel,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+modele-risque-portefeuille-bancaire,Modèle de risque de portefeuille bancaire,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+modele-scoring-credit-et-risque-client,Modèle de scoring crédit & risque client,FINANCE & GESTION,document,heuristique
+monetisation-contenus-strategie,Stratégie de monétisation des contenus,MARKETING & COMMERCIAL,analysis,heuristique
+nda-accord-confidentialite,Template de NDA & accord de confidentialité,JURIDIQUE & CONFORMITÉ,document,heuristique
+negociation-commerciale-avancee,Techniques de négociation commerciale avancée,MARKETING & COMMERCIAL,analysis,heuristique
+note-de-cadrage-strategique,Template de note de cadrage stratégique,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+okr-pilotage-agile,OKR (Objectives & Key Results) & pilotage agile,STRATÉGIE & MANAGEMENT,analysis,heuristique
+open-data-strategie,Stratégie de données ouvertes (Open Data),TRANSFORMATION DIGITALE & IA,analysis,heuristique
+optimisation-fiscale-legale-et-niches-fiscales,Optimisation fiscale légale & niches fiscales,FINANCE & GESTION,analysis,heuristique
+outil-acv-simplifie-iso-14040-44,Outil ACV simplifié (ISO 14040/44),Économie Circulaire & Déchets,assessment,heuristique
+outil-analyse-donnees-open-source-osint,Outil d'analyse des données open source (OSINT),INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+outil-analyse-epidemiologique-surveillance-sanitaire,Outil d'analyse épidémiologique & surveillance sanitaire,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-analyse-marche-prix-commodites,Outil d'analyse de marché & prix des commodités,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-analyse-marches-financiers,Outil d'analyse des marchés financiers,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-audit-accessibilite-numerique,Outil d'audit de l'accessibilité numérique,OUTILS SECTORIELS SPÉCIALISÉS,assessment,heuristique
+outil-cartographie-opportunities-regionales,Outil de cartographie des opportunités d'affaires régionales,INTELLIGENCE ÉCONOMIQUE & VEILLE,table,heuristique
+outil-cartographie-processus-bpmn,Outil de cartographie des processus (BPMN),QUALITÉ & EXCELLENCE OPÉRATIONNELLE,table,heuristique
+outil-cartographie-risques-pays-geopolitiques,Outil de cartographie des risques pays & géopolitiques,INTELLIGENCE ÉCONOMIQUE & VEILLE,table,heuristique
+outil-certification-bio-standards-internationaux,Outil de certification bio & standards internationaux,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-communication-transformation-digitale,Outil de communication de la transformation digitale,COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+outil-compensation-carbone-et-marches-volontaires,Outil de compensation carbone & marchés volontaires,RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+outil-conformite-fournisseurs-rse-qualite-legale,"Outil de conformité fournisseurs (RSE, qualité, légal)",SUPPLY CHAIN & ACHATS,assessment,heuristique
+outil-conformite-lois-donnees-personnelles-africaines,Outil de conformité lois données personnelles africaines,OUTILS SECTORIELS SPÉCIALISÉS,assessment,heuristique
+outil-d-alerte-precoce,Outil d'alerte précoce,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+outil-d-analyse-de-la-data-client-cdp,Outil d'analyse de la data client (CDP),MARKETING & COMMERCIAL,analysis,heuristique
+outil-d-analyse-de-la-donnee-et-business-intelligence-bi,Outil d'analyse de la donnée & Business Intelligence (BI),TRANSFORMATION DIGITALE & IA,analysis,heuristique
+outil-d-analyse-de-scenarios-et-stress-testing,Outil d'analyse de scénarios & stress testing,GESTION DES RISQUES,analysis,heuristique
+outil-d-automatisation-du-reporting,Outil d'automatisation du reporting (ETL/BI),TRANSFORMATION DIGITALE & IA,table,heuristique
+outil-d-entretien-structure-score-comportemental,Outil d'entretien structuré & scoring comportemental,RH & CAPITAL HUMAIN,profile,heuristique
+outil-d-evaluation-de-la-maturite-pmo,Outil d'évaluation de la maturité PMO,GESTION DE PROJETS & PMO,assessment,heuristique
+outil-d-evaluation-des-compétences-numériques,Outil d'évaluation des compétences numériques (DIGCOMP),PROFILS APPRENANTS & PÉDAGOGIE,assessment,heuristique
+outil-d-evaluation-et-notation-esg,Outil d'évaluation & notation ESG,RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+outil-d-intelligence-collective-et-crowdsourcing,Outil d'intelligence collective & crowdsourcing,INNOVATION & R&D,analysis,heuristique
+outil-d-optimisation-de-la-chaine-d-approvisionnement,Outil d'optimisation de la chaîne d'approvisionnement,SUPPLY CHAIN & ACHATS,analysis,heuristique
+outil-dappel-doffres-eprocurement,Outil d'appel d'offres & e-procurement,SUPPLY CHAIN & ACHATS,analysis,heuristique
+outil-de-benchmark-et-maturite-pm-opm3,Outil de benchmark & maturité PM (OPM3),GESTION DE PROJETS & PMO,assessment,heuristique
+outil-de-benchmarking-sectoriel-international,Outil de benchmarking sectoriel international,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+outil-de-blended-learning-hybridation,Outil de blended learning & hybridation,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+outil-de-brand-management-et-identite-de-marque,Outil de brand management & identité de marque,MARKETING & COMMERCIAL,analysis,heuristique
+outil-de-calcul-de-l-empreinte-eau-et-biodiversite,Outil de calcul de l'empreinte eau & biodiversité,RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+outil-de-calcule-de-l-impact-economique-local,Outil de calcul de l'impact économique local,RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+outil-de-calcule-et-suit-du-roi-projet,Outil de calcul & suivi du ROI projet,GESTION DE PROJETS & PMO,analysis,heuristique
+outil-de-capitalisation-des-experiences-de-projet,Outil de capitalisation des expériences de projet,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+outil-de-classification-pesee-des-postes-hay,Outil de classification & pesée des postes (Hay),RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-co-creation-avec-parties-prenantes,Outil de co-création avec parties prenantes,INNOVATION & R&D,analysis,heuristique
+outil-de-coaching-pedagogique-personnalise,Outil de coaching pédagogique personnalisé,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+outil-de-communication-de-crise-multicanal,Outil de communication de crise multicanal,GESTION DES RISQUES,analysis,heuristique
+outil-de-communication-rse-aupres-des-communautes-locales,Outil de communication RSE auprès des communautés locales,RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+outil-de-compliance,"Outil de compliance CIMA, UEMOA, CEMAC, OHADA",JURIDIQUE & CONFORMITÉ,analysis,heuristique
+outil-de-conformite-ai-act-et-regulation-de-l-ia,Outil de conformité AI Act & régulation de l'IA,TRANSFORMATION DIGITALE & IA,assessment,heuristique
+outil-de-conformite-aml-kyc,Outil de conformité AML/KYC (anti-blanchiment),JURIDIQUE & CONFORMITÉ,assessment,heuristique
+outil-de-conformite-anti-corruption-iso-37001,Outil de conformité anti-corruption (ISO 37001),JURIDIQUE & CONFORMITÉ,assessment,heuristique
+outil-de-conformite-droit-de-la-concurrence,Outil de conformité droit de la concurrence,JURIDIQUE & CONFORMITÉ,assessment,heuristique
+outil-de-conformite-droit-du-travail-sectoriel,Outil de conformité droit du travail sectoriel,JURIDIQUE & CONFORMITÉ,assessment,heuristique
+outil-de-conformite-iso-37301,Outil de conformité ISO 37301,"Gouvernance, Éthique & Anti-Corruption",assessment,heuristique
+outil-de-conformite-itie-transparence-miniere,Outil de conformité ITIE (transparence minière),OUTILS SECTORIELS SPÉCIALISÉS,assessment,heuristique
+outil-de-conformite-marches-publics-et-ohada,Outil de conformité marchés publics & OHADA,JURIDIQUE & CONFORMITÉ,assessment,heuristique
+outil-de-conformite-ohada-droit-des-affaires-africain,Outil de conformité OHADA & droit des affaires africain,OUTILS SECTORIELS SPÉCIALISÉS,assessment,heuristique
+outil-de-conformite-rgcd-protection-des-donnees,Outil de conformité RGPD & protection des données,JURIDIQUE & CONFORMITÉ,assessment,heuristique
+outil-de-conformite-sectorielle,"Outil de conformité sectorielle (bancaire, santé, énergie)",JURIDIQUE & CONFORMITÉ,assessment,heuristique
+outil-de-conformite-taxonomie-verte,Outil de conformité taxonomie verte (UE/Afrique),RSE & DÉVELOPPEMENT DURABLE,assessment,heuristique
+outil-de-connaissance-de-soi,Outil de connaissance de soi (Fenêtre de Johari),PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+outil-de-construction-verte-hqe-breeam,Plan de projet de construction verte (HQE/BREEAM),OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+outil-de-cooptation-et-referral-program,Outil de cooptation & referral program,RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-design-de-parcours-de-formation,Outil de design de parcours de formation,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-de-design-ux-ui-centre-utilisateur,Outil de design UX/UI centré utilisateur,TRANSFORMATION DIGITALE & IA,analysis,heuristique
+outil-de-detection-des-biais-au-recrutement,Outil de détection des biais au recrutement,RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-detection-et-prevention-de-la-fraude,Outil de détection & prévention de la fraude,GESTION DES RISQUES,analysis,heuristique
+outil-de-developpement-de-la-pensee-systemique,Outil de développement de la pensée systémique,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+outil-de-developpement-du-leadership-authentique,Outil de développement du leadership authentique,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+outil-de-devoir-de-vigilance-sapin-ii-dembelé,Outil de devoir de vigilance (Sapin II / Dembélé),JURIDIQUE & CONFORMITÉ,analysis,heuristique
+outil-de-due-diligence-en-droits-humains-et-travail,Outil de due diligence en droits humains & travail,RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+outil-de-facilitation-strategique,Outil de facilitation stratégique (workshop & CODIR),STRATÉGIE & MANAGEMENT,analysis,heuristique
+outil-de-feedback-pedagogique-360,Outil de feedback pédagogique 360°,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+outil-de-financement-vert,"Outil de financement vert (Green Bonds, Sustainability Linked)",RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+outil-de-formalisation-entreprise-informelle,Outil de formalisation d'entreprise informelle,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-de-fundraising-et-gestion-des-relations-investisseurs,Outil de fundraising & gestion des relations investisseurs,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-de-gamification-et-apprentissage-par-le-jeu,Outil de gamification & apprentissage par le jeu,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+outil-de-gestion-continue-des-performances-cpm,Outil de gestion continue des performances (CPM),RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-gestion-de-l-innovation-frugale-et-jugaad,Outil de gestion de l'innovation frugale & jugaad,INNOVATION & R&D,analysis,heuristique
+outil-de-gestion-de-la-blockchain-en-entreprise,Outil de gestion de la blockchain en entreprise,TRANSFORMATION DIGITALE & IA,analysis,heuristique
+outil-de-gestion-de-la-connaissance-projet,Outil de gestion de la connaissance projet (KB),GESTION DE PROJETS & PMO,analysis,heuristique
+outil-de-gestion-de-la-dette-technologique,Outil de gestion de la dette technologique,INNOVATION & R&D,analysis,heuristique
+outil-de-gestion-de-la-paie-optimisation,Outil de gestion de la paie & optimisation,RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-gestion-de-la-qualite-en-sante,Outil de gestion de la qualité en santé (accréditation HAS/JCI),QUALITÉ & EXCELLENCE OPÉRATIONNELLE,analysis,heuristique
+outil-de-gestion-de-la-reputation-en-ligne-orm,Outil de gestion de la réputation en ligne (ORM),MARKETING & COMMERCIAL,analysis,heuristique
+outil-de-gestion-de-la-transition-numerique-du-secteur-public,Outil de gestion de la transition numérique du secteur public,TRANSFORMATION DIGITALE & IA,analysis,heuristique
+outil-de-gestion-de-lidentite-numerique-kyc-digital,Outil de gestion de l'identité numérique (KYC digital),OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-de-gestion-de-portefeuille-d-actifs,Outil de gestion de portefeuille d'actifs,FINANCE & GESTION,analysis,heuristique
+outil-de-gestion-de-projet-humanitaire-ong,Outil de gestion de projet humanitaire & ONG (PCM/LFA),GESTION DE PROJETS & PMO,analysis,heuristique
+outil-de-gestion-de-projets-d-innovation-stage-gate,Outil de gestion de projets d'innovation (Stage-Gate),GESTION DE PROJETS & PMO,analysis,heuristique
+outil-de-gestion-des-avantages-sociaux,Outil de gestion des avantages sociaux,RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-gestion-des-compétences-critiques-et-rares,Outil de gestion des compétences critiques & rares,RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-gestion-des-conges-absences,Outil de gestion des congés & absences,RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-gestion-des-contrats-projet,Outil de gestion des contrats projet,GESTION DE PROJETS & PMO,analysis,heuristique
+outil-de-gestion-des-contrats,Outil de gestion des contrats (CLM — lifecycle),JURIDIQUE & CONFORMITÉ,analysis,heuristique
+outil-de-gestion-des-creances-et-recouvrement,Outil de gestion des créances & recouvrement,FINANCE & GESTION,analysis,heuristique
+outil-de-gestion-des-dependances-inter-projets,Outil de gestion des dépendances inter-projets,GESTION DE PROJETS & PMO,analysis,heuristique
+outil-de-gestion-des-droits-d-auteur-et-licences,Outil de gestion des droits d'auteur & licences,JURIDIQUE & CONFORMITÉ,analysis,heuristique
+outil-de-gestion-des-expatries-et-mobilite-internationale,Outil de gestion des expatriés & mobilité internationale,RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-gestion-des-finances-publiques-gfmis,Outil de gestion des finances publiques (GFMIS),OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-de-gestion-des-fonds-de-capital-risque,Outil de gestion des fonds de capital-risque,FINANCE & GESTION,analysis,heuristique
+outil-de-gestion-des-formations,Outil de gestion des formations (LMS intégré),RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-gestion-des-garanties-et-suretes,Outil de gestion des garanties & sûretés,FINANCE & GESTION,analysis,heuristique
+outil-de-gestion-des-idees,Outil de gestion des idées (Ideation management),INNOVATION & R&D,analysis,heuristique
+outil-de-gestion-des-jumeaux-numeriques,Outil de gestion des jumeaux numériques (digital twins),TRANSFORMATION DIGITALE & IA,analysis,heuristique
+outil-de-gestion-des-litiges-et-contentieux,Outil de gestion des litiges & contentieux,JURIDIQUE & CONFORMITÉ,analysis,heuristique
+outil-de-gestion-des-projets-de-construction,Outil de gestion des projets de construction (BTP),GESTION DE PROJETS & PMO,analysis,heuristique
+outil-de-gestion-des-projets-de-transformation-digitale,Outil de gestion des projets de transformation digitale,GESTION DE PROJETS & PMO,analysis,heuristique
+outil-de-gestion-des-risques-climatiques,Outil de gestion des risques climatiques (TCFD/TNFD),GESTION DES RISQUES,analysis,heuristique
+outil-de-gestion-des-risques-d-innovation-technologique,Outil de gestion des risques d'innovation technologique,GESTION DES RISQUES,analysis,heuristique
+outil-de-gestion-des-risques-de-credit-portefeuille,Outil de gestion des risques de crédit portefeuille,GESTION DES RISQUES,analysis,heuristique
+outil-de-gestion-des-risques-de-reputation-numerique,Outil de gestion des risques de réputation numérique,GESTION DES RISQUES,analysis,heuristique
+outil-de-gestion-des-risques-esg,Outil de gestion des risques ESG,GESTION DES RISQUES,analysis,heuristique
+outil-de-gestion-des-risques-pays-et-de-change,Outil de gestion des risques pays & de change,GESTION DES RISQUES,analysis,heuristique
+outil-de-gestion-des-risques-physiques-et-climatiques,Outil de gestion des risques physiques & climatiques,RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+outil-de-gestion-des-stocks-optimisation-niveaux,Outil de gestion des stocks & optimisation des niveaux,SUPPLY CHAIN & ACHATS,analysis,heuristique
+outil-de-gestion-des-subventions-aides-et-dossiers,"Outil de gestion des subventions, aides & dossiers",FINANCE & GESTION,analysis,heuristique
+outil-de-gestion-des-travailleurs-indedependants-et-gig-workers,Outil de gestion des travailleurs indépendants & gig workers,RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-gestion-du-changement-projet,Outil de gestion du changement projet,GESTION DE PROJETS & PMO,analysis,heuristique
+outil-de-gestion-du-portefeuille-d-innovations-stage-gate,Outil de gestion du portefeuille d'innovations (Stage-Gate),INNOVATION & R&D,analysis,heuristique
+outil-de-gestion-du-stress-et-prevention-burn-out,Outil de gestion du stress & prévention burn-out,RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-gouvernance-des-donnees,Outil de gouvernance des données (Data Governance),TRANSFORMATION DIGITALE & IA,analysis,heuristique
+outil-de-mentorat-inverse,Outil de mentorat inversé & reverse mentoring,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+outil-de-mesure-d-audience-web-analytics,Outil de mesure d'audience & web analytics,MARKETING & COMMERCIAL,table,heuristique
+outil-de-mesure-de-l-acces-a-l-energie-et-inclusion-energetique,Outil de mesure de l'accès à l'énergie & inclusion énergétique,RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+outil-de-mesure-de-l-attractivite-employeur,Outil de mesure de l'attractivité employeur,RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-mesure-de-l-engagement,Outil de mesure de l'engagement (pulse survey),RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-mesure-de-l-impact-des-campagnes,Outil de mesure de l'impact des campagnes,MARKETING & COMMERCIAL,analysis,heuristique
+outil-de-mesure-de-la-notoriete-brand-equity,Outil de mesure de la notoriété & brand equity,MARKETING & COMMERCIAL,analysis,heuristique
+outil-de-mesure-de-la-valeur-partagee,Outil de mesure de la valeur partagée (CSV — Porter),RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+outil-de-mesure-du-roi-de-la-transformation-digitale,Outil de mesure du ROI de la transformation digitale,TRANSFORMATION DIGITALE & IA,analysis,heuristique
+outil-de-mesure-et-gestion-de-l-impact-social-sroi,Outil de mesure & gestion de l'impact social (SROI),RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+outil-de-micro-learning-et-learning-nuggets,Outil de micro-learning & learning nuggets,RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-modelisation-actuarielle,Outil de modélisation actuarielle,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-de-modélisation-des-risques-actuariels,Outil de modélisation des risques actuariels,FINANCE & GESTION,analysis,heuristique
+outil-de-monitoring-des-reseaux-sociaux-et-e-reputation,Outil de monitoring des réseaux sociaux & e-réputation,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+outil-de-partenariat-public-prive-a-impact,Outil de partenariat public-privé à impact (PPP),RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+outil-de-partenariat-public-privé-à-impact,Outil de partenariat public-privé à impact,RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+outil-de-participation-citoyenne-numerique,Outil de participation citoyenne numérique,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-de-people-analytics-avance,Outil de People Analytics avancé,RH & CAPITAL HUMAIN,table,heuristique
+outil-de-personnalisation-ia-des-offres,Outil de personnalisation IA des offres,MARKETING & COMMERCIAL,analysis,heuristique
+outil-de-pharmacovigilance-et-effets-indesirables,Outil de pharmacovigilance & effets indésirables,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-de-pilotage-de-la-performance-strategique,Outil de pilotage de la performance stratégique,STRATÉGIE & MANAGEMENT,analysis,heuristique
+outil-de-pilotage-des-nao,Outil de pilotage des NAO,RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-prevention-et-gestion-des-rps,Outil de prévention & gestion des RPS,RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-prevision-de-la-demande-forecasting-ia,Outil de prévision de la demande (forecasting IA),SUPPLY CHAIN & ACHATS,analysis,heuristique
+outil-de-priorisation-des-projets,"Outil de priorisation des projets (MoSCoW, scoring)",GESTION DE PROJETS & PMO,assessment,heuristique
+outil-de-priorisation-strategique-moscow-scoring,"Outil de priorisation stratégique (MoSCoW, scoring)",STRATÉGIE & MANAGEMENT,assessment,heuristique
+outil-de-protection-de-l-innovation,"Outil de protection de l'innovation (brevets, marques, secrets)",INNOVATION & R&D,analysis,heuristique
+outil-de-protection-de-la-proprieté-intellectuelle,Outil de protection de la propriété intellectuelle,JURIDIQUE & CONFORMITÉ,analysis,heuristique
+outil-de-quantification-des-risques-monte-carlo,Outil de quantification des risques (Monte Carlo),GESTION DES RISQUES,analysis,heuristique
+outil-de-reconnaissance-des-acquis-vae-rncp,Outil de reconnaissance des acquis (VAE/RNCP),PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+outil-de-reconnaissance-des-acquis,Outil de reconnaissance des acquis,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+outil-de-reporting-unifie-rse-multi-referentiels,Outil de reporting unifié RSE multi-référentiels,RSE & DÉVELOPPEMENT DURABLE,table,heuristique
+outil-de-scenario-planning-et-futurs-possibles,Outil de scenario planning & futurs possibles,INNOVATION & R&D,analysis,heuristique
+outil-de-scoring-credit-et-risque-client,Outil de scoring crédit & risque client,OUTILS SECTORIELS SPÉCIALISÉS,assessment,heuristique
+outil-de-scoring-qualification-nurturing-des-leads,"Outil de scoring, qualification & nurturing des leads",MARKETING & COMMERCIAL,assessment,heuristique
+outil-de-simulation-de-politique-dividende,Outil de simulation de politique dividende,FINANCE & GESTION,document,heuristique
+outil-de-simulation-et-exercices-de-crise,Outil de simulation & exercices de crise,GESTION DES RISQUES,analysis,heuristique
+outil-de-simulation-et-mise-en-situation-pedagogique,Outil de simulation & mise en situation pédagogique,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+outil-de-simulation-financiere-de-projet-ppp,Outil de simulation financière de projet PPP,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+outil-de-sourcing-et-chasse-de-tetes-ia-augmente,Outil de sourcing & chasse de têtes IA-augmenté,RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-suivi-budg-etat-projet-evm,Outil de suivi budgétaire projet (EVM),GESTION DE PROJETS & PMO,analysis,heuristique
+outil-de-suivi-des-megatendances-mondiales,Outil de suivi des mégatendances mondiales,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+outil-de-suivi-et-reporting-chantier,Outil de suivi & reporting chantier,OUTILS SECTORIELS SPÉCIALISÉS,table,heuristique
+outil-de-test-validation-mvp-lean-startup,Outil de test & validation MVP (Lean Startup),INNOVATION & R&D,analysis,heuristique
+outil-de-validation-de-marche-mvp-lean-startup,Outil de validation de marché (MVP & lean startup),OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-de-valorisation-de-la-recherche-et-spin-off,Outil de valorisation de la recherche & spin-off,INNOVATION & R&D,analysis,heuristique
+outil-de-veille-concurrentielle-automatisee,Outil de veille concurrentielle automatisée,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+outil-de-veille-des-appels-doffres-et-marches-publics,Outil de veille des appels d'offres & marchés publics,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+outil-de-veille-des-brevets-et-propriete-intellectuelle,Outil de veille des brevets & propriété intellectuelle,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+outil-de-veille-des-financements-disponibles,"Outil de veille des financements disponibles (bailleurs, fonds)",INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+outil-de-veille-des-marches-financiers-et-matiere-premiere,Outil de veille des marchés financiers & matières premières,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+outil-de-veille-des-politiques-publiques-et-reformes,Outil de veille des politiques publiques & réformes,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+outil-de-veille-des-prix-et-indices-sectoriels,Outil de veille des prix & indices sectoriels,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+outil-de-veille-des-risques-geopolitiques,Outil de veille des risques géopolitiques,GESTION DES RISQUES,analysis,heuristique
+outil-de-veille-des-tendances-consommateurs,Outil de veille des tendances consommateurs,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+outil-de-veille-juridique-rh-droit-du-travail,Outil de veille juridique RH & droit du travail,RH & CAPITAL HUMAIN,analysis,heuristique
+outil-de-veille-juridique-sectorielle-automatisee,Outil de veille juridique sectorielle automatisée,JURIDIQUE & CONFORMITÉ,analysis,heuristique
+outil-de-veille-reglementaire-et-juridique,Outil de veille réglementaire & juridique,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+outil-de-veille-strategique-sectorielle-ia,Outil de veille stratégique sectorielle IA,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+outil-de-veille-technologique-et-innovation-sectorielle,Outil de veille technologique & innovation sectorielle,INNOVATION & R&D,analysis,heuristique
+outil-de-veille-technologique-et-innovation,Outil de veille technologique & innovation,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+outil-de-vente-argumentation-gestion-objections,"Script de vente, argumentation & gestion des objections",MARKETING & COMMERCIAL,analysis,heuristique
+outil-de-verification-declarations-environnementales,Outil de vérification déclarations environnementales,Inspection Technique & Vérification,assessment,heuristique
+outil-dia-biais-algorithmiques,Outil d'IA éthique RH (biais algorithmiques),RH & CAPITAL HUMAIN,analysis,heuristique
+outil-diagnostic-conformite-afd,Outil diagnostic conformité AFD,Conformité Bailleurs & Projets Financés,assessment,heuristique
+outil-dms-gestion-documentation-qualite,Outil de gestion de la documentation qualité (DMS),QUALITÉ & EXCELLENCE OPÉRATIONNELLE,analysis,heuristique
+outil-efficacite-communication-kpis,Outil de mesure de l'efficacité de la communication (KPIs),COMMUNICATION & RELATIONS EXTÉRIEURES,table,heuristique
+outil-escalade-gestion-issues-projet,Outil d'escalade & gestion des issues projet,GESTION DE PROJETS & PMO,analysis,heuristique
+outil-evaluation-des-apprentissages,Outil d'évaluation des apprentissages,OUTILS SECTORIELS SPÉCIALISÉS,assessment,heuristique
+outil-evaluation-performance-360,Outil d'évaluation de la performance 360°,RH & CAPITAL HUMAIN,assessment,heuristique
+outil-evaluation-politiques-publiques,Outil d'évaluation des politiques publiques,OUTILS SECTORIELS SPÉCIALISÉS,assessment,heuristique
+outil-feuille-de-route-transformation-digitale,Feuille de route de transformation digitale,TRANSFORMATION DIGITALE & IA,document,heuristique
+outil-gestion-actif-passif-alm,Outil de gestion actif-passif (ALM),OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-gestion-changement-processus,Outil de gestion du changement processus,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,analysis,heuristique
+outil-gestion-cultures-calendrier-cultural,Outil de gestion des cultures & calendrier cultural,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-gestion-entrepots-wms,Outil de gestion des entrepôts (WMS),SUPPLY CHAIN & ACHATS,analysis,heuristique
+outil-gestion-etablissements-scolaires,Outil de gestion des établissements scolaires,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-gestion-flux-douaniers-transitaires,Outil de gestion des flux douaniers & transitaires,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-gestion-hoteliere-revpar,Outil de gestion hôtelière & RevPAR,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-gestion-immobiliere-valorisation,Outil de gestion immobilière & valorisation,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-gestion-indicateurs-qualite-kqi,Outil de gestion des indicateurs qualité (KQI),QUALITÉ & EXCELLENCE OPÉRATIONNELLE,analysis,heuristique
+outil-gestion-medias-communautaires-radio-presse-locale,"Outil de gestion des médias communautaires (radio, presse locale)",COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+outil-gestion-medicaments-essentiels,Outil de gestion des médicaments essentiels,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-gestion-non-conformites-capa,Outil de gestion des non-conformités & CAPA,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,assessment,heuristique
+outil-gestion-produit,Outil de gestion produit,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-gestion-programmes-humanitaires-4w-5w,Outil de gestion de programmes humanitaires (4W/5W),OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-gestion-qualite-enseignement,Outil de gestion de la qualité dans l'enseignement,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,analysis,heuristique
+outil-gestion-reclamations-clients,Outil de gestion des réclamations clients,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,analysis,heuristique
+outil-gestion-relation-fournisseurs-srm,Outil de gestion de la relation fournisseurs (SRM),SUPPLY CHAIN & ACHATS,analysis,heuristique
+outil-gestion-ressources-minieres,Outil de gestion des ressources minières,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-gestion-risques-qualite-fmea,Outil de gestion des risques qualité (FMEA),QUALITÉ & EXCELLENCE OPÉRATIONNELLE,analysis,heuristique
+outil-igp-aop-eligibilite-produit,Outil IGP/AOP — éligibilité produit,Certification de Produits & Services,assessment,heuristique
+outil-integrite-marches-publics,Outil intégrité marchés publics,"Gouvernance, Éthique & Anti-Corruption",assessment,heuristique
+outil-management-qualite-projet,Outil de management de la qualité en projet (QAP),QUALITÉ & EXCELLENCE OPÉRATIONNELLE,analysis,heuristique
+outil-management-reputation-en-ligne-orm,Outil de management de la réputation en ligne (ORM),COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+outil-management-visuel-tableau-bord-operationnel,Outil de management visuel & tableau de bord opérationnel,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,table,heuristique
+outil-marketing-automation-personnalisation,Outil de marketing automation & personnalisation,MARKETING & COMMERCIAL,analysis,heuristique
+outil-mesure-acces-energie,Outil de mesure de l'accès à l'énergie,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-mesure-image-reputation,Outil de mesure de l'image & réputation,COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+outil-mesure-impact-ong-sroi,Outil de mesure d'impact ONG & SROI,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-mesure-qualite-soins-accréditation-has-jci,Outil de mesure de la qualité des soins (accréditation HAS/JCI),OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-mesure-satisfaction-interne-collaborateurs,Outil de mesure de la satisfaction interne (collaborateurs),QUALITÉ & EXCELLENCE OPÉRATIONNELLE,analysis,heuristique
+outil-negociation-contrat-achats,Outil de négociation & contractualisation achats,SUPPLY CHAIN & ACHATS,analysis,heuristique
+outil-optimisation-portuaire-fret-maritime,Outil d'optimisation portuaire & fret maritime,SUPPLY CHAIN & ACHATS,analysis,heuristique
+outil-optimisation-tournees-routage-ia,Outil d'optimisation des tournées & routage IA,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-planification-nationale-suivi-odd,Outil de planification nationale & suivi des ODD,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-preparation-label-engage-rse-afnor,Outil de préparation label Engagé RSE (AFNOR),Labels ESG / RSE / Durabilité,assessment,heuristique
+outil-preparation-reporting-gri-sasb,Outil de préparation reporting GRI/SASB,Labels ESG / RSE / Durabilité,table,heuristique
+outil-production-contenu-ia-assiste,Outil de production de contenu IA-assisté,COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+outil-profilage-partners-investors,Outil de profilage des partenaires & investisseurs,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+outil-qualification-evaluation-fournisseurs,Outil de qualification & évaluation des fournisseurs,SUPPLY CHAIN & ACHATS,assessment,heuristique
+outil-revue-direction-management-review,Outil de revue de direction & management review,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,analysis,heuristique
+outil-rse-africain,Programme RSE adapté aux contextes africains,RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+outil-six-sigma-dmaic,Outil Six Sigma & démarche DMAIC,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,analysis,heuristique
+outil-social-learning,Outil de social learning & apprentissage collaboratif,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+outil-strategie-cloud,"Stratégie cloud, migration & architecture",TRANSFORMATION DIGITALE & IA,analysis,heuristique
+outil-suivi-actions-correctives-preventives,Outil de suivi des actions correctives & préventives,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,analysis,heuristique
+outil-suivi-sante-mentale-entreprise,Outil de suivi de la santé mentale en entreprise,RH & CAPITAL HUMAIN,analysis,heuristique
+outil-traceabilite-produits-agricoles-certifications,Outil de traçabilité des produits agricoles & certifications,SUPPLY CHAIN & ACHATS,analysis,heuristique
+outil-traceabilite-transparence-chaine-logistique,Outil de traçabilité & transparence chaîne logistique,SUPPLY CHAIN & ACHATS,analysis,heuristique
+outil-transition-numerique-tpe-pme,Outil de transition numérique TPE/PME,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+outil-traçabilité-supply-chain-responsable,Outil de traçabilité & supply chain responsable,RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+outils-de-cartographie-des-acteurs-et-reseaux-d-influence,Outil de cartographie des acteurs & réseaux d'influence,INTELLIGENCE ÉCONOMIQUE & VEILLE,table,heuristique
+parcours-de-montee-en-competences-individualise,Parcours de montée en compétences individualisé,RH & CAPITAL HUMAIN,analysis,heuristique
+people-analytics-rh-data-driven,People analytics & RH data-driven,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+performance-analytics-tool,Analytics de la performance des produits/services,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+performance-financiere-analytics,Analytics de la performance financière,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+performance-marketing-roi-analytics,Analytics de la performance marketing (ROI),REPORTING & ANALYTICS DASHBOARD,table,heuristique
+performance-network-distribution-reporting,Reporting de la performance du réseau de distribution,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+persona-et-profil-client-ideal,Persona & profil client idéal (ICP & Buyer Persona),MARKETING & COMMERCIAL,profile,heuristique
+pitch-deck-financier-pour-investisseurs,Pitch deck financier pour investisseurs,FINANCE & GESTION,document,heuristique
+plan-accreditation-certification-internationale,Plan d'accréditation & certification internationale,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,document,heuristique
+plan-action-gouvernemental-suivi-reformes,Plan d'action gouvernemental & suivi des réformes,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-audit-interne-qualite,Plan d'audit interne qualité,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,document,heuristique
+plan-benchmarking-qualite-sectoriel,Plan de benchmarking qualité sectoriel,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,document,heuristique
+plan-certification-renouvellement-certifications,Plan de certification & renouvellement des certifications,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,document,heuristique
+plan-communication-appels-projets,Plan de communication pour les appels à projets,COMMUNICATION & RELATIONS EXTÉRIEURES,document,heuristique
+plan-communication-changement-organisationnel,Plan de communication du changement organisationnel,COMMUNICATION & RELATIONS EXTÉRIEURES,document,heuristique
+plan-communication-crise-dark-site,Plan de communication de crise & dark site,COMMUNICATION & RELATIONS EXTÉRIEURES,document,heuristique
+plan-communication-evenementiel,Plan de communication événementiel,COMMUNICATION & RELATIONS EXTÉRIEURES,document,heuristique
+plan-communication-financiere-relations-investisseurs,Plan de communication financière & relations investisseurs,COMMUNICATION & RELATIONS EXTÉRIEURES,document,heuristique
+plan-communication-interne-annuel,Plan de communication interne annuel,COMMUNICATION & RELATIONS EXTÉRIEURES,document,heuristique
+plan-communication-levée-fonds,Plan de communication pour levée de fonds,COMMUNICATION & RELATIONS EXTÉRIEURES,document,heuristique
+plan-communication-odds-impact-societal,Plan de communication pour les ODD & impact sociétal,COMMUNICATION & RELATIONS EXTÉRIEURES,document,heuristique
+plan-communication-rh-employer-branding,Plan de communication RH & employer branding,COMMUNICATION & RELATIONS EXTÉRIEURES,document,heuristique
+plan-communication-rse-impact,Plan de communication RSE & impact,COMMUNICATION & RELATIONS EXTÉRIEURES,document,heuristique
+plan-cybersecurite-pme-protection-basique,Plan de cybersécurité PME & protection basique,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-d-acces-au-financement-bad-bceao-beac-fonds-africains,"Plan d'accès au financement BAD, BCEAO, BEAC, Fonds africains",FINANCE & GESTION,document,heuristique
+plan-d-acces-universel-aux-services-et-inclusion,Plan d'accès universel aux services & inclusion,RSE & DÉVELOPPEMENT DURABLE,document,heuristique
+plan-d-accessibilite-numerique-rgaa-wcag,Plan d'accessibilité numérique (RGAA/WCAG),TRANSFORMATION DIGITALE & IA,document,heuristique
+plan-d-acquisition-et-generation-de-leads,Plan d'acquisition & génération de leads,MARKETING & COMMERCIAL,document,heuristique
+plan-d-action-rse-annuel-priorites,Plan d'action RSE annuel & priorités,RSE & DÉVELOPPEMENT DURABLE,document,heuristique
+plan-d-adoption-de-l-ia-en-entreprise,Plan d'adoption de l'IA en entreprise (AI Strategy),TRANSFORMATION DIGITALE & IA,document,heuristique
+plan-d-affaires-agricole-etude-de-faisabilite,Plan d'affaires agricole & étude de faisabilité,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-d-affaires-cooperative-ess,Plan d'affaires pour coopérative & ESS,FINANCE & GESTION,document,heuristique
+plan-d-amelioration-de-la-performance-pip,Plan d'amélioration de la performance (PIP),RH & CAPITAL HUMAIN,document,heuristique
+plan-d-assurance-qualite-projet,Plan d'assurance qualité projet (QA/QC),GESTION DE PROJETS & PMO,document,heuristique
+plan-d-email-marketing-automation,Plan d'email marketing & automation,MARKETING & COMMERCIAL,document,heuristique
+plan-d-engagement-des-parties-prenantes,Plan d'engagement des parties prenantes,COMMUNICATION & RELATIONS EXTÉRIEURES,document,heuristique
+plan-damelioration-continue-kaizen-lean,Plan d'amélioration continue (Kaizen & Lean),QUALITÉ & EXCELLENCE OPÉRATIONNELLE,document,heuristique
+plan-de-cession-et-exit-strategy,Plan de cession & exit strategy,STRATÉGIE & MANAGEMENT,document,heuristique
+plan-de-cloture-et-retex,Plan de clôture & RETEX (retour d'expérience),GESTION DE PROJETS & PMO,document,heuristique
+plan-de-co-marketing-et-co-branding,Plan de co-marketing & co-branding,MARKETING & COMMERCIAL,document,heuristique
+plan-de-collecte-de-fonds,Plan de collecte de fonds & fundraising,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-de-communication-360-integre,Plan de communication 360° intégré,MARKETING & COMMERCIAL,document,heuristique
+plan-de-communication-multilingue,Plan de communication multilingue (20 langues),MARKETING & COMMERCIAL,document,heuristique
+plan-de-communication-produit-lancement,Plan de communication produit & lancement,COMMUNICATION & RELATIONS EXTÉRIEURES,document,heuristique
+plan-de-continuit-fournisseur-backup-sourcing,Plan de continuité fournisseur & backup sourcing,SUPPLY CHAIN & ACHATS,document,heuristique
+plan-de-continuité-d-activité-pca-bcp,Plan de continuité d'activité (PCA/BCP),GESTION DES RISQUES,document,heuristique
+plan-de-continuité-des-opérations-projet,Plan de continuité des opérations projet,GESTION DE PROJETS & PMO,document,heuristique
+plan-de-croissance-externe-et-integration,Plan de croissance externe (M&A) & intégration,STRATÉGIE & MANAGEMENT,document,heuristique
+plan-de-croissance-startup-et-metriques-north-star,Plan de croissance startup & métriques north star,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-de-cross-fonctionnalite-et-mobilité-interne,Plan de cross-fonctionnalité & mobilité interne,RH & CAPITAL HUMAIN,document,heuristique
+plan-de-decarbonation-de-la-supply-chain,Plan de décarbonation de la supply chain,SUPPLY CHAIN & ACHATS,document,heuristique
+plan-de-deploiement-et-mise-en-production,Plan de déploiement & mise en production,GESTION DE PROJETS & PMO,document,heuristique
+plan-de-developpement-commercial-growth-hacking,Plan de développement commercial & growth hacking,MARKETING & COMMERCIAL,document,heuristique
+plan-de-developpement-d-une-franchise,Plan de développement d'une franchise,STRATÉGIE & MANAGEMENT,document,heuristique
+plan-de-developpement-d-une-plateforme-saas,Plan de développement d'une plateforme SaaS,TRANSFORMATION DIGITALE & IA,document,heuristique
+plan-de-developpement-de-l-offre-de-soins,Plan de développement de l'offre de soins,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-de-developpement-de-produits-dassurance,Plan de développement de produits d'assurance,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-de-developpement-du-leadership-feminin,Plan de développement du leadership féminin,RH & CAPITAL HUMAIN,document,heuristique
+plan-de-developpement-individuel-idp,Plan de développement individuel (PDI/IDP),RH & CAPITAL HUMAIN,document,heuristique
+plan-de-developpement-institutionnel,Plan de développement institutionnel (PDI),OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-de-developpement-personnel-apprenant-ilp,Plan de développement personnel apprenant (ILP),PROFILS APPRENANTS & PÉDAGOGIE,document,heuristique
+plan-de-developpement-plateforme-paiement-mobile,Plan de développement d'une plateforme de paiement mobile,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-de-developpement-touristique-territorial,Plan de développement touristique territorial,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-de-diffusion-de-l-innovation,Plan de diffusion de l'innovation (Rogers),INNOVATION & R&D,document,heuristique
+plan-de-fidelisation-des-clients-institutionnels,Plan de fidélisation des clients institutionnels,MARKETING & COMMERCIAL,document,heuristique
+plan-de-financement-d-energie-renouvelable-ppa,Plan de financement d'énergie renouvelable (PPA),FINANCE & GESTION,document,heuristique
+plan-de-financement-et-structuration-du-capital,Plan de financement & structuration du capital,FINANCE & GESTION,document,heuristique
+plan-de-financement-import-export-trade-finance,Plan de financement import-export & trade finance,FINANCE & GESTION,document,heuristique
+plan-de-formation-upskilling-numerique,Plan de formation & upskilling numérique,TRANSFORMATION DIGITALE & IA,document,heuristique
+plan-de-gestion-de-crise-communication,Plan de gestion de crise communication,MARKETING & COMMERCIAL,document,heuristique
+plan-de-gestion-de-la-biodiversite-et-capital-naturel,Plan de gestion de la biodiversité & capital naturel,RSE & DÉVELOPPEMENT DURABLE,document,heuristique
+plan-de-gestion-de-la-diversite-generationnelle,Plan de gestion de la diversité générationnelle,RH & CAPITAL HUMAIN,document,heuristique
+plan-de-gestion-de-la-donnee-client,Plan de gestion de la donnée client (CDP & CRM),TRANSFORMATION DIGITALE & IA,document,heuristique
+plan-de-gestion-de-projet-infrastructure-publique,Plan de gestion de projet infrastructure publique,GESTION DE PROJETS & PMO,document,heuristique
+plan-de-gestion-des-approvisionnements,Plan de gestion des approvisionnements,SUPPLY CHAIN & ACHATS,document,heuristique
+plan-de-gestion-des-conflits-et-mediation,Plan de gestion des conflits & médiation,RH & CAPITAL HUMAIN,document,heuristique
+plan-de-gestion-des-dechets-et-economie-des-materiales,Plan de gestion des déchets & économie des matières,RSE & DÉVELOPPEMENT DURABLE,document,heuristique
+plan-de-gestion-des-intrants-et-des-ressources-agricoles,Plan de gestion des intrants & des ressources agricoles,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-de-gestion-des-projets-de-developpement-territorial,Plan de gestion des projets de développement territorial,GESTION DE PROJETS & PMO,document,heuristique
+plan-de-gestion-des-ressources-et-capacite,Plan de gestion des ressources & capacité,GESTION DE PROJETS & PMO,document,heuristique
+plan-de-gestion-des-risques-de-liquidite-pme,Plan de gestion des risques de liquidité PME,FINANCE & GESTION,document,heuristique
+plan-de-gestion-des-risques-de-liquidite,Plan de gestion des risques de liquidité,GESTION DES RISQUES,document,heuristique
+plan-de-gestion-des-risques-de-projet-de-construction,Plan de gestion des risques de projet de construction,GESTION DES RISQUES,document,heuristique
+plan-de-gestion-des-risques-de-securite-alimentaire,Plan de gestion des risques de sécurité alimentaire,GESTION DES RISQUES,document,heuristique
+plan-de-gestion-des-risques-esg-dans-la-supply-chain,Plan de gestion des risques ESG dans la supply chain,RSE & DÉVELOPPEMENT DURABLE,document,heuristique
+plan-de-gestion-des-risques-financiers-et-marche,Plan de gestion des risques financiers & marché,GESTION DES RISQUES,document,heuristique
+plan-de-gestion-des-risques-liés-aux-données,Plan de gestion des risques liés aux données,GESTION DES RISQUES,document,heuristique
+plan-de-gestion-des-risques-sanitaires-et-pandemiques,Plan de gestion des risques sanitaires & pandémiques,GESTION DES RISQUES,document,heuristique
+plan-de-gestion-des-talents-en-afrique-et-pays-emergents,Plan de gestion des talents en Afrique & pays émergents,RH & CAPITAL HUMAIN,document,heuristique
+plan-de-gestion-du-cash-et-du-bfr,Plan de gestion du cash & du BFR,FINANCE & GESTION,document,heuristique
+plan-de-gestion-du-changement-digital,Plan de gestion du changement digital,TRANSFORMATION DIGITALE & IA,document,heuristique
+plan-de-gestion-et-communication-de-crise,Plan de gestion & communication de crise,GESTION DES RISQUES,document,heuristique
+plan-de-gestion-financiere-d-une-ong-et-rapport-bailleurs,Plan de gestion financière d'une ONG & rapport bailleurs,FINANCE & GESTION,document,heuristique
+plan-de-gestion-integree-des-ressources-en-eau,Plan de gestion intégrée des ressources en eau,RSE & DÉVELOPPEMENT DURABLE,document,heuristique
+plan-de-gestion-qualite-donnees,Plan de gestion de la qualité des données (Data Quality),QUALITÉ & EXCELLENCE OPÉRATIONNELLE,document,heuristique
+plan-de-gestion-qualite-fournisseurs,Plan de gestion de la qualité fournisseurs,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,document,heuristique
+plan-de-lancement-de-produit-service-gtm,Plan de lancement de produit/service (GTM),MARKETING & COMMERCIAL,document,heuristique
+plan-de-maintenance-preventive-des-vehicules,Plan de maintenance préventive des véhicules,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-de-marketing-b2g-entreprise-vers-gouvernement,Plan de marketing B2G (entreprise vers gouvernement),MARKETING & COMMERCIAL,document,heuristique
+plan-de-marketing-touristique-digital,Plan de marketing touristique digital,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-de-materiatisation-et-digitalisation-des-processus,Plan de dématérialisation & digitalisation des processus,TRANSFORMATION DIGITALE & IA,document,heuristique
+plan-de-mise-en-conformite-bale-iii-iv,Plan de mise en conformité Bâle III/IV,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-de-partenariat-startup-corporate-venturing,Plan de partenariat startup & corporate venturing,INNOVATION & R&D,document,heuristique
+plan-de-pilotage-des-projets-rse-et-impact,Plan de pilotage des projets RSE & impact,GESTION DE PROJETS & PMO,document,heuristique
+plan-de-prevention-des-risques-ppsr,Plan de prévention des risques (PPSR),OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-de-projet-btp,"Plan de projet BTP (budget, délais, qualité)",OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-de-projet-detaille-wbs-gantt-interactif,Plan de projet détaillé (WBS & Gantt interactif),GESTION DE PROJETS & PMO,document,heuristique
+plan-de-protection-des-droits-des-peuples-autochtones,Plan de protection des droits des peuples autochtones,RSE & DÉVELOPPEMENT DURABLE,document,heuristique
+plan-de-reduction-des-delais,Plan de réduction des délais (Lead Time reduction),SUPPLY CHAIN & ACHATS,document,heuristique
+plan-de-reforme-administrative,Plan de réforme administrative,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-de-remediation-et-soutien-pedagogique,Plan de remédiation & soutien pédagogique,PROFILS APPRENANTS & PÉDAGOGIE,document,heuristique
+plan-de-renforcement-des-capacites-institutionnelles,Plan de renforcement des capacités institutionnelles,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-de-reprise-d-activite-pra-drp,Plan de reprise d'activité (PRA/DRP),GESTION DES RISQUES,document,heuristique
+plan-de-resilience-climatique-et-adaptation,Plan de résilience climatique & adaptation (TCFD/TNFD),RSE & DÉVELOPPEMENT DURABLE,document,heuristique
+plan-de-restructuration-et-accompagnement-pse,Plan de restructuration & accompagnement PSE,RH & CAPITAL HUMAIN,document,heuristique
+plan-de-restructuration-et-redressement-financier,Plan de restructuration & redressement financier,FINANCE & GESTION,document,heuristique
+plan-de-résilience-organisationnelle-rh,Plan de résilience organisationnelle RH,RH & CAPITAL HUMAIN,document,heuristique
+plan-de-sante-communautaire,Plan de santé communautaire,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-de-sourcing-international-multi-sourcing,Plan de sourcing international & multi-sourcing,SUPPLY CHAIN & ACHATS,document,heuristique
+plan-de-souverainete-numerique-et-des-donnees,Plan de souveraineté numérique & des données,TRANSFORMATION DIGITALE & IA,document,heuristique
+plan-de-succesion-et-gestion-des-hauts-potentiels,Plan de succession & gestion des hauts potentiels,RH & CAPITAL HUMAIN,document,heuristique
+plan-de-suivi-et-evaluation-de-projet,Plan de suivi & évaluation de projet (S&E),ÉTUDES DE PROJETS & FAISABILITÉ,document,heuristique
+plan-de-trade-marketing-merchandising,Plan de trade marketing & merchandising,MARKETING & COMMERCIAL,document,heuristique
+plan-de-transfert-technologique-valorisation,Plan de transfert technologique & valorisation,INNOVATION & R&D,document,heuristique
+plan-de-transformation-culturelle,Plan de transformation culturelle,RH & CAPITAL HUMAIN,document,heuristique
+plan-de-transformation-numerique-des-pme-africaines,Plan de transformation numérique des PME africaines,TRANSFORMATION DIGITALE & IA,document,heuristique
+plan-de-transformation-organisationnelle,Plan de transformation organisationnelle,STRATÉGIE & MANAGEMENT,document,heuristique
+plan-de-transition-energetique-organisationnel,Plan de transition énergétique organisationnel,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-de-transport-logistique-optimise,Plan de transport & logistique optimisé,SUPPLY CHAIN & ACHATS,document,heuristique
+plan-de-valorisation-des-resultats-dun-projet,Plan de valorisation des résultats d'un projet,ÉTUDES DE PROJETS & FAISABILITÉ,document,heuristique
+plan-decarbonation-et-trajectoire-sbti,Plan de décarbonation & trajectoire SBTi,RSE & DÉVELOPPEMENT DURABLE,document,heuristique
+plan-decentralisation-gouvernance-locale,Plan de décentralisation & gouvernance locale,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-deploiement-bonnes-pratiques,Plan de déploiement des bonnes pratiques,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,document,heuristique
+plan-deploiement-de-l-ia-generative-en-innovation,Plan de déploiement de l'IA générative en innovation,INNOVATION & R&D,document,heuristique
+plan-deploiement-de-projet-a-l-international,Plan de déploiement de projet à l'international,GESTION DE PROJETS & PMO,document,heuristique
+plan-deploiement-saas-go-to-market-tech,Plan de déploiement SaaS & go-to-market tech,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-deploiement-solutions-off-grid-low-tech,Plan de déploiement de solutions off-grid & low-tech,TRANSFORMATION DIGITALE & IA,document,heuristique
+plan-deployement-erp-sirh-integre,Plan de déploiement ERP & SIRH intégré,TRANSFORMATION DIGITALE & IA,document,heuristique
+plan-developpement-chaine-logistique-africaine,Plan de développement d'une chaîne logistique africaine,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-developpement-cooperative-agricole,Plan de développement d'une coopérative agricole,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-developpement-ecosysteme-entrepreneurial-local,Plan de développement d'un écosystème entrepreneurial local,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-developpement-international-export,Plan de développement international & export,STRATÉGIE & MANAGEMENT,document,heuristique
+plan-developpement-mini-reseau-solaire,Plan de développement d'un mini-réseau solaire,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-digitalisation-supply-chain,Plan de digitalisation de la supply chain,SUPPLY CHAIN & ACHATS,document,heuristique
+plan-education-inclusive-besoins-speciaux,Plan d'éducation inclusive & besoins spéciaux,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-eies,Plan EIES (Étude d'Impact Environnemental et Social),OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-et-processus-d-onboarding-digital-30-60-90-jours,Plan & processus d'onboarding digital 30-60-90 jours,RH & CAPITAL HUMAIN,document,heuristique
+plan-financement-etablissement-enseignement,Plan de financement d'établissement d'enseignement,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-financier-projet-impact-social,Plan financier pour projet à impact social,FINANCE & GESTION,document,heuristique
+plan-formation-montee-compétences-équipe-projet,Plan de formation & montée en compétences équipe projet,GESTION DE PROJETS & PMO,document,heuristique
+plan-formation-sensibilisation-qualite,Plan de formation & sensibilisation qualité,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,document,heuristique
+plan-formation-sensibilisation-rse,Plan de formation & sensibilisation RSE,RSE & DÉVELOPPEMENT DURABLE,document,heuristique
+plan-gestion-chaine-froid,Plan de gestion de la chaîne du froid,SUPPLY CHAIN & ACHATS,document,heuristique
+plan-gestion-chaine-valeur-agricole,Plan de gestion de la chaîne de valeur agricole,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-gestion-hospitaliere-efficience-clinique,Plan de gestion hospitalière & efficience clinique,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-gestion-qualite-innovation,Plan de gestion de la qualité dans l'innovation,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,document,heuristique
+plan-gestion-retours-flux-inverses,Plan de gestion des retours & flux inverses,SUPPLY CHAIN & ACHATS,document,heuristique
+plan-gestion-stocks-medicaments-consommables,Plan de gestion des stocks de médicaments & consommables,SUPPLY CHAIN & ACHATS,document,heuristique
+plan-internationalisation-pme-africaine,Plan d'internationalisation PME africaine,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-lancement-marches-emergents-africains,Plan de lancement sur marchés émergents africains,MARKETING & COMMERCIAL,document,heuristique
+plan-maintenance-totale-tpm,Plan de maintenance totale (TPM),QUALITÉ & EXCELLENCE OPÉRATIONNELLE,document,heuristique
+plan-management-qualite-services-publics,Plan de management de la qualité dans les services publics,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,document,heuristique
+plan-marketing-annuel-multicanal,Plan marketing annuel & multicanal,MARKETING & COMMERCIAL,document,heuristique
+plan-mise-en-place-smq-iso-9001,Plan de mise en place d'un SMQ (ISO 9001),QUALITÉ & EXCELLENCE OPÉRATIONNELLE,document,heuristique
+plan-open-innovation-partenariats-rd,Plan d'open innovation & partenariats R&D,INNOVATION & R&D,document,heuristique
+plan-pedagogique-institutionnel-structur,Plan pédagogique institutionnel structuré,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-portefeuille-investissement-allocation-actifs,Plan de portefeuille d'investissement & allocation d'actifs,OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+plan-rd-feuille-de-route-technologique,Plan de R&D & feuille de route technologique,INNOVATION & R&D,document,heuristique
+plan-reduction-couts-achats,Plan de réduction des coûts achats,SUPPLY CHAIN & ACHATS,document,heuristique
+plan-reduction-delais-time-to-market,Plan de réduction des délais (Time to Market),QUALITÉ & EXCELLENCE OPÉRATIONNELLE,document,heuristique
+plan-reduction-emissions-ges-neutralite-carbone,Plan de réduction des émissions GES & neutralité carbone,RSE & DÉVELOPPEMENT DURABLE,document,heuristique
+plan-reduction-gaspillages-lean-5s,Plan de réduction des gaspillages (Lean/5S),QUALITÉ & EXCELLENCE OPÉRATIONNELLE,document,heuristique
+plan-strategique-developpement-territorial,Plan stratégique de développement territorial,STRATÉGIE & MANAGEMENT,document,heuristique
+plan-strategique,Plan stratégique à 3-5-10 ans,STRATÉGIE & MANAGEMENT,document,heuristique
+plan-test-validation-recette,"Plan de test, validation & recette",GESTION DE PROJETS & PMO,document,heuristique
+plan-transition-ecologique-bas-carbone,Plan de transition écologique & bas-carbone,RSE & DÉVELOPPEMENT DURABLE,document,heuristique
+politique-dachats-responsables-et-criteres-rse-fournisseurs,Politique d'achats responsables & critères RSE fournisseurs,RSE & DÉVELOPPEMENT DURABLE,document,heuristique
+politique-dei,"Politique de diversité, équité & inclusion (DEI)",RH & CAPITAL HUMAIN,document,heuristique
+portfolio-de-compétences-numérique-et-open-badge,Portfolio de compétences numérique & open badge,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+pricing-dynamique-revenue-management,Stratégie de pricing dynamique & revenue management,MARKETING & COMMERCIAL,analysis,heuristique
+prise-de-risque-calculée,Profil de la prise de risque calculée,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+processus-de-gestion-des-departs-offboarding,Processus de gestion des départs & offboarding,RH & CAPITAL HUMAIN,analysis,heuristique
+processus-de-mediation-et-gestion-des-contentieux,Processus de médiation & gestion des contentieux,RH & CAPITAL HUMAIN,analysis,heuristique
+profil-analytique-data-driven-mindset,Profil analytique & data-driven mindset,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+profil-apprenant-adulte,Profil de l'apprenant adulte (andragogie — Knowles),PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+profil-apprenant-formation-duale,Profil de l'apprenant en formation duale (alternance),PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+profil-apprenant-handicap,Profil apprenant en situation de handicap,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+profil-apprenant-numerique,Profil de l'apprenant numérique,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+profil-coach-developpeur-equipe,Profil de coach & développeur d'équipe,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+profil-createur-intrapreneuriat,Profil créateur & intrapreneuriat,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+profil-de-carriere-orientation-professionnelle,Profil de carrière & orientation professionnelle,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+profil-de-gestion-du-changement-et-transformation,Profil de gestion du changement & transformation,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+profil-de-l-intelligence-interculturelle,Profil de l'intelligence interculturelle,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+profil-de-mentor-transmission-des-savoirs,Profil de mentor & transmission des savoirs,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+profil-de-performance-sous-pression,Profil de performance sous pression,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+profil-des-barrieres-et-freins-a-l-apprentissage,Profil des barrières & freins à l'apprentissage,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+profil-entrepreneurial-capacite-a-innover,Profil entrepreneurial & capacité à innover,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+profil-negociateur-et-influence,Profil négociateur & influence,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+programme-5s-organisation-espaces-travail,Programme 5S & organisation des espaces de travail,QUALITÉ & EXCELLENCE OPÉRATIONNELLE,analysis,heuristique
+programme-d-entrepreneuriat-social-intrapreneuriat-rse,Programme d'entrepreneuriat social & intrapreneuriat RSE,RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+programme-d-intrapreneuriat-ventures-internes,Programme d'intrapreneuriat & ventures internes,INNOVATION & R&D,analysis,heuristique
+programme-de-bien-etre-et-prevention-sante-globale,Programme de bien-être & prévention santé globale,RH & CAPITAL HUMAIN,analysis,heuristique
+programme-de-fidelite-et-ambassadeurs,Programme de fidélité & ambassadeurs,MARKETING & COMMERCIAL,analysis,heuristique
+programme-de-leadership-development,Programme de leadership development,RH & CAPITAL HUMAIN,analysis,heuristique
+programme-de-mentorat-et-coaching-interne,Programme de mentorat & coaching interne,RH & CAPITAL HUMAIN,analysis,heuristique
+programme-de-micro-certification-et-badging,Programme de micro-certification & badging,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+programme-de-reconnaissance-et-recompense,Programme de reconnaissance & récompense,RH & CAPITAL HUMAIN,analysis,heuristique
+programme-de-reverse-mentoring,Programme de reverse mentoring,RH & CAPITAL HUMAIN,analysis,heuristique
+programme-de-volontariat-et-engagement-collaborateurs,Programme de volontariat & engagement collaborateurs,RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+programme-qvt-qvct-structure,Programme QVT/QVCT structuré,RH & CAPITAL HUMAIN,analysis,heuristique
+prospection-pipeline-crm-commercial,"Prospection, pipeline & CRM commercial",MARKETING & COMMERCIAL,analysis,heuristique
+rapport-activite-bailleurs-fonds,"Rapport d'activité pour bailleurs de fonds (USAID, UE, BAD...)",OUTILS SECTORIELS SPÉCIALISÉS,document,heuristique
+rapport-d-activite-annuelle-automatise,Rapport d'activité annuel automatisé,REPORTING & ANALYTICS DASHBOARD,document,heuristique
+rapport-d-audit-financier-interne-configuration,Template de rapport d'audit financier interne,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+rapport-davancement-automatise,Rapport d'avancement automatisé (RAG status),GESTION DE PROJETS & PMO,document,heuristique
+rapport-de-veille-hebdomadaire-automatise,Rapport de veille hebdomadaire automatisé,INTELLIGENCE ÉCONOMIQUE & VEILLE,document,heuristique
+rapport-impact-annuel-communication-rse,Rapport d'impact annuel & communication RSE,RSE & DÉVELOPPEMENT DURABLE,document,heuristique
+rapport-positionnement-concurrentiel,Rapport de positionnement concurrentiel,INTELLIGENCE ÉCONOMIQUE & VEILLE,document,heuristique
+rapport-rse-complet,"Rapport RSE complet (GRI, CSRD, DPEF, B-Corp)",RSE & DÉVELOPPEMENT DURABLE,document,heuristique
+rapports-de-gestion-automatises-mis,Rapports de gestion automatisés (MIS),REPORTING & ANALYTICS DASHBOARD,table,heuristique
+recrutement-inclusif-dei,Processus de recrutement inclusif & DEI,RH & CAPITAL HUMAIN,analysis,heuristique
+redaction-actes-procedures-delibérations,"Rédaction d'actes, procédures & délibérations",JURIDIQUE & CONFORMITÉ,document,heuristique
+referentiel-compétences-par-poste-et-niveau,Référentiel de compétences par poste & niveau,RH & CAPITAL HUMAIN,analysis,heuristique
+registre-des-risques-automatise,Registre des risques automatisé,GESTION DES RISQUES,table,heuristique
+registre-des-traitements-rgpd-automatise,Registre des traitements RGPD automatisé,JURIDIQUE & CONFORMITÉ,table,heuristique
+reporting-carbone-empreinte-ges,Reporting carbone & empreinte GES,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-commercial-force-de-vente,Reporting commercial & force de vente,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-consolide-groupe-multi-entites,Reporting consolidé groupe (multi-entités),REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-daudit-interne,Reporting d'audit interne,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-de-cybersecurite-et-incidents,Reporting de cybersécurité & incidents,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-de-formation-et-compétences,Reporting de formation & compétences,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-de-gestion-de-projets-et-portefeuille,Reporting de gestion de projets & portefeuille,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-de-gouvernance-et-ca,Reporting de gouvernance & CA,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-de-la-performance-achats,Reporting de la performance achats,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-de-la-performance-logistique,Reporting de la performance logistique,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-de-satisfaction-client,"Reporting de satisfaction client (NPS, CSAT)",REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-de-tresorerie-en-temps-reel,Reporting de trésorerie en temps réel,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-de-veille-concurrentielle,Reporting de veille concurrentielle,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-dimpact-social-et-societal,Reporting d'impact social & sociétal,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-du-capital-immaterial,Reporting du capital immatériel,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-esg-tool,Reporting ESG pour investisseurs & rating agencies,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-finances,Reporting IFRS / OHADA / SYSCOHADA / normes locales,FINANCE & GESTION,table,heuristique
+reporting-financier-mensuel-automatise,Reporting financier mensuel automatisé,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-marketing-acquisition-digitale,Reporting marketing & acquisition digitale,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-odd-et-contribution-aux-sdg-de-l-onu,Reporting ODD & contribution aux SDG de l'ONU,RSE & DÉVELOPPEMENT DURABLE,table,heuristique
+reporting-opérationnel-et-production,Reporting opérationnel & production,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-rd-innovation,Reporting R&D & innovation,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-reglementaire-et-conformite-automatise,Reporting réglementaire & conformité automatisé,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-rh-social-automatiser,Reporting RH & social automatisé,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-risque-alerte-automatique,Reporting de risques & alertes automatiques,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-rse-et-durable,Reporting RSE & développement durable,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reporting-supply-chain-logistique,Reporting supply chain & logistique,REPORTING & ANALYTICS DASHBOARD,table,heuristique
+reskilling-upskilling-massif,Programme de reskilling & upskilling massif,RH & CAPITAL HUMAIN,analysis,heuristique
+retour-d-experience-template,Template de retour d'expérience (RETEX),TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+risk-mapping-interactive,Cartographie des risques (Risk mapping interactif),GESTION DES RISQUES,table,heuristique
+roi-innovation-tool,Mesure de l'impact de l'innovation (ROI innovation),INNOVATION & R&D,analysis,heuristique
+roi-marketing-attribution-multicanal,Mesure du ROI marketing & attribution multicanal,MARKETING & COMMERCIAL,analysis,heuristique
+rpa-ia-strategie,Stratégie d'automatisation des processus (RPA & IA),TRANSFORMATION DIGITALE & IA,analysis,heuristique
+sante-travail-sport-entreprise,Programme de santé au travail & sport en entreprise,RH & CAPITAL HUMAIN,analysis,heuristique
+satisfaction-client,Mesure de la satisfaction & expérience client,MARKETING & COMMERCIAL,analysis,heuristique
+scorecard-strategique-balanced-scorecard,Scorecard stratégique (Balanced Scorecard),REPORTING & ANALYTICS DASHBOARD,table,heuristique
+segmentation-ciblage-positionnement-stp,"Segmentation, ciblage & positionnement (STP)",MARKETING & COMMERCIAL,analysis,heuristique
+social-selling-strategie,Stratégie de vente sociale,MARKETING & COMMERCIAL,analysis,heuristique
+spc-performance-measurement-tool,Outil de mesure de la performance des processus (SPC),QUALITÉ & EXCELLENCE OPÉRATIONNELLE,analysis,heuristique
+storytelling-strategie-narrative-marque,Stratégie de storytelling & narrative de marque,COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+strategie-achats-et-politique-d-achat,Stratégie achats & politique d'achat,SUPPLY CHAIN & ACHATS,document,heuristique
+strategie-alliance-jv-partenariat-strategique,"Stratégie d'alliance, JV & partenariat stratégique",STRATÉGIE & MANAGEMENT,analysis,heuristique
+strategie-assurance-couverture-optimale,Stratégie d'assurance & couverture optimale des risques,GESTION DES RISQUES,analysis,heuristique
+strategie-co-innovation-fournisseurs-cles,Stratégie de co-innovation avec fournisseurs clés,SUPPLY CHAIN & ACHATS,analysis,heuristique
+strategie-communication-b2b-thought-leadership,Stratégie de communication B2B & thought leadership,COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+strategie-communication-corporate-globale,Stratégie de communication corporate globale,COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+strategie-communication-crise-esg,Stratégie de communication de crise ESG,COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+strategie-communication-digitale-social-media,Stratégie de communication digitale (social media),COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+strategie-communication-interculturelle,Stratégie de communication interculturelle,COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+strategie-communication-langues-africaines-locales,Stratégie de communication en langues africaines locales,COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+strategie-communication-mobile-ussd-afrique,Stratégie de communication mobile & USSD (Afrique),MARKETING & COMMERCIAL,analysis,heuristique
+strategie-communication-multilingue-20-langues,Stratégie de communication multilingue (20 langues),COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+strategie-communication-ong,Stratégie de communication institutionnelle pour ONG,COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+strategie-communication-post-crise-reconstruction,Stratégie de communication post-crise & reconstruction,COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+strategie-conquete-marches-africains,Stratégie de conquête des marchés africains,STRATÉGIE & MANAGEMENT,analysis,heuristique
+strategie-cooperation-ecosysteme,Stratégie de coopétition & écosystème,STRATÉGIE & MANAGEMENT,analysis,heuristique
+strategie-d-innovation,Stratégie d'innovation (incrémentale vs disruptive),STRATÉGIE & MANAGEMENT,analysis,heuristique
+strategie-dambassadeur-porte-parole,Stratégie d'ambassadeur & porte-parole,COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+strategie-de-contenu-et-content-marketing,Stratégie de contenu & content marketing,MARKETING & COMMERCIAL,analysis,heuristique
+strategie-de-diversification-et-de-pivot,Stratégie de diversification & de pivot,STRATÉGIE & MANAGEMENT,analysis,heuristique
+strategie-de-fidelisation-client,Stratégie de fidélisation client (CRM & loyalty),MARKETING & COMMERCIAL,analysis,heuristique
+strategie-de-marque-employeur-et-evp,Stratégie de marque employeur & EVP,RH & CAPITAL HUMAIN,analysis,heuristique
+strategie-de-monetisation-des-donnees,Stratégie de monétisation des données,TRANSFORMATION DIGITALE & IA,analysis,heuristique
+strategie-de-prix-et-architecture-tarifaire,Stratégie de prix & architecture tarifaire,MARKETING & COMMERCIAL,analysis,heuristique
+strategie-de-vente-sociale,Stratégie de vente sociale (social selling),MARKETING & COMMERCIAL,analysis,heuristique
+strategie-deploiement-ia-generative-entreprise,Stratégie de déploiement de l'IA générative en entreprise,TRANSFORMATION DIGITALE & IA,analysis,heuristique
+strategie-distribution-canaux-partenaires,"Stratégie de distribution, canaux & partenaires",MARKETING & COMMERCIAL,analysis,heuristique
+strategie-economie-circulaire-reduction-des-dechets,Stratégie d'économie circulaire & réduction des déchets,RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+strategie-fidelisation-client,Stratégie de fidélisation client,MARKETING & COMMERCIAL,analysis,heuristique
+strategie-fintech-paiement-mobile-afrique,Stratégie de fintech & paiement mobile (Afrique),TRANSFORMATION DIGITALE & IA,analysis,heuristique
+strategie-gestion-plateformes-numeriques,Stratégie de gestion des plateformes numériques,TRANSFORMATION DIGITALE & IA,analysis,heuristique
+strategie-influence-marketing-partenariats,Stratégie d'influence marketing & partenariats,MARKETING & COMMERCIAL,analysis,heuristique
+strategie-internationalisation-adaptation-locale,Stratégie d'internationalisation & adaptation locale,MARKETING & COMMERCIAL,analysis,heuristique
+strategie-investissement-responsable,Stratégie d'investissement responsable (ISR/ESG),RSE & DÉVELOPPEMENT DURABLE,analysis,heuristique
+strategie-lobbying-affaires-publiques,Stratégie de lobbying & affaires publiques,COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+strategie-marketing-digital-inbound,Stratégie de marketing digital & inbound,MARKETING & COMMERCIAL,analysis,heuristique
+strategie-marketing-inclusif-et-diversite,Stratégie de marketing inclusif & diversité,MARKETING & COMMERCIAL,analysis,heuristique
+strategie-marketplace-distribution-digitale,Stratégie marketplace & distribution digitale,TRANSFORMATION DIGITALE & IA,analysis,heuristique
+strategie-medias-sociaux-community-management,Stratégie de médias sociaux & community management,MARKETING & COMMERCIAL,analysis,heuristique
+strategie-plateforme-marketplace-api,"Stratégie de plateforme, marketplace & API",STRATÉGIE & MANAGEMENT,analysis,heuristique
+strategie-relations-mediques-presse,Stratégie de relations médias & presse,COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+strategie-resilience-antifragilite,Stratégie de résilience & antifragilité organisationnelle,STRATÉGIE & MANAGEMENT,analysis,heuristique
+strategie-resilience-diversification-fournisseurs,Stratégie de résilience & diversification fournisseurs,SUPPLY CHAIN & ACHATS,analysis,heuristique
+strategie-rse-globale-et-politique-de-developpement-durable,Stratégie RSE globale & politique de développement durable,RSE & DÉVELOPPEMENT DURABLE,document,heuristique
+strategie-sea-paid-media-programmatique,"Stratégie SEA, paid media & programmatique",MARKETING & COMMERCIAL,analysis,heuristique
+strategie-supply-chain-durable-et-responsable,Stratégie de supply chain durable & responsable,SUPPLY CHAIN & ACHATS,analysis,heuristique
+tableau-de-bord-apprenant-learning-analytics,Tableau de bord apprenant & learning analytics,PROFILS APPRENANTS & PÉDAGOGIE,table,heuristique
+tableau-de-bord-financier-de-pilotage,Tableau de bord financier de pilotage,FINANCE & GESTION,table,heuristique
+tableau-de-bord-pmo-multi-projets,Tableau de bord PMO multi-projets,GESTION DE PROJETS & PMO,table,heuristique
+tableau-de-bord-social-bdes-bdese,Tableau de bord social & BDES/BDESE,RH & CAPITAL HUMAIN,table,heuristique
+tableau-de-financement-et-plan-de-financement,Tableau de financement & plan de financement,FINANCE & GESTION,document,heuristique
+team-dynamics-assessment,Analyse comportementale en équipe,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+teletravail-config,"Politique télétravail, flex-office & remote",RH & CAPITAL HUMAIN,document,heuristique
+template-appel-offres-projet,Template de réponse à appel d'offres projet,GESTION DE PROJETS & PMO,document,heuristique
+template-bilan-carbone-simplifiee-pme,Template de bilan carbone simplifié PME,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-budget-previsionnel,Template de budget prévisionnel,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-business-plan,Template de business plan (startup/PME),TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-cadre-logique-ong,Template de cadre logique (matrice logique ONG),TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-cahier-des-charges-fonctionnel,Template de cahier des charges fonctionnel,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-cgv-cga,Template de conditions générales de vente (CGV/CGA),JURIDIQUE & CONFORMITÉ,document,heuristique
+template-charte-d-equipe,Template de charte d'équipe & règles de fonctionnement,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-charte-ethique-code-conduite,Template de charte éthique & code de conduite,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-charte-teletravail-flex-office,Template de charte télétravail & flex-office,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-communique-de-presse,Template de communiqué de presse,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-compte-rendu-reunion-copil,Template de compte-rendu de réunion & COPIL,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-contrat-commercial-b2b,Template de contrat commercial B2B,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-contrat-commercial,Template de contrat commercial (B2B/B2C),JURIDIQUE & CONFORMITÉ,document,heuristique
+template-contrat-de-travail,Template de contrat de travail (CDI/CDD/Intérim),JURIDIQUE & CONFORMITÉ,document,heuristique
+template-de-bon-de-commande,Template de bon de commande,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-charter-de-projet,Template de charte de projet (Project Charter),TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-contrat-de-prestation-de-services,Template de contrat de prestation de services,JURIDIQUE & CONFORMITÉ,document,heuristique
+template-de-devis-professionnel,Template de devis professionnel,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-dossier-de-credit-bancaire,Template de dossier de crédit bancaire,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-dossier-de-financement-bancaire,Template de dossier de financement bancaire,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-dossier-de-subvention-et-aide-publique,Template de dossier de subvention & aide publique,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-fiche-de-controle-qualite,Template de fiche de contrôle qualité,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-fiche-de-poste,Template de fiche de poste (compétences & responsabilités),TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-kit-de-communication-interne,Template de kit de communication interne,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-memo-de-decision-executive,Template de mémo de décision executive,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-plan-d-onboarding,Template de plan d'onboarding,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-plan-de-communication-projet,Template de plan de communication projet,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-plan-de-formation-individuel,Template de plan de formation individuel,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-plan-de-gestion-d-une-cooperative,Template de plan de gestion d'une coopérative,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-plan-de-gestion-de-crise,Template de plan de gestion de crise,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-plan-de-maintenance-preventive,Template de plan de maintenance préventive,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-plan-de-succession,Template de plan de succession,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-plan-de-test-et-recette,Template de plan de test & recette,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-plan-de-transformation-organisationnelle,Template de plan de transformation organisationnelle,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-plan-marketing-annuel,Template de plan marketing annuel,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-plan-strategique-pluriannuel,Template de plan stratégique pluriannuel,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-presentation-comite-de-direction,Template de présentation Comité de direction,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-presentation-investisseurs,Template de présentation investisseurs (pitch deck),TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-procedure-operationnelle-standard,Template de procédure opérationnelle standard (SOP),TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-procuration-et-delegation-de-pouvoir,Template de procuration & délégation de pouvoir,JURIDIQUE & CONFORMITÉ,document,heuristique
+template-de-protocole-d-acord-et-mou,Template de protocole d'accord & MOU,JURIDIQUE & CONFORMITÉ,document,heuristique
+template-de-rapport-d-impact-annuel,Template de rapport d'impact annuel,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-rapport-de-mission-humanitaire,Template de rapport de mission humanitaire,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-rapport-de-non-conformite,Template de rapport de non-conformité,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-reglement-interieur,Template de règlement intérieur,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-reponse-a-appel-d-offres,Template de réponse à appel d'offres,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-de-tableau-de-bord-de-tresorerie,Template de tableau de bord de trésorerie,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-discours-dirigeant,Template de discours dirigeant,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-grille-entretien-recrutement,Template de grille d'entretien de recrutement,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-memorandum-information-ma,Template de mémorandum d'information (IM) M&A,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-newsletter-interne-mensuelle,Template de newsletter interne mensuelle,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-note-de-synthese-financiere,Template de note de synthèse financière,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-offre-emploi,Template d'offre d'emploi inclusive & attractive,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-pacte-associes-shareholders-agreement,Template de pacte d'associés & shareholders agreement,JURIDIQUE & CONFORMITÉ,document,heuristique
+template-plan-action-corrective-pdca-8d,Template de plan d'action corrective (PDCA/8D),TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-plan-affaires-social-ess,Template de plan d'affaires social (ESS),TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-plan-d-action-developpement-durable,Template de plan d'action développement durable,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-plan-de-communication-annuel,Template de plan de communication annuel,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-plan-de-compte-grand-client,Template de plan de compte grand client,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-plan-de-risques-projet,Template de plan de risques projet,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-plan-developpement-territorial,Template de plan de développement territorial,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-plan-pedagogique-annuel,Template de plan pédagogique annuel,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-politique-diversite-inclusion,Template de politique diversité & inclusion,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-proposition-commerciale-gagnante,Template de proposition commerciale gagnante,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-rapport-activite-annuel,Template de rapport d'activité annuel (board deck),TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-rapport-commissaire-aux-comptes,Template de rapport de commissaire aux comptes,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-rapport-projet-mensuel,Template de rapport de projet (mensuel),TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-rapport-rse-annuel,Template de rapport RSE annuel,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-resolutions-proces-verbaux-ag,Template de résolutions & procès-verbaux d'AG,JURIDIQUE & CONFORMITÉ,document,heuristique
+template-rse-dd-unique,Template de politique RSE & DD,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-specifications-techniques,Template de spécifications techniques,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-term-sheet-lettre-d-intention,Template de term sheet & lettre d'intention,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+template-theorie-du-changement,Template de théorie du changement,TEMPLATES & MODÈLES PRÊTS À L'EMPLOI,document,heuristique
+test-agilité-cognitive-et-learning-agility,Test d'agilité cognitive & learning agility,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-aptitudes-manageriale-leadership,Test d'aptitudes managériales & leadership,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-assertivite-et-affirmation-de-soi,Test d'assertivité & affirmation de soi,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-big-five-ocean-professionnel,Test Big Five OCEAN professionnel,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-cq,Test d'intelligence culturelle (CQ),PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-de-creativite-et-pensee-divergente,Test de créativité & pensée divergente,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-de-gestion-des-conflits-tki,Test de gestion des conflits (TKI — Thomas-Kilmann),PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-de-intelligence-emotionnelle,Test d'intelligence émotionnelle (EQ-i 2.0),PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-de-maturite-emotionnelle-et-sociale,Test de maturité émotionnelle & sociale,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-de-motivation,Test de motivation intrinsèque & extrinsèque,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+test-de-motivations-drivers-professionnels-mvpi,Test de motivations & drivers professionnels (MVPI),PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-de-positionnement-auditeur-iso,Test de positionnement auditeur ISO (9001/14001/45001/27001),Certification de Compétences & Personnes,profile,heuristique
+test-de-potentiel-de-leadership-hpi-hds,Test de potentiel de leadership (HPI/HDS),PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-de-preferences-d-apprentissage-vark,Test de préférences d'apprentissage (VARK),PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-de-preferences-sensorielles-vark,Test de préférences sensorielles VARK,PROFILS APPRENANTS & PÉDAGOGIE,profile,heuristique
+test-de-resilience-et-capacite-d-adaptation,Test de résilience & capacité d'adaptation,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-de-styles-cognitifs-et-preferences-mentales,Test de styles cognitifs & préférences mentales,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-de-styles-de-communication-et-influence,Test de styles de communication & influence,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-de-styles-de-leadership,Test de styles de leadership (Situational Leadership),PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-de-styles-de-prise-de-decision,Test de styles de prise de décision,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-des-valeurs-professionnelles-schwartz-graves,Test des valeurs professionnelles (Schwartz/Graves),PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-disc-professionnel-styles-comportementaux,Test DISC professionnel (4 styles comportementaux),PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-integrite-et-ethique-professionnelle,Test d'intégrité & éthique professionnelle,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-mbti-professionnel-16-profils,Test MBTI professionnel (16 profils),PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+test-profil-entrepreneurial,Test de profil entrepreneurial & goût du risque,PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL,profile,heuristique
+theorie-du-changement-appliquee-au-projet,Théorie du changement appliquée au projet,ÉTUDES DE PROJETS & FAISABILITÉ,analysis,heuristique
+theorie-du-changement-modele-logique,Théorie du changement & modèle logique,OUTILS SECTORIELS SPÉCIALISÉS,analysis,heuristique
+transition-durable-strategie-management,Feuille de route de la transition durable,STRATÉGIE & MANAGEMENT,document,heuristique
+tresorerie-optimisation,Optimisation & prévision de trésorerie,FINANCE & GESTION,analysis,heuristique
+veille-innovations-disruptions-africaines,Veille des innovations & disruptions africaines,INTELLIGENCE ÉCONOMIQUE & VEILLE,analysis,heuristique
+veille-reputation,Outil de veille & monitoring de la réputation,COMMUNICATION & RELATIONS EXTÉRIEURES,analysis,heuristique
+veille-strategique-et-intelligence-economique,Veille stratégique & intelligence économique,STRATÉGIE & MANAGEMENT,analysis,heuristique

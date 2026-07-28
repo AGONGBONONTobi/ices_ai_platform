@@ -38,35 +38,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en assurance. L'utilisateur a répondu : Type de produit: {type_de_produit}, Cible: {cible}, Niveau de prise en charge: {niveau_de_prise_en_charge}%, Budget alloué: {budget_alloué}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations pour le développement du produit d'assurance.",
+  "promptTemplate": "Tu es un consultant expert en assurance. L'utilisateur a répondu : Type de produit: {type_de_produit}, Cible: {cible}, Niveau de prise en charge: {niveau_de_prise_en_charge}%, Budget alloué: {budget_alloué}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

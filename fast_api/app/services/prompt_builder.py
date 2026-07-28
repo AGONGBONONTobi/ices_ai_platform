@@ -16,6 +16,7 @@ from typing import Any
 
 from app.i18n import language_name
 from app.schemas import ToolConfig
+from app.services.output_kinds import guidance_for, schema_for
 
 
 def build_prompt(template: str, user_inputs: dict[str, Any]) -> str:
@@ -48,20 +49,31 @@ def build_input_lines(tool: ToolConfig, user_inputs: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+def _effective_schema(tool: ToolConfig) -> dict:
+    """Schéma de sortie de l'outil, ou le schéma canonique de son type à défaut."""
+    return tool.outputSchema or schema_for(tool.output_kind)
+
+
 def build_system_prompt(tool: ToolConfig, lang: str) -> str:
     """Règles transverses uniquement — le métier vit dans le promptTemplate de l'outil."""
     return f"""You are an expert consultant executing one specific professional tool.
 Tool: "{tool.title}" | Category: "{tool.category}"
 
+WHAT THIS TOOL MUST PRODUCE:
+{guidance_for(tool.output_kind)}
+
 STRICT RULES:
 1. LANGUAGE: Respond entirely in {language_name(lang)}. No exceptions.
 2. OUTPUT FORMAT: Return ONLY a raw valid JSON object matching this exact schema:
-{json.dumps(tool.outputSchema, indent=2, ensure_ascii=False)}
-   Every property declared above must be present. Respect the declared types
-   exactly: a "number" must be a JSON number, never a string nor a range.
+{json.dumps(_effective_schema(tool), indent=2, ensure_ascii=False)}
+   Every property declared above must be present and non-empty. Respect the
+   declared types exactly: a "number" must be a JSON number, never a string nor
+   a range.
 3. Follow the tool instructions given in the user message. Base your answer on the
    facts provided; do not invent facts that were not given.
-4. NO markdown outside the JSON. NO explanations. NO code blocks. ONLY the JSON."""
+4. If the tool instructions ask for something the schema above does not contain
+   (a score, for instance), the schema wins.
+5. NO markdown outside the JSON. NO explanations. NO code blocks. ONLY the JSON."""
 
 
 def build_user_prompt(tool: ToolConfig, user_inputs: dict[str, Any]) -> str:

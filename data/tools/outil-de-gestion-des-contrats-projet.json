@@ -37,35 +37,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant expert en gestion de projets. L'utilisateur a fourni les informations suivantes : Type de contrat : {typeDeContrat}, Description du projet : {descriptionDuProjet}, Durée du contrat : {dureeDuContrat} mois, Budget alloué : {budgetAlloue}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe (gestion du contrat, gestion du projet, gestion budgétaire), et des recommandations pour améliorer la gestion du contrat.",
+  "promptTemplate": "Vous êtes un consultant expert en gestion de projets. L'utilisateur a fourni les informations suivantes : Type de contrat : {typeDeContrat}, Description du projet : {descriptionDuProjet}, Durée du contrat : {dureeDuContrat} mois, Budget alloué : {budgetAlloue}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

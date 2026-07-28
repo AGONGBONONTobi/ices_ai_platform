@@ -36,35 +36,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en financement de projets. L'utilisateur a répondu : Objectif du projet : {objectifDuProjet}, Montant demandé : {montantDemande}, Type de subvention : {typeDeSubvention}, Calendrier du projet : {calendrierProjet}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (par exemple, viabilité financière, impact social, innovation), et des recommandations pour améliorer le dossier de candidature.",
+  "promptTemplate": "Vous êtes un expert en financement de projets. L'utilisateur a répondu : Objectif du projet : {objectifDuProjet}, Montant demandé : {montantDemande}, Type de subvention : {typeDeSubvention}, Calendrier du projet : {calendrierProjet}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

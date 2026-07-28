@@ -44,35 +44,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en amélioration des processus. L'utilisateur a répondu : Temps actuel : {current_time_to_market} jours, Objectif : {target_time_to_market} jours, Complexité du processus : {process_complexity}, Taille de l'équipe : {team_size} membres, Principal défi : {primary_challenge}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (ex: Efficacité, Collaboration, Technologie, Gestion de projet), et des recommandations concrètes pour atteindre l'objectif.",
+  "promptTemplate": "Tu es un consultant expert en amélioration des processus. L'utilisateur a répondu : Temps actuel : {current_time_to_market} jours, Objectif : {target_time_to_market} jours, Complexité du processus : {process_complexity}, Taille de l'équipe : {team_size} membres, Principal défi : {primary_challenge}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

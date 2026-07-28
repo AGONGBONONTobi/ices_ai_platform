@@ -45,35 +45,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un conseiller en investissement responsable. L'utilisateur a répondu : Objectif d'investissement : {objectif-investissement}, Période d'investissement : {periode-investissement}, Secteur d'investissement : {secteur-investissement}, Préoccupations environnementales : {concerns-environnementaux}, Préoccupations sociales : {concerns-sociaux}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un conseiller en investissement responsable. L'utilisateur a répondu : Objectif d'investissement : {objectif-investissement}, Période d'investissement : {periode-investissement}, Secteur d'investissement : {secteur-investissement}, Préoccupations environnementales : {concerns-environnementaux}, Préoccupations sociales : {concerns-sociaux}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

@@ -48,10 +48,14 @@ type Labels = {
   recommendations: string;
   yourAnswers: string;
   notProvided: string;
+  summary: string;
+  dimensions: string;
+  keyPoints: string;
+  developmentPaths: string;
   generatedOn: string;
   page: string;
   of: string;
-  disclaimer: string;
+  disclaimers: Record<string, string>;
   levels: { high: string; mid: string; low: string };
   readings: { high: string; mid: string; low: string };
 };
@@ -68,11 +72,25 @@ const LABELS: Record<string, Labels> = {
     recommendations: "Plan d'actions recommandé",
     yourAnswers: "Éléments déclarés",
     notProvided: "(non renseigné)",
+    summary: "Synthèse",
+    dimensions: "Dimensions mesurées",
+    keyPoints: "Points clés",
+    developmentPaths: "Pistes de développement",
     generatedOn: "Généré le",
     page: "Page",
     of: "sur",
-    disclaimer:
-      "Rapport d'auto-évaluation généré automatiquement à partir des éléments déclarés ci-dessus. Il ne constitue ni un audit certifié ni un avis de conformité.",
+    disclaimers: {
+      assessment:
+        "Rapport d'auto-évaluation généré automatiquement à partir des éléments déclarés ci-dessus. Il ne constitue ni un audit certifié ni un avis de conformité.",
+      profile:
+        "Profil indicatif généré automatiquement à partir des éléments déclarés ci-dessus. Il ne constitue ni un diagnostic psychologique ni un outil de décision individuelle.",
+      document:
+        "Document généré automatiquement à partir des éléments déclarés ci-dessus. À relire et à adapter avant tout usage engageant.",
+      table:
+        "Tableau généré automatiquement à partir des éléments déclarés ci-dessus. À vérifier avant toute décision.",
+      analysis:
+        "Analyse générée automatiquement à partir des éléments déclarés ci-dessus. À vérifier avant toute décision.",
+    },
     levels: { high: "Niveau avancé", mid: "Niveau intermédiaire", low: "Niveau à consolider" },
     readings: {
       high: "Les pratiques déclarées sont structurées et suivies. L'enjeu porte désormais sur l'optimisation et le maintien dans la durée.",
@@ -91,11 +109,25 @@ const LABELS: Record<string, Labels> = {
     recommendations: "Recommended action plan",
     yourAnswers: "Declared information",
     notProvided: "(not provided)",
+    summary: "Summary",
+    dimensions: "Measured dimensions",
+    keyPoints: "Key points",
+    developmentPaths: "Development paths",
     generatedOn: "Generated on",
     page: "Page",
     of: "of",
-    disclaimer:
-      "Report automatically generated from the information declared above. It is neither a certified audit nor a statement of conformity.",
+    disclaimers: {
+      assessment:
+        "Self-assessment report automatically generated from the information declared above. It is neither a certified audit nor a statement of conformity.",
+      profile:
+        "Indicative profile automatically generated from the information declared above. It is neither a psychological assessment nor a basis for individual decisions.",
+      document:
+        "Document automatically generated from the information declared above. Review and adapt it before any binding use.",
+      table:
+        "Table automatically generated from the information declared above. Verify before making any decision.",
+      analysis:
+        "Analysis automatically generated from the information declared above. Verify before making any decision.",
+    },
     levels: { high: "Advanced", mid: "Intermediate", low: "Needs strengthening" },
     readings: {
       high: "Declared practices are structured and monitored. The focus now shifts to optimisation and long-term consistency.",
@@ -135,17 +167,44 @@ export interface ReportAxis {
 export interface ReportSection {
   heading: string;
   lines: string[];
+  /** Sections réellement rédigées : rendues en paragraphes, pas en puces. */
+  prose?: boolean;
+}
+
+export interface ReportDimension {
+  dimension: string;
+  intensite: number;
+  interpretation: string;
 }
 
 interface NormalizedResult {
   scoreGlobal: number | null;
   axes: ReportAxis[];
   recommendations: string[];
-  /** Outils non-diagnostic : chaque clé du résultat devient une section. */
+  /** `profile` : dimensions mesurées, sans jugement de valeur. */
+  dimensions: ReportDimension[];
+  synthese: string | null;
+  pointsCles: string[];
+  table: { colonnes: string[]; lignes: string[][] } | null;
+  documentTitle: string | null;
+  /** Sections rédigées (`analysis`, `document`) ou repli clé par clé. */
   sections: ReportSection[];
   /** Contenu non reconnu : rendu en texte, pour ne jamais produire un PDF vide. */
   fallbackText: string | null;
 }
+
+const EMPTY: NormalizedResult = {
+  scoreGlobal: null,
+  axes: [],
+  recommendations: [],
+  dimensions: [],
+  synthese: null,
+  pointsCles: [],
+  table: null,
+  documentTitle: null,
+  sections: [],
+  fallbackText: null,
+};
 
 const TITLE_CASE = (key: string) =>
   key.replace(/_/g, " ").replace(/^[a-zà-ÿ]/, (c) => c.toUpperCase());
@@ -185,11 +244,11 @@ function clampScore(value: unknown): number | null {
  */
 export function normalizeResult(result: unknown): NormalizedResult {
   if (typeof result === "string") {
-    return { scoreGlobal: null, axes: [], recommendations: [], sections: [], fallbackText: result };
+    return { ...EMPTY, fallbackText: result };
   }
 
   if (!result || typeof result !== "object") {
-    return { scoreGlobal: null, axes: [], recommendations: [], sections: [], fallbackText: null };
+    return EMPTY;
   }
 
   const record = result as Record<string, unknown>;
@@ -216,24 +275,99 @@ export function normalizeResult(result: unknown): NormalizedResult {
 
   const scoreGlobal = clampScore(record.score_global ?? record.scoreGlobal);
 
-  const isDiagnostic = scoreGlobal !== null || axes.length > 0 || recommendations.length > 0;
+  // `profile` : une intensité mesurée, jamais une note.
+  const dimensions: ReportDimension[] = Array.isArray(record.dimensions)
+    ? record.dimensions
+        .map((entry) => {
+          if (!entry || typeof entry !== "object") return null;
+          const item = entry as Record<string, unknown>;
+          const intensite = clampScore(item.intensite ?? item.score);
+          if (intensite === null || typeof item.dimension !== "string") return null;
+          return {
+            dimension: item.dimension,
+            intensite,
+            interpretation: String(item.interpretation ?? ""),
+          };
+        })
+        .filter((d): d is ReportDimension => d !== null)
+    : [];
 
-  // Outils non-diagnostic (templates, reporting, analyses) : chaque clé du
-  // résultat devient une section titrée, plutôt qu'un JSON brut.
-  const sections: ReportSection[] = isDiagnostic
-    ? []
+  const synthese = typeof record.synthese === "string" && record.synthese.trim()
+    ? record.synthese.trim()
+    : null;
+
+  const pointsCles: string[] = Array.isArray(record.points_cles)
+    ? record.points_cles.map((p) => String(p).trim()).filter(Boolean)
+    : [];
+
+  const pistes: string[] = Array.isArray(record.pistes)
+    ? record.pistes.map((p) => String(p).trim()).filter(Boolean)
+    : [];
+
+  // `analysis` / `document` : sections réellement rédigées par le modèle.
+  const writtenSections: ReportSection[] = Array.isArray(record.sections)
+    ? record.sections
+        .map((entry): ReportSection | null => {
+          if (!entry || typeof entry !== "object") return null;
+          const item = entry as Record<string, unknown>;
+          const contenu = String(item.contenu ?? "").trim();
+          if (!contenu) return null;
+          return { heading: String(item.titre ?? ""), lines: [contenu], prose: true };
+        })
+        .filter((s): s is ReportSection => s !== null)
+    : [];
+
+  // `table`
+  const colonnes: string[] = Array.isArray(record.colonnes)
+    ? record.colonnes.map((c) => String(c))
+    : [];
+  const lignes: string[][] = Array.isArray(record.lignes)
+    ? record.lignes.map((row) =>
+        Array.isArray(row)
+          ? row.map((c) => String(c ?? ""))
+          : colonnes.map((c) => String((row as any)?.[c] ?? ""))
+      )
+    : [];
+  const table = colonnes.length > 0 && lignes.length > 0 ? { colonnes, lignes } : null;
+
+  const recognised =
+    scoreGlobal !== null ||
+    axes.length > 0 ||
+    recommendations.length > 0 ||
+    dimensions.length > 0 ||
+    writtenSections.length > 0 ||
+    table !== null ||
+    synthese !== null;
+
+  // Rien de connu : chaque clé devient une section titrée, plutôt qu'un JSON brut.
+  const sections: ReportSection[] = recognised
+    ? writtenSections
     : Object.entries(record)
         .map(([key, value]) => ({ heading: TITLE_CASE(key), lines: toLines(value) }))
         .filter((s) => s.lines.length > 0);
 
   const fallbackText =
-    isDiagnostic || sections.length > 0
+    recognised || sections.length > 0
       ? null
       : typeof record.result === "string"
         ? record.result
         : JSON.stringify(result, null, 2);
 
-  return { scoreGlobal, axes, recommendations, sections, fallbackText };
+  return {
+    documentTitle:
+      typeof record.titre === "string" && record.titre.trim() ? record.titre.trim() : null,
+    scoreGlobal,
+    axes,
+    // Les « pistes » d'un profil jouent le rôle du plan d'actions, sans en avoir
+    // le ton : elles sont rendues sous leur propre intitulé (cf. document).
+    recommendations: recommendations.length > 0 ? recommendations : pistes,
+    dimensions,
+    synthese,
+    pointsCles,
+    table,
+    sections,
+    fallbackText,
+  };
 }
 
 /* -------------------------------------------------------------------------- */
@@ -373,6 +507,34 @@ const styles = StyleSheet.create({
   },
   recoText: { fontSize: 9.5, lineHeight: 1.5, color: BODY, flex: 1 },
 
+  /* Profil : intensité, jamais une note — une seule couleur, neutre. */
+  dimRow: { marginBottom: 10 },
+  dimHead: { flexDirection: "row", justifyContent: "space-between", marginBottom: 4 },
+  dimName: { fontSize: 9.5, color: INK, flex: 1, paddingRight: 10 },
+  dimValue: { fontSize: 9.5, fontFamily: "Helvetica-Bold", color: BRAND },
+  dimTrack: { height: 6, backgroundColor: "#eef2f7", borderRadius: 3 },
+  dimFill: { height: 6, borderRadius: 3, backgroundColor: BRAND_LIGHT },
+  dimNote: { fontSize: 8, color: MUTED, lineHeight: 1.45, marginTop: 4 },
+
+  /* Tableau */
+  tHead: { flexDirection: "row", backgroundColor: BRAND, borderRadius: 3 },
+  tHeadCell: { color: "#ffffff", fontSize: 8, fontFamily: "Helvetica-Bold", padding: 6 },
+  tRow: { flexDirection: "row", borderBottomWidth: 1, borderBottomColor: HAIRLINE },
+  tCell: { fontSize: 8, color: BODY, padding: 6, lineHeight: 1.4 },
+
+  synthesis: {
+    borderLeftWidth: 3,
+    borderLeftColor: BRAND,
+    backgroundColor: "#faf9ff",
+    borderRadius: 4,
+    padding: 12,
+    marginBottom: 20,
+  },
+  synthesisText: { fontSize: 9.5, lineHeight: 1.55, color: BODY },
+
+  docTitle: { fontSize: 15, fontFamily: "Helvetica-Bold", color: INK, marginBottom: 14 },
+  sectionBody: { fontSize: 9.5, lineHeight: 1.55, color: BODY },
+
   bulletRow: { flexDirection: "row", marginBottom: 6 },
   bulletDot: { width: 12, fontSize: 9.5, color: BRAND, paddingLeft: 2 },
 
@@ -477,6 +639,8 @@ export interface GenericReportProps {
   result: unknown;
   /** Réponses saisies : sans elles, le score n'est rattaché à rien. */
   answers?: ReportAnswer[];
+  /** Nature du livrable — détermine l'intitulé du plan d'actions. */
+  outputKind?: string;
   lang?: string;
 }
 
@@ -485,10 +649,14 @@ export const GenericReportDocument = ({
   category,
   result,
   answers = [],
+  outputKind = "analysis",
   lang = "fr",
 }: GenericReportProps) => {
   const t = labelsFor(lang);
-  const { scoreGlobal, axes, recommendations, sections, fallbackText } = normalizeResult(result);
+  const {
+    scoreGlobal, axes, recommendations, dimensions,
+    synthese, pointsCles, table, sections, fallbackText, documentTitle,
+  } = normalizeResult(result);
 
   const generatedOn = new Date().toLocaleDateString(LOCALE_TAG[lang] ?? "fr-FR", {
     day: "2-digit",
@@ -553,6 +721,61 @@ export const GenericReportDocument = ({
             </View>
           )}
 
+          {/* --- Synthèse (analysis, profile) --- */}
+          {synthese && (
+            <View style={styles.synthesis} wrap={false}>
+              <Text style={[styles.scoreLabel, { marginBottom: 6 }]}>{t.summary.toUpperCase()}</Text>
+              <Text style={styles.synthesisText}>{synthese}</Text>
+            </View>
+          )}
+
+          {/* --- Dimensions (profile) : une mesure, pas une note --- */}
+          {dimensions.length > 0 && (
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>{t.dimensions}</Text>
+              {dimensions.map((d, i) => (
+                <View key={i} style={styles.dimRow} wrap={false}>
+                  <View style={styles.dimHead}>
+                    <Text style={styles.dimName}>{d.dimension}</Text>
+                    <Text style={styles.dimValue}>{d.intensite}</Text>
+                  </View>
+                  <View style={styles.dimTrack}>
+                    <View style={[styles.dimFill, { width: `${d.intensite}%` }]} />
+                  </View>
+                  {d.interpretation ? (
+                    <Text style={styles.dimNote}>{d.interpretation}</Text>
+                  ) : null}
+                </View>
+              ))}
+            </View>
+          )}
+
+          {/* --- Tableau --- */}
+          {table && (
+            <View style={styles.section}>
+              <View style={styles.tHead} wrap={false}>
+                {table.colonnes.map((c, i) => (
+                  <Text key={i} style={[styles.tHeadCell, { width: `${100 / table.colonnes.length}%` }]}>
+                    {c}
+                  </Text>
+                ))}
+              </View>
+              {table.lignes.map((row, r) => (
+                <View
+                  key={r}
+                  style={[styles.tRow, r % 2 === 1 ? { backgroundColor: SURFACE } : {}]}
+                  wrap={false}
+                >
+                  {table.colonnes.map((_, c) => (
+                    <Text key={c} style={[styles.tCell, { width: `${100 / table.colonnes.length}%` }]}>
+                      {row[c] ?? ""}
+                    </Text>
+                  ))}
+                </View>
+              ))}
+            </View>
+          )}
+
           {/* --- Axes : radar + barres --- */}
           {axes.length > 0 && (
             <View style={styles.section}>
@@ -600,7 +823,9 @@ export const GenericReportDocument = ({
           {/* --- Recommandations --- */}
           {recommendations.length > 0 && (
             <View style={styles.section}>
-              <Text style={styles.sectionTitle}>{t.recommendations}</Text>
+              <Text style={styles.sectionTitle}>
+                {outputKind === "profile" ? t.developmentPaths : t.recommendations}
+              </Text>
               {recommendations.map((r, i) => (
                 <View key={i} style={styles.recoRow} wrap={false}>
                   <Text style={styles.recoIndex}>{i + 1}</Text>
@@ -611,17 +836,38 @@ export const GenericReportDocument = ({
           )}
 
           {/* --- Outils non-diagnostic : sections titrées --- */}
+          {documentTitle && <Text style={styles.docTitle}>{documentTitle}</Text>}
+
           {sections.map((s, i) => (
             <View key={i} style={styles.section}>
-              <Text style={styles.sectionTitle}>{s.heading}</Text>
-              {s.lines.map((line, j) => (
-                <View key={j} style={styles.bulletRow} wrap={false}>
+              {s.heading ? <Text style={styles.sectionTitle}>{s.heading}</Text> : null}
+              {s.prose
+                ? s.lines.map((line, j) => (
+                    <Text key={j} style={styles.sectionBody}>
+                      {line}
+                    </Text>
+                  ))
+                : s.lines.map((line, j) => (
+                    <View key={j} style={styles.bulletRow} wrap={false}>
+                      <Text style={styles.bulletDot}>•</Text>
+                      <Text style={styles.recoText}>{line}</Text>
+                    </View>
+                  ))}
+            </View>
+          ))}
+
+          {/* --- Points clés (analysis) --- */}
+          {pointsCles.length > 0 && (
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>{t.keyPoints}</Text>
+              {pointsCles.map((p, i) => (
+                <View key={i} style={styles.bulletRow} wrap={false}>
                   <Text style={styles.bulletDot}>•</Text>
-                  <Text style={styles.recoText}>{line}</Text>
+                  <Text style={styles.recoText}>{p}</Text>
                 </View>
               ))}
             </View>
-          ))}
+          )}
 
           {/* --- Contexte : ce sur quoi l'analyse s'appuie --- */}
           {answers.length > 0 && (
@@ -656,7 +902,7 @@ export const GenericReportDocument = ({
               `${t.brand}  ·  ${toolTitle}  ·  ${t.page} ${pageNumber} ${t.of} ${totalPages}`
             }
           />
-          <Text style={styles.footerNote}>{t.disclaimer}</Text>
+          <Text style={styles.footerNote}>{t.disclaimers[outputKind] ?? t.disclaimers.analysis}</Text>
         </View>
       </Page>
     </Document>

@@ -45,35 +45,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif projet : {objectif_projet}, Budget alloué : {budget_alloue} €, Type ONG : {type_ONG}, Nombre d'équipes : {nombre_equipes}, Durée projet : {duree_projet} mois. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectif projet : {objectif_projet}, Budget alloué : {budget_alloue} €, Type ONG : {type_ONG}, Nombre d'équipes : {nombre_equipes}, Durée projet : {duree_projet} mois.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

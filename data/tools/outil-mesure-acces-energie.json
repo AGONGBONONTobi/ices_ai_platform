@@ -38,35 +38,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "L'utilisateur a répondu : Population totale: {population_totale}, Type d'énergie: {type_energie}, Description du système: {description_systeme}, Taux de pénalisation: {taux_penalisation}. Évaluez l'accès à l'énergie fourni par ce système et donnez un score global sur 100, une évaluation par axe (fiabilité, qualité, couverture), et des recommandations pour améliorer l'accès à l'énergie.",
+  "promptTemplate": "L'utilisateur a répondu : Population totale: {population_totale}, Type d'énergie: {type_energie}, Description du système: {description_systeme}, Taux de pénalisation: {taux_penalisation}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

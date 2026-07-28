@@ -36,35 +36,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant expert en création de devis professionnels. L'entreprise {entreprise} a besoin d'un devis pour un {typeDeDevis}. Le projet consiste en {descriptionDuProjet}. Le délai de réalisation est de {delaiDeRealisation} jours. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe (qualité du projet, délai, coût), et des recommandations pour améliorer le devis.",
+  "promptTemplate": "Vous êtes un consultant expert en création de devis professionnels. L'entreprise {entreprise} a besoin d'un devis pour un {typeDeDevis}. Le projet consiste en {descriptionDuProjet}. Le délai de réalisation est de {delaiDeRealisation} jours.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

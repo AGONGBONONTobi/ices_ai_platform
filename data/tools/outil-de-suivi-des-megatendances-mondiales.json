@@ -49,35 +49,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur a répondu : Secteur: {secteur}, Description des mégatendances: {description}, Horizon temporel: {horizonTemporel}, Niveau de risque: {niveauDeRisque}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur a répondu : Secteur: {secteur}, Description des mégatendances: {description}, Horizon temporel: {horizonTemporel}, Niveau de risque: {niveauDeRisque}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

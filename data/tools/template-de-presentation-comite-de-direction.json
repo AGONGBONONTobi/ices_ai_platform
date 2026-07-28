@@ -37,35 +37,36 @@
       "required": false
     }
   ],
-  "promptTemplate": "Vous êtes un consultant en présentation. L'utilisateur a répondu : Objectif de la présentation: {objectif_presentation}, Public cible: {public_cible}, Durée de la présentation: {duree_presentation} minutes, Supports visuels: {supports_visuels}. Analysez ces informations et donnez un score global sur 100 pour la préparation de la présentation, évaluez les axes tels que la clarté de l'objectif, l'adéquation au public cible, la gestion du temps et l'efficacité des supports visuels, et fournissez des recommandations pour améliorer la présentation.",
+  "promptTemplate": "Vous êtes un consultant en présentation. L'utilisateur a répondu : Objectif de la présentation: {objectif_presentation}, Public cible: {public_cible}, Durée de la présentation: {duree_presentation} minutes, Supports visuels: {supports_visuels}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

@@ -44,35 +44,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en droit d'auteur et en licences. L'utilisateur a répondu : Type de contenu : {type_de_contenu}, Description du contenu : {description_du_contenu}, Objectif de l'utilisation : {objectif_de_l_utilisation}, Pays d'exploitation : {pays_d_exploitation}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (conformité légale, respect des droits d'auteur, etc.) et des recommandations pour une gestion efficace des droits d'auteur et des licences.",
+  "promptTemplate": "Vous êtes un expert en droit d'auteur et en licences. L'utilisateur a répondu : Type de contenu : {type_de_contenu}, Description du contenu : {description_du_contenu}, Objectif de l'utilisation : {objectif_de_l_utilisation}, Pays d'exploitation : {pays_d_exploitation}.) et des recommandations pour une gestion efficace des droits d'auteur et des licences.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

@@ -44,35 +44,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en comptabilité analytique. L'utilisateur a fourni les informations suivantes : Entreprise : {entreprise}, Centre de coûts : {centre-de-couts}, Revenus totaux : {revenus}, Dépenses totales : {depenses}, Description détaillée du centre de coûts : {description}. Analyse ces informations et fournis un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un expert en comptabilité analytique. L'utilisateur a fourni les informations suivantes : Entreprise : {entreprise}, Centre de coûts : {centre-de-couts}, Revenus totaux : {revenus}, Dépenses totales : {depenses}, Description détaillée du centre de coûts : {description}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

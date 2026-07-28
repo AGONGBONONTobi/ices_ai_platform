@@ -38,35 +38,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en participation citoyenne numérique. L'utilisateur a répondu : Objectif: {objectif}, Public cible: {public_cible}, Canaux utilisés: {canaux_utilises}, Indicateurs de suivi: {indicateurs_suivi}. Évaluez la pertinence et la faisabilité du projet en donnant un score global sur 100, une évaluation par axe (participation, engagement, inclusivité) et des recommandations pour améliorer le projet.",
+  "promptTemplate": "Vous êtes un expert en participation citoyenne numérique. L'utilisateur a répondu : Objectif: {objectif}, Public cible: {public_cible}, Canaux utilisés: {canaux_utilises}, Indicateurs de suivi: {indicateurs_suivi}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

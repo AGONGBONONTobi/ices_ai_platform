@@ -36,35 +36,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant pédagogique. L'utilisateur a répondu : Objectifs pédagogiques: {objectifs_pédagogiques}, Niveau scolaire: {niveaux_scolaires}, Matières à aborder: {matières_à_aborder}, Ressources pédagogiques: {ressources_pédagogiques}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer le plan pédagogique annuel.",
+  "promptTemplate": "Vous êtes un consultant pédagogique. L'utilisateur a répondu : Objectifs pédagogiques: {objectifs_pédagogiques}, Niveau scolaire: {niveaux_scolaires}, Matières à aborder: {matières_à_aborder}, Ressources pédagogiques: {ressources_pédagogiques}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

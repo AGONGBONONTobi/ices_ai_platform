@@ -45,35 +45,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en gestion des risques. L'utilisateur a sélectionné la zone géopolitique {zone-geopolitique} et le type de risque {type-de-risque}. Il a également décrit la situation actuelle comme suit : {description-de-la-situation}. Enfin, il a évalué la gravité de la situation à {évaluation-de-la-gravité} sur 10. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un expert en gestion des risques. L'utilisateur a sélectionné la zone géopolitique {zone-geopolitique} et le type de risque {type-de-risque}. Il a également décrit la situation actuelle comme suit : {description-de-la-situation}. Enfin, il a évalué la gravité de la situation à {évaluation-de-la-gravité} sur 10.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

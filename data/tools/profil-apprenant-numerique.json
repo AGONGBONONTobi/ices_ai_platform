@@ -53,35 +53,48 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Niveau de connaissance technologique : {niveau-de-connaissance-technologique}, Motivations pour apprendre : {motivations-pour-apprendre}, Habitudes d'apprentissage : {habitudes-d-apprentissage}, Outils technologiques utilisés : {outils-technologiques-utilises}, Problèmes de concentration : {problemes-de-concentration}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Niveau de connaissance technologique : {niveau-de-connaissance-technologique}, Motivations pour apprendre : {motivations-pour-apprendre}, Habitudes d'apprentissage : {habitudes-d-apprentissage}, Outils technologiques utilisés : {outils-technologiques-utilises}, Problèmes de concentration : {problemes-de-concentration}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "dimensions": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "dimension": {
               "type": "string"
             },
-            "score": {
+            "intensite": {
               "type": "number",
-              "description": "Score sur 100"
+              "description": "Intensité de 0 à 100 — une mesure, pas une note"
+            },
+            "interpretation": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "dimension",
+            "intensite",
+            "interpretation"
+          ]
         }
       },
-      "recommandations": {
+      "pistes": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "dimensions",
+      "pistes"
+    ]
+  },
+  "output_kind": "profile"
 }

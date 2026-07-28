@@ -44,35 +44,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en qualité et excellence opérationnelle. L'utilisateur a répondu : Review Name: {review_name}, Frequency: {frequency}, Performance Scale: {performance_scale}, Observations: {observations}, Review Date: {review_date}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (ex: Objectifs, Processus, Résultats, Leadership), et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert en qualité et excellence opérationnelle. L'utilisateur a répondu : Review Name: {review_name}, Frequency: {frequency}, Performance Scale: {performance_scale}, Observations: {observations}, Review Date: {review_date}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

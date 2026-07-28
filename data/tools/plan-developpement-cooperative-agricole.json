@@ -38,35 +38,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant en développement rural. La coopérative agricole a fourni les informations suivantes : Superficie de l'exploitation : {superficie_exploitation} hectares, Type de produits : {type_produits}, Objectifs : {objectifs}, Budget prévu : {budget_prevu} euros. Analysez ces informations et proposez un plan de développement comprenant un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Vous êtes un consultant en développement rural. La coopérative agricole a fourni les informations suivantes : Superficie de l'exploitation : {superficie_exploitation} hectares, Type de produits : {type_produits}, Objectifs : {objectifs}, Budget prévu : {budget_prevu} euros.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

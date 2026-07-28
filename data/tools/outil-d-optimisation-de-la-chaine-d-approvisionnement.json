@@ -37,35 +37,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en chaîne d'approvisionnement. L'utilisateur a répondu : Fournisseurs: {fournisseurs}, Délai de livraison: {delai_livraison} jours, Problèmes actuels: {description_probleme}, Budget alloué: {budget_optimisation} euros. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert en chaîne d'approvisionnement. L'utilisateur a répondu : Fournisseurs: {fournisseurs}, Délai de livraison: {delai_livraison} jours, Problèmes actuels: {description_probleme}, Budget alloué: {budget_optimisation} euros.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

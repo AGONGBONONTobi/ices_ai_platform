@@ -37,35 +37,30 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en intelligence économique. L'utilisateur a répondu : Secteur d'activité : {secteurActivite}, Acteurs clés : {acteursCles}, Type d'influence : {typeInfluence}, Objectif d'analyse : {objectifAnalyse}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour une meilleure compréhension des réseaux d'influence dans ce secteur.",
+  "promptTemplate": "Vous êtes un expert en intelligence économique. L'utilisateur a répondu : Secteur d'activité : {secteurActivite}, Acteurs clés : {acteursCles}, Type d'influence : {typeInfluence}, Objectif d'analyse : {objectifAnalyse}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
-      },
-      "axes": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "axe": {
-              "type": "string"
-            },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
-            }
-          }
-        }
-      },
-      "recommandations": {
+      "colonnes": {
         "type": "array",
         "items": {
           "type": "string"
         }
+      },
+      "lignes": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    }
-  }
+    },
+    "required": [
+      "colonnes",
+      "lignes"
+    ]
+  },
+  "output_kind": "table"
 }

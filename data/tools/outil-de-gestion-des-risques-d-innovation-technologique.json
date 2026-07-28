@@ -44,35 +44,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en gestion des risques. L'utilisateur a fourni les informations suivantes : Nom du projet : {nom_projet}, Description du projet : {description_projet}, Type de risque : {type_risque}, Impact potentiel du risque : {impact_risque}, Probabilité de survenance du risque : {probabilité_risque}. Analyse ces informations et propose un score global de risque sur 100, une évaluation par axe (technologique, financier, stratégique) et des recommandations pour atténuer les risques.",
+  "promptTemplate": "Tu es un expert en gestion des risques. L'utilisateur a fourni les informations suivantes : Nom du projet : {nom_projet}, Description du projet : {description_projet}, Type de risque : {type_risque}, Impact potentiel du risque : {impact_risque}, Probabilité de survenance du risque : {probabilité_risque}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

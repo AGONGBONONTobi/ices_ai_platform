@@ -4,6 +4,8 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, Field
 
+from app.services.output_kinds import DEFAULT_OUTPUT_KIND
+
 
 class ToolSelectOption(BaseModel):
     label: str
@@ -32,6 +34,9 @@ class ToolConfig(BaseModel):
     inputs: list[ToolInput] = Field(default_factory=list)
     promptTemplate: str = Field(min_length=1)
     outputSchema: dict[str, Any] = Field(default_factory=dict)
+    # Nature du livrable attendu. Les fiches antérieures au chantier B7 ne le
+    # déclarent pas : elles retombent sur le type par défaut.
+    output_kind: str = DEFAULT_OUTPUT_KIND
 
 
 class ToolSummary(BaseModel):

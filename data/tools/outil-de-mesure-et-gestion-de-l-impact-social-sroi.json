@@ -37,35 +37,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en développement durable. L'utilisateur a répondu : Montant total investi : {variable1}, Objectifs du projet : {variable2}, Axe principal de l'impact social : {variable3}, Nombre de personnes directement impactées : {variable4}. Analyse ces informations et présente un score global de l'impact social du projet sur 100, une évaluation par axe (économique, social, environnemental) et des recommandations pour améliorer l'impact social du projet.",
+  "promptTemplate": "Tu es un expert en développement durable. L'utilisateur a répondu : Montant total investi : {variable1}, Objectifs du projet : {variable2}, Axe principal de l'impact social : {variable3}, Nombre de personnes directement impactées : {variable4}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

@@ -36,35 +36,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en gestion de la qualité. L'utilisateur a répondu : Description du problème: {description_probleme}, Cause présumée: {cause_racontee}, Niveau d'urgence: {niveau_urgence}, Recommandations correctives: {recommandations_correctives}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (identification du problème, analyse de cause, planification corrective), et des recommandations pour améliorer la procédure de gestion des non-conformités.",
+  "promptTemplate": "Vous êtes un expert en gestion de la qualité. L'utilisateur a répondu : Description du problème: {description_probleme}, Cause présumée: {cause_racontee}, Niveau d'urgence: {niveau_urgence}, Recommandations correctives: {recommandations_correctives}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

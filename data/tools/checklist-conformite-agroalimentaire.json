@@ -46,35 +46,30 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous avez répondu : Hygiène: {hygiène}, Traçabilité: {traçabilité}, Gestion des risques: {gestionRisques}, Audits fournisseurs: {auditsFournisseurs}, Niveau de maturité: {niveauMaturité}. Évaluez la conformité de cette organisation aux référentiels BRC, IFS et SQF en matière d'hygiène, de traçabilité, de gestion des risques produits et d'audits fournisseurs. Donnez un score global sur 100, une évaluation par axe (hygiène, traçabilité, gestion des risques, audits fournisseurs) et des recommandations prioritaires.",
+  "promptTemplate": "Vous avez répondu : Hygiène: {hygiène}, Traçabilité: {traçabilité}, Gestion des risques: {gestionRisques}, Audits fournisseurs: {auditsFournisseurs}, Niveau de maturité: {niveauMaturité}. Évaluez la conformité de cette organisation aux référentiels BRC, IFS et SQF en matière d'hygiène, de traçabilité, de gestion des risques produits et d'audits fournisseurs.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
-      },
-      "axes": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "axe": {
-              "type": "string"
-            },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
-            }
-          }
-        }
-      },
-      "recommandations": {
+      "colonnes": {
         "type": "array",
         "items": {
           "type": "string"
         }
+      },
+      "lignes": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    }
-  }
+    },
+    "required": [
+      "colonnes",
+      "lignes"
+    ]
+  },
+  "output_kind": "table"
 }

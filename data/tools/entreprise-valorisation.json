@@ -64,35 +64,43 @@
       "required": false
     }
   ],
-  "promptTemplate": "Tu es un expert en valorisation d'entreprise. L'utilisateur a répondu : Entreprise : {entreprise}, Revenu annuel : {revenu_annuel} millions d'Euros, Marge marchande : {marge_marchande} %, Taux de risque : {taux_risque} %, Modele de comparaison : {modele_comparables}, Taux de la dette : {taux_dette} %, Actif net : {actif_net} millions d'Euros, Commentaires : {textarea_commentaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un expert en valorisation d'entreprise. L'utilisateur a répondu : Entreprise : {entreprise}, Revenu annuel : {revenu_annuel} millions d'Euros, Marge marchande : {marge_marchande} %, Taux de risque : {taux_risque} %, Modele de comparaison : {modele_comparables}, Taux de la dette : {taux_dette} %, Actif net : {actif_net} millions d'Euros, Commentaires : {textarea_commentaires}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

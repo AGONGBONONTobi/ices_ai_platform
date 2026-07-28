@@ -45,35 +45,48 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Capacité à apprendre rapidement : {variable1}, Exemple de situation : {variable2}, Impact de l'apprentissage continu : {variable3}, Capacité à gérer le stress : {variable4}, Facteurs limitants : {variable5}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Capacité à apprendre rapidement : {variable1}, Exemple de situation : {variable2}, Impact de l'apprentissage continu : {variable3}, Capacité à gérer le stress : {variable4}, Facteurs limitants : {variable5}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "dimensions": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "dimension": {
               "type": "string"
             },
-            "score": {
+            "intensite": {
               "type": "number",
-              "description": "Score sur 100"
+              "description": "Intensité de 0 à 100 — une mesure, pas une note"
+            },
+            "interpretation": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "dimension",
+            "intensite",
+            "interpretation"
+          ]
         }
       },
-      "recommandations": {
+      "pistes": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "dimensions",
+      "pistes"
+    ]
+  },
+  "output_kind": "profile"
 }

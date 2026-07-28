@@ -39,35 +39,43 @@
       "required": false
     }
   ],
-  "promptTemplate": "Vous êtes un expert en intelligence économique. L'utilisateur a répondu : Secteur: {secteur}, Description de l'activité: {description_activite}, Zone géographique: {zone_geographique}, Partenaires clés: {partenaires_cles}. Analysez ces informations pour fournir un score global sur 100 de la position de l'entreprise dans les chaînes de valeur mondiales, une évaluation par axe (technologique, économique, stratégique), et des recommandations pour améliorer sa position.",
+  "promptTemplate": "Vous êtes un expert en intelligence économique. L'utilisateur a répondu : Secteur: {secteur}, Description de l'activité: {description_activite}, Zone géographique: {zone_geographique}, Partenaires clés: {partenaires_cles}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

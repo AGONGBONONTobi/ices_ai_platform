@@ -36,35 +36,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant financier expert. L'utilisateur a répondu : Type de risque: {typeDeRisque}, Montant exposé: {montantExposé}, Description du risque: {descriptionDuRisque}, Stratégie actuelle: {stratégieActuelle}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (identification, évaluation, gestion), et des recommandations pour améliorer la gestion de ce risque.",
+  "promptTemplate": "Vous êtes un consultant financier expert. L'utilisateur a répondu : Type de risque: {typeDeRisque}, Montant exposé: {montantExposé}, Description du risque: {descriptionDuRisque}, Stratégie actuelle: {stratégieActuelle}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

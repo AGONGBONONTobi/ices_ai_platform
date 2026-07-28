@@ -44,35 +44,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en veille réglementaire et juridique. L'utilisateur a répondu : Secteur d'activité: {secteurActivite}, Zones géographiques: {zonesGeographiques}, Thèmes de veille: {themesVeille}, Niveau de veille: {niveauDeVeille}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer la veille réglementaire et juridique de l'utilisateur.",
+  "promptTemplate": "Vous êtes un expert en veille réglementaire et juridique. L'utilisateur a répondu : Secteur d'activité: {secteurActivite}, Zones géographiques: {zonesGeographiques}, Thèmes de veille: {themesVeille}, Niveau de veille: {niveauDeVeille}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

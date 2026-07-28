@@ -38,35 +38,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant agricole expert. L'utilisateur a répondu : Type de culture : {type_de_culture}, Superficie cultivable : {superficie_cultivable} hectares, Ressources disponibles : {ressources_disponibles}, Objectifs de production : {objectifs_de_production}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (production, ressources, environnement), et des recommandations pour améliorer la gestion des intrants et des ressources agricoles.",
+  "promptTemplate": "Vous êtes un consultant agricole expert. L'utilisateur a répondu : Type de culture : {type_de_culture}, Superficie cultivable : {superficie_cultivable} hectares, Ressources disponibles : {ressources_disponibles}, Objectifs de production : {objectifs_de_production}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

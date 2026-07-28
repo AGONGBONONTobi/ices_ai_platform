@@ -39,35 +39,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en bilan carbone. L'utilisateur a fourni les informations suivantes : Emissions de GES du scope 1 : {emissions-scope-1} tonnes CO2 équivalent, Emissions de GES du scope 2 : {emissions-scope-2} tonnes CO2 équivalent, Emissions de GES du scope 3 : {emissions-scope-3} tonnes CO2 équivalent, Réductions annuelles d'émissions de GES : {reductions-annuelles} tonnes CO2 équivalent, Objectifs de réduction des émissions de GES : {objectifs-carbone}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un expert en bilan carbone. L'utilisateur a fourni les informations suivantes : Emissions de GES du scope 1 : {emissions-scope-1} tonnes CO2 équivalent, Emissions de GES du scope 2 : {emissions-scope-2} tonnes CO2 équivalent, Emissions de GES du scope 3 : {emissions-scope-3} tonnes CO2 équivalent, Réductions annuelles d'émissions de GES : {reductions-annuelles} tonnes CO2 équivalent, Objectifs de réduction des émissions de GES : {objectifs-carbone}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

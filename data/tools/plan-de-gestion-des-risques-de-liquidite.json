@@ -42,35 +42,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en gestion des risques. L'institution a répondu : Type d'institution : {type_d_institution}, Actifs liquides : {actifs_liquides}, Stratégie de gestion : {strategie_de_gestion}, Fréquence de révision : {frequence_de_revision}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (par exemple, gestion des actifs, gestion des passifs, stratégie de financement), et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert en gestion des risques. L'institution a répondu : Type d'institution : {type_d_institution}, Actifs liquides : {actifs_liquides}, Stratégie de gestion : {strategie_de_gestion}, Fréquence de révision : {frequence_de_revision}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

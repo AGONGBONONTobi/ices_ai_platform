@@ -55,35 +55,48 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en psychologie du développement personnel. L'utilisateur a répondu : Type d'orientation : {type-orientation}, Type de préférence de décision : {type-preference-decision}, Type de préférence d'organisation : {type-preference-organisation}, Type de préférence de communication : {type-preference-communication}, Exemple de prise de décision difficile : {type-preference-prise-de-decision}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert en psychologie du développement personnel. L'utilisateur a répondu : Type d'orientation : {type-orientation}, Type de préférence de décision : {type-preference-decision}, Type de préférence d'organisation : {type-preference-organisation}, Type de préférence de communication : {type-preference-communication}, Exemple de prise de décision difficile : {type-preference-prise-de-decision}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "dimensions": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "dimension": {
               "type": "string"
             },
-            "score": {
+            "intensite": {
               "type": "number",
-              "description": "Score sur 100"
+              "description": "Intensité de 0 à 100 — une mesure, pas une note"
+            },
+            "interpretation": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "dimension",
+            "intensite",
+            "interpretation"
+          ]
         }
       },
-      "recommandations": {
+      "pistes": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "dimensions",
+      "pistes"
+    ]
+  },
+  "output_kind": "profile"
 }

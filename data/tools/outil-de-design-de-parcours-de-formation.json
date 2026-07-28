@@ -37,35 +37,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en formation. L'utilisateur a répondu : Objectif de formation: {objectifFormation}, Niveau de formation: {niveauFormation}, Public cible: {publicCible}, Durée de formation: {dureeFormation} heures. Conçois un parcours de formation sur mesure en fonction de ces critères et évalue son efficacité potentielle. Donne un score global sur 100, une évaluation par axe (contenu, méthode, durée), et des recommandations pour améliorer le parcours de formation.",
+  "promptTemplate": "Tu es un consultant expert en formation. L'utilisateur a répondu : Objectif de formation: {objectifFormation}, Niveau de formation: {niveauFormation}, Public cible: {publicCible}, Durée de formation: {dureeFormation} heures. Conçois un parcours de formation sur mesure en fonction de ces critères et évalue son efficacité potentielle.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

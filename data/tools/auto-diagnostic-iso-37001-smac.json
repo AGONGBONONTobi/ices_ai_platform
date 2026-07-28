@@ -73,7 +73,11 @@
               "type": "number",
               "description": "Score sur 100"
             }
-          }
+          },
+          "required": [
+            "axe",
+            "score"
+          ]
         }
       },
       "recommandations": {
@@ -82,6 +86,12 @@
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "score_global",
+      "axes",
+      "recommandations"
+    ]
+  },
+  "output_kind": "assessment"
 }

@@ -44,35 +44,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant financier expert. L'utilisateur a répondu : Montant demandé: {montantDemande}, Durée de remboursement: {dureeRemboursement}, Description du projet: {descriptionProjet}, Type de financement: {typeFinancement}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (solabilité, risque, potentiel de croissance), et des recommandations pour le dossier de financement bancaire.",
+  "promptTemplate": "Vous êtes un consultant financier expert. L'utilisateur a répondu : Montant demandé: {montantDemande}, Durée de remboursement: {dureeRemboursement}, Description du projet: {descriptionProjet}, Type de financement: {typeFinancement}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

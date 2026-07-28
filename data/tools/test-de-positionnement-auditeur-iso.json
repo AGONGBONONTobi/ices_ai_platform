@@ -55,35 +55,48 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un auditeur expérimenté. L'utilisateur a répondu : Niveau d'expérience: {niveau_experience}, Connaissances normatives: {connaissances_normatives}, Formation actuelle: {formation_actuelle}, Compétences techniques: {competences_techniques}, Objectif professionnel: {objectif_professionnel}. Évaluez les connaissances et compétences de l'utilisateur en matière d'audit selon les normes ISO 9001, 14001, 45001 et 27001. Donnez un score global sur 100, une évaluation par axe (connaissances normatives, compétences techniques, expérience) et des recommandations de formation adaptées pour atteindre son objectif professionnel.",
+  "promptTemplate": "Vous êtes un auditeur expérimenté. L'utilisateur a répondu : Niveau d'expérience: {niveau_experience}, Connaissances normatives: {connaissances_normatives}, Formation actuelle: {formation_actuelle}, Compétences techniques: {competences_techniques}, Objectif professionnel: {objectif_professionnel}. Évaluez les connaissances et compétences de l'utilisateur en matière d'audit selon les normes ISO 9001, 14001, 45001 et 27001.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "dimensions": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "dimension": {
               "type": "string"
             },
-            "score": {
+            "intensite": {
               "type": "number",
-              "description": "Score sur 100"
+              "description": "Intensité de 0 à 100 — une mesure, pas une note"
+            },
+            "interpretation": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "dimension",
+            "intensite",
+            "interpretation"
+          ]
         }
       },
-      "recommandations": {
+      "pistes": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "dimensions",
+      "pistes"
+    ]
+  },
+  "output_kind": "profile"
 }

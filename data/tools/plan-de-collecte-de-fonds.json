@@ -36,35 +36,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant expert en collecte de fonds. L'utilisateur a répondu : Objectif : {objectif}, Public cible : {public_cible}, Stratégie : {strategie}, Budget : {budget}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (objectif, public cible, stratégie, budget), et des recommandations pour améliorer le plan de collecte de fonds.",
+  "promptTemplate": "Vous êtes un consultant expert en collecte de fonds. L'utilisateur a répondu : Objectif : {objectif}, Public cible : {public_cible}, Stratégie : {strategie}, Budget : {budget}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

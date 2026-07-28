@@ -31,35 +31,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en gestion des cultures. L'utilisateur a répondu : Type de culture: {type_culture}, Superficie: {superficie} hectares, Calendrier cultural: {description_calendrier}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe (rendement, qualité, respect de l'environnement), et des recommandations pour améliorer la gestion de la culture.",
+  "promptTemplate": "Vous êtes un expert en gestion des cultures. L'utilisateur a répondu : Type de culture: {type_culture}, Superficie: {superficie} hectares, Calendrier cultural: {description_calendrier}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

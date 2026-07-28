@@ -37,35 +37,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant juridique. L'utilisateur a répondu : Type de contrat: {type_de_contrat}, Parties impliquées: {parties_impliquees}, Durée du contrat: {duree_contrat} mois, Conditions de résiliation: {conditions_resiliation}. Analysez ces informations et donnez un score global sur 100 pour la qualité du contrat, évaluez les axes tels que la clarté, la complétude et la sécurité juridique, et fournissez des recommandations pour améliorer le contrat.",
+  "promptTemplate": "Vous êtes un consultant juridique. L'utilisateur a répondu : Type de contrat: {type_de_contrat}, Parties impliquées: {parties_impliquees}, Durée du contrat: {duree_contrat} mois, Conditions de résiliation: {conditions_resiliation}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

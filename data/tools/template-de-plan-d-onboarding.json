@@ -37,35 +37,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en onboarding. Le nouvel employé s'appelle {nomDuNouvelEmploye} et occupera le poste de {posteOccupe}. Ses objectifs principaux pour les premiers mois sont : {objectifs}. Il aura besoin des ressources suivantes pour réussir : {ressourcesNecessaires}. Analyse ces informations et donne un score global sur 100 pour l'efficacité du plan d'onboarding, une évaluation par axe (par exemple, intégration dans l'équipe, compréhension des processus, atteinte des objectifs), et des recommandations pour améliorer le plan.",
+  "promptTemplate": "Tu es un consultant expert en onboarding. Le nouvel employé s'appelle {nomDuNouvelEmploye} et occupera le poste de {posteOccupe}. Ses objectifs principaux pour les premiers mois sont : {objectifs}. Il aura besoin des ressources suivantes pour réussir : {ressourcesNecessaires}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

@@ -30,35 +30,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en gestion de flotte. L'utilisateur a répondu : Type de véhicule: {type_de_vehicule}, Nombre de véhicules: {nombre_de_vehicules}, Description de la flotte: {description_flotte}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (par exemple, efficacité énergétique, maintenance, utilisation), et des recommandations pour améliorer la performance de la flotte.",
+  "promptTemplate": "Tu es un consultant expert en gestion de flotte. L'utilisateur a répondu : Type de véhicule: {type_de_vehicule}, Nombre de véhicules: {nombre_de_vehicules}, Description de la flotte: {description_flotte}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

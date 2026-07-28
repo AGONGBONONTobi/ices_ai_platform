@@ -46,35 +46,43 @@
       "required": false
     }
   ],
-  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur a répondu : Pays: {pays}, Secteur: {secteur}, Description de l'écosystème: {description}, Investissement: {investissement}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (innovation, croissance, impact), et des recommandations pour améliorer l'écosystème startup dans ce pays et secteur.",
+  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur a répondu : Pays: {pays}, Secteur: {secteur}, Description de l'écosystème: {description}, Investissement: {investissement}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

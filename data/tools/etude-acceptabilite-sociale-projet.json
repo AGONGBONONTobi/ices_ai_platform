@@ -37,35 +37,43 @@
       "required": false
     }
   ],
-  "promptTemplate": "Vous êtes un consultant expert en acceptabilité sociale. L'utilisateur a répondu : Description du projet : {description_projet}, Public cible : {public_cible}, Principales inquiétudes : {principales_inquiétudes}, Budget alloué : {budget_alloué}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Vous êtes un consultant expert en acceptabilité sociale. L'utilisateur a répondu : Description du projet : {description_projet}, Public cible : {public_cible}, Principales inquiétudes : {principales_inquiétudes}, Budget alloué : {budget_alloué}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

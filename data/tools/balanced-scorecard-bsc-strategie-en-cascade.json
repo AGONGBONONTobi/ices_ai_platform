@@ -45,35 +45,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Indicateurs de performance : {indicateurs-performances}, Stratégie en cascade : {strategie-en-cascade}, Ressources disponibles : {ressources-disponibles}, Barrières ou obstacles : {barrières-obstacles}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Objectifs stratégiques : {objectifs-strategiques}, Indicateurs de performance : {indicateurs-performances}, Stratégie en cascade : {strategie-en-cascade}, Ressources disponibles : {ressources-disponibles}, Barrières ou obstacles : {barrières-obstacles}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

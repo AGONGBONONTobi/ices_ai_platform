@@ -38,35 +38,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en bilan carbone. L'utilisateur a répondu : Emissions de gaz à effet de serre : {emission-gaz-a-effect-global} tonnes CO2 équivalent, Consommation d'énergie électrique : {consommation-energie-electrique} MWh, Mode de transport utilisé par l'entreprise : {transport-entreprise}, Mesures de recyclage et de gestion des déchets : {recyclage-déchets}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert en bilan carbone. L'utilisateur a répondu : Emissions de gaz à effet de serre : {emission-gaz-a-effect-global} tonnes CO2 équivalent, Consommation d'énergie électrique : {consommation-energie-electrique} MWh, Mode de transport utilisé par l'entreprise : {transport-entreprise}, Mesures de recyclage et de gestion des déchets : {recyclage-déchets}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

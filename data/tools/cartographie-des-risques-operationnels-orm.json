@@ -42,35 +42,30 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant en gestion des risques. L'organisation a répondu : Type d'organisation: {type_d_organisation}, Description des processus: {description_processus}, Niveau de risque: {niveau_de_risque}, Mesures de contrôle: {mesures_de_controle}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour améliorer la cartographie des risques opérationnels.",
+  "promptTemplate": "Vous êtes un consultant en gestion des risques. L'organisation a répondu : Type d'organisation: {type_d_organisation}, Description des processus: {description_processus}, Niveau de risque: {niveau_de_risque}, Mesures de contrôle: {mesures_de_controle}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
-      },
-      "axes": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "axe": {
-              "type": "string"
-            },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
-            }
-          }
-        }
-      },
-      "recommandations": {
+      "colonnes": {
         "type": "array",
         "items": {
           "type": "string"
         }
+      },
+      "lignes": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    }
-  }
+    },
+    "required": [
+      "colonnes",
+      "lignes"
+    ]
+  },
+  "output_kind": "table"
 }

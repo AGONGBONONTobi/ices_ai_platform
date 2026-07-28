@@ -38,35 +38,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant en éducation. L'établissement scolaire nommé {nom_etablissement} de type {type_etablissement} avec un effectif de {effectif_eleves} élèves, rencontre les défis suivants : {description_defis}. Analysez ces informations et proposez un score global sur 100, une évaluation par axe, ainsi que des recommandations pour améliorer la situation.",
+  "promptTemplate": "Vous êtes un consultant en éducation. L'établissement scolaire nommé {nom_etablissement} de type {type_etablissement} avec un effectif de {effectif_eleves} élèves, rencontre les défis suivants : {description_defis}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

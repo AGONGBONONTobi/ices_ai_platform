@@ -51,35 +51,43 @@
       "required": false
     }
   ],
-  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : type_de_produit: {type_de_produit}, certifications_requises: {certifications_requises}, niveau_de_tracabilite: {niveau_de_tracabilite}, nombre_de_fournisseurs: {nombre_de_fournisseurs}, delais_de_livraison: {delais_de_livraison}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : type_de_produit: {type_de_produit}, certifications_requises: {certifications_requises}, niveau_de_tracabilite: {niveau_de_tracabilite}, nombre_de_fournisseurs: {nombre_de_fournisseurs}, delais_de_livraison: {delais_de_livraison}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

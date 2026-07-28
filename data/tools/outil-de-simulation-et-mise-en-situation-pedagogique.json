@@ -44,35 +44,48 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un enseignant expérimenté. L'apprenant a  {age} ans et est au {niveau-scolaire}. Ses motivations sont : {motivation} et il rencontre les difficultés suivantes : {difficultes}. Analyse ces informations et propose une stratégie pédagogique pour aider l'apprenant à progresser.",
+  "promptTemplate": "Tu es un enseignant expérimenté. L'apprenant a {age} ans et est au {niveau-scolaire}. Ses motivations sont : {motivation} et il rencontre les difficultés suivantes : {difficultes}. Analyse ces informations et propose une stratégie pédagogique pour aider l'apprenant à progresser.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "dimensions": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "dimension": {
               "type": "string"
             },
-            "score": {
+            "intensite": {
               "type": "number",
-              "description": "Score sur 100"
+              "description": "Intensité de 0 à 100 — une mesure, pas une note"
+            },
+            "interpretation": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "dimension",
+            "intensite",
+            "interpretation"
+          ]
         }
       },
-      "recommandations": {
+      "pistes": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "dimensions",
+      "pistes"
+    ]
+  },
+  "output_kind": "profile"
 }

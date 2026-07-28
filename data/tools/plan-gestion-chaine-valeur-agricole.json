@@ -38,35 +38,36 @@
       "required": false
     }
   ],
-  "promptTemplate": "Vous êtes un consultant expert en gestion de la chaîne de valeur agricole. L'utilisateur a répondu : Type de culture: {type_culture}, Superficie de l'exploitation: {superficie_exploitation} hectares, Description des processus: {description_processus}, Objectifs de qualité: {objectifs_qualite}. Analysez ces informations et proposez un plan d'action pour améliorer la chaîne de valeur, en incluant un score global sur 100, une évaluation par axe (ex: production, logistique, commercialisation), et des recommandations concrètes.",
+  "promptTemplate": "Vous êtes un consultant expert en gestion de la chaîne de valeur agricole. L'utilisateur a répondu : Type de culture: {type_culture}, Superficie de l'exploitation: {superficie_exploitation} hectares, Description des processus: {description_processus}, Objectifs de qualité: {objectifs_qualite}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

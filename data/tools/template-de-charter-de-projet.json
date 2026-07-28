@@ -36,35 +36,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant en gestion de projet. L'utilisateur a répondu : Nom du projet : {projet_nom}, Objectif principal : {projet_objectif}, Type de projet : {projet_type}, Durée estimée : {projet_duree} mois. Analysez ces informations et donnez un score global sur 100 pour la qualité de la charte de projet, évaluez les axes clés (par exemple, la clarté de l'objectif, la faisabilité du projet, la planification) et fournissez des recommandations pour améliorer la charte de projet.",
+  "promptTemplate": "Vous êtes un consultant en gestion de projet. L'utilisateur a répondu : Nom du projet : {projet_nom}, Objectif principal : {projet_objectif}, Type de projet : {projet_type}, Durée estimée : {projet_duree} mois.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

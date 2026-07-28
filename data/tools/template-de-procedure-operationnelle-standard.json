@@ -41,35 +41,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant expert en procédures opérationnelles. L'utilisateur a fourni les informations suivantes : Nom de la procédure : {procedureName}, Description : {procedureDescription}, Type de procédure : {procedureType}, Fréquence d'exécution : {frequency}. Analysez ces informations et proposez un modèle de procédure opérationnelle standard (SOP) adapté aux besoins de l'utilisateur, en incluant un score global sur 100, une évaluation par axe (ex : efficacité, efficience, qualité) et des recommandations pour améliorer la procédure.",
+  "promptTemplate": "Vous êtes un consultant expert en procédures opérationnelles. L'utilisateur a fourni les informations suivantes : Nom de la procédure : {procedureName}, Description : {procedureDescription}, Type de procédure : {procedureType}, Fréquence d'exécution : {frequency}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

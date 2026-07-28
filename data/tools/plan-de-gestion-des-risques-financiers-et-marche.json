@@ -37,35 +37,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en gestion des risques financiers. L'utilisateur a répondu : Risques financiers : {variable1}, Principal risque de marché : {variable2}, Montant maximum autorisé pour les investissements risqués : {variable3}%, Indicateurs clés de performance : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert en gestion des risques financiers. L'utilisateur a répondu : Risques financiers : {variable1}, Principal risque de marché : {variable2}, Montant maximum autorisé pour les investissements risqués : {variable3}%, Indicateurs clés de performance : {variable4}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

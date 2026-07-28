@@ -45,35 +45,43 @@
       "required": false
     }
   ],
-  "promptTemplate": "Vous êtes un spécialiste en gestion de programmes humanitaires. L'utilisateur a répondu : Objectif: {objectif}, Localisation: {localisation}, Type d'aide: {type_aide}, Public cible: {public_cible}, Partenaires: {partenaires}. Évaluez ce programme selon les critères 4W/5W (Qui, Quoi, Où, Quand, Combien) et fournissez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Vous êtes un spécialiste en gestion de programmes humanitaires. L'utilisateur a répondu : Objectif: {objectif}, Localisation: {localisation}, Type d'aide: {type_aide}, Public cible: {public_cible}, Partenaires: {partenaires}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

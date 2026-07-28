@@ -43,35 +43,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en gestion des flux douaniers et transitaires. L'utilisateur a répondu : Type de marchandise: {type_de_marchandise}, Poids de marchandise: {poids_de_marchandise} kg, Description du problème: {description_probleme}, Urgence: {urgence}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Vous êtes un expert en gestion des flux douaniers et transitaires. L'utilisateur a répondu : Type de marchandise: {type_de_marchandise}, Poids de marchandise: {poids_de_marchandise} kg, Description du problème: {description_probleme}, Urgence: {urgence}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

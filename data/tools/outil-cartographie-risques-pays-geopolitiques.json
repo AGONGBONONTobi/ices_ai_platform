@@ -31,35 +31,30 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur a répondu : Pays concerné : {pays_concerne}, Type d'activité : {type_activite}, Contexte : {description_context}. Analysez ces informations pour fournir une cartographie des risques pays et géopolitiques associés à cette situation. Évaluez les risques sur 100 et proposez des recommandations.",
+  "promptTemplate": "Vous êtes un expert en intelligence économique et veille. L'utilisateur a répondu : Pays concerné : {pays_concerne}, Type d'activité : {type_activite}, Contexte : {description_context}. Analysez ces informations pour fournir une cartographie des risques pays et géopolitiques associés à cette situation.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score de risque global sur 100"
-      },
-      "axes": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "axe": {
-              "type": "string"
-            },
-            "score": {
-              "type": "number",
-              "description": "Score de risque sur 100"
-            }
-          }
-        }
-      },
-      "recommandations": {
+      "colonnes": {
         "type": "array",
         "items": {
           "type": "string"
         }
+      },
+      "lignes": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    }
-  }
+    },
+    "required": [
+      "colonnes",
+      "lignes"
+    ]
+  },
+  "output_kind": "table"
 }

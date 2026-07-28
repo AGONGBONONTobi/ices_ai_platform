@@ -43,35 +43,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en gestion des risques ESG. L'entreprise opère dans le secteur {secteurActivite} et a décrit les risques ESG potentiels comme suit : {descriptionRisques}. Le niveau de conscience des parties prenantes sur les risques ESG est {niveauConscience}. L'entreprise a investi {investissementESG} euros dans des initiatives ESG au cours des 12 derniers mois. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (environnemental, social, gouvernance), et des recommandations pour améliorer la gestion des risques ESG.",
+  "promptTemplate": "Vous êtes un expert en gestion des risques ESG. L'entreprise opère dans le secteur {secteurActivite} et a décrit les risques ESG potentiels comme suit : {descriptionRisques}. Le niveau de conscience des parties prenantes sur les risques ESG est {niveauConscience}. L'entreprise a investi {investissementESG} euros dans des initiatives ESG au cours des 12 derniers mois.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

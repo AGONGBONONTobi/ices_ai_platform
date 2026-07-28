@@ -38,35 +38,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant RH expert. L'utilisateur a répondu : Type de congé: {typeDeConge}, Durée: {duree} jours, Motif: {motif}, Date de début: {dateDebut}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (gestion du personnel, impact sur la productivité, respect des politiques de l'entreprise), et des recommandations.",
+  "promptTemplate": "Tu es un consultant RH expert. L'utilisateur a répondu : Type de congé: {typeDeConge}, Durée: {duree} jours, Motif: {motif}, Date de début: {dateDebut}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

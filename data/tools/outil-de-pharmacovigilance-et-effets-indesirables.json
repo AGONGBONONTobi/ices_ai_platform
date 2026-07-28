@@ -40,35 +40,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "En tant que spécialiste en pharmacovigilance, vous avez les informations suivantes : Médicament: {medicament}, Effet indésirable: {effet_indesirable}, Niveau de sévérité: {niveau_severite}, Population affectée: {population_affectee}. Évaluez ces informations et attribuez un score global sur 100, une évaluation par axe pertinents et formulez des recommandations.",
+  "promptTemplate": "En tant que spécialiste en pharmacovigilance, vous avez les informations suivantes : Médicament: {medicament}, Effet indésirable: {effet_indesirable}, Niveau de sévérité: {niveau_severite}, Population affectée: {population_affectee}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

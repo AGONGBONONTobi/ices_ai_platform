@@ -31,35 +31,30 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en intelligence économique. L'utilisateur a répondu : Région: {region}, Secteur: {secteur}, Description de l'opportunité: {description_opportunite}. Analysez ces informations et fournissez un score global sur 100, une évaluation par axe (potentiel de croissance, faisabilité, alignement stratégique) avec leurs scores respectifs sur 100, et des recommandations concrètes pour saisir cette opportunité.",
+  "promptTemplate": "Vous êtes un expert en intelligence économique. L'utilisateur a répondu : Région: {region}, Secteur: {secteur}, Description de l'opportunité: {description_opportunite}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
-      },
-      "axes": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "axe": {
-              "type": "string"
-            },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
-            }
-          }
-        }
-      },
-      "recommandations": {
+      "colonnes": {
         "type": "array",
         "items": {
           "type": "string"
         }
+      },
+      "lignes": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    }
-  }
+    },
+    "required": [
+      "colonnes",
+      "lignes"
+    ]
+  },
+  "output_kind": "table"
 }

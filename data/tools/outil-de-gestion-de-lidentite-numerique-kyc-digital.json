@@ -30,35 +30,43 @@
       "required": false
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en gestion de l'identité numérique. L'utilisateur a répondu : Type de pièce d'identité: {type_de_piece_didentite}, Numéro de pièce d'identité: {numero_de_piece_didentite}, Informations complémentaires: {informations_complementaires}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert en gestion de l'identité numérique. L'utilisateur a répondu : Type de pièce d'identité: {type_de_piece_didentite}, Numéro de pièce d'identité: {numero_de_piece_didentite}, Informations complémentaires: {informations_complementaires}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

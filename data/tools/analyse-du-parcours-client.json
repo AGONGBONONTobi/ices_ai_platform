@@ -45,35 +45,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en marketing. L'utilisateur a répondu : Objectif : {objectif}, Canal principal : {canal}, Points de contact : {pointsDeContact}, Défis : {defis}, Objectif d'amélioration : {objectifAmelioration}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (compréhension du client, efficacité du canal, qualité de l'expérience), et des recommandations pour améliorer le parcours client.",
+  "promptTemplate": "Tu es un consultant expert en marketing. L'utilisateur a répondu : Objectif : {objectif}, Canal principal : {canal}, Points de contact : {pointsDeContact}, Défis : {defis}, Objectif d'amélioration : {objectifAmelioration}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

@@ -38,35 +38,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant expert en expérience utilisateur. L'utilisateur cherche à évaluer la satisfaction des visiteurs de son événement. Voici les informations fournies : Objectif: {objectif}, Type d'expérience: {typeExperience}, Description: {description}, Cible: {cible}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (qualité de l'expérience, satisfaction générale, recommandation), et des recommandations pour améliorer l'expérience.",
+  "promptTemplate": "Vous êtes un consultant expert en expérience utilisateur. L'utilisateur cherche à évaluer la satisfaction des visiteurs de son événement. Voici les informations fournies : Objectif: {objectif}, Type d'expérience: {typeExperience}, Description: {description}, Cible: {cible}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

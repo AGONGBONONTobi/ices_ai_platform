@@ -36,35 +36,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant expert en gestion des risques. L'utilisateur a répondu : Type de transformation : {type_de_transformation}, Objectifs de la transformation : {objectifs_de_la_transformation}, Risques identifiés : {risques_identifies}, Niveau de confiance : {niveau_de_confiance}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations pour gérer les risques associés à cette transformation.",
+  "promptTemplate": "Vous êtes un consultant expert en gestion des risques. L'utilisateur a répondu : Type de transformation : {type_de_transformation}, Objectifs de la transformation : {objectifs_de_la_transformation}, Risques identifiés : {risques_identifies}, Niveau de confiance : {niveau_de_confiance}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }

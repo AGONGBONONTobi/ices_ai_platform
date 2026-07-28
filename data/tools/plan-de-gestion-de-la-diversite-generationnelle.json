@@ -45,35 +45,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Age moyen de l'équipe : {age-moyen-équipe}, Pourcentage de genre masculin : {pourcentage-de-genre-masculin}, Expérience moyenne en années : {experience-moyenne-en-ans}, Type de contrat le plus représenté : {type-de-contract}, Culture de l'entreprise : {description-de-la-culture-entreprise}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert. L'utilisateur a répondu : Age moyen de l'équipe : {age-moyen-équipe}, Pourcentage de genre masculin : {pourcentage-de-genre-masculin}, Expérience moyenne en années : {experience-moyenne-en-ans}, Type de contrat le plus représenté : {type-de-contract}, Culture de l'entreprise : {description-de-la-culture-entreprise}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

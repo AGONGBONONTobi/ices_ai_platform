@@ -38,35 +38,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en gestion de projet BTP. L'utilisateur a répondu : Type de projet: {type_de_projet}, Description du projet: {description_du_projet}, Budget prévu: {budget_prevu}, Délai prévu: {delai_prevu}. Analyse ces informations et donne un score global sur 100, une évaluation par axe (budget, délais, qualité), et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert en gestion de projet BTP. L'utilisateur a répondu : Type de projet: {type_de_projet}, Description du projet: {description_du_projet}, Budget prévu: {budget_prevu}, Délai prévu: {delai_prevu}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

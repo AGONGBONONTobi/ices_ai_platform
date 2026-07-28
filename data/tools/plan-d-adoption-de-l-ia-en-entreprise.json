@@ -36,35 +36,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant expert en transformation digitale et IA. L'utilisateur a répondu : Objectifs métier: {objectifs_metier}, Niveau de maturité: {niveau_de_maturite}, Ressources disponibles: {ressources_disponibles}, Défis technologiques: {defis_technologiques}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (stratégie, organisation, technologie), et des recommandations pour élaborer un plan d'adoption de l'IA en entreprise.",
+  "promptTemplate": "Vous êtes un consultant expert en transformation digitale et IA. L'utilisateur a répondu : Objectifs métier: {objectifs_metier}, Niveau de maturité: {niveau_de_maturite}, Ressources disponibles: {ressources_disponibles}, Défis technologiques: {defis_technologiques}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

@@ -53,35 +53,30 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en développement personnel. L'utilisateur a répondu : Domaine 1 : {domaine1}, Description de Domaine 1 : {description-domaine1}, Domaine 2 : {domaine2}, Description de Domaine 2 : {description-domaine2}, Objectif Professionnel : {objectif-professionnel}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un consultant expert en développement personnel. L'utilisateur a répondu : Domaine 1 : {domaine1}, Description de Domaine 1 : {description-domaine1}, Domaine 2 : {domaine2}, Description de Domaine 2 : {description-domaine2}, Objectif Professionnel : {objectif-professionnel}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
-      },
-      "axes": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "axe": {
-              "type": "string"
-            },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
-            }
-          }
-        }
-      },
-      "recommandations": {
+      "colonnes": {
         "type": "array",
         "items": {
           "type": "string"
         }
+      },
+      "lignes": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    }
-  }
+    },
+    "required": [
+      "colonnes",
+      "lignes"
+    ]
+  },
+  "output_kind": "table"
 }

@@ -37,35 +37,30 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un expert en reporting. L'utilisateur a répondu : Taux de perte de produits : {variable1}, Causes principales : {variable2}, Facteur principal : {variable3}, Temps de livraison moyen : {variable4}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Tu es un expert en reporting. L'utilisateur a répondu : Taux de perte de produits : {variable1}, Causes principales : {variable2}, Facteur principal : {variable3}, Temps de livraison moyen : {variable4}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
-      },
-      "axes": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "axe": {
-              "type": "string"
-            },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
-            }
-          }
-        }
-      },
-      "recommandations": {
+      "colonnes": {
         "type": "array",
         "items": {
           "type": "string"
         }
+      },
+      "lignes": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    }
-  }
+    },
+    "required": [
+      "colonnes",
+      "lignes"
+    ]
+  },
+  "output_kind": "table"
 }

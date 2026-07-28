@@ -43,35 +43,48 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un consultant expert en dynamique d'équipe. L'utilisateur a répondu : Role dans l'équipe: {roleDansLEquipe}, Description du problème: {descriptionDuProbleme}, Niveau de communication: {niveauDeCommunication}, Objectifs de l'équipe: {objectifsDeLEquipe}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe (leadership, communication, objectifs), et des recommandations pour améliorer la dynamique de l'équipe.",
+  "promptTemplate": "Vous êtes un consultant expert en dynamique d'équipe. L'utilisateur a répondu : Role dans l'équipe: {roleDansLEquipe}, Description du problème: {descriptionDuProbleme}, Niveau de communication: {niveauDeCommunication}, Objectifs de l'équipe: {objectifsDeLEquipe}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "dimensions": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "dimension": {
               "type": "string"
             },
-            "score": {
+            "intensite": {
               "type": "number",
-              "description": "Score sur 100"
+              "description": "Intensité de 0 à 100 — une mesure, pas une note"
+            },
+            "interpretation": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "dimension",
+            "intensite",
+            "interpretation"
+          ]
         }
       },
-      "recommandations": {
+      "pistes": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "dimensions",
+      "pistes"
+    ]
+  },
+  "output_kind": "profile"
 }

@@ -38,35 +38,36 @@
       "required": true
     }
   ],
-  "promptTemplate": "Tu es un consultant expert en marketing touristique digital. L'utilisateur souhaite promouvoir la destination de {destination} auprès de la cible {cible}. Ses objectifs sont {objectifs} et son budget est de {budget}. Analyse ces informations et donne un score global sur 100, une évaluation par axe, et des recommandations pour mettre en place un plan de marketing touristique digital efficace.",
+  "promptTemplate": "Tu es un consultant expert en marketing touristique digital. L'utilisateur souhaite promouvoir la destination de {destination} auprès de la cible {cible}. Ses objectifs sont {objectifs} et son budget est de {budget}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "titre": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
-        }
-      },
-      "recommandations": {
-        "type": "array",
-        "items": {
-          "type": "string"
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       }
-    }
-  }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document"
 }

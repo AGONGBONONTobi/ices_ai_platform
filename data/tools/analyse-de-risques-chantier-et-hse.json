@@ -44,35 +44,43 @@
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en analyse de risques chantier et HSE. L'utilisateur a répondu : Type de chantier : {type_de_chantier}, Description des activités : {description_des_activites}, Niveau de risque initial : {niveau_de_risque_initial}, Mesures de sécurité prévues : {mesures_de_securite_prevues}. Analysez ces informations et donnez un score global sur 100, une évaluation par axe, et des recommandations.",
+  "promptTemplate": "Vous êtes un expert en analyse de risques chantier et HSE. L'utilisateur a répondu : Type de chantier : {type_de_chantier}, Description des activités : {description_des_activites}, Niveau de risque initial : {niveau_de_risque_initial}, Mesures de sécurité prévues : {mesures_de_securite_prevues}.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "score_global": {
-        "type": "number",
-        "description": "Score sur 100"
+      "synthese": {
+        "type": "string"
       },
-      "axes": {
+      "sections": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "axe": {
+            "titre": {
               "type": "string"
             },
-            "score": {
-              "type": "number",
-              "description": "Score sur 100"
+            "contenu": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
         }
       },
-      "recommandations": {
+      "points_cles": {
         "type": "array",
         "items": {
           "type": "string"
         }
       }
-    }
-  }
+    },
+    "required": [
+      "synthese",
+      "sections",
+      "points_cles"
+    ]
+  },
+  "output_kind": "analysis"
 }
