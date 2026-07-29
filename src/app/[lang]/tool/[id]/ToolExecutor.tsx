@@ -11,6 +11,7 @@ import { executeTool } from "@/lib/api/tools";
 import { ApiError } from "@/lib/api/client";
 import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
 import { Button } from "@/components/ui/button";
+import { FREE_TIER_LIMIT } from "@/lib/quota";
 import { motion } from "framer-motion";
 
 /**
@@ -227,7 +228,7 @@ export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
           Limite gratuite atteinte
         </h3>
         <p className="text-slate-500 mb-6 max-w-sm mx-auto">
-          Vous avez utilisé vos 3 analyses gratuites. Passez à la version PRO pour un accès illimité à tous nos outils.
+          Vous avez utilisé vos {FREE_TIER_LIMIT} analyses gratuites. Passez à la version PRO pour un accès illimité à tous nos outils.
         </p>
         <Button onClick={() => window.location.href = `/${lang}/pricing`} className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white rounded-xl px-8 shadow-lg shadow-violet-200">
           Découvrir les offres

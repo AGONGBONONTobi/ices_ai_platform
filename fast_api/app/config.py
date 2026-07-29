@@ -40,7 +40,7 @@ class Settings(BaseSettings):
     cors_origins: str = "http://localhost:3000"
 
     # --- Quotas ---
-    free_tier_limit: int = 3
+    free_tier_limit: int = 50
 
     # --- Limitation de débit ---
     # Complète le quota : protège contre les rafales, avant toute dépense LLM.

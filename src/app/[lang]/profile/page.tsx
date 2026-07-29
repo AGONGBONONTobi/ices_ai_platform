@@ -7,13 +7,11 @@ import { ManageSubscriptionButton } from "@/components/billing/ManageSubscriptio
 import { CheckoutButton } from "@/components/billing/CheckoutButton";
 import { createSupabaseServerClient, getAccessToken } from "@/lib/supabase/server";
 import { fetchProfile } from "@/lib/api/account";
+import { FREE_TIER_LIMIT } from "@/lib/quota";
 
 interface ProfilePageProps {
   params: { lang: Locale };
 }
-
-// Doit rester synchronisé avec FREE_TIER_LIMIT côté backend (fast_api/app/config.py)
-const FREE_TIER_LIMIT = 3;
 
 export const dynamic = "force-dynamic";
 
