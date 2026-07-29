@@ -24,7 +24,17 @@ class ToolInput(BaseModel):
     # Question factuelle posée à l'utilisateur (prioritaire sur `label` dans le prompt)
     question: str | None = None
     placeholder: str | None = None
+    # Exigence du référentiel, affichée sous le libellé du champ.
+    help: str | None = None
     required: bool = True
+    # --- Scoring déterministe (chantier B6) ---
+    # Chapitre du référentiel évalué par ce champ ('4.1') : sert d'axe de
+    # regroupement, ce qui permet un score par chapitre de la norme.
+    chapitre: str | None = None
+    # Axe de regroupement pour un outil scoré sans référentiel normatif.
+    axe: str | None = None
+    # Poids de la question dans le score de son axe.
+    poids: float | None = None
 
 
 class ToolConfig(BaseModel):
@@ -37,6 +47,11 @@ class ToolConfig(BaseModel):
     # Nature du livrable attendu. Les fiches antérieures au chantier B7 ne le
     # déclarent pas : elles retombent sur le type par défaut.
     output_kind: str = DEFAULT_OUTPUT_KIND
+    # --- Socle normatif (chantier B5) ---
+    # Référentiel dont les clauses sont injectées à l'exécution. Sans lui, un
+    # diagnostic ISO repose sur la mémoire du modèle.
+    referentiel_code: str | None = None
+    referentiel_version: str | None = None
 
 
 class ToolSummary(BaseModel):

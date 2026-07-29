@@ -120,8 +120,23 @@ function main() {
         );
       }
     }
+    // Un champ coté (options {label, score}, rattaché à un chapitre ou à un axe)
+    // alimente le moteur de scoring, pas le template : son absence du prompt est
+    // normale. Ses réponses sont de toute façon transmises au modèle sous forme
+    // de rappel factuel, et son score est calculé côté serveur.
+    const feedsScoring = new Set(
+      tool.inputs
+        .filter(
+          (i: any) =>
+            i.chapitre ||
+            i.axe ||
+            (i.options ?? []).some((o: any) => typeof o === "object" && o.score !== undefined)
+        )
+        .map((i: any) => i.name)
+    );
+
     for (const name of Array.from(declared)) {
-      if (!used.has(name)) {
+      if (!used.has(name) && !feedsScoring.has(name)) {
         add(
           file,
           "warning",

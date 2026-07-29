@@ -2,50 +2,788 @@
   "id": "auto-diagnostic-iso-9001",
   "title": "Auto-diagnostic ISO 9001",
   "category": "Systèmes de Management ISO",
+  "output_kind": "assessment",
+  "referentiel_code": "ISO-9001",
+  "referentiel_version": "2015",
   "inputs": [
     {
-      "name": "contexte_organisationnel",
+      "name": "contexte",
       "type": "textarea",
-      "label": "Décrivez brièvement le contexte organisationnel et les parties intéressées",
-      "placeholder": "Ex: Secteur d'activité, produits/services, clients principaux",
+      "question": "Décrivez brièvement votre organisme",
+      "help": "Secteur, effectif, sites, nature des produits ou services, et objectif visé (certification, mise à niveau interne...).",
+      "placeholder": "PME agroalimentaire, 40 salariés, un site de production, visant la certification sous 12 mois.",
       "required": true
     },
     {
-      "name": "niveau_maturite",
+      "name": "c4_1",
       "type": "select",
+      "question": "4.1 — Compréhension de l'organisme et de son contexte",
+      "help": "L'organisme identifie les facteurs internes et externes qui influencent sa capacité à atteindre les résultats attendus de son système qualité, et tient cette analyse à jour.",
       "options": [
-        "Inexistant (0)",
-        "Initié (1)",
-        "Formalisé (2)",
-        "Optimisé (3)"
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
       ],
-      "label": "Quel est votre niveau de maturité actuel selon vous ?",
-      "required": true
+      "required": true,
+      "chapitre": "4.1",
+      "axe": "4 — Contexte de l'organisme",
+      "poids": 1
     },
     {
-      "name": "chapitres_evaluation",
+      "name": "c4_2",
       "type": "select",
+      "question": "4.2 — Besoins et attentes des parties intéressées",
+      "help": "L'organisme détermine quelles parties intéressées sont pertinentes pour son système qualité, quelles sont leurs exigences, et surveille l'évolution de ces exigences.",
       "options": [
-        "Contexte",
-        "Leadership",
-        "Planification",
-        "Support",
-        "Réalisation",
-        "Évaluation",
-        "Amélioration"
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
       ],
-      "label": "Quels chapitres de la norme ISO 9001 souhaitez-vous évaluer en priorité ?",
-      "required": true
+      "required": true,
+      "chapitre": "4.2",
+      "axe": "4 — Contexte de l'organisme",
+      "poids": 1
     },
     {
-      "name": "description_processus",
-      "type": "textarea",
-      "label": "Décrivez les processus actuels de gestion de la qualité",
-      "placeholder": "Ex: Processus de planification, de réalisation, de suivi",
-      "required": true
+      "name": "c4_3",
+      "type": "select",
+      "question": "4.3 — Domaine d'application du système de management de la qualité",
+      "help": "Le périmètre du système qualité est défini par écrit, avec les produits et services couverts, les sites concernés, et la justification de toute exigence jugée non applicable.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.3",
+      "axe": "4 — Contexte de l'organisme",
+      "poids": 1
+    },
+    {
+      "name": "c4_4",
+      "type": "select",
+      "question": "4.4 — Système de management de la qualité et processus",
+      "help": "Les processus nécessaires sont identifiés avec leurs entrées, sorties, séquences, interactions, responsables et critères de performance.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.4",
+      "axe": "4 — Contexte de l'organisme",
+      "poids": 2
+    },
+    {
+      "name": "c5_1",
+      "type": "select",
+      "question": "5.1 — Leadership et engagement",
+      "help": "La direction assume la responsabilité de l'efficacité du système qualité, s'assure qu'il est intégré aux processus métier et que les ressources nécessaires sont disponibles.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.1",
+      "axe": "5 — Leadership",
+      "poids": 2
+    },
+    {
+      "name": "c5_2",
+      "type": "select",
+      "question": "5.2 — Politique qualité",
+      "help": "Une politique qualité adaptée à l'organisme est établie, communiquée, comprise et disponible pour les parties intéressées pertinentes.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.2",
+      "axe": "5 — Leadership",
+      "poids": 1
+    },
+    {
+      "name": "c5_3",
+      "type": "select",
+      "question": "5.3 — Rôles, responsabilités et autorités",
+      "help": "Les responsabilités et autorités relatives au système qualité sont attribuées, communiquées et comprises au sein de l'organisme.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.3",
+      "axe": "5 — Leadership",
+      "poids": 1
+    },
+    {
+      "name": "c6_1",
+      "type": "select",
+      "question": "6.1 — Actions face aux risques et opportunités",
+      "help": "Les risques et opportunités liés au contexte et aux parties intéressées sont déterminés, et des actions proportionnées sont planifiées puis évaluées quant à leur efficacité.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.1",
+      "axe": "6 — Planification",
+      "poids": 2
+    },
+    {
+      "name": "c6_2",
+      "type": "select",
+      "question": "6.2 — Objectifs qualité et planification",
+      "help": "Des objectifs qualité mesurables, cohérents avec la politique, sont établis aux niveaux pertinents, avec pour chacun les moyens, le responsable, l'échéance et le mode d'évaluation.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.2",
+      "axe": "6 — Planification",
+      "poids": 2
+    },
+    {
+      "name": "c6_3",
+      "type": "select",
+      "question": "6.3 — Planification des modifications",
+      "help": "Les modifications du système qualité sont conduites de façon planifiée, en examinant leurs conséquences, la disponibilité des ressources et les responsabilités affectées.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.3",
+      "axe": "6 — Planification",
+      "poids": 1
+    },
+    {
+      "name": "c7_1",
+      "type": "select",
+      "question": "7.1 — Ressources, infrastructures et surveillance",
+      "help": "Les ressources humaines, les infrastructures et l'environnement nécessaires sont fournis et entretenus ; les équipements de mesure sont vérifiés ou étalonnés lorsque la validité des résultats l'exige.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.1",
+      "axe": "7 — Support",
+      "poids": 2
+    },
+    {
+      "name": "c7_2",
+      "type": "select",
+      "question": "7.2 — Compétences",
+      "help": "Les compétences nécessaires sont déterminées, assurées par la formation ou l'expérience, et leur efficacité est évaluée ; les preuves sont conservées.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.2",
+      "axe": "7 — Support",
+      "poids": 2
+    },
+    {
+      "name": "c7_3",
+      "type": "select",
+      "question": "7.3 — Sensibilisation",
+      "help": "Le personnel connaît la politique qualité, les objectifs qui le concernent, sa contribution à l'efficacité du système et les conséquences d'un non-respect des exigences.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.3",
+      "axe": "7 — Support",
+      "poids": 1
+    },
+    {
+      "name": "c7_5",
+      "type": "select",
+      "question": "7.5 — Informations documentées",
+      "help": "Les documents et enregistrements nécessaires sont identifiés, maîtrisés en version, protégés, et disponibles là où ils sont utilisés ; les durées de conservation sont définies.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.5",
+      "axe": "7 — Support",
+      "poids": 1
+    },
+    {
+      "name": "c8_1",
+      "type": "select",
+      "question": "8.1 — Planification et maîtrise opérationnelles",
+      "help": "Les processus de réalisation sont planifiés et maîtrisés : critères d'acceptation définis, ressources allouées, contrôles prévus et enregistrements conservés.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.1",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 2
+    },
+    {
+      "name": "c8_2",
+      "type": "select",
+      "question": "8.2 — Exigences relatives aux produits et services",
+      "help": "Les exigences client, réglementaires et internes sont déterminées et revues avant engagement ; l'organisme s'assure de pouvoir les satisfaire, et les modifications sont tracées.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.2",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 2
+    },
+    {
+      "name": "c8_4",
+      "type": "select",
+      "question": "8.4 — Maîtrise des prestataires externes",
+      "help": "Les fournisseurs et sous-traitants sont évalués et sélectionnés selon des critères définis, réévalués périodiquement, et les exigences leur sont communiquées.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.4",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 2
+    },
+    {
+      "name": "c8_5",
+      "type": "select",
+      "question": "8.5 — Production et prestation de service",
+      "help": "La production est maîtrisée : identification et traçabilité assurées lorsque nécessaire, propriété du client préservée, activités après livraison définies, modifications maîtrisées.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.5",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 2
+    },
+    {
+      "name": "c8_7",
+      "type": "select",
+      "question": "8.7 — Maîtrise des éléments de sortie non conformes",
+      "help": "Les produits ou services non conformes sont identifiés et maîtrisés pour empêcher leur utilisation involontaire ; le traitement retenu et l'autorité de décision sont enregistrés.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.7",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 2
+    },
+    {
+      "name": "c9_1",
+      "type": "select",
+      "question": "9.1 — Surveillance, mesure, analyse et évaluation",
+      "help": "L'organisme détermine ce qui doit être surveillé et mesuré, avec quelles méthodes et à quelle fréquence, évalue la satisfaction client, et analyse les données pour en tirer des conclusions.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.1",
+      "axe": "9 — Évaluation des performances",
+      "poids": 2
+    },
+    {
+      "name": "c9_2",
+      "type": "select",
+      "question": "9.2 — Audit interne",
+      "help": "Des audits internes sont menés à intervalles planifiés selon un programme tenant compte de l'importance des processus et des résultats précédents, par des auditeurs objectifs et compétents.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.2",
+      "axe": "9 — Évaluation des performances",
+      "poids": 2
+    },
+    {
+      "name": "c9_3",
+      "type": "select",
+      "question": "9.3 — Revue de direction",
+      "help": "La direction revoit le système qualité à intervalles planifiés en examinant notamment la performance des processus, les retours clients, les non-conformités, les audits et les risques ; les décisions et actions sont enregistrées.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.3",
+      "axe": "9 — Évaluation des performances",
+      "poids": 2
+    },
+    {
+      "name": "c10_2",
+      "type": "select",
+      "question": "10.2 — Non-conformité et action corrective",
+      "help": "Face à une non-conformité, l'organisme réagit, analyse les causes profondes, met en œuvre des actions correctives, en vérifie l'efficacité et met à jour les risques si nécessaire.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "10.2",
+      "axe": "10 — Amélioration",
+      "poids": 3
+    },
+    {
+      "name": "c10_3",
+      "type": "select",
+      "question": "10.3 — Amélioration continue",
+      "help": "L'organisme améliore en continu la pertinence, l'adéquation et l'efficacité du système qualité, en s'appuyant sur les résultats d'analyse, d'audit et de revue de direction.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "10.3",
+      "axe": "10 — Amélioration",
+      "poids": 1
     }
   ],
-  "promptTemplate": "Vous avez répondu : Contexte organisationnel: {contexte_organisationnel}, Niveau de maturité: {niveau_maturite}, Chapitres à évaluer: {chapitres_evaluation}, Description des processus: {description_processus}. Évaluez ces informations selon les exigences des 7 chapitres de la norme ISO 9001 (contexte, leadership, planification, support, réalisation, évaluation, amélioration) et donnez un score global sur 100, une évaluation par axe (contexte, leadership, planification, support, réalisation, évaluation, amélioration) et des recommandations prioritaires pour combler les écarts.",
+  "promptTemplate": "Tu es auditeur qualité expérimenté, habitué aux audits de certification ISO-9001. L'organisme est décrit ainsi : {contexte}.\n\nLes clauses applicables et leur grille de maturité te sont fournies plus bas, ainsi que le positionnement déclaré pour chacune et les scores déjà calculés.\n\nProduis un rapport de pré-audit :\n- pour chaque chapitre parmi 4 (Contexte de l'organisme), 5 (Leadership), 6 (Planification), 7 (Support), 8 (Réalisation des activités opérationnelles), 9 (Évaluation des performances), 10 (Amélioration), un constat appuyé sur les clauses réellement concernées, en citant leur numéro ;\n- pour les clauses les plus faibles, indique l'écart précis par rapport à l'exigence et la preuve qui serait demandée en audit ;\n- des recommandations priorisées, chacune rattachée à un numéro de clause, actionnables et proportionnées au contexte décrit.\n\nN'invente aucune exigence absente des clauses fournies. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
@@ -84,6 +822,5 @@
       "axes",
       "recommandations"
     ]
-  },
-  "output_kind": "assessment"
+  }
 }

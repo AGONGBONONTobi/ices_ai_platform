@@ -16,6 +16,12 @@ export const toolInputSchema = z.object({
   options: z.array(toolSelectOptionSchema).optional(),
   label: z.string().optional(),
   question: z.string().optional(), // Nouveau champ : la question factuelle
+  // Exigence du référentiel, affichée sous le libellé : sans elle l'utilisateur
+  // se positionne sans savoir ce qui est attendu.
+  help: z.string().optional(),
+  chapitre: z.string().optional(),
+  axe: z.string().optional(),
+  poids: z.number().optional(),
   placeholder: z.string().optional(),
   required: z.boolean().default(true),
 });

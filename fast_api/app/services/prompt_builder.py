@@ -76,16 +76,35 @@ STRICT RULES:
 5. NO markdown outside the JSON. NO explanations. NO code blocks. ONLY the JSON."""
 
 
-def build_user_prompt(tool: ToolConfig, user_inputs: dict[str, Any]) -> str:
-    """Instruction métier de l'outil (promptTemplate interpolé) + rappel factuel des réponses."""
-    instructions = build_prompt(tool.promptTemplate, user_inputs)
+def build_user_prompt(
+    tool: ToolConfig,
+    user_inputs: dict[str, Any],
+    *,
+    clauses: str | None = None,
+    scores: str | None = None,
+) -> str:
+    """Instruction métier + socle normatif + scores calculés + réponses.
 
-    return f"""{instructions}
+    L'ordre compte : les clauses arrivent avant les réponses, pour que le modèle
+    évalue des faits au regard d'un référentiel fourni plutôt que de puiser dans
+    sa mémoire. Les scores, eux, sont déjà calculés : le modèle les commente.
+    """
+    parts = [build_prompt(tool.promptTemplate, user_inputs)]
 
---- Réponses fournies par l'utilisateur ---
-{build_input_lines(tool, user_inputs)}
+    if clauses:
+        parts.append(f"--- Référentiel applicable ---\n{clauses}")
 
-Génère maintenant le résultat, en respectant strictement le schéma de sortie."""
+    if scores:
+        parts.append(f"--- Résultat du calcul ---\n{scores}")
+
+    parts.append(
+        f"--- Réponses fournies par l'utilisateur ---\n{build_input_lines(tool, user_inputs)}"
+    )
+    parts.append(
+        "Génère maintenant le résultat, en respectant strictement le schéma de sortie."
+    )
+
+    return "\n\n".join(parts)
 
 
 def build_retry_prompt(previous_answer: str, validation_error: str) -> str:

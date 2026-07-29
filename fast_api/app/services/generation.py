@@ -31,9 +31,15 @@ def generate_structured(
     output_schema: dict[str, Any],
     *,
     max_retries: int = MAX_RETRIES,
+    model: str | None = None,
 ) -> dict[str, Any]:
-    """Retourne un résultat validé contre `output_schema`, ou lève `GenerationError`."""
+    """Retourne un résultat validé contre `output_schema`, ou lève `GenerationError`.
+
+    `model` permet de router un outil exigeant (diagnostic normatif, document)
+    vers un modèle plus capable que celui par défaut.
+    """
     settings = get_settings()
+    model = model or settings.groq_model
     messages: list[dict[str, str]] = [
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt},
@@ -45,7 +51,7 @@ def generate_structured(
         try:
             completion = get_groq().chat.completions.create(
                 messages=messages,
-                model=settings.groq_model,
+                model=model,
                 temperature=0.4,
                 max_tokens=2000,
                 response_format={"type": "json_object"},

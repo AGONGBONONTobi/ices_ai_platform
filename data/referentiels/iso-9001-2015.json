@@ -1,0 +1,356 @@
+{
+  "code": "ISO-9001",
+  "version": "2015",
+  "label": "ISO 9001:2015 — Systèmes de management de la qualité",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (numérotation et intitulés des chapitres) et une reformulation des attendus sont utilisées.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "4", "titre": "Contexte de l'organisme" },
+    { "numero": "5", "titre": "Leadership" },
+    { "numero": "6", "titre": "Planification" },
+    { "numero": "7", "titre": "Support" },
+    { "numero": "8", "titre": "Réalisation des activités opérationnelles" },
+    { "numero": "9", "titre": "Évaluation des performances" },
+    { "numero": "10", "titre": "Amélioration" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "4.1",
+      "intitule": "Compréhension de l'organisme et de son contexte",
+      "exigence": "L'organisme identifie les facteurs internes et externes qui influencent sa capacité à atteindre les résultats attendus de son système qualité, et tient cette analyse à jour.",
+      "preuves": [
+        "Analyse documentée du contexte (SWOT, PESTEL ou équivalent) datée et révisée",
+        "Trace de la prise en compte de ces facteurs dans les décisions du comité de direction"
+      ],
+      "erreurs_frequentes": [
+        "Un SWOT rédigé une fois pour l'audit initial et jamais revu",
+        "Une analyse générique du secteur, sans lien avec les processus réellement exercés"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "4.2",
+      "intitule": "Besoins et attentes des parties intéressées",
+      "exigence": "L'organisme détermine quelles parties intéressées sont pertinentes pour son système qualité, quelles sont leurs exigences, et surveille l'évolution de ces exigences.",
+      "preuves": [
+        "Liste des parties intéressées avec leurs exigences respectives",
+        "Mécanisme de mise à jour (revue périodique, veille réglementaire)"
+      ],
+      "erreurs_frequentes": [
+        "Se limiter aux clients en oubliant le personnel, les autorités, les fournisseurs et les riverains",
+        "Confondre attente exprimée et exigence retenue par l'organisme"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "4.3",
+      "intitule": "Domaine d'application du système de management de la qualité",
+      "exigence": "Le périmètre du système qualité est défini par écrit, avec les produits et services couverts, les sites concernés, et la justification de toute exigence jugée non applicable.",
+      "preuves": [
+        "Document de périmètre accessible, mentionnant sites, activités et exclusions justifiées"
+      ],
+      "erreurs_frequentes": [
+        "Exclure une exigence sans justifier en quoi elle n'affecte pas la conformité des produits",
+        "Un périmètre qui ne correspond plus aux activités réelles après une acquisition ou un nouveau site"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "4.4",
+      "intitule": "Système de management de la qualité et processus",
+      "exigence": "Les processus nécessaires sont identifiés avec leurs entrées, sorties, séquences, interactions, responsables et critères de performance.",
+      "preuves": [
+        "Cartographie des processus montrant les interactions",
+        "Fiche par processus : pilote, entrées, sorties, indicateurs, risques"
+      ],
+      "erreurs_frequentes": [
+        "Une cartographie qui décalque l'organigramme au lieu des flux réels",
+        "Des processus sans pilote nommé ni indicateur"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.1",
+      "intitule": "Leadership et engagement",
+      "exigence": "La direction assume la responsabilité de l'efficacité du système qualité, s'assure qu'il est intégré aux processus métier et que les ressources nécessaires sont disponibles.",
+      "preuves": [
+        "Comptes rendus de revue de direction signés, avec décisions et allocations de ressources",
+        "Objectifs qualité portés dans les instances de pilotage de l'entreprise"
+      ],
+      "erreurs_frequentes": [
+        "Une direction qui délègue entièrement la qualité au responsable qualité",
+        "Un système qualité parallèle, déconnecté du pilotage opérationnel"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.2",
+      "intitule": "Politique qualité",
+      "exigence": "Une politique qualité adaptée à l'organisme est établie, communiquée, comprise et disponible pour les parties intéressées pertinentes.",
+      "preuves": [
+        "Politique datée et signée par la direction",
+        "Preuve de diffusion et de compréhension (affichage, accueil, entretiens)"
+      ],
+      "erreurs_frequentes": [
+        "Une politique affichée mais que personne ne sait reformuler",
+        "Un texte générique interchangeable avec celui de n'importe quelle entreprise"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "5.3",
+      "intitule": "Rôles, responsabilités et autorités",
+      "exigence": "Les responsabilités et autorités relatives au système qualité sont attribuées, communiquées et comprises au sein de l'organisme.",
+      "preuves": [
+        "Fiches de poste ou matrice de responsabilités mentionnant les attributions qualité",
+        "Désignation explicite des pilotes de processus"
+      ],
+      "erreurs_frequentes": [
+        "Des responsabilités écrites que les intéressés ignorent",
+        "Aucune autorité réelle donnée pour arrêter une production non conforme"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "6.1",
+      "intitule": "Actions face aux risques et opportunités",
+      "exigence": "Les risques et opportunités liés au contexte et aux parties intéressées sont déterminés, et des actions proportionnées sont planifiées puis évaluées quant à leur efficacité.",
+      "preuves": [
+        "Registre des risques relié aux processus, avec cotation et actions associées",
+        "Évaluation a posteriori de l'efficacité des actions engagées"
+      ],
+      "erreurs_frequentes": [
+        "Un registre des risques sans lien avec l'analyse de contexte du 4.1",
+        "Des actions planifiées mais jamais évaluées quant à leur effet réel"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.2",
+      "intitule": "Objectifs qualité et planification",
+      "exigence": "Des objectifs qualité mesurables, cohérents avec la politique, sont établis aux niveaux pertinents, avec pour chacun les moyens, le responsable, l'échéance et le mode d'évaluation.",
+      "preuves": [
+        "Tableau d'objectifs avec cible chiffrée, responsable, échéance et ressources",
+        "Suivi périodique de l'atteinte"
+      ],
+      "erreurs_frequentes": [
+        "Des objectifs non chiffrés (« améliorer la satisfaction client »)",
+        "Des objectifs définis au niveau global sans déclinaison opérationnelle"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.3",
+      "intitule": "Planification des modifications",
+      "exigence": "Les modifications du système qualité sont conduites de façon planifiée, en examinant leurs conséquences, la disponibilité des ressources et les responsabilités affectées.",
+      "preuves": [
+        "Trace d'analyse d'impact avant un changement d'organisation, d'outil ou de procédé"
+      ],
+      "erreurs_frequentes": [
+        "Des changements d'ERP ou de site conduits sans analyse d'impact qualité"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "7.1",
+      "intitule": "Ressources, infrastructures et surveillance",
+      "exigence": "Les ressources humaines, les infrastructures et l'environnement nécessaires sont fournis et entretenus ; les équipements de mesure sont vérifiés ou étalonnés lorsque la validité des résultats l'exige.",
+      "preuves": [
+        "Plan de maintenance et son suivi d'exécution",
+        "Certificats d'étalonnage à jour, raccordés à des étalons reconnus"
+      ],
+      "erreurs_frequentes": [
+        "Instruments de mesure utilisés pour statuer sur la conformité sans étalonnage raccordé",
+        "Maintenance uniquement curative, sans plan préventif"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.2",
+      "intitule": "Compétences",
+      "exigence": "Les compétences nécessaires sont déterminées, assurées par la formation ou l'expérience, et leur efficacité est évaluée ; les preuves sont conservées.",
+      "preuves": [
+        "Matrice de compétences par poste, avec écarts identifiés",
+        "Évaluation de l'efficacité des formations, au-delà de la feuille de présence"
+      ],
+      "erreurs_frequentes": [
+        "Confondre plan de formation et gestion des compétences",
+        "Aucune évaluation de l'effet de la formation sur le poste de travail"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.3",
+      "intitule": "Sensibilisation",
+      "exigence": "Le personnel connaît la politique qualité, les objectifs qui le concernent, sa contribution à l'efficacité du système et les conséquences d'un non-respect des exigences.",
+      "preuves": [
+        "Entretiens de terrain montrant que les opérateurs situent leur rôle dans la qualité"
+      ],
+      "erreurs_frequentes": [
+        "Une sensibilisation limitée à une réunion annuelle sans vérification de la compréhension"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "7.5",
+      "intitule": "Informations documentées",
+      "exigence": "Les documents et enregistrements nécessaires sont identifiés, maîtrisés en version, protégés, et disponibles là où ils sont utilisés ; les durées de conservation sont définies.",
+      "preuves": [
+        "Système de gestion documentaire avec indice de révision et liste de diffusion",
+        "Règles de conservation et d'archivage appliquées"
+      ],
+      "erreurs_frequentes": [
+        "Des versions périmées encore présentes aux postes de travail",
+        "Une documentation pléthorique que personne n'utilise"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "8.1",
+      "intitule": "Planification et maîtrise opérationnelles",
+      "exigence": "Les processus de réalisation sont planifiés et maîtrisés : critères d'acceptation définis, ressources allouées, contrôles prévus et enregistrements conservés.",
+      "preuves": [
+        "Gammes de fabrication ou modes opératoires avec critères d'acceptation",
+        "Enregistrements de contrôle correspondants"
+      ],
+      "erreurs_frequentes": [
+        "Des critères d'acceptation implicites, laissés au jugement de l'opérateur",
+        "Une sous-traitance de process critique sans maîtrise définie"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.2",
+      "intitule": "Exigences relatives aux produits et services",
+      "exigence": "Les exigences client, réglementaires et internes sont déterminées et revues avant engagement ; l'organisme s'assure de pouvoir les satisfaire, et les modifications sont tracées.",
+      "preuves": [
+        "Revue de contrat ou de commande formalisée avant acceptation",
+        "Trace des avenants et de leur communication en interne"
+      ],
+      "erreurs_frequentes": [
+        "Accepter des commandes sans vérifier la capacité réelle (délai, capacité, compétence)",
+        "Des modifications acceptées oralement, non répercutées en production"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.4",
+      "intitule": "Maîtrise des prestataires externes",
+      "exigence": "Les fournisseurs et sous-traitants sont évalués et sélectionnés selon des critères définis, réévalués périodiquement, et les exigences leur sont communiquées.",
+      "preuves": [
+        "Critères de sélection et grille d'évaluation fournisseurs",
+        "Suivi de performance (qualité, délai) et actions en cas de dérive"
+      ],
+      "erreurs_frequentes": [
+        "Une liste de fournisseurs agréés sans réévaluation depuis plusieurs années",
+        "Aucune exigence qualité formalisée dans les commandes d'achat"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.5",
+      "intitule": "Production et prestation de service",
+      "exigence": "La production est maîtrisée : identification et traçabilité assurées lorsque nécessaire, propriété du client préservée, activités après livraison définies, modifications maîtrisées.",
+      "preuves": [
+        "Système de traçabilité permettant de remonter d'un produit à ses composants et lots",
+        "Procédure de gestion des biens confiés par le client"
+      ],
+      "erreurs_frequentes": [
+        "Une traçabilité qui s'interrompt à une étape (reconditionnement, retour client)",
+        "Aucune règle sur les biens ou données fournis par le client"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.7",
+      "intitule": "Maîtrise des éléments de sortie non conformes",
+      "exigence": "Les produits ou services non conformes sont identifiés et maîtrisés pour empêcher leur utilisation involontaire ; le traitement retenu et l'autorité de décision sont enregistrés.",
+      "preuves": [
+        "Registre des non-conformités avec décision (rebut, retouche, dérogation) et signataire",
+        "Zone ou marquage empêchant l'usage involontaire"
+      ],
+      "erreurs_frequentes": [
+        "Des dérogations accordées sans autorité désignée ni analyse de risque",
+        "Un stock de produits bloqués sans identification physique claire"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "9.1",
+      "intitule": "Surveillance, mesure, analyse et évaluation",
+      "exigence": "L'organisme détermine ce qui doit être surveillé et mesuré, avec quelles méthodes et à quelle fréquence, évalue la satisfaction client, et analyse les données pour en tirer des conclusions.",
+      "preuves": [
+        "Tableau de bord d'indicateurs avec cibles, historique et analyse commentée",
+        "Dispositif de mesure de la satisfaction client et exploitation des retours"
+      ],
+      "erreurs_frequentes": [
+        "Collecter des indicateurs sans jamais les analyser ni décider sur cette base",
+        "Réduire la satisfaction client au seul nombre de réclamations reçues"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "9.2",
+      "intitule": "Audit interne",
+      "exigence": "Des audits internes sont menés à intervalles planifiés selon un programme tenant compte de l'importance des processus et des résultats précédents, par des auditeurs objectifs et compétents.",
+      "preuves": [
+        "Programme d'audit pluriannuel couvrant l'ensemble des processus",
+        "Rapports d'audit avec constats, et preuve de l'indépendance de l'auditeur vis-à-vis du domaine audité"
+      ],
+      "erreurs_frequentes": [
+        "Un auditeur qui audite son propre processus",
+        "Des audits systématiquement sans écart, signe d'un audit de complaisance"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "9.3",
+      "intitule": "Revue de direction",
+      "exigence": "La direction revoit le système qualité à intervalles planifiés en examinant notamment la performance des processus, les retours clients, les non-conformités, les audits et les risques ; les décisions et actions sont enregistrées.",
+      "preuves": [
+        "Compte rendu de revue couvrant l'ensemble des éléments d'entrée attendus",
+        "Décisions assorties d'un responsable et d'une échéance, suivies d'une revue à l'autre"
+      ],
+      "erreurs_frequentes": [
+        "Une revue qui présente des données sans acter de décision",
+        "Un ordre du jour incomplet, omettant les risques ou l'adéquation des ressources"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "10.2",
+      "intitule": "Non-conformité et action corrective",
+      "exigence": "Face à une non-conformité, l'organisme réagit, analyse les causes profondes, met en œuvre des actions correctives, en vérifie l'efficacité et met à jour les risques si nécessaire.",
+      "preuves": [
+        "Analyse de causes documentée (5 pourquoi, Ishikawa) au-delà de la cause immédiate",
+        "Vérification d'efficacité à distance, avec critère et date"
+      ],
+      "erreurs_frequentes": [
+        "Traiter le symptôme (retoucher la pièce) sans agir sur la cause",
+        "Clôturer une action corrective le jour de sa mise en œuvre, sans vérifier son effet"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.3",
+      "intitule": "Amélioration continue",
+      "exigence": "L'organisme améliore en continu la pertinence, l'adéquation et l'efficacité du système qualité, en s'appuyant sur les résultats d'analyse, d'audit et de revue de direction.",
+      "preuves": [
+        "Actions d'amélioration issues explicitement des analyses et des revues",
+        "Mesure du gain obtenu"
+      ],
+      "erreurs_frequentes": [
+        "Confondre amélioration continue et traitement des non-conformités",
+        "Aucune trace reliant les décisions d'amélioration aux données analysées"
+      ],
+      "poids": 1
+    }
+  ]
+}

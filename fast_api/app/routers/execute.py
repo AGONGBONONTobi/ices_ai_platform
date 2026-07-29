@@ -19,6 +19,8 @@ from app.schemas import ExecuteRequest, ExecuteResponse
 from app.services.generation import GenerationError, generate_structured
 from app.services.input_validator import InputValidationError, validate_inputs
 from app.services.prompt_builder import build_system_prompt, build_user_prompt
+from app.services.referentiels import load_referentiel, render_clauses
+from app.services.scoring import compute_scores, render_scores
 from app.services.supabase_client import get_supabase_admin
 from app.services.tools_repository import get_published_tool
 from app.services.translation import translate_tool_config
@@ -66,10 +68,34 @@ def execute_tool(
             detail={"error": "INVALID_INPUTS", "details": str(error)},
         ) from error
 
+    # --- Socle normatif : les clauses sont fournies, jamais récitées de mémoire ---
+    clauses = None
+    if tool.referentiel_code:
+        referentiel = load_referentiel(tool.referentiel_code, tool.referentiel_version)
+        if referentiel:
+            chapitres = [i.chapitre for i in tool.inputs if i.chapitre]
+            clauses = render_clauses(referentiel, chapitres)
+        else:
+            # Mieux vaut un diagnostic sans référentiel qu'un refus, mais on veut
+            # le savoir : un socle manquant, c'est un score sans fondement.
+            logger.warning(
+                "Référentiel %s introuvable pour l'outil %s : diagnostic dégradé.",
+                tool.referentiel_code,
+                tool.id,
+            )
+
+    # --- Scoring déterministe : calculé ici, jamais demandé au modèle ---
+    computed = compute_scores(tool, user_inputs)
+
     try:
         result = generate_structured(
             system_prompt=build_system_prompt(tool, payload.lang),
-            user_prompt=build_user_prompt(tool, user_inputs),
+            user_prompt=build_user_prompt(
+                tool,
+                user_inputs,
+                clauses=clauses,
+                scores=render_scores(computed) if computed else None,
+            ),
             output_schema=tool.outputSchema,
         )
     except GenerationError as error:
@@ -78,6 +104,11 @@ def execute_tool(
             status_code=status.HTTP_502_BAD_GATEWAY,
             detail={"error": "GENERATION_FAILED", "details": str(error)},
         ) from error
+
+    # Le calcul prime sur le modèle : s'il a malgré tout produit ses propres
+    # chiffres, on les remplace par ceux qui sont reproductibles.
+    if computed:
+        result = {**result, **computed}
 
     # --- Décompte du quota : uniquement après un résultat validé ---
     if profile.plan == "free":
