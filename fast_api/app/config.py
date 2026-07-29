@@ -17,7 +17,16 @@ class Settings(BaseSettings):
 
     # --- Groq (LLM) ---
     groq_api_key: str
+    # Modèle par défaut : rapide et gratuit, suffisant pour les outils courants.
     groq_model: str = "llama-3.1-8b-instant"
+    # Modèle des tâches exigeantes (diagnostics adossés à un référentiel,
+    # documents). Le modèle par défaut ne convient pas : à charge égale il ne
+    # rattache aucune recommandation à une clause, et il ne peut de toute façon
+    # pas absorber un référentiel complet dans la limite de tokens par minute
+    # du palier gratuit.
+    groq_model_capable: str = "llama-3.3-70b-versatile"
+    # Permet de revenir au modèle unique en cas de souci de quota fournisseur.
+    model_routing_enabled: bool = True
 
     # --- Stripe ---
     stripe_secret_key: str = ""

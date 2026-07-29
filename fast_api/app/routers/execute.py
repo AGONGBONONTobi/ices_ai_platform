@@ -18,6 +18,7 @@ from app.rate_limit import limiter
 from app.schemas import ExecuteRequest, ExecuteResponse
 from app.services.generation import GenerationError, generate_structured
 from app.services.input_validator import InputValidationError, validate_inputs
+from app.services.model_router import select_model
 from app.services.prompt_builder import build_system_prompt, build_user_prompt
 from app.services.referentiels import load_referentiel, render_clauses
 from app.services.scoring import compute_scores, render_scores
@@ -97,6 +98,7 @@ def execute_tool(
                 scores=render_scores(computed) if computed else None,
             ),
             output_schema=tool.outputSchema,
+            model=select_model(tool),
         )
     except GenerationError as error:
         # Pas de résultat exploitable → le quota n'est pas décompté (cf. plus bas).
