@@ -1,0 +1,270 @@
+{
+  "code": "ISO-27001",
+  "version": "2022",
+  "label": "ISO/IEC 27001:2022 — Sécurité de l'information",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme et de son Annexe A est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (numérotation, intitulés des chapitres et thèmes de l'Annexe A) et une reformulation des attendus sont utilisées.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "4", "titre": "Contexte de l'organisme" },
+    { "numero": "5", "titre": "Leadership" },
+    { "numero": "6", "titre": "Planification" },
+    { "numero": "7", "titre": "Support" },
+    { "numero": "8", "titre": "Réalisation des activités opérationnelles" },
+    { "numero": "9", "titre": "Évaluation des performances" },
+    { "numero": "10", "titre": "Amélioration" },
+    { "numero": "A", "titre": "Mesures de sécurité (Annexe A)" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "4.3",
+      "intitule": "Domaine d'application du SMSI",
+      "exigence": "Le périmètre du système de management de la sécurité de l'information est défini par écrit : processus, sites, systèmes d'information et interfaces avec les tiers, avec justification des exclusions.",
+      "preuves": [
+        "Document de périmètre listant les actifs, services et sites couverts",
+        "Description des interfaces et dépendances vis-à-vis des prestataires cloud"
+      ],
+      "erreurs_frequentes": [
+        "Un périmètre taillé pour exclure les systèmes les moins maîtrisés, ce qui vide la certification de son sens",
+        "Ne pas traiter les interfaces avec les fournisseurs de services hébergés"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.1",
+      "intitule": "Leadership et engagement",
+      "exigence": "La direction s'assure que la politique et les objectifs de sécurité sont compatibles avec l'orientation stratégique, que les ressources sont disponibles et que le SMSI atteint les résultats attendus.",
+      "preuves": [
+        "Budget sécurité identifié et arbitrages tracés en comité de direction",
+        "Nomination formelle d'un responsable de la sécurité des systèmes d'information"
+      ],
+      "erreurs_frequentes": [
+        "Une sécurité entièrement déléguée à la DSI, sans arbitrage métier sur les risques acceptés",
+        "Un responsable sécurité sans autorité ni ligne budgétaire"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.3",
+      "intitule": "Rôles et responsabilités",
+      "exigence": "Les rôles et responsabilités relatifs à la sécurité de l'information sont attribués et communiqués, y compris la responsabilité de rendre compte de la performance du SMSI.",
+      "preuves": [
+        "Matrice de responsabilités couvrant propriétaires d'actifs, administrateurs et utilisateurs",
+        "Séparation des tâches sensibles documentée"
+      ],
+      "erreurs_frequentes": [
+        "Aucun propriétaire désigné pour les actifs informationnels critiques",
+        "Un administrateur unique cumulant tous les droits, sans contrôle croisé"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.1.2",
+      "intitule": "Appréciation des risques de sécurité",
+      "exigence": "Un processus d'appréciation des risques est défini et reproductible : critères d'acceptation, identification des risques pesant sur la confidentialité, l'intégrité et la disponibilité, propriétaires des risques, analyse des conséquences et de la vraisemblance.",
+      "preuves": [
+        "Méthode d'appréciation documentée, produisant des résultats cohérents d'une itération à l'autre",
+        "Registre des risques avec propriétaire nommé, niveau et critères d'acceptation explicites"
+      ],
+      "erreurs_frequentes": [
+        "Une appréciation menée une seule fois pour la certification, jamais réitérée",
+        "Des risques identifiés sans propriétaire, donc sans décision possible",
+        "Ne considérer que la confidentialité, en négligeant la disponibilité et l'intégrité"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.1.3",
+      "intitule": "Traitement des risques et Déclaration d'Applicabilité",
+      "exigence": "Un plan de traitement des risques est établi, les mesures nécessaires sont déterminées puis comparées à celles de l'Annexe A, et une Déclaration d'Applicabilité justifie l'inclusion ou l'exclusion de chaque mesure ; les propriétaires des risques approuvent le plan et acceptent les risques résiduels.",
+      "preuves": [
+        "Déclaration d'Applicabilité couvrant l'ensemble des mesures de l'Annexe A, avec justification et statut de mise en œuvre",
+        "Approbation formelle des risques résiduels par leurs propriétaires"
+      ],
+      "erreurs_frequentes": [
+        "Une Déclaration d'Applicabilité déclarant tout applicable sans que les mesures soient réellement en place",
+        "Des exclusions non justifiées, ou justifiées par « non pertinent » sans argument",
+        "Un risque résiduel accepté par le responsable sécurité au lieu du métier propriétaire"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.2",
+      "intitule": "Objectifs de sécurité",
+      "exigence": "Des objectifs de sécurité mesurables, cohérents avec la politique et tenant compte des résultats de l'appréciation des risques, sont établis, suivis et communiqués.",
+      "preuves": [
+        "Objectifs chiffrés (délai de correctif, couverture de sauvegarde, taux de sensibilisation) avec responsable et échéance"
+      ],
+      "erreurs_frequentes": [
+        "Des objectifs déconnectés du registre des risques",
+        "Aucune mesure du niveau atteint, donc aucune revue possible"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.2",
+      "intitule": "Compétences et sensibilisation",
+      "exigence": "Les compétences nécessaires sont assurées, et l'ensemble du personnel est sensibilisé à la politique de sécurité, à sa contribution et aux conséquences d'un manquement.",
+      "preuves": [
+        "Programme de sensibilisation périodique avec taux de participation",
+        "Exercices de simulation d'hameçonnage et exploitation des résultats"
+      ],
+      "erreurs_frequentes": [
+        "Une sensibilisation à l'embauche jamais renouvelée",
+        "Des campagnes de simulation dont les résultats ne débouchent sur aucune action ciblée"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.1",
+      "intitule": "Planification et maîtrise opérationnelles",
+      "exigence": "Les processus nécessaires à la satisfaction des exigences de sécurité sont planifiés, mis en œuvre et maîtrisés ; les processus externalisés sont déterminés et maîtrisés.",
+      "preuves": [
+        "Procédures d'exploitation documentées pour les activités sensibles",
+        "Exigences de sécurité contractualisées avec les prestataires et vérifiées"
+      ],
+      "erreurs_frequentes": [
+        "Des services critiques externalisés sans clause de sécurité ni droit d'audit",
+        "Aucune vérification des attestations de conformité fournies par les prestataires cloud"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.2",
+      "intitule": "Réappréciation périodique des risques",
+      "exigence": "L'appréciation des risques est réalisée à intervalles planifiés et lorsque des changements significatifs surviennent ; les résultats sont conservés.",
+      "preuves": [
+        "Historique des itérations d'appréciation, avec dates et évolutions du registre",
+        "Réappréciation déclenchée après un incident majeur ou un changement d'architecture"
+      ],
+      "erreurs_frequentes": [
+        "Une réappréciation annuelle qui recopie la précédente sans réexamen",
+        "Aucun déclencheur défini pour les changements significatifs"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "9.1",
+      "intitule": "Surveillance, mesure et évaluation",
+      "exigence": "L'organisme détermine ce qui doit être surveillé, les méthodes assurant des résultats valides, quand et par qui, et évalue la performance de la sécurité et l'efficacité du SMSI.",
+      "preuves": [
+        "Indicateurs de sécurité suivis dans la durée, avec seuils d'alerte",
+        "Revue des journaux d'événements et traitement des alertes"
+      ],
+      "erreurs_frequentes": [
+        "Collecter des journaux que personne n'exploite",
+        "Mesurer l'activité (nombre d'alertes) sans mesurer l'efficacité (délai de détection et de correction)"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "9.2",
+      "intitule": "Audit interne",
+      "exigence": "Des audits internes planifiés vérifient la conformité du SMSI aux exigences de la norme et aux exigences propres de l'organisme, ainsi que sa mise en œuvre effective.",
+      "preuves": [
+        "Programme d'audit couvrant les chapitres de la norme et les mesures retenues dans la Déclaration d'Applicabilité",
+        "Constats techniques appuyés sur des vérifications de configuration"
+      ],
+      "erreurs_frequentes": [
+        "Un audit purement documentaire, sans contrôle technique des configurations",
+        "Ne jamais auditer les mesures déclarées applicables mais non encore déployées"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "9.3",
+      "intitule": "Revue de direction",
+      "exigence": "La direction examine notamment l'évolution des risques, les résultats d'audit, les incidents de sécurité, l'atteinte des objectifs, les retours des parties intéressées et l'adéquation des ressources.",
+      "preuves": [
+        "Compte rendu couvrant les éléments d'entrée attendus, dont le bilan des incidents",
+        "Décisions tracées avec responsable et échéance"
+      ],
+      "erreurs_frequentes": [
+        "Une revue centrée sur l'outillage technique, sans arbitrage sur les risques acceptés",
+        "Omettre le bilan des incidents et des vulnérabilités non corrigées"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "10.2",
+      "intitule": "Non-conformité et action corrective",
+      "exigence": "Les non-conformités et incidents de sécurité sont traités, leurs causes analysées, des actions correctives engagées et leur efficacité vérifiée ; le registre des risques est mis à jour si nécessaire.",
+      "preuves": [
+        "Analyse post-incident documentée, avec chronologie et causes profondes",
+        "Mise à jour du registre des risques à la suite d'un incident"
+      ],
+      "erreurs_frequentes": [
+        "Restaurer un service après incident sans analyser comment l'attaquant est entré",
+        "Ne pas relier les incidents survenus au registre des risques"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "A.5",
+      "intitule": "Annexe A — Mesures organisationnelles",
+      "exigence": "Les mesures d'ordre organisationnel sont définies et appliquées : politiques de sécurité, gestion des actifs et de leur classification, relations avec les fournisseurs, gestion des incidents, continuité d'activité et conformité légale.",
+      "preuves": [
+        "Inventaire des actifs informationnels avec propriétaire et niveau de classification",
+        "Procédure de gestion des incidents avec rôles, délais et escalade",
+        "Plan de continuité testé"
+      ],
+      "erreurs_frequentes": [
+        "Un inventaire d'actifs limité au matériel, sans les données ni les services cloud",
+        "Une procédure d'incident jamais éprouvée avant l'incident réel",
+        "Aucune identification des exigences légales de protection des données personnelles applicables"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "A.6",
+      "intitule": "Annexe A — Mesures liées aux personnes",
+      "exigence": "Les mesures relatives aux personnes sont appliquées : vérifications avant embauche, engagements de confidentialité, sensibilisation, processus disciplinaire, et retrait des accès au départ.",
+      "preuves": [
+        "Clauses de confidentialité signées, y compris par les prestataires",
+        "Procédure de départ avec restitution du matériel et révocation des accès, tracée"
+      ],
+      "erreurs_frequentes": [
+        "Des comptes d'anciens salariés toujours actifs plusieurs mois après leur départ",
+        "Aucune revue périodique des droits d'accès accordés"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "A.7",
+      "intitule": "Annexe A — Mesures physiques",
+      "exigence": "Les mesures physiques protègent les locaux et les équipements : périmètres sécurisés, contrôle des accès physiques, protection contre les menaces environnementales, sécurité du poste de travail et mise au rebut sécurisée des supports.",
+      "preuves": [
+        "Contrôle d'accès aux salles serveurs avec journalisation et revue des habilitations",
+        "Procédure d'effacement ou de destruction des supports avant réforme"
+      ],
+      "erreurs_frequentes": [
+        "Une salle serveur accessible avec un badge générique partagé",
+        "Des disques durs réformés sans effacement sécurisé ni certificat de destruction",
+        "Aucune protection contre les coupures d'alimentation dans un contexte de réseau électrique instable"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "A.8",
+      "intitule": "Annexe A — Mesures technologiques",
+      "exigence": "Les mesures techniques sont mises en œuvre : gestion des accès et des privilèges, protection contre les codes malveillants, gestion des vulnérabilités et des correctifs, sauvegardes, journalisation, cloisonnement réseau et sécurité du développement.",
+      "preuves": [
+        "Sauvegardes testées par restauration réelle, avec date et résultat consignés",
+        "Cycle de gestion des correctifs avec délais cibles selon la criticité",
+        "Revue périodique des comptes à privilèges"
+      ],
+      "erreurs_frequentes": [
+        "Des sauvegardes exécutées mais jamais restaurées à titre de test",
+        "Des sauvegardes stockées sur le même réseau que les données, donc chiffrables par un rançongiciel",
+        "Des correctifs critiques appliqués avec plusieurs mois de retard, faute de fenêtre de maintenance"
+      ],
+      "poids": 3
+    }
+  ]
+}

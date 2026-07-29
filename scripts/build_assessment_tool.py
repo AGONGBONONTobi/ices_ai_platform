@@ -134,9 +134,12 @@ def main() -> int:
     path.write_text(json.dumps(tool, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     questions = len([i for i in tool["inputs"] if i["type"] == "select"])
-    chapitres = sorted({i["chapitre"] for i in tool["inputs"] if i.get("chapitre")})
+    axes = sorted({i["axe"] for i in tool["inputs"] if i.get("axe")})
     print(f"{path.relative_to(ROOT)}")
-    print(f"  {questions} questions cotées, réparties sur {len(chapitres)} chapitres : {', '.join(chapitres)}")
+    print(f"  {questions} questions cotées, regroupées en {len(axes)} chapitres")
+    for a in axes:
+        n = len([i for i in tool["inputs"] if i.get("axe") == a])
+        print(f"    {a}  ({n})")
     print(f"  référentiel : {code}:{version}")
     return 0
 

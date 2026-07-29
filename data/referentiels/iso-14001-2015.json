@@ -1,0 +1,279 @@
+{
+  "code": "ISO-14001",
+  "version": "2015",
+  "label": "ISO 14001:2015 — Systèmes de management environnemental",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (numérotation et intitulés des chapitres) et une reformulation des attendus sont utilisées.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "4", "titre": "Contexte de l'organisme" },
+    { "numero": "5", "titre": "Leadership" },
+    { "numero": "6", "titre": "Planification" },
+    { "numero": "7", "titre": "Support" },
+    { "numero": "8", "titre": "Réalisation des activités opérationnelles" },
+    { "numero": "9", "titre": "Évaluation des performances" },
+    { "numero": "10", "titre": "Amélioration" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "4.1",
+      "intitule": "Contexte et conditions environnementales",
+      "exigence": "L'organisme identifie les enjeux internes et externes pertinents, y compris les conditions environnementales qu'il subit (climat, qualité de l'air, disponibilité de l'eau, biodiversité locale) et non seulement celles qu'il provoque.",
+      "preuves": [
+        "Analyse de contexte mentionnant explicitement les conditions environnementales du territoire d'implantation",
+        "Revue de cette analyse à une fréquence définie"
+      ],
+      "erreurs_frequentes": [
+        "N'analyser que les impacts de l'organisme sur l'environnement, en oubliant les impacts de l'environnement sur l'organisme (stress hydrique, inondations, coupures)",
+        "Reprendre une analyse de contexte qualité sans l'adapter aux enjeux environnementaux"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "4.2",
+      "intitule": "Parties intéressées et obligations retenues",
+      "exigence": "L'organisme détermine les parties intéressées pertinentes, celles de leurs attentes qu'il retient comme obligations de conformité, et distingue clairement ces dernières des simples attentes.",
+      "preuves": [
+        "Liste des parties intéressées (riverains, autorités, assureurs, clients, ONG) avec leurs attentes",
+        "Identification de celles devenues des obligations de conformité"
+      ],
+      "erreurs_frequentes": [
+        "Confondre attente d'un riverain et exigence légale opposable",
+        "Oublier les autorités locales et les organismes de contrôle"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "4.3",
+      "intitule": "Domaine d'application",
+      "exigence": "Le périmètre du système environnemental est défini par écrit, en tenant compte des unités, fonctions et limites physiques retenues, ainsi que des activités et de l'autorité que l'organisme exerce réellement.",
+      "preuves": [
+        "Document de périmètre avec limites géographiques et organisationnelles"
+      ],
+      "erreurs_frequentes": [
+        "Exclure du périmètre une activité polluante pour éviter d'avoir à la traiter",
+        "Un périmètre qui ne couvre pas les activités confiées à des sous-traitants sur site"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "5.1",
+      "intitule": "Leadership et engagement",
+      "exigence": "La direction rend compte de l'efficacité du système environnemental, intègre les exigences environnementales aux processus métier et alloue les ressources nécessaires.",
+      "preuves": [
+        "Budget environnemental identifié et engagé",
+        "Comptes rendus de revue de direction avec arbitrages environnementaux"
+      ],
+      "erreurs_frequentes": [
+        "Un système environnemental porté par une seule personne, sans relais dans les opérations",
+        "Des investissements de mise en conformité systématiquement reportés"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.2",
+      "intitule": "Politique environnementale",
+      "exigence": "La politique environnementale inclut un engagement de protection de l'environnement — dont la prévention de la pollution —, de respect des obligations de conformité et d'amélioration continue.",
+      "preuves": [
+        "Politique signée mentionnant explicitement les trois engagements",
+        "Preuve de mise à disposition des parties intéressées"
+      ],
+      "erreurs_frequentes": [
+        "Une politique qui omet l'engagement de conformité réglementaire",
+        "Des engagements non déclinés en objectifs mesurables"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "6.1.2",
+      "intitule": "Aspects environnementaux et impacts",
+      "exigence": "L'organisme identifie les aspects environnementaux de ses activités, produits et services qu'il peut maîtriser ou influencer, en considérant le cycle de vie, et détermine ceux qui sont significatifs selon des critères établis.",
+      "preuves": [
+        "Analyse environnementale listant les aspects par activité, avec critères de cotation documentés",
+        "Prise en compte des conditions normales, anormales et des situations d'urgence"
+      ],
+      "erreurs_frequentes": [
+        "Une analyse limitée au site, sans considérer l'amont (achats) ni l'aval (fin de vie du produit)",
+        "Des critères de significativité non écrits, rendant la cotation inauditable",
+        "Ne coter que les conditions normales de fonctionnement"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.1.3",
+      "intitule": "Obligations de conformité",
+      "exigence": "Les obligations légales et autres exigences applicables sont identifiées, tenues à jour, rendues accessibles, et leur incidence sur le système est déterminée.",
+      "preuves": [
+        "Registre réglementaire daté, avec source et applicabilité par activité",
+        "Dispositif de veille avec responsable et périodicité"
+      ],
+      "erreurs_frequentes": [
+        "Un registre réglementaire acheté une fois et jamais mis à jour",
+        "Identifier les textes sans en traduire les conséquences opérationnelles (seuils, fréquences d'analyse, déclarations)",
+        "Omettre les prescriptions propres à l'autorisation d'exploiter du site"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.2",
+      "intitule": "Objectifs environnementaux",
+      "exigence": "Des objectifs environnementaux cohérents avec la politique sont établis pour les aspects significatifs, mesurables, surveillés, communiqués, avec les moyens, responsables, échéances et indicateurs associés.",
+      "preuves": [
+        "Programme environnemental chiffré (consommations, rejets, déchets) avec responsable et échéance",
+        "Suivi périodique de l'avancement"
+      ],
+      "erreurs_frequentes": [
+        "Des objectifs sans lien avec les aspects jugés significatifs",
+        "Des cibles non chiffrées (« réduire la consommation d'eau »)"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.2",
+      "intitule": "Compétences environnementales",
+      "exigence": "Les compétences nécessaires sont déterminées pour les personnes dont le travail affecte la performance environnementale ou la capacité à satisfaire les obligations de conformité.",
+      "preuves": [
+        "Habilitations spécifiques (déchets dangereux, produits chimiques, conduite d'installations classées)",
+        "Évaluation de l'efficacité des formations"
+      ],
+      "erreurs_frequentes": [
+        "Former le responsable environnement mais pas les opérateurs qui manipulent les produits",
+        "Aucune formation des sous-traitants intervenant sur site"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.4",
+      "intitule": "Communication interne et externe",
+      "exigence": "L'organisme établit ce qu'il communique, quand, à qui et comment, en tenant compte de ses obligations de conformité, et conserve les preuves des communications.",
+      "preuves": [
+        "Plan de communication distinguant interne et externe",
+        "Traçabilité des réponses apportées aux plaintes de riverains"
+      ],
+      "erreurs_frequentes": [
+        "Aucun canal formalisé pour recevoir et traiter les plaintes de voisinage",
+        "Des communications réglementaires (déclarations, rapports) faites sans preuve conservée"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "8.1",
+      "intitule": "Planification et maîtrise opérationnelles",
+      "exigence": "Les processus liés aux aspects significatifs sont maîtrisés par des critères d'exploitation définis ; les exigences environnementales pertinentes sont communiquées aux prestataires externes, y compris pour les activités sous-traitées.",
+      "preuves": [
+        "Consignes d'exploitation intégrant les paramètres environnementaux (rétention, tri, réglages)",
+        "Clauses environnementales dans les contrats de sous-traitance"
+      ],
+      "erreurs_frequentes": [
+        "Sous-traiter une activité à impact (nettoyage industriel, transport de déchets) sans exigence contractuelle ni contrôle",
+        "Des consignes affichées mais des dispositifs de rétention absents ou saturés"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.2",
+      "intitule": "Préparation et réponse aux situations d'urgence",
+      "exigence": "L'organisme identifie les situations d'urgence potentielles, planifie sa réponse, teste périodiquement les procédures lorsque c'est réalisable, et les révise après un incident ou un exercice.",
+      "preuves": [
+        "Scénarios d'urgence identifiés (déversement, incendie, fuite) et procédures associées",
+        "Comptes rendus d'exercices avec écarts constatés et actions correctives"
+      ],
+      "erreurs_frequentes": [
+        "Des procédures d'urgence écrites mais jamais testées",
+        "Des kits anti-pollution absents, périmés ou inaccessibles au point d'usage",
+        "Ne pas réviser la procédure après un incident réel"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.1.1",
+      "intitule": "Surveillance et mesure de la performance",
+      "exigence": "L'organisme détermine ce qui doit être surveillé, les méthodes assurant des résultats valides, les critères d'évaluation et la fréquence ; les équipements de mesure sont étalonnés ou vérifiés.",
+      "preuves": [
+        "Plan de surveillance des rejets (eau, air, bruit) avec fréquences et laboratoires accrédités",
+        "Rapports d'analyse comparés aux valeurs limites autorisées"
+      ],
+      "erreurs_frequentes": [
+        "Mesurer sans comparer aux seuils réglementaires applicables",
+        "Analyses confiées à un laboratoire non accrédité pour le paramètre concerné"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "9.1.2",
+      "intitule": "Évaluation de la conformité",
+      "exigence": "L'organisme évalue périodiquement, selon une fréquence définie, s'il satisfait à ses obligations de conformité, et conserve la preuve de cette évaluation et de ses conclusions.",
+      "preuves": [
+        "Rapport d'évaluation de conformité daté, obligation par obligation, avec statut et écarts",
+        "Actions engagées sur les non-conformités réglementaires identifiées"
+      ],
+      "erreurs_frequentes": [
+        "Confondre veille réglementaire (connaître le texte) et évaluation de conformité (vérifier qu'on le respecte)",
+        "Une évaluation globale « nous sommes conformes » sans examen ligne à ligne"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.2",
+      "intitule": "Audit interne",
+      "exigence": "Des audits internes sont menés à intervalles planifiés selon un programme tenant compte de l'importance environnementale des processus et des résultats des audits précédents.",
+      "preuves": [
+        "Programme d'audit couvrant les aspects significatifs et les obligations de conformité",
+        "Auditeurs formés à la réglementation environnementale applicable"
+      ],
+      "erreurs_frequentes": [
+        "Des audits documentaires qui ne descendent jamais sur le terrain (rétentions, stockages, déchets)",
+        "Un programme qui ne cible pas les activités à plus fort impact"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "9.3",
+      "intitule": "Revue de direction",
+      "exigence": "La direction examine notamment l'évolution des obligations de conformité, la performance environnementale, l'atteinte des objectifs, les communications des parties intéressées et l'adéquation des ressources.",
+      "preuves": [
+        "Compte rendu couvrant l'ensemble des éléments d'entrée attendus, dont les plaintes reçues",
+        "Décisions tracées avec responsable et échéance"
+      ],
+      "erreurs_frequentes": [
+        "Omettre le bilan de conformité réglementaire de l'ordre du jour",
+        "Une revue annuelle expédiée en une heure sans données consolidées"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "10.2",
+      "intitule": "Non-conformité et action corrective",
+      "exigence": "Face à une non-conformité, y compris un incident environnemental, l'organisme réagit, en maîtrise les conséquences, analyse les causes, agit et vérifie l'efficacité des actions.",
+      "preuves": [
+        "Fiches d'incident environnemental avec analyse de causes et vérification d'efficacité",
+        "Mise à jour de l'analyse des aspects si l'incident en révèle un nouveau"
+      ],
+      "erreurs_frequentes": [
+        "Nettoyer un déversement sans chercher pourquoi la rétention n'a pas joué",
+        "Ne pas déclarer un incident aux autorités lorsque la réglementation l'impose"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.3",
+      "intitule": "Amélioration continue",
+      "exigence": "L'organisme améliore en continu son système environnemental afin d'accroître sa performance environnementale.",
+      "preuves": [
+        "Évolution pluriannuelle des indicateurs (consommations, déchets, rejets)",
+        "Actions d'amélioration issues des analyses et des revues"
+      ],
+      "erreurs_frequentes": [
+        "Des indicateurs stables ou dégradés sans plan d'action associé",
+        "Confondre conformité maintenue et amélioration de la performance"
+      ],
+      "poids": 1
+    }
+  ]
+}

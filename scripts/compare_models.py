@@ -26,7 +26,7 @@ from app.services.prompt_builder import build_system_prompt, build_user_prompt  
 from app.services.referentiels import load_referentiel, render_clauses  # noqa: E402
 from app.services.scoring import compute_scores, render_scores  # noqa: E402
 
-TOOL = ROOT / "data" / "tools" / "auto-diagnostic-iso-9001.json"
+DEFAULT_TOOL = "auto-diagnostic-iso-9001"
 
 CONTEXTE = (
     "PME agroalimentaire au Bénin, 40 salariés, un site de production à Cotonou. "
@@ -37,11 +37,13 @@ CONTEXTE = (
 
 # Positionnement réaliste d'une PME qui démarre : des pratiques opérationnelles
 # réelles mais peu formalisées, et rien sur l'amélioration continue.
+# `A` couvre l'Annexe A d'ISO 27001, dont les chapitres sont numérotés A.5 à A.8.
 NIVEAUX = {
-    "4": 1, "5": 1, "6": 0, "7": 2, "8": 2, "9": 1, "10": 0,
+    "4": 1, "5": 1, "6": 0, "7": 2, "8": 2, "9": 1, "10": 0, "A": 1,
 }
+NIVEAU_PAR_DEFAUT = 1
 
-CLAUSE_REF = re.compile(r"\b(?:4|5|6|7|8|9|10)\.\d\b")
+CLAUSE_REF = re.compile(r"\b(?:A|4|5|6|7|8|9|10)\.\d\b")
 
 
 def answers(tool: ToolConfig) -> dict:
@@ -49,7 +51,8 @@ def answers(tool: ToolConfig) -> dict:
     out = {"contexte": CONTEXTE}
     for i in tool.inputs:
         if i.type == "select" and i.chapitre:
-            out[i.name] = par_score[float(NIVEAUX[i.chapitre.split(".")[0]])]
+            niveau = NIVEAUX.get(i.chapitre.split(".")[0], NIVEAU_PAR_DEFAUT)
+            out[i.name] = par_score[float(niveau)]
     return out
 
 
@@ -100,9 +103,15 @@ def main() -> int:
 
         ref_module.MAX_INJECTED_CLAUSES = max_clauses
 
+    # Premier argument non-modèle : l'identifiant de l'outil à tester.
+    tool_id = DEFAULT_TOOL
+    if args and args[0].startswith("auto-diagnostic"):
+        tool_id = args.pop(0)
+
     models = args or ["llama-3.1-8b-instant", "llama-3.3-70b-versatile"]
 
-    tool = ToolConfig(**json.loads(TOOL.read_text(encoding="utf-8")))
+    path = ROOT / "data" / "tools" / f"{tool_id}.json"
+    tool = ToolConfig(**json.loads(path.read_text(encoding="utf-8")))
     referentiel = load_referentiel(tool.referentiel_code, tool.referentiel_version)
     if referentiel is None:
         print("Référentiel introuvable.", file=sys.stderr)

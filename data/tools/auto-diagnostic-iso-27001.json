@@ -2,47 +2,564 @@
   "id": "auto-diagnostic-iso-27001",
   "title": "Auto-diagnostic ISO 27001",
   "category": "Systèmes de Management ISO",
+  "output_kind": "assessment",
+  "referentiel_code": "ISO-27001",
+  "referentiel_version": "2022",
   "inputs": [
     {
-      "name": "organisation",
-      "type": "text",
-      "label": "Nom de votre organisation",
-      "placeholder": "Exemple : Banque XYZ",
-      "required": true
-    },
-    {
-      "name": "secteur_activite",
-      "type": "select",
-      "options": [
-        "Établissement financier",
-        "Télécoms",
-        "Administration",
-        "Autre"
-      ],
-      "label": "Secteur d'activité",
-      "required": true
-    },
-    {
-      "name": "description_smsi",
+      "name": "contexte",
       "type": "textarea",
-      "label": "Décrivez brièvement votre Système de Management de la Sécurité de l'Information (SMSI) actuel",
-      "placeholder": "Exemple : Nous avons un SMSI en place depuis 2020, basé sur l'ISO 27001...",
+      "question": "Décrivez brièvement votre organisme",
+      "help": "Secteur, effectif, sites, nature des produits ou services, et objectif visé (certification, mise à niveau interne...).",
+      "placeholder": "PME agroalimentaire, 40 salariés, un site de production, visant la certification sous 12 mois.",
       "required": true
     },
     {
-      "name": "niveau_conformite",
+      "name": "c4_3",
       "type": "select",
+      "question": "4.3 — Domaine d'application du SMSI",
+      "help": "Le périmètre du système de management de la sécurité de l'information est défini par écrit : processus, sites, systèmes d'information et interfaces avec les tiers, avec justification des exclusions.",
       "options": [
-        "0 - Inexistant",
-        "1 - Initié",
-        "2 - Formalisé",
-        "3 - Optimisé"
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
       ],
-      "label": "Quel est votre niveau de conformité actuel à l'ISO 27001 ?",
-      "required": true
+      "required": true,
+      "chapitre": "4.3",
+      "axe": "4 — Contexte de l'organisme",
+      "poids": 2
+    },
+    {
+      "name": "c5_1",
+      "type": "select",
+      "question": "5.1 — Leadership et engagement",
+      "help": "La direction s'assure que la politique et les objectifs de sécurité sont compatibles avec l'orientation stratégique, que les ressources sont disponibles et que le SMSI atteint les résultats attendus.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.1",
+      "axe": "5 — Leadership",
+      "poids": 2
+    },
+    {
+      "name": "c5_3",
+      "type": "select",
+      "question": "5.3 — Rôles et responsabilités",
+      "help": "Les rôles et responsabilités relatifs à la sécurité de l'information sont attribués et communiqués, y compris la responsabilité de rendre compte de la performance du SMSI.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.3",
+      "axe": "5 — Leadership",
+      "poids": 2
+    },
+    {
+      "name": "c6_1_2",
+      "type": "select",
+      "question": "6.1.2 — Appréciation des risques de sécurité",
+      "help": "Un processus d'appréciation des risques est défini et reproductible : critères d'acceptation, identification des risques pesant sur la confidentialité, l'intégrité et la disponibilité, propriétaires des risques, analyse des conséquences et de la vraisemblance.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.1.2",
+      "axe": "6 — Planification",
+      "poids": 3
+    },
+    {
+      "name": "c6_1_3",
+      "type": "select",
+      "question": "6.1.3 — Traitement des risques et Déclaration d'Applicabilité",
+      "help": "Un plan de traitement des risques est établi, les mesures nécessaires sont déterminées puis comparées à celles de l'Annexe A, et une Déclaration d'Applicabilité justifie l'inclusion ou l'exclusion de chaque mesure ; les propriétaires des risques approuvent le plan et acceptent les risques résiduels.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.1.3",
+      "axe": "6 — Planification",
+      "poids": 3
+    },
+    {
+      "name": "c6_2",
+      "type": "select",
+      "question": "6.2 — Objectifs de sécurité",
+      "help": "Des objectifs de sécurité mesurables, cohérents avec la politique et tenant compte des résultats de l'appréciation des risques, sont établis, suivis et communiqués.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.2",
+      "axe": "6 — Planification",
+      "poids": 2
+    },
+    {
+      "name": "c7_2",
+      "type": "select",
+      "question": "7.2 — Compétences et sensibilisation",
+      "help": "Les compétences nécessaires sont assurées, et l'ensemble du personnel est sensibilisé à la politique de sécurité, à sa contribution et aux conséquences d'un manquement.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.2",
+      "axe": "7 — Support",
+      "poids": 2
+    },
+    {
+      "name": "c8_1",
+      "type": "select",
+      "question": "8.1 — Planification et maîtrise opérationnelles",
+      "help": "Les processus nécessaires à la satisfaction des exigences de sécurité sont planifiés, mis en œuvre et maîtrisés ; les processus externalisés sont déterminés et maîtrisés.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.1",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 3
+    },
+    {
+      "name": "c8_2",
+      "type": "select",
+      "question": "8.2 — Réappréciation périodique des risques",
+      "help": "L'appréciation des risques est réalisée à intervalles planifiés et lorsque des changements significatifs surviennent ; les résultats sont conservés.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.2",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 2
+    },
+    {
+      "name": "c9_1",
+      "type": "select",
+      "question": "9.1 — Surveillance, mesure et évaluation",
+      "help": "L'organisme détermine ce qui doit être surveillé, les méthodes assurant des résultats valides, quand et par qui, et évalue la performance de la sécurité et l'efficacité du SMSI.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.1",
+      "axe": "9 — Évaluation des performances",
+      "poids": 2
+    },
+    {
+      "name": "c9_2",
+      "type": "select",
+      "question": "9.2 — Audit interne",
+      "help": "Des audits internes planifiés vérifient la conformité du SMSI aux exigences de la norme et aux exigences propres de l'organisme, ainsi que sa mise en œuvre effective.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.2",
+      "axe": "9 — Évaluation des performances",
+      "poids": 2
+    },
+    {
+      "name": "c9_3",
+      "type": "select",
+      "question": "9.3 — Revue de direction",
+      "help": "La direction examine notamment l'évolution des risques, les résultats d'audit, les incidents de sécurité, l'atteinte des objectifs, les retours des parties intéressées et l'adéquation des ressources.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.3",
+      "axe": "9 — Évaluation des performances",
+      "poids": 2
+    },
+    {
+      "name": "c10_2",
+      "type": "select",
+      "question": "10.2 — Non-conformité et action corrective",
+      "help": "Les non-conformités et incidents de sécurité sont traités, leurs causes analysées, des actions correctives engagées et leur efficacité vérifiée ; le registre des risques est mis à jour si nécessaire.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "10.2",
+      "axe": "10 — Amélioration",
+      "poids": 3
+    },
+    {
+      "name": "ca_5",
+      "type": "select",
+      "question": "A.5 — Annexe A — Mesures organisationnelles",
+      "help": "Les mesures d'ordre organisationnel sont définies et appliquées : politiques de sécurité, gestion des actifs et de leur classification, relations avec les fournisseurs, gestion des incidents, continuité d'activité et conformité légale.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "A.5",
+      "axe": "A — Mesures de sécurité (Annexe A)",
+      "poids": 3
+    },
+    {
+      "name": "ca_6",
+      "type": "select",
+      "question": "A.6 — Annexe A — Mesures liées aux personnes",
+      "help": "Les mesures relatives aux personnes sont appliquées : vérifications avant embauche, engagements de confidentialité, sensibilisation, processus disciplinaire, et retrait des accès au départ.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "A.6",
+      "axe": "A — Mesures de sécurité (Annexe A)",
+      "poids": 3
+    },
+    {
+      "name": "ca_7",
+      "type": "select",
+      "question": "A.7 — Annexe A — Mesures physiques",
+      "help": "Les mesures physiques protègent les locaux et les équipements : périmètres sécurisés, contrôle des accès physiques, protection contre les menaces environnementales, sécurité du poste de travail et mise au rebut sécurisée des supports.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "A.7",
+      "axe": "A — Mesures de sécurité (Annexe A)",
+      "poids": 2
+    },
+    {
+      "name": "ca_8",
+      "type": "select",
+      "question": "A.8 — Annexe A — Mesures technologiques",
+      "help": "Les mesures techniques sont mises en œuvre : gestion des accès et des privilèges, protection contre les codes malveillants, gestion des vulnérabilités et des correctifs, sauvegardes, journalisation, cloisonnement réseau et sécurité du développement.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "A.8",
+      "axe": "A — Mesures de sécurité (Annexe A)",
+      "poids": 3
     }
   ],
-  "promptTemplate": "Vous êtes un auditeur/consultant expert de l'ISO 27001. L'utilisateur a répondu : Organisation: {organisation}, Secteur d'activité: {secteur_activite}, Description du SMSI: {description_smsi}, Niveau de conformité: {niveau_conformite}. Analysez ces informations selon les exigences de l'ISO 27001 (114 contrôles de l'Annexe A) et évaluez le gap de conformité du SMSI. Donnez un score global sur 100, une évaluation par axe (Confidentialité, Intégrité, Disponibilité), et des recommandations prioritaires pour améliorer la conformité.",
+  "promptTemplate": "Tu es auditeur qualité expérimenté, habitué aux audits de certification ISO-27001. L'organisme est décrit ainsi : {contexte}.\n\nLes clauses applicables et leur grille de maturité te sont fournies plus bas, ainsi que le positionnement déclaré pour chacune et les scores déjà calculés.\n\nProduis un rapport de pré-audit :\n- pour chaque chapitre parmi 4 (Contexte de l'organisme), 5 (Leadership), 6 (Planification), 7 (Support), 8 (Réalisation des activités opérationnelles), 9 (Évaluation des performances), 10 (Amélioration), A (Mesures de sécurité (Annexe A)), un constat appuyé sur les clauses réellement concernées, en citant leur numéro ;\n- pour les clauses les plus faibles, indique l'écart précis par rapport à l'exigence et la preuve qui serait demandée en audit ;\n- des recommandations priorisées, chacune rattachée à un numéro de clause, actionnables et proportionnées au contexte décrit.\n\nN'invente aucune exigence absente des clauses fournies. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
@@ -81,6 +598,5 @@
       "axes",
       "recommandations"
     ]
-  },
-  "output_kind": "assessment"
+  }
 }

@@ -18,14 +18,52 @@ from app.services.referentiels import Clause, Referentiel, render_clauses
 from app.services.scoring import compute_scores, is_scorable, render_scores
 
 ROOT = Path(__file__).resolve().parents[2]
-ISO_9001 = ROOT / "data" / "referentiels" / "iso-9001-2015.json"
+REFERENTIELS_DIR = ROOT / "data" / "referentiels"
+ISO_9001 = REFERENTIELS_DIR / "iso-9001-2015.json"
 TOOL_9001 = ROOT / "data" / "tools" / "auto-diagnostic-iso-9001.json"
+
+# Tout socle ajouté dans data/referentiels/ est couvert d'office : c'est ce qui
+# garantit qu'une norme livrée à un client n'arrive pas sans preuves ni écarts.
+TOUS_LES_SOCLES = sorted(REFERENTIELS_DIR.glob("*.json"))
+
+
+def _charger(path: Path) -> Referentiel:
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return Referentiel(data, [Clause(c) for c in data["clauses"]])
 
 
 @pytest.fixture
 def referentiel() -> Referentiel:
-    data = json.loads(ISO_9001.read_text(encoding="utf-8"))
-    return Referentiel(data, [Clause(c) for c in data["clauses"]])
+    return _charger(ISO_9001)
+
+
+@pytest.mark.parametrize("path", TOUS_LES_SOCLES, ids=lambda p: p.stem)
+def test_chaque_socle_est_exploitable(path):
+    ref = _charger(path)
+    assert ref.code and ref.version and ref.label
+    assert len(ref.clauses) >= 15, "un socle trop maigre n'apporte pas d'expertise"
+    assert set(ref.echelle) == {"0", "1", "2", "3", "4"}
+    # Chapitres uniques : deux clauses de même numéro s'écraseraient en base
+    # (contrainte UNIQUE) et fausseraient la sélection des clauses à injecter.
+    numeros = [c.chapitre for c in ref.clauses]
+    assert len(numeros) == len(set(numeros))
+
+
+@pytest.mark.parametrize("path", TOUS_LES_SOCLES, ids=lambda p: p.stem)
+def test_chaque_socle_transmet_une_expertise(path):
+    """Sans preuves ni écarts constatés, l'outil ne fait que paraphraser la question."""
+    ref = _charger(path)
+    for clause in ref.clauses:
+        assert clause.exigence.strip(), f"{ref.code} {clause.chapitre} : exigence vide"
+        assert clause.preuves, f"{ref.code} {clause.chapitre} : aucune preuve attendue"
+        assert clause.erreurs_frequentes, f"{ref.code} {clause.chapitre} : aucun écart fréquent"
+
+
+@pytest.mark.parametrize("path", TOUS_LES_SOCLES, ids=lambda p: p.stem)
+def test_chaque_socle_porte_sa_mention_legale(path):
+    """Le texte officiel ISO est protégé : la reformulation doit être assumée."""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    assert "jamais reproduit" in data.get("note_legale", "")
 
 
 @pytest.fixture

@@ -1,0 +1,266 @@
+{
+  "code": "ISO-45001",
+  "version": "2018",
+  "label": "ISO 45001:2018 — Santé et sécurité au travail",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (numérotation et intitulés des chapitres) et une reformulation des attendus sont utilisées.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "4", "titre": "Contexte de l'organisme" },
+    { "numero": "5", "titre": "Leadership et participation des travailleurs" },
+    { "numero": "6", "titre": "Planification" },
+    { "numero": "7", "titre": "Support" },
+    { "numero": "8", "titre": "Réalisation des activités opérationnelles" },
+    { "numero": "9", "titre": "Évaluation des performances" },
+    { "numero": "10", "titre": "Amélioration" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "4.2",
+      "intitule": "Besoins des travailleurs et des parties intéressées",
+      "exigence": "L'organisme détermine les travailleurs et autres parties intéressées pertinents pour le système, leurs besoins et attentes, et celles qui deviennent des obligations de conformité.",
+      "preuves": [
+        "Recensement incluant les intérimaires, sous-traitants et travailleurs détachés présents sur site",
+        "Identification des exigences légales issues du code du travail applicable"
+      ],
+      "erreurs_frequentes": [
+        "Limiter le périmètre aux salariés en contrat direct, en excluant intérimaires et sous-traitants",
+        "Oublier les instances représentatives du personnel comme partie intéressée"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.1",
+      "intitule": "Leadership et culture de sécurité",
+      "exigence": "La direction assume la responsabilité de la prévention des lésions et des atteintes à la santé, développe une culture qui soutient le système, et protège les travailleurs contre les représailles lorsqu'ils signalent un danger.",
+      "preuves": [
+        "Visites de sécurité de la direction sur le terrain, tracées",
+        "Dispositif de signalement garantissant l'absence de sanction"
+      ],
+      "erreurs_frequentes": [
+        "Une politique sécurité affichée pendant que les cadences rendent les consignes inapplicables",
+        "Des remontées de presqu'accidents qui se retournent contre celui qui signale"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "5.4",
+      "intitule": "Consultation et participation des travailleurs",
+      "exigence": "L'organisme met en place des dispositifs de consultation et de participation des travailleurs non-encadrants à toutes les étapes du système, supprime les obstacles à cette participation et fournit les moyens nécessaires.",
+      "preuves": [
+        "Participation effective des opérateurs à l'évaluation des risques de leur poste",
+        "Comptes rendus de réunions sécurité associant les non-encadrants, avec suites données"
+      ],
+      "erreurs_frequentes": [
+        "Une évaluation des risques rédigée en bureau, sans les personnes qui tiennent le poste",
+        "Des réunions programmées à des horaires qui excluent les équipes postées",
+        "Consulter sans jamais rendre compte des suites, ce qui tarit les remontées"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.1.2",
+      "intitule": "Identification des dangers et évaluation des risques",
+      "exigence": "L'organisme identifie en continu les dangers, en tenant compte de l'organisation du travail, des facteurs sociaux, des situations d'urgence, des incidents passés et des modifications, puis évalue les risques associés.",
+      "preuves": [
+        "Document d'évaluation des risques par unité de travail, daté et révisé",
+        "Prise en compte des risques psychosociaux et de l'organisation du travail, pas seulement des risques physiques"
+      ],
+      "erreurs_frequentes": [
+        "Une évaluation figée, non révisée après un changement de procédé ou d'organisation",
+        "Ignorer les risques liés au travail isolé, aux horaires atypiques ou à la charge mentale",
+        "Coter le risque sans tenir compte des mesures de prévention réellement en place"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.1.3",
+      "intitule": "Exigences légales et autres exigences",
+      "exigence": "Les exigences légales applicables en santé et sécurité sont déterminées, tenues à jour et communiquées ; leur incidence sur le système est établie.",
+      "preuves": [
+        "Registre réglementaire couvrant vérifications périodiques obligatoires, surveillance médicale et formations réglementaires",
+        "Preuve de communication aux personnes concernées"
+      ],
+      "erreurs_frequentes": [
+        "Omettre les vérifications périodiques obligatoires (levage, électricité, incendie)",
+        "Ne pas suivre les échéances de surveillance médicale des salariés exposés"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.2",
+      "intitule": "Objectifs santé et sécurité",
+      "exigence": "Des objectifs mesurables sont établis aux niveaux pertinents, cohérents avec la politique, en tenant compte des résultats de l'évaluation des risques et de la consultation des travailleurs.",
+      "preuves": [
+        "Objectifs comportant des indicateurs de prévention (proactifs), pas seulement le taux de fréquence",
+        "Moyens, responsable et échéance associés à chaque objectif"
+      ],
+      "erreurs_frequentes": [
+        "Piloter uniquement par les accidents survenus, indicateur tardif par nature",
+        "Des objectifs fixés sans lien avec les risques cotés les plus élevés"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.2",
+      "intitule": "Compétences et habilitations",
+      "exigence": "Les compétences nécessaires en matière de santé et sécurité sont déterminées et assurées, y compris la capacité à identifier les dangers, et leur efficacité est évaluée.",
+      "preuves": [
+        "Registre des habilitations et autorisations avec dates de validité (électrique, conduite d'engins, travail en hauteur)",
+        "Accueil sécurité formalisé pour tout nouvel arrivant, y compris intérimaire"
+      ],
+      "erreurs_frequentes": [
+        "Des habilitations expirées mais des personnes toujours en poste sur la tâche concernée",
+        "Un accueil sécurité réduit à une signature sans contenu vérifié"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.4",
+      "intitule": "Communication et remontée d'information",
+      "exigence": "L'organisme définit ce qu'il communique en matière de santé et sécurité, à qui et comment, en tenant compte de la diversité des travailleurs (langue, alphabétisation, handicap).",
+      "preuves": [
+        "Consignes disponibles dans une forme compréhensible par tous les travailleurs présents",
+        "Canal de remontée des situations dangereuses et traçabilité des réponses"
+      ],
+      "erreurs_frequentes": [
+        "Des consignes rédigées dans une langue que la moitié des opérateurs ne lit pas",
+        "Aucun retour donné aux travailleurs sur les signalements qu'ils ont faits"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.1.2",
+      "intitule": "Élimination des dangers et réduction des risques",
+      "exigence": "L'organisme applique une hiérarchie des mesures de prévention : supprimer le danger, le substituer, mettre en place des protections collectives et des mesures organisationnelles, puis seulement recourir aux équipements de protection individuelle.",
+      "preuves": [
+        "Analyses montrant que la protection collective a été étudiée avant le recours aux EPI",
+        "Traçabilité des arbitrages lorsqu'une mesure supérieure a été écartée"
+      ],
+      "erreurs_frequentes": [
+        "Distribuer des EPI comme réponse unique à un risque qui pouvait être supprimé à la source",
+        "Justifier l'absence de protection collective par le seul coût, sans analyse"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.1.3",
+      "intitule": "Conduite du changement",
+      "exigence": "Les modifications — installations, procédés, organisation, effectifs, réglementation — font l'objet d'une analyse préalable de leurs conséquences sur la santé et la sécurité.",
+      "preuves": [
+        "Analyse de risques préalable à toute modification d'installation ou d'organisation",
+        "Mise à jour de l'évaluation des risques après le changement"
+      ],
+      "erreurs_frequentes": [
+        "Une nouvelle machine mise en service sans analyse de risques ni formation préalable",
+        "Un changement d'horaires ou d'effectif décidé sans examen de ses effets sur la sécurité"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.1.4",
+      "intitule": "Acquisitions, sous-traitance et externalisation",
+      "exigence": "L'organisme maîtrise les risques liés aux achats, aux prestataires et aux fonctions externalisées, et coordonne son système avec celui des sous-traitants intervenant sur son site.",
+      "preuves": [
+        "Plan de prévention établi avec les entreprises extérieures avant intervention",
+        "Critères de sécurité dans la sélection des prestataires et suivi de leur performance"
+      ],
+      "erreurs_frequentes": [
+        "Des interventions d'entreprises extérieures sans plan de prévention ni inspection commune préalable",
+        "Aucune vérification des habilitations des intervenants extérieurs"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.2",
+      "intitule": "Préparation et réponse aux situations d'urgence",
+      "exigence": "L'organisme planifie sa réponse aux situations d'urgence, forme les personnes concernées, teste périodiquement les dispositions et les révise après un exercice ou un événement réel.",
+      "preuves": [
+        "Exercices d'évacuation et de premiers secours tracés, avec écarts et actions",
+        "Effectif de secouristes et d'équipiers de première intervention suffisant par équipe et par horaire"
+      ],
+      "erreurs_frequentes": [
+        "Un exercice annuel réalisé toujours en journée, jamais sur les postes de nuit",
+        "Des issues de secours obstruées ou verrouillées constatées lors des visites"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.1",
+      "intitule": "Surveillance et mesure de la performance",
+      "exigence": "L'organisme détermine ce qui est surveillé, les méthodes, les critères et la fréquence, et évalue sa performance en santé et sécurité au moyen d'indicateurs pertinents.",
+      "preuves": [
+        "Suivi conjoint d'indicateurs de résultat (accidents) et de moyens (visites, presqu'accidents, actions soldées)",
+        "Vérifications périodiques réglementaires réalisées et écarts levés"
+      ],
+      "erreurs_frequentes": [
+        "Un taux de fréquence à zéro interprété comme une preuve de maîtrise, alors qu'aucun presqu'accident n'est remonté",
+        "Des rapports de vérification périodique reçus mais dont les réserves ne sont jamais traitées"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "9.2",
+      "intitule": "Audit interne",
+      "exigence": "Des audits internes planifiés vérifient la conformité du système aux exigences et son efficacité réelle, par des auditeurs objectifs et compétents.",
+      "preuves": [
+        "Programme d'audit priorisé sur les risques les plus élevés",
+        "Constats appuyés sur des observations de terrain aux postes de travail"
+      ],
+      "erreurs_frequentes": [
+        "Auditer la documentation sans observer le travail réel",
+        "Un auditeur qui audite son propre secteur"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "9.3",
+      "intitule": "Revue de direction",
+      "exigence": "La direction examine notamment les incidents, les résultats de la consultation des travailleurs, l'évaluation des risques, la conformité réglementaire et l'adéquation des ressources.",
+      "preuves": [
+        "Compte rendu couvrant les éléments d'entrée attendus, dont les remontées des travailleurs",
+        "Décisions avec responsable et échéance, revues à la session suivante"
+      ],
+      "erreurs_frequentes": [
+        "Une revue qui n'aborde pas les résultats de la consultation des travailleurs",
+        "Aucune décision d'allocation de ressources malgré des écarts identifiés"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "10.2",
+      "intitule": "Événements indésirables, non-conformités et actions correctives",
+      "exigence": "Les incidents et non-conformités sont déclarés, examinés avec la participation des travailleurs, leurs causes profondes analysées, des actions engagées selon la hiérarchie des mesures, et leur efficacité vérifiée.",
+      "preuves": [
+        "Analyse d'accident menée avec les opérateurs concernés, remontant au-delà de la cause immédiate",
+        "Actions correctives priorisant la suppression du danger plutôt que le rappel de consigne"
+      ],
+      "erreurs_frequentes": [
+        "Conclure une analyse d'accident par « erreur humaine » ou « non-respect des consignes »",
+        "Ne pas enregistrer les presqu'accidents, qui sont pourtant le principal signal disponible",
+        "Une action corrective qui se limite à une note de service"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.3",
+      "intitule": "Amélioration continue",
+      "exigence": "L'organisme améliore en continu la pertinence et l'efficacité du système, en promouvant la culture de sécurité et la participation des travailleurs.",
+      "preuves": [
+        "Évolution des indicateurs proactifs dans la durée",
+        "Actions d'amélioration issues des remontées de terrain"
+      ],
+      "erreurs_frequentes": [
+        "Une amélioration continue réduite à la clôture des actions correctives",
+        "Aucun retour aux équipes sur les améliorations issues de leurs propositions"
+      ],
+      "poids": 1
+    }
+  ]
+}
