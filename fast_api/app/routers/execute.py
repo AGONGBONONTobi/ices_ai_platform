@@ -21,7 +21,7 @@ from app.services.input_validator import InputValidationError, validate_inputs
 from app.services.model_router import select_model
 from app.services.prompt_builder import build_system_prompt, build_user_prompt
 from app.services.referentiels import load_referentiel, render_clauses
-from app.services.scoring import compute_scores, render_scores
+from app.services.scoring import clause_levels, compute_scores, render_scores
 from app.services.supabase_client import get_supabase_admin
 from app.services.tools_repository import get_published_tool
 from app.services.translation import translate_tool_config
@@ -75,7 +75,9 @@ def execute_tool(
         referentiel = load_referentiel(tool.referentiel_code, tool.referentiel_version)
         if referentiel:
             chapitres = [i.chapitre for i in tool.inputs if i.chapitre]
-            clauses = render_clauses(referentiel, chapitres)
+            clauses = render_clauses(
+                referentiel, chapitres, niveaux=clause_levels(tool, user_inputs)
+            )
         else:
             # Mieux vaut un diagnostic sans référentiel qu'un refus, mais on veut
             # le savoir : un socle manquant, c'est un score sans fondement.

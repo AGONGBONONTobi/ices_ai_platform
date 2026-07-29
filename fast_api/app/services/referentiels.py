@@ -34,6 +34,12 @@ LOCAL_DIR = Path(__file__).resolve().parents[3] / "data" / "referentiels"
 # bloc : à 100+ clauses le contexte devient coûteux et le modèle se disperse.
 MAX_INJECTED_CLAUSES = 40
 
+# Au-dessus de ce niveau de maturité déclaré, la clause n'est plus un sujet
+# d'audit : elle reste citée avec son exigence, mais sans ses preuves attendues
+# ni ses erreurs fréquentes. Sur une échelle 0-4, cela vise « formalisé » et
+# en dessous.
+SEUIL_CLAUSE_DETAILLEE = 2.0
+
 
 class Clause:
     __slots__ = ("chapitre", "intitule", "exigence", "preuves", "erreurs_frequentes", "poids")
@@ -141,12 +147,24 @@ def load_referentiel(code: str, version: str | None = None) -> Referentiel | Non
     return referentiel
 
 
-def render_clauses(referentiel: Referentiel, chapitres: list[str] | None = None) -> str:
+def render_clauses(
+    referentiel: Referentiel,
+    chapitres: list[str] | None = None,
+    *,
+    niveaux: dict[str, float] | None = None,
+) -> str:
     """Met en forme les clauses pour injection dans le prompt.
 
     Les preuves attendues et les erreurs fréquentes sont incluses : c'est ce que
     l'utilisateur ne peut pas produire seul, et donc ce qui donne sa valeur au
     résultat. Sans elles, le modèle ne peut que paraphraser la question.
+
+    `niveaux` donne le positionnement déclaré par clause. Quand il est fourni,
+    seules les clauses en écart reçoivent le détail complet : sur une clause déjà
+    pilotée, il n'y a pas d'écart à décrire, et lui joindre ses preuves attendues
+    et ses erreurs fréquentes coûte du contexte sans rien apporter au rapport.
+    Le détail se concentre donc là où l'audit se joue — ce qui, accessoirement,
+    fait porter la dépense de tokens sur les clauses qui la justifient.
     """
     clauses = referentiel.clauses
     if chapitres:
@@ -155,13 +173,21 @@ def render_clauses(referentiel: Referentiel, chapitres: list[str] | None = None)
 
     clauses = clauses[:MAX_INJECTED_CLAUSES]
 
+    def _en_ecart(clause: Clause) -> bool:
+        """Vrai si la clause mérite son détail complet."""
+        if niveaux is None:
+            return True
+        niveau = niveaux.get(clause.chapitre)
+        # Une clause non renseignée reste détaillée : on ne sait pas si elle tient.
+        return niveau is None or niveau <= SEUIL_CLAUSE_DETAILLEE
+
     lignes = [f"RÉFÉRENTIEL : {referentiel.label} ({referentiel.reference})"]
 
     if referentiel.echelle:
-        niveaux = ", ".join(
+        echelle = ", ".join(
             f"{k} = {v}" for k, v in sorted(referentiel.echelle.items())
         )
-        lignes.append(f"Échelle de maturité : {niveaux}")
+        lignes.append(f"Échelle de maturité : {echelle}")
 
     lignes.append("")
     lignes.append(
@@ -174,6 +200,10 @@ def render_clauses(referentiel: Referentiel, chapitres: list[str] | None = None)
         lignes.append("")
         lignes.append(f"[{clause.chapitre}] {clause.intitule}")
         lignes.append(f"  Exigence : {clause.exigence}")
+
+        if not _en_ecart(clause):
+            continue
+
         if clause.preuves:
             lignes.append("  Preuves attendues :")
             lignes.extend(f"    - {p}" for p in clause.preuves)

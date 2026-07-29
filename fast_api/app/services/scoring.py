@@ -41,6 +41,24 @@ def _max_scale(tool_input: ToolInput) -> float:
     return max(scores) if scores else 0.0
 
 
+def clause_levels(tool: ToolConfig, user_inputs: dict[str, Any]) -> dict[str, float]:
+    """Niveau déclaré par clause, indexé sur le numéro de chapitre.
+
+    Sert à décider quelles clauses méritent leur détail complet dans le prompt
+    (cf. `referentiels.render_clauses`). Les champs non cotés ou sans chapitre
+    sont ignorés : une clause absente du résultat est traitée comme inconnue,
+    donc détaillée par défaut.
+    """
+    niveaux: dict[str, float] = {}
+    for tool_input in tool.inputs:
+        if not tool_input.chapitre:
+            continue
+        score = _option_score(tool_input, user_inputs.get(tool_input.name))
+        if score is not None:
+            niveaux[tool_input.chapitre] = score
+    return niveaux
+
+
 def is_scorable(tool: ToolConfig) -> bool:
     """Au moins un champ porte des options cotées."""
     return any(
