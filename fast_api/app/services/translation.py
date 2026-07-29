@@ -9,10 +9,11 @@ Stratégie inchangée :
 
 import json
 import logging
+from typing import Any
 
 from app.config import get_settings
 from app.i18n import DEFAULT_LOCALE, LOCALE_TO_TRANSLATION_LABEL, normalize_locale
-from app.schemas import ToolConfig, ToolInput
+from app.schemas import SelectOption, ToolConfig, ToolInput, ToolSelectOption
 from app.services.groq_client import get_groq
 from app.services.supabase_client import get_supabase_admin, get_supabase_anon
 
@@ -57,6 +58,51 @@ def get_cached_translations(lang: str) -> dict[str, dict]:
     return {row["tool_id"]: row for row in (response.data or [])}
 
 
+def _merge_options(
+    traduites: Any, origine: list[SelectOption] | None
+) -> list[SelectOption] | None:
+    """Reprend les libellés traduits en conservant les scores d'origine.
+
+    Deux pièges, tous deux silencieux si on se contente d'affecter la valeur
+    traduite. D'une part `model_copy` ne valide pas : un `dict` renvoyé par le
+    modèle resterait un `dict` là où le reste du code attend un
+    `ToolSelectOption`, et `.label` lèverait une `AttributeError` à l'exécution.
+    D'autre part le modèle traduit les libellés mais omet volontiers le `score` :
+    le reprendre tel quel ferait tomber la cotation à zéro sans rien signaler.
+
+    Le score fait donc toujours foi côté source, seul le libellé est traduit, et
+    l'appariement se fait par position — c'est déjà la convention retenue par
+    `_canonical_select_value` pour retrouver l'option d'origine.
+    """
+    if not origine:
+        return origine
+    if not isinstance(traduites, list) or not traduites:
+        return origine
+
+    fusionnees: list[SelectOption] = []
+    for index, option_origine in enumerate(origine):
+        brute = traduites[index] if index < len(traduites) else None
+
+        libelle = None
+        if isinstance(brute, str):
+            libelle = brute
+        elif isinstance(brute, dict):
+            libelle = brute.get("label")
+
+        if isinstance(option_origine, str):
+            fusionnees.append(libelle or option_origine)
+            continue
+
+        fusionnees.append(
+            ToolSelectOption(
+                label=libelle or option_origine.label,
+                score=option_origine.score,
+            )
+        )
+
+    return fusionnees
+
+
 def _merge_translation(tool: ToolConfig, translated: dict) -> ToolConfig:
     """Applique un payload traduit sur la config d'origine, champ par champ."""
     translated_inputs = translated.get("inputs") or []
@@ -74,7 +120,9 @@ def _merge_translation(tool: ToolConfig, translated: dict) -> ToolConfig:
                 update={
                     "label": candidate.get("label") or tool_input.label,
                     "placeholder": candidate.get("placeholder") or tool_input.placeholder,
-                    "options": candidate.get("options") or tool_input.options,
+                    "options": _merge_options(
+                        candidate.get("options"), tool_input.options
+                    ),
                 }
             )
         )
