@@ -17,34 +17,46 @@
       "required": true
     },
     {
-      "name": "description_des_activites",
-      "type": "textarea",
-      "label": "Décrivez les activités prévues sur le chantier",
-      "placeholder": "Exemple : travaux de terrassement, montage d'échafaudage, etc.",
+      "name": "annee_construction_bati",
+      "type": "select",
+      "options": [
+        "construit avant 1949",
+        "construit entre 1949 et 1997",
+        "construit après 1997",
+        "sans objet (construction neuve)",
+        "de période inconnue"
+      ],
+      "label": "De quand date le bâti sur lequel vous intervenez ?",
+      "help": "Détermine les repérages obligatoires avant travaux : plomb pour le bâti ancien, amiante pour tout bâti antérieur à son interdiction.",
+      "placeholder": "",
       "required": true
     },
     {
-      "name": "niveau_de_risque_initial",
-      "type": "select",
-      "options": [
-        "Faible",
-        "Modéré",
-        "Élevé",
-        "Très élevé"
-      ],
-      "label": "Quel est le niveau de risque initial perçu pour ce chantier ?",
-      "placeholder": "",
+      "name": "description_des_activites",
+      "type": "textarea",
+      "label": "Décrivez les activités prévues sur le chantier",
+      "help": "Soyez concret sur les tâches et les moyens : plus la description est précise, plus les dangers identifiés seront ceux de votre chantier et non une liste générique.",
+      "placeholder": "Exemple : dépose de cloisons à la disqueuse, terrassement à la mini-pelle, montage d'échafaudage en façade sur 3 niveaux.",
+      "required": true
+    },
+    {
+      "name": "environnement_et_coactivite",
+      "type": "textarea",
+      "label": "Décrivez l'environnement du chantier et la co-activité",
+      "help": "Site occupé ou vide, hauteurs de travail, effectif, nombre d'entreprises intervenant simultanément, voisinage et contraintes d'accès.",
+      "placeholder": "Exemple : bâtiment occupé aux étages, 8 compagnons, 3 entreprises en simultané, travaux en façade sur rue passante.",
       "required": true
     },
     {
       "name": "mesures_de_securite_prevues",
       "type": "textarea",
-      "label": "Décrivez les mesures de sécurité prévues pour le chantier",
-      "placeholder": "Exemple : équipements de protection individuelle, procédures d'urgence, etc.",
+      "label": "Décrivez les mesures de sécurité déjà prévues",
+      "help": "Ce que vous avez déjà planifié. Ces mesures seront confrontées aux risques identifiés pour faire ressortir les écarts.",
+      "placeholder": "Exemple : EPI standards, garde-corps sur échafaudage, balisage de la zone, accueil sécurité à l'arrivée.",
       "required": true
     }
   ],
-  "promptTemplate": "Vous êtes un expert en analyse de risques chantier et HSE. L'utilisateur a répondu : Type de chantier : {type_de_chantier}, Description des activités : {description_des_activites}, Niveau de risque initial : {niveau_de_risque_initial}, Mesures de sécurité prévues : {mesures_de_securite_prevues}.",
+  "promptTemplate": "Tu es préventeur HSE expérimenté, habitué à rédiger des analyses de risques opposables sur chantier et à les défendre devant un coordonnateur SPS ou un inspecteur du travail.\n\nChantier à analyser : {type_de_chantier}, sur un bâti {annee_construction_bati}.\nActivités prévues : {description_des_activites}\nEnvironnement et co-activité : {environnement_et_coactivite}\nMesures déjà prévues par le demandeur : {mesures_de_securite_prevues}\n\nMéthode imposée :\n1. Décompose les activités décrites en unités de travail. Pour chaque unité, identifie les dangers réellement induits par CES activités et CET environnement — jamais une liste générique de chantier.\n2. Cote chaque risque : gravité (1 bénigne, 2 sérieuse, 3 grave, 4 irréversible ou mortelle) × probabilité (1 improbable, 2 rare, 3 fréquente, 4 très fréquente) = criticité sur 16. Annonce les trois chiffres.\n3. Applique la hiérarchie des mesures de prévention dans cet ordre : suppression du danger, substitution, protection collective, mesures organisationnelles, et seulement en dernier recours les EPI. Toute mesure qui repose sur un EPI alors qu'une protection collective est possible doit être signalée comme insuffisante.\n4. Confronte les mesures déjà prévues par le demandeur aux risques que tu as cotés. Dis explicitement lesquelles manquent, lesquelles sont mal placées dans la hiérarchie, lesquelles sont sans objet. Ne te contente jamais de reformuler ce que le demandeur a déclaré : s'il n'a annoncé que des EPI, c'est un écart, pas une réponse.\n5. Recote le risque résiduel une fois les mesures appliquées.\n\nPoints de vigilance à traiter s'ils concernent ce chantier, et à écarter d'une phrase s'ils ne le concernent pas :\n- bâti antérieur à 1997 : repérage amiante avant travaux ; antérieur à 1949 : risque plomb ;\n- démolition, découpe, perçage : silice cristalline, effondrement, chutes d'objets ;\n- site occupé ou plusieurs entreprises : interférences, circulation, plan de prévention ;\n- travail en hauteur : protection collective avant harnais, vérification périodique des échafaudages.\n\nProduis :\n- une synthèse qui annonce le niveau de risque que TU as établi à partir des faits décrits, en nommant les deux ou trois risques qui le déterminent ; ne reprends aucune appréciation de risque fournie par le demandeur ;\n- une section par unité de travail significative (4 à 6 sections), chacune en prose continue : dangers, cotation chiffrée, mesures dans l'ordre de la hiérarchie, risque résiduel, et les formations ou vérifications réglementaires réellement rattachées à cette tâche ;\n- une section « Écarts et documents à produire » : ce qui manque aux mesures déclarées, puis les documents attendus pour ce chantier (document unique d'évaluation des risques, et selon le cas plan particulier de sécurité, plan de retrait amiante, plan de prévention).\n\nEn points clés, les décisions à prendre avant ouverture du chantier, formulées à l'impératif.\n\nContraintes de rédaction : n'écris jamais deux sections qui disent la même chose — chaque section porte une unité de travail distincte. Ne cite aucun article de code, aucune norme numérotée ni aucune durée de formation dont tu n'es pas certain : nomme l'obligation sans inventer sa référence.",
   "outputSchema": {
     "type": "object",
     "properties": {
