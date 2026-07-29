@@ -1,0 +1,335 @@
+{
+  "code": "ISO-37301",
+  "version": "2021",
+  "label": "ISO 37301:2021 — Systèmes de management de la conformité",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (numérotation et intitulés des chapitres) et une reformulation des attendus sont utilisées. À faire relire par un praticien disposant du texte officiel avant mise en vente.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "4", "titre": "Contexte de l'organisme" },
+    { "numero": "5", "titre": "Leadership" },
+    { "numero": "6", "titre": "Planification" },
+    { "numero": "7", "titre": "Support" },
+    { "numero": "8", "titre": "Réalisation des activités opérationnelles" },
+    { "numero": "9", "titre": "Évaluation des performances" },
+    { "numero": "10", "titre": "Amélioration" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "4.1",
+      "intitule": "Compréhension de l'organisme et de son contexte",
+      "exigence": "L'organisme détermine les enjeux internes et externes pertinents pour son système de management de la conformité, y compris son environnement réglementaire et ses activités exposées.",
+      "preuves": [
+        "Analyse de contexte identifiant les régulateurs, les activités réglementées et les juridictions concernées",
+        "Prise en compte des évolutions réglementaires attendues"
+      ],
+      "erreurs_frequentes": [
+        "Un contexte qui ne nomme aucun régulateur ni aucun texte applicable",
+        "Une analyse limitée au siège, ignorant les entités et pays exposés"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.5",
+      "intitule": "Obligations de conformité",
+      "exigence": "L'organisme identifie de manière systématique ses obligations de conformité, réglementaires comme volontaires, les tient à jour et en évalue les implications pour ses activités.",
+      "preuves": [
+        "Registre des obligations de conformité, daté, nommant le texte et l'activité concernée",
+        "Processus de veille réglementaire identifiant qui surveille quoi et à quelle fréquence",
+        "Traduction des obligations en exigences opérationnelles concrètes"
+      ],
+      "erreurs_frequentes": [
+        "Un registre d'obligations générique, sans lien avec les activités réelles",
+        "Une veille réglementaire non attribuée, donc jamais faite",
+        "Des obligations recensées mais jamais traduites en procédures"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "4.6",
+      "intitule": "Appréciation des risques de conformité",
+      "exigence": "L'organisme identifie et apprécie ses risques de conformité en analysant la vraisemblance et la gravité des manquements possibles, et en tenant compte des contrôles existants.",
+      "preuves": [
+        "Cartographie des risques de conformité rattachant chaque risque à une obligation identifiée",
+        "Évaluation motivée de la vraisemblance et de la gravité",
+        "Réappréciation après changement d'activité ou de réglementation"
+      ],
+      "erreurs_frequentes": [
+        "Une cartographie des risques déconnectée du registre des obligations",
+        "Une appréciation réalisée une fois puis figée",
+        "Des risques cotés sans tenir compte des contrôles réellement en place"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "5.1",
+      "intitule": "Leadership, engagement et culture de conformité",
+      "exigence": "L'organe de gouvernance et la direction démontrent leur engagement en faveur de la conformité, allouent les ressources nécessaires et promeuvent une culture qui la valorise.",
+      "preuves": [
+        "Décisions de gouvernance actant le dispositif et ses moyens",
+        "Exemples d'arbitrages où la conformité a primé sur un intérêt commercial",
+        "Actions de promotion de la culture de conformité traçables"
+      ],
+      "erreurs_frequentes": [
+        "Un engagement formel démenti par la pression opérationnelle exercée sur les équipes",
+        "Aucune trace d'un arbitrage réel en faveur de la conformité"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "5.2",
+      "intitule": "Politique de conformité",
+      "exigence": "Une politique de conformité est établie, approuvée par la gouvernance, communiquée en interne et mise à disposition des parties intéressées pertinentes.",
+      "preuves": [
+        "Politique datée, approuvée par l'organe de gouvernance, diffusée",
+        "Preuve de communication et d'accessibilité"
+      ],
+      "erreurs_frequentes": [
+        "Une politique approuvée par la seule direction opérationnelle",
+        "Une politique jamais rediffusée après sa signature"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.3",
+      "intitule": "Fonction de conformité",
+      "exigence": "Une fonction de conformité est désignée, dotée de l'autorité, de l'indépendance, des compétences et des ressources nécessaires, avec un accès direct à l'organe de gouvernance.",
+      "preuves": [
+        "Mandat écrit précisant l'autorité, l'indépendance et les moyens de la fonction",
+        "Accès direct à la gouvernance démontrable",
+        "Ressources proportionnées au risque apprécié"
+      ],
+      "erreurs_frequentes": [
+        "Une fonction rattachée à une direction opérationnelle qu'elle doit contrôler",
+        "Un rôle cumulé avec des responsabilités opérationnelles créant un conflit d'intérêts",
+        "Une fonction sans budget ni équipe malgré un risque élevé"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "6.1",
+      "intitule": "Actions face aux risques et opportunités",
+      "exigence": "L'organisme planifie les actions permettant de traiter les risques de conformité identifiés et d'atteindre les résultats attendus du système, et en évalue l'efficacité.",
+      "preuves": [
+        "Plan d'actions rattachant chaque risque significatif à un contrôle et à un responsable",
+        "Évaluation de l'efficacité des actions engagées"
+      ],
+      "erreurs_frequentes": [
+        "Des risques appréciés sans plan de traitement",
+        "Des actions sans responsable ni échéance"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.2",
+      "intitule": "Objectifs de conformité",
+      "exigence": "Des objectifs de conformité mesurables sont établis aux niveaux et fonctions pertinents, cohérents avec la politique, et font l'objet d'un suivi.",
+      "preuves": [
+        "Objectifs chiffrés avec indicateur et échéance",
+        "Suivi périodique montrant l'écart"
+      ],
+      "erreurs_frequentes": [
+        "Des objectifs limités au taux de formation",
+        "Des objectifs jamais mesurés"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.2",
+      "intitule": "Compétences et processus d'emploi",
+      "exigence": "L'organisme détermine les compétences nécessaires aux personnes intervenant dans la conformité et tient compte de la conformité dans ses processus d'emploi et de rémunération.",
+      "preuves": [
+        "Compétences définies pour la fonction conformité et les fonctions exposées",
+        "Prise en compte du comportement de conformité dans l'évaluation et la rémunération",
+        "Vérifications préalables proportionnées pour les postes sensibles"
+      ],
+      "erreurs_frequentes": [
+        "Des systèmes de rémunération variable qui récompensent le résultat sans considération de conformité",
+        "Une fonction conformité occupée par une personne sans formation juridique ni réglementaire"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.3",
+      "intitule": "Sensibilisation et formation",
+      "exigence": "L'organisme assure la sensibilisation et la formation à la conformité, adaptées aux fonctions exposées, actualisées et dont l'efficacité est évaluée.",
+      "preuves": [
+        "Programme de formation différencié selon l'exposition des fonctions",
+        "Évaluation de l'assimilation, et pas seulement de la participation",
+        "Actualisation après évolution réglementaire"
+      ],
+      "erreurs_frequentes": [
+        "Une formation unique identique pour tous, sans adaptation au risque du poste",
+        "Mesurer la présence sans jamais mesurer la compréhension"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.4",
+      "intitule": "Communication",
+      "exigence": "L'organisme détermine les besoins de communication interne et externe relatifs à la conformité, y compris avec les régulateurs.",
+      "preuves": [
+        "Procédure identifiant qui communique avec les régulateurs et dans quels cas",
+        "Communication interne des évolutions réglementaires aux fonctions concernées"
+      ],
+      "erreurs_frequentes": [
+        "Des évolutions réglementaires connues de la fonction conformité mais jamais transmises aux opérationnels",
+        "Aucun interlocuteur désigné pour les régulateurs"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.5",
+      "intitule": "Informations documentées",
+      "exigence": "Les informations documentées exigées par le système de management de la conformité sont identifiées, maîtrisées et conservées comme preuve.",
+      "preuves": [
+        "Conservation des preuves de contrôle sur la durée exigée par la réglementation",
+        "Gestion des versions des procédures de conformité"
+      ],
+      "erreurs_frequentes": [
+        "Des durées de conservation inférieures aux exigences réglementaires applicables",
+        "Des preuves de contrôle non conservées, rendant la conformité indémontrable"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.1",
+      "intitule": "Planification et maîtrise opérationnelles",
+      "exigence": "L'organisme planifie, met en œuvre et maîtrise les processus nécessaires pour satisfaire ses obligations de conformité, y compris pour les processus externalisés.",
+      "preuves": [
+        "Processus de conformité intégrés aux opérations et non traités à part",
+        "Maîtrise des processus externalisés portant des obligations de conformité"
+      ],
+      "erreurs_frequentes": [
+        "Une conformité traitée comme un contrôle a posteriori plutôt qu'intégrée aux processus",
+        "Des activités externalisées sans exigence de conformité contractualisée"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.2",
+      "intitule": "Établissement des contrôles et procédures",
+      "exigence": "L'organisme met en place des contrôles et des procédures permettant de gérer ses obligations et ses risques de conformité, proportionnés au risque apprécié.",
+      "preuves": [
+        "Contrôles rattachés explicitement à une obligation et à un risque appréciés",
+        "Preuve de l'exécution effective des contrôles",
+        "Proportionnalité des contrôles au niveau de risque"
+      ],
+      "erreurs_frequentes": [
+        "Des contrôles uniformes sans lien avec le niveau de risque",
+        "Des procédures écrites mais non appliquées sur le terrain",
+        "Aucune preuve de l'exécution des contrôles déclarés"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.3",
+      "intitule": "Remontée des préoccupations",
+      "exigence": "L'organisme met en place des dispositifs accessibles permettant de signaler un manquement réel ou suspecté, y compris de façon anonyme, en informant les personnes de leurs droits et de leur protection contre les représailles.",
+      "preuves": [
+        "Canal de signalement accessible à tous, permettant l'anonymat",
+        "Information effective du personnel sur ses droits et sa protection",
+        "Statistiques de signalements et suites données"
+      ],
+      "erreurs_frequentes": [
+        "Un canal géré par la hiérarchie, ce qui dissuade tout signalement",
+        "Aucune communication sur la protection contre les représailles",
+        "Un dispositif inaccessible aux tiers et aux sous-traitants"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.4",
+      "intitule": "Processus d'investigation",
+      "exigence": "L'organisme établit un processus d'investigation des manquements réels ou suspectés, conduit par des personnes compétentes et indépendantes, avec conservation des preuves et suites données.",
+      "preuves": [
+        "Procédure d'investigation précisant les responsabilités, les garanties et les suites",
+        "Dossiers d'investigation conservés",
+        "Preuve d'indépendance des investigateurs vis-à-vis des faits examinés"
+      ],
+      "erreurs_frequentes": [
+        "Une investigation confiée au responsable hiérarchique concerné",
+        "Aucune trace écrite des investigations menées",
+        "Des conclusions sans suite disciplinaire ni correction du contrôle défaillant"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "9.1",
+      "intitule": "Surveillance, mesure, analyse et évaluation",
+      "exigence": "L'organisme surveille et mesure la performance de conformité, analyse les résultats et évalue l'efficacité du système.",
+      "preuves": [
+        "Indicateurs de conformité suivis dans le temps : contrôles exécutés, manquements détectés, délais de traitement",
+        "Analyse de l'efficacité des contrôles, et pas seulement de leur exécution"
+      ],
+      "erreurs_frequentes": [
+        "Mesurer l'activité de la fonction conformité plutôt que la conformité obtenue",
+        "Aucune analyse des manquements révélés par une source externe"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.2",
+      "intitule": "Audit interne",
+      "exigence": "L'organisme réalise des audits internes à intervalles planifiés, selon un programme fondé sur le risque, par des auditeurs garantissant l'objectivité.",
+      "preuves": [
+        "Programme d'audit priorisé selon les risques de conformité appréciés",
+        "Preuve de l'objectivité des auditeurs",
+        "Suivi des écarts relevés"
+      ],
+      "erreurs_frequentes": [
+        "Un audit conduit par la fonction conformité sur son propre dispositif",
+        "Un programme uniforme, sans priorisation par le risque"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.3",
+      "intitule": "Revue de direction",
+      "exigence": "La direction et l'organe de gouvernance procèdent à intervalles planifiés à la revue du système de management de la conformité, en examinant les manquements, les investigations et l'adéquation des ressources.",
+      "preuves": [
+        "Compte rendu couvrant les signalements, investigations et résultats d'audit",
+        "Décisions actées et ressources réallouées"
+      ],
+      "erreurs_frequentes": [
+        "Une revue qui n'examine jamais les signalements reçus",
+        "Une revue sans participation de l'organe de gouvernance"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.1",
+      "intitule": "Non-conformités et actions correctives",
+      "exigence": "En cas de manquement, l'organisme réagit, en analyse les causes, met en œuvre les actions nécessaires et en vérifie l'efficacité.",
+      "preuves": [
+        "Registre des manquements avec analyse de cause et vérification d'efficacité",
+        "Actions correctives portant sur le contrôle défaillant, pas seulement sur la personne"
+      ],
+      "erreurs_frequentes": [
+        "Sanctionner sans corriger le contrôle qui a permis le manquement",
+        "Des actions closes sur déclaration, sans preuve"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.2",
+      "intitule": "Amélioration continue",
+      "exigence": "L'organisme améliore en continu la pertinence, l'adéquation et l'efficacité de son système de management de la conformité.",
+      "preuves": [
+        "Évolutions du dispositif tracées, issues des audits, signalements ou manquements",
+        "Comparaison de la maturité du dispositif dans le temps"
+      ],
+      "erreurs_frequentes": [
+        "Un dispositif figé depuis sa mise en place",
+        "Une amélioration continue affirmée sans évolution démontrable"
+      ],
+      "poids": 2
+    }
+  ]
+}

@@ -1,0 +1,312 @@
+{
+  "code": "ISO-50001",
+  "version": "2018",
+  "label": "ISO 50001:2018 — Management de l'énergie",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (numérotation et intitulés des chapitres) et une reformulation des attendus sont utilisées. À faire relire par un praticien disposant du texte officiel avant mise en vente.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "4", "titre": "Contexte de l'organisme" },
+    { "numero": "5", "titre": "Leadership" },
+    { "numero": "6", "titre": "Planification" },
+    { "numero": "7", "titre": "Support" },
+    { "numero": "8", "titre": "Réalisation des activités opérationnelles" },
+    { "numero": "9", "titre": "Évaluation des performances" },
+    { "numero": "10", "titre": "Amélioration" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "4.1",
+      "intitule": "Compréhension de l'organisme et de son contexte",
+      "exigence": "L'organisme détermine les enjeux internes et externes influant sur sa capacité à améliorer sa performance énergétique et à atteindre les résultats attendus de son système de management de l'énergie.",
+      "preuves": [
+        "Analyse de contexte citant les contraintes réelles : coût et stabilité de la fourniture, contraintes réglementaires, état des équipements",
+        "Prise en compte des contraintes locales d'approvisionnement énergétique"
+      ],
+      "erreurs_frequentes": [
+        "Un contexte générique sans lien avec les usages énergétiques réels du site",
+        "Ignorer les délestages et l'autoproduction, pourtant déterminants sur la performance"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.3",
+      "intitule": "Détermination du domaine d'application",
+      "exigence": "L'organisme définit les limites de son système de management de l'énergie et ne peut exclure du domaine d'application un type d'énergie qu'il consomme.",
+      "preuves": [
+        "Domaine d'application écrit, nommant les sites, procédés et types d'énergie couverts",
+        "Justification des limites retenues"
+      ],
+      "erreurs_frequentes": [
+        "Exclure un vecteur énergétique consommé, ce qui est explicitement interdit",
+        "Un périmètre qui laisse de côté le principal poste de consommation"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "5.1",
+      "intitule": "Leadership et engagement",
+      "exigence": "La direction démontre son engagement en dotant le système des ressources nécessaires, en constituant une équipe énergie et en assurant que les objectifs de performance énergétique sont établis.",
+      "preuves": [
+        "Équipe énergie constituée et dotée de temps identifiable",
+        "Décisions d'investissement intégrant explicitement la performance énergétique"
+      ],
+      "erreurs_frequentes": [
+        "Une équipe énergie nommée sur le papier, sans temps ni budget",
+        "Des investissements décidés au seul coût d'achat, sans coût d'exploitation"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "5.2",
+      "intitule": "Politique énergétique",
+      "exigence": "Une politique énergétique est établie, engage à l'amélioration continue de la performance énergétique et à la disponibilité des informations et ressources nécessaires.",
+      "preuves": [
+        "Politique datée, approuvée et diffusée",
+        "Engagement explicite sur la disponibilité de l'information et des ressources"
+      ],
+      "erreurs_frequentes": [
+        "Une politique qui engage sur l'environnement en général sans viser la performance énergétique",
+        "Une politique jamais rediffusée après sa signature"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.3",
+      "intitule": "Rôles, responsabilités et autorités",
+      "exigence": "Les rôles, responsabilités et autorités liés au système de management de l'énergie sont attribués et communiqués au sein de l'organisme.",
+      "preuves": [
+        "Attributions écrites pour l'équipe énergie et les responsables d'usages significatifs",
+        "Communication effective de ces rôles aux intéressés"
+      ],
+      "erreurs_frequentes": [
+        "Tout reposant sur une seule personne, sans relais opérationnel",
+        "Des responsables d'usages significatifs qui ignorent leur rôle"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.3",
+      "intitule": "Revue énergétique",
+      "exigence": "L'organisme réalise et actualise une revue énergétique analysant les usages et consommations à partir de mesures, identifiant les usages énergétiques significatifs et les opportunités d'amélioration.",
+      "preuves": [
+        "Revue énergétique datée, appuyée sur des relevés et non sur des estimations",
+        "Usages énergétiques significatifs identifiés selon un critère explicite",
+        "Liste hiérarchisée des opportunités d'amélioration identifiées"
+      ],
+      "erreurs_frequentes": [
+        "Une revue fondée sur les seules factures, sans sous-comptage permettant d'isoler les usages",
+        "Des usages significatifs désignés sans critère de sélection écrit",
+        "Une revue jamais actualisée après modification d'un procédé"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "6.4",
+      "intitule": "Indicateurs de performance énergétique",
+      "exigence": "L'organisme détermine des indicateurs de performance énergétique appropriés, permettant de démontrer l'amélioration, et en conserve la méthode de détermination et d'actualisation.",
+      "preuves": [
+        "Indicateurs définis avec leur méthode de calcul écrite",
+        "Indicateurs sensibles aux actions engagées, et non de simples consommations totales"
+      ],
+      "erreurs_frequentes": [
+        "Utiliser la consommation absolue comme indicateur, ce qui reflète l'activité plutôt que la performance",
+        "Des indicateurs non normalisés des variables pertinentes (production, climat)"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "6.5",
+      "intitule": "Situation énergétique de référence",
+      "exigence": "L'organisme établit une situation énergétique de référence à partir des données de la revue énergétique, sur une période représentative, et la révise selon des règles définies.",
+      "preuves": [
+        "Référence établie sur une période représentative, documentée",
+        "Règles de révision de la référence définies à l'avance",
+        "Comparaison de la performance actuelle à cette référence"
+      ],
+      "erreurs_frequentes": [
+        "Une référence établie sur une période atypique, non représentative de l'activité",
+        "Une référence ajustée après coup pour faire apparaître une amélioration",
+        "Aucune référence, ce qui rend toute démonstration d'amélioration impossible"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "6.6",
+      "intitule": "Planification du recueil des données énergétiques",
+      "exigence": "L'organisme définit et met en œuvre un plan de recueil des données énergétiques, précisant les données nécessaires, leur fréquence de relevé et les moyens de mesure associés.",
+      "preuves": [
+        "Plan de comptage identifiant les points de mesure et leur fréquence",
+        "Moyens de mesure adaptés et vérifiés",
+        "Données effectivement collectées selon le plan"
+      ],
+      "erreurs_frequentes": [
+        "Un plan de comptage écrit mais non déployé faute de compteurs installés",
+        "Des relevés manuels irréguliers, rendant les indicateurs inexploitables"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.2",
+      "intitule": "Objectifs et cibles énergétiques",
+      "exigence": "L'organisme établit des objectifs énergétiques et des cibles de performance mesurables, cohérents avec la politique, et planifie les actions pour les atteindre.",
+      "preuves": [
+        "Objectifs chiffrés, datés, rattachés à un usage énergétique significatif",
+        "Plans d'actions précisant les moyens, les responsables et les échéances"
+      ],
+      "erreurs_frequentes": [
+        "Des objectifs globaux sans rattachement aux usages significatifs",
+        "Des plans d'actions sans moyens chiffrés, donc jamais réalisés"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.2",
+      "intitule": "Compétences",
+      "exigence": "L'organisme détermine les compétences nécessaires des personnes dont le travail influe sur la performance énergétique et s'assure qu'elles les possèdent.",
+      "preuves": [
+        "Compétences identifiées pour les opérateurs des usages significatifs",
+        "Preuves de formation ou d'expérience conservées"
+      ],
+      "erreurs_frequentes": [
+        "Former l'équipe énergie sans jamais former les opérateurs qui pilotent les équipements",
+        "Aucune compétence identifiée en analyse de données énergétiques"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.5",
+      "intitule": "Informations documentées",
+      "exigence": "Les informations documentées exigées par le système de management de l'énergie sont identifiées, maîtrisées et disponibles là où elles sont nécessaires.",
+      "preuves": [
+        "Données énergétiques archivées et accessibles sur la durée de la référence",
+        "Gestion des versions des procédures et des méthodes de calcul"
+      ],
+      "erreurs_frequentes": [
+        "Des données de comptage conservées dans un tableur personnel, perdues au départ de son auteur",
+        "Une méthode de calcul d'indicateur modifiée sans trace"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.1",
+      "intitule": "Planification et maîtrise opérationnelles",
+      "exigence": "L'organisme planifie, met en œuvre et maîtrise les processus liés aux usages énergétiques significatifs, en définissant des critères d'exploitation et en maîtrisant les processus sous-traités.",
+      "preuves": [
+        "Critères d'exploitation écrits pour les usages significatifs : consignes, plages de fonctionnement",
+        "Preuve du respect de ces critères dans l'exploitation courante",
+        "Maîtrise des activités sous-traitées influant sur la performance"
+      ],
+      "erreurs_frequentes": [
+        "Des consignes définies mais non appliquées ni contrôlées sur le terrain",
+        "Une maintenance sous-traitée sans exigence de performance énergétique"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.2",
+      "intitule": "Conception",
+      "exigence": "L'organisme prend en compte les opportunités d'amélioration de la performance énergétique et la maîtrise opérationnelle lors de la conception d'installations, équipements ou procédés nouveaux ou modifiés.",
+      "preuves": [
+        "Critères de performance énergétique intégrés aux cahiers des charges de conception",
+        "Trace de l'examen énergétique lors d'un projet récent"
+      ],
+      "erreurs_frequentes": [
+        "Des projets conduits sans que l'équipe énergie soit consultée",
+        "Une performance énergétique examinée après le choix de l'équipement, donc trop tard"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.3",
+      "intitule": "Achats",
+      "exigence": "L'organisme établit des critères d'évaluation de la performance énergétique sur la durée de vie prévue pour l'achat de produits, équipements et services influant sur les usages significatifs, et en informe les fournisseurs.",
+      "preuves": [
+        "Critères énergétiques présents dans les cahiers des charges d'achat",
+        "Preuve que les fournisseurs sont informés que la performance énergétique est un critère d'évaluation",
+        "Spécifications d'achat d'énergie documentées"
+      ],
+      "erreurs_frequentes": [
+        "Un achat décidé au seul prix d'acquisition, sans coût d'exploitation sur la durée de vie",
+        "Des critères énergétiques écrits mais jamais transmis aux fournisseurs"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.1",
+      "intitule": "Surveillance, mesure, analyse et évaluation",
+      "exigence": "L'organisme surveille et mesure les caractéristiques clés de ses activités, évalue la performance énergétique atteinte et l'efficacité du système, et compare la consommation attendue à la consommation réelle.",
+      "preuves": [
+        "Suivi des indicateurs comparés à la situation de référence",
+        "Analyse des écarts significatifs entre consommation attendue et réelle, avec réaction"
+      ],
+      "erreurs_frequentes": [
+        "Collecter des données sans jamais les analyser ni réagir aux dérives",
+        "Aucune investigation en cas d'écart significatif inexpliqué"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "9.2",
+      "intitule": "Audit interne",
+      "exigence": "L'organisme réalise des audits internes à intervalles planifiés, selon un programme tenant compte de l'importance des processus, par des auditeurs garantissant l'objectivité.",
+      "preuves": [
+        "Programme d'audit couvrant l'ensemble des exigences sur un cycle défini",
+        "Rapports d'audit et preuve de l'objectivité des auditeurs"
+      ],
+      "erreurs_frequentes": [
+        "Un audit interne réalisé par le responsable énergie sur son propre système",
+        "Un audit centré sur la documentation, sans vérification sur le terrain"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.3",
+      "intitule": "Revue de direction",
+      "exigence": "La direction procède à intervalles planifiés à la revue du système, en examinant la performance énergétique atteinte, l'évolution des indicateurs et l'adéquation des ressources.",
+      "preuves": [
+        "Compte rendu couvrant l'évolution de la performance énergétique et des indicateurs",
+        "Décisions actées sur les ressources et les objectifs"
+      ],
+      "erreurs_frequentes": [
+        "Une revue qui examine l'avancement des actions sans jamais regarder la performance obtenue",
+        "Une revue sans décision ni allocation de moyens"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.1",
+      "intitule": "Non-conformités et actions correctives",
+      "exigence": "En cas de non-conformité, l'organisme réagit, en évalue les causes, met en œuvre les actions nécessaires et vérifie leur efficacité.",
+      "preuves": [
+        "Registre des non-conformités avec analyse de cause et vérification d'efficacité",
+        "Dérives de consommation traitées comme des non-conformités"
+      ],
+      "erreurs_frequentes": [
+        "Des dérives de consommation constatées mais jamais traitées comme des écarts",
+        "Des actions closes sans vérification"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "10.2",
+      "intitule": "Amélioration continue",
+      "exigence": "L'organisme améliore en continu sa performance énergétique ainsi que la pertinence et l'efficacité de son système de management de l'énergie.",
+      "preuves": [
+        "Amélioration de la performance énergétique démontrée par les indicateurs dans le temps",
+        "Évolution du système appuyée sur les résultats d'audit et de revue"
+      ],
+      "erreurs_frequentes": [
+        "Une amélioration du système affirmée sans amélioration mesurable de la performance énergétique",
+        "Confondre baisse de consommation liée à une baisse d'activité et gain de performance"
+      ],
+      "poids": 3
+    }
+  ]
+}

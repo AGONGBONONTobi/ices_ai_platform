@@ -1,0 +1,386 @@
+{
+  "code": "ISO-22000",
+  "version": "2018",
+  "label": "ISO 22000:2018 — Sécurité des denrées alimentaires",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (numérotation et intitulés des chapitres) et une reformulation des attendus sont utilisées. À faire relire par un praticien disposant du texte officiel avant mise en vente.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "4", "titre": "Contexte de l'organisme" },
+    { "numero": "5", "titre": "Leadership" },
+    { "numero": "6", "titre": "Planification" },
+    { "numero": "7", "titre": "Support" },
+    { "numero": "8", "titre": "Réalisation des activités opérationnelles" },
+    { "numero": "9", "titre": "Évaluation des performances" },
+    { "numero": "10", "titre": "Amélioration" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "4.1",
+      "intitule": "Compréhension de l'organisme et de son contexte",
+      "exigence": "L'organisme détermine les enjeux internes et externes pertinents pour son système de management de la sécurité des denrées alimentaires, y compris sa position dans la chaîne alimentaire et son environnement réglementaire.",
+      "preuves": [
+        "Analyse de contexte identifiant la position dans la chaîne alimentaire et les exigences réglementaires applicables",
+        "Prise en compte des contraintes réelles : chaîne du froid, qualité de l'eau, approvisionnements"
+      ],
+      "erreurs_frequentes": [
+        "Un contexte recopié d'un modèle, sans lien avec les produits réellement fabriqués",
+        "Ignorer les contraintes locales d'infrastructure qui conditionnent la maîtrise sanitaire"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.3",
+      "intitule": "Détermination du domaine d'application",
+      "exigence": "L'organisme définit les limites de son système, en précisant les produits, procédés et sites couverts.",
+      "preuves": [
+        "Domaine d'application nommant les produits, lignes et sites couverts",
+        "Justification des exclusions"
+      ],
+      "erreurs_frequentes": [
+        "Un périmètre flou qui laisse indéterminé le statut de certaines lignes de production",
+        "Des activités sous-traitées exclues sans justification"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.1",
+      "intitule": "Leadership et engagement",
+      "exigence": "La direction démontre son engagement en dotant le système des ressources nécessaires, en désignant une équipe sécurité des denrées alimentaires et en s'assurant de l'intégration des exigences aux processus.",
+      "preuves": [
+        "Équipe sécurité des denrées alimentaires constituée, pluridisciplinaire, avec du temps dédié",
+        "Ressources engagées : moyens de contrôle, maintenance, formation"
+      ],
+      "erreurs_frequentes": [
+        "Une équipe réduite à une seule personne, sans compétence procédé ni maintenance",
+        "Un engagement affiché contredit par le refus des investissements d'hygiène nécessaires"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "5.2",
+      "intitule": "Politique de sécurité des denrées alimentaires",
+      "exigence": "Une politique de sécurité des denrées alimentaires est établie, communiquée à tous les niveaux et engage au respect des exigences réglementaires et clients.",
+      "preuves": [
+        "Politique datée, approuvée, affichée et comprise du personnel de production",
+        "Engagement explicite sur les exigences réglementaires et clients"
+      ],
+      "erreurs_frequentes": [
+        "Une politique affichée mais incompréhensible pour les opérateurs concernés",
+        "Aucune vérification de la compréhension effective"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.1",
+      "intitule": "Actions face aux risques et opportunités",
+      "exigence": "L'organisme détermine les risques et opportunités à traiter pour que le système atteigne les résultats escomptés, planifie les actions correspondantes et en évalue l'efficacité.",
+      "preuves": [
+        "Analyse des risques du système, distincte de l'analyse des dangers sanitaires",
+        "Plan d'actions rattachant chaque risque retenu à une mesure et à un responsable"
+      ],
+      "erreurs_frequentes": [
+        "Confondre les risques du système de management avec l'analyse des dangers du chapitre 8",
+        "Des risques identifiés sans action de traitement"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.2",
+      "intitule": "Objectifs du système et planification",
+      "exigence": "L'organisme établit des objectifs mesurables pour le système de management de la sécurité des denrées alimentaires, cohérents avec la politique, et planifie les moyens de les atteindre.",
+      "preuves": [
+        "Objectifs chiffrés, datés, avec l'indicateur qui les mesure",
+        "Plan précisant les moyens, les responsables et les échéances"
+      ],
+      "erreurs_frequentes": [
+        "Des objectifs limités au taux de conformité des analyses, sans objectif de maîtrise",
+        "Des objectifs fixés puis jamais mesurés"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.3",
+      "intitule": "Planification des modifications",
+      "exigence": "Lorsque des modifications du système sont nécessaires, l'organisme les planifie et les réalise de façon maîtrisée, en préservant l'intégrité du système.",
+      "preuves": [
+        "Trace de la maîtrise d'une modification récente : nouvelle ligne, nouveau produit, nouveau site",
+        "Évaluation de l'impact sanitaire avant mise en œuvre"
+      ],
+      "erreurs_frequentes": [
+        "Des modifications de procédé mises en œuvre avant toute évaluation de leur impact sanitaire",
+        "Une réorganisation conduite sans réexamen du plan de maîtrise"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.2",
+      "intitule": "Compétences",
+      "exigence": "L'organisme s'assure que les personnes dont les activités influent sur la sécurité des denrées alimentaires, y compris l'équipe dédiée et les prestataires externes, possèdent les compétences nécessaires.",
+      "preuves": [
+        "Compétences définies par poste, avec preuves de formation conservées",
+        "Formation à l'hygiène renouvelée et adaptée aux postes",
+        "Compétences des prestataires externes vérifiées"
+      ],
+      "erreurs_frequentes": [
+        "Une formation hygiène à l'embauche jamais renouvelée",
+        "Le personnel intérimaire ou saisonnier non formé alors qu'il intervient en production"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.4",
+      "intitule": "Communication",
+      "exigence": "L'organisme établit une communication interne et externe efficace sur les questions de sécurité des denrées alimentaires, notamment avec les fournisseurs, les clients et les autorités.",
+      "preuves": [
+        "Procédure identifiant qui communique avec les autorités et les clients, et dans quels cas",
+        "Communication interne assurant que l'équipe est informée des changements de procédé ou de matière première"
+      ],
+      "erreurs_frequentes": [
+        "Un changement de fournisseur ou de recette non transmis à l'équipe sécurité des denrées",
+        "Aucun interlocuteur désigné pour les autorités en cas d'alerte"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.5",
+      "intitule": "Informations documentées",
+      "exigence": "Les informations documentées exigées par le système sont identifiées, maîtrisées, et les enregistrements sont conservés de manière à rester exploitables.",
+      "preuves": [
+        "Enregistrements de surveillance conservés, lisibles et datés",
+        "Gestion des versions des plans de maîtrise et des procédures"
+      ],
+      "erreurs_frequentes": [
+        "Des relevés de température complétés a posteriori, donc sans valeur probante",
+        "Plusieurs versions du plan de maîtrise en circulation en production"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.2",
+      "intitule": "Programmes prérequis",
+      "exigence": "L'organisme établit, met en œuvre et actualise des programmes prérequis permettant de maîtriser l'environnement de production et de limiter la contamination, adaptés à la taille et à la nature de l'activité.",
+      "preuves": [
+        "Programmes prérequis écrits couvrant nettoyage, lutte contre les nuisibles, maintenance, hygiène du personnel, eau",
+        "Preuves de mise en œuvre et de vérification de leur efficacité",
+        "Plans de nettoyage précisant fréquences, produits et responsables"
+      ],
+      "erreurs_frequentes": [
+        "Des programmes prérequis rédigés mais dont l'application n'est jamais vérifiée",
+        "Un plan de lutte contre les nuisibles sans relevé des appâts ni suivi des captures",
+        "La qualité de l'eau utilisée jamais analysée"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.3",
+      "intitule": "Système de traçabilité",
+      "exigence": "L'organisme établit un système de traçabilité permettant d'identifier les lots de matières premières entrantes et leur relation avec les produits finis et leur distribution, et en vérifie l'efficacité.",
+      "preuves": [
+        "Traçabilité amont et aval opérationnelle, testée par un exercice de traçabilité",
+        "Exercice de traçabilité daté, avec le temps de reconstitution mesuré",
+        "Enregistrements permettant de relier un lot de produit fini à ses matières premières"
+      ],
+      "erreurs_frequentes": [
+        "Une traçabilité théorique jamais testée par un exercice réel",
+        "Une rupture de traçabilité au niveau du vrac ou des retours",
+        "Un exercice réussi sur le papier mais dont la durée rendrait un rappel inefficace"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.4",
+      "intitule": "Préparation et réponse aux situations d'urgence",
+      "exigence": "L'organisme met en place des procédures pour gérer les situations d'urgence et les incidents pouvant affecter la sécurité des denrées alimentaires, y compris le retrait et le rappel de produits.",
+      "preuves": [
+        "Procédure de retrait-rappel écrite, nommant les responsables et les autorités à prévenir",
+        "Test de la procédure de rappel réalisé et documenté",
+        "Liste de contacts d'urgence à jour"
+      ],
+      "erreurs_frequentes": [
+        "Une procédure de rappel jamais testée",
+        "Aucune identification des autorités à prévenir ni des délais réglementaires applicables"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.5.2",
+      "intitule": "Analyse des dangers",
+      "exigence": "L'organisme identifie et évalue les dangers biologiques, chimiques et physiques susceptibles d'apparaître, détermine leur niveau acceptable et sélectionne les mesures de maîtrise appropriées.",
+      "preuves": [
+        "Analyse des dangers conduite étape par étape sur un diagramme de fabrication vérifié sur le terrain",
+        "Évaluation motivée de la gravité et de la probabilité pour chaque danger retenu",
+        "Justification du choix des mesures de maîtrise"
+      ],
+      "erreurs_frequentes": [
+        "Un diagramme de fabrication jamais confronté à la réalité de l'atelier",
+        "Une analyse recopiée d'un guide sectoriel sans adaptation au procédé réel",
+        "Les dangers liés aux allergènes ou aux corps étrangers omis"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.5.3",
+      "intitule": "Validation des mesures de maîtrise",
+      "exigence": "L'organisme valide, avant mise en œuvre, que les mesures de maîtrise sélectionnées sont capables d'atteindre la maîtrise attendue du danger.",
+      "preuves": [
+        "Éléments de validation : données scientifiques, littérature, essais réalisés",
+        "Validation conduite avant mise en œuvre, et non déduite de l'absence d'incident"
+      ],
+      "erreurs_frequentes": [
+        "Confondre validation et surveillance : constater que ça marche ne prouve pas que c'était capable",
+        "Des barèmes de traitement thermique repris d'un autre produit sans justification"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.5.4",
+      "intitule": "Plan de maîtrise des dangers (HACCP / PRPo)",
+      "exigence": "L'organisme établit un plan de maîtrise identifiant les points critiques et les programmes prérequis opérationnels, avec pour chacun les limites critiques ou critères d'action, la surveillance et les corrections à appliquer.",
+      "preuves": [
+        "Plan de maîtrise précisant, pour chaque point critique, la limite critique, la méthode et la fréquence de surveillance, le responsable et la correction",
+        "Distinction argumentée entre points critiques et programmes prérequis opérationnels",
+        "Enregistrements de surveillance complets sur la période"
+      ],
+      "erreurs_frequentes": [
+        "Des limites critiques non mesurables ou sans justification",
+        "Une surveillance dont la fréquence ne permettrait pas d'isoler le produit non conforme",
+        "Aucune correction définie à l'avance en cas de dépassement"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.6",
+      "intitule": "Mise à jour du plan de maîtrise",
+      "exigence": "L'organisme actualise les informations relatives aux matières premières, produits et procédés, et met à jour le plan de maîtrise en conséquence.",
+      "preuves": [
+        "Trace d'une mise à jour consécutive à un changement de recette, de fournisseur ou d'équipement",
+        "Revue périodique des fiches matières premières"
+      ],
+      "erreurs_frequentes": [
+        "Un plan de maîtrise inchangé malgré un changement de procédé ou de fournisseur",
+        "Des fiches techniques de matières premières périmées"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.7",
+      "intitule": "Maîtrise de la surveillance et du mesurage",
+      "exigence": "L'organisme s'assure que les équipements et méthodes de surveillance et de mesurage sont adaptés et étalonnés, et conserve les preuves associées.",
+      "preuves": [
+        "Plan d'étalonnage des sondes et instruments critiques, appliqué",
+        "Certificats d'étalonnage conservés et raccordés à des étalons"
+      ],
+      "erreurs_frequentes": [
+        "Des thermomètres de surveillance jamais étalonnés",
+        "Aucune évaluation de l'impact sur les produits lorsqu'un instrument se révèle dérivé"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.9",
+      "intitule": "Maîtrise des non-conformités produits et procédés",
+      "exigence": "L'organisme traite les dépassements de limites critiques et les non-conformités par des corrections et des actions correctives, et gère les produits potentiellement dangereux avant leur libération.",
+      "preuves": [
+        "Procédure de gestion des produits potentiellement dangereux, avec décision de libération tracée",
+        "Enregistrements des corrections appliquées après dépassement",
+        "Preuve qu'aucun produit concerné n'a été libéré sans évaluation"
+      ],
+      "erreurs_frequentes": [
+        "Des produits libérés sans évaluation après un dépassement de limite critique",
+        "Une correction appliquée sans analyse de cause, laissant l'écart se reproduire"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "9.1",
+      "intitule": "Surveillance, mesure, analyse et évaluation",
+      "exigence": "L'organisme détermine ce qui doit être surveillé et mesuré, analyse les résultats et évalue la performance du système de management de la sécurité des denrées alimentaires.",
+      "preuves": [
+        "Analyse des résultats de surveillance et des tendances, et non seulement leur collecte",
+        "Résultats d'analyses microbiologiques exploités et suivis dans le temps"
+      ],
+      "erreurs_frequentes": [
+        "Des résultats d'analyses classés sans jamais être analysés en tendance",
+        "Aucune réaction face à une dérive progressive restée sous la limite"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.8",
+      "intitule": "Vérification liée aux programmes prérequis et au plan de maîtrise",
+      "exigence": "L'organisme planifie et réalise des activités de vérification confirmant que les programmes prérequis et le plan de maîtrise sont mis en œuvre et efficaces.",
+      "preuves": [
+        "Programme de vérification distinct de la surveillance courante",
+        "Contrôles de surface, analyses produits ou audits internes d'hygiène réalisés selon le plan"
+      ],
+      "erreurs_frequentes": [
+        "Confondre surveillance et vérification : relever une température n'est pas vérifier le dispositif",
+        "Une vérification planifiée mais non réalisée faute de moyens d'analyse"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.2",
+      "intitule": "Audit interne",
+      "exigence": "L'organisme réalise des audits internes à intervalles planifiés, par des auditeurs garantissant l'objectivité, pour vérifier la conformité et l'efficacité du système.",
+      "preuves": [
+        "Programme d'audit couvrant l'ensemble des exigences sur un cycle défini",
+        "Preuve de l'objectivité des auditeurs"
+      ],
+      "erreurs_frequentes": [
+        "Un audit interne conduit par le responsable qualité sur son propre système",
+        "Un audit documentaire sans passage en production"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.3",
+      "intitule": "Revue de direction",
+      "exigence": "La direction procède à intervalles planifiés à la revue du système, en examinant notamment les résultats de vérification, les incidents, les réclamations et l'adéquation des ressources.",
+      "preuves": [
+        "Compte rendu couvrant les entrées exigées, dont les réclamations clients et les résultats de vérification",
+        "Décisions actées et suivies"
+      ],
+      "erreurs_frequentes": [
+        "Une revue qui n'examine ni les réclamations ni les incidents sanitaires",
+        "Une revue annuelle expédiée, sans décision"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.1",
+      "intitule": "Non-conformités et actions correctives",
+      "exigence": "En cas de non-conformité, l'organisme réagit, en évalue les causes, met en œuvre les actions nécessaires et vérifie leur efficacité.",
+      "preuves": [
+        "Registre des non-conformités avec analyse de cause et vérification d'efficacité",
+        "Réclamations clients traitées comme des non-conformités"
+      ],
+      "erreurs_frequentes": [
+        "Traiter le lot non conforme sans corriger la cause",
+        "Des réclamations clients traitées commercialement, sans analyse sanitaire"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.3",
+      "intitule": "Mise à jour et amélioration continue du système",
+      "exigence": "L'organisme améliore en continu la pertinence, l'adéquation et l'efficacité de son système de management de la sécurité des denrées alimentaires.",
+      "preuves": [
+        "Évolutions du système tracées, issues des vérifications, audits et incidents",
+        "Mise à jour du système consécutive aux changements de contexte"
+      ],
+      "erreurs_frequentes": [
+        "Un système figé depuis sa certification initiale",
+        "Aucune exploitation des résultats de vérification pour faire évoluer le dispositif"
+      ],
+      "poids": 2
+    }
+  ]
+}

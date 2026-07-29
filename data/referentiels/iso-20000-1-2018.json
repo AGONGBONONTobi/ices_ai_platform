@@ -1,0 +1,291 @@
+{
+  "code": "ISO-20000-1",
+  "version": "2018",
+  "label": "ISO/IEC 20000-1:2018 — Management des services informatiques",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (numérotation et intitulés des chapitres) et une reformulation des attendus sont utilisées. À faire relire par un praticien disposant du texte officiel avant mise en vente.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "4", "titre": "Contexte de l'organisme" },
+    { "numero": "5", "titre": "Leadership" },
+    { "numero": "6", "titre": "Planification" },
+    { "numero": "7", "titre": "Support" },
+    { "numero": "8", "titre": "Réalisation des activités opérationnelles" },
+    { "numero": "9", "titre": "Évaluation des performances" },
+    { "numero": "10", "titre": "Amélioration" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "4.1",
+      "intitule": "Compréhension de l'organisme et de son contexte",
+      "exigence": "L'organisme détermine les enjeux internes et externes pertinents pour son système de management des services, y compris les attentes des clients et les contraintes techniques.",
+      "preuves": [
+        "Analyse de contexte identifiant les clients, les services rendus et les contraintes d'infrastructure",
+        "Prise en compte des dépendances aux fournisseurs et opérateurs"
+      ],
+      "erreurs_frequentes": [
+        "Un contexte purement technique, sans les attentes métier des clients",
+        "Ignorer les dépendances externes qui conditionnent la disponibilité"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.3",
+      "intitule": "Détermination du domaine d'application",
+      "exigence": "L'organisme définit le domaine d'application du système de management des services, en précisant les services, sites et parties concernées.",
+      "preuves": [
+        "Domaine d'application nommant les services couverts et les entités concernées",
+        "Justification des exclusions"
+      ],
+      "erreurs_frequentes": [
+        "Un périmètre revendiquant des services dont la maîtrise appartient en réalité à un tiers",
+        "Des exclusions non justifiées"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.1",
+      "intitule": "Leadership et engagement",
+      "exigence": "La direction démontre son engagement en dotant le système des ressources nécessaires et en s'assurant que les objectifs de service sont compatibles avec l'orientation de l'organisme.",
+      "preuves": [
+        "Ressources affectées au management des services, identifiables",
+        "Objectifs de service arbitrés au niveau de la direction"
+      ],
+      "erreurs_frequentes": [
+        "Des engagements de service pris commercialement sans validation des moyens",
+        "Un système porté par la seule équipe technique"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "5.2",
+      "intitule": "Politique de management des services",
+      "exigence": "Une politique de management des services est établie, communiquée et tenue à disposition des parties intéressées pertinentes.",
+      "preuves": [
+        "Politique datée, approuvée, diffusée",
+        "Preuve de communication aux équipes et aux clients concernés"
+      ],
+      "erreurs_frequentes": [
+        "Une politique générique, sans engagement mesurable sur le service",
+        "Une politique jamais rediffusée"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.2",
+      "intitule": "Objectifs de service et planification",
+      "exigence": "Des objectifs de management des services mesurables sont établis, planifiés et suivis, en précisant les moyens, les responsables et les échéances.",
+      "preuves": [
+        "Objectifs chiffrés avec indicateur et échéance",
+        "Plan précisant les moyens et les responsables"
+      ],
+      "erreurs_frequentes": [
+        "Des objectifs de disponibilité affichés sans moyen de les mesurer",
+        "Des objectifs fixés sans lien avec les engagements contractuels"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.2",
+      "intitule": "Compétences",
+      "exigence": "L'organisme détermine les compétences nécessaires aux personnes intervenant dans la fourniture des services et s'assure qu'elles les possèdent.",
+      "preuves": [
+        "Matrice de compétences par service et par processus",
+        "Preuves de formation conservées",
+        "Couverture des compétences critiques par plusieurs personnes"
+      ],
+      "erreurs_frequentes": [
+        "Une compétence critique détenue par une seule personne, sans relais",
+        "Aucune identification des compétences nécessaires à l'astreinte"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.5",
+      "intitule": "Informations documentées",
+      "exigence": "Les informations documentées exigées par le système de management des services sont identifiées, maîtrisées et disponibles là où elles sont nécessaires.",
+      "preuves": [
+        "Procédures d'exploitation accessibles aux équipes d'astreinte",
+        "Gestion des versions des documents de service"
+      ],
+      "erreurs_frequentes": [
+        "Des procédures d'exploitation stockées sur le système qu'elles servent à rétablir",
+        "Une documentation obsolète, non alignée sur la configuration réelle"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.2",
+      "intitule": "Portefeuille et catalogue de services",
+      "exigence": "L'organisme planifie ses services, maîtrise les parties intervenant dans leur cycle de vie, tient un catalogue de services à jour et gère les actifs et la configuration.",
+      "preuves": [
+        "Catalogue de services décrivant chaque service, son périmètre et ses engagements",
+        "Base de configuration tenue à jour et rapprochée de la réalité",
+        "Inventaire des actifs supportant les services"
+      ],
+      "erreurs_frequentes": [
+        "Un catalogue de services rédigé une fois, jamais actualisé après évolution de l'offre",
+        "Une base de configuration divergente de la réalité, ce qui invalide toute analyse d'impact",
+        "Aucun rapprochement périodique entre l'inventaire déclaré et l'infrastructure réelle"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.3",
+      "intitule": "Relations et accords de service",
+      "exigence": "L'organisme gère les relations avec les clients et les fournisseurs, et établit des accords de service définissant les engagements, les indicateurs et les modalités de revue.",
+      "preuves": [
+        "Accords de service écrits, avec des engagements mesurables et des seuils",
+        "Revue périodique des accords avec les clients",
+        "Accords avec les fournisseurs cohérents avec les engagements pris aux clients"
+      ],
+      "erreurs_frequentes": [
+        "Des engagements pris aux clients plus exigeants que ceux obtenus des fournisseurs",
+        "Des accords de service jamais revus malgré l'évolution des besoins",
+        "Des engagements qualitatifs invérifiables"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.4",
+      "intitule": "Offre et demande",
+      "exigence": "L'organisme budgète et comptabilise les services, gère la demande et la capacité de manière à assurer la disponibilité des ressources nécessaires.",
+      "preuves": [
+        "Suivi budgétaire des services",
+        "Plan de capacité fondé sur des données de consommation observées",
+        "Prévision de la demande alimentée par les évolutions métier connues"
+      ],
+      "erreurs_frequentes": [
+        "Une capacité gérée en réaction aux saturations plutôt qu'en anticipation",
+        "Aucune prévision de demande malgré des projets métier connus"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.5",
+      "intitule": "Conception, construction et transition des services",
+      "exigence": "L'organisme gère les changements, conçoit et construit les services nouveaux ou modifiés, puis pilote leur mise en production, en évaluant les risques associés.",
+      "preuves": [
+        "Processus de gestion des changements avec évaluation d'impact et autorisation tracée",
+        "Critères d'acceptation définis avant mise en production",
+        "Plan de retour arrière prévu pour les changements significatifs"
+      ],
+      "erreurs_frequentes": [
+        "Des changements en urgence systématiquement hors processus, jamais régularisés",
+        "Aucun plan de retour arrière, ce qui transforme tout échec en incident majeur",
+        "Une mise en production sans critères d'acceptation définis à l'avance"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.6",
+      "intitule": "Résolution et traitement des demandes",
+      "exigence": "L'organisme gère les incidents et les demandes de service selon des procédures définies, avec classification, priorisation et escalade, et gère les problèmes en recherchant les causes sous-jacentes.",
+      "preuves": [
+        "Procédure d'incident avec règles de priorisation et délais associés",
+        "Procédure d'escalade des incidents majeurs, testée",
+        "Gestion des problèmes distincte de la gestion des incidents, avec analyse de cause"
+      ],
+      "erreurs_frequentes": [
+        "Une gestion des problèmes inexistante : les mêmes incidents se répètent sans analyse de cause",
+        "Une priorisation appliquée au ressenti plutôt qu'aux règles définies",
+        "Des incidents clos sans confirmation du demandeur"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.7",
+      "intitule": "Garantie de service",
+      "exigence": "L'organisme gère la disponibilité des services, la continuité de service et la sécurité de l'information, en cohérence avec les engagements pris.",
+      "preuves": [
+        "Objectifs de disponibilité définis et mesurés par service",
+        "Plans de continuité de service testés",
+        "Dispositions de sécurité de l'information appliquées aux services"
+      ],
+      "erreurs_frequentes": [
+        "Une disponibilité mesurée sur l'infrastructure plutôt que sur le service rendu à l'utilisateur",
+        "Des sauvegardes réalisées mais dont la restauration n'est jamais testée",
+        "Un plan de continuité informatique jamais exercé"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "9.1",
+      "intitule": "Surveillance, mesure, analyse et évaluation",
+      "exigence": "L'organisme détermine ce qui doit être surveillé et mesuré pour les services, analyse les résultats et évalue la performance et l'efficacité du système.",
+      "preuves": [
+        "Indicateurs de service suivis dans le temps et comparés aux engagements",
+        "Rapports de service produits et communiqués aux clients",
+        "Analyse des tendances et non seulement des valeurs du mois"
+      ],
+      "erreurs_frequentes": [
+        "Des indicateurs produits mais jamais analysés ni communiqués",
+        "Mesurer ce qui est facile à mesurer plutôt que ce qui est engagé contractuellement"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.2",
+      "intitule": "Audit interne",
+      "exigence": "L'organisme réalise des audits internes à intervalles planifiés, selon un programme tenant compte de l'importance des processus, par des auditeurs garantissant l'objectivité.",
+      "preuves": [
+        "Programme d'audit couvrant l'ensemble des processus sur un cycle défini",
+        "Preuve de l'objectivité des auditeurs",
+        "Suivi des écarts"
+      ],
+      "erreurs_frequentes": [
+        "Un audit conduit par le responsable du processus audité",
+        "Un programme qui ne couvre jamais certains processus"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.3",
+      "intitule": "Revue de direction",
+      "exigence": "La direction procède à intervalles planifiés à la revue du système de management des services, en examinant la performance, les retours clients et l'adéquation des ressources.",
+      "preuves": [
+        "Compte rendu couvrant la performance de service, les réclamations et les résultats d'audit",
+        "Décisions actées et suivies"
+      ],
+      "erreurs_frequentes": [
+        "Une revue qui n'examine pas la satisfaction des clients du service",
+        "Une revue sans décision ni allocation de moyens"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.1",
+      "intitule": "Non-conformités et actions correctives",
+      "exigence": "En cas de non-conformité, l'organisme réagit, en évalue les causes, met en œuvre les actions nécessaires et vérifie leur efficacité.",
+      "preuves": [
+        "Registre des non-conformités avec analyse de cause et vérification d'efficacité",
+        "Manquements aux engagements de service traités comme des non-conformités"
+      ],
+      "erreurs_frequentes": [
+        "Des dépassements d'engagement constatés sans action corrective",
+        "Des actions closes sans vérification"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.2",
+      "intitule": "Amélioration continue",
+      "exigence": "L'organisme améliore en continu la pertinence, l'adéquation et l'efficacité du système de management des services et des services eux-mêmes.",
+      "preuves": [
+        "Registre des opportunités d'amélioration, priorisé et suivi",
+        "Améliorations issues des incidents, problèmes et retours clients"
+      ],
+      "erreurs_frequentes": [
+        "Un registre d'améliorations alimenté mais jamais traité",
+        "Aucune exploitation des problèmes récurrents comme source d'amélioration"
+      ],
+      "poids": 2
+    }
+  ]
+}

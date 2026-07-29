@@ -1,0 +1,337 @@
+{
+  "code": "ISO-37001",
+  "version": "2025",
+  "label": "ISO 37001:2025 — Systèmes de management anticorruption",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (numérotation et intitulés des chapitres) et une reformulation des attendus sont utilisées. ATTENTION — cette révision 2025 est récente (transition depuis l'édition 2016 exigée d'ici février 2027) et l'ossature retenue ici s'appuie sur des sources secondaires : la relecture par un praticien disposant du texte officiel est ici particulièrement nécessaire.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "4", "titre": "Contexte de l'organisme" },
+    { "numero": "5", "titre": "Leadership" },
+    { "numero": "6", "titre": "Planification" },
+    { "numero": "7", "titre": "Support" },
+    { "numero": "8", "titre": "Réalisation des activités opérationnelles" },
+    { "numero": "9", "titre": "Évaluation des performances" },
+    { "numero": "10", "titre": "Amélioration" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "4.1",
+      "intitule": "Compréhension de l'organisme et de son contexte",
+      "exigence": "L'organisme détermine les enjeux internes et externes pertinents pour son dispositif anticorruption, notamment ses secteurs d'activité, ses implantations géographiques et la nature de ses interactions avec des agents publics.",
+      "preuves": [
+        "Analyse de contexte identifiant les pays, secteurs et modes de vente porteurs de risque",
+        "Prise en compte du recours à des intermédiaires, agents ou distributeurs"
+      ],
+      "erreurs_frequentes": [
+        "Un contexte décrit sans mention des pays ni des canaux de vente réellement exposés",
+        "Ignorer la sous-traitance et les partenaires commerciaux, qui portent l'essentiel du risque"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.5",
+      "intitule": "Appréciation du risque de corruption",
+      "exigence": "L'organisme apprécie régulièrement son risque de corruption, en identifiant les situations d'exposition, en évaluant leur vraisemblance et leur gravité, et en vérifiant l'adéquation des contrôles existants.",
+      "preuves": [
+        "Cartographie du risque de corruption datée, par activité, pays et type de tiers",
+        "Lien explicite entre le niveau de risque apprécié et l'intensité des contrôles retenus",
+        "Trace d'une réappréciation après changement d'activité, de pays ou de partenaire"
+      ],
+      "erreurs_frequentes": [
+        "Une cartographie réalisée une fois, jamais réactualisée",
+        "Des contrôles uniformes appliqués sans tenir compte du niveau de risque apprécié",
+        "Une appréciation qui reste au niveau du groupe sans descendre aux entités exposées"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "5.1",
+      "intitule": "Leadership, engagement et culture",
+      "exigence": "L'organe de gouvernance et la direction démontrent leur engagement anticorruption, allouent les ressources nécessaires et promeuvent activement une culture de refus de la corruption à tous les niveaux.",
+      "preuves": [
+        "Décisions de gouvernance actant le dispositif et ses moyens",
+        "Actions de promotion de la culture anticorruption traçables, portées par la direction",
+        "Exemples d'arbitrages où une opportunité commerciale a été refusée pour motif de conformité"
+      ],
+      "erreurs_frequentes": [
+        "Un engagement affiché mais démenti par des pratiques commerciales tolérées",
+        "Aucune trace d'une décision où la conformité l'a emporté sur le chiffre d'affaires"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "5.2",
+      "intitule": "Politique anticorruption",
+      "exigence": "Une politique anticorruption est établie, interdit la corruption, exige le respect des lois applicables, et est communiquée en interne comme aux partenaires commerciaux.",
+      "preuves": [
+        "Politique approuvée, datée, disponible dans les langues de travail",
+        "Preuve de communication aux partenaires commerciaux, et pas seulement au personnel"
+      ],
+      "erreurs_frequentes": [
+        "Une politique diffusée en interne mais jamais portée à la connaissance des tiers",
+        "Une politique qui n'aborde ni les paiements de facilitation ni les cadeaux"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "5.3",
+      "intitule": "Fonction de conformité anticorruption",
+      "exigence": "Une fonction de conformité anticorruption est désignée, dotée de l'autorité, des ressources et de l'indépendance nécessaires, avec un accès direct à l'organe de gouvernance.",
+      "preuves": [
+        "Lettre de mission précisant l'autorité, les moyens et le rattachement de la fonction",
+        "Preuve d'un accès direct à l'organe de gouvernance, sans filtre hiérarchique"
+      ],
+      "erreurs_frequentes": [
+        "Une fonction rattachée à la direction commerciale, donc en conflit d'intérêts structurel",
+        "Un rôle attribué en complément d'un poste opérationnel, sans temps ni moyens dédiés"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "6.1",
+      "intitule": "Actions face aux risques et opportunités",
+      "exigence": "L'organisme planifie les actions permettant de traiter les risques identifiés lors de l'appréciation du risque de corruption, et évalue l'efficacité de ces actions.",
+      "preuves": [
+        "Plan d'actions rattachant chaque risque significatif à une mesure et à un responsable",
+        "Évaluation de l'efficacité des mesures engagées"
+      ],
+      "erreurs_frequentes": [
+        "Des risques cartographiés sans plan d'actions correspondant",
+        "Des actions closes sans vérification de leur effet réel"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.2",
+      "intitule": "Objectifs anticorruption",
+      "exigence": "Des objectifs anticorruption mesurables sont établis aux niveaux et fonctions pertinents, et font l'objet d'un suivi.",
+      "preuves": [
+        "Objectifs chiffrés avec l'indicateur qui les mesure et l'échéance",
+        "Suivi périodique montrant l'écart à l'objectif"
+      ],
+      "erreurs_frequentes": [
+        "Des objectifs limités au taux de formation, sans mesure de l'efficacité du dispositif",
+        "Des objectifs fixés au niveau du groupe et jamais déclinés aux entités exposées"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.2",
+      "intitule": "Compétences et processus d'emploi",
+      "exigence": "L'organisme détermine les compétences nécessaires et applique des processus d'emploi tenant compte du risque de corruption, notamment pour les postes exposés.",
+      "preuves": [
+        "Vérifications préalables proportionnées avant recrutement sur les postes exposés",
+        "Clauses anticorruption dans les contrats de travail des fonctions sensibles",
+        "Absence de prime dont la structure encouragerait la prise de risque de corruption"
+      ],
+      "erreurs_frequentes": [
+        "Des systèmes de rémunération variable qui rendent le contournement rationnel",
+        "Aucune vérification préalable pour les postes commerciaux exposés"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.3",
+      "intitule": "Sensibilisation et formation",
+      "exigence": "L'organisme assure une sensibilisation et une formation anticorruption adaptées au risque, actualisées, et étendues aux partenaires commerciaux lorsque le risque le justifie.",
+      "preuves": [
+        "Programme de formation différencié selon l'exposition des fonctions",
+        "Preuve d'une formation étendue aux partenaires commerciaux à risque élevé",
+        "Actualisation périodique du contenu"
+      ],
+      "erreurs_frequentes": [
+        "Une formation générique unique, identique pour tous les postes",
+        "Une formation à l'embauche jamais renouvelée",
+        "Des partenaires commerciaux jamais sensibilisés alors qu'ils portent le risque"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.2",
+      "intitule": "Diligence raisonnable",
+      "exigence": "L'organisme applique une diligence raisonnable proportionnée au risque sur les transactions, projets, activités, partenaires commerciaux et personnels concernés, avant engagement et de manière actualisée.",
+      "preuves": [
+        "Dossiers de diligence conservés, avec le niveau d'investigation justifié par le risque",
+        "Diligence conduite avant l'engagement contractuel, et non après",
+        "Réactualisation périodique pour les relations durables"
+      ],
+      "erreurs_frequentes": [
+        "Une diligence réduite à une recherche sur internet, sans analyse ni conclusion écrite",
+        "Une diligence conduite après la signature du contrat",
+        "Aucune réactualisation sur des relations anciennes devenues risquées"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.3",
+      "intitule": "Contrôles financiers",
+      "exigence": "L'organisme met en œuvre des contrôles financiers permettant de prévenir et détecter le risque de corruption, notamment la séparation des tâches, les seuils d'approbation et la traçabilité des paiements.",
+      "preuves": [
+        "Séparation effective entre engagement, approbation et paiement",
+        "Seuils d'approbation documentés et respectés",
+        "Interdiction et absence de paiements en espèces non justifiés"
+      ],
+      "erreurs_frequentes": [
+        "Une même personne qui engage, approuve et paie",
+        "Des paiements à des comptes situés dans un pays sans lien avec la prestation",
+        "Des seuils contournés par fractionnement des dépenses"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.4",
+      "intitule": "Contrôles non financiers",
+      "exigence": "L'organisme met en œuvre des contrôles non financiers portant sur les achats, les opérations, les ventes, les aspects commerciaux et juridiques exposés au risque de corruption.",
+      "preuves": [
+        "Procédure d'appel d'offres et de sélection des fournisseurs traçable",
+        "Contrôle des recours aux intermédiaires et de leur rémunération",
+        "Justification écrite des attributions de gré à gré"
+      ],
+      "erreurs_frequentes": [
+        "Des contrôles limités au circuit financier, laissant les achats sans maîtrise",
+        "Des commissions d'intermédiaires sans lien démontrable avec un service réel"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.5",
+      "intitule": "Mise en œuvre des contrôles par les partenaires commerciaux",
+      "exigence": "L'organisme exige de ses organismes contrôlés et de ses partenaires commerciaux exposés qu'ils appliquent des contrôles anticorruption, ou met en place des contrôles compensatoires.",
+      "preuves": [
+        "Clauses anticorruption dans les contrats avec les partenaires exposés",
+        "Droit d'audit prévu et exercé au moins une fois quand le risque le justifie",
+        "Contrôles compensatoires documentés lorsque le partenaire ne peut se conformer"
+      ],
+      "erreurs_frequentes": [
+        "Des clauses contractuelles jamais suivies d'aucune vérification",
+        "Un droit d'audit prévu mais jamais exercé"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.7",
+      "intitule": "Cadeaux, invitations, dons et avantages similaires",
+      "exigence": "L'organisme met en œuvre des procédures encadrant l'offre et l'acceptation de cadeaux, invitations, dons et avantages susceptibles d'être perçus comme de la corruption.",
+      "preuves": [
+        "Procédure fixant des seuils, une obligation de déclaration et un registre tenu",
+        "Registre des cadeaux et invitations réellement alimenté",
+        "Encadrement spécifique des dons, parrainages et contributions politiques"
+      ],
+      "erreurs_frequentes": [
+        "Un registre existant mais vide, ce qui signale une absence de déclaration plutôt qu'une absence de cadeaux",
+        "Des seuils fixés sans distinction entre agents publics et partenaires privés"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.9",
+      "intitule": "Remontée des préoccupations",
+      "exigence": "L'organisme met en place des dispositifs permettant de signaler une tentative ou un soupçon de corruption, y compris de façon anonyme, et garantit l'absence de représailles.",
+      "preuves": [
+        "Canal de signalement accessible, y compris aux tiers, et permettant l'anonymat",
+        "Politique de protection des auteurs de signalement, communiquée",
+        "Statistiques de signalements et suites données"
+      ],
+      "erreurs_frequentes": [
+        "Un canal interne géré par la hiérarchie, ce qui dissuade tout signalement",
+        "Aucune communication sur la protection contre les représailles",
+        "Zéro signalement depuis la mise en place, sans que ce silence n'interroge personne"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.10",
+      "intitule": "Investigation et traitement des faits de corruption",
+      "exigence": "L'organisme conduit des investigations sur les signalements reçus, par des personnes compétentes et indépendantes, et traite les faits avérés y compris sur le plan disciplinaire.",
+      "preuves": [
+        "Procédure d'investigation précisant qui investigue et selon quelles garanties",
+        "Dossiers d'investigation conservés, avec les suites données",
+        "Preuve de sanctions effectivement appliquées quand les faits sont établis"
+      ],
+      "erreurs_frequentes": [
+        "Une investigation confiée au supérieur hiérarchique de la personne mise en cause",
+        "Des faits établis restés sans suite disciplinaire",
+        "Aucune trace écrite des investigations menées"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "9.1",
+      "intitule": "Surveillance, mesure, analyse et évaluation",
+      "exigence": "L'organisme surveille et mesure la performance de son dispositif anticorruption, et en évalue l'efficacité à intervalles planifiés.",
+      "preuves": [
+        "Indicateurs suivis dans le temps : diligences réalisées, signalements traités, formations effectives",
+        "Analyse de l'efficacité des contrôles, et pas seulement de leur existence"
+      ],
+      "erreurs_frequentes": [
+        "Mesurer l'activité du dispositif sans jamais évaluer s'il détecte quoi que ce soit",
+        "Aucune analyse des cas non détectés révélés par une source externe"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.2",
+      "intitule": "Audit interne",
+      "exigence": "L'organisme conduit des audits internes du dispositif anticorruption selon un programme fondé sur le risque, par des auditeurs objectifs et compétents.",
+      "preuves": [
+        "Programme d'audit priorisé selon le risque de corruption apprécié",
+        "Preuve de l'objectivité des auditeurs vis-à-vis du domaine audité",
+        "Rapports d'audit et suivi des écarts"
+      ],
+      "erreurs_frequentes": [
+        "Un audit conduit par la fonction conformité sur son propre dispositif",
+        "Un programme uniforme, sans priorisation par le risque"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.3",
+      "intitule": "Revue de direction et de gouvernance",
+      "exigence": "La direction et l'organe de gouvernance procèdent à intervalles planifiés à la revue du dispositif anticorruption, en examinant sa pertinence, son adéquation et son efficacité.",
+      "preuves": [
+        "Compte rendu de revue couvrant les signalements, les investigations et les résultats d'audit",
+        "Décisions actées et ressources réallouées le cas échéant"
+      ],
+      "erreurs_frequentes": [
+        "Une revue qui ne traite jamais des signalements reçus",
+        "Une revue de direction sans implication de l'organe de gouvernance"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.1",
+      "intitule": "Non-conformités et actions correctives",
+      "exigence": "En cas de non-conformité au dispositif anticorruption, l'organisme réagit, en analyse les causes, met en œuvre les actions nécessaires et en vérifie l'efficacité.",
+      "preuves": [
+        "Registre des non-conformités avec analyse de cause et vérification d'efficacité",
+        "Actions correctives rattachées à une défaillance de contrôle identifiée"
+      ],
+      "erreurs_frequentes": [
+        "Sanctionner l'individu sans corriger le contrôle qui a permis les faits",
+        "Des actions closes sur déclaration, sans preuve"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.2",
+      "intitule": "Amélioration continue",
+      "exigence": "L'organisme améliore en continu la pertinence, l'adéquation et l'efficacité de son système de management anticorruption.",
+      "preuves": [
+        "Évolutions du dispositif tracées, issues des audits, signalements ou incidents",
+        "Comparaison de la maturité du dispositif dans le temps"
+      ],
+      "erreurs_frequentes": [
+        "Un dispositif figé depuis sa mise en place initiale",
+        "Une amélioration continue affirmée sans aucune évolution démontrable"
+      ],
+      "poids": 2
+    }
+  ]
+}

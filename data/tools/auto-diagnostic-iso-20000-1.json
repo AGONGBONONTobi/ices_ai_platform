@@ -1,24 +1,24 @@
 {
-  "id": "auto-diagnostic-iso-37001",
-  "title": "Auto-diagnostic ISO 37001",
+  "id": "auto-diagnostic-iso-20000-1",
+  "title": "Auto-diagnostic ISO/IEC 20000-1",
   "category": "Systèmes de Management ISO",
   "output_kind": "assessment",
-  "referentiel_code": "ISO-37001",
-  "referentiel_version": "2025",
+  "referentiel_code": "ISO-20000-1",
+  "referentiel_version": "2018",
   "inputs": [
     {
       "name": "contexte",
       "type": "textarea",
       "question": "Décrivez brièvement votre organisme",
-      "help": "Secteur, effectif, pays d'activité, recours à des intermédiaires ou agents, exposition aux marchés publics.",
-      "placeholder": "Entreprise de BTP, 200 salariés, répondant à des appels d'offres publics et travaillant avec des agents commerciaux.",
+      "help": "Nature des services fournis, effectif, clients internes ou externes, périmètre visé.",
+      "placeholder": "DSI interne, 25 personnes, services applicatifs et poste de travail pour 900 utilisateurs.",
       "required": true
     },
     {
       "name": "c4_1",
       "type": "select",
       "question": "4.1 — Compréhension de l'organisme et de son contexte",
-      "help": "L'organisme détermine les enjeux internes et externes pertinents pour son dispositif anticorruption, notamment ses secteurs d'activité, ses implantations géographiques et la nature de ses interactions avec des agents publics.",
+      "help": "L'organisme détermine les enjeux internes et externes pertinents pour son système de management des services, y compris les attentes des clients et les contraintes techniques.",
       "options": [
         {
           "label": "0 · Inexistant — rien n'est en place sur ce point.",
@@ -47,10 +47,10 @@
       "poids": 2
     },
     {
-      "name": "c4_5",
+      "name": "c4_3",
       "type": "select",
-      "question": "4.5 — Appréciation du risque de corruption",
-      "help": "L'organisme apprécie régulièrement son risque de corruption, en identifiant les situations d'exposition, en évaluant leur vraisemblance et leur gravité, et en vérifiant l'adéquation des contrôles existants.",
+      "question": "4.3 — Détermination du domaine d'application",
+      "help": "L'organisme définit le domaine d'application du système de management des services, en précisant les services, sites et parties concernées.",
       "options": [
         {
           "label": "0 · Inexistant — rien n'est en place sur ce point.",
@@ -74,15 +74,15 @@
         }
       ],
       "required": true,
-      "chapitre": "4.5",
+      "chapitre": "4.3",
       "axe": "4 — Contexte de l'organisme",
-      "poids": 4
+      "poids": 2
     },
     {
       "name": "c5_1",
       "type": "select",
-      "question": "5.1 — Leadership, engagement et culture",
-      "help": "L'organe de gouvernance et la direction démontrent leur engagement anticorruption, allouent les ressources nécessaires et promeuvent activement une culture de refus de la corruption à tous les niveaux.",
+      "question": "5.1 — Leadership et engagement",
+      "help": "La direction démontre son engagement en dotant le système des ressources nécessaires et en s'assurant que les objectifs de service sont compatibles avec l'orientation de l'organisme.",
       "options": [
         {
           "label": "0 · Inexistant — rien n'est en place sur ce point.",
@@ -108,13 +108,13 @@
       "required": true,
       "chapitre": "5.1",
       "axe": "5 — Leadership",
-      "poids": 4
+      "poids": 3
     },
     {
       "name": "c5_2",
       "type": "select",
-      "question": "5.2 — Politique anticorruption",
-      "help": "Une politique anticorruption est établie, interdit la corruption, exige le respect des lois applicables, et est communiquée en interne comme aux partenaires commerciaux.",
+      "question": "5.2 — Politique de management des services",
+      "help": "Une politique de management des services est établie, communiquée et tenue à disposition des parties intéressées pertinentes.",
       "options": [
         {
           "label": "0 · Inexistant — rien n'est en place sur ce point.",
@@ -140,77 +140,13 @@
       "required": true,
       "chapitre": "5.2",
       "axe": "5 — Leadership",
-      "poids": 3
-    },
-    {
-      "name": "c5_3",
-      "type": "select",
-      "question": "5.3 — Fonction de conformité anticorruption",
-      "help": "Une fonction de conformité anticorruption est désignée, dotée de l'autorité, des ressources et de l'indépendance nécessaires, avec un accès direct à l'organe de gouvernance.",
-      "options": [
-        {
-          "label": "0 · Inexistant — rien n'est en place sur ce point.",
-          "score": 0.0
-        },
-        {
-          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
-          "score": 1.0
-        },
-        {
-          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
-          "score": 2.0
-        },
-        {
-          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
-          "score": 3.0
-        },
-        {
-          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
-          "score": 4.0
-        }
-      ],
-      "required": true,
-      "chapitre": "5.3",
-      "axe": "5 — Leadership",
-      "poids": 4
-    },
-    {
-      "name": "c6_1",
-      "type": "select",
-      "question": "6.1 — Actions face aux risques et opportunités",
-      "help": "L'organisme planifie les actions permettant de traiter les risques identifiés lors de l'appréciation du risque de corruption, et évalue l'efficacité de ces actions.",
-      "options": [
-        {
-          "label": "0 · Inexistant — rien n'est en place sur ce point.",
-          "score": 0.0
-        },
-        {
-          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
-          "score": 1.0
-        },
-        {
-          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
-          "score": 2.0
-        },
-        {
-          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
-          "score": 3.0
-        },
-        {
-          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
-          "score": 4.0
-        }
-      ],
-      "required": true,
-      "chapitre": "6.1",
-      "axe": "6 — Planification",
-      "poids": 3
+      "poids": 2
     },
     {
       "name": "c6_2",
       "type": "select",
-      "question": "6.2 — Objectifs anticorruption",
-      "help": "Des objectifs anticorruption mesurables sont établis aux niveaux et fonctions pertinents, et font l'objet d'un suivi.",
+      "question": "6.2 — Objectifs de service et planification",
+      "help": "Des objectifs de management des services mesurables sont établis, planifiés et suivis, en précisant les moyens, les responsables et les échéances.",
       "options": [
         {
           "label": "0 · Inexistant — rien n'est en place sur ce point.",
@@ -236,13 +172,13 @@
       "required": true,
       "chapitre": "6.2",
       "axe": "6 — Planification",
-      "poids": 2
+      "poids": 3
     },
     {
       "name": "c7_2",
       "type": "select",
-      "question": "7.2 — Compétences et processus d'emploi",
-      "help": "L'organisme détermine les compétences nécessaires et applique des processus d'emploi tenant compte du risque de corruption, notamment pour les postes exposés.",
+      "question": "7.2 — Compétences",
+      "help": "L'organisme détermine les compétences nécessaires aux personnes intervenant dans la fourniture des services et s'assure qu'elles les possèdent.",
       "options": [
         {
           "label": "0 · Inexistant — rien n'est en place sur ce point.",
@@ -271,10 +207,10 @@
       "poids": 3
     },
     {
-      "name": "c7_3",
+      "name": "c7_5",
       "type": "select",
-      "question": "7.3 — Sensibilisation et formation",
-      "help": "L'organisme assure une sensibilisation et une formation anticorruption adaptées au risque, actualisées, et étendues aux partenaires commerciaux lorsque le risque le justifie.",
+      "question": "7.5 — Informations documentées",
+      "help": "Les informations documentées exigées par le système de management des services sont identifiées, maîtrisées et disponibles là où elles sont nécessaires.",
       "options": [
         {
           "label": "0 · Inexistant — rien n'est en place sur ce point.",
@@ -298,15 +234,15 @@
         }
       ],
       "required": true,
-      "chapitre": "7.3",
+      "chapitre": "7.5",
       "axe": "7 — Support",
       "poids": 3
     },
     {
       "name": "c8_2",
       "type": "select",
-      "question": "8.2 — Diligence raisonnable",
-      "help": "L'organisme applique une diligence raisonnable proportionnée au risque sur les transactions, projets, activités, partenaires commerciaux et personnels concernés, avant engagement et de manière actualisée.",
+      "question": "8.2 — Portefeuille et catalogue de services",
+      "help": "L'organisme planifie ses services, maîtrise les parties intervenant dans leur cycle de vie, tient un catalogue de services à jour et gère les actifs et la configuration.",
       "options": [
         {
           "label": "0 · Inexistant — rien n'est en place sur ce point.",
@@ -337,8 +273,8 @@
     {
       "name": "c8_3",
       "type": "select",
-      "question": "8.3 — Contrôles financiers",
-      "help": "L'organisme met en œuvre des contrôles financiers permettant de prévenir et détecter le risque de corruption, notamment la séparation des tâches, les seuils d'approbation et la traçabilité des paiements.",
+      "question": "8.3 — Relations et accords de service",
+      "help": "L'organisme gère les relations avec les clients et les fournisseurs, et établit des accords de service définissant les engagements, les indicateurs et les modalités de revue.",
       "options": [
         {
           "label": "0 · Inexistant — rien n'est en place sur ce point.",
@@ -369,8 +305,8 @@
     {
       "name": "c8_4",
       "type": "select",
-      "question": "8.4 — Contrôles non financiers",
-      "help": "L'organisme met en œuvre des contrôles non financiers portant sur les achats, les opérations, les ventes, les aspects commerciaux et juridiques exposés au risque de corruption.",
+      "question": "8.4 — Offre et demande",
+      "help": "L'organisme budgète et comptabilise les services, gère la demande et la capacité de manière à assurer la disponibilité des ressources nécessaires.",
       "options": [
         {
           "label": "0 · Inexistant — rien n'est en place sur ce point.",
@@ -401,8 +337,8 @@
     {
       "name": "c8_5",
       "type": "select",
-      "question": "8.5 — Mise en œuvre des contrôles par les partenaires commerciaux",
-      "help": "L'organisme exige de ses organismes contrôlés et de ses partenaires commerciaux exposés qu'ils appliquent des contrôles anticorruption, ou met en place des contrôles compensatoires.",
+      "question": "8.5 — Conception, construction et transition des services",
+      "help": "L'organisme gère les changements, conçoit et construit les services nouveaux ou modifiés, puis pilote leur mise en production, en évaluant les risques associés.",
       "options": [
         {
           "label": "0 · Inexistant — rien n'est en place sur ce point.",
@@ -428,13 +364,45 @@
       "required": true,
       "chapitre": "8.5",
       "axe": "8 — Réalisation des activités opérationnelles",
-      "poids": 3
+      "poids": 4
+    },
+    {
+      "name": "c8_6",
+      "type": "select",
+      "question": "8.6 — Résolution et traitement des demandes",
+      "help": "L'organisme gère les incidents et les demandes de service selon des procédures définies, avec classification, priorisation et escalade, et gère les problèmes en recherchant les causes sous-jacentes.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.6",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 4
     },
     {
       "name": "c8_7",
       "type": "select",
-      "question": "8.7 — Cadeaux, invitations, dons et avantages similaires",
-      "help": "L'organisme met en œuvre des procédures encadrant l'offre et l'acceptation de cadeaux, invitations, dons et avantages susceptibles d'être perçus comme de la corruption.",
+      "question": "8.7 — Garantie de service",
+      "help": "L'organisme gère la disponibilité des services, la continuité de service et la sécurité de l'information, en cohérence avec les engagements pris.",
       "options": [
         {
           "label": "0 · Inexistant — rien n'est en place sur ce point.",
@@ -460,77 +428,13 @@
       "required": true,
       "chapitre": "8.7",
       "axe": "8 — Réalisation des activités opérationnelles",
-      "poids": 3
-    },
-    {
-      "name": "c8_9",
-      "type": "select",
-      "question": "8.9 — Remontée des préoccupations",
-      "help": "L'organisme met en place des dispositifs permettant de signaler une tentative ou un soupçon de corruption, y compris de façon anonyme, et garantit l'absence de représailles.",
-      "options": [
-        {
-          "label": "0 · Inexistant — rien n'est en place sur ce point.",
-          "score": 0.0
-        },
-        {
-          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
-          "score": 1.0
-        },
-        {
-          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
-          "score": 2.0
-        },
-        {
-          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
-          "score": 3.0
-        },
-        {
-          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
-          "score": 4.0
-        }
-      ],
-      "required": true,
-      "chapitre": "8.9",
-      "axe": "8 — Réalisation des activités opérationnelles",
-      "poids": 4
-    },
-    {
-      "name": "c8_10",
-      "type": "select",
-      "question": "8.10 — Investigation et traitement des faits de corruption",
-      "help": "L'organisme conduit des investigations sur les signalements reçus, par des personnes compétentes et indépendantes, et traite les faits avérés y compris sur le plan disciplinaire.",
-      "options": [
-        {
-          "label": "0 · Inexistant — rien n'est en place sur ce point.",
-          "score": 0.0
-        },
-        {
-          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
-          "score": 1.0
-        },
-        {
-          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
-          "score": 2.0
-        },
-        {
-          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
-          "score": 3.0
-        },
-        {
-          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
-          "score": 4.0
-        }
-      ],
-      "required": true,
-      "chapitre": "8.10",
-      "axe": "8 — Réalisation des activités opérationnelles",
       "poids": 4
     },
     {
       "name": "c9_1",
       "type": "select",
       "question": "9.1 — Surveillance, mesure, analyse et évaluation",
-      "help": "L'organisme surveille et mesure la performance de son dispositif anticorruption, et en évalue l'efficacité à intervalles planifiés.",
+      "help": "L'organisme détermine ce qui doit être surveillé et mesuré pour les services, analyse les résultats et évalue la performance et l'efficacité du système.",
       "options": [
         {
           "label": "0 · Inexistant — rien n'est en place sur ce point.",
@@ -562,7 +466,7 @@
       "name": "c9_2",
       "type": "select",
       "question": "9.2 — Audit interne",
-      "help": "L'organisme conduit des audits internes du dispositif anticorruption selon un programme fondé sur le risque, par des auditeurs objectifs et compétents.",
+      "help": "L'organisme réalise des audits internes à intervalles planifiés, selon un programme tenant compte de l'importance des processus, par des auditeurs garantissant l'objectivité.",
       "options": [
         {
           "label": "0 · Inexistant — rien n'est en place sur ce point.",
@@ -593,8 +497,8 @@
     {
       "name": "c9_3",
       "type": "select",
-      "question": "9.3 — Revue de direction et de gouvernance",
-      "help": "La direction et l'organe de gouvernance procèdent à intervalles planifiés à la revue du dispositif anticorruption, en examinant sa pertinence, son adéquation et son efficacité.",
+      "question": "9.3 — Revue de direction",
+      "help": "La direction procède à intervalles planifiés à la revue du système de management des services, en examinant la performance, les retours clients et l'adéquation des ressources.",
       "options": [
         {
           "label": "0 · Inexistant — rien n'est en place sur ce point.",
@@ -626,7 +530,7 @@
       "name": "c10_1",
       "type": "select",
       "question": "10.1 — Non-conformités et actions correctives",
-      "help": "En cas de non-conformité au dispositif anticorruption, l'organisme réagit, en analyse les causes, met en œuvre les actions nécessaires et en vérifie l'efficacité.",
+      "help": "En cas de non-conformité, l'organisme réagit, en évalue les causes, met en œuvre les actions nécessaires et vérifie leur efficacité.",
       "options": [
         {
           "label": "0 · Inexistant — rien n'est en place sur ce point.",
@@ -658,7 +562,7 @@
       "name": "c10_2",
       "type": "select",
       "question": "10.2 — Amélioration continue",
-      "help": "L'organisme améliore en continu la pertinence, l'adéquation et l'efficacité de son système de management anticorruption.",
+      "help": "L'organisme améliore en continu la pertinence, l'adéquation et l'efficacité du système de management des services et des services eux-mêmes.",
       "options": [
         {
           "label": "0 · Inexistant — rien n'est en place sur ce point.",
@@ -687,7 +591,7 @@
       "poids": 2
     }
   ],
-  "promptTemplate": "Tu es auditeur expérimenté, habitué aux audits de certification ISO 37001. L'organisme est décrit ainsi : {contexte}.\n\nLes clauses applicables et leur grille de maturité te sont fournies plus bas, ainsi que le positionnement déclaré pour chacune et les scores déjà calculés.\n\nProduis un rapport de pré-audit :\n- pour chaque chapitre parmi 4 (Contexte de l'organisme), 5 (Leadership), 6 (Planification), 7 (Support), 8 (Réalisation des activités opérationnelles), 9 (Évaluation des performances), 10 (Amélioration), un constat appuyé sur les clauses réellement concernées, en citant leur numéro ;\n- pour les clauses les plus faibles, indique l'écart précis par rapport à l'exigence et la preuve qui serait demandée en audit ;\n- des recommandations priorisées, chacune rattachée à un numéro de clause, actionnables et proportionnées au contexte décrit.\n\nTraite en priorité l'appréciation du risque de corruption et la diligence raisonnable : des contrôles génériques, non proportionnés au risque réellement apprécié, sont l'écart le plus fréquemment relevé.\n\nN'invente aucune exigence absente des clauses fournies. Ne recalcule pas les scores.",
+  "promptTemplate": "Tu es auditeur expérimenté, habitué aux audits de certification ISO 20000 1. L'organisme est décrit ainsi : {contexte}.\n\nLes clauses applicables et leur grille de maturité te sont fournies plus bas, ainsi que le positionnement déclaré pour chacune et les scores déjà calculés.\n\nProduis un rapport de pré-audit :\n- pour chaque chapitre parmi 4 (Contexte de l'organisme), 5 (Leadership), 6 (Planification), 7 (Support), 8 (Réalisation des activités opérationnelles), 9 (Évaluation des performances), 10 (Amélioration), un constat appuyé sur les clauses réellement concernées, en citant leur numéro ;\n- pour les clauses les plus faibles, indique l'écart précis par rapport à l'exigence et la preuve qui serait demandée en audit ;\n- des recommandations priorisées, chacune rattachée à un numéro de clause, actionnables et proportionnées au contexte décrit.\n\nTraite en priorité le chapitre 8 : il concentre l'essentiel du temps d'audit, et un catalogue de services non tenu à jour invalide tout ce qui s'y rattache.\n\nN'invente aucune exigence absente des clauses fournies. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {

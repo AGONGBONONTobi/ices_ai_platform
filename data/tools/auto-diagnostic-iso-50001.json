@@ -2,42 +2,660 @@
   "id": "auto-diagnostic-iso-50001",
   "title": "Auto-diagnostic ISO 50001",
   "category": "Systèmes de Management ISO",
+  "output_kind": "assessment",
+  "referentiel_code": "ISO-50001",
+  "referentiel_version": "2018",
   "inputs": [
     {
-      "name": "UES_identifies",
+      "name": "contexte",
       "type": "textarea",
-      "label": "Quels sont les usages énergétiques significatifs (UES) identifiés dans votre organisation ?",
-      "placeholder": "Ex: consommation électrique des bâtiments, utilisation de gaz pour la production",
+      "question": "Décrivez brièvement votre organisme",
+      "help": "Secteur, effectif, sites, principaux usages énergétiques et objectif visé.",
+      "placeholder": "Unité de transformation agroalimentaire, 80 salariés, un site, forte consommation de froid.",
       "required": true
     },
     {
-      "name": "revue_energetique",
-      "type": "textarea",
-      "label": "Décrivez la revue énergétique initiale menée dans votre organisation",
-      "placeholder": "Ex: analyse des consommations énergétiques, identification des opportunités d'amélioration",
-      "required": true
-    },
-    {
-      "name": "niveau_maturite",
+      "name": "c4_1",
       "type": "select",
+      "question": "4.1 — Compréhension de l'organisme et de son contexte",
+      "help": "L'organisme détermine les enjeux internes et externes influant sur sa capacité à améliorer sa performance énergétique et à atteindre les résultats attendus de son système de management de l'énergie.",
       "options": [
-        "0 - Inexistant",
-        "1 - Initié",
-        "2 - Formalisé",
-        "3 - Optimisé"
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
       ],
-      "label": "Quel est le niveau de maturité de votre organisation en matière de management de l'énergie ?",
-      "required": true
+      "required": true,
+      "chapitre": "4.1",
+      "axe": "4 — Contexte de l'organisme",
+      "poids": 2
     },
     {
-      "name": "plan_actions",
-      "type": "textarea",
-      "label": "Décrivez le plan d'actions d'efficacité énergétique mis en place",
-      "placeholder": "Ex: réduction de la consommation électrique, amélioration de l'efficacité des équipements",
-      "required": true
+      "name": "c4_3",
+      "type": "select",
+      "question": "4.3 — Détermination du domaine d'application",
+      "help": "L'organisme définit les limites de son système de management de l'énergie et ne peut exclure du domaine d'application un type d'énergie qu'il consomme.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.3",
+      "axe": "4 — Contexte de l'organisme",
+      "poids": 3
+    },
+    {
+      "name": "c5_1",
+      "type": "select",
+      "question": "5.1 — Leadership et engagement",
+      "help": "La direction démontre son engagement en dotant le système des ressources nécessaires, en constituant une équipe énergie et en assurant que les objectifs de performance énergétique sont établis.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.1",
+      "axe": "5 — Leadership",
+      "poids": 3
+    },
+    {
+      "name": "c5_2",
+      "type": "select",
+      "question": "5.2 — Politique énergétique",
+      "help": "Une politique énergétique est établie, engage à l'amélioration continue de la performance énergétique et à la disponibilité des informations et ressources nécessaires.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.2",
+      "axe": "5 — Leadership",
+      "poids": 2
+    },
+    {
+      "name": "c5_3",
+      "type": "select",
+      "question": "5.3 — Rôles, responsabilités et autorités",
+      "help": "Les rôles, responsabilités et autorités liés au système de management de l'énergie sont attribués et communiqués au sein de l'organisme.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.3",
+      "axe": "5 — Leadership",
+      "poids": 2
+    },
+    {
+      "name": "c6_3",
+      "type": "select",
+      "question": "6.3 — Revue énergétique",
+      "help": "L'organisme réalise et actualise une revue énergétique analysant les usages et consommations à partir de mesures, identifiant les usages énergétiques significatifs et les opportunités d'amélioration.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.3",
+      "axe": "6 — Planification",
+      "poids": 4
+    },
+    {
+      "name": "c6_4",
+      "type": "select",
+      "question": "6.4 — Indicateurs de performance énergétique",
+      "help": "L'organisme détermine des indicateurs de performance énergétique appropriés, permettant de démontrer l'amélioration, et en conserve la méthode de détermination et d'actualisation.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.4",
+      "axe": "6 — Planification",
+      "poids": 4
+    },
+    {
+      "name": "c6_5",
+      "type": "select",
+      "question": "6.5 — Situation énergétique de référence",
+      "help": "L'organisme établit une situation énergétique de référence à partir des données de la revue énergétique, sur une période représentative, et la révise selon des règles définies.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.5",
+      "axe": "6 — Planification",
+      "poids": 4
+    },
+    {
+      "name": "c6_6",
+      "type": "select",
+      "question": "6.6 — Planification du recueil des données énergétiques",
+      "help": "L'organisme définit et met en œuvre un plan de recueil des données énergétiques, précisant les données nécessaires, leur fréquence de relevé et les moyens de mesure associés.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.6",
+      "axe": "6 — Planification",
+      "poids": 3
+    },
+    {
+      "name": "c6_2",
+      "type": "select",
+      "question": "6.2 — Objectifs et cibles énergétiques",
+      "help": "L'organisme établit des objectifs énergétiques et des cibles de performance mesurables, cohérents avec la politique, et planifie les actions pour les atteindre.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.2",
+      "axe": "6 — Planification",
+      "poids": 3
+    },
+    {
+      "name": "c7_2",
+      "type": "select",
+      "question": "7.2 — Compétences",
+      "help": "L'organisme détermine les compétences nécessaires des personnes dont le travail influe sur la performance énergétique et s'assure qu'elles les possèdent.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.2",
+      "axe": "7 — Support",
+      "poids": 2
+    },
+    {
+      "name": "c7_5",
+      "type": "select",
+      "question": "7.5 — Informations documentées",
+      "help": "Les informations documentées exigées par le système de management de l'énergie sont identifiées, maîtrisées et disponibles là où elles sont nécessaires.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.5",
+      "axe": "7 — Support",
+      "poids": 2
+    },
+    {
+      "name": "c8_1",
+      "type": "select",
+      "question": "8.1 — Planification et maîtrise opérationnelles",
+      "help": "L'organisme planifie, met en œuvre et maîtrise les processus liés aux usages énergétiques significatifs, en définissant des critères d'exploitation et en maîtrisant les processus sous-traités.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.1",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 3
+    },
+    {
+      "name": "c8_2",
+      "type": "select",
+      "question": "8.2 — Conception",
+      "help": "L'organisme prend en compte les opportunités d'amélioration de la performance énergétique et la maîtrise opérationnelle lors de la conception d'installations, équipements ou procédés nouveaux ou modifiés.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.2",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 3
+    },
+    {
+      "name": "c8_3",
+      "type": "select",
+      "question": "8.3 — Achats",
+      "help": "L'organisme établit des critères d'évaluation de la performance énergétique sur la durée de vie prévue pour l'achat de produits, équipements et services influant sur les usages significatifs, et en informe les fournisseurs.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.3",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 3
+    },
+    {
+      "name": "c9_1",
+      "type": "select",
+      "question": "9.1 — Surveillance, mesure, analyse et évaluation",
+      "help": "L'organisme surveille et mesure les caractéristiques clés de ses activités, évalue la performance énergétique atteinte et l'efficacité du système, et compare la consommation attendue à la consommation réelle.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.1",
+      "axe": "9 — Évaluation des performances",
+      "poids": 4
+    },
+    {
+      "name": "c9_2",
+      "type": "select",
+      "question": "9.2 — Audit interne",
+      "help": "L'organisme réalise des audits internes à intervalles planifiés, selon un programme tenant compte de l'importance des processus, par des auditeurs garantissant l'objectivité.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.2",
+      "axe": "9 — Évaluation des performances",
+      "poids": 3
+    },
+    {
+      "name": "c9_3",
+      "type": "select",
+      "question": "9.3 — Revue de direction",
+      "help": "La direction procède à intervalles planifiés à la revue du système, en examinant la performance énergétique atteinte, l'évolution des indicateurs et l'adéquation des ressources.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.3",
+      "axe": "9 — Évaluation des performances",
+      "poids": 3
+    },
+    {
+      "name": "c10_1",
+      "type": "select",
+      "question": "10.1 — Non-conformités et actions correctives",
+      "help": "En cas de non-conformité, l'organisme réagit, en évalue les causes, met en œuvre les actions nécessaires et vérifie leur efficacité.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "10.1",
+      "axe": "10 — Amélioration",
+      "poids": 2
+    },
+    {
+      "name": "c10_2",
+      "type": "select",
+      "question": "10.2 — Amélioration continue",
+      "help": "L'organisme améliore en continu sa performance énergétique ainsi que la pertinence et l'efficacité de son système de management de l'énergie.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "10.2",
+      "axe": "10 — Amélioration",
+      "poids": 3
     }
   ],
-  "promptTemplate": "Vous avez répondu : UES_identifies: {UES_identifies}, revue_energetique: {revue_energetique}, niveau_maturite: {niveau_maturite}, plan_actions: {plan_actions}. En tant qu'auditeur expert du référentiel ISO 50001, évaluez ces informations selon les exigences du standard (revue énergétique initiale, identification des UES, plan d'actions d'efficacité énergétique) et attribuez un score global sur 100. Évaluez également les axes suivants : Revue énergétique, Identification des UES, Plan d'actions. Fournissez des recommandations prioritaires pour améliorer la conformité et l'efficacité du système de management de l'énergie.",
+  "promptTemplate": "Tu es auditeur expérimenté, habitué aux audits de certification ISO 50001. L'organisme est décrit ainsi : {contexte}.\n\nLes clauses applicables et leur grille de maturité te sont fournies plus bas, ainsi que le positionnement déclaré pour chacune et les scores déjà calculés.\n\nProduis un rapport de pré-audit :\n- pour chaque chapitre parmi 4 (Contexte de l'organisme), 5 (Leadership), 6 (Planification), 7 (Support), 8 (Réalisation des activités opérationnelles), 9 (Évaluation des performances), 10 (Amélioration), un constat appuyé sur les clauses réellement concernées, en citant leur numéro ;\n- pour les clauses les plus faibles, indique l'écart précis par rapport à l'exigence et la preuve qui serait demandée en audit ;\n- des recommandations priorisées, chacune rattachée à un numéro de clause, actionnables et proportionnées au contexte décrit.\n\nTraite en priorité la revue énergétique, les indicateurs et la situation énergétique de référence : sans référence établie, aucune amélioration de la performance ne peut être démontrée en audit.\n\nN'invente aucune exigence absente des clauses fournies. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
@@ -76,6 +694,5 @@
       "axes",
       "recommandations"
     ]
-  },
-  "output_kind": "assessment"
+  }
 }
