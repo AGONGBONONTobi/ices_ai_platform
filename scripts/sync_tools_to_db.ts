@@ -96,23 +96,46 @@ async function main() {
   }
 
   // --- Upsert par lots ---
-  for (let i = 0; i < local.length; i += BATCH_SIZE) {
-    const batch = local.slice(i, i + BATCH_SIZE).map((tool) => ({
-      id: tool.id,
-      title: tool.title,
-      category: tool.category,
-      config: tool as any,
-      // Sans statut explicite, une insertion prend le défaut 'draft'. On ne
-      // touche jamais au statut d'une fiche déjà en base : le dépublier
-      // silencieusement serait pire que de ne rien faire.
-      ...(PUBLISH_NEW && !remoteSet.has(tool.id) ? { status: "published" } : {}),
-    }));
-    const { error } = await supabase.from("tools").upsert(batch);
-    if (error) {
-      console.error(`✖ Upsert du lot ${i / BATCH_SIZE + 1} :`, error.message);
-      process.exit(1);
+  //
+  // Deux passes, et non une seule avec un `status` conditionnel : un upsert en
+  // masse exige que tous les objets envoyés portent les mêmes colonnes, les
+  // absentes étant écrites à NULL. Mélanger des fiches avec statut et des
+  // fiches sans faisait donc écrire `status = NULL` sur les secondes, ce que la
+  // contrainte NOT NULL rejetait — et le lot entier échouait.
+  //
+  // On ne touche jamais au statut d'une fiche déjà en base : la dépublier
+  // silencieusement serait pire que de ne rien faire. Sans statut explicite,
+  // une insertion prend le défaut 'draft'.
+  const nouvelles = local.filter((tool) => !remoteSet.has(tool.id));
+  const existantes = local.filter((tool) => remoteSet.has(tool.id));
+
+  const colonnes = (tool: (typeof local)[number]) => ({
+    id: tool.id,
+    title: tool.title,
+    category: tool.category,
+    config: tool as any,
+  });
+
+  const passes: { fiches: typeof local; statut?: string }[] = [
+    { fiches: existantes },
+    { fiches: nouvelles, ...(PUBLISH_NEW ? { statut: "published" } : {}) },
+  ];
+
+  let traitees = 0;
+  for (const { fiches, statut } of passes) {
+    for (let i = 0; i < fiches.length; i += BATCH_SIZE) {
+      const batch = fiches
+        .slice(i, i + BATCH_SIZE)
+        .map((tool) => (statut ? { ...colonnes(tool), status: statut } : colonnes(tool)));
+
+      const { error } = await supabase.from("tools").upsert(batch);
+      if (error) {
+        console.error(`✖ Upsert (${batch.length} fiches) :`, error.message);
+        process.exit(1);
+      }
+      traitees += batch.length;
+      console.log(`  ${traitees}/${local.length} synchronisées`);
     }
-    console.log(`  ${Math.min(i + BATCH_SIZE, local.length)}/${local.length} synchronisées`);
   }
 
   // --- Suppression des obsolètes ---
