@@ -9,8 +9,15 @@
  * catalogue que validate_tools.ts rejette.
  *
  * Usage :
- *   npx tsx scripts/sync_tools_to_db.ts            # aperçu
- *   npx tsx scripts/sync_tools_to_db.ts --write    # applique
+ *   npx tsx scripts/sync_tools_to_db.ts                    # aperçu
+ *   npx tsx scripts/sync_tools_to_db.ts --write            # applique
+ *   npx tsx scripts/sync_tools_to_db.ts --write --publish  # publie les nouvelles
+ *
+ * La colonne `status` a pour défaut 'draft' : une fiche insérée pour la première
+ * fois n'est donc pas servie par le catalogue. C'est voulu — le banc de tests
+ * décidera de la publication — mais cela surprend lors d'un simple renommage,
+ * où l'outil était publié sous son ancien identifiant. `--publish` publie les
+ * fiches nouvellement insérées.
  */
 
 import fs from "fs";
@@ -23,6 +30,7 @@ dotenv.config({ path: ".env.local" });
 
 const TOOLS_DIR = path.join(__dirname, "../data/tools");
 const WRITE = process.argv.includes("--write");
+const PUBLISH_NEW = process.argv.includes("--publish");
 const BATCH_SIZE = 200;
 
 const supabase = createClient(
@@ -65,8 +73,17 @@ async function main() {
     if ((data ?? []).length < 1000) break;
   }
 
+  const remoteSet = new Set(remoteIds);
   const stale = remoteIds.filter((id) => !localIds.has(id));
+  const created = local.filter((t) => !remoteSet.has(t.id)).map((t) => t.id);
+
   console.log(`${remoteIds.length} fiches en base, dont ${stale.length} obsolète(s).`);
+  if (created.length > 0) {
+    console.log(
+      `${created.length} fiche(s) à insérer` +
+        (PUBLISH_NEW ? " — publiées (--publish)." : " — en `draft`, donc invisibles au catalogue.")
+    );
+  }
 
   if (!WRITE) {
     if (stale.length > 0) {
@@ -85,6 +102,10 @@ async function main() {
       title: tool.title,
       category: tool.category,
       config: tool as any,
+      // Sans statut explicite, une insertion prend le défaut 'draft'. On ne
+      // touche jamais au statut d'une fiche déjà en base : le dépublier
+      // silencieusement serait pire que de ne rien faire.
+      ...(PUBLISH_NEW && !remoteSet.has(tool.id) ? { status: "published" } : {}),
     }));
     const { error } = await supabase.from("tools").upsert(batch);
     if (error) {

@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import { ToolConfig } from "@/lib/schema/tool-schema";
 import { DynamicToolForm } from "@/components/engine/DynamicToolForm";
-import { PdfDownloadButton } from "@/components/engine/PdfDownloadButton";
 import { ResultView } from "@/components/engine/ResultView";
 import { CheckCircle, ArrowClockwise, WarningCircle } from "@phosphor-icons/react/dist/ssr";
 import { Locale } from "@/lib/i18n/getDictionary";
@@ -13,17 +13,87 @@ import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
+/**
+ * `@react-pdf/renderer` n'est pas compatible avec le rendu serveur : son seul
+ * import dans l'arbre de la page la faisait échouer en 500 — « Element type is
+ * invalid » — et donc aucun outil ne s'ouvrait. On la charge uniquement dans le
+ * navigateur.
+ */
+const PdfDownloadButton = dynamic(
+  () => import("@/components/engine/PdfDownloadButton").then((m) => m.PdfDownloadButton),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-11 rounded-xl bg-slate-100 animate-pulse" />
+    ),
+  }
+);
+
+
 interface ToolExecutorProps {
   tool: ToolConfig;
   dict: any;
   lang: Locale;
 }
 
-// Skeleton loader for the results section
-function ResultSkeleton() {
+/**
+ * Silhouette du résultat pendant la génération. Elle suit le type de sortie de
+ * l'outil : afficher un score en attente sur un modèle de document ou un test de
+ * personnalité annoncerait un résultat qui ne viendra pas.
+ */
+function ResultSkeleton({ kind }: { kind?: string }) {
+  const bars = (n: number, widths: string[]) => (
+    <div className="space-y-3">
+      {Array.from({ length: n }).map((_, i) => (
+        <div key={i} className="h-10 rounded-xl bg-slate-100" style={{ width: widths[i % widths.length] }} />
+      ))}
+    </div>
+  );
+
+  if (kind === "table") {
+    return (
+      <div className="space-y-2 animate-pulse">
+        <div className="h-10 rounded-t-xl bg-violet-200/60" />
+        {[0, 1, 2, 3].map((i) => (
+          <div key={i} className="h-9 rounded bg-slate-100" />
+        ))}
+      </div>
+    );
+  }
+
+  if (kind === "document" || kind === "analysis") {
+    return (
+      <div className="space-y-6 animate-pulse">
+        <div className="h-6 w-1/2 rounded-lg bg-slate-200" />
+        {[0, 1, 2].map((i) => (
+          <div key={i} className="space-y-2">
+            <div className="h-4 w-1/3 rounded bg-violet-200/50" />
+            {bars(3, ["100%", "95%", "70%"])}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  if (kind === "profile") {
+    return (
+      <div className="space-y-6 animate-pulse">
+        <div className="h-20 rounded-2xl bg-violet-50 border border-violet-100" />
+        <div className="space-y-4">
+          {[0, 1, 2, 3].map((i) => (
+            <div key={i} className="space-y-2">
+              <div className="h-4 w-1/3 rounded bg-slate-200" />
+              <div className="h-1.5 rounded-full bg-violet-100" style={{ width: `${80 - i * 12}%` }} />
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // assessment : score global, axes, recommandations
   return (
     <div className="space-y-6 animate-pulse">
-      {/* Score skeleton */}
       <div className="rounded-2xl border border-violet-100 bg-gradient-to-br from-violet-50 to-indigo-50 p-6 flex items-center justify-between">
         <div className="space-y-2">
           <div className="h-5 w-32 rounded-lg bg-violet-200/60" />
@@ -31,18 +101,55 @@ function ResultSkeleton() {
         </div>
         <div className="w-20 h-20 rounded-full bg-violet-200/60" />
       </div>
-      {/* Axes skeleton */}
-      <div className="grid grid-cols-2 gap-4">
-        {[1, 2, 3, 4].map((i) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {[0, 1, 2, 3].map((i) => (
           <div key={i} className="h-20 rounded-xl bg-slate-100" />
         ))}
       </div>
-      {/* Reco skeleton */}
-      <div className="space-y-3">
-        {[1, 2, 3].map((i) => (
-          <div key={i} className="h-10 rounded-xl bg-slate-100" />
-        ))}
+      {bars(3, ["100%", "92%", "80%"])}
+    </div>
+  );
+}
+
+/**
+ * Bandeau d'attente. Les diagnostics adossés à un référentiel passent par un
+ * modèle plus capable et peuvent demander une trentaine de secondes : sans
+ * compteur ni explication, l'utilisateur croit que rien ne se passe.
+ */
+function GeneratingBanner({ hasReferentiel }: { hasReferentiel: boolean }) {
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => setSeconds((s) => s + 1), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const message = hasReferentiel
+    ? "Analyse de vos réponses au regard du référentiel…"
+    : "L'IA analyse votre situation…";
+
+  return (
+    <div className="text-center py-8 space-y-3">
+      <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-violet-50 border border-violet-200 text-violet-700 font-medium text-sm">
+        <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none">
+          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+        </svg>
+        <span>{message}</span>
+        <span className="flex gap-1">
+          {[0, 1, 2].map((i) => (
+            <span
+              key={i}
+              className="w-1.5 h-1.5 rounded-full bg-violet-500 animate-bounce"
+              style={{ animationDelay: `${i * 0.15}s` }}
+            />
+          ))}
+        </span>
       </div>
+      <p className="text-xs text-slate-400 tabular-nums">
+        {seconds}s
+        {seconds >= 12 && " — les diagnostics normatifs demandent parfois une trentaine de secondes"}
+      </p>
     </div>
   );
 }
@@ -98,25 +205,11 @@ export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
     }
   };
 
-  // Show skeleton while loading
   if (isGenerating) {
     return (
       <div className="space-y-6">
-        <div className="text-center py-8">
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-violet-50 border border-violet-200 text-violet-700 font-medium text-sm">
-            <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-            </svg>
-            <span>L&apos;IA analyse votre situation...</span>
-            <span className="flex gap-1">
-              {[0, 1, 2].map((i) => (
-                <span key={i} className="w-1.5 h-1.5 rounded-full bg-violet-500 animate-bounce" style={{ animationDelay: `${i * 0.15}s` }} />
-              ))}
-            </span>
-          </div>
-        </div>
-        <ResultSkeleton />
+        <GeneratingBanner hasReferentiel={Boolean(tool.referentiel_code)} />
+        <ResultSkeleton kind={tool.output_kind} />
       </div>
     );
   }
