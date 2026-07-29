@@ -1,0 +1,322 @@
+{
+  "code": "ISO-22301",
+  "version": "2019",
+  "label": "ISO 22301:2019 — Continuité d'activité",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (numérotation et intitulés des chapitres) et une reformulation des attendus sont utilisées. À faire relire par un praticien disposant du texte officiel avant mise en vente.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "4", "titre": "Contexte de l'organisme" },
+    { "numero": "5", "titre": "Leadership" },
+    { "numero": "6", "titre": "Planification" },
+    { "numero": "7", "titre": "Support" },
+    { "numero": "8", "titre": "Réalisation des activités opérationnelles" },
+    { "numero": "9", "titre": "Évaluation des performances" },
+    { "numero": "10", "titre": "Amélioration" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "4.1",
+      "intitule": "Compréhension de l'organisme et de son contexte",
+      "exigence": "L'organisme détermine les enjeux internes et externes qui influent sur sa capacité à atteindre les résultats attendus de son système de management de la continuité d'activité, y compris sa dépendance aux infrastructures, aux fournisseurs et à son environnement local.",
+      "preuves": [
+        "Analyse de contexte écrite, datée, citant les dépendances réelles de l'organisme (énergie, réseau, transport, fournisseur unique)",
+        "Trace d'une revue de ce contexte après un changement significatif"
+      ],
+      "erreurs_frequentes": [
+        "Une analyse de contexte générique, recopiée d'un modèle, sans lien avec l'activité réelle",
+        "Ignorer les dépendances locales concrètes : coupure électrique, accès routier, opérateur télécom unique"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.2",
+      "intitule": "Besoins et attentes des parties intéressées",
+      "exigence": "L'organisme identifie les parties intéressées pertinentes pour la continuité d'activité et leurs exigences, y compris les exigences légales, réglementaires et contractuelles applicables.",
+      "preuves": [
+        "Liste des parties intéressées avec, pour chacune, l'exigence de continuité qui en découle",
+        "Registre des exigences légales et contractuelles de continuité, tenu à jour"
+      ],
+      "erreurs_frequentes": [
+        "Confondre partie intéressée et client : les autorités, assureurs et sous-traitants critiques sont oubliés",
+        "Lister les parties sans jamais en déduire une exigence de délai ou de niveau de service"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.3",
+      "intitule": "Détermination du domaine d'application",
+      "exigence": "L'organisme définit les limites du système de management de la continuité d'activité et justifie les activités, sites et produits inclus ou exclus.",
+      "preuves": [
+        "Domaine d'application écrit, nommant les sites et activités couverts",
+        "Justification argumentée de toute exclusion"
+      ],
+      "erreurs_frequentes": [
+        "Un périmètre si étroit qu'il exclut les activités réellement critiques",
+        "Des exclusions non justifiées, découvertes en audit"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.1",
+      "intitule": "Leadership et engagement",
+      "exigence": "La direction démontre son engagement en dotant le dispositif de continuité de ressources, en l'intégrant aux processus de l'organisme et en en portant les arbitrages.",
+      "preuves": [
+        "Budget et ressources affectés à la continuité, identifiables",
+        "Participation effective de la direction aux exercices et aux revues"
+      ],
+      "erreurs_frequentes": [
+        "Un engagement affiché dans la politique mais sans ressource ni arbitrage réel",
+        "La continuité déléguée entièrement à un service technique, sans portage par la direction"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "5.2",
+      "intitule": "Politique de continuité d'activité",
+      "exigence": "Une politique de continuité d'activité est établie, communiquée et tenue à disposition des parties intéressées pertinentes.",
+      "preuves": [
+        "Politique datée, approuvée par la direction, diffusée et accessible",
+        "Preuve de communication au personnel concerné"
+      ],
+      "erreurs_frequentes": [
+        "Une politique signée puis jamais rediffusée ni relue",
+        "Une politique dont le contenu ne dit rien de spécifique à l'organisme"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.3",
+      "intitule": "Rôles, responsabilités et autorités",
+      "exigence": "Les rôles, responsabilités et autorités liés à la continuité d'activité sont attribués, communiqués, et prévoient les délégations applicables en situation de crise.",
+      "preuves": [
+        "Organigramme de crise nommant les titulaires et leurs suppléants",
+        "Règle de délégation d'autorité applicable quand un responsable est injoignable"
+      ],
+      "erreurs_frequentes": [
+        "Aucun suppléant désigné : le dispositif tombe si une personne est indisponible",
+        "Des rôles attribués à des personnes qui ignorent en avoir la charge"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.1",
+      "intitule": "Actions face aux risques et opportunités",
+      "exigence": "L'organisme détermine les risques et opportunités à traiter pour que le système de continuité atteigne ses résultats, et planifie les actions correspondantes ainsi que leur évaluation.",
+      "preuves": [
+        "Plan d'actions rattachant chaque risque retenu à une mesure et à un responsable",
+        "Évaluation de l'efficacité des actions engagées"
+      ],
+      "erreurs_frequentes": [
+        "Un registre des risques tenu pour lui-même, sans action rattachée",
+        "Des actions sans responsable ni échéance"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.2",
+      "intitule": "Objectifs de continuité d'activité",
+      "exigence": "Des objectifs de continuité mesurables sont établis aux niveaux pertinents, cohérents avec la politique, et font l'objet d'un suivi.",
+      "preuves": [
+        "Objectifs chiffrés et datés, avec l'indicateur qui les mesure",
+        "Suivi périodique montrant l'écart à l'objectif"
+      ],
+      "erreurs_frequentes": [
+        "Des objectifs qualitatifs invérifiables du type « améliorer la résilience »",
+        "Des objectifs fixés une fois puis jamais mesurés"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.2",
+      "intitule": "Compétences",
+      "exigence": "L'organisme détermine les compétences nécessaires aux personnes intervenant dans la continuité d'activité, s'assure qu'elles les possèdent et conserve les preuves associées.",
+      "preuves": [
+        "Matrice de compétences pour les membres de la cellule de crise",
+        "Attestations de formation ou d'entraînement conservées"
+      ],
+      "erreurs_frequentes": [
+        "Une formation initiale unique, jamais réactualisée malgré le renouvellement des équipes",
+        "Confondre information et compétence : avoir lu le plan ne rend pas capable de l'exécuter"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.4",
+      "intitule": "Communication",
+      "exigence": "L'organisme détermine les besoins de communication interne et externe relatifs à la continuité, y compris les moyens à utiliser lorsque les canaux habituels sont indisponibles.",
+      "preuves": [
+        "Procédure d'alerte identifiant qui prévient qui, dans quel délai, par quel canal",
+        "Moyen de communication de secours testé, indépendant du système principal"
+      ],
+      "erreurs_frequentes": [
+        "Un plan de communication qui repose entièrement sur la messagerie d'entreprise, indisponible en cas de panne",
+        "Aucune liste de contacts d'urgence tenue à jour hors du système d'information"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.5",
+      "intitule": "Informations documentées",
+      "exigence": "Les informations documentées exigées par le système de continuité sont identifiées, maîtrisées, et restent accessibles au moment où elles sont nécessaires.",
+      "preuves": [
+        "Plans de continuité accessibles hors ligne et hors des locaux principaux",
+        "Gestion des versions montrant quelle édition fait foi"
+      ],
+      "erreurs_frequentes": [
+        "Le plan de continuité stocké uniquement sur le serveur qu'il est censé sauver",
+        "Plusieurs versions en circulation sans que personne ne sache laquelle s'applique"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.2",
+      "intitule": "Bilan d'impact sur l'activité et appréciation du risque",
+      "exigence": "L'organisme réalise un bilan d'impact identifiant les activités prioritaires, les délais maximaux d'interruption admissibles et les besoins en ressources associés, et apprécie les risques de perturbation correspondants.",
+      "preuves": [
+        "Bilan d'impact daté, énonçant pour chaque activité prioritaire un délai de reprise cible et le niveau de service minimal",
+        "Ressources nécessaires à la reprise quantifiées : personnes, systèmes, locaux, fournisseurs"
+      ],
+      "erreurs_frequentes": [
+        "Des délais de reprise fixés par confort plutôt que déduits de l'impact réel",
+        "Un bilan d'impact conduit une fois, jamais revu après changement d'activité",
+        "Traiter toutes les activités comme prioritaires, ce qui revient à n'en prioriser aucune"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.3",
+      "intitule": "Stratégies et solutions de continuité",
+      "exigence": "L'organisme identifie et sélectionne des stratégies de continuité proportionnées aux délais de reprise retenus, et met en place les solutions correspondantes.",
+      "preuves": [
+        "Stratégie retenue par activité prioritaire, avec la justification du choix",
+        "Solutions effectivement déployées : site de repli, redondance, accord avec un tiers"
+      ],
+      "erreurs_frequentes": [
+        "Une stratégie affichée sans les moyens qui la rendent réalisable",
+        "Un site de repli contractualisé mais jamais activé ni vérifié",
+        "Une solution dont le délai de mise en œuvre dépasse le délai de reprise visé"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.4",
+      "intitule": "Plans et procédures de continuité",
+      "exigence": "L'organisme établit des plans et procédures documentés permettant de gérer une perturbation et de reprendre les activités prioritaires dans les délais fixés, incluant l'alerte, la mobilisation et la reprise.",
+      "preuves": [
+        "Plans opérationnels nommant les personnes, les seuils de déclenchement et les actions dans l'ordre",
+        "Procédure d'escalade et critères d'activation explicites"
+      ],
+      "erreurs_frequentes": [
+        "Un plan rédigé pour l'audit, inutilisable sous pression parce que trop long ou trop abstrait",
+        "Aucun critère écrit disant qui décide d'activer le plan, et à partir de quel seuil"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.5",
+      "intitule": "Programme d'exercices",
+      "exigence": "L'organisme exerce et teste ses dispositifs de continuité à intervalles planifiés, dans des conditions cohérentes avec les scénarios retenus, et exploite les résultats obtenus.",
+      "preuves": [
+        "Programme d'exercices planifié, avec des scénarios différenciés",
+        "Comptes rendus d'exercice mentionnant les écarts constatés et les actions qui en découlent"
+      ],
+      "erreurs_frequentes": [
+        "Un exercice annuel purement théorique, sans mise en situation réelle",
+        "Des écarts relevés en exercice qui ne débouchent sur aucune correction",
+        "Tester toujours le même scénario, celui qu'on sait réussir"
+      ],
+      "poids": 4
+    },
+    {
+      "chapitre": "8.6",
+      "intitule": "Évaluation de la documentation et des capacités de continuité",
+      "exigence": "L'organisme évalue à intervalles planifiés la pertinence et l'efficacité de ses procédures et de ses capacités de continuité, y compris après une perturbation réelle.",
+      "preuves": [
+        "Revue périodique des plans, avec la date de dernière vérification",
+        "Retour d'expérience formalisé après tout incident réel"
+      ],
+      "erreurs_frequentes": [
+        "Des plans dont les contacts et les rôles ne sont plus à jour",
+        "Aucun retour d'expérience après un incident réel, alors que c'est la source la plus riche"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.1",
+      "intitule": "Surveillance, mesure, analyse et évaluation",
+      "exigence": "L'organisme détermine ce qui doit être surveillé et mesuré pour la continuité, ainsi que les méthodes et la périodicité, et évalue la performance obtenue.",
+      "preuves": [
+        "Indicateurs de continuité suivis dans le temps : délais constatés en exercice, taux de couverture des activités prioritaires",
+        "Analyse des écarts entre délai de reprise visé et délai réellement atteint"
+      ],
+      "erreurs_frequentes": [
+        "Mesurer l'activité du dispositif plutôt que sa performance : compter les exercices sans mesurer les délais atteints",
+        "Aucune comparaison entre l'objectif de reprise et le résultat observé"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.2",
+      "intitule": "Audit interne",
+      "exigence": "L'organisme réalise des audits internes à intervalles planifiés, selon un programme tenant compte de l'importance des processus, et par des auditeurs garantissant l'impartialité.",
+      "preuves": [
+        "Programme d'audit couvrant l'ensemble des exigences sur un cycle défini",
+        "Rapports d'audit et preuve de l'indépendance des auditeurs vis-à-vis du domaine audité"
+      ],
+      "erreurs_frequentes": [
+        "Un audit interne conduit par le responsable de la continuité lui-même",
+        "Un programme qui ne couvre jamais certaines exigences"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.3",
+      "intitule": "Revue de direction",
+      "exigence": "La direction procède à intervalles planifiés à la revue du système de continuité, en examinant les résultats des exercices, les incidents, les audits et l'adéquation des ressources.",
+      "preuves": [
+        "Compte rendu de revue de direction couvrant les entrées exigées et actant des décisions",
+        "Décisions de revue rattachées à des actions suivies"
+      ],
+      "erreurs_frequentes": [
+        "Une revue qui constate sans décider ni allouer de ressources",
+        "Des entrées incomplètes : les résultats d'exercices et les incidents réels sont omis"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.1",
+      "intitule": "Non-conformités et actions correctives",
+      "exigence": "En cas de non-conformité, l'organisme réagit, en évalue les causes, met en œuvre les actions nécessaires et vérifie leur efficacité.",
+      "preuves": [
+        "Registre des non-conformités mentionnant l'analyse de cause et la vérification d'efficacité",
+        "Trace de la clôture, appuyée sur une preuve et non sur une déclaration"
+      ],
+      "erreurs_frequentes": [
+        "Traiter le symptôme sans analyser la cause, ce qui laisse l'écart réapparaître",
+        "Des actions déclarées closes sans aucune vérification d'efficacité"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.2",
+      "intitule": "Amélioration continue",
+      "exigence": "L'organisme améliore en continu la pertinence, l'adéquation et l'efficacité de son système de management de la continuité d'activité.",
+      "preuves": [
+        "Améliorations tracées, issues des exercices, des audits ou des incidents réels",
+        "Évolution démontrable du dispositif d'une année sur l'autre"
+      ],
+      "erreurs_frequentes": [
+        "Une amélioration continue affirmée dans les documents mais sans aucune évolution constatable",
+        "Un dispositif identique d'une année sur l'autre malgré des écarts répétés"
+      ],
+      "poids": 2
+    }
+  ]
+}

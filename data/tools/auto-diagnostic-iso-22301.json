@@ -1,0 +1,730 @@
+{
+  "id": "auto-diagnostic-iso-22301",
+  "title": "Auto-diagnostic ISO 22301",
+  "category": "Systèmes de Management ISO",
+  "output_kind": "assessment",
+  "referentiel_code": "ISO-22301",
+  "referentiel_version": "2019",
+  "inputs": [
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Décrivez brièvement votre organisme",
+      "help": "Secteur, effectif, sites, activités critiques, et objectif visé (certification, mise à niveau interne...).",
+      "placeholder": "Cabinet de conseil, 60 salariés, deux bureaux à Cotonou, visant la certification sous 18 mois.",
+      "required": true
+    },
+    {
+      "name": "c4_1",
+      "type": "select",
+      "question": "4.1 — Compréhension de l'organisme et de son contexte",
+      "help": "L'organisme détermine les enjeux internes et externes qui influent sur sa capacité à atteindre les résultats attendus de son système de management de la continuité d'activité, y compris sa dépendance aux infrastructures, aux fournisseurs et à son environnement local.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.1",
+      "axe": "4 — Contexte de l'organisme",
+      "poids": 2
+    },
+    {
+      "name": "c4_2",
+      "type": "select",
+      "question": "4.2 — Besoins et attentes des parties intéressées",
+      "help": "L'organisme identifie les parties intéressées pertinentes pour la continuité d'activité et leurs exigences, y compris les exigences légales, réglementaires et contractuelles applicables.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.2",
+      "axe": "4 — Contexte de l'organisme",
+      "poids": 2
+    },
+    {
+      "name": "c4_3",
+      "type": "select",
+      "question": "4.3 — Détermination du domaine d'application",
+      "help": "L'organisme définit les limites du système de management de la continuité d'activité et justifie les activités, sites et produits inclus ou exclus.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.3",
+      "axe": "4 — Contexte de l'organisme",
+      "poids": 2
+    },
+    {
+      "name": "c5_1",
+      "type": "select",
+      "question": "5.1 — Leadership et engagement",
+      "help": "La direction démontre son engagement en dotant le dispositif de continuité de ressources, en l'intégrant aux processus de l'organisme et en en portant les arbitrages.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.1",
+      "axe": "5 — Leadership",
+      "poids": 3
+    },
+    {
+      "name": "c5_2",
+      "type": "select",
+      "question": "5.2 — Politique de continuité d'activité",
+      "help": "Une politique de continuité d'activité est établie, communiquée et tenue à disposition des parties intéressées pertinentes.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.2",
+      "axe": "5 — Leadership",
+      "poids": 2
+    },
+    {
+      "name": "c5_3",
+      "type": "select",
+      "question": "5.3 — Rôles, responsabilités et autorités",
+      "help": "Les rôles, responsabilités et autorités liés à la continuité d'activité sont attribués, communiqués, et prévoient les délégations applicables en situation de crise.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.3",
+      "axe": "5 — Leadership",
+      "poids": 3
+    },
+    {
+      "name": "c6_1",
+      "type": "select",
+      "question": "6.1 — Actions face aux risques et opportunités",
+      "help": "L'organisme détermine les risques et opportunités à traiter pour que le système de continuité atteigne ses résultats, et planifie les actions correspondantes ainsi que leur évaluation.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.1",
+      "axe": "6 — Planification",
+      "poids": 2
+    },
+    {
+      "name": "c6_2",
+      "type": "select",
+      "question": "6.2 — Objectifs de continuité d'activité",
+      "help": "Des objectifs de continuité mesurables sont établis aux niveaux pertinents, cohérents avec la politique, et font l'objet d'un suivi.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.2",
+      "axe": "6 — Planification",
+      "poids": 2
+    },
+    {
+      "name": "c7_2",
+      "type": "select",
+      "question": "7.2 — Compétences",
+      "help": "L'organisme détermine les compétences nécessaires aux personnes intervenant dans la continuité d'activité, s'assure qu'elles les possèdent et conserve les preuves associées.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.2",
+      "axe": "7 — Support",
+      "poids": 2
+    },
+    {
+      "name": "c7_4",
+      "type": "select",
+      "question": "7.4 — Communication",
+      "help": "L'organisme détermine les besoins de communication interne et externe relatifs à la continuité, y compris les moyens à utiliser lorsque les canaux habituels sont indisponibles.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.4",
+      "axe": "7 — Support",
+      "poids": 3
+    },
+    {
+      "name": "c7_5",
+      "type": "select",
+      "question": "7.5 — Informations documentées",
+      "help": "Les informations documentées exigées par le système de continuité sont identifiées, maîtrisées, et restent accessibles au moment où elles sont nécessaires.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.5",
+      "axe": "7 — Support",
+      "poids": 3
+    },
+    {
+      "name": "c8_2",
+      "type": "select",
+      "question": "8.2 — Bilan d'impact sur l'activité et appréciation du risque",
+      "help": "L'organisme réalise un bilan d'impact identifiant les activités prioritaires, les délais maximaux d'interruption admissibles et les besoins en ressources associés, et apprécie les risques de perturbation correspondants.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.2",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 4
+    },
+    {
+      "name": "c8_3",
+      "type": "select",
+      "question": "8.3 — Stratégies et solutions de continuité",
+      "help": "L'organisme identifie et sélectionne des stratégies de continuité proportionnées aux délais de reprise retenus, et met en place les solutions correspondantes.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.3",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 4
+    },
+    {
+      "name": "c8_4",
+      "type": "select",
+      "question": "8.4 — Plans et procédures de continuité",
+      "help": "L'organisme établit des plans et procédures documentés permettant de gérer une perturbation et de reprendre les activités prioritaires dans les délais fixés, incluant l'alerte, la mobilisation et la reprise.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.4",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 4
+    },
+    {
+      "name": "c8_5",
+      "type": "select",
+      "question": "8.5 — Programme d'exercices",
+      "help": "L'organisme exerce et teste ses dispositifs de continuité à intervalles planifiés, dans des conditions cohérentes avec les scénarios retenus, et exploite les résultats obtenus.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.5",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 4
+    },
+    {
+      "name": "c8_6",
+      "type": "select",
+      "question": "8.6 — Évaluation de la documentation et des capacités de continuité",
+      "help": "L'organisme évalue à intervalles planifiés la pertinence et l'efficacité de ses procédures et de ses capacités de continuité, y compris après une perturbation réelle.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.6",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 3
+    },
+    {
+      "name": "c9_1",
+      "type": "select",
+      "question": "9.1 — Surveillance, mesure, analyse et évaluation",
+      "help": "L'organisme détermine ce qui doit être surveillé et mesuré pour la continuité, ainsi que les méthodes et la périodicité, et évalue la performance obtenue.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.1",
+      "axe": "9 — Évaluation des performances",
+      "poids": 3
+    },
+    {
+      "name": "c9_2",
+      "type": "select",
+      "question": "9.2 — Audit interne",
+      "help": "L'organisme réalise des audits internes à intervalles planifiés, selon un programme tenant compte de l'importance des processus, et par des auditeurs garantissant l'impartialité.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.2",
+      "axe": "9 — Évaluation des performances",
+      "poids": 3
+    },
+    {
+      "name": "c9_3",
+      "type": "select",
+      "question": "9.3 — Revue de direction",
+      "help": "La direction procède à intervalles planifiés à la revue du système de continuité, en examinant les résultats des exercices, les incidents, les audits et l'adéquation des ressources.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.3",
+      "axe": "9 — Évaluation des performances",
+      "poids": 3
+    },
+    {
+      "name": "c10_1",
+      "type": "select",
+      "question": "10.1 — Non-conformités et actions correctives",
+      "help": "En cas de non-conformité, l'organisme réagit, en évalue les causes, met en œuvre les actions nécessaires et vérifie leur efficacité.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "10.1",
+      "axe": "10 — Amélioration",
+      "poids": 3
+    },
+    {
+      "name": "c10_2",
+      "type": "select",
+      "question": "10.2 — Amélioration continue",
+      "help": "L'organisme améliore en continu la pertinence, l'adéquation et l'efficacité de son système de management de la continuité d'activité.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "10.2",
+      "axe": "10 — Amélioration",
+      "poids": 2
+    }
+  ],
+  "promptTemplate": "Tu es auditeur expérimenté en continuité d'activité, habitué aux audits de certification ISO-22301. L'organisme est décrit ainsi : {contexte}.\n\nLes clauses applicables et leur grille de maturité te sont fournies plus bas, ainsi que le positionnement déclaré pour chacune et les scores déjà calculés.\n\nProduis un rapport de pré-audit :\n- pour chaque chapitre parmi 4 (Contexte de l'organisme), 5 (Leadership), 6 (Planification), 7 (Support), 8 (Réalisation des activités opérationnelles), 9 (Évaluation des performances), 10 (Amélioration), un constat appuyé sur les clauses réellement concernées, en citant leur numéro ;\n- pour les clauses les plus faibles, indique l'écart précis par rapport à l'exigence et la preuve qui serait demandée en audit ;\n- des recommandations priorisées, chacune rattachée à un numéro de clause, actionnables et proportionnées au contexte décrit.\n\nTraite en priorité les clauses du chapitre 8 : c'est là que se joue la capacité réelle de reprise, et un dispositif bien documenté mais jamais exercé n'a aucune valeur en audit.\n\nN'invente aucune exigence absente des clauses fournies. Ne recalcule pas les scores.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          },
+          "required": [
+            "axe",
+            "score"
+          ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "score_global",
+      "axes",
+      "recommandations"
+    ]
+  }
+}
