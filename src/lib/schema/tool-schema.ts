@@ -55,6 +55,12 @@ export const toolSchema = z.object({
   outputSchema: z.record(z.string(), z.any()),
   // Absent des fiches antérieures au typage des sorties : on retombe sur le défaut.
   output_kind: z.enum(outputKinds).default(DEFAULT_OUTPUT_KIND),
+  // Référentiel dont les clauses sont injectées à l'exécution.
+  // ATTENTION : Zod supprime les clés non déclarées. Tout champ absent d'ici est
+  // perdu lors de la synchronisation vers la base, sans erreur — c'est ainsi que
+  // le rattachement normatif avait disparu en production.
+  referentiel_code: z.string().optional(),
+  referentiel_version: z.string().optional(),
 });
 
 export type ToolSelectOption = z.infer<typeof toolSelectOptionSchema>;
