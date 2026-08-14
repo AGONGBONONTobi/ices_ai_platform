@@ -1,0 +1,730 @@
+{
+  "id": "auto-diagnostic-iso-17020",
+  "title": "Auto-diagnostic ISO/IEC 17020 — organisme d'inspection",
+  "category": "Inspection Technique & Vérification",
+  "output_kind": "assessment",
+  "referentiel_code": "ISO-17020",
+  "referentiel_version": "2012",
+  "inputs": [
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Décrivez brièvement votre organisme",
+      "help": "Domaines d'inspection couverts, type d'organisme revendiqué (A, B ou C), effectif d'inspecteurs, appartenance éventuelle à un groupe, et objectif visé.",
+      "placeholder": "Organisme d'inspection d'ascenseurs et d'appareils de levage, 12 inspecteurs, indépendant, visant l'accréditation type A.",
+      "required": true
+    },
+    {
+      "name": "c4_1_1",
+      "type": "select",
+      "question": "4.1.1 — Type d'organisme et exigences d'indépendance",
+      "help": "L'organisme détermine le type d'inspection qu'il exerce (A, B ou C) au regard de son indépendance vis-à-vis des parties concernées, et satisfait aux exigences correspondantes. Le type revendiqué conditionne l'ensemble des règles d'indépendance applicables.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.1.1",
+      "axe": "4 — Exigences générales",
+      "poids": 3
+    },
+    {
+      "name": "c4_1_3",
+      "type": "select",
+      "question": "4.1.3 — Identification et maîtrise des risques pour l'impartialité",
+      "help": "Les risques pesant sur l'impartialité sont identifiés de façon continue — liens financiers, commerciaux ou personnels avec le client — et des mesures sont prises pour les éliminer ou les réduire.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.1.3",
+      "axe": "4 — Exigences générales",
+      "poids": 3
+    },
+    {
+      "name": "c4_1_6",
+      "type": "select",
+      "question": "4.1.6 — Absence de rémunération liée au résultat de l'inspection",
+      "help": "La rémunération du personnel intervenant dans l'inspection ne dépend ni du nombre d'inspections réalisées ni de leurs résultats.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.1.6",
+      "axe": "4 — Exigences générales",
+      "poids": 3
+    },
+    {
+      "name": "c4_2",
+      "type": "select",
+      "question": "4.2 — Confidentialité",
+      "help": "L'organisme protège les informations obtenues au cours de l'inspection, et informe le client au préalable lorsqu'une divulgation est imposée par la loi ou par des dispositions contractuelles.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.2",
+      "axe": "4 — Exigences générales",
+      "poids": 2
+    },
+    {
+      "name": "c5_1_2",
+      "type": "select",
+      "question": "5.1.2 — Statut juridique et couverture des responsabilités",
+      "help": "L'organisme est une entité juridiquement identifiable, responsable de ses activités d'inspection, et dispose d'une couverture suffisante des responsabilités découlant de ces activités.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.1.2",
+      "axe": "5 — Exigences structurelles",
+      "poids": 2
+    },
+    {
+      "name": "c5_2_2",
+      "type": "select",
+      "question": "5.2.2 — Organisation, responsabilités et suppléance",
+      "help": "L'organisation, les responsabilités et les liens hiérarchiques sont documentés, et une suppléance est prévue pour les fonctions dont l'absence bloquerait l'activité, notamment le responsable technique.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.2.2",
+      "axe": "5 — Exigences structurelles",
+      "poids": 2
+    },
+    {
+      "name": "c6_1_3",
+      "type": "select",
+      "question": "6.1.3 — Critères de qualification du personnel d'inspection",
+      "help": "Les critères de formation initiale, de formation continue, d'expérience et de connaissances techniques sont définis pour chaque domaine et chaque type d'inspection.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.1.3",
+      "axe": "6 — Exigences en matière de ressources",
+      "poids": 3
+    },
+    {
+      "name": "c6_1_7",
+      "type": "select",
+      "question": "6.1.7 — Autorisation, surveillance et maintien de la compétence",
+      "help": "Chaque inspecteur est formellement autorisé pour les activités qu'il réalise ; sa compétence est maintenue et surveillée, notamment par des observations sur site à intervalles définis.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.1.7",
+      "axe": "6 — Exigences en matière de ressources",
+      "poids": 3
+    },
+    {
+      "name": "c6_2_4",
+      "type": "select",
+      "question": "6.2.4 — Équipements, étalonnage et traçabilité des mesures",
+      "help": "Les équipements utilisés en inspection sont identifiés, vérifiés ou étalonnés avant mise en service puis selon un programme établi, et rattachés à des étalons de référence lorsque la mesure influe sur le résultat.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.2.4",
+      "axe": "6 — Exigences en matière de ressources",
+      "poids": 3
+    },
+    {
+      "name": "c6_3_1",
+      "type": "select",
+      "question": "6.3.1 — Sous-traitance",
+      "help": "L'organisme ne sous-traite que de façon exceptionnelle, à des prestataires compétents et conformes aux exigences applicables ; il en informe le client, obtient son accord, et conserve la responsabilité du résultat.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.3.1",
+      "axe": "6 — Exigences en matière de ressources",
+      "poids": 2
+    },
+    {
+      "name": "c7_1_1",
+      "type": "select",
+      "question": "7.1.1 — Méthodes et procédures d'inspection",
+      "help": "L'organisme utilise les méthodes définies par les exigences applicables à l'inspection ; en l'absence de méthode normalisée, il développe et valide sa propre méthode, et la documente.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.1.1",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 3
+    },
+    {
+      "name": "c7_1_3",
+      "type": "select",
+      "question": "7.1.3 — Contrat, instructions et planification de l'inspection",
+      "help": "Les exigences de l'inspection sont établies avec le client et revues avant exécution ; les inspecteurs disposent d'instructions écrites précisant l'étendue, les points à vérifier et les critères d'acceptation.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.1.3",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 2
+    },
+    {
+      "name": "c7_2_1",
+      "type": "select",
+      "question": "7.2.1 — Traitement des objets et échantillons",
+      "help": "Les objets inspectés et les échantillons prélevés sont identifiés sans ambiguïté, et leur état est vérifié et consigné à la prise en charge ; toute anomalie est signalée au client avant l'inspection.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.2.1",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 2
+    },
+    {
+      "name": "c7_3_1",
+      "type": "select",
+      "question": "7.3.1 — Enregistrements d'inspection",
+      "help": "Les enregistrements comportent les observations et données recueillies sur place, suffisamment détaillées pour permettre de reconstituer l'inspection, et identifient le personnel qui les a produites.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.3.1",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 3
+    },
+    {
+      "name": "c7_4_1",
+      "type": "select",
+      "question": "7.4.1 — Rapports et certificats d'inspection",
+      "help": "Chaque inspection donne lieu à un rapport ou un certificat identifiant l'objet, la méthode, la date, les constatations et les conclusions, approuvé par une personne autorisée avant diffusion.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.4.1",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 3
+    },
+    {
+      "name": "c7_5_1",
+      "type": "select",
+      "question": "7.5.1 — Traitement des réclamations et des appels",
+      "help": "L'organisme dispose d'un processus documenté de réception, d'examen et de décision sur les réclamations et les appels ; la décision est prise par des personnes non impliquées dans l'inspection contestée.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.5.1",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 2
+    },
+    {
+      "name": "c8_3",
+      "type": "select",
+      "question": "8.3 — Maîtrise des documents",
+      "help": "Les documents du système sont approuvés, identifiés par leur version, disponibles aux postes où ils sont utilisés, et les versions périmées retirées de l'usage.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.3",
+      "axe": "8 — Exigences relatives au système de management",
+      "poids": 2
+    },
+    {
+      "name": "c8_4",
+      "type": "select",
+      "question": "8.4 — Maîtrise des enregistrements",
+      "help": "Les enregistrements sont lisibles, stockés de façon sûre et conservés pendant une durée définie, tenant compte des obligations contractuelles et légales.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.4",
+      "axe": "8 — Exigences relatives au système de management",
+      "poids": 2
+    },
+    {
+      "name": "c8_5",
+      "type": "select",
+      "question": "8.5 — Revue de direction",
+      "help": "La direction revoit le système à intervalles planifiés à partir de données réelles — audits, réclamations, appels, retours clients, résultats des comparaisons interlaboratoires ou interinspecteurs — et décide des actions.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.5",
+      "axe": "8 — Exigences relatives au système de management",
+      "poids": 2
+    },
+    {
+      "name": "c8_6",
+      "type": "select",
+      "question": "8.6 — Audits internes",
+      "help": "Un programme d'audit interne couvre l'ensemble des exigences de la norme sur un cycle défini, et les audits sont réalisés par du personnel indépendant de l'activité auditée.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.6",
+      "axe": "8 — Exigences relatives au système de management",
+      "poids": 2
+    },
+    {
+      "name": "c8_7",
+      "type": "select",
+      "question": "8.7 — Actions correctives",
+      "help": "Les non-conformités donnent lieu à une analyse des causes, à des actions proportionnées, et à une vérification de leur efficacité ; l'incidence sur les inspections déjà réalisées est évaluée.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.7",
+      "axe": "8 — Exigences relatives au système de management",
+      "poids": 3
+    }
+  ],
+  "promptTemplate": "Tu es évaluateur pour un organisme d'accréditation, habitué aux évaluations ISO/IEC 17020. On parle d'accréditation et non de certification : emploie le vocabulaire de l'accréditation dans tout le rapport. L'organisme est décrit ainsi : {contexte}.\n\nLes clauses applicables et leur grille de maturité te sont fournies plus bas, ainsi que le positionnement déclaré pour chacune et les scores déjà calculés.\n\nProduis un rapport de pré-audit :\n- pour chaque chapitre parmi 4 (Exigences générales), 5 (Exigences structurelles), 6 (Exigences en matière de ressources), 7 (Exigences relatives aux processus), 8 (Exigences relatives au système de management), un constat appuyé sur les clauses réellement concernées, en citant leur numéro ;\n- pour les clauses les plus faibles, indique l'écart précis par rapport à l'exigence et la preuve qui serait demandée en audit ;\n- des recommandations priorisées, chacune rattachée à un numéro de clause, actionnables et proportionnées au contexte décrit.\n\nTraite en priorité l'impartialité et le type d'organisme revendiqué : c'est le point d'entrée de toute évaluation, et un type A revendiqué à tort invalide l'ensemble du dossier. Vient ensuite la qualification et la surveillance des inspecteurs, qui est le premier motif d'écart en évaluation.\n\nN'invente aucune exigence absente des clauses fournies. Ne recalcule pas les scores.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          },
+          "required": [
+            "axe",
+            "score"
+          ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "score_global",
+      "axes",
+      "recommandations"
+    ]
+  }
+}

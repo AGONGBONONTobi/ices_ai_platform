@@ -1,0 +1,347 @@
+{
+  "code": "ISO-26000",
+  "version": "2010",
+  "label": "ISO 26000:2010 — Lignes directrices relatives à la responsabilité sociétale",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (numérotation et intitulés des questions centrales et de leurs domaines d'action) et une reformulation des attendus sont utilisées. ISO 26000 est une norme de lignes directrices : elle ne donne lieu à aucune certification, et le rapport produit doit se garder de laisser croire le contraire. À faire relire par un praticien disposant du texte officiel avant mise en vente.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "6.2", "titre": "Gouvernance de l'organisation" },
+    { "numero": "6.3", "titre": "Droits de l'Homme" },
+    { "numero": "6.4", "titre": "Relations et conditions de travail" },
+    { "numero": "6.5", "titre": "L'environnement" },
+    { "numero": "6.6", "titre": "Loyauté des pratiques" },
+    { "numero": "6.7", "titre": "Questions relatives aux consommateurs" },
+    { "numero": "6.8", "titre": "Communautés et développement local" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "6.2",
+      "intitule": "Gouvernance de l'organisation",
+      "exigence": "L'organisation dispose d'un processus de décision qui intègre les principes de responsabilité sociétale : redevabilité, transparence, comportement éthique et respect des intérêts des parties prenantes. Les responsabilités en matière de responsabilité sociétale sont attribuées à un niveau qui a autorité pour arbitrer.",
+      "preuves": [
+        "Décision écrite désignant le responsable de la démarche et son rattachement hiérarchique",
+        "Compte rendu d'une instance de direction où un arbitrage a été rendu sur un sujet social ou environnemental"
+      ],
+      "erreurs_frequentes": [
+        "Une démarche confiée à la communication, sans autorité sur les décisions d'achat, de production ou de recrutement",
+        "Des principes affichés dans une charte sans aucun mécanisme de reddition de comptes"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.3.3",
+      "intitule": "Devoir de vigilance",
+      "exigence": "L'organisation identifie de façon continue les incidences réelles et potentielles de ses activités et de ses relations d'affaires sur les droits de l'Homme, et agit pour les prévenir ou les corriger.",
+      "preuves": [
+        "Cartographie des risques d'atteinte aux droits de l'Homme, couvrant les activités propres et les fournisseurs",
+        "Trace des mesures prises à la suite d'un risque identifié"
+      ],
+      "erreurs_frequentes": [
+        "Une vigilance limitée aux salariés directs, ignorant les sous-traitants et la main-d'œuvre journalière",
+        "Une cartographie établie une fois, jamais actualisée après un changement de fournisseur ou de pays d'activité"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.3.5",
+      "intitule": "Prévention de la complicité",
+      "exigence": "L'organisation s'abstient de contribuer, directement ou par ses relations d'affaires, à des atteintes aux droits de l'Homme commises par d'autres, et se retire des situations où sa présence rendrait ces atteintes possibles.",
+      "preuves": [
+        "Clause contractuelle permettant de suspendre une relation en cas d'atteinte avérée",
+        "Exemple documenté de relation d'affaires interrompue ou refusée pour ce motif"
+      ],
+      "erreurs_frequentes": [
+        "Considérer qu'un fournisseur en règle sur le papier dégage l'organisation de toute responsabilité",
+        "Maintenir une relation commerciale après un signalement crédible, faute de solution de remplacement"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.3.7",
+      "intitule": "Discrimination et groupes vulnérables",
+      "exigence": "L'organisation vérifie que ses pratiques de recrutement, de rémunération, de promotion et d'accès à ses services ne créent pas de discrimination, et tient compte de la situation des groupes vulnérables présents sur son territoire.",
+      "preuves": [
+        "Analyse des écarts de rémunération et de promotion, notamment entre femmes et hommes",
+        "Mesures d'accessibilité ou d'aménagement prises pour un groupe identifié comme vulnérable"
+      ],
+      "erreurs_frequentes": [
+        "Une politique de non-discrimination affirmée sans aucune donnée permettant de vérifier son effet",
+        "Des critères de recrutement neutres en apparence mais écartant de fait une catégorie (mobilité, diplôme non requis par le poste)"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.3.10",
+      "intitule": "Principes fondamentaux et droits au travail",
+      "exigence": "L'organisation respecte la liberté d'association et la négociation collective, et s'assure de l'absence de travail forcé et de travail des enfants dans ses activités comme chez ses fournisseurs.",
+      "preuves": [
+        "Procédure de vérification de l'âge à l'embauche et registre correspondant",
+        "Trace du respect de la liberté d'association : représentation du personnel, accords ou réunions"
+      ],
+      "erreurs_frequentes": [
+        "Une vérification de l'âge fondée sur la seule déclaration du candidat, sans pièce justificative",
+        "Une sous-traitance en cascade qui rend invisible la main-d'œuvre réellement employée"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.4.3",
+      "intitule": "Emploi et relations employeur/employé",
+      "exigence": "Le travail effectué est couvert par un contrat écrit et déclaré, quelle que soit sa durée. L'organisation ne recourt pas à des statuts destinés à contourner les obligations attachées à l'emploi.",
+      "preuves": [
+        "Contrats écrits couvrant l'ensemble du personnel, y compris saisonnier et journalier",
+        "Preuve de déclaration et d'affiliation aux organismes sociaux applicables"
+      ],
+      "erreurs_frequentes": [
+        "Le recours durable à des prestataires individuels pour des postes en réalité subordonnés et permanents",
+        "Des travailleurs journaliers reconduits pendant des années sans contrat écrit"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.4.4",
+      "intitule": "Conditions de travail et protection sociale",
+      "exigence": "Les conditions de travail — salaires, temps de travail, repos, congés — respectent au minimum la réglementation nationale et les conventions applicables, et permettent de couvrir les besoins essentiels des salariés.",
+      "preuves": [
+        "Grille de rémunération comparée au minimum légal ou conventionnel du pays",
+        "Relevé des heures de travail et des repos effectivement accordés"
+      ],
+      "erreurs_frequentes": [
+        "Des heures supplémentaires systématiques, non comptabilisées et non rémunérées",
+        "Confondre le salaire minimum légal avec un revenu permettant réellement de vivre dans le contexte local"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.4.5",
+      "intitule": "Dialogue social",
+      "exigence": "L'organisation reconnaît les représentants du personnel, leur donne accès aux informations nécessaires et les consulte avant les décisions ayant une incidence importante sur l'emploi et les conditions de travail.",
+      "preuves": [
+        "Comptes rendus de réunions avec les représentants du personnel",
+        "Trace d'une consultation menée en amont d'une réorganisation ou d'un changement d'horaires"
+      ],
+      "erreurs_frequentes": [
+        "Une information communiquée après la décision, présentée comme une consultation",
+        "Des représentants désignés par la direction plutôt qu'élus par les salariés"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.4.6",
+      "intitule": "Santé et sécurité au travail",
+      "exigence": "Les risques pour la santé et la sécurité sont identifiés poste par poste, réduits à la source autant que possible, et les équipements de protection sont fournis et effectivement utilisés.",
+      "preuves": [
+        "Évaluation des risques par poste, datée et actualisée",
+        "Registre des accidents et des presque-accidents, avec les suites données"
+      ],
+      "erreurs_frequentes": [
+        "Distribuer des équipements de protection sans traiter le risque à la source ni vérifier leur port",
+        "Un registre des accidents qui ne recense que les cas ayant entraîné un arrêt de travail"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.4.7",
+      "intitule": "Développement du capital humain",
+      "exigence": "L'organisation donne à ses salariés accès à la formation et au développement de leurs compétences, sans réserver cet accès à une catégorie de personnel.",
+      "preuves": [
+        "Plan de formation et taux de salariés formés, ventilé par catégorie et par sexe",
+        "Trace d'évolutions internes ou de qualifications acquises"
+      ],
+      "erreurs_frequentes": [
+        "Une formation concentrée sur l'encadrement, les opérateurs n'en bénéficiant jamais",
+        "Compter comme formation les seules obligations réglementaires (sécurité, hygiène)"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.5.3",
+      "intitule": "Prévention de la pollution",
+      "exigence": "L'organisation identifie ses sources de pollution — rejets dans l'eau et l'air, déchets, substances dangereuses, bruit — les mesure et met en œuvre des mesures de réduction.",
+      "preuves": [
+        "Inventaire des rejets et des déchets produits, avec quantités",
+        "Filière de traitement identifiée et justifiée pour chaque déchet dangereux"
+      ],
+      "erreurs_frequentes": [
+        "Confier les déchets à un collecteur informel sans traçabilité de leur destination finale",
+        "Ne considérer que les rejets soumis à autorisation, en ignorant les autres"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.5.4",
+      "intitule": "Utilisation durable des ressources",
+      "exigence": "L'organisation suit ses consommations d'énergie, d'eau et de matières, et engage des actions pour en améliorer l'efficacité.",
+      "preuves": [
+        "Relevés de consommation d'énergie et d'eau sur au moins douze mois",
+        "Action d'efficacité mise en œuvre et gain mesuré"
+      ],
+      "erreurs_frequentes": [
+        "Suivre une dépense en francs plutôt qu'une consommation en unités physiques, ce qui masque l'effet des variations de prix",
+        "Aucune mesure de l'eau prélevée lorsque la ressource provient d'un forage privé"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.5.5",
+      "intitule": "Atténuation des changements climatiques et adaptation",
+      "exigence": "L'organisation estime ses émissions de gaz à effet de serre, identifie ses postes principaux et prend en compte les effets du changement climatique sur ses propres activités.",
+      "preuves": [
+        "Estimation des émissions précisant le périmètre retenu et les facteurs d'émission utilisés",
+        "Analyse des vulnérabilités climatiques des sites et des approvisionnements"
+      ],
+      "erreurs_frequentes": [
+        "Un bilan limité aux consommations directes, alors que l'essentiel des émissions se situe dans les achats et le transport",
+        "Traiter l'adaptation comme un sujet théorique alors que l'activité dépend d'une ressource sensible au climat"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.5.6",
+      "intitule": "Protection de l'environnement, biodiversité et réhabilitation des habitats naturels",
+      "exigence": "L'organisation évalue l'incidence de ses implantations et de ses approvisionnements sur les milieux naturels, et évite, réduit ou compense les atteintes constatées.",
+      "preuves": [
+        "Évaluation des incidences pour les sites situés à proximité d'une zone sensible",
+        "Mesures d'évitement, de réduction ou de réhabilitation effectivement engagées"
+      ],
+      "erreurs_frequentes": [
+        "Se limiter à des actions symboliques de plantation sans lien avec l'atteinte réellement causée",
+        "Ignorer l'incidence des matières premières agricoles ou forestières achetées"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.6.3",
+      "intitule": "Lutte contre la corruption",
+      "exigence": "L'organisation identifie les situations où ses collaborateurs sont exposés à des sollicitations, énonce une règle claire sur les cadeaux et paiements de facilitation, et met un canal de signalement à disposition.",
+      "preuves": [
+        "Règle écrite sur les cadeaux, invitations et paiements de facilitation, diffusée au personnel exposé",
+        "Canal de signalement accessible et trace de son fonctionnement"
+      ],
+      "erreurs_frequentes": [
+        "Un code d'éthique signé à l'embauche puis jamais rappelé aux fonctions réellement exposées",
+        "Un canal de signalement dont l'usage n'offre aucune garantie contre les représailles"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.6.5",
+      "intitule": "Concurrence loyale",
+      "exigence": "L'organisation s'abstient de pratiques anticoncurrentielles — entente sur les prix, répartition de marchés, abus de position — et sensibilise les fonctions commerciales aux règles applicables.",
+      "preuves": [
+        "Consigne écrite encadrant les échanges avec les concurrents, notamment en groupement",
+        "Sensibilisation des équipes commerciales et de la direction"
+      ],
+      "erreurs_frequentes": [
+        "Des échanges d'informations sur les prix au sein d'un syndicat professionnel, perçus comme anodins",
+        "Des offres de complaisance déposées pour compléter un appel d'offres"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.6.6",
+      "intitule": "Promotion de la responsabilité sociétale dans la chaîne de valeur",
+      "exigence": "L'organisation intègre des critères sociaux et environnementaux dans ses achats et accompagne ses fournisseurs, en tenant compte de sa capacité réelle d'influence.",
+      "preuves": [
+        "Critères sociaux et environnementaux figurant dans les consultations ou les contrats",
+        "Évaluation ou accompagnement des fournisseurs jugés les plus sensibles"
+      ],
+      "erreurs_frequentes": [
+        "Une charte fournisseurs signée sans aucune vérification ultérieure",
+        "Exiger des engagements que les délais et les prix imposés rendent intenables"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.7.3",
+      "intitule": "Pratiques loyales en matière de commercialisation, d'informations et de contrats",
+      "exigence": "Les informations données aux clients — caractéristiques, prix total, conditions — sont exactes, compréhensibles et disponibles avant l'engagement, dans une langue qu'ils comprennent.",
+      "preuves": [
+        "Documents commerciaux et contractuels remis au client avant signature",
+        "Procédure de contrôle des allégations avant diffusion"
+      ],
+      "erreurs_frequentes": [
+        "Des frais annexes révélés après l'engagement",
+        "Des allégations environnementales ou sanitaires invérifiables employées comme argument de vente"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.7.4",
+      "intitule": "Protection de la santé et de la sécurité des consommateurs",
+      "exigence": "L'organisation s'assure que ses produits et services ne présentent pas de risque en usage normal ou raisonnablement prévisible, et sait rappeler un produit défectueux.",
+      "preuves": [
+        "Analyse des risques liés à l'usage du produit et consignes de sécurité associées",
+        "Procédure de rappel et traçabilité permettant d'identifier les lots concernés"
+      ],
+      "erreurs_frequentes": [
+        "Une traçabilité qui s'arrête à la sortie d'usine, rendant tout rappel ciblé impossible",
+        "Des consignes de sécurité rédigées dans une langue que l'utilisateur final ne lit pas"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.7.7",
+      "intitule": "Protection des données et de la vie privée des consommateurs",
+      "exigence": "L'organisation limite les données personnelles collectées à ce qui est nécessaire, informe les personnes de l'usage qui en est fait et protège ces données contre les accès non autorisés.",
+      "preuves": [
+        "Inventaire des données personnelles collectées et de leur finalité",
+        "Mesures de protection en place : contrôle des accès, sauvegardes, durée de conservation définie"
+      ],
+      "erreurs_frequentes": [
+        "Collecter des données au cas où elles serviraient, sans finalité définie",
+        "Des fichiers clients accessibles à l'ensemble du personnel sans restriction"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.8.3",
+      "intitule": "Implication auprès des communautés",
+      "exigence": "L'organisation identifie les communautés concernées par ses activités, les consulte sur les décisions qui les affectent et dispose d'un moyen de recevoir et traiter leurs doléances.",
+      "preuves": [
+        "Trace de consultations menées auprès des riverains ou des autorités locales",
+        "Registre des doléances reçues et des réponses apportées"
+      ],
+      "erreurs_frequentes": [
+        "Consulter les seules autorités coutumières ou administratives, sans atteindre les personnes réellement affectées",
+        "Un registre de doléances ouvert mais sans délai de réponse ni suivi"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.8.5",
+      "intitule": "Création d'emplois et développement des compétences",
+      "exigence": "L'organisation privilégie, à compétence comparable, le recrutement et l'approvisionnement locaux, et contribue à la montée en compétences du bassin d'emploi.",
+      "preuves": [
+        "Part des recrutements et des achats réalisés localement",
+        "Actions de formation ou d'apprentissage ouvertes à des personnes extérieures à l'organisation"
+      ],
+      "erreurs_frequentes": [
+        "Un emploi local limité aux postes non qualifiés, l'encadrement restant systématiquement expatrié",
+        "Des stages non rémunérés présentés comme une contribution au développement local"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.8.9",
+      "intitule": "Investissement dans la société",
+      "exigence": "Les contributions de l'organisation à des projets d'intérêt général répondent à un besoin exprimé par la communauté, et leur effet est suivi dans la durée.",
+      "preuves": [
+        "Projets soutenus, montants engagés et besoin à l'origine de chaque projet",
+        "Suivi de l'usage réel de l'ouvrage ou du service financé, après la remise"
+      ],
+      "erreurs_frequentes": [
+        "Financer un équipement sans prévoir qui en assurera l'entretien et le fonctionnement",
+        "Présenter des dons ponctuels comme une politique d'investissement sociétal"
+      ],
+      "poids": 1
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "code": "XP-X30-901",
+  "version": "2018",
+  "label": "XP X30-901:2018 — Système de management de projet d'économie circulaire",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme expérimentale AFNOR XP X30-901 est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (les sept domaines d'action de l'économie circulaire et les étapes de pilotage du projet) et une reformulation des attendus sont utilisées. Ce référentiel s'applique à un projet d'économie circulaire délimité, et non à l'organisme entier : le diagnostic doit être renseigné projet par projet. À faire relire par un praticien disposant du texte officiel avant mise en vente.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "1", "titre": "Approvisionnement durable" },
+    { "numero": "2", "titre": "Écoconception" },
+    { "numero": "3", "titre": "Écologie industrielle et territoriale" },
+    { "numero": "4", "titre": "Économie de la fonctionnalité" },
+    { "numero": "5", "titre": "Consommation responsable" },
+    { "numero": "6", "titre": "Allongement de la durée d'usage" },
+    { "numero": "7", "titre": "Gestion efficace des matières et produits en fin de vie" },
+    { "numero": "8", "titre": "Pilotage du projet d'économie circulaire" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "1.1",
+      "intitule": "Connaissance et maîtrise des approvisionnements",
+      "exigence": "Le projet identifie l'origine des matières et ressources qu'il mobilise, leur disponibilité dans le temps et les incidences environnementales et sociales de leur extraction ou de leur production.",
+      "preuves": [
+        "Cartographie des approvisionnements du projet, précisant l'origine et le mode d'obtention des matières principales",
+        "Analyse de la disponibilité future des ressources critiques du projet"
+      ],
+      "erreurs_frequentes": [
+        "Une connaissance qui s'arrête au fournisseur de rang 1, sans remonter à la ressource",
+        "Un approvisionnement qualifié de durable sur la seule foi d'une déclaration du fournisseur"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "1.2",
+      "intitule": "Recours aux matières recyclées et renouvelables",
+      "exigence": "Le projet définit une part de matières issues du recyclage ou de sources renouvelables gérées durablement, en mesure la progression et traite les contraintes techniques associées.",
+      "preuves": [
+        "Part de matières recyclées ou renouvelables dans les approvisionnements du projet, mesurée sur une période",
+        "Essais ou qualifications ayant permis d'incorporer une matière recyclée"
+      ],
+      "erreurs_frequentes": [
+        "Un objectif d'incorporation annoncé sans mesure de la part effectivement atteinte",
+        "Des spécifications techniques héritées qui interdisent de fait toute matière recyclée"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "2.1",
+      "intitule": "Prise en compte du cycle de vie dès la conception",
+      "exigence": "Les choix de conception du produit ou du service sont éclairés par une évaluation des incidences environnementales sur l'ensemble du cycle de vie, et non sur la seule phase de fabrication.",
+      "preuves": [
+        "Évaluation environnementale, même simplifiée, réalisée en amont des choix de conception",
+        "Trace d'un arbitrage de conception motivé par cette évaluation"
+      ],
+      "erreurs_frequentes": [
+        "Une évaluation environnementale conduite après le gel de la conception, sans possibilité d'influer",
+        "Un transfert d'impact non détecté : un gain en fabrication compensé par une perte en usage"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "2.2",
+      "intitule": "Conception pour la réparation, le démontage et le recyclage",
+      "exigence": "La conception facilite la réparation, le démontage et la séparation des matériaux en fin de vie : assemblages démontables, limitation du nombre de matériaux, disponibilité des pièces et de l'information technique.",
+      "preuves": [
+        "Choix de conception documentés en faveur de la démontabilité ou de la réparabilité",
+        "Disponibilité des pièces détachées et de la documentation technique pour les réparateurs"
+      ],
+      "erreurs_frequentes": [
+        "Des assemblages collés ou soudés retenus pour le coût, rendant la réparation impossible",
+        "Une documentation technique réservée au réseau agréé, ce qui exclut la réparation indépendante"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "3.1",
+      "intitule": "Identification des synergies de territoire",
+      "exigence": "Le projet recherche activement les échanges possibles avec les acteurs voisins : flux de matières, d'énergie, d'eau, mutualisation d'équipements ou de services.",
+      "preuves": [
+        "Inventaire des flux entrants et sortants du site, exploitable pour rechercher des synergies",
+        "Contacts établis avec des acteurs du territoire et synergies étudiées"
+      ],
+      "erreurs_frequentes": [
+        "Une recherche de synergies limitée aux entreprises de la même filière",
+        "Des flux sortants décrits en catégories réglementaires de déchets, trop grossières pour révéler un usage possible"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "3.2",
+      "intitule": "Mise en œuvre et pérennisation des synergies",
+      "exigence": "Les synergies identifiées font l'objet d'accords précisant les engagements réciproques — qualité, volumes, continuité, responsabilité — de façon à ne pas rendre un partenaire dépendant d'un flux non garanti.",
+      "preuves": [
+        "Conventions ou contrats formalisant les synergies engagées",
+        "Suivi des volumes réellement échangés au regard des engagements"
+      ],
+      "erreurs_frequentes": [
+        "Une synergie fondée sur un accord verbal, qui s'effondre au premier changement de dirigeant",
+        "Un partenaire ayant investi pour valoriser un flux dont la continuité n'est garantie par aucun engagement"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.1",
+      "intitule": "Vente de l'usage plutôt que du bien",
+      "exigence": "Le projet examine la possibilité de vendre un usage, une performance ou un service plutôt que le bien lui-même, et en tire les conséquences sur le modèle économique et la propriété du bien.",
+      "preuves": [
+        "Étude du modèle économique fondé sur l'usage, chiffrée sur la durée de vie du bien",
+        "Offre commerciale exprimée en performance ou en usage, le cas échéant"
+      ],
+      "erreurs_frequentes": [
+        "Une offre de location présentée comme économie de la fonctionnalité, sans que le fournisseur n'assume la performance ni la fin de vie",
+        "Un modèle d'usage adopté sans adapter la conception du bien à une exploitation intensive et longue"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.2",
+      "intitule": "Alignement des intérêts sur la durabilité du bien",
+      "exigence": "Lorsque le bien reste la propriété du fournisseur, les modalités contractuelles et le suivi mis en place font converger l'intérêt économique du fournisseur et la durabilité du bien.",
+      "preuves": [
+        "Clauses contractuelles liant la rémunération à la disponibilité ou à la performance du bien",
+        "Suivi de l'état et de la maintenance des biens exploités"
+      ],
+      "erreurs_frequentes": [
+        "Une rémunération au volume consommé, qui décourage l'efficacité",
+        "Aucun suivi de l'état réel du parc, rendant impossible la réutilisation en fin de contrat"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.1",
+      "intitule": "Information du client et sobriété d'usage",
+      "exigence": "Le projet donne au client une information sincère et vérifiable sur les caractéristiques environnementales du produit ou du service, sa durée de vie attendue et son usage sobre.",
+      "preuves": [
+        "Éléments d'information remis au client et justificatifs des allégations formulées",
+        "Consignes d'usage permettant de réduire les consommations pendant la vie du produit"
+      ],
+      "erreurs_frequentes": [
+        "Des allégations environnementales générales et invérifiables, exposant le projet au reproche d'écoblanchiment",
+        "Une durée de vie annoncée sans base d'essai ni retour d'usage"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.2",
+      "intitule": "Achats responsables du porteur de projet",
+      "exigence": "Le porteur de projet intègre des critères d'économie circulaire dans ses propres achats — matières, équipements, prestations — et en vérifie la prise en compte effective.",
+      "preuves": [
+        "Critères d'économie circulaire figurant dans les consultations et les contrats",
+        "Part des marchés attribués en tenant compte de ces critères"
+      ],
+      "erreurs_frequentes": [
+        "Des critères environnementaux pondérés si faiblement qu'ils ne modifient jamais le classement",
+        "Des exigences imposées aux fournisseurs mais jamais vérifiées après attribution"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.1",
+      "intitule": "Réemploi, réparation et reconditionnement",
+      "exigence": "Le projet organise les conditions du réemploi, de la réparation et du reconditionnement : collecte des biens usagés, diagnostic, remise en état, garantie et remise sur le marché.",
+      "preuves": [
+        "Filière de réemploi ou de reconditionnement organisée, avec les volumes traités",
+        "Conditions de garantie applicables aux produits reconditionnés"
+      ],
+      "erreurs_frequentes": [
+        "Une activité de réparation maintenue sans accès aux pièces détachées, donc condamnée à terme",
+        "Des produits repris puis stockés faute de filière de remise sur le marché"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.2",
+      "intitule": "Lutte contre l'obsolescence",
+      "exigence": "Le projet identifie les causes d'arrêt prématuré d'usage — technique, logicielle, esthétique ou économique — et prend des mesures pour les traiter.",
+      "preuves": [
+        "Analyse des causes réelles de mise au rebut des produits, fondée sur des retours de terrain",
+        "Engagements de durée de disponibilité des pièces et des mises à jour logicielles"
+      ],
+      "erreurs_frequentes": [
+        "Ne traiter que l'usure mécanique, alors que l'arrêt du support logiciel est la première cause de rebut",
+        "Une durée de disponibilité des pièces annoncée sans stock ni fournisseur engagé pour la tenir"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.1",
+      "intitule": "Tri à la source et qualité des gisements",
+      "exigence": "Les matières et produits en fin de vie sont triés au plus près de leur production, dans des conditions préservant la qualité du gisement et donc les possibilités de valorisation.",
+      "preuves": [
+        "Organisation du tri sur site : contenants, signalétique, consignes et formation des opérateurs",
+        "Taux de refus constatés par la filière de valorisation en aval"
+      ],
+      "erreurs_frequentes": [
+        "Un tri annoncé mais des flux regroupés en fin de chaîne, ce qui déclasse l'ensemble du gisement",
+        "Aucun retour de la filière aval sur la qualité du tri, donc aucune correction possible"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.2",
+      "intitule": "Traçabilité des flux jusqu'à leur destination finale",
+      "exigence": "Le projet connaît et documente la destination réelle de chaque flux sortant, jusqu'à son traitement final, et s'assure de la régularité des installations qui les reçoivent.",
+      "preuves": [
+        "Documents de suivi des flux sortants, jusqu'à l'installation de traitement finale",
+        "Vérification de l'autorisation d'exploiter des prestataires de traitement"
+      ],
+      "erreurs_frequentes": [
+        "Une traçabilité qui s'arrête au collecteur, sans connaissance de la destination finale",
+        "Un flux confié à un opérateur informel, qualifié de valorisation sans aucune preuve"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.3",
+      "intitule": "Hiérarchie des modes de traitement",
+      "exigence": "Le projet applique la hiérarchie des modes de traitement — prévention, réemploi, recyclage, autre valorisation, élimination — et justifie tout traitement retenu à un rang inférieur.",
+      "preuves": [
+        "Répartition des tonnages par mode de traitement, sur une période",
+        "Justification documentée lorsqu'un flux valorisable est éliminé"
+      ],
+      "erreurs_frequentes": [
+        "Une valorisation énergétique présentée comme du recyclage",
+        "Un mode de traitement choisi sur le seul coût, sans examen des options de rang supérieur"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.1",
+      "intitule": "Définition du projet, de son périmètre et de ses parties intéressées",
+      "exigence": "Le projet d'économie circulaire est défini : objet, périmètre, durée, ressources affectées, et parties intéressées identifiées avec leurs attentes.",
+      "preuves": [
+        "Note de cadrage du projet, précisant son périmètre et les moyens affectés",
+        "Cartographie des parties intéressées et de leurs attentes"
+      ],
+      "erreurs_frequentes": [
+        "Un projet confondu avec l'activité courante de l'organisme, dont on ne peut isoler ni le périmètre ni les résultats",
+        "Des parties intéressées limitées aux clients et aux autorités, sans les acteurs du territoire ni les filières aval"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.2",
+      "intitule": "Objectifs, indicateurs et plan d'actions",
+      "exigence": "Le projet fixe des objectifs mesurables par domaine d'action retenu, des indicateurs associés, et un plan d'actions désignant les responsables, les échéances et les moyens.",
+      "preuves": [
+        "Objectifs chiffrés et datés par domaine d'action retenu",
+        "Plan d'actions nominatif avec échéances et moyens affectés"
+      ],
+      "erreurs_frequentes": [
+        "Des objectifs formulés en intentions, sans valeur cible ni date",
+        "Des indicateurs choisis parce qu'ils sont disponibles, et non parce qu'ils mesurent l'objectif"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.3",
+      "intitule": "Engagement de la direction et allocation des moyens",
+      "exigence": "La direction porte le projet, y affecte des moyens identifiés et désigne un responsable disposant de l'autorité nécessaire pour engager les arbitrages.",
+      "preuves": [
+        "Décision de direction engageant le projet et les moyens correspondants",
+        "Désignation du responsable du projet et description de son autorité"
+      ],
+      "erreurs_frequentes": [
+        "Un projet confié à un stagiaire ou à un chargé de mission sans autorité sur les achats ni la conception",
+        "Des moyens annoncés mais jamais inscrits au budget"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.4",
+      "intitule": "Évaluation des résultats et revue du projet",
+      "exigence": "Les résultats du projet sont mesurés au regard des objectifs fixés, revus à intervalles planifiés, et ces revues débouchent sur des décisions d'ajustement.",
+      "preuves": [
+        "Comptes rendus de revue de projet, avec les écarts constatés et les décisions prises",
+        "Historique des indicateurs sur au moins deux périodes"
+      ],
+      "erreurs_frequentes": [
+        "Une revue qui constate l'écart sans en analyser la cause ni ajuster les moyens",
+        "Des indicateurs dont la méthode de calcul change d'une période à l'autre, ce qui interdit toute comparaison"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.5",
+      "intitule": "Communication et valorisation des résultats",
+      "exigence": "La communication sur le projet repose sur des résultats mesurés et vérifiables, et distingue ce qui est atteint de ce qui est visé.",
+      "preuves": [
+        "Éléments de communication et justificatifs des chiffres avancés",
+        "Distinction explicite, dans les supports, entre résultats atteints et objectifs"
+      ],
+      "erreurs_frequentes": [
+        "Communiquer sur un objectif comme s'il était atteint",
+        "Des chiffres avancés sans périmètre ni période de référence, donc invérifiables"
+      ],
+      "poids": 2
+    }
+  ]
+}

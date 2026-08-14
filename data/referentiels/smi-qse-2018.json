@@ -1,0 +1,361 @@
+{
+  "code": "SMI-QSE",
+  "version": "2018",
+  "label": "Système de management intégré QSE — ISO 9001:2015, ISO 14001:2015 et ISO 45001:2018",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel des normes ISO 9001, ISO 14001 et ISO 45001 est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure harmonisée publique (numérotation et intitulés des chapitres 4 à 10, commune aux trois normes) et une reformulation des attendus sont utilisées. Ce référentiel porte sur ce que les trois normes exigent en commun et sur les points où elles divergent ; il ne remplace pas les diagnostics par norme, qui restent nécessaires pour préparer une certification sur un référentiel donné. À faire relire par un praticien disposant des textes officiels avant mise en vente.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "4", "titre": "Contexte de l'organisme" },
+    { "numero": "5", "titre": "Leadership et participation des travailleurs" },
+    { "numero": "6", "titre": "Planification" },
+    { "numero": "7", "titre": "Support" },
+    { "numero": "8", "titre": "Réalisation des activités opérationnelles" },
+    { "numero": "9", "titre": "Évaluation des performances" },
+    { "numero": "10", "titre": "Amélioration" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "4.1",
+      "intitule": "Enjeux internes et externes, traités conjointement pour les trois domaines",
+      "exigence": "L'organisme détermine les enjeux internes et externes pertinents pour la qualité, l'environnement et la santé-sécurité au travail. Une analyse unique est possible, à condition que chaque enjeu soit rattaché aux domaines qu'il concerne réellement.",
+      "preuves": [
+        "Analyse de contexte unique, identifiant pour chaque enjeu les domaines concernés (Q, E, S)",
+        "Trace de revue de cette analyse après un changement significatif"
+      ],
+      "erreurs_frequentes": [
+        "Trois analyses de contexte distinctes, produites par trois responsables, aux conclusions divergentes",
+        "Une analyse fusionnée où les enjeux environnementaux et santé-sécurité disparaissent derrière les enjeux commerciaux"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.2",
+      "intitule": "Parties intéressées et leurs exigences",
+      "exigence": "Les parties intéressées et leurs exigences pertinentes sont déterminées pour les trois domaines. ISO 45001 impose que les travailleurs figurent parmi les parties intéressées ; ISO 14001 met l'accent sur les riverains et les autorités environnementales.",
+      "preuves": [
+        "Cartographie unique des parties intéressées, précisant les exigences retenues par domaine",
+        "Identification explicite des travailleurs et de leurs représentants comme partie intéressée"
+      ],
+      "erreurs_frequentes": [
+        "Une cartographie centrée sur les clients, où riverains, autorités et travailleurs n'apparaissent pas",
+        "Des exigences recensées sans distinguer celles qui deviennent des obligations de conformité"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.3",
+      "intitule": "Domaine d'application du système intégré",
+      "exigence": "Le domaine d'application est défini et documenté. Un périmètre commun aux trois domaines simplifie le système, mais toute différence de périmètre entre qualité, environnement et santé-sécurité doit être explicite et justifiée.",
+      "preuves": [
+        "Domaine d'application documenté, indiquant les sites, activités et produits couverts par domaine",
+        "Justification des exclusions retenues, notamment pour ISO 9001"
+      ],
+      "erreurs_frequentes": [
+        "Un périmètre qualité limité à un site alors que la santé-sécurité couvre l'ensemble, sans que cette différence soit énoncée",
+        "Des sous-traitants intervenant sur site laissés hors du périmètre santé-sécurité"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.4",
+      "intitule": "Système de management intégré et ses processus",
+      "exigence": "Les processus nécessaires au système sont établis, avec leurs interactions, leurs critères et leurs responsables. Dans un système intégré, un même processus porte les exigences des trois domaines plutôt que d'être décrit trois fois.",
+      "preuves": [
+        "Cartographie des processus unique, chaque processus indiquant les exigences Q, E et S qu'il porte",
+        "Fiches de processus mentionnant un responsable unique et les indicateurs des trois domaines"
+      ],
+      "erreurs_frequentes": [
+        "Trois systèmes documentaires juxtaposés sous une couverture commune, sans réelle intégration",
+        "Une intégration réduite à la fusion des manuels, les pratiques restant cloisonnées par service"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "5.1",
+      "intitule": "Leadership et engagement de la direction",
+      "exigence": "La direction assume la responsabilité de l'efficacité du système, y consacre des ressources et rend compte des résultats. ISO 45001 y ajoute la responsabilité de prévenir les lésions et les atteintes à la santé, et de développer une culture de prévention.",
+      "preuves": [
+        "Décisions d'allocation de ressources tracées pour les trois domaines",
+        "Participation effective de la direction aux revues, aux visites de terrain et aux analyses d'accidents"
+      ],
+      "erreurs_frequentes": [
+        "Un engagement réel sur la qualité, l'environnement et la sécurité restant délégués au seul responsable QSE",
+        "Une direction qui arbitre systématiquement en faveur du délai de production lorsqu'un risque est signalé"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "5.2",
+      "intitule": "Politique QSE intégrée",
+      "exigence": "Une politique unique peut couvrir les trois domaines, à condition de porter les engagements propres à chacun : satisfaction du client, protection de l'environnement et prévention de la pollution, conditions de travail sûres et prévention des lésions, ainsi que l'amélioration continue et le respect des obligations de conformité.",
+      "preuves": [
+        "Politique QSE datée, signée, diffusée et accessible aux parties intéressées",
+        "Vérification que chaque engagement exigé par les trois normes y figure explicitement"
+      ],
+      "erreurs_frequentes": [
+        "Une politique fusionnée qui perd en route l'engagement de protection de l'environnement ou celui de consultation des travailleurs",
+        "Une politique affichée à l'accueil mais inconnue des opérateurs"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.3",
+      "intitule": "Rôles, responsabilités et autorités",
+      "exigence": "Les responsabilités et autorités sont attribuées et communiquées à tous les niveaux. Dans un système intégré, un responsable unique peut porter les trois domaines s'il en a le temps et la compétence ; à défaut, les répartitions doivent être explicites.",
+      "preuves": [
+        "Fiches de fonction précisant les responsabilités Q, E et S de chaque poste d'encadrement",
+        "Temps réellement affecté à la fonction QSE, rapporté à l'étendue du périmètre"
+      ],
+      "erreurs_frequentes": [
+        "Un responsable QSE nommé à temps très partiel sur trois domaines, sans suppléance ni relais dans les services",
+        "Des responsabilités attribuées à des personnes qui ignorent en avoir la charge"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "5.4",
+      "intitule": "Consultation et participation des travailleurs",
+      "exigence": "Exigence propre à ISO 45001, sans équivalent dans ISO 9001 et ISO 14001 : les travailleurs et leurs représentants sont consultés et participent à l'élaboration, à la mise en œuvre et à l'évaluation du système, avec des moyens et un temps identifiés, et sans obstacle à leur participation.",
+      "preuves": [
+        "Modalités de consultation formalisées et comptes rendus des consultations tenues",
+        "Trace de la participation des travailleurs à l'identification des dangers et à l'analyse des incidents"
+      ],
+      "erreurs_frequentes": [
+        "Une consultation réduite à l'affichage des consignes, prise pour de la participation",
+        "L'exigence oubliée lors de l'intégration, parce qu'elle n'a pas d'équivalent dans les deux autres normes"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.1.1",
+      "intitule": "Actions à mettre en œuvre face aux risques et opportunités",
+      "exigence": "L'organisme détermine les risques et opportunités liés à son contexte et à ses parties intéressées, et planifie des actions proportionnées. Cette démarche est commune aux trois normes et constitue le principal gisement de mutualisation.",
+      "preuves": [
+        "Analyse unique des risques et opportunités, chaque risque étant rattaché aux domaines concernés",
+        "Actions planifiées, mises en œuvre et évaluées quant à leur efficacité"
+      ],
+      "erreurs_frequentes": [
+        "Une analyse de risques stratégiques sans lien avec les risques opérationnels des trois domaines",
+        "Des risques identifiés sans aucune action associée, l'analyse servant de pièce documentaire"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.1.2",
+      "intitule": "Aspects environnementaux et dangers pour la santé-sécurité",
+      "exigence": "Ces identifications ne se mutualisent pas : ISO 14001 impose de déterminer les aspects environnementaux et leurs impacts et d'en dégager les aspects significatifs ; ISO 45001 impose d'identifier les dangers de façon proactive et d'apprécier les risques pour la santé-sécurité, en tenant compte de l'organisation du travail et des facteurs humains.",
+      "preuves": [
+        "Analyse environnementale déterminant les aspects significatifs et les critères de significativité",
+        "Identification des dangers et appréciation des risques par poste et par situation, y compris les situations non routinières"
+      ],
+      "erreurs_frequentes": [
+        "Une analyse fusionnée en un tableau unique de « risques QSE », qui ne satisfait aucune des deux exigences",
+        "Des dangers identifiés en situation normale seulement, ignorant la maintenance, le nettoyage et les interventions d'urgence"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.1.3",
+      "intitule": "Obligations de conformité et exigences légales",
+      "exigence": "Les exigences légales et autres exigences applicables sont déterminées, tenues à jour et rendues accessibles ; leur respect est évalué périodiquement. Une veille unique peut couvrir les trois domaines si elle distingue les obligations par domaine.",
+      "preuves": [
+        "Registre unique des obligations de conformité, distinguant les domaines et citant les textes applicables",
+        "Évaluation périodique de conformité, datée, avec les écarts relevés et leur traitement"
+      ],
+      "erreurs_frequentes": [
+        "Une veille réglementaire souscrite mais jamais transformée en obligations applicables à l'organisme",
+        "Une évaluation de conformité annoncée mais réalisée sans confronter les textes aux pratiques réelles"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.2",
+      "intitule": "Objectifs QSE et planification des actions",
+      "exigence": "Les objectifs sont mesurables, cohérents avec la politique, suivis et mis à jour ; leur planification précise les moyens, les responsables, les échéances et le mode d'évaluation des résultats.",
+      "preuves": [
+        "Objectifs chiffrés et datés couvrant les trois domaines, avec leurs indicateurs",
+        "Plans d'actions nominatifs et suivi de leur avancement"
+      ],
+      "erreurs_frequentes": [
+        "Des objectifs qualité chiffrés et suivis, les objectifs environnementaux et sécurité restant des intentions",
+        "Des objectifs santé-sécurité limités au taux de fréquence des accidents, sans indicateur d'action préventive"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.2",
+      "intitule": "Compétences",
+      "exigence": "Les compétences nécessaires sont déterminées, acquises et évaluées quant à leur efficacité. Un plan de compétences unique couvre les trois domaines, mais les habilitations réglementaires propres à la santé-sécurité et à l'environnement restent spécifiques.",
+      "preuves": [
+        "Matrice de compétences unique, intégrant les habilitations réglementaires et leurs échéances",
+        "Évaluation de l'efficacité des formations, et non de la seule présence"
+      ],
+      "erreurs_frequentes": [
+        "Des habilitations réglementaires périmées, faute de suivi des échéances dans le plan intégré",
+        "Une évaluation de l'efficacité réduite à un questionnaire de satisfaction en fin de session"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.3",
+      "intitule": "Sensibilisation",
+      "exigence": "Les personnes travaillant sous le contrôle de l'organisme connaissent la politique, leur contribution au système et les conséquences d'un manquement. ISO 45001 y ajoute la connaissance des incidents pertinents et le droit de se retirer d'une situation de danger grave et imminent.",
+      "preuves": [
+        "Actions de sensibilisation réalisées, y compris auprès des intérimaires et des sous-traitants",
+        "Trace de l'information des travailleurs sur leur droit de retrait et sur les modalités de son exercice"
+      ],
+      "erreurs_frequentes": [
+        "Un accueil sécurité réservé aux nouveaux embauchés, dont les intérimaires et sous-traitants sont exclus",
+        "Le droit de retrait jamais formulé, laissant les travailleurs sans recours face à un danger imminent"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.4",
+      "intitule": "Communication interne et externe",
+      "exigence": "L'organisme détermine ce qu'il communique, à quel moment, avec qui et comment, pour les trois domaines. ISO 14001 exige de tenir compte des obligations de conformité en matière de communication environnementale.",
+      "preuves": [
+        "Plan de communication précisant les sujets, les destinataires et les canaux, par domaine",
+        "Traitement des demandes externes reçues, notamment celles des riverains et des autorités"
+      ],
+      "erreurs_frequentes": [
+        "Une communication externe environnementale traitée au cas par cas, sans règle ni porte-parole désigné",
+        "Une communication descendante uniquement, sans canal de remontée depuis le terrain"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.5",
+      "intitule": "Informations documentées",
+      "exigence": "Les informations documentées exigées par les trois normes sont créées, mises à jour et maîtrisées : identification, approbation, disponibilité au poste, protection et conservation. C'est le gisement de mutualisation le plus immédiat d'un système intégré.",
+      "preuves": [
+        "Liste unique des documents en vigueur, avec indice, approbation et domaines concernés",
+        "Preuve du retrait effectif des versions périmées aux postes de travail"
+      ],
+      "erreurs_frequentes": [
+        "Trois systèmes documentaires maintenus en parallèle, avec des procédures qui se contredisent",
+        "Une intégration documentaire menée sans vérifier que chaque enregistrement exigé par chacune des trois normes subsiste"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.1",
+      "intitule": "Planification et maîtrise opérationnelles",
+      "exigence": "Les processus opérationnels sont planifiés et maîtrisés selon des critères définis. C'est le chapitre où l'intégration atteint sa limite : les critères qualité, les moyens de maîtrise environnementale et la hiérarchie des mesures de prévention en santé-sécurité coexistent sur un même poste sans se confondre.",
+      "preuves": [
+        "Instructions de poste portant conjointement les consignes qualité, environnement et sécurité",
+        "Application de la hiérarchie des mesures de prévention : élimination, substitution, mesures techniques, organisationnelles, puis équipements de protection individuelle"
+      ],
+      "erreurs_frequentes": [
+        "Une prévention qui commence et s'arrête aux équipements de protection individuelle, sans avoir examiné l'élimination ni la substitution",
+        "Des consignes des trois domaines dispersées dans des documents distincts, que l'opérateur ne consulte jamais ensemble"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.1.4",
+      "intitule": "Maîtrise des processus, produits et services externalisés",
+      "exigence": "L'organisme maîtrise ses activités externalisées et ses approvisionnements pour les trois domaines, et communique aux prestataires les exigences applicables, y compris celles relatives aux intervenants sur site.",
+      "preuves": [
+        "Exigences QSE figurant dans les contrats et les commandes",
+        "Plans de prévention pour les interventions d'entreprises extérieures, et évaluation des prestataires sur les trois domaines"
+      ],
+      "erreurs_frequentes": [
+        "Des fournisseurs évalués sur la qualité et le délai seulement, jamais sur l'environnement ni la sécurité",
+        "Des intervenants extérieurs accueillis sans plan de prévention ni information sur les risques du site"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.2",
+      "intitule": "Préparation et réponse aux situations d'urgence",
+      "exigence": "Exigence commune à ISO 14001 et ISO 45001 : les situations d'urgence potentielles sont identifiées, les réponses planifiées, testées périodiquement, et revues après chaque exercice ou situation réelle.",
+      "preuves": [
+        "Scénarios d'urgence identifiés, couvrant à la fois les conséquences environnementales et humaines",
+        "Comptes rendus d'exercices, avec les écarts constatés et les corrections apportées"
+      ],
+      "erreurs_frequentes": [
+        "Des exercices d'évacuation réalisés, mais aucun scénario de pollution accidentelle jamais testé",
+        "Un plan d'urgence jamais révisé après un exercice qui en a montré les limites"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.1",
+      "intitule": "Surveillance, mesure, analyse et évaluation",
+      "exigence": "L'organisme détermine ce qui doit être surveillé et mesuré, selon quelles méthodes et à quelle fréquence, pour les trois domaines, et conserve les résultats. L'évaluation périodique de la conformité aux obligations légales en fait partie.",
+      "preuves": [
+        "Plan de surveillance unique, précisant par domaine les paramètres, les méthodes et les fréquences",
+        "Étalonnage ou vérification des moyens de mesure utilisés, notamment pour les mesures environnementales et d'exposition"
+      ],
+      "erreurs_frequentes": [
+        "Des indicateurs qualité suivis mensuellement, les mesures environnementales et d'exposition n'étant réalisées qu'à l'approche de l'audit",
+        "Des résultats de mesure conservés sans jamais être analysés ni comparés à un seuil"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.2",
+      "intitule": "Audit interne intégré",
+      "exigence": "Un programme d'audit interne planifié couvre l'ensemble des exigences des trois normes sur un cycle défini ; les auditeurs sont compétents sur les domaines audités et indépendants de l'activité auditée.",
+      "preuves": [
+        "Programme pluriannuel montrant la couverture des exigences des trois normes",
+        "Qualification des auditeurs internes par domaine, et rapports d'audit avec les suites données"
+      ],
+      "erreurs_frequentes": [
+        "Un audit intégré conduit par un auditeur qualité seul, dont les constats environnementaux et sécurité restent superficiels",
+        "Un cycle d'audit qui, en pratique, ne couvre jamais certains processus ou certaines exigences"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "9.3",
+      "intitule": "Revue de direction intégrée",
+      "exigence": "Une revue unique peut couvrir les trois domaines, à condition d'examiner l'ensemble des données d'entrée exigées par chacune des normes et de déboucher sur des décisions tracées portant sur les trois.",
+      "preuves": [
+        "Compte rendu de revue reprenant les données d'entrée exigées par les trois normes",
+        "Décisions prises, avec responsables et échéances, et suivi de la revue précédente"
+      ],
+      "erreurs_frequentes": [
+        "Une revue intégrée dont l'ordre du jour, hérité de la qualité, omet des données d'entrée propres à ISO 14001 ou ISO 45001",
+        "Une revue qui commente les résultats sans décider d'aucune action ni allouer de ressource"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.2",
+      "intitule": "Non-conformité, incident et action corrective",
+      "exigence": "Les non-conformités et, pour la santé-sécurité, les incidents font l'objet d'une réaction immédiate, d'une analyse des causes, d'actions proportionnées et d'une vérification d'efficacité. ISO 45001 impose la participation des travailleurs à l'analyse des incidents.",
+      "preuves": [
+        "Registre unique des non-conformités et incidents, avec analyse de cause et vérification d'efficacité",
+        "Trace de la participation des travailleurs à l'analyse des incidents les concernant"
+      ],
+      "erreurs_frequentes": [
+        "Des presque-accidents non enregistrés, ce qui prive l'organisme de son principal signal préventif",
+        "Une cause systématiquement attribuée au non-respect d'une consigne, sans examiner pourquoi la consigne n'était pas tenable"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.3",
+      "intitule": "Amélioration continue",
+      "exigence": "L'organisme améliore en continu la pertinence, l'adéquation et l'efficacité du système sur les trois domaines, en s'appuyant sur les résultats de l'analyse, de l'évaluation et de la revue de direction.",
+      "preuves": [
+        "Évolution des indicateurs des trois domaines sur au moins deux exercices",
+        "Actions d'amélioration issues des audits, des revues et de l'analyse des incidents"
+      ],
+      "erreurs_frequentes": [
+        "Une amélioration continue démontrée sur la qualité seulement, les résultats environnementaux et sécurité stagnant",
+        "Des indicateurs dont la méthode de calcul change d'un exercice à l'autre, interdisant toute comparaison"
+      ],
+      "poids": 2
+    }
+  ]
+}

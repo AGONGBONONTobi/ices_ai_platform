@@ -1,0 +1,317 @@
+{
+  "code": "ISO-17020",
+  "version": "2012",
+  "label": "ISO/IEC 17020:2012 — Exigences pour le fonctionnement des organismes procédant à l'inspection",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (numérotation et intitulés des chapitres) et une reformulation des attendus sont utilisées. Cette norme est un référentiel d'accréditation, délivrée par l'organisme national d'accréditation et non par un organisme de certification : le rapport doit employer le vocabulaire de l'accréditation. Les exigences d'indépendance diffèrent selon le type d'organisme (A, B ou C). À faire relire par un praticien disposant du texte officiel avant mise en vente.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "4", "titre": "Exigences générales" },
+    { "numero": "5", "titre": "Exigences structurelles" },
+    { "numero": "6", "titre": "Exigences en matière de ressources" },
+    { "numero": "7", "titre": "Exigences relatives aux processus" },
+    { "numero": "8", "titre": "Exigences relatives au système de management" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "4.1.1",
+      "intitule": "Type d'organisme et exigences d'indépendance",
+      "exigence": "L'organisme détermine le type d'inspection qu'il exerce (A, B ou C) au regard de son indépendance vis-à-vis des parties concernées, et satisfait aux exigences correspondantes. Le type revendiqué conditionne l'ensemble des règles d'indépendance applicables.",
+      "preuves": [
+        "Document déclarant le type revendiqué et démontrant la satisfaction des critères correspondants",
+        "Organigramme du groupe d'appartenance faisant apparaître les activités de conception, fabrication ou maintenance éventuelles"
+      ],
+      "erreurs_frequentes": [
+        "Revendiquer le type A alors que la maison mère conçoit ou entretient les objets inspectés",
+        "Un type déclaré une fois, non réexaminé après un rachat ou une diversification de l'activité"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.1.3",
+      "intitule": "Identification et maîtrise des risques pour l'impartialité",
+      "exigence": "Les risques pesant sur l'impartialité sont identifiés de façon continue — liens financiers, commerciaux ou personnels avec le client — et des mesures sont prises pour les éliminer ou les réduire.",
+      "preuves": [
+        "Analyse des risques d'impartialité, tenue à jour, couvrant les relations du personnel et de la direction",
+        "Déclarations d'intérêts des inspecteurs et règle de récusation"
+      ],
+      "erreurs_frequentes": [
+        "Une analyse limitée aux liens capitalistiques, sans traiter les relations personnelles dans un marché local restreint",
+        "Aucune règle empêchant un inspecteur d'intervenir chez un ancien employeur récent"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.1.6",
+      "intitule": "Absence de rémunération liée au résultat de l'inspection",
+      "exigence": "La rémunération du personnel intervenant dans l'inspection ne dépend ni du nombre d'inspections réalisées ni de leurs résultats.",
+      "preuves": [
+        "Règles de rémunération variable applicables au personnel d'inspection",
+        "Engagement individuel signé sur l'impartialité"
+      ],
+      "erreurs_frequentes": [
+        "Une prime indexée sur le volume d'inspections, qui pousse à l'expédition des visites",
+        "Des inspecteurs également chargés de la prospection commerciale chez les clients qu'ils inspectent"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.2",
+      "intitule": "Confidentialité",
+      "exigence": "L'organisme protège les informations obtenues au cours de l'inspection, et informe le client au préalable lorsqu'une divulgation est imposée par la loi ou par des dispositions contractuelles.",
+      "preuves": [
+        "Engagements de confidentialité signés par le personnel et les sous-traitants",
+        "Mesures de protection des dossiers d'inspection, sur support papier et électronique"
+      ],
+      "erreurs_frequentes": [
+        "Des rapports d'inspection stockés sur des messageries ou des supports personnels",
+        "Aucune information du client lorsqu'une autorité exige la communication d'un rapport"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.1.2",
+      "intitule": "Statut juridique et couverture des responsabilités",
+      "exigence": "L'organisme est une entité juridiquement identifiable, responsable de ses activités d'inspection, et dispose d'une couverture suffisante des responsabilités découlant de ces activités.",
+      "preuves": [
+        "Document constitutif de l'entité et description des activités couvertes",
+        "Attestation d'assurance couvrant la responsabilité liée aux inspections réalisées"
+      ],
+      "erreurs_frequentes": [
+        "Une couverture d'assurance dont le plafond est sans rapport avec les conséquences possibles d'une inspection erronée",
+        "Une activité d'inspection exercée par un service dépourvu d'existence juridique propre"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.2.2",
+      "intitule": "Organisation, responsabilités et suppléance",
+      "exigence": "L'organisation, les responsabilités et les liens hiérarchiques sont documentés, et une suppléance est prévue pour les fonctions dont l'absence bloquerait l'activité, notamment le responsable technique.",
+      "preuves": [
+        "Organigramme et fiches de fonction du personnel d'inspection et d'encadrement technique",
+        "Désignation nominative d'un suppléant du responsable technique"
+      ],
+      "erreurs_frequentes": [
+        "Un responsable technique unique, sans suppléant qualifié : l'activité s'arrête en son absence",
+        "Des fiches de fonction qui ne précisent pas qui décide de la validation des rapports"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.1.3",
+      "intitule": "Critères de qualification du personnel d'inspection",
+      "exigence": "Les critères de formation initiale, de formation continue, d'expérience et de connaissances techniques sont définis pour chaque domaine et chaque type d'inspection.",
+      "preuves": [
+        "Grille de qualification par domaine d'inspection, précisant les critères exigés",
+        "Dossiers individuels attestant la satisfaction de ces critères"
+      ],
+      "erreurs_frequentes": [
+        "Des critères rédigés pour correspondre au profil des inspecteurs déjà en poste",
+        "Une expérience revendiquée sans pièce permettant de l'établir"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.1.7",
+      "intitule": "Autorisation, surveillance et maintien de la compétence",
+      "exigence": "Chaque inspecteur est formellement autorisé pour les activités qu'il réalise ; sa compétence est maintenue et surveillée, notamment par des observations sur site à intervalles définis.",
+      "preuves": [
+        "Décisions d'autorisation nominatives, par activité et par domaine",
+        "Rapports d'observation sur site des inspecteurs, datés, avec les suites données"
+      ],
+      "erreurs_frequentes": [
+        "Une autorisation accordée à l'embauche et jamais réexaminée",
+        "Des observations sur site prévues dans la procédure mais non réalisées, faute de temps d'encadrement"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.2.4",
+      "intitule": "Équipements, étalonnage et traçabilité des mesures",
+      "exigence": "Les équipements utilisés en inspection sont identifiés, vérifiés ou étalonnés avant mise en service puis selon un programme établi, et rattachés à des étalons de référence lorsque la mesure influe sur le résultat.",
+      "preuves": [
+        "Inventaire des équipements avec leur statut d'étalonnage et l'échéance suivante",
+        "Certificats d'étalonnage rattachés à des étalons reconnus"
+      ],
+      "erreurs_frequentes": [
+        "Des équipements personnels d'inspecteurs utilisés en inspection, hors du programme d'étalonnage",
+        "Aucune analyse de l'incidence sur les inspections déjà réalisées lorsqu'un équipement est trouvé hors tolérance"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.3.1",
+      "intitule": "Sous-traitance",
+      "exigence": "L'organisme ne sous-traite que de façon exceptionnelle, à des prestataires compétents et conformes aux exigences applicables ; il en informe le client, obtient son accord, et conserve la responsabilité du résultat.",
+      "preuves": [
+        "Registre des sous-traitants, avec l'évaluation de leur compétence",
+        "Accord du client tracé avant recours à la sous-traitance"
+      ],
+      "erreurs_frequentes": [
+        "Une sous-traitance devenue structurelle sur un domaine entier, faute de compétence interne",
+        "Un client informé après coup, à réception du rapport"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.1.1",
+      "intitule": "Méthodes et procédures d'inspection",
+      "exigence": "L'organisme utilise les méthodes définies par les exigences applicables à l'inspection ; en l'absence de méthode normalisée, il développe et valide sa propre méthode, et la documente.",
+      "preuves": [
+        "Liste des méthodes utilisées par domaine, avec leur référence et leur version",
+        "Dossier de validation des méthodes développées en interne"
+      ],
+      "erreurs_frequentes": [
+        "Des méthodes internes non validées, reposant sur l'habitude d'un inspecteur expérimenté",
+        "Une version périmée d'une méthode normalisée toujours appliquée sur le terrain"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.1.3",
+      "intitule": "Contrat, instructions et planification de l'inspection",
+      "exigence": "Les exigences de l'inspection sont établies avec le client et revues avant exécution ; les inspecteurs disposent d'instructions écrites précisant l'étendue, les points à vérifier et les critères d'acceptation.",
+      "preuves": [
+        "Revue de contrat tracée, précisant l'étendue et le référentiel applicables",
+        "Instructions ou check-lists remises aux inspecteurs avant intervention"
+      ],
+      "erreurs_frequentes": [
+        "Une étendue d'inspection définie oralement, source de litige à la remise du rapport",
+        "Des check-lists qui listent des points à voir sans énoncer le critère d'acceptation"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.2.1",
+      "intitule": "Traitement des objets et échantillons",
+      "exigence": "Les objets inspectés et les échantillons prélevés sont identifiés sans ambiguïté, et leur état est vérifié et consigné à la prise en charge ; toute anomalie est signalée au client avant l'inspection.",
+      "preuves": [
+        "Règle d'identification des objets et des échantillons",
+        "Enregistrements de prise en charge mentionnant les anomalies constatées"
+      ],
+      "erreurs_frequentes": [
+        "Une identification par la seule position physique de l'objet, perdue dès qu'il est déplacé",
+        "Une anomalie d'état relevée seulement dans le rapport final, alors qu'elle rendait l'inspection non représentative"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.3.1",
+      "intitule": "Enregistrements d'inspection",
+      "exigence": "Les enregistrements comportent les observations et données recueillies sur place, suffisamment détaillées pour permettre de reconstituer l'inspection, et identifient le personnel qui les a produites.",
+      "preuves": [
+        "Notes de terrain conservées, datées et signées par l'inspecteur",
+        "Traçabilité entre les observations de terrain et les conclusions du rapport"
+      ],
+      "erreurs_frequentes": [
+        "Des notes de terrain détruites une fois le rapport rédigé",
+        "Un rapport dont les conclusions ne se retrouvent dans aucune observation enregistrée"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.4.1",
+      "intitule": "Rapports et certificats d'inspection",
+      "exigence": "Chaque inspection donne lieu à un rapport ou un certificat identifiant l'objet, la méthode, la date, les constatations et les conclusions, approuvé par une personne autorisée avant diffusion.",
+      "preuves": [
+        "Modèle de rapport comportant l'ensemble des mentions exigées",
+        "Trace de l'approbation du rapport par une personne autorisée, distincte de son rédacteur lorsque cela est prévu"
+      ],
+      "erreurs_frequentes": [
+        "Des conclusions rédigées en termes ambigus, ne permettant pas de savoir si l'objet est conforme",
+        "Des rapports diffusés au client avant approbation, puis corrigés sans indice de révision"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.5.1",
+      "intitule": "Traitement des réclamations et des appels",
+      "exigence": "L'organisme dispose d'un processus documenté de réception, d'examen et de décision sur les réclamations et les appels ; la décision est prise par des personnes non impliquées dans l'inspection contestée.",
+      "preuves": [
+        "Processus documenté et accessible aux clients",
+        "Registre des réclamations et des appels, avec les décisions et le nom des décideurs"
+      ],
+      "erreurs_frequentes": [
+        "L'appel instruit par l'inspecteur dont la conclusion est contestée",
+        "Des réclamations traitées oralement, sans enregistrement ni exploitation en revue de direction"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.3",
+      "intitule": "Maîtrise des documents",
+      "exigence": "Les documents du système sont approuvés, identifiés par leur version, disponibles aux postes où ils sont utilisés, et les versions périmées retirées de l'usage.",
+      "preuves": [
+        "Liste des documents en vigueur, avec indice et date d'approbation",
+        "Modalité de mise à disposition des documents aux inspecteurs en déplacement"
+      ],
+      "erreurs_frequentes": [
+        "Des inspecteurs travaillant avec des copies locales périmées de check-lists",
+        "Aucune règle de conservation des versions retirées"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.4",
+      "intitule": "Maîtrise des enregistrements",
+      "exigence": "Les enregistrements sont lisibles, stockés de façon sûre et conservés pendant une durée définie, tenant compte des obligations contractuelles et légales.",
+      "preuves": [
+        "Durées de conservation définies par type d'enregistrement",
+        "Dispositif de sauvegarde et de protection contre la perte ou la modification"
+      ],
+      "erreurs_frequentes": [
+        "Des enregistrements électroniques sans sauvegarde testée",
+        "Une durée de conservation inférieure à la durée pendant laquelle la responsabilité peut être engagée"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.5",
+      "intitule": "Revue de direction",
+      "exigence": "La direction revoit le système à intervalles planifiés à partir de données réelles — audits, réclamations, appels, retours clients, résultats des comparaisons interlaboratoires ou interinspecteurs — et décide des actions.",
+      "preuves": [
+        "Compte rendu de revue reprenant les données d'entrée exigées et les décisions prises",
+        "Suivi de l'exécution des décisions de la revue précédente"
+      ],
+      "erreurs_frequentes": [
+        "Une revue tenue pour satisfaire l'auditeur, la veille de l'évaluation d'accréditation",
+        "Aucune décision d'allocation de ressources malgré des constats répétés"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.6",
+      "intitule": "Audits internes",
+      "exigence": "Un programme d'audit interne couvre l'ensemble des exigences de la norme sur un cycle défini, et les audits sont réalisés par du personnel indépendant de l'activité auditée.",
+      "preuves": [
+        "Programme pluriannuel montrant la couverture de toutes les exigences",
+        "Rapports d'audit et qualification des auditeurs internes"
+      ],
+      "erreurs_frequentes": [
+        "Des audits centrés sur les processus techniques, laissant l'impartialité et la confidentialité jamais auditées",
+        "Un auditeur interne qui audite les activités dont il a la charge"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.7",
+      "intitule": "Actions correctives",
+      "exigence": "Les non-conformités donnent lieu à une analyse des causes, à des actions proportionnées, et à une vérification de leur efficacité ; l'incidence sur les inspections déjà réalisées est évaluée.",
+      "preuves": [
+        "Fiches d'action corrective traçant l'analyse de cause et la vérification d'efficacité",
+        "Évaluation de l'incidence sur les rapports déjà émis, lorsque la non-conformité les affecte"
+      ],
+      "erreurs_frequentes": [
+        "Une correction immédiate présentée comme action corrective, sans recherche de cause",
+        "Aucun examen des inspections antérieures lorsqu'une méthode ou un équipement est mis en cause"
+      ],
+      "poids": 3
+    }
+  ]
+}

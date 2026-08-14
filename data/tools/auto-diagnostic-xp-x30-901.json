@@ -1,0 +1,698 @@
+{
+  "id": "auto-diagnostic-xp-x30-901",
+  "title": "Auto-évaluation économie circulaire — XP X30-901",
+  "category": "Économie Circulaire & Déchets",
+  "output_kind": "assessment",
+  "referentiel_code": "XP-X30-901",
+  "referentiel_version": "2018",
+  "inputs": [
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Décrivez brièvement votre organisme",
+      "help": "Objet et périmètre du projet d'économie circulaire, acteurs impliqués, stade d'avancement, et ressources qui lui sont affectées.",
+      "placeholder": "Projet de valorisation des déchets plastiques d'une zone industrielle, porté par trois entreprises et la commune, en phase de démarrage.",
+      "required": true
+    },
+    {
+      "name": "c1_1",
+      "type": "select",
+      "question": "1.1 — Connaissance et maîtrise des approvisionnements",
+      "help": "Le projet identifie l'origine des matières et ressources qu'il mobilise, leur disponibilité dans le temps et les incidences environnementales et sociales de leur extraction ou de leur production.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "1.1",
+      "axe": "1 — Approvisionnement durable",
+      "poids": 2
+    },
+    {
+      "name": "c1_2",
+      "type": "select",
+      "question": "1.2 — Recours aux matières recyclées et renouvelables",
+      "help": "Le projet définit une part de matières issues du recyclage ou de sources renouvelables gérées durablement, en mesure la progression et traite les contraintes techniques associées.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "1.2",
+      "axe": "1 — Approvisionnement durable",
+      "poids": 2
+    },
+    {
+      "name": "c2_1",
+      "type": "select",
+      "question": "2.1 — Prise en compte du cycle de vie dès la conception",
+      "help": "Les choix de conception du produit ou du service sont éclairés par une évaluation des incidences environnementales sur l'ensemble du cycle de vie, et non sur la seule phase de fabrication.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "2.1",
+      "axe": "2 — Écoconception",
+      "poids": 3
+    },
+    {
+      "name": "c2_2",
+      "type": "select",
+      "question": "2.2 — Conception pour la réparation, le démontage et le recyclage",
+      "help": "La conception facilite la réparation, le démontage et la séparation des matériaux en fin de vie : assemblages démontables, limitation du nombre de matériaux, disponibilité des pièces et de l'information technique.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "2.2",
+      "axe": "2 — Écoconception",
+      "poids": 3
+    },
+    {
+      "name": "c3_1",
+      "type": "select",
+      "question": "3.1 — Identification des synergies de territoire",
+      "help": "Le projet recherche activement les échanges possibles avec les acteurs voisins : flux de matières, d'énergie, d'eau, mutualisation d'équipements ou de services.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "3.1",
+      "axe": "3 — Écologie industrielle et territoriale",
+      "poids": 2
+    },
+    {
+      "name": "c3_2",
+      "type": "select",
+      "question": "3.2 — Mise en œuvre et pérennisation des synergies",
+      "help": "Les synergies identifiées font l'objet d'accords précisant les engagements réciproques — qualité, volumes, continuité, responsabilité — de façon à ne pas rendre un partenaire dépendant d'un flux non garanti.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "3.2",
+      "axe": "3 — Écologie industrielle et territoriale",
+      "poids": 2
+    },
+    {
+      "name": "c4_1",
+      "type": "select",
+      "question": "4.1 — Vente de l'usage plutôt que du bien",
+      "help": "Le projet examine la possibilité de vendre un usage, une performance ou un service plutôt que le bien lui-même, et en tire les conséquences sur le modèle économique et la propriété du bien.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.1",
+      "axe": "4 — Économie de la fonctionnalité",
+      "poids": 2
+    },
+    {
+      "name": "c4_2",
+      "type": "select",
+      "question": "4.2 — Alignement des intérêts sur la durabilité du bien",
+      "help": "Lorsque le bien reste la propriété du fournisseur, les modalités contractuelles et le suivi mis en place font converger l'intérêt économique du fournisseur et la durabilité du bien.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.2",
+      "axe": "4 — Économie de la fonctionnalité",
+      "poids": 2
+    },
+    {
+      "name": "c5_1",
+      "type": "select",
+      "question": "5.1 — Information du client et sobriété d'usage",
+      "help": "Le projet donne au client une information sincère et vérifiable sur les caractéristiques environnementales du produit ou du service, sa durée de vie attendue et son usage sobre.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.1",
+      "axe": "5 — Consommation responsable",
+      "poids": 2
+    },
+    {
+      "name": "c5_2",
+      "type": "select",
+      "question": "5.2 — Achats responsables du porteur de projet",
+      "help": "Le porteur de projet intègre des critères d'économie circulaire dans ses propres achats — matières, équipements, prestations — et en vérifie la prise en compte effective.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.2",
+      "axe": "5 — Consommation responsable",
+      "poids": 2
+    },
+    {
+      "name": "c6_1",
+      "type": "select",
+      "question": "6.1 — Réemploi, réparation et reconditionnement",
+      "help": "Le projet organise les conditions du réemploi, de la réparation et du reconditionnement : collecte des biens usagés, diagnostic, remise en état, garantie et remise sur le marché.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.1",
+      "axe": "6 — Allongement de la durée d'usage",
+      "poids": 3
+    },
+    {
+      "name": "c6_2",
+      "type": "select",
+      "question": "6.2 — Lutte contre l'obsolescence",
+      "help": "Le projet identifie les causes d'arrêt prématuré d'usage — technique, logicielle, esthétique ou économique — et prend des mesures pour les traiter.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.2",
+      "axe": "6 — Allongement de la durée d'usage",
+      "poids": 2
+    },
+    {
+      "name": "c7_1",
+      "type": "select",
+      "question": "7.1 — Tri à la source et qualité des gisements",
+      "help": "Les matières et produits en fin de vie sont triés au plus près de leur production, dans des conditions préservant la qualité du gisement et donc les possibilités de valorisation.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.1",
+      "axe": "7 — Gestion efficace des matières et produits en fin de vie",
+      "poids": 3
+    },
+    {
+      "name": "c7_2",
+      "type": "select",
+      "question": "7.2 — Traçabilité des flux jusqu'à leur destination finale",
+      "help": "Le projet connaît et documente la destination réelle de chaque flux sortant, jusqu'à son traitement final, et s'assure de la régularité des installations qui les reçoivent.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.2",
+      "axe": "7 — Gestion efficace des matières et produits en fin de vie",
+      "poids": 3
+    },
+    {
+      "name": "c7_3",
+      "type": "select",
+      "question": "7.3 — Hiérarchie des modes de traitement",
+      "help": "Le projet applique la hiérarchie des modes de traitement — prévention, réemploi, recyclage, autre valorisation, élimination — et justifie tout traitement retenu à un rang inférieur.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.3",
+      "axe": "7 — Gestion efficace des matières et produits en fin de vie",
+      "poids": 3
+    },
+    {
+      "name": "c8_1",
+      "type": "select",
+      "question": "8.1 — Définition du projet, de son périmètre et de ses parties intéressées",
+      "help": "Le projet d'économie circulaire est défini : objet, périmètre, durée, ressources affectées, et parties intéressées identifiées avec leurs attentes.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.1",
+      "axe": "8 — Pilotage du projet d'économie circulaire",
+      "poids": 3
+    },
+    {
+      "name": "c8_2",
+      "type": "select",
+      "question": "8.2 — Objectifs, indicateurs et plan d'actions",
+      "help": "Le projet fixe des objectifs mesurables par domaine d'action retenu, des indicateurs associés, et un plan d'actions désignant les responsables, les échéances et les moyens.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.2",
+      "axe": "8 — Pilotage du projet d'économie circulaire",
+      "poids": 3
+    },
+    {
+      "name": "c8_3",
+      "type": "select",
+      "question": "8.3 — Engagement de la direction et allocation des moyens",
+      "help": "La direction porte le projet, y affecte des moyens identifiés et désigne un responsable disposant de l'autorité nécessaire pour engager les arbitrages.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.3",
+      "axe": "8 — Pilotage du projet d'économie circulaire",
+      "poids": 3
+    },
+    {
+      "name": "c8_4",
+      "type": "select",
+      "question": "8.4 — Évaluation des résultats et revue du projet",
+      "help": "Les résultats du projet sont mesurés au regard des objectifs fixés, revus à intervalles planifiés, et ces revues débouchent sur des décisions d'ajustement.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.4",
+      "axe": "8 — Pilotage du projet d'économie circulaire",
+      "poids": 2
+    },
+    {
+      "name": "c8_5",
+      "type": "select",
+      "question": "8.5 — Communication et valorisation des résultats",
+      "help": "La communication sur le projet repose sur des résultats mesurés et vérifiables, et distingue ce qui est atteint de ce qui est visé.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.5",
+      "axe": "8 — Pilotage du projet d'économie circulaire",
+      "poids": 2
+    }
+  ],
+  "promptTemplate": "Tu es évaluateur de projets d'économie circulaire, familier de la norme expérimentale XP X30-901. L'organisme est décrit ainsi : {contexte}.\n\nLes clauses applicables et leur grille de maturité te sont fournies plus bas, ainsi que le positionnement déclaré pour chacune et les scores déjà calculés.\n\nProduis un rapport de pré-audit :\n- pour chaque chapitre parmi 1 (Approvisionnement durable), 2 (Écoconception), 3 (Écologie industrielle et territoriale), 4 (Économie de la fonctionnalité), 5 (Consommation responsable), 6 (Allongement de la durée d'usage), 7 (Gestion efficace des matières et produits en fin de vie), 8 (Pilotage du projet d'économie circulaire), un constat appuyé sur les clauses réellement concernées, en citant leur numéro ;\n- pour les clauses les plus faibles, indique l'écart précis par rapport à l'exigence et la preuve qui serait demandée en audit ;\n- des recommandations priorisées, chacune rattachée à un numéro de clause, actionnables et proportionnées au contexte décrit.\n\nCe référentiel s'applique à un projet délimité, non à l'organisme entier : rappelle-le si le contexte décrit une entreprise plutôt qu'un projet. Traite en priorité le pilotage (chapitre 8) et la traçabilité des flux jusqu'à leur destination finale : un projet sans périmètre défini ni indicateurs ne peut rien démontrer, et une valorisation dont la destination finale est inconnue ne peut pas être revendiquée.\n\nN'invente aucune exigence absente des clauses fournies. Ne recalcule pas les scores.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          },
+          "required": [
+            "axe",
+            "score"
+          ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "score_global",
+      "axes",
+      "recommandations"
+    ]
+  }
+}

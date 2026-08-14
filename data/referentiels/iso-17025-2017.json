@@ -1,0 +1,373 @@
+{
+  "code": "ISO-17025",
+  "version": "2017",
+  "label": "ISO/IEC 17025:2017 — Compétence des laboratoires d'étalonnages et d'essais",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (numérotation et intitulés des chapitres) et une reformulation des attendus sont utilisées. Cette norme est un référentiel d'accréditation, délivrée par l'organisme national d'accréditation et non par un organisme de certification : le rapport doit employer le vocabulaire de l'accréditation et rappeler que la portée d'accréditation est définie essai par essai. À faire relire par un praticien disposant du texte officiel avant mise en vente.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "4", "titre": "Exigences générales" },
+    { "numero": "5", "titre": "Exigences structurelles" },
+    { "numero": "6", "titre": "Exigences en matière de ressources" },
+    { "numero": "7", "titre": "Exigences relatives aux processus" },
+    { "numero": "8", "titre": "Exigences relatives au système de management" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "4.1",
+      "intitule": "Impartialité",
+      "exigence": "Les activités du laboratoire sont conduites de manière impartiale. Les risques pesant sur l'impartialité — pressions commerciales, hiérarchiques ou financières sur le résultat — sont identifiés en continu et maîtrisés.",
+      "preuves": [
+        "Analyse des risques d'impartialité, couvrant les liens avec les clients et la structure de rattachement du laboratoire",
+        "Engagement d'impartialité signé par le personnel réalisant les essais"
+      ],
+      "erreurs_frequentes": [
+        "Un laboratoire interne dont le responsable dépend hiérarchiquement du service de production dont il contrôle les produits",
+        "Une analyse des risques limitée aux liens financiers, ignorant la pression exercée sur un résultat attendu"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.2",
+      "intitule": "Confidentialité",
+      "exigence": "Le laboratoire protège les informations des clients et informe ceux-ci lorsqu'une divulgation est imposée par la loi ou autorisée par contrat.",
+      "preuves": [
+        "Engagements de confidentialité du personnel et des prestataires",
+        "Mesures de protection des résultats, sur support papier et dans le système informatique"
+      ],
+      "erreurs_frequentes": [
+        "Des résultats transmis par messagerie personnelle ou consultables par du personnel non concerné",
+        "Aucune information du client avant communication de résultats à une autorité"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.5",
+      "intitule": "Structure, responsabilités et portée des activités",
+      "exigence": "Le laboratoire définit son organisation, les responsabilités et autorités du personnel, et l'étendue des activités qu'il déclare conformes à la norme. Il dispose du personnel nécessaire, y compris en suppléance.",
+      "preuves": [
+        "Organigramme, fiches de fonction et liste des activités couvertes",
+        "Désignation de suppléants pour les fonctions techniques et qualité"
+      ],
+      "erreurs_frequentes": [
+        "Une portée déclarée plus large que les essais réellement maîtrisés et validés",
+        "Un responsable qualité et un responsable technique confondus en une seule personne sans suppléance"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.2.2",
+      "intitule": "Compétence, autorisation et surveillance du personnel",
+      "exigence": "Les exigences de compétence sont définies par fonction et par activité ; le personnel est formé, autorisé nominativement pour les activités qu'il réalise, et sa compétence est surveillée dans le temps.",
+      "preuves": [
+        "Grille de compétences par méthode et décisions d'autorisation nominatives",
+        "Enregistrements de surveillance de la compétence : double lecture, essais d'aptitude internes, observation de poste"
+      ],
+      "erreurs_frequentes": [
+        "Une autorisation accordée après une simple formation, sans vérification pratique sur la méthode concernée",
+        "Un technicien autorisé sur une méthode qu'il n'a plus pratiquée depuis longtemps, sans requalification"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.3.2",
+      "intitule": "Installations et conditions ambiantes",
+      "exigence": "Les conditions ambiantes susceptibles d'influer sur les résultats sont identifiées, surveillées, enregistrées, et les essais sont interrompus lorsqu'elles sortent des limites définies.",
+      "preuves": [
+        "Limites définies par méthode pour les paramètres influents et enregistrements de surveillance",
+        "Trace des décisions prises lors d'un dépassement des limites"
+      ],
+      "erreurs_frequentes": [
+        "Une température enregistrée en continu mais aucun seuil d'action défini",
+        "Des dépassements constatés sans évaluation de leur incidence sur les résultats produits pendant la période"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.4.3",
+      "intitule": "Équipements : vérification, étalonnage et programme",
+      "exigence": "Les équipements sont vérifiés avant mise en service, puis étalonnés ou vérifiés selon un programme établi ; leur statut est identifiable par l'utilisateur au moment de l'emploi.",
+      "preuves": [
+        "Inventaire des équipements avec statut et échéance d'étalonnage",
+        "Programme d'étalonnage établi à partir de l'incidence de chaque équipement sur le résultat"
+      ],
+      "erreurs_frequentes": [
+        "Une périodicité d'étalonnage reprise du fournisseur, sans lien avec l'usage réel et la dérive constatée",
+        "Un équipement hors échéance resté en service faute de signalisation au poste"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.4.9",
+      "intitule": "Équipement défectueux et incidence sur les résultats antérieurs",
+      "exigence": "Un équipement trouvé défectueux ou hors tolérance est retiré du service et identifié comme tel ; le laboratoire examine l'incidence de l'anomalie sur les résultats déjà émis et agit en conséquence.",
+      "preuves": [
+        "Enregistrements de mise hors service et d'identification des équipements défectueux",
+        "Analyse d'incidence sur les résultats antérieurs et information des clients concernés le cas échéant"
+      ],
+      "erreurs_frequentes": [
+        "Un équipement réajusté sans examen des résultats produits depuis le dernier étalonnage conforme",
+        "Aucune information du client alors que des résultats émis se révèlent affectés"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.5.2",
+      "intitule": "Traçabilité métrologique",
+      "exigence": "Les résultats de mesure sont reliés à une référence appropriée par une chaîne ininterrompue d'étalonnages documentés, chacune contribuant à l'incertitude de mesure.",
+      "preuves": [
+        "Certificats d'étalonnage rattachés à un laboratoire accrédité ou à un institut national de métrologie",
+        "Schéma de raccordement des équipements aux étalons de référence"
+      ],
+      "erreurs_frequentes": [
+        "Des étalons internes utilisés sans raccordement documenté à une référence reconnue",
+        "Des certificats d'étalonnage acceptés sans vérifier qu'ils couvrent l'étendue de mesure réellement utilisée"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.6.2",
+      "intitule": "Produits et services fournis par des prestataires externes",
+      "exigence": "Le laboratoire définit les exigences applicables aux prestations externes influant sur les résultats — sous-traitance d'essais, étalonnages, consommables — évalue les prestataires et conserve les enregistrements de cette évaluation.",
+      "preuves": [
+        "Critères et enregistrements d'évaluation des prestataires critiques",
+        "Exigences transmises au prestataire avant commande, y compris l'accréditation exigée le cas échéant"
+      ],
+      "erreurs_frequentes": [
+        "Des réactifs ou matériaux de référence achetés au moins-disant, sans exigence de certificat",
+        "Une sous-traitance d'essais confiée à un laboratoire non accrédité pour la méthode concernée, sans information du client"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.1.1",
+      "intitule": "Revue des demandes, appels d'offres et contrats",
+      "exigence": "Le laboratoire vérifie avant acceptation qu'il dispose des ressources et de la compétence nécessaires, que la méthode demandée est appropriée, et que toute différence avec la demande initiale est résolue avec le client.",
+      "preuves": [
+        "Enregistrements de revue de demande, y compris pour les demandes verbales",
+        "Trace de l'accord du client sur la méthode retenue et sur la règle de décision applicable"
+      ],
+      "erreurs_frequentes": [
+        "Accepter un essai hors portée d'accréditation sans le signaler au client",
+        "Une règle de décision (déclaration de conformité) non convenue avec le client avant l'essai"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.2.1",
+      "intitule": "Sélection et vérification des méthodes",
+      "exigence": "Le laboratoire utilise des méthodes appropriées, dans leur version en vigueur, et vérifie avant emploi qu'il est capable de les mettre en œuvre avec les performances attendues.",
+      "preuves": [
+        "Liste des méthodes avec leur référence et leur version en vigueur",
+        "Dossiers de vérification initiale démontrant la maîtrise de chaque méthode par le laboratoire"
+      ],
+      "erreurs_frequentes": [
+        "Une méthode normalisée mise en œuvre sans vérification préalable des performances par le laboratoire lui-même",
+        "Des écarts au mode opératoire normalisé, appliqués en routine sans être documentés ni justifiés"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.2.2",
+      "intitule": "Validation des méthodes non normalisées ou modifiées",
+      "exigence": "Les méthodes développées, modifiées ou employées hors de leur domaine prévu sont validées ; l'étendue de la validation et les performances obtenues sont documentées.",
+      "preuves": [
+        "Dossiers de validation précisant les caractéristiques évaluées et les résultats obtenus",
+        "Déclaration de l'aptitude de la méthode à l'usage prévu"
+      ],
+      "erreurs_frequentes": [
+        "Une méthode adaptée à une nouvelle matrice sans nouvelle validation",
+        "Une validation qui n'évalue que la fidélité, sans traiter la justesse ni la limite de quantification"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.3.1",
+      "intitule": "Échantillonnage",
+      "exigence": "Lorsque le laboratoire réalise l'échantillonnage, il applique un plan et une méthode documentés, et enregistre les données permettant d'apprécier la représentativité de l'échantillon.",
+      "preuves": [
+        "Plan d'échantillonnage documenté et enregistrements de prélèvement : lieu, date, conditions, opérateur",
+        "Écarts au plan d'échantillonnage consignés et communiqués avec les résultats"
+      ],
+      "erreurs_frequentes": [
+        "Un échantillonnage réalisé par le client sans que le rapport ne le mentionne",
+        "Aucune trace des conditions de prélèvement et de transport, alors qu'elles conditionnent le résultat"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.4.1",
+      "intitule": "Manutention des objets d'essai",
+      "exigence": "Les objets soumis à essai sont identifiés sans ambiguïté, leur état à réception est vérifié et enregistré, et les conditions de conservation prévues par la méthode sont respectées.",
+      "preuves": [
+        "Système d'identification des échantillons, sans ambiguïté possible entre lots",
+        "Enregistrements de réception : état, écarts constatés, conditions de conservation"
+      ],
+      "erreurs_frequentes": [
+        "Des échantillons reçus hors conditions de conservation, acceptés sans réserve ni mention au rapport",
+        "Une identification réutilisée d'une série à l'autre, ouvrant la voie aux confusions"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.5.1",
+      "intitule": "Enregistrements techniques",
+      "exigence": "Les enregistrements techniques comportent les données brutes, les observations et les calculs, en quantité suffisante pour permettre de répéter l'essai dans des conditions aussi proches que possible des conditions initiales.",
+      "preuves": [
+        "Enregistrements bruts conservés, identifiant l'opérateur, la date et l'équipement utilisé",
+        "Règle de correction des enregistrements préservant la valeur d'origine"
+      ],
+      "erreurs_frequentes": [
+        "Des données brutes recopiées puis détruites, rendant impossible toute vérification du calcul",
+        "Des corrections effectuées par surcharge ou effacement, sans conserver la valeur initiale ni l'auteur de la correction"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.6.1",
+      "intitule": "Évaluation de l'incertitude de mesure",
+      "exigence": "Le laboratoire identifie les contributions à l'incertitude de mesure et l'évalue pour chaque méthode, selon une approche documentée et proportionnée à l'usage des résultats.",
+      "preuves": [
+        "Budget d'incertitude par méthode, identifiant les composantes retenues",
+        "Réexamen de l'incertitude après un changement d'équipement, de méthode ou d'opérateur"
+      ],
+      "erreurs_frequentes": [
+        "Une incertitude reprise d'une norme ou d'un autre laboratoire, sans lien avec les conditions réelles de mise en œuvre",
+        "Une incertitude évaluée une fois, jamais réexaminée malgré les changements survenus"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.7.1",
+      "intitule": "Assurance de la validité des résultats",
+      "exigence": "Le laboratoire surveille la validité de ses résultats par des moyens planifiés — cartes de contrôle, matériaux de référence, répétitions, contrôles internes — dont les données sont analysées et exploitées.",
+      "preuves": [
+        "Plan de contrôle qualité interne par méthode, avec les critères d'acceptation",
+        "Cartes de contrôle exploitées, avec les actions déclenchées en cas de dérive"
+      ],
+      "erreurs_frequentes": [
+        "Des contrôles internes réalisés et archivés sans analyse de tendance",
+        "Un critère d'acceptation recalculé après coup pour englober un résultat aberrant"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.7.2",
+      "intitule": "Comparaisons interlaboratoires et essais d'aptitude",
+      "exigence": "Le laboratoire participe à des essais d'aptitude ou à des comparaisons interlaboratoires lorsqu'ils sont disponibles, analyse ses résultats et engage des actions en cas d'écart.",
+      "preuves": [
+        "Programme pluriannuel de participation couvrant les méthodes de la portée",
+        "Analyse des résultats reçus et actions engagées sur les écarts constatés"
+      ],
+      "erreurs_frequentes": [
+        "Une participation limitée aux méthodes déjà bien maîtrisées",
+        "Un résultat douteux ou insatisfaisant classé sans analyse de cause"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.8.1",
+      "intitule": "Rapport sur les résultats",
+      "exigence": "Les rapports présentent les résultats de manière exacte, claire et non ambiguë, avec les informations nécessaires à leur interprétation : méthode, identification de l'objet, date, incertitude lorsqu'elle est pertinente.",
+      "preuves": [
+        "Modèle de rapport comportant l'ensemble des mentions exigées",
+        "Règle d'identification des résultats obtenus hors portée d'accréditation ou par sous-traitance"
+      ],
+      "erreurs_frequentes": [
+        "Une incertitude omise alors que le résultat sert à déclarer une conformité près de la limite",
+        "Des résultats sous-traités ou hors portée présentés sans distinction des autres"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.8.6",
+      "intitule": "Déclarations de conformité et règle de décision",
+      "exigence": "Lorsque le laboratoire déclare une conformité à une spécification, il applique une règle de décision convenue et documentée, et indique dans le rapport la règle appliquée et le niveau de risque associé.",
+      "preuves": [
+        "Règle de décision documentée et convenue avec le client avant l'essai",
+        "Rapports mentionnant explicitement la règle appliquée"
+      ],
+      "erreurs_frequentes": [
+        "Déclarer « conforme » par simple comparaison à la limite, sans prendre en compte l'incertitude",
+        "Une règle de décision définie en interne mais jamais portée à la connaissance du client"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.10.1",
+      "intitule": "Travaux non conformes",
+      "exigence": "Les travaux non conformes sont identifiés, leur importance évaluée, une décision prise sur leur acceptabilité, et le client informé lorsque des résultats déjà émis sont affectés.",
+      "preuves": [
+        "Registre des travaux non conformes, avec la décision prise et son auteur",
+        "Trace du rappel ou de l'annulation de rapports affectés, et de l'information du client"
+      ],
+      "erreurs_frequentes": [
+        "Des essais refaits sans enregistrer la non-conformité qui a motivé la reprise",
+        "Aucune règle définissant qui a autorité pour reprendre le travail et informer le client"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.5",
+      "intitule": "Actions face aux risques et opportunités",
+      "exigence": "Le laboratoire identifie les risques et opportunités liés à ses activités, planifie des actions proportionnées et évalue leur efficacité.",
+      "preuves": [
+        "Analyse des risques et opportunités, tenue à jour, couvrant les activités techniques et le système",
+        "Actions décidées, mises en œuvre et évaluées"
+      ],
+      "erreurs_frequentes": [
+        "Une analyse de risques établie pour l'accréditation, sans lien avec les incidents réellement rencontrés",
+        "Des risques identifiés sans aucune action associée"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.7",
+      "intitule": "Actions correctives",
+      "exigence": "Face à une non-conformité, le laboratoire réagit pour la maîtriser, en recherche les causes, engage des actions proportionnées et en vérifie l'efficacité.",
+      "preuves": [
+        "Fiches d'action corrective traçant l'analyse de cause et la vérification d'efficacité",
+        "Nombre de non-conformités récurrentes sur la période"
+      ],
+      "erreurs_frequentes": [
+        "Une cause attribuée à l'erreur de l'opérateur, sans examen de la méthode ni des conditions de travail",
+        "Une action close sans vérifier que la non-conformité ne se reproduit plus"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.8",
+      "intitule": "Audits internes",
+      "exigence": "Des audits internes couvrent les exigences de la norme et le système du laboratoire sur un cycle planifié, réalisés par des auditeurs objectifs et impartiaux au regard de l'activité auditée.",
+      "preuves": [
+        "Programme pluriannuel montrant la couverture des exigences et des méthodes",
+        "Rapports d'audit et suivi des constats"
+      ],
+      "erreurs_frequentes": [
+        "Un audit interne réalisé la veille de l'évaluation d'accréditation, sur les seuls points attendus",
+        "Un cycle d'audit qui ne couvre jamais certaines exigences en pratique"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.9",
+      "intitule": "Revues de direction",
+      "exigence": "La direction revoit le système à intervalles planifiés, sur la base des retours clients, des résultats des essais d'aptitude, des audits, des non-conformités et de l'adéquation des ressources, et décide des actions.",
+      "preuves": [
+        "Compte rendu de revue reprenant les données d'entrée exigées et les décisions prises",
+        "Suivi des décisions de la revue précédente"
+      ],
+      "erreurs_frequentes": [
+        "Une revue qui commente des indicateurs sans arbitrer les moyens demandés",
+        "Les résultats d'essais d'aptitude absents des données examinées"
+      ],
+      "poids": 2
+    }
+  ]
+}

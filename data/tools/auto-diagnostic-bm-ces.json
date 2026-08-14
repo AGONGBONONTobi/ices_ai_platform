@@ -1,0 +1,730 @@
+{
+  "id": "auto-diagnostic-bm-ces",
+  "title": "Auto-diagnostic CES Banque mondiale — les 10 NES",
+  "category": "Conformité Bailleurs & Projets Financés",
+  "output_kind": "assessment",
+  "referentiel_code": "BM-CES",
+  "referentiel_version": "2018",
+  "inputs": [
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Décrivez brièvement votre organisme",
+      "help": "Nature et localisation du projet, montant et bailleur, stade d'avancement, classification de risque si elle est connue, et composition de l'unité de gestion.",
+      "placeholder": "Projet de réhabilitation de 120 km de pistes rurales, financé par l'IDA, en phase de préparation, UGP en cours de constitution.",
+      "required": true
+    },
+    {
+      "name": "c1_1",
+      "type": "select",
+      "question": "1.1 — Évaluation environnementale et sociale et classification des risques",
+      "help": "Le projet fait l'objet d'une évaluation environnementale et sociale proportionnée à ses risques, portant sur les effets directs, indirects et cumulés, y compris ceux des installations associées, et cohérente avec la classification de risque retenue par la Banque.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "1.1",
+      "axe": "1 — NES 1 — Évaluation et gestion des risques et effets environnementaux et sociaux",
+      "poids": 3
+    },
+    {
+      "name": "c1_2",
+      "type": "select",
+      "question": "1.2 — Hiérarchie d'atténuation",
+      "help": "Les mesures retenues appliquent la hiérarchie d'atténuation : anticiper et éviter les risques, puis les minimiser ou les réduire, puis les atténuer, et enfin compenser les effets résiduels lorsqu'ils subsistent.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "1.2",
+      "axe": "1 — NES 1 — Évaluation et gestion des risques et effets environnementaux et sociaux",
+      "poids": 3
+    },
+    {
+      "name": "c1_3",
+      "type": "select",
+      "question": "1.3 — Plan d'engagement environnemental et social (PEES) et capacité organisationnelle",
+      "help": "L'Emprunteur met en œuvre les engagements du PEES selon le calendrier convenu, dispose d'une structure organisationnelle dotée d'un personnel qualifié en sauvegardes, et rend compte périodiquement à la Banque.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "1.3",
+      "axe": "1 — NES 1 — Évaluation et gestion des risques et effets environnementaux et sociaux",
+      "poids": 3
+    },
+    {
+      "name": "c1_4",
+      "type": "select",
+      "question": "1.4 — Suivi, rapportage et gestion des entreprises et fournisseurs",
+      "help": "Le projet suit la performance environnementale et sociale de ses entrepreneurs et fournisseurs, intègre les obligations correspondantes dans les documents d'appel d'offres et les contrats, et en contrôle l'exécution.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "1.4",
+      "axe": "1 — NES 1 — Évaluation et gestion des risques et effets environnementaux et sociaux",
+      "poids": 3
+    },
+    {
+      "name": "c2_1",
+      "type": "select",
+      "question": "2.1 — Conditions d'emploi et de travail",
+      "help": "Les travailleurs du projet disposent d'une information écrite sur leurs conditions d'emploi, sont rémunérés régulièrement, et bénéficient de la liberté d'association et de la négociation collective conformément au droit national.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "2.1",
+      "axe": "2 — NES 2 — Emploi et conditions de travail",
+      "poids": 3
+    },
+    {
+      "name": "c2_2",
+      "type": "select",
+      "question": "2.2 — Santé et sécurité au travail et mécanisme de gestion des plaintes des travailleurs",
+      "help": "Les risques professionnels sont évalués et maîtrisés, les équipements de protection fournis, les accidents enregistrés et déclarés ; un mécanisme de gestion des plaintes est accessible à l'ensemble des travailleurs du projet.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "2.2",
+      "axe": "2 — NES 2 — Emploi et conditions de travail",
+      "poids": 3
+    },
+    {
+      "name": "c2_3",
+      "type": "select",
+      "question": "2.3 — Travail des enfants, travail forcé et chaîne d'approvisionnement",
+      "help": "Le projet vérifie l'absence de travail des enfants en dessous de l'âge autorisé et de travail forcé, y compris chez ses fournisseurs principaux, et agit dès qu'un cas est identifié.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "2.3",
+      "axe": "2 — NES 2 — Emploi et conditions de travail",
+      "poids": 3
+    },
+    {
+      "name": "c3_1",
+      "type": "select",
+      "question": "3.1 — Utilisation rationnelle des ressources",
+      "help": "Le projet met en œuvre des mesures d'utilisation efficace de l'énergie, de l'eau et des matières premières, en tenant compte de la disponibilité de ces ressources pour les usages existants des communautés.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "3.1",
+      "axe": "3 — NES 3 — Utilisation rationnelle des ressources, prévention et gestion de la pollution",
+      "poids": 2
+    },
+    {
+      "name": "c3_2",
+      "type": "select",
+      "question": "3.2 — Prévention et gestion de la pollution, déchets et substances dangereuses",
+      "help": "Le projet évite ou réduit ses rejets dans l'air, l'eau et les sols, gère ses déchets selon une filière identifiée jusqu'à leur destination finale, et maîtrise l'usage et le stockage des substances dangereuses.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "3.2",
+      "axe": "3 — NES 3 — Utilisation rationnelle des ressources, prévention et gestion de la pollution",
+      "poids": 3
+    },
+    {
+      "name": "c4_1",
+      "type": "select",
+      "question": "4.1 — Santé et sécurité des populations riveraines",
+      "help": "Le projet évalue et gère les risques que ses activités font peser sur les populations : circulation des engins, poussières et bruit, ouvrages, sécurité routière et exposition aux maladies transmissibles.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.1",
+      "axe": "4 — NES 4 — Santé et sécurité des populations",
+      "poids": 3
+    },
+    {
+      "name": "c4_2",
+      "type": "select",
+      "question": "4.2 — Personnel de sécurité et exploitation et sécurité des ouvrages",
+      "help": "Le recours à du personnel de sécurité est encadré par des règles de conduite et de proportionnalité, et la conception comme l'exploitation des ouvrages tiennent compte des risques pour les populations, y compris les risques naturels.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.2",
+      "axe": "4 — NES 4 — Santé et sécurité des populations",
+      "poids": 2
+    },
+    {
+      "name": "c5_1",
+      "type": "select",
+      "question": "5.1 — Évitement de la réinstallation et recensement des personnes affectées",
+      "help": "Le projet évite la réinstallation involontaire ou la réduit en explorant des variantes de conception. Lorsqu'elle est inévitable, un recensement établit à une date butoir la liste des personnes et des biens affectés, quel que soit le statut d'occupation.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.1",
+      "axe": "5 — NES 5 — Acquisition de terres, restrictions à l'utilisation de terres et réinstallation involontaire",
+      "poids": 3
+    },
+    {
+      "name": "c5_2",
+      "type": "select",
+      "question": "5.2 — Compensation au coût de remplacement et restauration des moyens de subsistance",
+      "help": "Les personnes affectées sont indemnisées au coût de remplacement avant tout déplacement ou perte d'accès, et bénéficient d'un appui à la restauration de leurs moyens de subsistance lorsque ceux-ci sont affectés.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.2",
+      "axe": "5 — NES 5 — Acquisition de terres, restrictions à l'utilisation de terres et réinstallation involontaire",
+      "poids": 3
+    },
+    {
+      "name": "c6_1",
+      "type": "select",
+      "question": "6.1 — Préservation de la biodiversité et habitats critiques",
+      "help": "Le projet identifie les habitats concernés — naturels, modifiés ou critiques — évalue ses effets sur la biodiversité et applique la hiérarchie d'atténuation, avec des exigences renforcées en habitat critique.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.1",
+      "axe": "6 — NES 6 — Préservation de la biodiversité et gestion durable des ressources naturelles biologiques",
+      "poids": 2
+    },
+    {
+      "name": "c6_2",
+      "type": "select",
+      "question": "6.2 — Gestion durable des ressources naturelles biologiques et fournisseurs primaires",
+      "help": "L'exploitation des ressources naturelles vivantes se fait de manière durable, et le projet évalue le risque que ses fournisseurs primaires contribuent à la conversion d'habitats naturels.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.2",
+      "axe": "6 — NES 6 — Préservation de la biodiversité et gestion durable des ressources naturelles biologiques",
+      "poids": 2
+    },
+    {
+      "name": "c7_1",
+      "type": "select",
+      "question": "7.1 — Identification des communautés concernées et consentement préalable",
+      "help": "Le projet détermine si des peuples autochtones ou des communautés locales traditionnelles historiquement défavorisées sont présents ou attachés à la zone, et recueille leur consentement préalable, donné librement et en connaissance de cause, dans les cas où la norme l'exige.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.1",
+      "axe": "7 — NES 7 — Peuples autochtones et communautés locales traditionnelles historiquement défavorisées",
+      "poids": 3
+    },
+    {
+      "name": "c8_1",
+      "type": "select",
+      "question": "8.1 — Patrimoine culturel matériel et immatériel",
+      "help": "Le projet identifie le patrimoine culturel susceptible d'être affecté, y compris les sites d'usage coutumier, et met en place une procédure de découverte fortuite applicable aux travaux d'excavation.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.1",
+      "axe": "8 — NES 8 — Patrimoine culturel",
+      "poids": 2
+    },
+    {
+      "name": "c9_1",
+      "type": "select",
+      "question": "9.1 — Système de gestion environnementale et sociale de l'intermédiaire financier",
+      "help": "Lorsque le financement transite par un intermédiaire financier, celui-ci dispose d'un système de gestion environnementale et sociale proportionné au risque de son portefeuille, appliqué à l'examen de chaque sous-projet, avec un personnel désigné et une liste d'exclusion.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.1",
+      "axe": "9 — NES 9 — Intermédiaires financiers",
+      "poids": 2
+    },
+    {
+      "name": "c10_1",
+      "type": "select",
+      "question": "10.1 — Plan de mobilisation des parties prenantes et consultation",
+      "help": "Le projet identifie les parties prenantes, y compris les personnes défavorisées ou vulnérables, et met en œuvre un plan de mobilisation prévoyant une consultation tenue suffisamment tôt pour influencer les décisions, dans une langue et une forme accessibles.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "10.1",
+      "axe": "10 — NES 10 — Mobilisation des parties prenantes et information",
+      "poids": 3
+    },
+    {
+      "name": "c10_2",
+      "type": "select",
+      "question": "10.2 — Mécanisme de gestion des plaintes",
+      "help": "Un mécanisme de gestion des plaintes accessible, gratuit et connu des populations reçoit et traite les préoccupations liées au projet dans des délais définis, et permet le signalement confidentiel, notamment des cas d'exploitation et d'abus sexuels.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "10.2",
+      "axe": "10 — NES 10 — Mobilisation des parties prenantes et information",
+      "poids": 3
+    },
+    {
+      "name": "c10_3",
+      "type": "select",
+      "question": "10.3 — Diffusion de l'information",
+      "help": "Les documents environnementaux et sociaux du projet sont publiés et rendus accessibles aux parties prenantes, sous une forme et dans une langue compréhensibles, avant les consultations qui s'y rapportent.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "10.3",
+      "axe": "10 — NES 10 — Mobilisation des parties prenantes et information",
+      "poids": 2
+    }
+  ],
+  "promptTemplate": "Tu es spécialiste des sauvegardes environnementales et sociales, habitué à l'examen de la conformité des projets au Cadre environnemental et social de la Banque mondiale. Il ne s'agit pas d'une certification mais d'une condition de financement opposable à l'Emprunteur. L'organisme est décrit ainsi : {contexte}.\n\nLes clauses applicables et leur grille de maturité te sont fournies plus bas, ainsi que le positionnement déclaré pour chacune et les scores déjà calculés.\n\nProduis un rapport de pré-audit :\n- pour chaque chapitre parmi 1 (NES 1 — Évaluation et gestion des risques et effets environnementaux et sociaux), 2 (NES 2 — Emploi et conditions de travail), 3 (NES 3 — Utilisation rationnelle des ressources, prévention et gestion de la pollution), 4 (NES 4 — Santé et sécurité des populations), 5 (NES 5 — Acquisition de terres, restrictions à l'utilisation de terres et réinstallation involontaire), 6 (NES 6 — Préservation de la biodiversité et gestion durable des ressources naturelles biologiques), 7 (NES 7 — Peuples autochtones et communautés locales traditionnelles historiquement défavorisées), 8 (NES 8 — Patrimoine culturel), 9 (NES 9 — Intermédiaires financiers), 10 (NES 10 — Mobilisation des parties prenantes et information), un constat appuyé sur les clauses réellement concernées, en citant leur numéro ;\n- pour les clauses les plus faibles, indique l'écart précis par rapport à l'exigence et la preuve qui serait demandée en audit ;\n- des recommandations priorisées, chacune rattachée à un numéro de clause, actionnables et proportionnées au contexte décrit.\n\nTraite en priorité la NES 1, la NES 10 et, si le projet touche au foncier, la NES 5 : l'évaluation environnementale et sociale, la mobilisation des parties prenantes et la réinstallation involontaire concentrent l'essentiel des cas de non-conformité et des suspensions de décaissement. Signale les NES sans objet pour ce projet plutôt que de les noter à zéro, et rappelle que le diagnostic ne remplace pas les instruments exigés par la Banque.\n\nN'invente aucune exigence absente des clauses fournies. Ne recalcule pas les scores.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          },
+          "required": [
+            "axe",
+            "score"
+          ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "score_global",
+      "axes",
+      "recommandations"
+    ]
+  }
+}

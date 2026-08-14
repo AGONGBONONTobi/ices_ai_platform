@@ -1,0 +1,794 @@
+{
+  "id": "auto-diagnostic-iso-26000",
+  "title": "Diagnostic RSE ISO 26000",
+  "category": "Labels ESG / RSE / Durabilité",
+  "output_kind": "assessment",
+  "referentiel_code": "ISO-26000",
+  "referentiel_version": "2010",
+  "inputs": [
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Décrivez brièvement votre organisme",
+      "help": "Secteur, effectif, implantation, parties prenantes principales, et objectif visé (structuration interne, label, exigence d'un donneur d'ordre...).",
+      "placeholder": "Entreprise agroalimentaire, 120 salariés, deux sites au Bénin, sollicitée par un client européen sur ses engagements RSE.",
+      "required": true
+    },
+    {
+      "name": "c6_2",
+      "type": "select",
+      "question": "6.2 — Gouvernance de l'organisation",
+      "help": "L'organisation dispose d'un processus de décision qui intègre les principes de responsabilité sociétale : redevabilité, transparence, comportement éthique et respect des intérêts des parties prenantes. Les responsabilités en matière de responsabilité sociétale sont attribuées à un niveau qui a autorité pour arbitrer.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.2",
+      "axe": "6.2 — Gouvernance de l'organisation",
+      "poids": 3
+    },
+    {
+      "name": "c6_3_3",
+      "type": "select",
+      "question": "6.3.3 — Devoir de vigilance",
+      "help": "L'organisation identifie de façon continue les incidences réelles et potentielles de ses activités et de ses relations d'affaires sur les droits de l'Homme, et agit pour les prévenir ou les corriger.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.3.3",
+      "axe": "6.3 — Droits de l'Homme",
+      "poids": 3
+    },
+    {
+      "name": "c6_3_5",
+      "type": "select",
+      "question": "6.3.5 — Prévention de la complicité",
+      "help": "L'organisation s'abstient de contribuer, directement ou par ses relations d'affaires, à des atteintes aux droits de l'Homme commises par d'autres, et se retire des situations où sa présence rendrait ces atteintes possibles.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.3.5",
+      "axe": "6.3 — Droits de l'Homme",
+      "poids": 2
+    },
+    {
+      "name": "c6_3_7",
+      "type": "select",
+      "question": "6.3.7 — Discrimination et groupes vulnérables",
+      "help": "L'organisation vérifie que ses pratiques de recrutement, de rémunération, de promotion et d'accès à ses services ne créent pas de discrimination, et tient compte de la situation des groupes vulnérables présents sur son territoire.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.3.7",
+      "axe": "6.3 — Droits de l'Homme",
+      "poids": 3
+    },
+    {
+      "name": "c6_3_10",
+      "type": "select",
+      "question": "6.3.10 — Principes fondamentaux et droits au travail",
+      "help": "L'organisation respecte la liberté d'association et la négociation collective, et s'assure de l'absence de travail forcé et de travail des enfants dans ses activités comme chez ses fournisseurs.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.3.10",
+      "axe": "6.3 — Droits de l'Homme",
+      "poids": 3
+    },
+    {
+      "name": "c6_4_3",
+      "type": "select",
+      "question": "6.4.3 — Emploi et relations employeur/employé",
+      "help": "Le travail effectué est couvert par un contrat écrit et déclaré, quelle que soit sa durée. L'organisation ne recourt pas à des statuts destinés à contourner les obligations attachées à l'emploi.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.4.3",
+      "axe": "6.4 — Relations et conditions de travail",
+      "poids": 3
+    },
+    {
+      "name": "c6_4_4",
+      "type": "select",
+      "question": "6.4.4 — Conditions de travail et protection sociale",
+      "help": "Les conditions de travail — salaires, temps de travail, repos, congés — respectent au minimum la réglementation nationale et les conventions applicables, et permettent de couvrir les besoins essentiels des salariés.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.4.4",
+      "axe": "6.4 — Relations et conditions de travail",
+      "poids": 3
+    },
+    {
+      "name": "c6_4_5",
+      "type": "select",
+      "question": "6.4.5 — Dialogue social",
+      "help": "L'organisation reconnaît les représentants du personnel, leur donne accès aux informations nécessaires et les consulte avant les décisions ayant une incidence importante sur l'emploi et les conditions de travail.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.4.5",
+      "axe": "6.4 — Relations et conditions de travail",
+      "poids": 2
+    },
+    {
+      "name": "c6_4_6",
+      "type": "select",
+      "question": "6.4.6 — Santé et sécurité au travail",
+      "help": "Les risques pour la santé et la sécurité sont identifiés poste par poste, réduits à la source autant que possible, et les équipements de protection sont fournis et effectivement utilisés.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.4.6",
+      "axe": "6.4 — Relations et conditions de travail",
+      "poids": 3
+    },
+    {
+      "name": "c6_4_7",
+      "type": "select",
+      "question": "6.4.7 — Développement du capital humain",
+      "help": "L'organisation donne à ses salariés accès à la formation et au développement de leurs compétences, sans réserver cet accès à une catégorie de personnel.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.4.7",
+      "axe": "6.4 — Relations et conditions de travail",
+      "poids": 2
+    },
+    {
+      "name": "c6_5_3",
+      "type": "select",
+      "question": "6.5.3 — Prévention de la pollution",
+      "help": "L'organisation identifie ses sources de pollution — rejets dans l'eau et l'air, déchets, substances dangereuses, bruit — les mesure et met en œuvre des mesures de réduction.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.5.3",
+      "axe": "6.5 — L'environnement",
+      "poids": 3
+    },
+    {
+      "name": "c6_5_4",
+      "type": "select",
+      "question": "6.5.4 — Utilisation durable des ressources",
+      "help": "L'organisation suit ses consommations d'énergie, d'eau et de matières, et engage des actions pour en améliorer l'efficacité.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.5.4",
+      "axe": "6.5 — L'environnement",
+      "poids": 2
+    },
+    {
+      "name": "c6_5_5",
+      "type": "select",
+      "question": "6.5.5 — Atténuation des changements climatiques et adaptation",
+      "help": "L'organisation estime ses émissions de gaz à effet de serre, identifie ses postes principaux et prend en compte les effets du changement climatique sur ses propres activités.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.5.5",
+      "axe": "6.5 — L'environnement",
+      "poids": 2
+    },
+    {
+      "name": "c6_5_6",
+      "type": "select",
+      "question": "6.5.6 — Protection de l'environnement, biodiversité et réhabilitation des habitats naturels",
+      "help": "L'organisation évalue l'incidence de ses implantations et de ses approvisionnements sur les milieux naturels, et évite, réduit ou compense les atteintes constatées.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.5.6",
+      "axe": "6.5 — L'environnement",
+      "poids": 2
+    },
+    {
+      "name": "c6_6_3",
+      "type": "select",
+      "question": "6.6.3 — Lutte contre la corruption",
+      "help": "L'organisation identifie les situations où ses collaborateurs sont exposés à des sollicitations, énonce une règle claire sur les cadeaux et paiements de facilitation, et met un canal de signalement à disposition.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.6.3",
+      "axe": "6.6 — Loyauté des pratiques",
+      "poids": 3
+    },
+    {
+      "name": "c6_6_5",
+      "type": "select",
+      "question": "6.6.5 — Concurrence loyale",
+      "help": "L'organisation s'abstient de pratiques anticoncurrentielles — entente sur les prix, répartition de marchés, abus de position — et sensibilise les fonctions commerciales aux règles applicables.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.6.5",
+      "axe": "6.6 — Loyauté des pratiques",
+      "poids": 2
+    },
+    {
+      "name": "c6_6_6",
+      "type": "select",
+      "question": "6.6.6 — Promotion de la responsabilité sociétale dans la chaîne de valeur",
+      "help": "L'organisation intègre des critères sociaux et environnementaux dans ses achats et accompagne ses fournisseurs, en tenant compte de sa capacité réelle d'influence.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.6.6",
+      "axe": "6.6 — Loyauté des pratiques",
+      "poids": 2
+    },
+    {
+      "name": "c6_7_3",
+      "type": "select",
+      "question": "6.7.3 — Pratiques loyales en matière de commercialisation, d'informations et de contrats",
+      "help": "Les informations données aux clients — caractéristiques, prix total, conditions — sont exactes, compréhensibles et disponibles avant l'engagement, dans une langue qu'ils comprennent.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.7.3",
+      "axe": "6.7 — Questions relatives aux consommateurs",
+      "poids": 2
+    },
+    {
+      "name": "c6_7_4",
+      "type": "select",
+      "question": "6.7.4 — Protection de la santé et de la sécurité des consommateurs",
+      "help": "L'organisation s'assure que ses produits et services ne présentent pas de risque en usage normal ou raisonnablement prévisible, et sait rappeler un produit défectueux.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.7.4",
+      "axe": "6.7 — Questions relatives aux consommateurs",
+      "poids": 3
+    },
+    {
+      "name": "c6_7_7",
+      "type": "select",
+      "question": "6.7.7 — Protection des données et de la vie privée des consommateurs",
+      "help": "L'organisation limite les données personnelles collectées à ce qui est nécessaire, informe les personnes de l'usage qui en est fait et protège ces données contre les accès non autorisés.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.7.7",
+      "axe": "6.7 — Questions relatives aux consommateurs",
+      "poids": 2
+    },
+    {
+      "name": "c6_8_3",
+      "type": "select",
+      "question": "6.8.3 — Implication auprès des communautés",
+      "help": "L'organisation identifie les communautés concernées par ses activités, les consulte sur les décisions qui les affectent et dispose d'un moyen de recevoir et traiter leurs doléances.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.8.3",
+      "axe": "6.8 — Communautés et développement local",
+      "poids": 3
+    },
+    {
+      "name": "c6_8_5",
+      "type": "select",
+      "question": "6.8.5 — Création d'emplois et développement des compétences",
+      "help": "L'organisation privilégie, à compétence comparable, le recrutement et l'approvisionnement locaux, et contribue à la montée en compétences du bassin d'emploi.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.8.5",
+      "axe": "6.8 — Communautés et développement local",
+      "poids": 2
+    },
+    {
+      "name": "c6_8_9",
+      "type": "select",
+      "question": "6.8.9 — Investissement dans la société",
+      "help": "Les contributions de l'organisation à des projets d'intérêt général répondent à un besoin exprimé par la communauté, et leur effet est suivi dans la durée.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.8.9",
+      "axe": "6.8 — Communautés et développement local",
+      "poids": 1
+    }
+  ],
+  "promptTemplate": "Tu es consultant en responsabilité sociétale, familier des évaluations conduites sur la base d'ISO 26000. Cette norme énonce des lignes directrices et ne donne lieu à aucune certification : ne laisse jamais entendre le contraire, et parle de niveau de maturité, pas de conformité certifiable. L'organisme est décrit ainsi : {contexte}.\n\nLes clauses applicables et leur grille de maturité te sont fournies plus bas, ainsi que le positionnement déclaré pour chacune et les scores déjà calculés.\n\nProduis un rapport de pré-audit :\n- pour chaque chapitre parmi 6.2 (Gouvernance de l'organisation), 6.3 (Droits de l'Homme), 6.4 (Relations et conditions de travail), 6.5 (L'environnement), 6.6 (Loyauté des pratiques), 6.7 (Questions relatives aux consommateurs), 6.8 (Communautés et développement local), un constat appuyé sur les clauses réellement concernées, en citant leur numéro ;\n- pour les clauses les plus faibles, indique l'écart précis par rapport à l'exigence et la preuve qui serait demandée en audit ;\n- des recommandations priorisées, chacune rattachée à un numéro de clause, actionnables et proportionnées au contexte décrit.\n\nTraite en priorité la gouvernance (6.2) : c'est elle qui détermine si les autres questions centrales sont réellement arbitrées ou seulement affichées. Rattache chaque recommandation à une question centrale et à un domaine d'action, et proportionne-la à la sphère d'influence réelle de l'organisation.\n\nN'invente aucune exigence absente des clauses fournies. Ne recalcule pas les scores.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          },
+          "required": [
+            "axe",
+            "score"
+          ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "score_global",
+      "axes",
+      "recommandations"
+    ]
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "code": "ISO-14040",
+  "version": "2006",
+  "label": "ISO 14040/14044:2006 — Analyse du cycle de vie : principes, cadre et exigences",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel des normes ISO 14040 et ISO 14044 est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (numérotation et intitulés des phases de l'ACV) et une reformulation des attendus sont utilisées. Ces normes ne donnent pas lieu à certification de l'organisme : elles encadrent la conduite d'une étude, dont la crédibilité repose sur la revue critique. Le diagnostic évalue l'aptitude à conduire une ACV conforme, il ne vaut pas revue critique. À faire relire par un praticien disposant du texte officiel avant mise en vente.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "4.2", "titre": "Définition des objectifs et du champ de l'étude" },
+    { "numero": "4.3", "titre": "Analyse de l'inventaire du cycle de vie (ICV)" },
+    { "numero": "4.4", "titre": "Évaluation de l'impact du cycle de vie (ACVI)" },
+    { "numero": "4.5", "titre": "Interprétation du cycle de vie" },
+    { "numero": "4.6", "titre": "Rapport" },
+    { "numero": "4.7", "titre": "Revue critique" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "4.2.2",
+      "intitule": "Objectif de l'étude",
+      "exigence": "L'objectif énonce sans ambiguïté l'application visée, les raisons de conduire l'étude, le public auquel les résultats sont destinés, et précise si les résultats sont destinés à une affirmation comparative divulguée au public.",
+      "preuves": [
+        "Document d'objectif approuvé par le commanditaire, énonçant l'usage prévu et le public visé",
+        "Mention explicite du caractère comparatif ou non de l'étude, et de sa divulgation éventuelle"
+      ],
+      "erreurs_frequentes": [
+        "Un objectif rédigé après l'obtention des résultats, pour cadrer avec ce qui a été trouvé",
+        "Une comparaison destinée au public engagée sans mesurer les exigences renforcées qui s'y attachent"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.2.3.2",
+      "intitule": "Fonction, unité fonctionnelle et flux de référence",
+      "exigence": "L'étude définit la fonction du système, une unité fonctionnelle quantifiée et mesurable, et le flux de référence correspondant. Toute comparaison s'effectue à unité fonctionnelle identique.",
+      "preuves": [
+        "Unité fonctionnelle exprimée avec une quantité, une durée et un niveau de performance",
+        "Calcul du flux de référence rattachant chaque système à l'unité fonctionnelle"
+      ],
+      "erreurs_frequentes": [
+        "Une unité fonctionnelle exprimée en masse de produit, alors que les produits comparés ne rendent pas le même service",
+        "Une durée de vie ignorée, ce qui avantage mécaniquement le produit le moins durable"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.2.3.3",
+      "intitule": "Frontières du système",
+      "exigence": "Les frontières du système précisent les étapes du cycle de vie, les processus et les flux inclus, ainsi que les exclusions et leur justification, en cohérence avec l'objectif de l'étude.",
+      "preuves": [
+        "Schéma des frontières du système montrant les processus inclus et exclus",
+        "Justification documentée de chaque exclusion"
+      ],
+      "erreurs_frequentes": [
+        "Des frontières s'arrêtant à la sortie d'usine, alors que l'usage et la fin de vie dominent les impacts",
+        "Des frontières ajustées en cours d'étude pour écarter une étape défavorable"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.2.3.3.3",
+      "intitule": "Critères de coupure",
+      "exigence": "Les critères de coupure — masse, énergie, importance environnementale — sont définis a priori, appliqués de manière cohérente, et leur incidence sur les résultats est appréciée.",
+      "preuves": [
+        "Critères de coupure énoncés avant la collecte des données, avec leurs seuils",
+        "Appréciation de l'incidence des flux exclus sur les résultats"
+      ],
+      "erreurs_frequentes": [
+        "Une coupure fondée sur la seule masse, qui écarte des substances de faible quantité mais de fort impact",
+        "Des critères appliqués de façon inégale d'un système comparé à l'autre"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.2.3.6",
+      "intitule": "Exigences relatives aux données et qualité des données",
+      "exigence": "L'étude définit les exigences de qualité des données : couverture temporelle, géographique et technologique, précision, exhaustivité, représentativité, cohérence et reproductibilité.",
+      "preuves": [
+        "Exigences de qualité définies avant la collecte, par catégorie de données",
+        "Évaluation de la qualité des données effectivement utilisées, au regard de ces exigences"
+      ],
+      "erreurs_frequentes": [
+        "Des données génériques européennes employées pour une production locale africaine, sans discuter la représentativité",
+        "Des exigences de qualité énoncées puis jamais confrontées aux données réellement obtenues"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.2.3.7",
+      "intitule": "Hypothèses et limitations",
+      "exigence": "Les hypothèses retenues et les limitations de l'étude sont énoncées explicitement, de façon à ce que le lecteur puisse apprécier la portée réelle des résultats.",
+      "preuves": [
+        "Liste des hypothèses structurantes et de leur justification",
+        "Énoncé des limitations, y compris celles tenant à la disponibilité des données"
+      ],
+      "erreurs_frequentes": [
+        "Des hypothèses dispersées dans le corps du rapport, jamais rassemblées ni hiérarchisées",
+        "Des limitations reléguées en annexe alors qu'elles conditionnent la conclusion"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.3.2",
+      "intitule": "Collecte des données",
+      "exigence": "Les données de chaque processus élémentaire sont collectées, leur origine documentée, et les procédures de collecte décrites de façon à permettre la reconstitution de l'inventaire.",
+      "preuves": [
+        "Fiches de collecte par processus, indiquant la source, la période et le mode d'obtention",
+        "Distinction claire entre données primaires mesurées et données secondaires issues de bases"
+      ],
+      "erreurs_frequentes": [
+        "Des valeurs reprises d'une base de données sans consigner sa version ni le jeu de données exact",
+        "Aucune distinction entre ce qui a été mesuré sur site et ce qui a été estimé"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.3.3",
+      "intitule": "Validation des données et rattachement aux processus",
+      "exigence": "Les données collectées sont vérifiées — bilans de masse et d'énergie, cohérence des ordres de grandeur — puis rapportées au flux de référence de chaque processus élémentaire.",
+      "preuves": [
+        "Bilans de masse et d'énergie établis par processus",
+        "Trace des contrôles de cohérence effectués et des anomalies corrigées"
+      ],
+      "erreurs_frequentes": [
+        "Aucun bilan de masse, ce qui laisse passer des erreurs d'unité ou de facteur mille",
+        "Des données agrégées sur une année atypique, retenues sans discussion"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.3.4",
+      "intitule": "Affectation des flux et des rejets",
+      "exigence": "L'affectation est évitée autant que possible par subdivision ou extension du système ; lorsqu'elle est nécessaire, la règle retenue est justifiée, appliquée de façon uniforme, et son effet testé par une analyse de sensibilité.",
+      "preuves": [
+        "Justification de la règle d'affectation retenue et démonstration que l'évitement n'était pas possible",
+        "Analyse de sensibilité sur la règle d'affectation"
+      ],
+      "erreurs_frequentes": [
+        "Une affectation à la valeur économique retenue par commodité, alors qu'elle favorise le coproduit étudié",
+        "Des règles d'affectation différentes selon les processus, sans justification"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.4.2",
+      "intitule": "Éléments obligatoires de l'ACVI : catégories, classification, caractérisation",
+      "exigence": "Les catégories d'impact, les indicateurs et les modèles de caractérisation sont sélectionnés et justifiés en cohérence avec l'objectif ; les résultats d'inventaire sont affectés aux catégories puis caractérisés.",
+      "preuves": [
+        "Liste des catégories d'impact retenues, avec la méthode de caractérisation et sa version",
+        "Justification du choix des catégories au regard de l'objectif de l'étude"
+      ],
+      "erreurs_frequentes": [
+        "Une étude réduite au seul changement climatique, présentée comme une analyse du cycle de vie",
+        "Un mélange de méthodes de caractérisation issues de sources différentes, sans cohérence"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.4.3",
+      "intitule": "Éléments facultatifs : normalisation, regroupement, pondération",
+      "exigence": "La normalisation, le regroupement et la pondération sont facultatifs ; s'ils sont employés, les choix de valeurs sont explicités, et la pondération n'est pas utilisée pour les affirmations comparatives divulguées au public.",
+      "preuves": [
+        "Référentiel de normalisation employé et justification des jeux de pondération",
+        "Présentation des résultats avant et après pondération"
+      ],
+      "erreurs_frequentes": [
+        "Un score unique agrégé, présenté au public pour comparer deux produits",
+        "Des coefficients de pondération repris sans en indiquer l'origine ni le caractère subjectif"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.5.2",
+      "intitule": "Identification des points significatifs",
+      "exigence": "L'interprétation identifie les processus, les flux et les étapes du cycle de vie qui contribuent de façon déterminante aux résultats, en s'appuyant sur les phases d'inventaire et d'évaluation d'impact.",
+      "preuves": [
+        "Analyse de contribution par étape et par processus, pour chaque catégorie d'impact",
+        "Identification argumentée des points chauds environnementaux"
+      ],
+      "erreurs_frequentes": [
+        "Des points chauds désignés à partir de l'intuition métier plutôt que de l'analyse de contribution",
+        "Une analyse de contribution conduite sur une seule catégorie d'impact"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.5.3",
+      "intitule": "Vérifications de complétude, de sensibilité et de cohérence",
+      "exigence": "L'interprétation comprend un contrôle de complétude des données, une analyse de sensibilité des hypothèses structurantes et un contrôle de cohérence des méthodes et des données entre les systèmes étudiés.",
+      "preuves": [
+        "Analyse de sensibilité portant sur les hypothèses et les règles d'affectation retenues",
+        "Contrôle de cohérence documenté, notamment pour les comparaisons"
+      ],
+      "erreurs_frequentes": [
+        "Une analyse de sensibilité annoncée mais limitée à une variation marginale d'un paramètre secondaire",
+        "Des systèmes comparés à partir de données de qualité très inégale, sans que l'écart ne soit relevé"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.5.4",
+      "intitule": "Conclusions, limitations et recommandations",
+      "exigence": "Les conclusions découlent des points significatifs identifiés et des vérifications réalisées ; elles sont assorties des limitations qui en restreignent la portée, et les recommandations restent dans le champ de l'objectif de l'étude.",
+      "preuves": [
+        "Conclusions rattachées explicitement aux résultats et aux vérifications correspondantes",
+        "Limitations rappelées au même endroit que les conclusions"
+      ],
+      "erreurs_frequentes": [
+        "Des conclusions extrapolées à des usages ou à des marchés hors du champ défini",
+        "Des recommandations commerciales déduites d'une étude dont les limitations les interdisent"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.6",
+      "intitule": "Rapport d'étude",
+      "exigence": "Le rapport présente les résultats et les conclusions de manière complète et sans biais, et rend compte des données, méthodes, hypothèses et limitations avec un niveau de détail suffisant pour permettre à un tiers d'apprécier l'étude.",
+      "preuves": [
+        "Rapport couvrant les quatre phases de l'ACV, avec les données et hypothèses employées",
+        "Rapport destiné aux tiers distinct, le cas échéant, du rapport interne"
+      ],
+      "erreurs_frequentes": [
+        "Un rapport public réduit à une synthèse de résultats, sans les hypothèses qui les conditionnent",
+        "Des données considérées comme confidentielles au point de rendre l'étude invérifiable"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.7.2",
+      "intitule": "Revue critique : nécessité et modalités",
+      "exigence": "La nécessité d'une revue critique, son type et le niveau d'indépendance du ou des réviseurs sont décidés lors de la définition du champ de l'étude.",
+      "preuves": [
+        "Décision documentée sur le type de revue retenu, prise au stade de la définition du champ",
+        "Désignation du ou des réviseurs et justification de leur compétence"
+      ],
+      "erreurs_frequentes": [
+        "Une revue critique envisagée en fin d'étude, quand les choix structurants ne sont plus modifiables",
+        "Un réviseur ayant participé à la réalisation de l'étude"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.7.3",
+      "intitule": "Revue par un comité de parties intéressées pour les affirmations comparatives",
+      "exigence": "Une affirmation comparative destinée à être divulguée au public fait l'objet d'une revue critique par un comité de parties intéressées, dont les conclusions sont jointes au rapport.",
+      "preuves": [
+        "Composition du comité de revue et rapport de revue critique",
+        "Réponses apportées aux observations du comité et modifications qui en découlent"
+      ],
+      "erreurs_frequentes": [
+        "Une comparaison publiée après une revue par un expert unique",
+        "Un rapport de revue non joint à la communication faite au public"
+      ],
+      "poids": 3
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "code": "RGPD",
+  "version": "2016-679",
+  "label": "RGPD (règlement UE 2016/679) — protection des données à caractère personnel",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe à partir de la structure publique du règlement (UE) 2016/679, publié au Journal officiel de l'Union européenne. Le texte des articles n'est jamais reproduit ici : les numéros d'articles sont cités à titre de repère et les attendus sont reformulés. Le RGPD est une obligation légale, non un référentiel de certification : le diagnostic mesure un niveau de conformité, il ne délivre aucun titre. Pour un organisme établi hors de l'Union européenne, le RGPD ne s'applique que dans les cas prévus par son article 3 ; la loi nationale sur les données personnelles et, en Afrique de l'Ouest, l'Acte additionnel A/SA.1/01/10 de la CEDEAO restent en tout état de cause applicables et doivent être vérifiés auprès de l'autorité de protection compétente. Ce diagnostic ne constitue pas une consultation juridique. À faire relire par un juriste avant mise en vente.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "1", "titre": "Principes, licéité et minimisation" },
+    { "numero": "2", "titre": "Information et droits des personnes" },
+    { "numero": "3", "titre": "Responsabilité et documentation" },
+    { "numero": "4", "titre": "Sécurité des traitements" },
+    { "numero": "5", "titre": "Violations de données à caractère personnel" },
+    { "numero": "6", "titre": "Protection dès la conception et analyse d'impact" },
+    { "numero": "7", "titre": "Délégué à la protection des données" },
+    { "numero": "8", "titre": "Sous-traitance et transferts hors du territoire" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "1.1",
+      "intitule": "Base légale de chaque traitement (art. 6)",
+      "exigence": "Chaque traitement repose sur une base légale déterminée avant sa mise en œuvre — consentement, contrat, obligation légale, intérêt légitime ou autre — et cette base est documentée traitement par traitement.",
+      "preuves": [
+        "Registre indiquant, pour chaque traitement, la base légale retenue",
+        "Analyse écrite justifiant le recours à l'intérêt légitime, lorsqu'il est invoqué"
+      ],
+      "erreurs_frequentes": [
+        "Le consentement invoqué pour des traitements imposés au salarié ou nécessaires au contrat, alors qu'il n'y est pas libre",
+        "Une base légale unique retenue pour l'ensemble des traitements de l'organisme"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "1.2",
+      "intitule": "Finalités déterminées et minimisation des données (art. 5)",
+      "exigence": "Les données sont collectées pour des finalités déterminées, explicites et légitimes, et limitées à ce qui est nécessaire au regard de ces finalités.",
+      "preuves": [
+        "Finalité énoncée pour chaque traitement, et justification des catégories de données collectées",
+        "Revue des formulaires de collecte au regard du principe de minimisation"
+      ],
+      "erreurs_frequentes": [
+        "Des champs collectés « pour information » sans usage identifié, notamment situation familiale et données de santé",
+        "Des données collectées pour une finalité, réutilisées pour une autre sans nouvelle analyse"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "1.3",
+      "intitule": "Exactitude et durées de conservation (art. 5)",
+      "exigence": "Les données sont tenues à jour et conservées pendant une durée n'excédant pas ce qui est nécessaire aux finalités poursuivies ; une durée est définie par catégorie de données et effectivement appliquée.",
+      "preuves": [
+        "Politique de conservation fixant une durée par catégorie de données, avec sa justification",
+        "Preuve d'exécution des purges ou des archivages aux échéances définies"
+      ],
+      "erreurs_frequentes": [
+        "Des durées écrites dans la politique mais aucune purge jamais exécutée dans les systèmes",
+        "Des sauvegardes conservées indéfiniment, qui font subsister des données supprimées en base active"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "1.4",
+      "intitule": "Traitements portant sur des catégories particulières de données (art. 9)",
+      "exigence": "Les traitements portant sur des données sensibles — santé, opinions, appartenance syndicale, données biométriques — sont recensés et ne sont mis en œuvre que dans les cas prévus, avec des garanties renforcées.",
+      "preuves": [
+        "Recensement des traitements portant sur des catégories particulières de données",
+        "Garanties spécifiques appliquées : restriction des accès, chiffrement, habilitations nominatives"
+      ],
+      "erreurs_frequentes": [
+        "Un dispositif biométrique de pointage installé sans examen de sa licéité ni recherche d'une alternative",
+        "Des certificats médicaux conservés dans le dossier du personnel, accessibles à l'ensemble du service RH"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "2.1",
+      "intitule": "Information des personnes concernées (art. 12 à 14)",
+      "exigence": "Les personnes reçoivent, au moment de la collecte, une information concise, transparente et compréhensible sur l'identité du responsable, les finalités, la base légale, les destinataires, les durées et leurs droits.",
+      "preuves": [
+        "Mentions d'information figurant sur les formulaires, le site et les contrats",
+        "Modalité d'information retenue lorsque les données ne sont pas collectées auprès de la personne elle-même"
+      ],
+      "erreurs_frequentes": [
+        "Une politique de confidentialité en ligne, mais aucune mention sur les formulaires papier utilisés à l'accueil",
+        "Une information rédigée dans une langue ou un registre que le public concerné ne comprend pas"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "2.2",
+      "intitule": "Exercice des droits d'accès, de rectification et d'effacement (art. 15 à 17)",
+      "exigence": "L'organisme dispose d'une procédure permettant de recevoir les demandes d'exercice de droits, de vérifier l'identité du demandeur et de répondre dans le délai d'un mois, prorogeable dans les conditions prévues.",
+      "preuves": [
+        "Procédure interne de traitement des demandes et point de contact publié",
+        "Registre des demandes reçues, avec les délais de réponse constatés"
+      ],
+      "erreurs_frequentes": [
+        "Des demandes reçues par différents canaux, sans point de centralisation ni délai suivi",
+        "Une pièce d'identité systématiquement exigée, y compris quand l'identité du demandeur ne fait aucun doute"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "2.3",
+      "intitule": "Opposition, portabilité et décision automatisée (art. 20 à 22)",
+      "exigence": "L'organisme sait répondre aux demandes d'opposition et de portabilité, et identifie les traitements produisant des décisions fondées exclusivement sur un traitement automatisé, pour lesquels des garanties spécifiques s'appliquent.",
+      "preuves": [
+        "Recensement des traitements comportant une décision automatisée ou un profilage",
+        "Capacité technique d'extraire les données dans un format structuré et lisible par machine"
+      ],
+      "erreurs_frequentes": [
+        "Un score automatisé d'octroi de crédit ou de présélection de candidatures, sans intervention humaine réelle ni information de la personne",
+        "Une portabilité traitée par l'envoi d'un document imprimé"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "3.1",
+      "intitule": "Registre des activités de traitement (art. 30)",
+      "exigence": "L'organisme tient un registre à jour de ses activités de traitement, mentionnant les finalités, les catégories de personnes et de données, les destinataires, les transferts, les durées et les mesures de sécurité.",
+      "preuves": [
+        "Registre couvrant l'ensemble des traitements, daté et tenu à jour",
+        "Trace de mise à jour du registre à l'occasion d'un nouveau traitement ou d'un nouvel outil"
+      ],
+      "erreurs_frequentes": [
+        "Un registre établi une fois puis figé, ignorant les outils adoptés depuis",
+        "Des traitements RH, vidéosurveillance et prospection oubliés au profit des seuls traitements clients"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "3.2",
+      "intitule": "Politiques internes, sensibilisation et habilitations (art. 24, 29, 32)",
+      "exigence": "L'organisme définit des règles internes sur l'usage des données, sensibilise les personnes qui y accèdent, et n'accorde les accès qu'aux personnes qui en ont besoin, sur la base d'habilitations tenues à jour.",
+      "preuves": [
+        "Charte ou politique interne diffusée et signée, et actions de sensibilisation réalisées",
+        "Matrice des habilitations, revue périodiquement, y compris lors des départs et des mobilités"
+      ],
+      "erreurs_frequentes": [
+        "Des comptes d'anciens salariés restés actifs faute de procédure de sortie",
+        "Une sensibilisation faite une fois à l'arrivée, jamais renouvelée"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.1",
+      "intitule": "Mesures techniques de sécurité (art. 32)",
+      "exigence": "Les mesures techniques sont proportionnées au risque : contrôle des accès, chiffrement lorsque nécessaire, sauvegardes testées, journalisation et maintien à jour des systèmes.",
+      "preuves": [
+        "Description des mesures en place : authentification, chiffrement, sauvegardes, journalisation",
+        "Compte rendu du dernier test de restauration des sauvegardes"
+      ],
+      "erreurs_frequentes": [
+        "Des sauvegardes réalisées mais jamais restaurées à titre d'essai",
+        "Des données personnelles exportées dans des tableurs stockés sur des postes ou des clés non chiffrés"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.2",
+      "intitule": "Sécurité physique et organisationnelle",
+      "exigence": "L'accès physique aux locaux et aux supports contenant des données personnelles est maîtrisé, et les supports papier comme les archives sont protégés et détruits de manière sûre.",
+      "preuves": [
+        "Mesures de contrôle d'accès aux locaux et aux salles serveurs",
+        "Modalités de destruction sécurisée des documents et des supports numériques réformés"
+      ],
+      "erreurs_frequentes": [
+        "Des dossiers du personnel conservés dans des armoires non fermées, dans un bureau de passage",
+        "Des ordinateurs réformés cédés ou jetés sans effacement des disques"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.1",
+      "intitule": "Détection, documentation et notification des violations (art. 33)",
+      "exigence": "L'organisme sait détecter une violation de données, la documenter, et la notifier à l'autorité de contrôle compétente dans les 72 heures lorsqu'elle présente un risque pour les personnes.",
+      "preuves": [
+        "Procédure de gestion des violations précisant les rôles, les délais et l'autorité destinataire",
+        "Registre des violations, y compris celles qui n'ont pas été notifiées, avec la justification"
+      ],
+      "erreurs_frequentes": [
+        "Un délai de 72 heures inatteignable faute de circuit d'alerte interne connu du personnel",
+        "Des violations traitées comme de simples incidents informatiques, jamais qualifiées ni consignées"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "5.2",
+      "intitule": "Communication de la violation aux personnes concernées (art. 34)",
+      "exigence": "Lorsque la violation est susceptible d'engendrer un risque élevé pour les personnes, celles-ci en sont informées dans les meilleurs délais, en termes clairs, avec les mesures qu'elles peuvent prendre.",
+      "preuves": [
+        "Modèle de communication aux personnes concernées, prêt à être adapté",
+        "Critères retenus pour apprécier le risque élevé et déclencher l'information"
+      ],
+      "erreurs_frequentes": [
+        "Un risque systématiquement jugé faible pour éviter d'avoir à informer",
+        "Une information adressée sans indiquer aux personnes ce qu'elles doivent faire pour se protéger"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.1",
+      "intitule": "Protection des données dès la conception et par défaut (art. 25)",
+      "exigence": "La protection des données est prise en compte dès la conception des traitements et des outils, et les paramètres par défaut limitent la collecte et l'accessibilité au strict nécessaire.",
+      "preuves": [
+        "Point de contrôle relatif aux données personnelles dans le processus de choix ou de développement d'un outil",
+        "Paramétrage par défaut des applications, limitant la visibilité et la collecte"
+      ],
+      "erreurs_frequentes": [
+        "Un outil choisi puis mis en service, la question des données personnelles étant posée après le déploiement",
+        "Des paramètres par défaut ouverts, tous les utilisateurs voyant l'ensemble des dossiers"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.2",
+      "intitule": "Analyse d'impact relative à la protection des données (art. 35)",
+      "exigence": "Une analyse d'impact est menée avant tout traitement susceptible d'engendrer un risque élevé, notamment en cas de surveillance systématique, de données sensibles à grande échelle ou d'évaluation automatisée ; elle décrit le traitement, apprécie la nécessité et les risques, et arrête les mesures retenues.",
+      "preuves": [
+        "Analyses d'impact réalisées, avec la description du traitement, l'appréciation des risques et les mesures décidées",
+        "Critères et trace de la décision lorsqu'une analyse d'impact a été jugée non nécessaire"
+      ],
+      "erreurs_frequentes": [
+        "Une analyse d'impact rédigée après la mise en service, pour régulariser",
+        "Une analyse qui décrit le traitement sans jamais apprécier les risques du point de vue des personnes concernées"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.1",
+      "intitule": "Désignation et positionnement du délégué à la protection des données (art. 37, 38)",
+      "exigence": "Lorsque sa désignation est requise ou décidée, le délégué est désigné sur la base de ses compétences, ses coordonnées sont publiées et communiquées à l'autorité de contrôle, il est associé en temps utile aux questions de protection des données et ne reçoit aucune instruction sur l'exercice de ses missions.",
+      "preuves": [
+        "Acte de désignation, coordonnées publiées et notification à l'autorité de contrôle",
+        "Rattachement hiérarchique du délégué et moyens dont il dispose"
+      ],
+      "erreurs_frequentes": [
+        "Un délégué désigné parmi les responsables informatiques ou marketing, en conflit d'intérêts avec les traitements qu'il doit contrôler",
+        "Un délégué informé des projets une fois les décisions prises"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.2",
+      "intitule": "Missions du délégué et reddition de comptes (art. 39)",
+      "exigence": "Le délégué informe et conseille, contrôle le respect des règles, conseille sur les analyses d'impact, coopère avec l'autorité de contrôle, et rend compte au niveau le plus élevé de la direction.",
+      "preuves": [
+        "Plan de contrôle du délégué et rapports d'activité adressés à la direction",
+        "Trace des avis rendus sur les projets et les analyses d'impact"
+      ],
+      "erreurs_frequentes": [
+        "Un délégué cantonné à la rédaction de mentions d'information, sans jamais contrôler les traitements en fonctionnement",
+        "Aucun rapport d'activité, donc aucune preuve que la fonction est exercée"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.1",
+      "intitule": "Encadrement contractuel de la sous-traitance (art. 28)",
+      "exigence": "Le recours à un sous-traitant est encadré par un contrat prévoyant l'objet, la durée, les instructions du responsable, la confidentialité, la sécurité, l'assistance, le sort des données en fin de contrat et le recours à des sous-traitants ultérieurs.",
+      "preuves": [
+        "Contrats ou avenants de sous-traitance comportant les clauses exigées",
+        "Liste des sous-traitants ayant accès à des données personnelles, y compris les prestataires informatiques et d'hébergement"
+      ],
+      "erreurs_frequentes": [
+        "Des prestataires courants — paie, hébergement, maintenance, publipostage — jamais recensés comme sous-traitants",
+        "Des conditions générales acceptées en ligne, tenues pour un encadrement contractuel suffisant"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.2",
+      "intitule": "Contrôle effectif des sous-traitants",
+      "exigence": "Le responsable de traitement ne recourt qu'à des sous-traitants présentant des garanties suffisantes, et vérifie ces garanties autrement que par la seule déclaration du prestataire.",
+      "preuves": [
+        "Éléments recueillis auprès des sous-traitants : certifications, rapports d'audit, description des mesures de sécurité",
+        "Trace d'une vérification ou d'un audit réalisé chez un sous-traitant critique"
+      ],
+      "erreurs_frequentes": [
+        "Un droit d'audit inscrit au contrat mais jamais exercé",
+        "Des garanties admises sur la seule notoriété du prestataire"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.3",
+      "intitule": "Transferts de données hors du territoire (art. 44 à 49)",
+      "exigence": "Les transferts vers un pays tiers sont recensés et encadrés par un mécanisme approprié — décision d'adéquation, clauses types, règles internes — et les personnes en sont informées.",
+      "preuves": [
+        "Recensement des transferts, incluant l'hébergement et le support technique assurés depuis l'étranger",
+        "Mécanisme d'encadrement retenu pour chaque transfert et documentation correspondante"
+      ],
+      "erreurs_frequentes": [
+        "Un hébergement en nuage ou une maintenance à distance non identifiés comme des transferts",
+        "Des clauses types signées sans évaluer le niveau de protection effectif dans le pays destinataire"
+      ],
+      "poids": 3
+    }
+  ]
+}

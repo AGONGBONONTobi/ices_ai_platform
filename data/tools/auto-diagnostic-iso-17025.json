@@ -1,0 +1,858 @@
+{
+  "id": "auto-diagnostic-iso-17025",
+  "title": "Auto-diagnostic ISO/IEC 17025 — laboratoire",
+  "category": "Inspection Technique & Vérification",
+  "output_kind": "assessment",
+  "referentiel_code": "ISO-17025",
+  "referentiel_version": "2017",
+  "inputs": [
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Décrivez brièvement votre organisme",
+      "help": "Nature des essais ou étalonnages réalisés, portée visée, effectif technique, équipements principaux, et objectif visé.",
+      "placeholder": "Laboratoire d'analyses physico-chimiques de l'eau, 9 techniciens, visant l'accréditation sur huit paramètres.",
+      "required": true
+    },
+    {
+      "name": "c4_1",
+      "type": "select",
+      "question": "4.1 — Impartialité",
+      "help": "Les activités du laboratoire sont conduites de manière impartiale. Les risques pesant sur l'impartialité — pressions commerciales, hiérarchiques ou financières sur le résultat — sont identifiés en continu et maîtrisés.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.1",
+      "axe": "4 — Exigences générales",
+      "poids": 3
+    },
+    {
+      "name": "c4_2",
+      "type": "select",
+      "question": "4.2 — Confidentialité",
+      "help": "Le laboratoire protège les informations des clients et informe ceux-ci lorsqu'une divulgation est imposée par la loi ou autorisée par contrat.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.2",
+      "axe": "4 — Exigences générales",
+      "poids": 2
+    },
+    {
+      "name": "c5_5",
+      "type": "select",
+      "question": "5.5 — Structure, responsabilités et portée des activités",
+      "help": "Le laboratoire définit son organisation, les responsabilités et autorités du personnel, et l'étendue des activités qu'il déclare conformes à la norme. Il dispose du personnel nécessaire, y compris en suppléance.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.5",
+      "axe": "5 — Exigences structurelles",
+      "poids": 2
+    },
+    {
+      "name": "c6_2_2",
+      "type": "select",
+      "question": "6.2.2 — Compétence, autorisation et surveillance du personnel",
+      "help": "Les exigences de compétence sont définies par fonction et par activité ; le personnel est formé, autorisé nominativement pour les activités qu'il réalise, et sa compétence est surveillée dans le temps.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.2.2",
+      "axe": "6 — Exigences en matière de ressources",
+      "poids": 3
+    },
+    {
+      "name": "c6_3_2",
+      "type": "select",
+      "question": "6.3.2 — Installations et conditions ambiantes",
+      "help": "Les conditions ambiantes susceptibles d'influer sur les résultats sont identifiées, surveillées, enregistrées, et les essais sont interrompus lorsqu'elles sortent des limites définies.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.3.2",
+      "axe": "6 — Exigences en matière de ressources",
+      "poids": 3
+    },
+    {
+      "name": "c6_4_3",
+      "type": "select",
+      "question": "6.4.3 — Équipements : vérification, étalonnage et programme",
+      "help": "Les équipements sont vérifiés avant mise en service, puis étalonnés ou vérifiés selon un programme établi ; leur statut est identifiable par l'utilisateur au moment de l'emploi.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.4.3",
+      "axe": "6 — Exigences en matière de ressources",
+      "poids": 3
+    },
+    {
+      "name": "c6_4_9",
+      "type": "select",
+      "question": "6.4.9 — Équipement défectueux et incidence sur les résultats antérieurs",
+      "help": "Un équipement trouvé défectueux ou hors tolérance est retiré du service et identifié comme tel ; le laboratoire examine l'incidence de l'anomalie sur les résultats déjà émis et agit en conséquence.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.4.9",
+      "axe": "6 — Exigences en matière de ressources",
+      "poids": 3
+    },
+    {
+      "name": "c6_5_2",
+      "type": "select",
+      "question": "6.5.2 — Traçabilité métrologique",
+      "help": "Les résultats de mesure sont reliés à une référence appropriée par une chaîne ininterrompue d'étalonnages documentés, chacune contribuant à l'incertitude de mesure.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.5.2",
+      "axe": "6 — Exigences en matière de ressources",
+      "poids": 3
+    },
+    {
+      "name": "c6_6_2",
+      "type": "select",
+      "question": "6.6.2 — Produits et services fournis par des prestataires externes",
+      "help": "Le laboratoire définit les exigences applicables aux prestations externes influant sur les résultats — sous-traitance d'essais, étalonnages, consommables — évalue les prestataires et conserve les enregistrements de cette évaluation.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.6.2",
+      "axe": "6 — Exigences en matière de ressources",
+      "poids": 2
+    },
+    {
+      "name": "c7_1_1",
+      "type": "select",
+      "question": "7.1.1 — Revue des demandes, appels d'offres et contrats",
+      "help": "Le laboratoire vérifie avant acceptation qu'il dispose des ressources et de la compétence nécessaires, que la méthode demandée est appropriée, et que toute différence avec la demande initiale est résolue avec le client.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.1.1",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 3
+    },
+    {
+      "name": "c7_2_1",
+      "type": "select",
+      "question": "7.2.1 — Sélection et vérification des méthodes",
+      "help": "Le laboratoire utilise des méthodes appropriées, dans leur version en vigueur, et vérifie avant emploi qu'il est capable de les mettre en œuvre avec les performances attendues.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.2.1",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 3
+    },
+    {
+      "name": "c7_2_2",
+      "type": "select",
+      "question": "7.2.2 — Validation des méthodes non normalisées ou modifiées",
+      "help": "Les méthodes développées, modifiées ou employées hors de leur domaine prévu sont validées ; l'étendue de la validation et les performances obtenues sont documentées.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.2.2",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 3
+    },
+    {
+      "name": "c7_3_1",
+      "type": "select",
+      "question": "7.3.1 — Échantillonnage",
+      "help": "Lorsque le laboratoire réalise l'échantillonnage, il applique un plan et une méthode documentés, et enregistre les données permettant d'apprécier la représentativité de l'échantillon.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.3.1",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 2
+    },
+    {
+      "name": "c7_4_1",
+      "type": "select",
+      "question": "7.4.1 — Manutention des objets d'essai",
+      "help": "Les objets soumis à essai sont identifiés sans ambiguïté, leur état à réception est vérifié et enregistré, et les conditions de conservation prévues par la méthode sont respectées.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.4.1",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 2
+    },
+    {
+      "name": "c7_5_1",
+      "type": "select",
+      "question": "7.5.1 — Enregistrements techniques",
+      "help": "Les enregistrements techniques comportent les données brutes, les observations et les calculs, en quantité suffisante pour permettre de répéter l'essai dans des conditions aussi proches que possible des conditions initiales.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.5.1",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 3
+    },
+    {
+      "name": "c7_6_1",
+      "type": "select",
+      "question": "7.6.1 — Évaluation de l'incertitude de mesure",
+      "help": "Le laboratoire identifie les contributions à l'incertitude de mesure et l'évalue pour chaque méthode, selon une approche documentée et proportionnée à l'usage des résultats.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.6.1",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 3
+    },
+    {
+      "name": "c7_7_1",
+      "type": "select",
+      "question": "7.7.1 — Assurance de la validité des résultats",
+      "help": "Le laboratoire surveille la validité de ses résultats par des moyens planifiés — cartes de contrôle, matériaux de référence, répétitions, contrôles internes — dont les données sont analysées et exploitées.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.7.1",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 3
+    },
+    {
+      "name": "c7_7_2",
+      "type": "select",
+      "question": "7.7.2 — Comparaisons interlaboratoires et essais d'aptitude",
+      "help": "Le laboratoire participe à des essais d'aptitude ou à des comparaisons interlaboratoires lorsqu'ils sont disponibles, analyse ses résultats et engage des actions en cas d'écart.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.7.2",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 3
+    },
+    {
+      "name": "c7_8_1",
+      "type": "select",
+      "question": "7.8.1 — Rapport sur les résultats",
+      "help": "Les rapports présentent les résultats de manière exacte, claire et non ambiguë, avec les informations nécessaires à leur interprétation : méthode, identification de l'objet, date, incertitude lorsqu'elle est pertinente.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.8.1",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 3
+    },
+    {
+      "name": "c7_8_6",
+      "type": "select",
+      "question": "7.8.6 — Déclarations de conformité et règle de décision",
+      "help": "Lorsque le laboratoire déclare une conformité à une spécification, il applique une règle de décision convenue et documentée, et indique dans le rapport la règle appliquée et le niveau de risque associé.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.8.6",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 3
+    },
+    {
+      "name": "c7_10_1",
+      "type": "select",
+      "question": "7.10.1 — Travaux non conformes",
+      "help": "Les travaux non conformes sont identifiés, leur importance évaluée, une décision prise sur leur acceptabilité, et le client informé lorsque des résultats déjà émis sont affectés.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.10.1",
+      "axe": "7 — Exigences relatives aux processus",
+      "poids": 3
+    },
+    {
+      "name": "c8_5",
+      "type": "select",
+      "question": "8.5 — Actions face aux risques et opportunités",
+      "help": "Le laboratoire identifie les risques et opportunités liés à ses activités, planifie des actions proportionnées et évalue leur efficacité.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.5",
+      "axe": "8 — Exigences relatives au système de management",
+      "poids": 2
+    },
+    {
+      "name": "c8_7",
+      "type": "select",
+      "question": "8.7 — Actions correctives",
+      "help": "Face à une non-conformité, le laboratoire réagit pour la maîtriser, en recherche les causes, engage des actions proportionnées et en vérifie l'efficacité.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.7",
+      "axe": "8 — Exigences relatives au système de management",
+      "poids": 3
+    },
+    {
+      "name": "c8_8",
+      "type": "select",
+      "question": "8.8 — Audits internes",
+      "help": "Des audits internes couvrent les exigences de la norme et le système du laboratoire sur un cycle planifié, réalisés par des auditeurs objectifs et impartiaux au regard de l'activité auditée.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.8",
+      "axe": "8 — Exigences relatives au système de management",
+      "poids": 2
+    },
+    {
+      "name": "c8_9",
+      "type": "select",
+      "question": "8.9 — Revues de direction",
+      "help": "La direction revoit le système à intervalles planifiés, sur la base des retours clients, des résultats des essais d'aptitude, des audits, des non-conformités et de l'adéquation des ressources, et décide des actions.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.9",
+      "axe": "8 — Exigences relatives au système de management",
+      "poids": 2
+    }
+  ],
+  "promptTemplate": "Tu es évaluateur technique pour un organisme d'accréditation, habitué aux évaluations ISO/IEC 17025. On parle d'accréditation et non de certification, et la portée d'accréditation se définit essai par essai : emploie ce vocabulaire dans tout le rapport. L'organisme est décrit ainsi : {contexte}.\n\nLes clauses applicables et leur grille de maturité te sont fournies plus bas, ainsi que le positionnement déclaré pour chacune et les scores déjà calculés.\n\nProduis un rapport de pré-audit :\n- pour chaque chapitre parmi 4 (Exigences générales), 5 (Exigences structurelles), 6 (Exigences en matière de ressources), 7 (Exigences relatives aux processus), 8 (Exigences relatives au système de management), un constat appuyé sur les clauses réellement concernées, en citant leur numéro ;\n- pour les clauses les plus faibles, indique l'écart précis par rapport à l'exigence et la preuve qui serait demandée en audit ;\n- des recommandations priorisées, chacune rattachée à un numéro de clause, actionnables et proportionnées au contexte décrit.\n\nTraite en priorité la validation des méthodes, l'incertitude de mesure et l'assurance de la validité des résultats : ces trois exigences forment la démonstration technique de compétence, et c'est là que se concentrent les écarts en évaluation initiale. Rappelle qu'une portée revendiquée au-delà des méthodes réellement validées est le motif de refus le plus courant.\n\nN'invente aucune exigence absente des clauses fournies. Ne recalcule pas les scores.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          },
+          "required": [
+            "axe",
+            "score"
+          ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "score_global",
+      "axes",
+      "recommandations"
+    ]
+  }
+}

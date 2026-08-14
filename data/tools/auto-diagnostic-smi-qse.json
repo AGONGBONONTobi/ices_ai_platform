@@ -1,0 +1,826 @@
+{
+  "id": "auto-diagnostic-smi-qse",
+  "title": "Auto-diagnostic SMI intégré QSE",
+  "category": "Systèmes de Management ISO",
+  "output_kind": "assessment",
+  "referentiel_code": "SMI-QSE",
+  "referentiel_version": "2018",
+  "inputs": [
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Décrivez brièvement votre organisme",
+      "help": "Secteur, effectif, sites, normes déjà certifiées ou visées, et organisation actuelle de la fonction QSE.",
+      "placeholder": "Entreprise de BTP, 180 salariés, trois chantiers, certifiée ISO 9001 et visant l'intégration 14001 et 45001 sous 18 mois.",
+      "required": true
+    },
+    {
+      "name": "c4_1",
+      "type": "select",
+      "question": "4.1 — Enjeux internes et externes, traités conjointement pour les trois domaines",
+      "help": "L'organisme détermine les enjeux internes et externes pertinents pour la qualité, l'environnement et la santé-sécurité au travail. Une analyse unique est possible, à condition que chaque enjeu soit rattaché aux domaines qu'il concerne réellement.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.1",
+      "axe": "4 — Contexte de l'organisme",
+      "poids": 2
+    },
+    {
+      "name": "c4_2",
+      "type": "select",
+      "question": "4.2 — Parties intéressées et leurs exigences",
+      "help": "Les parties intéressées et leurs exigences pertinentes sont déterminées pour les trois domaines. ISO 45001 impose que les travailleurs figurent parmi les parties intéressées ; ISO 14001 met l'accent sur les riverains et les autorités environnementales.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.2",
+      "axe": "4 — Contexte de l'organisme",
+      "poids": 2
+    },
+    {
+      "name": "c4_3",
+      "type": "select",
+      "question": "4.3 — Domaine d'application du système intégré",
+      "help": "Le domaine d'application est défini et documenté. Un périmètre commun aux trois domaines simplifie le système, mais toute différence de périmètre entre qualité, environnement et santé-sécurité doit être explicite et justifiée.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.3",
+      "axe": "4 — Contexte de l'organisme",
+      "poids": 2
+    },
+    {
+      "name": "c4_4",
+      "type": "select",
+      "question": "4.4 — Système de management intégré et ses processus",
+      "help": "Les processus nécessaires au système sont établis, avec leurs interactions, leurs critères et leurs responsables. Dans un système intégré, un même processus porte les exigences des trois domaines plutôt que d'être décrit trois fois.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.4",
+      "axe": "4 — Contexte de l'organisme",
+      "poids": 3
+    },
+    {
+      "name": "c5_1",
+      "type": "select",
+      "question": "5.1 — Leadership et engagement de la direction",
+      "help": "La direction assume la responsabilité de l'efficacité du système, y consacre des ressources et rend compte des résultats. ISO 45001 y ajoute la responsabilité de prévenir les lésions et les atteintes à la santé, et de développer une culture de prévention.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.1",
+      "axe": "5 — Leadership et participation des travailleurs",
+      "poids": 3
+    },
+    {
+      "name": "c5_2",
+      "type": "select",
+      "question": "5.2 — Politique QSE intégrée",
+      "help": "Une politique unique peut couvrir les trois domaines, à condition de porter les engagements propres à chacun : satisfaction du client, protection de l'environnement et prévention de la pollution, conditions de travail sûres et prévention des lésions, ainsi que l'amélioration continue et le respect des obligations de conformité.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.2",
+      "axe": "5 — Leadership et participation des travailleurs",
+      "poids": 2
+    },
+    {
+      "name": "c5_3",
+      "type": "select",
+      "question": "5.3 — Rôles, responsabilités et autorités",
+      "help": "Les responsabilités et autorités sont attribuées et communiquées à tous les niveaux. Dans un système intégré, un responsable unique peut porter les trois domaines s'il en a le temps et la compétence ; à défaut, les répartitions doivent être explicites.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.3",
+      "axe": "5 — Leadership et participation des travailleurs",
+      "poids": 3
+    },
+    {
+      "name": "c5_4",
+      "type": "select",
+      "question": "5.4 — Consultation et participation des travailleurs",
+      "help": "Exigence propre à ISO 45001, sans équivalent dans ISO 9001 et ISO 14001 : les travailleurs et leurs représentants sont consultés et participent à l'élaboration, à la mise en œuvre et à l'évaluation du système, avec des moyens et un temps identifiés, et sans obstacle à leur participation.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.4",
+      "axe": "5 — Leadership et participation des travailleurs",
+      "poids": 3
+    },
+    {
+      "name": "c6_1_1",
+      "type": "select",
+      "question": "6.1.1 — Actions à mettre en œuvre face aux risques et opportunités",
+      "help": "L'organisme détermine les risques et opportunités liés à son contexte et à ses parties intéressées, et planifie des actions proportionnées. Cette démarche est commune aux trois normes et constitue le principal gisement de mutualisation.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.1.1",
+      "axe": "6 — Planification",
+      "poids": 2
+    },
+    {
+      "name": "c6_1_2",
+      "type": "select",
+      "question": "6.1.2 — Aspects environnementaux et dangers pour la santé-sécurité",
+      "help": "Ces identifications ne se mutualisent pas : ISO 14001 impose de déterminer les aspects environnementaux et leurs impacts et d'en dégager les aspects significatifs ; ISO 45001 impose d'identifier les dangers de façon proactive et d'apprécier les risques pour la santé-sécurité, en tenant compte de l'organisation du travail et des facteurs humains.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.1.2",
+      "axe": "6 — Planification",
+      "poids": 3
+    },
+    {
+      "name": "c6_1_3",
+      "type": "select",
+      "question": "6.1.3 — Obligations de conformité et exigences légales",
+      "help": "Les exigences légales et autres exigences applicables sont déterminées, tenues à jour et rendues accessibles ; leur respect est évalué périodiquement. Une veille unique peut couvrir les trois domaines si elle distingue les obligations par domaine.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.1.3",
+      "axe": "6 — Planification",
+      "poids": 3
+    },
+    {
+      "name": "c6_2",
+      "type": "select",
+      "question": "6.2 — Objectifs QSE et planification des actions",
+      "help": "Les objectifs sont mesurables, cohérents avec la politique, suivis et mis à jour ; leur planification précise les moyens, les responsables, les échéances et le mode d'évaluation des résultats.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.2",
+      "axe": "6 — Planification",
+      "poids": 2
+    },
+    {
+      "name": "c7_2",
+      "type": "select",
+      "question": "7.2 — Compétences",
+      "help": "Les compétences nécessaires sont déterminées, acquises et évaluées quant à leur efficacité. Un plan de compétences unique couvre les trois domaines, mais les habilitations réglementaires propres à la santé-sécurité et à l'environnement restent spécifiques.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.2",
+      "axe": "7 — Support",
+      "poids": 3
+    },
+    {
+      "name": "c7_3",
+      "type": "select",
+      "question": "7.3 — Sensibilisation",
+      "help": "Les personnes travaillant sous le contrôle de l'organisme connaissent la politique, leur contribution au système et les conséquences d'un manquement. ISO 45001 y ajoute la connaissance des incidents pertinents et le droit de se retirer d'une situation de danger grave et imminent.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.3",
+      "axe": "7 — Support",
+      "poids": 2
+    },
+    {
+      "name": "c7_4",
+      "type": "select",
+      "question": "7.4 — Communication interne et externe",
+      "help": "L'organisme détermine ce qu'il communique, à quel moment, avec qui et comment, pour les trois domaines. ISO 14001 exige de tenir compte des obligations de conformité en matière de communication environnementale.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.4",
+      "axe": "7 — Support",
+      "poids": 2
+    },
+    {
+      "name": "c7_5",
+      "type": "select",
+      "question": "7.5 — Informations documentées",
+      "help": "Les informations documentées exigées par les trois normes sont créées, mises à jour et maîtrisées : identification, approbation, disponibilité au poste, protection et conservation. C'est le gisement de mutualisation le plus immédiat d'un système intégré.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.5",
+      "axe": "7 — Support",
+      "poids": 2
+    },
+    {
+      "name": "c8_1",
+      "type": "select",
+      "question": "8.1 — Planification et maîtrise opérationnelles",
+      "help": "Les processus opérationnels sont planifiés et maîtrisés selon des critères définis. C'est le chapitre où l'intégration atteint sa limite : les critères qualité, les moyens de maîtrise environnementale et la hiérarchie des mesures de prévention en santé-sécurité coexistent sur un même poste sans se confondre.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.1",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 3
+    },
+    {
+      "name": "c8_1_4",
+      "type": "select",
+      "question": "8.1.4 — Maîtrise des processus, produits et services externalisés",
+      "help": "L'organisme maîtrise ses activités externalisées et ses approvisionnements pour les trois domaines, et communique aux prestataires les exigences applicables, y compris celles relatives aux intervenants sur site.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.1.4",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 3
+    },
+    {
+      "name": "c8_2",
+      "type": "select",
+      "question": "8.2 — Préparation et réponse aux situations d'urgence",
+      "help": "Exigence commune à ISO 14001 et ISO 45001 : les situations d'urgence potentielles sont identifiées, les réponses planifiées, testées périodiquement, et revues après chaque exercice ou situation réelle.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.2",
+      "axe": "8 — Réalisation des activités opérationnelles",
+      "poids": 3
+    },
+    {
+      "name": "c9_1",
+      "type": "select",
+      "question": "9.1 — Surveillance, mesure, analyse et évaluation",
+      "help": "L'organisme détermine ce qui doit être surveillé et mesuré, selon quelles méthodes et à quelle fréquence, pour les trois domaines, et conserve les résultats. L'évaluation périodique de la conformité aux obligations légales en fait partie.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.1",
+      "axe": "9 — Évaluation des performances",
+      "poids": 3
+    },
+    {
+      "name": "c9_2",
+      "type": "select",
+      "question": "9.2 — Audit interne intégré",
+      "help": "Un programme d'audit interne planifié couvre l'ensemble des exigences des trois normes sur un cycle défini ; les auditeurs sont compétents sur les domaines audités et indépendants de l'activité auditée.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.2",
+      "axe": "9 — Évaluation des performances",
+      "poids": 3
+    },
+    {
+      "name": "c9_3",
+      "type": "select",
+      "question": "9.3 — Revue de direction intégrée",
+      "help": "Une revue unique peut couvrir les trois domaines, à condition d'examiner l'ensemble des données d'entrée exigées par chacune des normes et de déboucher sur des décisions tracées portant sur les trois.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.3",
+      "axe": "9 — Évaluation des performances",
+      "poids": 3
+    },
+    {
+      "name": "c10_2",
+      "type": "select",
+      "question": "10.2 — Non-conformité, incident et action corrective",
+      "help": "Les non-conformités et, pour la santé-sécurité, les incidents font l'objet d'une réaction immédiate, d'une analyse des causes, d'actions proportionnées et d'une vérification d'efficacité. ISO 45001 impose la participation des travailleurs à l'analyse des incidents.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "10.2",
+      "axe": "10 — Amélioration",
+      "poids": 3
+    },
+    {
+      "name": "c10_3",
+      "type": "select",
+      "question": "10.3 — Amélioration continue",
+      "help": "L'organisme améliore en continu la pertinence, l'adéquation et l'efficacité du système sur les trois domaines, en s'appuyant sur les résultats de l'analyse, de l'évaluation et de la revue de direction.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "10.3",
+      "axe": "10 — Amélioration",
+      "poids": 2
+    }
+  ],
+  "promptTemplate": "Tu es auditeur QSE expérimenté, habitué aux audits de certification combinés ISO 9001, ISO 14001 et ISO 45001. L'organisme est décrit ainsi : {contexte}.\n\nLes clauses applicables et leur grille de maturité te sont fournies plus bas, ainsi que le positionnement déclaré pour chacune et les scores déjà calculés.\n\nProduis un rapport de pré-audit :\n- pour chaque chapitre parmi 4 (Contexte de l'organisme), 5 (Leadership et participation des travailleurs), 6 (Planification), 7 (Support), 8 (Réalisation des activités opérationnelles), 9 (Évaluation des performances), 10 (Amélioration), un constat appuyé sur les clauses réellement concernées, en citant leur numéro ;\n- pour les clauses les plus faibles, indique l'écart précis par rapport à l'exigence et la preuve qui serait demandée en audit ;\n- des recommandations priorisées, chacune rattachée à un numéro de clause, actionnables et proportionnées au contexte décrit.\n\nDistingue systématiquement ce qui se mutualise de ce qui ne se mutualise pas. Les informations documentées, la veille réglementaire, l'audit interne et la revue de direction se fusionnent sans perte ; l'identification des aspects environnementaux, celle des dangers pour la santé-sécurité et la consultation des travailleurs n'ont pas d'équivalent dans les autres normes et disparaissent souvent lors de l'intégration. Signale explicitement les redondances supprimables et les exigences que la fusion risque de faire perdre.\n\nN'invente aucune exigence absente des clauses fournies. Ne recalcule pas les scores.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          },
+          "required": [
+            "axe",
+            "score"
+          ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "score_global",
+      "axes",
+      "recommandations"
+    ]
+  }
+}

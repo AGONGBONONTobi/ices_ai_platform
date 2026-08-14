@@ -1,0 +1,698 @@
+{
+  "id": "auto-diagnostic-rgpd",
+  "title": "Auto-évaluation RGPD — protection des données",
+  "category": "Certification de Compétences & Personnes",
+  "output_kind": "assessment",
+  "referentiel_code": "RGPD",
+  "referentiel_version": "2016-679",
+  "inputs": [
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Décrivez brièvement votre organisme",
+      "help": "Secteur, effectif, pays d'établissement, types de données traitées, outils utilisés, et raison de la démarche (obligation d'un client, incident, mise en conformité).",
+      "placeholder": "Établissement de microfinance, 90 salariés, établi au Bénin, traitant des données de clients et de salariés, sollicité par un partenaire européen.",
+      "required": true
+    },
+    {
+      "name": "c1_1",
+      "type": "select",
+      "question": "1.1 — Base légale de chaque traitement (art. 6)",
+      "help": "Chaque traitement repose sur une base légale déterminée avant sa mise en œuvre — consentement, contrat, obligation légale, intérêt légitime ou autre — et cette base est documentée traitement par traitement.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "1.1",
+      "axe": "1 — Principes, licéité et minimisation",
+      "poids": 3
+    },
+    {
+      "name": "c1_2",
+      "type": "select",
+      "question": "1.2 — Finalités déterminées et minimisation des données (art. 5)",
+      "help": "Les données sont collectées pour des finalités déterminées, explicites et légitimes, et limitées à ce qui est nécessaire au regard de ces finalités.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "1.2",
+      "axe": "1 — Principes, licéité et minimisation",
+      "poids": 3
+    },
+    {
+      "name": "c1_3",
+      "type": "select",
+      "question": "1.3 — Exactitude et durées de conservation (art. 5)",
+      "help": "Les données sont tenues à jour et conservées pendant une durée n'excédant pas ce qui est nécessaire aux finalités poursuivies ; une durée est définie par catégorie de données et effectivement appliquée.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "1.3",
+      "axe": "1 — Principes, licéité et minimisation",
+      "poids": 3
+    },
+    {
+      "name": "c1_4",
+      "type": "select",
+      "question": "1.4 — Traitements portant sur des catégories particulières de données (art. 9)",
+      "help": "Les traitements portant sur des données sensibles — santé, opinions, appartenance syndicale, données biométriques — sont recensés et ne sont mis en œuvre que dans les cas prévus, avec des garanties renforcées.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "1.4",
+      "axe": "1 — Principes, licéité et minimisation",
+      "poids": 3
+    },
+    {
+      "name": "c2_1",
+      "type": "select",
+      "question": "2.1 — Information des personnes concernées (art. 12 à 14)",
+      "help": "Les personnes reçoivent, au moment de la collecte, une information concise, transparente et compréhensible sur l'identité du responsable, les finalités, la base légale, les destinataires, les durées et leurs droits.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "2.1",
+      "axe": "2 — Information et droits des personnes",
+      "poids": 3
+    },
+    {
+      "name": "c2_2",
+      "type": "select",
+      "question": "2.2 — Exercice des droits d'accès, de rectification et d'effacement (art. 15 à 17)",
+      "help": "L'organisme dispose d'une procédure permettant de recevoir les demandes d'exercice de droits, de vérifier l'identité du demandeur et de répondre dans le délai d'un mois, prorogeable dans les conditions prévues.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "2.2",
+      "axe": "2 — Information et droits des personnes",
+      "poids": 3
+    },
+    {
+      "name": "c2_3",
+      "type": "select",
+      "question": "2.3 — Opposition, portabilité et décision automatisée (art. 20 à 22)",
+      "help": "L'organisme sait répondre aux demandes d'opposition et de portabilité, et identifie les traitements produisant des décisions fondées exclusivement sur un traitement automatisé, pour lesquels des garanties spécifiques s'appliquent.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "2.3",
+      "axe": "2 — Information et droits des personnes",
+      "poids": 2
+    },
+    {
+      "name": "c3_1",
+      "type": "select",
+      "question": "3.1 — Registre des activités de traitement (art. 30)",
+      "help": "L'organisme tient un registre à jour de ses activités de traitement, mentionnant les finalités, les catégories de personnes et de données, les destinataires, les transferts, les durées et les mesures de sécurité.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "3.1",
+      "axe": "3 — Responsabilité et documentation",
+      "poids": 3
+    },
+    {
+      "name": "c3_2",
+      "type": "select",
+      "question": "3.2 — Politiques internes, sensibilisation et habilitations (art. 24, 29, 32)",
+      "help": "L'organisme définit des règles internes sur l'usage des données, sensibilise les personnes qui y accèdent, et n'accorde les accès qu'aux personnes qui en ont besoin, sur la base d'habilitations tenues à jour.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "3.2",
+      "axe": "3 — Responsabilité et documentation",
+      "poids": 3
+    },
+    {
+      "name": "c4_1",
+      "type": "select",
+      "question": "4.1 — Mesures techniques de sécurité (art. 32)",
+      "help": "Les mesures techniques sont proportionnées au risque : contrôle des accès, chiffrement lorsque nécessaire, sauvegardes testées, journalisation et maintien à jour des systèmes.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.1",
+      "axe": "4 — Sécurité des traitements",
+      "poids": 3
+    },
+    {
+      "name": "c4_2",
+      "type": "select",
+      "question": "4.2 — Sécurité physique et organisationnelle",
+      "help": "L'accès physique aux locaux et aux supports contenant des données personnelles est maîtrisé, et les supports papier comme les archives sont protégés et détruits de manière sûre.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.2",
+      "axe": "4 — Sécurité des traitements",
+      "poids": 2
+    },
+    {
+      "name": "c5_1",
+      "type": "select",
+      "question": "5.1 — Détection, documentation et notification des violations (art. 33)",
+      "help": "L'organisme sait détecter une violation de données, la documenter, et la notifier à l'autorité de contrôle compétente dans les 72 heures lorsqu'elle présente un risque pour les personnes.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.1",
+      "axe": "5 — Violations de données à caractère personnel",
+      "poids": 3
+    },
+    {
+      "name": "c5_2",
+      "type": "select",
+      "question": "5.2 — Communication de la violation aux personnes concernées (art. 34)",
+      "help": "Lorsque la violation est susceptible d'engendrer un risque élevé pour les personnes, celles-ci en sont informées dans les meilleurs délais, en termes clairs, avec les mesures qu'elles peuvent prendre.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.2",
+      "axe": "5 — Violations de données à caractère personnel",
+      "poids": 2
+    },
+    {
+      "name": "c6_1",
+      "type": "select",
+      "question": "6.1 — Protection des données dès la conception et par défaut (art. 25)",
+      "help": "La protection des données est prise en compte dès la conception des traitements et des outils, et les paramètres par défaut limitent la collecte et l'accessibilité au strict nécessaire.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.1",
+      "axe": "6 — Protection dès la conception et analyse d'impact",
+      "poids": 2
+    },
+    {
+      "name": "c6_2",
+      "type": "select",
+      "question": "6.2 — Analyse d'impact relative à la protection des données (art. 35)",
+      "help": "Une analyse d'impact est menée avant tout traitement susceptible d'engendrer un risque élevé, notamment en cas de surveillance systématique, de données sensibles à grande échelle ou d'évaluation automatisée ; elle décrit le traitement, apprécie la nécessité et les risques, et arrête les mesures retenues.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.2",
+      "axe": "6 — Protection dès la conception et analyse d'impact",
+      "poids": 3
+    },
+    {
+      "name": "c7_1",
+      "type": "select",
+      "question": "7.1 — Désignation et positionnement du délégué à la protection des données (art. 37, 38)",
+      "help": "Lorsque sa désignation est requise ou décidée, le délégué est désigné sur la base de ses compétences, ses coordonnées sont publiées et communiquées à l'autorité de contrôle, il est associé en temps utile aux questions de protection des données et ne reçoit aucune instruction sur l'exercice de ses missions.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.1",
+      "axe": "7 — Délégué à la protection des données",
+      "poids": 2
+    },
+    {
+      "name": "c7_2",
+      "type": "select",
+      "question": "7.2 — Missions du délégué et reddition de comptes (art. 39)",
+      "help": "Le délégué informe et conseille, contrôle le respect des règles, conseille sur les analyses d'impact, coopère avec l'autorité de contrôle, et rend compte au niveau le plus élevé de la direction.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.2",
+      "axe": "7 — Délégué à la protection des données",
+      "poids": 2
+    },
+    {
+      "name": "c8_1",
+      "type": "select",
+      "question": "8.1 — Encadrement contractuel de la sous-traitance (art. 28)",
+      "help": "Le recours à un sous-traitant est encadré par un contrat prévoyant l'objet, la durée, les instructions du responsable, la confidentialité, la sécurité, l'assistance, le sort des données en fin de contrat et le recours à des sous-traitants ultérieurs.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.1",
+      "axe": "8 — Sous-traitance et transferts hors du territoire",
+      "poids": 3
+    },
+    {
+      "name": "c8_2",
+      "type": "select",
+      "question": "8.2 — Contrôle effectif des sous-traitants",
+      "help": "Le responsable de traitement ne recourt qu'à des sous-traitants présentant des garanties suffisantes, et vérifie ces garanties autrement que par la seule déclaration du prestataire.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.2",
+      "axe": "8 — Sous-traitance et transferts hors du territoire",
+      "poids": 2
+    },
+    {
+      "name": "c8_3",
+      "type": "select",
+      "question": "8.3 — Transferts de données hors du territoire (art. 44 à 49)",
+      "help": "Les transferts vers un pays tiers sont recensés et encadrés par un mécanisme approprié — décision d'adéquation, clauses types, règles internes — et les personnes en sont informées.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.3",
+      "axe": "8 — Sous-traitance et transferts hors du territoire",
+      "poids": 3
+    }
+  ],
+  "promptTemplate": "Tu es délégué à la protection des données expérimenté, habitué aux audits de conformité au RGPD. Le RGPD est une obligation légale et non un référentiel de certification ; ton rapport constitue un état des lieux, en aucun cas une consultation juridique. L'organisme est décrit ainsi : {contexte}.\n\nLes clauses applicables et leur grille de maturité te sont fournies plus bas, ainsi que le positionnement déclaré pour chacune et les scores déjà calculés.\n\nProduis un rapport de pré-audit :\n- pour chaque chapitre parmi 1 (Principes, licéité et minimisation), 2 (Information et droits des personnes), 3 (Responsabilité et documentation), 4 (Sécurité des traitements), 5 (Violations de données à caractère personnel), 6 (Protection dès la conception et analyse d'impact), 7 (Délégué à la protection des données), 8 (Sous-traitance et transferts hors du territoire), un constat appuyé sur les clauses réellement concernées, en citant leur numéro ;\n- pour les clauses les plus faibles, indique l'écart précis par rapport à l'exigence et la preuve qui serait demandée en audit ;\n- des recommandations priorisées, chacune rattachée à un numéro de clause, actionnables et proportionnées au contexte décrit.\n\nTraite en priorité le registre des traitements et les durées de conservation : sans registre à jour, aucune des autres obligations ne peut être démontrée, et une conservation illimitée est l'écart le plus systématiquement relevé. Si l'organisme est établi hors de l'Union européenne, précise que l'applicabilité du RGPD dépend de l'article 3 et que la loi nationale ainsi que l'Acte additionnel de la CEDEAO s'appliquent en tout état de cause.\n\nN'invente aucune exigence absente des clauses fournies. Ne recalcule pas les scores.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          },
+          "required": [
+            "axe",
+            "score"
+          ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "score_global",
+      "axes",
+      "recommandations"
+    ]
+  }
+}

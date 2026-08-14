@@ -1,0 +1,602 @@
+{
+  "id": "auto-diagnostic-iso-14040",
+  "title": "Auto-diagnostic ACV — ISO 14040/14044",
+  "category": "Économie Circulaire & Déchets",
+  "output_kind": "assessment",
+  "referentiel_code": "ISO-14040",
+  "referentiel_version": "2006",
+  "inputs": [
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Décrivez brièvement votre organisme",
+      "help": "Produit ou service étudié, usage prévu des résultats (interne, communication, comparaison publique), données déjà disponibles, et compétences en interne.",
+      "placeholder": "Fabricant d'emballages en carton recyclé, souhaitant comparer deux gammes et communiquer le résultat auprès de ses clients.",
+      "required": true
+    },
+    {
+      "name": "c4_2_2",
+      "type": "select",
+      "question": "4.2.2 — Objectif de l'étude",
+      "help": "L'objectif énonce sans ambiguïté l'application visée, les raisons de conduire l'étude, le public auquel les résultats sont destinés, et précise si les résultats sont destinés à une affirmation comparative divulguée au public.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.2.2",
+      "axe": "4.2 — Définition des objectifs et du champ de l'étude",
+      "poids": 3
+    },
+    {
+      "name": "c4_2_3_2",
+      "type": "select",
+      "question": "4.2.3.2 — Fonction, unité fonctionnelle et flux de référence",
+      "help": "L'étude définit la fonction du système, une unité fonctionnelle quantifiée et mesurable, et le flux de référence correspondant. Toute comparaison s'effectue à unité fonctionnelle identique.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.2.3.2",
+      "axe": "4.2 — Définition des objectifs et du champ de l'étude",
+      "poids": 3
+    },
+    {
+      "name": "c4_2_3_3",
+      "type": "select",
+      "question": "4.2.3.3 — Frontières du système",
+      "help": "Les frontières du système précisent les étapes du cycle de vie, les processus et les flux inclus, ainsi que les exclusions et leur justification, en cohérence avec l'objectif de l'étude.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.2.3.3",
+      "axe": "4.2 — Définition des objectifs et du champ de l'étude",
+      "poids": 3
+    },
+    {
+      "name": "c4_2_3_3_3",
+      "type": "select",
+      "question": "4.2.3.3.3 — Critères de coupure",
+      "help": "Les critères de coupure — masse, énergie, importance environnementale — sont définis a priori, appliqués de manière cohérente, et leur incidence sur les résultats est appréciée.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.2.3.3.3",
+      "axe": "4.2 — Définition des objectifs et du champ de l'étude",
+      "poids": 2
+    },
+    {
+      "name": "c4_2_3_6",
+      "type": "select",
+      "question": "4.2.3.6 — Exigences relatives aux données et qualité des données",
+      "help": "L'étude définit les exigences de qualité des données : couverture temporelle, géographique et technologique, précision, exhaustivité, représentativité, cohérence et reproductibilité.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.2.3.6",
+      "axe": "4.2 — Définition des objectifs et du champ de l'étude",
+      "poids": 3
+    },
+    {
+      "name": "c4_2_3_7",
+      "type": "select",
+      "question": "4.2.3.7 — Hypothèses et limitations",
+      "help": "Les hypothèses retenues et les limitations de l'étude sont énoncées explicitement, de façon à ce que le lecteur puisse apprécier la portée réelle des résultats.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.2.3.7",
+      "axe": "4.2 — Définition des objectifs et du champ de l'étude",
+      "poids": 2
+    },
+    {
+      "name": "c4_3_2",
+      "type": "select",
+      "question": "4.3.2 — Collecte des données",
+      "help": "Les données de chaque processus élémentaire sont collectées, leur origine documentée, et les procédures de collecte décrites de façon à permettre la reconstitution de l'inventaire.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.3.2",
+      "axe": "4.3 — Analyse de l'inventaire du cycle de vie (ICV)",
+      "poids": 3
+    },
+    {
+      "name": "c4_3_3",
+      "type": "select",
+      "question": "4.3.3 — Validation des données et rattachement aux processus",
+      "help": "Les données collectées sont vérifiées — bilans de masse et d'énergie, cohérence des ordres de grandeur — puis rapportées au flux de référence de chaque processus élémentaire.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.3.3",
+      "axe": "4.3 — Analyse de l'inventaire du cycle de vie (ICV)",
+      "poids": 3
+    },
+    {
+      "name": "c4_3_4",
+      "type": "select",
+      "question": "4.3.4 — Affectation des flux et des rejets",
+      "help": "L'affectation est évitée autant que possible par subdivision ou extension du système ; lorsqu'elle est nécessaire, la règle retenue est justifiée, appliquée de façon uniforme, et son effet testé par une analyse de sensibilité.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.3.4",
+      "axe": "4.3 — Analyse de l'inventaire du cycle de vie (ICV)",
+      "poids": 3
+    },
+    {
+      "name": "c4_4_2",
+      "type": "select",
+      "question": "4.4.2 — Éléments obligatoires de l'ACVI : catégories, classification, caractérisation",
+      "help": "Les catégories d'impact, les indicateurs et les modèles de caractérisation sont sélectionnés et justifiés en cohérence avec l'objectif ; les résultats d'inventaire sont affectés aux catégories puis caractérisés.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.4.2",
+      "axe": "4.4 — Évaluation de l'impact du cycle de vie (ACVI)",
+      "poids": 3
+    },
+    {
+      "name": "c4_4_3",
+      "type": "select",
+      "question": "4.4.3 — Éléments facultatifs : normalisation, regroupement, pondération",
+      "help": "La normalisation, le regroupement et la pondération sont facultatifs ; s'ils sont employés, les choix de valeurs sont explicités, et la pondération n'est pas utilisée pour les affirmations comparatives divulguées au public.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.4.3",
+      "axe": "4.4 — Évaluation de l'impact du cycle de vie (ACVI)",
+      "poids": 2
+    },
+    {
+      "name": "c4_5_2",
+      "type": "select",
+      "question": "4.5.2 — Identification des points significatifs",
+      "help": "L'interprétation identifie les processus, les flux et les étapes du cycle de vie qui contribuent de façon déterminante aux résultats, en s'appuyant sur les phases d'inventaire et d'évaluation d'impact.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.5.2",
+      "axe": "4.5 — Interprétation du cycle de vie",
+      "poids": 3
+    },
+    {
+      "name": "c4_5_3",
+      "type": "select",
+      "question": "4.5.3 — Vérifications de complétude, de sensibilité et de cohérence",
+      "help": "L'interprétation comprend un contrôle de complétude des données, une analyse de sensibilité des hypothèses structurantes et un contrôle de cohérence des méthodes et des données entre les systèmes étudiés.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.5.3",
+      "axe": "4.5 — Interprétation du cycle de vie",
+      "poids": 3
+    },
+    {
+      "name": "c4_5_4",
+      "type": "select",
+      "question": "4.5.4 — Conclusions, limitations et recommandations",
+      "help": "Les conclusions découlent des points significatifs identifiés et des vérifications réalisées ; elles sont assorties des limitations qui en restreignent la portée, et les recommandations restent dans le champ de l'objectif de l'étude.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.5.4",
+      "axe": "4.5 — Interprétation du cycle de vie",
+      "poids": 3
+    },
+    {
+      "name": "c4_6",
+      "type": "select",
+      "question": "4.6 — Rapport d'étude",
+      "help": "Le rapport présente les résultats et les conclusions de manière complète et sans biais, et rend compte des données, méthodes, hypothèses et limitations avec un niveau de détail suffisant pour permettre à un tiers d'apprécier l'étude.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.6",
+      "axe": "4.6 — Rapport",
+      "poids": 2
+    },
+    {
+      "name": "c4_7_2",
+      "type": "select",
+      "question": "4.7.2 — Revue critique : nécessité et modalités",
+      "help": "La nécessité d'une revue critique, son type et le niveau d'indépendance du ou des réviseurs sont décidés lors de la définition du champ de l'étude.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.7.2",
+      "axe": "4.7 — Revue critique",
+      "poids": 3
+    },
+    {
+      "name": "c4_7_3",
+      "type": "select",
+      "question": "4.7.3 — Revue par un comité de parties intéressées pour les affirmations comparatives",
+      "help": "Une affirmation comparative destinée à être divulguée au public fait l'objet d'une revue critique par un comité de parties intéressées, dont les conclusions sont jointes au rapport.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.7.3",
+      "axe": "4.7 — Revue critique",
+      "poids": 3
+    }
+  ],
+  "promptTemplate": "Tu es praticien de l'analyse du cycle de vie, habitué à la revue critique d'études conduites selon ISO 14040 et ISO 14044. Ces normes encadrent la conduite d'une étude et n'ouvrent droit à aucune certification de l'organisme : ton rapport apprécie l'aptitude à produire une ACV défendable, il ne vaut pas revue critique. L'organisme est décrit ainsi : {contexte}.\n\nLes clauses applicables et leur grille de maturité te sont fournies plus bas, ainsi que le positionnement déclaré pour chacune et les scores déjà calculés.\n\nProduis un rapport de pré-audit :\n- pour chaque chapitre parmi 4.2 (Définition des objectifs et du champ de l'étude), 4.3 (Analyse de l'inventaire du cycle de vie (ICV)), 4.4 (Évaluation de l'impact du cycle de vie (ACVI)), 4.5 (Interprétation du cycle de vie), 4.6 (Rapport), 4.7 (Revue critique), un constat appuyé sur les clauses réellement concernées, en citant leur numéro ;\n- pour les clauses les plus faibles, indique l'écart précis par rapport à l'exigence et la preuve qui serait demandée en audit ;\n- des recommandations priorisées, chacune rattachée à un numéro de clause, actionnables et proportionnées au contexte décrit.\n\nTraite en priorité l'unité fonctionnelle, les frontières du système et la qualité des données : une étude irréprochable sur le reste s'effondre si ces trois choix sont mal posés. Si l'usage déclaré est une affirmation comparative divulguée au public, souligne les exigences renforcées qui en découlent, notamment la revue critique par un comité de parties intéressées.\n\nN'invente aucune exigence absente des clauses fournies. Ne recalcule pas les scores.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          },
+          "required": [
+            "axe",
+            "score"
+          ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "score_global",
+      "axes",
+      "recommandations"
+    ]
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "code": "BM-CES",
+  "version": "2018",
+  "label": "Cadre environnemental et social de la Banque mondiale — les 10 Normes environnementales et sociales (NES)",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe à partir de la structure publique du Cadre environnemental et social de la Banque mondiale, entré en vigueur le 1er octobre 2018. Le texte des normes est publié par la Banque mondiale ; il n'est jamais reproduit ici : seuls la numérotation et l'intitulé des dix NES sont repris, les attendus étant reformulés. Ce cadre s'impose à l'Emprunteur pour les projets financés par la BIRD/IDA : il ne s'agit ni d'une certification ni d'un référentiel volontaire. Le diagnostic ne se substitue pas aux instruments exigés par la Banque (évaluation environnementale et sociale, PEES, PMPP) ni à leur revue par l'équipe de projet. À faire relire par un spécialiste des sauvegardes avant mise en vente.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "1", "titre": "NES 1 — Évaluation et gestion des risques et effets environnementaux et sociaux" },
+    { "numero": "2", "titre": "NES 2 — Emploi et conditions de travail" },
+    { "numero": "3", "titre": "NES 3 — Utilisation rationnelle des ressources, prévention et gestion de la pollution" },
+    { "numero": "4", "titre": "NES 4 — Santé et sécurité des populations" },
+    { "numero": "5", "titre": "NES 5 — Acquisition de terres, restrictions à l'utilisation de terres et réinstallation involontaire" },
+    { "numero": "6", "titre": "NES 6 — Préservation de la biodiversité et gestion durable des ressources naturelles biologiques" },
+    { "numero": "7", "titre": "NES 7 — Peuples autochtones et communautés locales traditionnelles historiquement défavorisées" },
+    { "numero": "8", "titre": "NES 8 — Patrimoine culturel" },
+    { "numero": "9", "titre": "NES 9 — Intermédiaires financiers" },
+    { "numero": "10", "titre": "NES 10 — Mobilisation des parties prenantes et information" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "1.1",
+      "intitule": "Évaluation environnementale et sociale et classification des risques",
+      "exigence": "Le projet fait l'objet d'une évaluation environnementale et sociale proportionnée à ses risques, portant sur les effets directs, indirects et cumulés, y compris ceux des installations associées, et cohérente avec la classification de risque retenue par la Banque.",
+      "preuves": [
+        "Évaluation environnementale et sociale approuvée, couvrant les installations associées et les effets cumulés",
+        "Classification de risque du projet et justification de la portée de l'évaluation au regard de cette classification"
+      ],
+      "erreurs_frequentes": [
+        "Une évaluation limitée à l'emprise des travaux, laissant hors champ les carrières, bases-vie et voies d'accès",
+        "Une évaluation conduite après le démarrage des travaux, quand les choix d'implantation ne sont plus modifiables"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "1.2",
+      "intitule": "Hiérarchie d'atténuation",
+      "exigence": "Les mesures retenues appliquent la hiérarchie d'atténuation : anticiper et éviter les risques, puis les minimiser ou les réduire, puis les atténuer, et enfin compenser les effets résiduels lorsqu'ils subsistent.",
+      "preuves": [
+        "Tableau des mesures d'atténuation faisant apparaître le rang retenu pour chaque effet significatif",
+        "Justification documentée lorsque l'évitement a été écarté"
+      ],
+      "erreurs_frequentes": [
+        "Passer directement à la compensation financière sans avoir examiné les variantes permettant d'éviter l'effet",
+        "Des mesures d'atténuation énoncées sans responsable, ni budget, ni échéance"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "1.3",
+      "intitule": "Plan d'engagement environnemental et social (PEES) et capacité organisationnelle",
+      "exigence": "L'Emprunteur met en œuvre les engagements du PEES selon le calendrier convenu, dispose d'une structure organisationnelle dotée d'un personnel qualifié en sauvegardes, et rend compte périodiquement à la Banque.",
+      "preuves": [
+        "PEES signé et tableau de suivi de ses engagements, avec les échéances tenues ou reportées",
+        "Organigramme de l'unité de gestion faisant apparaître les spécialistes environnemental et social, et leurs qualifications"
+      ],
+      "erreurs_frequentes": [
+        "Des spécialistes environnemental et social recrutés tardivement, après l'attribution des marchés de travaux",
+        "Un PEES suivi comme une liste documentaire, sans vérification de la mise en œuvre sur le terrain"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "1.4",
+      "intitule": "Suivi, rapportage et gestion des entreprises et fournisseurs",
+      "exigence": "Le projet suit la performance environnementale et sociale de ses entrepreneurs et fournisseurs, intègre les obligations correspondantes dans les documents d'appel d'offres et les contrats, et en contrôle l'exécution.",
+      "preuves": [
+        "Clauses environnementales et sociales figurant dans les dossiers d'appel d'offres et les contrats de travaux",
+        "Rapports de suivi de chantier et suites données aux non-conformités relevées"
+      ],
+      "erreurs_frequentes": [
+        "Des obligations imposées à l'entreprise sans mécanisme contractuel permettant de les sanctionner",
+        "Un plan de gestion environnementale et sociale de chantier approuvé mais jamais vérifié sur site"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "2.1",
+      "intitule": "Conditions d'emploi et de travail",
+      "exigence": "Les travailleurs du projet disposent d'une information écrite sur leurs conditions d'emploi, sont rémunérés régulièrement, et bénéficient de la liberté d'association et de la négociation collective conformément au droit national.",
+      "preuves": [
+        "Procédure de gestion de la main-d'œuvre du projet, diffusée aux entreprises",
+        "Contrats et bulletins de paie de la main-d'œuvre de chantier, y compris locale et temporaire"
+      ],
+      "erreurs_frequentes": [
+        "Une main-d'œuvre locale recrutée à la journée sans contrat écrit ni affiliation sociale",
+        "Une procédure de gestion de la main-d'œuvre rédigée pour l'unité de gestion, non répercutée aux entreprises"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "2.2",
+      "intitule": "Santé et sécurité au travail et mécanisme de gestion des plaintes des travailleurs",
+      "exigence": "Les risques professionnels sont évalués et maîtrisés, les équipements de protection fournis, les accidents enregistrés et déclarés ; un mécanisme de gestion des plaintes est accessible à l'ensemble des travailleurs du projet.",
+      "preuves": [
+        "Plan santé-sécurité de chantier, registre des accidents et des presque-accidents",
+        "Mécanisme de plaintes propre aux travailleurs, distinct de celui des communautés, et registre des cas traités"
+      ],
+      "erreurs_frequentes": [
+        "Un registre d'accidents tenu par l'entreprise et non consolidé au niveau du projet",
+        "Un mécanisme de plaintes des travailleurs confondu avec celui des communautés, ce qui décourage son usage"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "2.3",
+      "intitule": "Travail des enfants, travail forcé et chaîne d'approvisionnement",
+      "exigence": "Le projet vérifie l'absence de travail des enfants en dessous de l'âge autorisé et de travail forcé, y compris chez ses fournisseurs principaux, et agit dès qu'un cas est identifié.",
+      "preuves": [
+        "Procédure de vérification de l'âge à l'embauche et registre correspondant",
+        "Évaluation des fournisseurs principaux au regard du risque de travail des enfants ou de travail forcé"
+      ],
+      "erreurs_frequentes": [
+        "Une vérification de l'âge fondée sur la déclaration, dans un contexte où l'état civil est incomplet",
+        "Des fournisseurs de matériaux — carrières, briqueteries — jamais évalués sur ce risque"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "3.1",
+      "intitule": "Utilisation rationnelle des ressources",
+      "exigence": "Le projet met en œuvre des mesures d'utilisation efficace de l'énergie, de l'eau et des matières premières, en tenant compte de la disponibilité de ces ressources pour les usages existants des communautés.",
+      "preuves": [
+        "Estimation des consommations d'eau et d'énergie du projet et mesures d'économie retenues",
+        "Analyse de la disponibilité de la ressource en eau au regard des usages locaux existants"
+      ],
+      "erreurs_frequentes": [
+        "Un prélèvement d'eau de chantier autorisé sans évaluer son effet sur les points d'eau utilisés par les riverains",
+        "Des mesures d'efficacité énoncées mais aucune consommation réellement mesurée"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "3.2",
+      "intitule": "Prévention et gestion de la pollution, déchets et substances dangereuses",
+      "exigence": "Le projet évite ou réduit ses rejets dans l'air, l'eau et les sols, gère ses déchets selon une filière identifiée jusqu'à leur destination finale, et maîtrise l'usage et le stockage des substances dangereuses.",
+      "preuves": [
+        "Plan de gestion des déchets du projet et bordereaux de suivi jusqu'à la destination finale",
+        "Conditions de stockage des hydrocarbures et produits dangereux, et dispositifs de rétention"
+      ],
+      "erreurs_frequentes": [
+        "Des déchets de chantier remis à des opérateurs informels, sans traçabilité de leur destination",
+        "Des huiles usagées et des déchets de laboratoire ou de soins traités comme des déchets ordinaires"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.1",
+      "intitule": "Santé et sécurité des populations riveraines",
+      "exigence": "Le projet évalue et gère les risques que ses activités font peser sur les populations : circulation des engins, poussières et bruit, ouvrages, sécurité routière et exposition aux maladies transmissibles.",
+      "preuves": [
+        "Plan de gestion de la circulation et de la sécurité routière du projet",
+        "Mesures de protection des riverains aux abords des emprises : signalisation, déviations, protections physiques"
+      ],
+      "erreurs_frequentes": [
+        "Une sécurité routière traitée pour le seul personnel du projet, sans mesure pour les piétons et les écoles riveraines",
+        "L'afflux de main-d'œuvre traité comme un enjeu de recrutement, sans en évaluer les effets sanitaires et sociaux"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.2",
+      "intitule": "Personnel de sécurité et exploitation et sécurité des ouvrages",
+      "exigence": "Le recours à du personnel de sécurité est encadré par des règles de conduite et de proportionnalité, et la conception comme l'exploitation des ouvrages tiennent compte des risques pour les populations, y compris les risques naturels.",
+      "preuves": [
+        "Instructions écrites encadrant le personnel de sécurité et formation dispensée",
+        "Revue de la sécurité des ouvrages par des experts indépendants, lorsque leur défaillance présenterait un risque grave"
+      ],
+      "erreurs_frequentes": [
+        "Un service de gardiennage sous-traité sans aucune règle d'usage de la force ni formation",
+        "Des ouvrages hydrauliques conçus sans revue indépendante de sécurité, alors que leur rupture menacerait des habitations"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.1",
+      "intitule": "Évitement de la réinstallation et recensement des personnes affectées",
+      "exigence": "Le projet évite la réinstallation involontaire ou la réduit en explorant des variantes de conception. Lorsqu'elle est inévitable, un recensement établit à une date butoir la liste des personnes et des biens affectés, quel que soit le statut d'occupation.",
+      "preuves": [
+        "Analyse des variantes documentant les efforts d'évitement de la réinstallation",
+        "Recensement et date butoir publiés, incluant les occupants sans titre et les activités informelles"
+      ],
+      "erreurs_frequentes": [
+        "Un recensement limité aux détenteurs de titres fonciers, excluant occupants coutumiers et locataires",
+        "Une date butoir non annoncée publiquement, qui rend le recensement contestable"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "5.2",
+      "intitule": "Compensation au coût de remplacement et restauration des moyens de subsistance",
+      "exigence": "Les personnes affectées sont indemnisées au coût de remplacement avant tout déplacement ou perte d'accès, et bénéficient d'un appui à la restauration de leurs moyens de subsistance lorsque ceux-ci sont affectés.",
+      "preuves": [
+        "Plan d'action de réinstallation et évaluation des biens au coût de remplacement",
+        "Preuves de paiement effectuées avant la libération des emprises, et suivi de la restauration des moyens de subsistance"
+      ],
+      "erreurs_frequentes": [
+        "Une indemnisation calculée sur des barèmes administratifs anciens, très inférieurs au coût réel de remplacement",
+        "Des travaux engagés avant paiement effectif des indemnités"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.1",
+      "intitule": "Préservation de la biodiversité et habitats critiques",
+      "exigence": "Le projet identifie les habitats concernés — naturels, modifiés ou critiques — évalue ses effets sur la biodiversité et applique la hiérarchie d'atténuation, avec des exigences renforcées en habitat critique.",
+      "preuves": [
+        "Étude de la biodiversité identifiant les habitats et les espèces concernés, et leur qualification",
+        "Mesures d'atténuation et, le cas échéant, plan de gestion de la biodiversité"
+      ],
+      "erreurs_frequentes": [
+        "Une étude conduite sur une seule saison, qui manque les espèces migratrices ou saisonnières",
+        "Une compensation écologique annoncée sans site identifié, ni gestionnaire, ni financement pérenne"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.2",
+      "intitule": "Gestion durable des ressources naturelles biologiques et fournisseurs primaires",
+      "exigence": "L'exploitation des ressources naturelles vivantes se fait de manière durable, et le projet évalue le risque que ses fournisseurs primaires contribuent à la conversion d'habitats naturels.",
+      "preuves": [
+        "Évaluation des fournisseurs primaires de produits agricoles, forestiers ou halieutiques",
+        "Dispositions de gestion durable applicables aux ressources exploitées par le projet"
+      ],
+      "erreurs_frequentes": [
+        "Des approvisionnements en bois ou en granulats dont l'origine n'est pas vérifiée",
+        "Une gestion durable affirmée sans indicateur de prélèvement ni de renouvellement de la ressource"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.1",
+      "intitule": "Identification des communautés concernées et consentement préalable",
+      "exigence": "Le projet détermine si des peuples autochtones ou des communautés locales traditionnelles historiquement défavorisées sont présents ou attachés à la zone, et recueille leur consentement préalable, donné librement et en connaissance de cause, dans les cas où la norme l'exige.",
+      "preuves": [
+        "Analyse documentée de la présence de ces communautés dans la zone du projet",
+        "Processus de consultation conduit dans la langue et selon les usages de la communauté, et trace du consentement lorsqu'il est requis"
+      ],
+      "erreurs_frequentes": [
+        "Conclure à l'absence de communautés concernées sans analyse, au motif qu'aucune revendication n'a été formulée",
+        "Une consultation menée avec les seules autorités administratives, sans atteindre la communauté elle-même"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.1",
+      "intitule": "Patrimoine culturel matériel et immatériel",
+      "exigence": "Le projet identifie le patrimoine culturel susceptible d'être affecté, y compris les sites d'usage coutumier, et met en place une procédure de découverte fortuite applicable aux travaux d'excavation.",
+      "preuves": [
+        "Inventaire du patrimoine culturel dans la zone du projet, incluant les sites d'usage rituel ou funéraire",
+        "Procédure de découverte fortuite diffusée aux entreprises et connue des chefs de chantier"
+      ],
+      "erreurs_frequentes": [
+        "Un inventaire limité aux sites classés par l'administration, ignorant les lieux sacrés non répertoriés",
+        "Une procédure de découverte fortuite figurant au contrat mais inconnue des équipes de terrassement"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "9.1",
+      "intitule": "Système de gestion environnementale et sociale de l'intermédiaire financier",
+      "exigence": "Lorsque le financement transite par un intermédiaire financier, celui-ci dispose d'un système de gestion environnementale et sociale proportionné au risque de son portefeuille, appliqué à l'examen de chaque sous-projet, avec un personnel désigné et une liste d'exclusion.",
+      "preuves": [
+        "Système de gestion environnementale et sociale documenté et procédure de sélection des sous-projets",
+        "Personnel désigné, formé, et rapports de suivi du portefeuille adressés à la Banque"
+      ],
+      "erreurs_frequentes": [
+        "Un système adopté sur le papier, sans personnel formé pour instruire les dossiers",
+        "Des sous-projets classés à risque faible par défaut, sans instruction réelle"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "10.1",
+      "intitule": "Plan de mobilisation des parties prenantes et consultation",
+      "exigence": "Le projet identifie les parties prenantes, y compris les personnes défavorisées ou vulnérables, et met en œuvre un plan de mobilisation prévoyant une consultation tenue suffisamment tôt pour influencer les décisions, dans une langue et une forme accessibles.",
+      "preuves": [
+        "Plan de mobilisation des parties prenantes (PMPP) et comptes rendus des consultations tenues",
+        "Modalités spécifiques retenues pour atteindre les groupes vulnérables identifiés"
+      ],
+      "erreurs_frequentes": [
+        "Des consultations tenues après la décision, présentées comme une information des populations",
+        "Des réunions en langue officielle uniquement, dans des zones où elle n'est pas comprise de tous"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.2",
+      "intitule": "Mécanisme de gestion des plaintes",
+      "exigence": "Un mécanisme de gestion des plaintes accessible, gratuit et connu des populations reçoit et traite les préoccupations liées au projet dans des délais définis, et permet le signalement confidentiel, notamment des cas d'exploitation et d'abus sexuels.",
+      "preuves": [
+        "Mécanisme documenté, points d'entrée multiples, et registre des plaintes avec délais et suites données",
+        "Canal confidentiel pour les plaintes sensibles et procédure de traitement associée"
+      ],
+      "erreurs_frequentes": [
+        "Un registre ouvert mais aucune plainte enregistrée, ce qui signale une méconnaissance du dispositif plutôt qu'une absence de grief",
+        "Un mécanisme dont le seul point d'entrée est l'entreprise de travaux, souvent à l'origine des griefs"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "10.3",
+      "intitule": "Diffusion de l'information",
+      "exigence": "Les documents environnementaux et sociaux du projet sont publiés et rendus accessibles aux parties prenantes, sous une forme et dans une langue compréhensibles, avant les consultations qui s'y rapportent.",
+      "preuves": [
+        "Preuves de publication des documents et des lieux de mise à disposition locale",
+        "Résumés non techniques établis dans les langues d'usage de la zone"
+      ],
+      "erreurs_frequentes": [
+        "Des documents publiés sur un site internet, dans une zone sans accès réseau",
+        "Une publication postérieure à la consultation qu'elle était censée éclairer"
+      ],
+      "poids": 2
+    }
+  ]
+}

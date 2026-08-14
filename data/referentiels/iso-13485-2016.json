@@ -1,0 +1,387 @@
+{
+  "code": "ISO-13485",
+  "version": "2016",
+  "label": "ISO 13485:2016 — Dispositifs médicaux : systèmes de management de la qualité",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (numérotation et intitulés des chapitres) et une reformulation des attendus sont utilisées. Cette norme s'articule avec des exigences réglementaires qui varient selon le marché visé : le diagnostic ne se substitue pas à l'analyse réglementaire du pays de mise sur le marché. À faire relire par un praticien disposant du texte officiel avant mise en vente.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "4", "titre": "Système de management de la qualité" },
+    { "numero": "5", "titre": "Responsabilité de la direction" },
+    { "numero": "6", "titre": "Management des ressources" },
+    { "numero": "7", "titre": "Réalisation du produit" },
+    { "numero": "8", "titre": "Mesurage, analyse et amélioration" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "4.1.1",
+      "intitule": "Exigences générales et rôle réglementaire",
+      "exigence": "L'organisme documente son système de management de la qualité et précise le ou les rôles qu'il exerce au regard de la réglementation applicable — fabricant, mandataire, importateur, distributeur — car les obligations qui en découlent diffèrent.",
+      "preuves": [
+        "Document décrivant le périmètre du système et le rôle réglementaire assumé, par marché visé",
+        "Liste des exigences réglementaires applicables et de leur source"
+      ],
+      "erreurs_frequentes": [
+        "Un système calqué sur ISO 9001, sans traitement des exigences réglementaires propres au dispositif médical",
+        "Un rôle réglementaire non tranché, laissant sans titulaire des obligations comme la vigilance"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.1.6",
+      "intitule": "Validation des logiciels utilisés dans le système qualité",
+      "exigence": "Les logiciels employés dans le système qualité, la production ou la surveillance sont validés avant utilisation, proportionnellement au risque associé, et revalidés après modification.",
+      "preuves": [
+        "Dossier de validation par logiciel concerné, précisant le risque évalué et les essais réalisés",
+        "Trace de revalidation après une mise à jour"
+      ],
+      "erreurs_frequentes": [
+        "Considérer qu'un logiciel commercial largement diffusé n'a pas à être validé pour l'usage qui en est fait",
+        "Une validation initiale jamais revue malgré les mises à jour automatiques"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.2.3",
+      "intitule": "Dossier de dispositif médical",
+      "exigence": "Pour chaque type ou famille de dispositif, l'organisme constitue et tient à jour un dossier rassemblant la description du produit, les spécifications, les procédés de fabrication et de contrôle, l'installation et le service après-vente.",
+      "preuves": [
+        "Dossier constitué par type ou famille de dispositif, avec sommaire et indice de révision",
+        "Trace de mise à jour du dossier après une modification du produit ou du procédé"
+      ],
+      "erreurs_frequentes": [
+        "Des informations dispersées entre services, sans dossier constitué ni sommaire permettant de le reconstituer en audit",
+        "Un dossier figé à la mise sur le marché, non actualisé après les modifications successives"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "4.2.4",
+      "intitule": "Maîtrise des documents",
+      "exigence": "Les documents sont approuvés avant diffusion, identifiés par leur version, disponibles là où ils sont utilisés, et les versions périmées sont retirées ou identifiées comme telles.",
+      "preuves": [
+        "Liste des documents en vigueur avec leur indice et leur date d'approbation",
+        "Règle de conservation des versions périmées et durée retenue"
+      ],
+      "erreurs_frequentes": [
+        "Des documents périmés restés affichés au poste de travail",
+        "Des procédures modifiées sans nouvelle approbation ni information des utilisateurs"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "4.2.5",
+      "intitule": "Maîtrise des enregistrements",
+      "exigence": "Les enregistrements sont lisibles, protégés et conservés au moins pendant la durée de vie du dispositif définie par l'organisme, sans être inférieure à la durée exigée par la réglementation applicable.",
+      "preuves": [
+        "Règle de conservation par type d'enregistrement, avec la durée retenue et sa justification",
+        "Conditions de stockage et de sauvegarde, y compris pour les enregistrements électroniques"
+      ],
+      "erreurs_frequentes": [
+        "Une durée de conservation alignée sur les obligations comptables, plus courte que la durée de vie du dispositif",
+        "Des enregistrements numériques sans sauvegarde vérifiée ni protection contre la modification"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.1",
+      "intitule": "Engagement de la direction",
+      "exigence": "La direction s'assure que les exigences réglementaires et celles des clients sont prises en compte, fixe la politique qualité, et fournit les ressources nécessaires au système.",
+      "preuves": [
+        "Politique qualité datée et signée, diffusée au personnel",
+        "Décisions d'allocation de ressources tracées en revue de direction"
+      ],
+      "erreurs_frequentes": [
+        "Une politique qualité générique, sans mention des exigences réglementaires applicables",
+        "Des moyens accordés aux seuls sujets de production, la vigilance et la surveillance restant sans ressource"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.2",
+      "intitule": "Orientation client et exigences réglementaires",
+      "exigence": "L'organisme détermine les exigences des clients et les exigences réglementaires applicables au dispositif, et vérifie qu'elles sont satisfaites.",
+      "preuves": [
+        "Analyse des exigences applicables par marché visé, tenue à jour",
+        "Trace de veille réglementaire et des suites données à une évolution"
+      ],
+      "erreurs_frequentes": [
+        "Une veille limitée au marché d'origine, alors que le produit est exporté",
+        "Aucune analyse d'impact lorsqu'une exigence réglementaire évolue"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "5.5.2",
+      "intitule": "Représentant de la direction",
+      "exigence": "Un membre de l'encadrement est désigné, avec l'autorité nécessaire, pour veiller au fonctionnement du système qualité et rendre compte de sa performance à la direction.",
+      "preuves": [
+        "Décision écrite de désignation précisant l'autorité conférée",
+        "Comptes rendus par lesquels le représentant rend compte à la direction"
+      ],
+      "erreurs_frequentes": [
+        "Une désignation formelle sans autorité réelle pour arrêter une production ou bloquer une expédition",
+        "Un rôle cumulé avec la responsabilité de production, ce qui place son titulaire en conflit d'intérêts"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "5.6.1",
+      "intitule": "Revue de direction",
+      "exigence": "La direction revoit le système à intervalles planifiés, sur la base de données réelles : réclamations, signalements, non-conformités, audits, actions correctives et évolutions réglementaires.",
+      "preuves": [
+        "Compte rendu de revue reprenant les données d'entrée exigées et les décisions prises",
+        "Suivi des décisions de la revue précédente"
+      ],
+      "erreurs_frequentes": [
+        "Une revue annuelle qui commente des indicateurs sans décider d'aucune action",
+        "Des réclamations et signalements absents des données examinées"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.2",
+      "intitule": "Compétence du personnel",
+      "exigence": "Les compétences nécessaires par poste sont définies, la formation dispensée, et son efficacité vérifiée — en particulier pour les activités dont un défaut affecterait la qualité du dispositif.",
+      "preuves": [
+        "Fiches de poste précisant les compétences requises et dossiers individuels de formation",
+        "Trace d'habilitation pour les postes critiques, avec la méthode de vérification"
+      ],
+      "erreurs_frequentes": [
+        "Une feuille de présence tenue pour preuve d'efficacité de la formation",
+        "Des opérateurs intérimaires affectés à des postes critiques sans habilitation"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "6.3",
+      "intitule": "Infrastructures",
+      "exigence": "Les locaux, équipements et systèmes support nécessaires à la conformité du produit sont définis, entretenus selon un plan documenté, et les opérations de maintenance sont enregistrées.",
+      "preuves": [
+        "Plan de maintenance des équipements influant sur la qualité et enregistrements associés",
+        "Suivi de l'étalonnage des moyens de mesure utilisés en contrôle"
+      ],
+      "erreurs_frequentes": [
+        "Une maintenance uniquement curative sur des équipements dont la dérive n'est pas détectable en sortie",
+        "Des moyens de mesure utilisés au-delà de leur date d'étalonnage"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "6.4.2",
+      "intitule": "Maîtrise de la contamination",
+      "exigence": "Pour les dispositifs stériles ou sensibles, l'organisme planifie et maîtrise la contamination — locaux, personnel, matières — afin d'éviter toute contamination du produit ou de l'environnement de travail.",
+      "preuves": [
+        "Règles d'habillage, de flux et de nettoyage des zones concernées, et contrôles associés",
+        "Résultats des contrôles d'environnement, avec les seuils retenus"
+      ],
+      "erreurs_frequentes": [
+        "Des flux de personnel et de matières qui se croisent entre zones propres et zones communes",
+        "Des contrôles d'environnement réalisés sans seuil d'action défini à l'avance"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.1",
+      "intitule": "Gestion des risques dans la réalisation du produit",
+      "exigence": "La gestion des risques couvre l'ensemble du cycle de vie du dispositif ; les résultats de l'analyse de risque orientent les décisions de conception, de production et de surveillance, et sont conservés.",
+      "preuves": [
+        "Dossier de gestion des risques tenu à jour, relié aux décisions de conception et aux contrôles retenus",
+        "Trace de réexamen du risque après un retour du terrain"
+      ],
+      "erreurs_frequentes": [
+        "Une analyse de risque conduite une fois pour l'obtention du marquage, jamais rouverte ensuite",
+        "Des risques cotés sans que la cotation n'entraîne aucune mesure de maîtrise"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.2.1",
+      "intitule": "Détermination des exigences relatives au produit",
+      "exigence": "Les exigences applicables au dispositif sont établies avant l'engagement : usage prévu, performances, exigences réglementaires, formation de l'utilisateur et activités après livraison.",
+      "preuves": [
+        "Spécification produit énonçant l'usage prévu et les performances attendues",
+        "Revue documentée des exigences avant acceptation d'une commande ou d'un marché"
+      ],
+      "erreurs_frequentes": [
+        "Un usage prévu formulé de façon si large qu'il couvre des situations non évaluées",
+        "Des exigences de formation et de service après-vente traitées après la mise sur le marché"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "7.3.2",
+      "intitule": "Éléments d'entrée de la conception",
+      "exigence": "Les éléments d'entrée de la conception comprennent l'usage prévu, les exigences de performance et de sécurité, les exigences réglementaires et les résultats de la gestion des risques ; ils sont revus quant à leur adéquation.",
+      "preuves": [
+        "Document d'entrée de conception approuvé, traçant l'origine de chaque exigence",
+        "Revue d'adéquation des éléments d'entrée, datée"
+      ],
+      "erreurs_frequentes": [
+        "Des entrées de conception rédigées après coup pour justifier une solution déjà retenue",
+        "Des exigences formulées de façon non vérifiable, empêchant toute vérification ultérieure"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.3.7",
+      "intitule": "Validation de la conception et du développement",
+      "exigence": "La validation démontre que le dispositif répond aux besoins de l'utilisateur dans les conditions réelles d'utilisation, sur des produits représentatifs de la production, avant la mise sur le marché.",
+      "preuves": [
+        "Plan et rapport de validation précisant la représentativité des produits utilisés",
+        "Justification documentée du recours ou non à une investigation clinique"
+      ],
+      "erreurs_frequentes": [
+        "Valider sur des prototypes non représentatifs des procédés de production définitifs",
+        "Confondre vérification (le produit est conforme aux spécifications) et validation (il répond au besoin réel)"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.3.9",
+      "intitule": "Maîtrise des modifications de la conception",
+      "exigence": "Toute modification de conception est évaluée quant à son incidence sur les produits déjà distribués, sur les éléments d'entrée, sur le risque et sur le statut réglementaire, puis approuvée avant mise en œuvre.",
+      "preuves": [
+        "Fiche de modification traçant l'évaluation d'impact et l'approbation",
+        "Analyse de l'incidence réglementaire de la modification pour chaque marché concerné"
+      ],
+      "erreurs_frequentes": [
+        "Traiter comme mineure une modification de fournisseur ou de matière première",
+        "Ne pas évaluer l'incidence sur les dispositifs déjà en circulation"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.4.1",
+      "intitule": "Processus d'achat",
+      "exigence": "Les fournisseurs sont évalués et sélectionnés selon leur aptitude à satisfaire les exigences, en proportion du risque associé au produit acheté ; les critères, les résultats et les actions qui en découlent sont enregistrés.",
+      "preuves": [
+        "Critères d'évaluation et fiches d'évaluation des fournisseurs critiques",
+        "Accord qualité avec les fournisseurs de composants critiques, prévoyant l'information en cas de modification"
+      ],
+      "erreurs_frequentes": [
+        "Une évaluation fondée sur le seul prix et le respect des délais",
+        "Aucune obligation faite au fournisseur d'annoncer un changement de procédé ou de site"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.5.1",
+      "intitule": "Maîtrise de la production et de la préparation du service",
+      "exigence": "La production est réalisée dans des conditions maîtrisées : instructions disponibles, équipements adaptés, contrôles définis, et enregistrement des paramètres pour chaque lot.",
+      "preuves": [
+        "Dossier de lot renseigné : paramètres, contrôles, personnel, équipements",
+        "Instructions de travail disponibles au poste, à l'indice en vigueur"
+      ],
+      "erreurs_frequentes": [
+        "Des dossiers de lot complétés en fin de série, de mémoire",
+        "Des paramètres critiques laissés au réglage de l'opérateur, sans valeur cible ni tolérance"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.5.6",
+      "intitule": "Validation des processus de production et de service",
+      "exigence": "Les procédés dont le résultat ne peut être vérifié par un contrôle en aval — stérilisation, soudure, scellage — sont validés avant emploi, avec des critères d'acceptation définis, et revalidés périodiquement.",
+      "preuves": [
+        "Rapports de validation des procédés spéciaux, avec critères d'acceptation et périodicité de revalidation",
+        "Enregistrements de surveillance en routine des paramètres validés"
+      ],
+      "erreurs_frequentes": [
+        "Une validation initiale jamais renouvelée malgré un changement d'équipement ou de matière",
+        "Une stérilisation surveillée par un seul indicateur de passage, sans suivi des paramètres du cycle"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "7.5.9",
+      "intitule": "Traçabilité",
+      "exigence": "L'organisme définit l'étendue de la traçabilité exigée par la réglementation applicable et conserve les enregistrements permettant, à partir d'un dispositif, de remonter aux composants, aux conditions de production et aux destinataires.",
+      "preuves": [
+        "Enregistrements permettant de reconstituer la chaîne d'un lot jusqu'à ses destinataires",
+        "Essai de traçabilité réalisé et documenté, avec le temps nécessaire pour aboutir"
+      ],
+      "erreurs_frequentes": [
+        "Une traçabilité descendante qui s'arrête au distributeur, sans possibilité d'atteindre l'utilisateur pour un dispositif implantable",
+        "Des numéros de lot des composants non enregistrés au moment du montage"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.2.1",
+      "intitule": "Retour d'information",
+      "exigence": "L'organisme recueille et analyse les informations issues de la production et de l'après-production — usage réel, incidents, réclamations — et les utilise en entrée de la gestion des risques et de l'amélioration.",
+      "preuves": [
+        "Procédure de recueil du retour d'information et compilation des données recueillies",
+        "Trace de l'utilisation de ces données pour réexaminer un risque ou une spécification"
+      ],
+      "erreurs_frequentes": [
+        "Un recueil limité aux réclamations écrites, ignorant les remontées orales des techniciens et distributeurs",
+        "Des données collectées mais jamais rapprochées du dossier de gestion des risques"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.2.3",
+      "intitule": "Signalement aux autorités réglementaires",
+      "exigence": "L'organisme dispose d'une procédure de signalement aux autorités compétentes des incidents répondant aux critères de déclaration, dans les délais fixés par la réglementation de chaque marché.",
+      "preuves": [
+        "Procédure de vigilance précisant les critères, les délais et l'autorité destinataire par marché",
+        "Enregistrements des signalements effectués, ou justification documentée de non-déclaration"
+      ],
+      "erreurs_frequentes": [
+        "Une procédure écrite pour le marché d'origine seulement, alors que le dispositif est exporté",
+        "Une décision de non-déclaration prise sans analyse tracée ni validation"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.2.4",
+      "intitule": "Audit interne",
+      "exigence": "Des audits internes sont planifiés selon l'importance et le risque des processus, réalisés par des auditeurs indépendants de l'activité auditée, et leurs constats donnent lieu à des actions dont l'efficacité est vérifiée.",
+      "preuves": [
+        "Programme d'audit fondé sur le risque, et rapports d'audit des cycles écoulés",
+        "Suivi des actions issues des constats, avec vérification de leur efficacité"
+      ],
+      "erreurs_frequentes": [
+        "Un auditeur qui audite son propre secteur, faute d'effectif",
+        "Des constats clos sur la seule promesse d'une action, sans vérification ultérieure"
+      ],
+      "poids": 2
+    },
+    {
+      "chapitre": "8.3.3",
+      "intitule": "Actions relatives aux produits non conformes détectés après livraison",
+      "exigence": "Lorsqu'une non-conformité est détectée après livraison, l'organisme évalue ses effets, engage les actions appropriées, et sait conduire un avis de sécurité ou un rappel lorsque cela est nécessaire.",
+      "preuves": [
+        "Procédure de rappel et d'avis de sécurité, précisant les rôles et les délais",
+        "Exercice ou cas réel de rappel documenté, avec le taux de récupération obtenu"
+      ],
+      "erreurs_frequentes": [
+        "Une procédure de rappel jamais éprouvée, dont les coordonnées des distributeurs ne sont plus à jour",
+        "Traiter un défaut par remplacement au cas par cas, sans évaluer l'ensemble des lots concernés"
+      ],
+      "poids": 3
+    },
+    {
+      "chapitre": "8.5.2",
+      "intitule": "Action corrective",
+      "exigence": "Les causes des non-conformités sont recherchées, les actions correctives engagées sans retard indu, et leur efficacité vérifiée ; les actions sont proportionnées aux effets constatés.",
+      "preuves": [
+        "Fiches d'action corrective traçant l'analyse de cause et la vérification d'efficacité",
+        "Délai moyen de traitement et nombre d'actions rouvertes"
+      ],
+      "erreurs_frequentes": [
+        "Une cause systématiquement attribuée à l'erreur humaine, sans examen des conditions qui l'ont rendue possible",
+        "Une action déclarée efficace le jour de sa mise en œuvre, sans recul"
+      ],
+      "poids": 3
+    }
+  ]
+}
