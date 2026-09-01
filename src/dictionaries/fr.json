@@ -23,6 +23,16 @@
     "emptyDb": {
       "title": "La base de données est vide.",
       "subtitle": "Lancez le script d'ingestion pour peupler le catalogue."
+    },
+    "smartSearch": {
+      "cta": "Pas sûr de l'outil qu'il vous faut ? Décrivez votre besoin",
+      "placeholder": "Ex : je dois vérifier ma conformité RGPD avant un appel d'offre",
+      "button": "Trouver l'outil",
+      "loading": "Recherche en cours…",
+      "error": "La recherche a échoué. Réessayez.",
+      "noResults": "Aucun outil ne correspond précisément à ce besoin.",
+      "close": "Fermer",
+      "resultsIntro": "Suggestions pour vous :"
     }
   },
   "tool": {

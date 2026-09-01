@@ -89,3 +89,34 @@ export async function apiFetch<T>(
   if (response.status === 204) return undefined as T;
   return (await response.json()) as T;
 }
+
+/**
+ * Variante multipart d'`apiFetch`, pour les routes qui reçoivent un fichier
+ * (le corps ne peut alors pas être `JSON.stringify`é).
+ */
+export async function apiUpload<T>(
+  path: string,
+  file: File,
+  token: string
+): Promise<T> {
+  const formData = new FormData();
+  formData.append("file", file);
+
+  const response = await fetch(`${baseUrl()}${path}`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${token}` },
+    body: formData,
+  });
+
+  if (!response.ok) {
+    let payload: any = null;
+    try {
+      payload = await response.json();
+    } catch {
+      // Réponse non-JSON
+    }
+    throw parseError(response.status, payload);
+  }
+
+  return (await response.json()) as T;
+}

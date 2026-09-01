@@ -2,14 +2,15 @@
 
 import { useState, useMemo } from "react";
 import { ToolCard } from "./ToolCard";
+import { SmartSearch } from "./SmartSearch";
 import { ToolConfig } from "@/lib/schema/tool-schema";
-import { MagnifyingGlass, SlidersHorizontal, CaretDown } from "@phosphor-icons/react/dist/ssr";
+import { MagnifyingGlass, SlidersHorizontal, CaretDown, SealCheck } from "@phosphor-icons/react/dist/ssr";
 import { getCategoryStyle } from "@/lib/categoryStyles";
 import { motion, AnimatePresence } from "framer-motion";
 import { Locale } from "@/lib/i18n/getDictionary";
 
 interface CatalogViewProps {
-  tools: Pick<ToolConfig, "id" | "title" | "category">[];
+  tools: Pick<ToolConfig, "id" | "title" | "category" | "referentiel_code">[];
   dict: any;
   lang: Locale;
 }
@@ -17,16 +18,30 @@ interface CatalogViewProps {
 // Nombre d'outils visibles par section avant de devoir cliquer sur "Voir tout"
 const SECTION_PREVIEW_COUNT = 8;
 
+// Valeur de filtre réservée (ne peut pas collisionner avec un nom de catégorie réel) :
+// isole les outils adossés à un référentiel officiel (clauses réelles injectées à
+// l'exécution), au lieu de les laisser mélangés à leur catégorie thématique.
+const VERIFIED_FILTER = "__referentiels_verifies__";
+
 export function CatalogView({ tools, dict, lang }: CatalogViewProps) {
   const [search, setSearch] = useState("");
   const filterAllLabel = dict.catalog.filterAll;
   const [activeCategory, setActiveCategory] = useState(filterAllLabel);
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
 
+  const verifiedCount = useMemo(
+    () => tools.filter((t) => t.referentiel_code).length,
+    [tools]
+  );
+
   const categories = useMemo(() => {
     const cats = Array.from(new Set(tools.map((t) => t.category))).sort();
-    return [filterAllLabel, ...cats];
-  }, [tools, filterAllLabel]);
+    return [
+      filterAllLabel,
+      ...(verifiedCount > 0 ? [VERIFIED_FILTER] : []),
+      ...cats,
+    ];
+  }, [tools, filterAllLabel, verifiedCount]);
 
   const filteredTools = useMemo(() => {
     return tools.filter((tool) => {
@@ -34,14 +49,26 @@ export function CatalogView({ tools, dict, lang }: CatalogViewProps) {
         tool.title.toLowerCase().includes(search.toLowerCase()) ||
         tool.category.toLowerCase().includes(search.toLowerCase());
       const matchesCategory =
-        activeCategory === filterAllLabel || tool.category === activeCategory;
+        activeCategory === filterAllLabel ||
+        (activeCategory === VERIFIED_FILTER
+          ? !!tool.referentiel_code
+          : tool.category === activeCategory);
       return matchesSearch && matchesCategory;
     });
   }, [tools, search, activeCategory, filterAllLabel]);
 
   // Regroupées par catégorie (comme les sections "ORGANIZE PDF" / "CONVERT PDF" d'iLovePDF),
   // triées par nombre d'outils décroissant pour mettre en avant les catégories les plus riches.
+  // Le filtre "Référentiels vérifiés" fait exception : ces outils viennent de
+  // catégories différentes mais partagent ce qui les distingue vraiment — on les
+  // regroupe donc dans une section unique plutôt que de les re-fragmenter.
   const sections = useMemo(() => {
+    if (activeCategory === VERIFIED_FILTER) {
+      return filteredTools.length > 0
+        ? [{ category: VERIFIED_FILTER, items: filteredTools }]
+        : [];
+    }
+
     const byCategory = new Map<string, typeof filteredTools>();
     for (const tool of filteredTools) {
       const list = byCategory.get(tool.category) || [];
@@ -51,7 +78,7 @@ export function CatalogView({ tools, dict, lang }: CatalogViewProps) {
     return Array.from(byCategory.entries())
       .map(([category, items]) => ({ category, items }))
       .sort((a, b) => b.items.length - a.items.length);
-  }, [filteredTools]);
+  }, [filteredTools, activeCategory]);
 
   const resultLabel =
     filteredTools.length > 1
@@ -95,27 +122,40 @@ export function CatalogView({ tools, dict, lang }: CatalogViewProps) {
         </div>
       </div>
 
+      {/* Assistant de recherche sémantique — coûte un appel LLM, distinct du filtre instantané ci-dessus */}
+      <SmartSearch dict={dict} lang={lang} />
+
       {/* Category filter pills — rangée défilante pour ne pas noyer les sections */}
       <div className="relative -mx-4 px-4 sm:mx-0 sm:px-0">
         <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide pb-1">
           {categories.map((cat) => {
             const isActive = activeCategory === cat;
+            const isVerified = cat === VERIFIED_FILTER;
             return (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                id={`filter-${cat.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}`}
-                className={`relative shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border ${
+                id={
+                  isVerified
+                    ? "filter-referentiels-verifies"
+                    : `filter-${cat.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}`
+                }
+                className={`relative shrink-0 whitespace-nowrap flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border ${
                   isActive
-                    ? "bg-violet-600 text-white border-violet-600 shadow-md shadow-violet-200"
+                    ? isVerified
+                      ? "bg-emerald-600 text-white border-emerald-600 shadow-md shadow-emerald-200"
+                      : "bg-violet-600 text-white border-violet-600 shadow-md shadow-violet-200"
+                    : isVerified
+                    ? "bg-emerald-50 text-emerald-700 border-emerald-200 hover:border-emerald-300 hover:bg-emerald-100"
                     : "bg-white/80 text-slate-600 border-slate-200 hover:border-violet-300 hover:text-violet-700 hover:bg-violet-50"
                 }`}
               >
-                {cat}
+                {isVerified && <SealCheck className="w-3.5 h-3.5" weight="fill" />}
+                {isVerified ? `Référentiels vérifiés (${verifiedCount})` : cat}
                 {isActive && (
                   <motion.span
                     layoutId="active-pill"
-                    className="absolute inset-0 rounded-full bg-violet-600 -z-10"
+                    className={`absolute inset-0 rounded-full -z-10 ${isVerified ? "bg-emerald-600" : "bg-violet-600"}`}
                   />
                 )}
               </button>
@@ -138,7 +178,10 @@ export function CatalogView({ tools, dict, lang }: CatalogViewProps) {
             className="space-y-12"
           >
             {sections.map((section) => {
-              const style = getCategoryStyle(section.category);
+              const isVerifiedSection = section.category === VERIFIED_FILTER;
+              const style = isVerifiedSection
+                ? { from: "#059669", to: "#34d399", icon: SealCheck }
+                : getCategoryStyle(section.category);
               const SectionIcon = style.icon;
               const isExpanded = expandedCategories.has(section.category);
               const visibleItems = isExpanded
@@ -154,11 +197,18 @@ export function CatalogView({ tools, dict, lang }: CatalogViewProps) {
                       className="flex items-center justify-center w-9 h-9 rounded-xl shrink-0"
                       style={{ background: `linear-gradient(135deg, ${style.from}, ${style.to})` }}
                     >
-                      <SectionIcon className="w-4.5 h-4.5 text-white" weight="bold" />
+                      <SectionIcon className="w-4.5 h-4.5 text-white" weight="fill" />
                     </div>
-                    <h2 className="text-base font-bold text-slate-800 tracking-tight" style={{ fontFamily: "Outfit, sans-serif" }}>
-                      {section.category}
-                    </h2>
+                    <div>
+                      <h2 className="text-base font-bold text-slate-800 tracking-tight" style={{ fontFamily: "Outfit, sans-serif" }}>
+                        {isVerifiedSection ? "Outils adossés à un référentiel officiel" : section.category}
+                      </h2>
+                      {isVerifiedSection && (
+                        <p className="text-xs text-slate-500">
+                          Clauses réelles (ISO, RGPD…) injectées à l&apos;exécution — pas une analyse générique.
+                        </p>
+                      )}
+                    </div>
                     <span className="text-xs font-medium text-slate-400">
                       {section.items.length}
                     </span>

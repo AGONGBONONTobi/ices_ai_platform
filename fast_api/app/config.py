@@ -47,6 +47,12 @@ class Settings(BaseSettings):
     rate_limit_enabled: bool = True
     execute_rate_limit: str = "10/minute"
     catalog_rate_limit: str = "120/minute"
+    # Coûte deux appels LLM par recherche (routage catégorie + choix des outils) :
+    # plus strict que le catalogue, plus permissif qu'exécuter un outil.
+    search_rate_limit: str = "15/minute"
+    # Coûte un appel LLM + une lecture de fichier ; ne consomme pas le quota
+    # payant (c'est un confort de saisie, pas l'exécution facturée de l'outil).
+    extract_rate_limit: str = "10/minute"
 
     # --- Observabilité ---
     # Vide = Sentry désactivé (développement local).

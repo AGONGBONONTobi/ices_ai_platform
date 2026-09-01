@@ -23,6 +23,16 @@
     "emptyDb": {
       "title": "O banco de dados está vazio.",
       "subtitle": "Execute o script de ingestão para popular o catálogo."
+    },
+    "smartSearch": {
+      "cta": "Não sabe qual ferramenta precisa? Descreva sua necessidade",
+      "placeholder": "Ex: preciso verificar minha conformidade com o RGPD antes de uma licitação",
+      "button": "Encontrar a ferramenta",
+      "loading": "Pesquisando…",
+      "error": "A pesquisa falhou. Tente novamente.",
+      "noResults": "Nenhuma ferramenta corresponde precisamente a essa necessidade.",
+      "close": "Fechar",
+      "resultsIntro": "Sugestões para você:"
     }
   },
   "tool": {

@@ -14,7 +14,7 @@ from slowapi.middleware import SlowAPIMiddleware
 from app.config import get_settings
 from app.observability import init_sentry
 from app.rate_limit import limiter, rate_limit_handler
-from app.routers import execute, profile, stripe_routes, tools
+from app.routers import execute, profile, search, stripe_routes, tools
 
 logging.basicConfig(level=logging.INFO)
 
@@ -44,6 +44,7 @@ app.include_router(tools.router, prefix="/api")
 app.include_router(execute.router, prefix="/api")
 app.include_router(profile.router, prefix="/api")
 app.include_router(stripe_routes.router, prefix="/api")
+app.include_router(search.router, prefix="/api")
 
 
 @app.get("/api/health", tags=["health"])

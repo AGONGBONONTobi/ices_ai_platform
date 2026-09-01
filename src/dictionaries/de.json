@@ -23,6 +23,16 @@
     "emptyDb": {
       "title": "Die Datenbank ist leer.",
       "subtitle": "Führen Sie das Ingestion-Skript aus, um den Katalog zu befüllen."
+    },
+    "smartSearch": {
+      "cta": "Nicht sicher, welches Tool Sie brauchen? Beschreiben Sie Ihr Anliegen",
+      "placeholder": "Z. B.: Ich muss meine DSGVO-Konformität vor einer Ausschreibung prüfen",
+      "button": "Tool finden",
+      "loading": "Suche läuft…",
+      "error": "Die Suche ist fehlgeschlagen. Bitte erneut versuchen.",
+      "noResults": "Kein Tool passt genau zu diesem Anliegen.",
+      "close": "Schließen",
+      "resultsIntro": "Vorschläge für Sie:"
     }
   },
   "tool": {

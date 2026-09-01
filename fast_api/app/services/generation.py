@@ -32,11 +32,14 @@ def generate_structured(
     *,
     max_retries: int = MAX_RETRIES,
     model: str | None = None,
+    max_tokens: int = 2000,
 ) -> dict[str, Any]:
     """Retourne un résultat validé contre `output_schema`, ou lève `GenerationError`.
 
     `model` permet de router un outil exigeant (diagnostic normatif, document)
-    vers un modèle plus capable que celui par défaut.
+    vers un modèle plus capable que celui par défaut. `max_tokens` compte dans le
+    budget de tokens par minute du palier gratuit Groq : le réduire pour les
+    réponses courtes (ex. recherche) laisse de la marge au prompt d'entrée.
     """
     settings = get_settings()
     model = model or settings.groq_model
@@ -53,7 +56,7 @@ def generate_structured(
                 messages=messages,
                 model=model,
                 temperature=0.4,
-                max_tokens=2000,
+                max_tokens=max_tokens,
                 response_format={"type": "json_object"},
             )
             content = completion.choices[0].message.content

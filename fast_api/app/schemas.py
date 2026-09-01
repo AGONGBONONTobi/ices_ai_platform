@@ -60,6 +60,29 @@ class ToolSummary(BaseModel):
     id: str
     title: str
     category: str
+    # Présent uniquement pour les outils adossés à un référentiel officiel
+    # (cf. app/services/referentiels.py) — sert à les distinguer dans le catalogue.
+    referentiel_code: str | None = None
+
+
+class SearchRequest(BaseModel):
+    query: str = Field(min_length=1, max_length=300)
+
+
+class SearchResultItem(BaseModel):
+    id: str
+    title: str
+    category: str
+    referentiel_code: str | None = None
+    reason: str
+
+
+class SearchResponse(BaseModel):
+    results: list[SearchResultItem]
+
+
+class ExtractResponse(BaseModel):
+    values: dict[str, Any]
 
 
 class ExecuteRequest(BaseModel):

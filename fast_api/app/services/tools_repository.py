@@ -58,7 +58,11 @@ def list_published_tools() -> list[ToolSummary]:
 
     while True:
         response = (
-            _published_only(client.table("tools").select("id, title, category"))
+            _published_only(
+                client.table("tools").select(
+                    "id, title, category, referentiel_code:config->>referentiel_code"
+                )
+            )
             .order("category", desc=False)
             .order("id", desc=False)
             .range(offset, offset + PAGE_SIZE - 1)

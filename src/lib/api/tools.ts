@@ -1,8 +1,8 @@
-import { apiFetch, ApiError } from "./client";
+import { apiFetch, apiUpload, ApiError } from "./client";
 import { ToolConfig } from "@/lib/schema/tool-schema";
 import { Locale } from "@/lib/i18n/getDictionary";
 
-export type ToolSummary = Pick<ToolConfig, "id" | "title" | "category">;
+export type ToolSummary = Pick<ToolConfig, "id" | "title" | "category" | "referentiel_code">;
 
 /**
  * Catalogue complet, déjà traduit côté backend avec les traductions en cache.
@@ -42,6 +42,45 @@ export async function fetchTool(
     if (error instanceof ApiError && error.status === 404) return null;
     throw error;
   }
+}
+
+export interface SmartSearchResult {
+  id: string;
+  title: string;
+  category: string;
+  referentiel_code: string | null;
+  reason: string;
+}
+
+/**
+ * Recherche assistée par IA : décrit un besoin en langage naturel, renvoie les
+ * outils les plus pertinents (contrairement à `fetchTools`, coûte un appel LLM
+ * — pas d'appel à chaque frappe, seulement à la soumission).
+ */
+export async function searchTools(query: string): Promise<SmartSearchResult[]> {
+  const { results } = await apiFetch<{ results: SmartSearchResult[] }>("/api/search", {
+    method: "POST",
+    body: { query },
+  });
+  return results;
+}
+
+/**
+ * Pré-remplit le formulaire d'un outil à partir d'un document (PDF/DOCX/TXT).
+ * Ne renvoie que les champs identifiés dans le document ; l'utilisateur relit
+ * et corrige avant de générer, ce résultat n'est jamais soumis tel quel.
+ */
+export async function extractFormValues(
+  toolId: string,
+  file: File,
+  token: string
+): Promise<Record<string, any>> {
+  const { values } = await apiUpload<{ values: Record<string, any> }>(
+    `/api/tools/${encodeURIComponent(toolId)}/extract`,
+    file,
+    token
+  );
+  return values;
 }
 
 export interface ExecuteResult {

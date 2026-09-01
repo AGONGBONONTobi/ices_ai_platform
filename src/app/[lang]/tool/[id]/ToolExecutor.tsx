@@ -288,7 +288,7 @@ export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
           {error}
         </div>
       )}
-      <DynamicToolForm tool={tool} onSubmit={handleSubmit} isLoading={isGenerating} />
+      <DynamicToolForm tool={tool} lang={lang} onSubmit={handleSubmit} isLoading={isGenerating} />
     </div>
   );
 }

@@ -23,6 +23,16 @@
     "emptyDb": {
       "title": "The database is empty.",
       "subtitle": "Run the ingestion script to populate the catalog."
+    },
+    "smartSearch": {
+      "cta": "Not sure which tool you need? Describe what you're trying to do",
+      "placeholder": "E.g: I need to check my GDPR compliance before a tender",
+      "button": "Find the tool",
+      "loading": "Searching…",
+      "error": "Search failed. Please try again.",
+      "noResults": "No tool precisely matches this need.",
+      "close": "Close",
+      "resultsIntro": "Suggestions for you:"
     }
   },
   "tool": {

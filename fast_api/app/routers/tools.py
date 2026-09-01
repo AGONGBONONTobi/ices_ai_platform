@@ -5,12 +5,15 @@ L'accès à la table passe par `services/tools_repository`, qui applique le filt
 de publication.
 """
 
-from fastapi import APIRouter, Query, Request
+from fastapi import APIRouter, File, HTTPException, Query, Request, UploadFile, status
 
 from app.config import get_settings
+from app.deps import CurrentProfile
 from app.i18n import DEFAULT_LOCALE, normalize_locale
 from app.rate_limit import limiter
-from app.schemas import ToolConfig, ToolSummary
+from app.schemas import ExtractResponse, ToolConfig, ToolSummary
+from app.services.document_text import FileTooLarge, UnsupportedFileType, extract_text
+from app.services.extraction import ExtractionError, extract_form_values
 from app.services.tools_repository import (
     count_published_tools,
     get_published_tool,
@@ -65,3 +68,41 @@ def get_tool(request: Request, tool_id: str, lang: str = Query(DEFAULT_LOCALE)) 
     """Configuration complète d'un outil publié, traduite dans `lang` (avec cache)."""
     tool = get_published_tool(tool_id)
     return translate_tool_config(tool, normalize_locale(lang))
+
+
+@router.post("/{tool_id}/extract", response_model=ExtractResponse)
+@limiter.limit(get_settings().extract_rate_limit)
+def extract_tool_inputs(
+    request: Request,
+    tool_id: str,
+    profile: CurrentProfile,
+    file: UploadFile = File(...),
+) -> ExtractResponse:
+    """Pré-remplit le formulaire d'un outil à partir d'un document uploadé.
+
+    Authentifié (comme `/execute`) pour éviter l'abus, mais ne décompte pas le
+    quota gratuit : ce n'est qu'un confort de saisie, l'utilisateur devra encore
+    lancer l'exécution — qui, elle, est facturée.
+    """
+    del profile  # authentification uniquement
+
+    tool = get_published_tool(tool_id)
+    content = file.file.read()
+
+    try:
+        document_text = extract_text(file.filename or "", content)
+    except (UnsupportedFileType, FileTooLarge) as error:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail={"error": "INVALID_FILE", "details": str(error)},
+        ) from error
+
+    try:
+        values = extract_form_values(tool, document_text)
+    except ExtractionError as error:
+        raise HTTPException(
+            status_code=status.HTTP_502_BAD_GATEWAY,
+            detail={"error": "EXTRACTION_FAILED", "details": str(error)},
+        ) from error
+
+    return ExtractResponse(values=values)

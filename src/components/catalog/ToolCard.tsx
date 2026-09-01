@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight, SealCheck } from "@phosphor-icons/react/dist/ssr";
 import { ToolConfig } from "@/lib/schema/tool-schema";
 import { Locale } from "@/lib/i18n/getDictionary";
 import { Badge } from "@/components/ui/badge";
@@ -9,7 +9,7 @@ import { getCategoryStyle } from "@/lib/categoryStyles";
 import { motion } from "framer-motion";
 
 interface ToolCardProps {
-  tool: Pick<ToolConfig, "id" | "title" | "category">;
+  tool: Pick<ToolConfig, "id" | "title" | "category" | "referentiel_code">;
   lang: Locale;
   dict: any;
   index: number;
@@ -37,6 +37,16 @@ export function ToolCard({ tool, lang, dict, index }: ToolCardProps) {
             className="absolute -top-8 -left-8 w-24 h-24 rounded-full opacity-0 group-hover:opacity-60 transition-opacity duration-500 blur-2xl"
             style={{ background: `radial-gradient(circle, ${style.from}, transparent)` }}
           />
+
+          {/* Outil adossé à un référentiel officiel (clauses réelles injectées à l'exécution) */}
+          {tool.referentiel_code && (
+            <div
+              className="absolute top-3 right-3 flex items-center justify-center w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 shadow-sm"
+              title={`Adossé au référentiel ${tool.referentiel_code}`}
+            >
+              <SealCheck className="w-3.5 h-3.5" weight="fill" />
+            </div>
+          )}
 
           {/* Header: Icon + Category badge */}
           <div>
