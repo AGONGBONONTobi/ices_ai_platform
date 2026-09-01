@@ -24,7 +24,7 @@ import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
 import { createClient } from "@supabase/supabase-js";
-import { toolSchema } from "../src/lib/schema/tool-schema";
+import { toolSchema, ToolConfig } from "../src/lib/schema/tool-schema";
 
 dotenv.config({ path: ".env.local" });
 
@@ -41,7 +41,7 @@ const supabase = createClient(
 async function main() {
   // --- Fiches locales, validées ---
   const files = fs.readdirSync(TOOLS_DIR).filter((f) => f.endsWith(".json"));
-  const local = [];
+  const local: ToolConfig[] = [];
 
   for (const file of files) {
     const parsed = toolSchema.safeParse(
