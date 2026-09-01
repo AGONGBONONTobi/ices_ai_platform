@@ -1,0 +1,30 @@
+name: Garder Supabase actif
+
+# Le palier gratuit Supabase met un projet en pause après une semaine sans
+# activité — la seule chose qui compte comme activité est une requête réelle
+# contre la base, une simple visite du dashboard ne suffit pas. Cette requête
+# de lecture, légère et sans effet de bord, en tient lieu automatiquement.
+on:
+  schedule:
+    - cron: "0 6 * * *" # tous les jours à 6h UTC
+  workflow_dispatch: # déclenchement manuel depuis l'onglet Actions
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Requête de lecture sur la table tools
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          status=$(curl -s -o /tmp/response.json -w "%{http_code}" \
+            "$SUPABASE_URL/rest/v1/tools?select=id&limit=1" \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            -H "Authorization: Bearer $SUPABASE_ANON_KEY")
+          echo "Statut HTTP : $status"
+          cat /tmp/response.json
+          if [ "$status" -ge 400 ]; then
+            echo "::error::Supabase a répondu $status — le projet est peut-être en pause ou les secrets sont invalides."
+            exit 1
+          fi
