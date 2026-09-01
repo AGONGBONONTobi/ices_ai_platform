@@ -1,0 +1,666 @@
+{
+  "id": "auto-diagnostic-iso-30414",
+  "title": "Auto-diagnostic ISO 30414 — reporting du capital humain",
+  "category": "RH & CAPITAL HUMAIN",
+  "output_kind": "assessment",
+  "referentiel_code": "ISO-30414",
+  "referentiel_version": "2018",
+  "inputs": [
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Décrivez brièvement votre organisme",
+      "help": "Secteur, effectif, pays d'implantation, et raison de la démarche (reporting extra-financier, exigence d'un investisseur, structuration RH interne...).",
+      "placeholder": "Société de services numériques, 150 salariés, deux pays, sollicitée par un fonds d'investissement sur ses indicateurs de capital humain.",
+      "required": true
+    },
+    {
+      "name": "c1_1",
+      "type": "select",
+      "question": "1.1 — Griefs et procédures disciplinaires",
+      "help": "L'organisme recense le nombre et la nature des griefs déposés, des procédures disciplinaires engagées et de leur issue, et suit cette évolution dans le temps.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "1.1",
+      "axe": "1 — Conformité et éthique",
+      "poids": 1
+    },
+    {
+      "name": "c1_2",
+      "type": "select",
+      "question": "1.2 — Formation à la conformité et à l'éthique",
+      "help": "L'organisme mesure la proportion de collaborateurs ayant suivi une formation à l'éthique et à la conformité, par catégorie de poste.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "1.2",
+      "axe": "1 — Conformité et éthique",
+      "poids": 1
+    },
+    {
+      "name": "c2_1",
+      "type": "select",
+      "question": "2.1 — Coût total de la main-d'œuvre",
+      "help": "L'organisme calcule le coût total de la main-d'œuvre (rémunération, charges, avantages, formation) et le rapporte au chiffre d'affaires ou au budget de fonctionnement.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "2.1",
+      "axe": "2 — Coûts",
+      "poids": 1
+    },
+    {
+      "name": "c2_2",
+      "type": "select",
+      "question": "2.2 — Coût par recrutement et coûts d'externalisation",
+      "help": "L'organisme suit le coût moyen d'un recrutement et la part de la main-d'œuvre externalisée ou intérimaire dans le coût total.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "2.2",
+      "axe": "2 — Coûts",
+      "poids": 1
+    },
+    {
+      "name": "c3_1",
+      "type": "select",
+      "question": "3.1 — Représentation de la diversité dans l'effectif",
+      "help": "L'organisme mesure la répartition de son effectif selon l'âge, le genre et, lorsque la loi le permet, d'autres dimensions de diversité pertinentes.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "3.1",
+      "axe": "3 — Diversité",
+      "poids": 1
+    },
+    {
+      "name": "c3_2",
+      "type": "select",
+      "question": "3.2 — Diversité de l'encadrement supérieur",
+      "help": "L'organisme suit spécifiquement la diversité au sein du comité de direction et des postes de direction, distinctement de l'effectif général.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "3.2",
+      "axe": "3 — Diversité",
+      "poids": 1
+    },
+    {
+      "name": "c4_1",
+      "type": "select",
+      "question": "4.1 — Confiance dans le leadership",
+      "help": "L'organisme mesure, par une enquête régulière, le niveau de confiance des collaborateurs envers l'encadrement.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.1",
+      "axe": "4 — Leadership",
+      "poids": 1
+    },
+    {
+      "name": "c4_2",
+      "type": "select",
+      "question": "4.2 — Étendue de l'encadrement et développement du leadership",
+      "help": "L'organisme suit le ratio d'encadrement (nombre de collaborateurs par manager) et la part de l'encadrement ayant bénéficié d'un développement du leadership.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.2",
+      "axe": "4 — Leadership",
+      "poids": 1
+    },
+    {
+      "name": "c5_1",
+      "type": "select",
+      "question": "5.1 — Engagement des collaborateurs",
+      "help": "L'organisme mesure régulièrement l'engagement des collaborateurs par une enquête dont la méthodologie est documentée et stable dans le temps.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.1",
+      "axe": "5 — Culture organisationnelle",
+      "poids": 1
+    },
+    {
+      "name": "c5_2",
+      "type": "select",
+      "question": "5.2 — Rétention volontaire et involontaire",
+      "help": "L'organisme distingue, dans son taux de rétention, les départs volontaires des départs involontaires, et en analyse les motifs.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.2",
+      "axe": "5 — Culture organisationnelle",
+      "poids": 1
+    },
+    {
+      "name": "c6_1",
+      "type": "select",
+      "question": "6.1 — Accidents du travail et maladies professionnelles",
+      "help": "L'organisme suit le nombre et la gravité des accidents du travail et des maladies professionnelles, et le nombre de décès liés au travail.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.1",
+      "axe": "6 — Santé, sécurité et bien-être",
+      "poids": 1.5
+    },
+    {
+      "name": "c6_2",
+      "type": "select",
+      "question": "6.2 — Absentéisme lié à la santé et formation santé-sécurité",
+      "help": "L'organisme mesure le taux d'absentéisme lié à des raisons de santé et la couverture de la formation santé-sécurité au travail.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.2",
+      "axe": "6 — Santé, sécurité et bien-être",
+      "poids": 1
+    },
+    {
+      "name": "c7_1",
+      "type": "select",
+      "question": "7.1 — Valeur ajoutée par collaborateur",
+      "help": "L'organisme rapporte un indicateur de productivité de la main-d'œuvre (par exemple le résultat d'exploitation ou la valeur ajoutée par équivalent temps plein).",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.1",
+      "axe": "7 — Productivité",
+      "poids": 1
+    },
+    {
+      "name": "c8_1",
+      "type": "select",
+      "question": "8.1 — Délai et qualité de recrutement",
+      "help": "L'organisme mesure le délai moyen de recrutement et un indicateur de qualité de l'embauche (par exemple la performance ou la rétention à un an des nouvelles recrues).",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.1",
+      "axe": "8 — Recrutement, mobilité et rotation",
+      "poids": 1
+    },
+    {
+      "name": "c8_2",
+      "type": "select",
+      "question": "8.2 — Rotation et mobilité interne",
+      "help": "L'organisme suit le taux de rotation (turnover), volontaire et involontaire, ainsi que le taux de mobilité interne.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.2",
+      "axe": "8 — Recrutement, mobilité et rotation",
+      "poids": 1
+    },
+    {
+      "name": "c9_1",
+      "type": "select",
+      "question": "9.1 — Investissement en formation",
+      "help": "L'organisme mesure les dépenses de formation et le nombre d'heures de formation par collaborateur, par catégorie de poste.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.1",
+      "axe": "9 — Compétences et capacités",
+      "poids": 1
+    },
+    {
+      "name": "c9_2",
+      "type": "select",
+      "question": "9.2 — Couverture et efficacité de la formation",
+      "help": "L'organisme suit la part de l'effectif ayant suivi au moins une formation sur la période, et évalue l'effet de la formation sur la performance ou la compétence.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.2",
+      "axe": "9 — Compétences et capacités",
+      "poids": 1
+    },
+    {
+      "name": "c10_1",
+      "type": "select",
+      "question": "10.1 — Couverture des postes clés",
+      "help": "L'organisme identifie ses postes clés et suit la part d'entre eux disposant d'au moins un successeur identifié et préparé.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "10.1",
+      "axe": "10 — Plans de succession",
+      "poids": 1
+    },
+    {
+      "name": "c11_1",
+      "type": "select",
+      "question": "11.1 — Effectif total et équivalent temps plein",
+      "help": "L'organisme rapporte son effectif total, son équivalent temps plein, et la répartition entre personnel permanent, temporaire et externe.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "11.1",
+      "axe": "11 — Disponibilité de la main-d'œuvre",
+      "poids": 1
+    }
+  ],
+  "promptTemplate": "Tu es consultant en reporting RH, familier des lignes directrices ISO 30414. Cette norme ne donne lieu à aucune certification : elle encadre un exercice de reporting, interne et externe. Parle de maturité du reporting, jamais de conformité certifiable. L'organisme est décrit ainsi : {contexte}.\n\nLes clauses applicables et leur grille de maturité te sont fournies plus bas, ainsi que le positionnement déclaré pour chacune et les scores déjà calculés.\n\nProduis un rapport de pré-audit :\n- pour chaque chapitre parmi 1 (Conformité et éthique), 2 (Coûts), 3 (Diversité), 4 (Leadership), 5 (Culture organisationnelle), 6 (Santé, sécurité et bien-être), 7 (Productivité), 8 (Recrutement, mobilité et rotation), 9 (Compétences et capacités), 10 (Plans de succession), 11 (Disponibilité de la main-d'œuvre), un constat appuyé sur les clauses réellement concernées, en citant leur numéro ;\n- pour les clauses les plus faibles, indique l'écart précis par rapport à l'exigence et la preuve qui serait demandée en audit ;\n- des recommandations priorisées, chacune rattachée à un numéro de clause, actionnables et proportionnées au contexte décrit.\n\nTraite en priorité les domaines santé-sécurité (6) et rotation (8) : ce sont les indicateurs les plus consultés par les tiers, et l'absence de méthode de calcul documentée y est l'écart le plus fréquent. Rappelle que chaque indicateur doit préciser sa méthode de calcul pour être comparable dans le temps.\n\nN'invente aucune exigence absente des clauses fournies. Ne recalcule pas les scores.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          },
+          "required": [
+            "axe",
+            "score"
+          ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "score_global",
+      "axes",
+      "recommandations"
+    ]
+  }
+}

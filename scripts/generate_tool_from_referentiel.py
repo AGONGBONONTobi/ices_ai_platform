@@ -113,7 +113,10 @@ def construire(ref: dict, *, titre: str, categorie: str, contexte: dict,
         chapitre = axe_de(clause["chapitre"], titres)
         inputs.append(
             {
-                "name": "c" + clause["chapitre"].replace(".", "_"),
+                # Un identifiant de champ n'accepte ni point ni tiret : les deux se
+                # rencontrent en pratique (numérotation ISO en points, numérotation
+                # GRI en tirets, ex. "101-1").
+                "name": "c" + clause["chapitre"].replace(".", "_").replace("-", "_"),
                 "type": "select",
                 "question": f"{clause['chapitre']} — {clause['intitule']}",
                 "help": clause["exigence"],
@@ -308,6 +311,46 @@ HABILLAGE = {
             "placeholder": "Établissement de microfinance, 90 salariés, établi au Bénin, traitant des données de clients et de salariés, sollicité par un partenaire européen.",
         },
         "priorite": "Traite en priorité le registre des traitements et les durées de conservation : sans registre à jour, aucune des autres obligations ne peut être démontrée, et une conservation illimitée est l'écart le plus systématiquement relevé. Si l'organisme est établi hors de l'Union européenne, précise que l'applicabilité du RGPD dépend de l'article 3 et que la loi nationale ainsi que l'Acte additionnel de la CEDEAO s'appliquent en tout état de cause.",
+    },
+    "ISO-30414": {
+        "titre": "Auto-diagnostic ISO 30414 — reporting du capital humain",
+        "categorie": "RH & CAPITAL HUMAIN",
+        "role": "Tu es consultant en reporting RH, familier des lignes directrices ISO 30414. Cette norme ne donne lieu à aucune certification : elle encadre un exercice de reporting, interne et externe. Parle de maturité du reporting, jamais de conformité certifiable.",
+        "contexte": {
+            "help": "Secteur, effectif, pays d'implantation, et raison de la démarche (reporting extra-financier, exigence d'un investisseur, structuration RH interne...).",
+            "placeholder": "Société de services numériques, 150 salariés, deux pays, sollicitée par un fonds d'investissement sur ses indicateurs de capital humain.",
+        },
+        "priorite": "Traite en priorité les domaines santé-sécurité (6) et rotation (8) : ce sont les indicateurs les plus consultés par les tiers, et l'absence de méthode de calcul documentée y est l'écart le plus fréquent. Rappelle que chaque indicateur doit préciser sa méthode de calcul pour être comparable dans le temps.",
+    },
+    "ISO-18295-1": {
+        "titre": "Auto-diagnostic ISO 18295-1 — centre de contact client",
+        "categorie": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+        "role": "Tu es auditeur expérimenté en centres de contact client, habitué aux audits de certification ISO 18295-1.",
+        "contexte": {
+            "help": "Nature du centre (interne ou externalisé), volumétrie de contacts, canaux couverts, effectif de conseillers, et objectif visé.",
+            "placeholder": "Centre de contact externalisé pour le compte d'un assureur, 80 conseillers, canaux voix et chat, visant la certification sous 12 mois.",
+        },
+        "priorite": "Traite en priorité la continuité d'activité (5.2) et l'assurance qualité (6.1) : un plan de continuité jamais testé et une grille qualité qui ne mesure pas la résolution réelle du besoin sont les deux écarts les plus fréquemment relevés en audit.",
+    },
+    "GRI-101": {
+        "titre": "Diagnostic reporting biodiversité — GRI 101",
+        "categorie": "Labels ESG / RSE / Durabilité",
+        "role": "Tu es consultant en reporting de durabilité, familier de la norme GRI 101. Cette norme encadre un exercice de reporting et ne donne lieu à aucune certification : ton rapport évalue la maturité du reporting biodiversité, il ne vaut pas déclaration de performance environnementale.",
+        "contexte": {
+            "help": "Secteur d'activité, implantation des sites, exposition à des zones sensibles pour la biodiversité, et raison de la démarche (reporting de durabilité, exigence d'un donneur d'ordre...).",
+            "placeholder": "Producteur agro-industriel, trois sites dont un en zone de savane à proximité d'une aire protégée, préparant son premier rapport de durabilité.",
+        },
+        "priorite": "Traite en priorité l'identification des sites en zones sensibles (101-4) et les facteurs directs de perte de biodiversité (101-5) : sans cette base factuelle, aucun autre élément du reporting ne peut être documenté avec sérieux. Rappelle que la compensation ne se justifie qu'après démonstration des efforts d'évitement et de réduction.",
+    },
+    "ISO-16290": {
+        "titre": "Auto-positionnement TRL — ISO 16290",
+        "categorie": "INNOVATION & R&D",
+        "role": "Tu es ingénieur R&D expérimenté dans l'évaluation de maturité technologique selon l'échelle TRL (ISO 16290). Cette échelle positionne une technologie, elle ne certifie ni ne valide techniquement un système : ton rapport est un auto-positionnement argumenté, pas une revue de qualification indépendante.",
+        "contexte": {
+            "help": "Nature de la technologie évaluée, application visée, stade de développement perçu, et objectif de la démarche (levée de fonds, réponse à appel à projets, pilotage interne...).",
+            "placeholder": "Capteur embarqué pour petit satellite, testé en laboratoire sur banc thermique, candidat à un appel à projets spatial.",
+        },
+        "priorite": "L'échelle TRL est cumulative : un niveau ne peut être considéré atteint que si tous les niveaux inférieurs le sont réellement. Signale explicitement toute incohérence (un TRL 6 déclaré alors qu'un critère du TRL 4 ou 5 reste à 0 ou 1) plutôt que de la lisser dans le score.",
     },
 }
 

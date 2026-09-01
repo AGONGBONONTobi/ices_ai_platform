@@ -1,0 +1,235 @@
+{
+  "code": "ISO-18295-1",
+  "version": "2017",
+  "label": "ISO 18295-1:2017 — Centres de contact client : exigences pour les centres de contact client",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (les grands domaines d'exigences de la norme) et une reformulation des attendus sont utilisées. Cette norme donne lieu à une certification possible de l'organisme ; le diagnostic évalue la maturité au regard de ses exigences, il ne se substitue pas à un audit de certification. À faire relire par un praticien disposant du texte officiel avant mise en vente.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "4", "titre": "Management des ressources humaines" },
+    { "numero": "5", "titre": "Environnement opérationnel et continuité d'activité" },
+    { "numero": "6", "titre": "Assurance qualité et amélioration continue" },
+    { "numero": "7", "titre": "Expérience et satisfaction client" },
+    { "numero": "8", "titre": "Relation avec le donneur d'ordre" },
+    { "numero": "9", "titre": "Pratiques éthiques et responsables" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "4.1",
+      "intitule": "Recrutement et intégration des conseillers",
+      "exigence": "Le centre définit un processus de recrutement adapté aux compétences requises et un parcours d'intégration formalisé pour tout nouveau conseiller.",
+      "preuves": [
+        "Référentiel de compétences utilisé pour le recrutement",
+        "Programme d'intégration formalisé et taux de complétion par les nouvelles recrues"
+      ],
+      "erreurs_frequentes": [
+        "Un parcours d'intégration réduit à la seule formation aux outils, sans mise en situation supervisée",
+        "L'absence de référentiel de compétences écrit, le recrutement reposant sur la seule appréciation du recruteur"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "4.2",
+      "intitule": "Formation continue et développement de carrière",
+      "exigence": "Le centre assure une formation continue des conseillers, adaptée à l'évolution des produits, services et outils, ainsi que des perspectives de développement de carrière.",
+      "preuves": [
+        "Plan de formation continue et taux de couverture des conseillers",
+        "Dispositif de développement de carrière ou d'évolution de poste au sein du centre"
+      ],
+      "erreurs_frequentes": [
+        "Une formation continue limitée aux mises à jour produit, sans développement des compétences relationnelles",
+        "L'absence de toute perspective d'évolution visible pour les conseillers"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "4.3",
+      "intitule": "Bien-être, charge de travail et ergonomie",
+      "exigence": "Le centre surveille la charge de travail des conseillers, leur bien-être au travail, et les conditions ergonomiques des postes.",
+      "preuves": [
+        "Indicateurs de charge de travail (volume d'appels/contacts, temps de traitement, pauses)",
+        "Enquête de bien-être au travail et actions correctives associées",
+        "Évaluation ergonomique des postes de travail"
+      ],
+      "erreurs_frequentes": [
+        "Un pilotage de la charge de travail limité aux seuls objectifs de productivité, sans indicateur de bien-être",
+        "L'absence d'évaluation ergonomique pour les postes en télétravail"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "4.4",
+      "intitule": "Gouvernance et responsabilités managériales",
+      "exigence": "Le centre définit clairement les rôles et responsabilités d'encadrement, avec un taux d'encadrement adapté au volume et à la complexité des contacts traités.",
+      "preuves": [
+        "Organigramme du centre avec responsabilités associées à chaque niveau d'encadrement",
+        "Ratio conseillers/superviseur et sa justification au regard de la complexité des contacts"
+      ],
+      "erreurs_frequentes": [
+        "Un ratio d'encadrement défini sans lien avec la complexité réelle des contacts traités",
+        "Des responsabilités de supervision qui se chevauchent sans arbitrage clair"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "5.1",
+      "intitule": "Infrastructure technologique et sécurité des données",
+      "exigence": "Le centre dispose d'une infrastructure technologique adaptée au volume et à la nature des contacts, et protège les données client échangées ou stockées.",
+      "preuves": [
+        "Description de l'infrastructure technologique (téléphonie, CRM, outils multicanaux)",
+        "Politique de sécurité des données client et contrôle d'accès aux systèmes"
+      ],
+      "erreurs_frequentes": [
+        "Des accès aux données client non différenciés par rôle, tout conseiller pouvant consulter l'historique complet",
+        "L'absence de chiffrement ou de traçabilité des accès aux données sensibles"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "5.2",
+      "intitule": "Continuité d'activité et gestion de crise",
+      "exigence": "Le centre dispose d'un plan de continuité d'activité couvrant les principaux scénarios de rupture de service, et le teste périodiquement.",
+      "preuves": [
+        "Plan de continuité d'activité formalisé, couvrant panne technique, indisponibilité de site et pic d'activité imprévu",
+        "Compte-rendu du dernier test ou exercice de continuité"
+      ],
+      "erreurs_frequentes": [
+        "Un plan de continuité rédigé mais jamais testé en conditions réelles",
+        "Un plan qui ne couvre que la panne technique, sans scénario de sursollicitation ou de crise sanitaire"
+      ],
+      "poids": 1.5
+    },
+    {
+      "chapitre": "6.1",
+      "intitule": "Processus d'assurance qualité",
+      "exigence": "Le centre évalue régulièrement la qualité des interactions (appels, écrits, chat) selon une grille documentée, et restitue les résultats aux conseillers concernés.",
+      "preuves": [
+        "Grille d'évaluation qualité et fréquence des évaluations par conseiller",
+        "Traçabilité de la restitution des résultats et des plans de progrès individuels"
+      ],
+      "erreurs_frequentes": [
+        "Une grille d'évaluation qui porte uniquement sur la conformité au script, sans évaluer la résolution effective du besoin",
+        "Des évaluations réalisées mais jamais restituées au conseiller"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "6.2",
+      "intitule": "Indicateurs de performance et amélioration continue",
+      "exigence": "Le centre suit des indicateurs de performance (délai de traitement, taux de résolution au premier contact, taux d'abandon) et engage des actions d'amélioration à partir de leur analyse.",
+      "preuves": [
+        "Tableau de bord des indicateurs de performance et leur évolution",
+        "Registre des actions d'amélioration engagées à la suite de l'analyse des indicateurs"
+      ],
+      "erreurs_frequentes": [
+        "Des indicateurs suivis sans qu'aucune action d'amélioration n'en découle jamais",
+        "Un taux de résolution au premier contact non mesuré, alors qu'il conditionne la charge globale du centre"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "6.3",
+      "intitule": "Gestion des réclamations",
+      "exigence": "Le centre dispose d'un processus documenté de traitement des réclamations, avec des délais cibles et une analyse des causes récurrentes.",
+      "preuves": [
+        "Procédure de traitement des réclamations, avec délais cibles par niveau de gravité",
+        "Analyse périodique des causes récurrentes de réclamation"
+      ],
+      "erreurs_frequentes": [
+        "Un traitement des réclamations au cas par cas, sans analyse des causes récurrentes",
+        "L'absence de délai cible formalisé, laissant le traitement à l'appréciation de chaque conseiller"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "7.1",
+      "intitule": "Mesure de la satisfaction client",
+      "exigence": "Le centre mesure la satisfaction client de façon régulière (par exemple par enquête post-contact) et en analyse l'évolution.",
+      "preuves": [
+        "Méthodologie de mesure de la satisfaction et taux de réponse",
+        "Évolution de la satisfaction dans le temps et actions engagées en cas de dégradation"
+      ],
+      "erreurs_frequentes": [
+        "Une enquête de satisfaction envoyée systématiquement mais dont les résultats ne sont jamais exploités",
+        "Un taux de réponse trop faible pour être représentatif, sans que cela soit questionné"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "7.2",
+      "intitule": "Accessibilité et cohérence multicanale",
+      "exigence": "Le centre garantit un accès raisonnable aux canaux de contact proposés (délai d'attente, horaires) et une cohérence de l'information délivrée d'un canal à l'autre.",
+      "preuves": [
+        "Indicateurs d'accessibilité par canal (délai d'attente moyen, taux de décroché)",
+        "Dispositif garantissant la cohérence des réponses entre canaux (base de connaissance partagée)"
+      ],
+      "erreurs_frequentes": [
+        "Des informations différentes selon le canal utilisé, faute de base de connaissance commune",
+        "Un indicateur d'accessibilité suivi sur un seul canal alors que plusieurs sont proposés au client"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "7.3",
+      "intitule": "Accessibilité aux publics vulnérables et multilinguisme",
+      "exigence": "Le centre adapte son service aux besoins spécifiques de certains clients (langue, situation de handicap, illectronisme) lorsque sa clientèle le justifie.",
+      "preuves": [
+        "Langues de service proposées et adéquation avec la clientèle desservie",
+        "Dispositif d'adaptation pour les clients en situation de handicap ou peu à l'aise avec le numérique"
+      ],
+      "erreurs_frequentes": [
+        "Une offre multilingue qui ne couvre pas les langues réellement parlées par la clientèle du centre",
+        "L'absence de toute alternative pour un client ne pouvant pas utiliser le canal principal proposé"
+      ],
+      "poids": 0.5
+    },
+    {
+      "chapitre": "8.1",
+      "intitule": "Clarté des engagements contractuels de service",
+      "exigence": "Lorsque le centre opère pour le compte d'un donneur d'ordre, les niveaux de service attendus (SLA) sont formalisés contractuellement et suivis conjointement.",
+      "preuves": [
+        "Contrat ou accord de niveau de service précisant les indicateurs, cibles et pénalités éventuelles",
+        "Compte-rendu de suivi conjoint périodique avec le donneur d'ordre"
+      ],
+      "erreurs_frequentes": [
+        "Des indicateurs de service suivis en interne mais jamais partagés formellement avec le donneur d'ordre",
+        "Un accord de niveau de service qui ne prévoit aucune revue périodique"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "9.1",
+      "intitule": "Pratiques commerciales responsables",
+      "exigence": "Le centre s'assure que les pratiques de vente ou de recouvrement de ses conseillers respectent les droits du client et évitent toute pratique trompeuse ou agressive.",
+      "preuves": [
+        "Charte ou consignes écrites encadrant les pratiques de vente et de recouvrement",
+        "Contrôle qualité incluant une vérification du respect de ces consignes"
+      ],
+      "erreurs_frequentes": [
+        "Des objectifs commerciaux fixés aux conseillers sans consigne écrite encadrant les pratiques acceptables",
+        "L'absence de contrôle qualité spécifique sur le respect des droits du client lors d'un recouvrement"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "9.2",
+      "intitule": "Protection des données et prévention de la fraude",
+      "exigence": "Le centre encadre l'accès des conseillers aux moyens de paiement et données sensibles du client, et forme spécifiquement à la détection des tentatives de fraude.",
+      "preuves": [
+        "Procédure encadrant la manipulation des données de paiement lors d'un contact",
+        "Programme de formation à la détection des tentatives de fraude ou d'usurpation d'identité"
+      ],
+      "erreurs_frequentes": [
+        "Un conseiller pouvant consulter ou noter des données de paiement complètes sans nécessité opérationnelle",
+        "L'absence de procédure de vérification d'identité renforcée avant une opération sensible"
+      ],
+      "poids": 1
+    }
+  ]
+}

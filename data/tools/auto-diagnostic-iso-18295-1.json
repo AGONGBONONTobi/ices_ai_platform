@@ -1,0 +1,538 @@
+{
+  "id": "auto-diagnostic-iso-18295-1",
+  "title": "Auto-diagnostic ISO 18295-1 — centre de contact client",
+  "category": "QUALITÉ & EXCELLENCE OPÉRATIONNELLE",
+  "output_kind": "assessment",
+  "referentiel_code": "ISO-18295-1",
+  "referentiel_version": "2017",
+  "inputs": [
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Décrivez brièvement votre organisme",
+      "help": "Nature du centre (interne ou externalisé), volumétrie de contacts, canaux couverts, effectif de conseillers, et objectif visé.",
+      "placeholder": "Centre de contact externalisé pour le compte d'un assureur, 80 conseillers, canaux voix et chat, visant la certification sous 12 mois.",
+      "required": true
+    },
+    {
+      "name": "c4_1",
+      "type": "select",
+      "question": "4.1 — Recrutement et intégration des conseillers",
+      "help": "Le centre définit un processus de recrutement adapté aux compétences requises et un parcours d'intégration formalisé pour tout nouveau conseiller.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.1",
+      "axe": "4 — Management des ressources humaines",
+      "poids": 1
+    },
+    {
+      "name": "c4_2",
+      "type": "select",
+      "question": "4.2 — Formation continue et développement de carrière",
+      "help": "Le centre assure une formation continue des conseillers, adaptée à l'évolution des produits, services et outils, ainsi que des perspectives de développement de carrière.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.2",
+      "axe": "4 — Management des ressources humaines",
+      "poids": 1
+    },
+    {
+      "name": "c4_3",
+      "type": "select",
+      "question": "4.3 — Bien-être, charge de travail et ergonomie",
+      "help": "Le centre surveille la charge de travail des conseillers, leur bien-être au travail, et les conditions ergonomiques des postes.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.3",
+      "axe": "4 — Management des ressources humaines",
+      "poids": 1
+    },
+    {
+      "name": "c4_4",
+      "type": "select",
+      "question": "4.4 — Gouvernance et responsabilités managériales",
+      "help": "Le centre définit clairement les rôles et responsabilités d'encadrement, avec un taux d'encadrement adapté au volume et à la complexité des contacts traités.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "4.4",
+      "axe": "4 — Management des ressources humaines",
+      "poids": 1
+    },
+    {
+      "name": "c5_1",
+      "type": "select",
+      "question": "5.1 — Infrastructure technologique et sécurité des données",
+      "help": "Le centre dispose d'une infrastructure technologique adaptée au volume et à la nature des contacts, et protège les données client échangées ou stockées.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.1",
+      "axe": "5 — Environnement opérationnel et continuité d'activité",
+      "poids": 1
+    },
+    {
+      "name": "c5_2",
+      "type": "select",
+      "question": "5.2 — Continuité d'activité et gestion de crise",
+      "help": "Le centre dispose d'un plan de continuité d'activité couvrant les principaux scénarios de rupture de service, et le teste périodiquement.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "5.2",
+      "axe": "5 — Environnement opérationnel et continuité d'activité",
+      "poids": 1.5
+    },
+    {
+      "name": "c6_1",
+      "type": "select",
+      "question": "6.1 — Processus d'assurance qualité",
+      "help": "Le centre évalue régulièrement la qualité des interactions (appels, écrits, chat) selon une grille documentée, et restitue les résultats aux conseillers concernés.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.1",
+      "axe": "6 — Assurance qualité et amélioration continue",
+      "poids": 1
+    },
+    {
+      "name": "c6_2",
+      "type": "select",
+      "question": "6.2 — Indicateurs de performance et amélioration continue",
+      "help": "Le centre suit des indicateurs de performance (délai de traitement, taux de résolution au premier contact, taux d'abandon) et engage des actions d'amélioration à partir de leur analyse.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.2",
+      "axe": "6 — Assurance qualité et amélioration continue",
+      "poids": 1
+    },
+    {
+      "name": "c6_3",
+      "type": "select",
+      "question": "6.3 — Gestion des réclamations",
+      "help": "Le centre dispose d'un processus documenté de traitement des réclamations, avec des délais cibles et une analyse des causes récurrentes.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "6.3",
+      "axe": "6 — Assurance qualité et amélioration continue",
+      "poids": 1
+    },
+    {
+      "name": "c7_1",
+      "type": "select",
+      "question": "7.1 — Mesure de la satisfaction client",
+      "help": "Le centre mesure la satisfaction client de façon régulière (par exemple par enquête post-contact) et en analyse l'évolution.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.1",
+      "axe": "7 — Expérience et satisfaction client",
+      "poids": 1
+    },
+    {
+      "name": "c7_2",
+      "type": "select",
+      "question": "7.2 — Accessibilité et cohérence multicanale",
+      "help": "Le centre garantit un accès raisonnable aux canaux de contact proposés (délai d'attente, horaires) et une cohérence de l'information délivrée d'un canal à l'autre.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.2",
+      "axe": "7 — Expérience et satisfaction client",
+      "poids": 1
+    },
+    {
+      "name": "c7_3",
+      "type": "select",
+      "question": "7.3 — Accessibilité aux publics vulnérables et multilinguisme",
+      "help": "Le centre adapte son service aux besoins spécifiques de certains clients (langue, situation de handicap, illectronisme) lorsque sa clientèle le justifie.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "7.3",
+      "axe": "7 — Expérience et satisfaction client",
+      "poids": 0.5
+    },
+    {
+      "name": "c8_1",
+      "type": "select",
+      "question": "8.1 — Clarté des engagements contractuels de service",
+      "help": "Lorsque le centre opère pour le compte d'un donneur d'ordre, les niveaux de service attendus (SLA) sont formalisés contractuellement et suivis conjointement.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "8.1",
+      "axe": "8 — Relation avec le donneur d'ordre",
+      "poids": 1
+    },
+    {
+      "name": "c9_1",
+      "type": "select",
+      "question": "9.1 — Pratiques commerciales responsables",
+      "help": "Le centre s'assure que les pratiques de vente ou de recouvrement de ses conseillers respectent les droits du client et évitent toute pratique trompeuse ou agressive.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.1",
+      "axe": "9 — Pratiques éthiques et responsables",
+      "poids": 1
+    },
+    {
+      "name": "c9_2",
+      "type": "select",
+      "question": "9.2 — Protection des données et prévention de la fraude",
+      "help": "Le centre encadre l'accès des conseillers aux moyens de paiement et données sensibles du client, et forme spécifiquement à la détection des tentatives de fraude.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "9.2",
+      "axe": "9 — Pratiques éthiques et responsables",
+      "poids": 1
+    }
+  ],
+  "promptTemplate": "Tu es auditeur expérimenté en centres de contact client, habitué aux audits de certification ISO 18295-1. L'organisme est décrit ainsi : {contexte}.\n\nLes clauses applicables et leur grille de maturité te sont fournies plus bas, ainsi que le positionnement déclaré pour chacune et les scores déjà calculés.\n\nProduis un rapport de pré-audit :\n- pour chaque chapitre parmi 4 (Management des ressources humaines), 5 (Environnement opérationnel et continuité d'activité), 6 (Assurance qualité et amélioration continue), 7 (Expérience et satisfaction client), 8 (Relation avec le donneur d'ordre), 9 (Pratiques éthiques et responsables), un constat appuyé sur les clauses réellement concernées, en citant leur numéro ;\n- pour les clauses les plus faibles, indique l'écart précis par rapport à l'exigence et la preuve qui serait demandée en audit ;\n- des recommandations priorisées, chacune rattachée à un numéro de clause, actionnables et proportionnées au contexte décrit.\n\nTraite en priorité la continuité d'activité (5.2) et l'assurance qualité (6.1) : un plan de continuité jamais testé et une grille qualité qui ne mesure pas la résolution réelle du besoin sont les deux écarts les plus fréquemment relevés en audit.\n\nN'invente aucune exigence absente des clauses fournies. Ne recalcule pas les scores.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          },
+          "required": [
+            "axe",
+            "score"
+          ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "score_global",
+      "axes",
+      "recommandations"
+    ]
+  }
+}

@@ -1,0 +1,538 @@
+{
+  "id": "auto-diagnostic-gri-101",
+  "title": "Diagnostic reporting biodiversité — GRI 101",
+  "category": "Labels ESG / RSE / Durabilité",
+  "output_kind": "assessment",
+  "referentiel_code": "GRI-101",
+  "referentiel_version": "2024",
+  "inputs": [
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Décrivez brièvement votre organisme",
+      "help": "Secteur d'activité, implantation des sites, exposition à des zones sensibles pour la biodiversité, et raison de la démarche (reporting de durabilité, exigence d'un donneur d'ordre...).",
+      "placeholder": "Producteur agro-industriel, trois sites dont un en zone de savane à proximité d'une aire protégée, préparant son premier rapport de durabilité.",
+      "required": true
+    },
+    {
+      "name": "c101_1_1",
+      "type": "select",
+      "question": "101-1.1 — Engagement politique formalisé",
+      "help": "L'organisme dispose d'une politique formalisée d'engagement à enrayer et inverser la perte de biodiversité, couvrant ses propres activités.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "101-1.1",
+      "axe": "101-1 — Politiques pour enrayer et inverser la perte de biodiversité",
+      "poids": 1
+    },
+    {
+      "name": "c101_1_2",
+      "type": "select",
+      "question": "101-1.2 — Couverture de la chaîne de valeur",
+      "help": "L'organisme précise si son engagement biodiversité s'étend à sa chaîne d'approvisionnement et à ses autres relations d'affaires, au-delà de ses opérations directes.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "101-1.2",
+      "axe": "101-1 — Politiques pour enrayer et inverser la perte de biodiversité",
+      "poids": 1
+    },
+    {
+      "name": "c101_1_3",
+      "type": "select",
+      "question": "101-1.3 — Objectifs chiffrés et échéancés",
+      "help": "L'organisme fixe des objectifs chiffrés et datés de réduction de son impact sur la biodiversité, alignés autant que possible avec le Cadre mondial de la biodiversité de Kunming-Montréal.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "101-1.3",
+      "axe": "101-1 — Politiques pour enrayer et inverser la perte de biodiversité",
+      "poids": 1
+    },
+    {
+      "name": "c101_2_1",
+      "type": "select",
+      "question": "101-2.1 — Hiérarchie d'atténuation",
+      "help": "L'organisme applique et documente une hiérarchie d'atténuation (éviter, réduire, restaurer, compenser) pour ses impacts significatifs sur la biodiversité.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "101-2.1",
+      "axe": "101-2 — Gestion des impacts sur la biodiversité",
+      "poids": 1.5
+    },
+    {
+      "name": "c101_2_2",
+      "type": "select",
+      "question": "101-2.2 — Intégration dans les processus de décision",
+      "help": "L'organisme intègre l'évaluation des impacts sur la biodiversité dans ses processus de décision (nouveaux projets, achats, implantations).",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "101-2.2",
+      "axe": "101-2 — Gestion des impacts sur la biodiversité",
+      "poids": 1
+    },
+    {
+      "name": "c101_2_3",
+      "type": "select",
+      "question": "101-2.3 — Consultation des parties prenantes locales",
+      "help": "L'organisme consulte les communautés locales et les parties prenantes concernées par ses impacts sur la biodiversité, et documente la prise en compte de leurs préoccupations.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "101-2.3",
+      "axe": "101-2 — Gestion des impacts sur la biodiversité",
+      "poids": 1
+    },
+    {
+      "name": "c101_3_1",
+      "type": "select",
+      "question": "101-3.1 — Accès aux ressources génétiques et partage des avantages",
+      "help": "Lorsque l'organisme utilise des ressources génétiques ou des savoirs traditionnels associés, il documente le respect des règles d'accès et de partage des avantages applicables.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "101-3.1",
+      "axe": "101-3 — Accès aux ressources génétiques et partage des avantages",
+      "poids": 0.5
+    },
+    {
+      "name": "c101_3_2",
+      "type": "select",
+      "question": "101-3.2 — Consentement préalable donné en connaissance de cause",
+      "help": "L'organisme documente l'obtention du consentement préalable, libre et éclairé des communautés autochtones ou locales détentrices des ressources génétiques ou des savoirs traditionnels concernés.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "101-3.2",
+      "axe": "101-3 — Accès aux ressources génétiques et partage des avantages",
+      "poids": 0.5
+    },
+    {
+      "name": "c101_4_1",
+      "type": "select",
+      "question": "101-4.1 — Sites en zones sensibles pour la biodiversité",
+      "help": "L'organisme recense ses sites situés dans ou à proximité d'aires protégées ou de zones clés pour la biodiversité, et en précise la surface et la nature des activités.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "101-4.1",
+      "axe": "101-4 — Sites présentant des impacts sur la biodiversité",
+      "poids": 1
+    },
+    {
+      "name": "c101_4_2",
+      "type": "select",
+      "question": "101-4.2 — Évolution de la superficie exploitée dans le temps",
+      "help": "L'organisme suit l'évolution de la superficie qu'il exploite ou occupe sur chaque site sensible, d'une période de reporting à l'autre.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "101-4.2",
+      "axe": "101-4 — Sites présentant des impacts sur la biodiversité",
+      "poids": 1
+    },
+    {
+      "name": "c101_5_1",
+      "type": "select",
+      "question": "101-5.1 — Facteurs directs de perte de biodiversité",
+      "help": "L'organisme identifie, pour chaque site significatif, lesquels des cinq facteurs directs reconnus (changement d'usage des sols/mers, surexploitation, changement climatique, pollution, espèces exotiques envahissantes) sont associés à ses activités.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "101-5.1",
+      "axe": "101-5 — Facteurs directs de perte de biodiversité",
+      "poids": 1.5
+    },
+    {
+      "name": "c101_6_1",
+      "type": "select",
+      "question": "101-6.1 — Espèces menacées affectées",
+      "help": "L'organisme identifie les espèces figurant sur une liste de conservation reconnue (Liste rouge de l'UICN ou liste nationale équivalente) affectées par ses activités.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "101-6.1",
+      "axe": "101-6 — Espèces affectées",
+      "poids": 1
+    },
+    {
+      "name": "c101_6_2",
+      "type": "select",
+      "question": "101-6.2 — Mesures de conservation pour les espèces affectées",
+      "help": "L'organisme décrit les mesures spécifiques prises pour protéger les espèces menacées identifiées, au-delà des mesures générales d'atténuation.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "101-6.2",
+      "axe": "101-6 — Espèces affectées",
+      "poids": 1
+    },
+    {
+      "name": "c101_7_1",
+      "type": "select",
+      "question": "101-7.1 — Écosystèmes affectés et étendue de l'impact",
+      "help": "L'organisme décrit les types d'écosystèmes affectés par ses activités et quantifie, lorsque c'est possible, l'étendue et l'état de l'impact (surface convertie, dégradée ou restaurée).",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "101-7.1",
+      "axe": "101-7 — Écosystèmes affectés et étendue des impacts",
+      "poids": 1
+    },
+    {
+      "name": "c101_7_2",
+      "type": "select",
+      "question": "101-7.2 — Services écosystémiques affectés",
+      "help": "L'organisme identifie les services écosystémiques (approvisionnement, régulation, culturels) dont dépendent ses activités ou celles des communautés voisines, et l'effet de ses activités sur leur disponibilité.",
+      "options": [
+        {
+          "label": "0 · Inexistant — rien n'est en place sur ce point.",
+          "score": 0.0
+        },
+        {
+          "label": "1 · Informel — cela se fait en pratique, sans règle écrite ni trace.",
+          "score": 1.0
+        },
+        {
+          "label": "2 · Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+          "score": 2.0
+        },
+        {
+          "label": "3 · Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+          "score": 3.0
+        },
+        {
+          "label": "4 · Optimisé — le dispositif est revu, comparé et amélioré sur la base de données.",
+          "score": 4.0
+        }
+      ],
+      "required": true,
+      "chapitre": "101-7.2",
+      "axe": "101-7 — Écosystèmes affectés et étendue des impacts",
+      "poids": 1
+    }
+  ],
+  "promptTemplate": "Tu es consultant en reporting de durabilité, familier de la norme GRI 101. Cette norme encadre un exercice de reporting et ne donne lieu à aucune certification : ton rapport évalue la maturité du reporting biodiversité, il ne vaut pas déclaration de performance environnementale. L'organisme est décrit ainsi : {contexte}.\n\nLes clauses applicables et leur grille de maturité te sont fournies plus bas, ainsi que le positionnement déclaré pour chacune et les scores déjà calculés.\n\nProduis un rapport de pré-audit :\n- pour chaque chapitre parmi 101-1 (Politiques pour enrayer et inverser la perte de biodiversité), 101-2 (Gestion des impacts sur la biodiversité), 101-3 (Accès aux ressources génétiques et partage des avantages), 101-4 (Sites présentant des impacts sur la biodiversité), 101-5 (Facteurs directs de perte de biodiversité), 101-6 (Espèces affectées), 101-7 (Écosystèmes affectés et étendue des impacts), un constat appuyé sur les clauses réellement concernées, en citant leur numéro ;\n- pour les clauses les plus faibles, indique l'écart précis par rapport à l'exigence et la preuve qui serait demandée en audit ;\n- des recommandations priorisées, chacune rattachée à un numéro de clause, actionnables et proportionnées au contexte décrit.\n\nTraite en priorité l'identification des sites en zones sensibles (101-4) et les facteurs directs de perte de biodiversité (101-5) : sans cette base factuelle, aucun autre élément du reporting ne peut être documenté avec sérieux. Rappelle que la compensation ne se justifie qu'après démonstration des efforts d'évitement et de réduction.\n\nN'invente aucune exigence absente des clauses fournies. Ne recalcule pas les scores.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
+      },
+      "axes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "axe": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
+            }
+          },
+          "required": [
+            "axe",
+            "score"
+          ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "score_global",
+      "axes",
+      "recommandations"
+    ]
+  }
+}

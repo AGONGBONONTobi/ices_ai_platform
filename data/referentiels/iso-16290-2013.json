@@ -1,0 +1,222 @@
+{
+  "code": "ISO-16290",
+  "version": "2013",
+  "label": "ISO 16290:2013 — Systèmes spatiaux : définition des niveaux de maturité technologique (TRL) et critères d'évaluation",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme est protégé par le droit d'auteur et n'est jamais reproduit ici : seule l'échelle publique des neuf niveaux de maturité technologique (TRL), largement diffusée par l'ESA, la NASA et l'ISO, est reformulée. Cette norme n'est pas un référentiel de conformité mais une échelle de positionnement : le diagnostic situe une technologie sur l'échelle TRL, il ne vaut ni certification ni validation technique indépendante. À faire relire par un praticien disposant du texte officiel avant mise en vente.",
+  "echelle": {
+    "0": "Non atteint — le critère de ce niveau n'est pas satisfait.",
+    "1": "Partiellement engagé — des éléments existent mais restent incomplets ou non documentés.",
+    "2": "En grande partie satisfait — l'essentiel est fait, une vérification reste à finaliser.",
+    "3": "Satisfait — le critère est démontré et peut être justifié en revue.",
+    "4": "Satisfait et documenté au niveau attendu pour un passage de revue formel."
+  },
+  "chapitres": [
+    { "numero": "1", "titre": "Recherche fondamentale (TRL 1 à 3)" },
+    { "numero": "2", "titre": "Développement technologique (TRL 4 à 6)" },
+    { "numero": "3", "titre": "Démonstration et qualification système (TRL 7 à 9)" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "1.1",
+      "intitule": "TRL 1 — Principes de base observés",
+      "exigence": "Les principes scientifiques et physiques de base sous-jacents à la technologie ont été observés et formulés dans une publication ou un rapport interne.",
+      "preuves": [
+        "Publication scientifique ou note technique décrivant les principes observés",
+        "Bibliographie ou état de l'art justifiant la nouveauté ou l'intérêt du principe"
+      ],
+      "erreurs_frequentes": [
+        "Une idée non formalisée par écrit, présentée directement comme un concept applicatif (TRL 2)"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "1.2",
+      "intitule": "TRL 2 — Concept technologique formulé",
+      "exigence": "Une application concrète du principe de base a été formulée, avec une description au moins qualitative de son fonctionnement attendu.",
+      "preuves": [
+        "Note de concept décrivant l'application envisagée et son principe de fonctionnement",
+        "Identification des hypothèses restant à valider expérimentalement"
+      ],
+      "erreurs_frequentes": [
+        "Un concept décrit sans qu'aucune hypothèse critique à valider ne soit identifiée"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "1.3",
+      "intitule": "TRL 3 — Preuve de concept analytique et expérimentale",
+      "exigence": "La fonction ou la caractéristique critique du concept a été validée analytiquement et expérimentalement, à petite échelle et en laboratoire.",
+      "preuves": [
+        "Résultats d'essais de laboratoire sur la fonction critique isolée",
+        "Modèle analytique ou simulation corroborant les résultats expérimentaux"
+      ],
+      "erreurs_frequentes": [
+        "Une validation purement analytique ou purement expérimentale, sans la seconde forme de preuve attendue à ce niveau",
+        "Un essai réalisé sur un composant trop éloigné de la fonction critique réellement visée"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "1.4",
+      "intitule": "Hypothèses critiques restant à lever",
+      "exigence": "Les hypothèses et incertitudes critiques qui conditionnent le passage aux niveaux suivants sont explicitement recensées, plutôt que découvertes au fil de l'avancement.",
+      "preuves": [
+        "Liste des hypothèses critiques identifiées, avec pour chacune le moyen de levée envisagé",
+        "Mise à jour de cette liste à chaque changement de niveau"
+      ],
+      "erreurs_frequentes": [
+        "Une liste d'hypothèses établie une fois puis jamais mise à jour à mesure que le projet avance",
+        "Des hypothèses critiques identifiées seulement a posteriori, après un échec d'essai"
+      ],
+      "poids": 0.5
+    },
+    {
+      "chapitre": "1.5",
+      "intitule": "Antériorité et état de l'art",
+      "exigence": "L'état de l'art existant est documenté, de façon à situer la nouveauté réelle du principe ou du concept par rapport aux solutions déjà éprouvées.",
+      "preuves": [
+        "Revue de l'état de l'art ou de la littérature couvrant les solutions existantes comparables",
+        "Argumentaire de la nouveauté ou de l'avantage revendiqué par rapport à l'existant"
+      ],
+      "erreurs_frequentes": [
+        "Une revue de l'état de l'art absente ou limitée à des sources internes à l'équipe projet"
+      ],
+      "poids": 0.5
+    },
+    {
+      "chapitre": "2.1",
+      "intitule": "TRL 4 — Validation en environnement de laboratoire",
+      "exigence": "Le composant ou l'assemblage de base (breadboard) a été validé en environnement de laboratoire, dans des conditions représentatives mais non opérationnelles.",
+      "preuves": [
+        "Rapport d'essais du breadboard en environnement de laboratoire",
+        "Écart documenté entre les conditions de laboratoire et les conditions opérationnelles visées"
+      ],
+      "erreurs_frequentes": [
+        "Un essai en laboratoire présenté comme représentatif de l'environnement opérationnel sans en démontrer les écarts"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "2.2",
+      "intitule": "TRL 5 — Validation en environnement représentatif",
+      "exigence": "Le composant ou l'assemblage a été validé dans un environnement représentatif des conditions opérationnelles réelles (thermique, vide, vibrations selon le cas).",
+      "preuves": [
+        "Rapport d'essais en environnement représentatif, avec les paramètres d'essai comparés aux conditions opérationnelles cibles",
+        "Liste des écarts restants entre l'environnement d'essai et l'environnement opérationnel final"
+      ],
+      "erreurs_frequentes": [
+        "Un environnement d'essai qualifié de \"représentatif\" sans comparaison chiffrée aux conditions opérationnelles réelles"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "2.3",
+      "intitule": "TRL 6 — Démonstration en environnement pertinent",
+      "exigence": "Un modèle ou prototype représentatif du système ou sous-système a été démontré en environnement pertinent, au sol ou dans l'espace.",
+      "preuves": [
+        "Rapport de démonstration du modèle/prototype en environnement pertinent",
+        "Définition du niveau de représentativité du modèle par rapport au système final"
+      ],
+      "erreurs_frequentes": [
+        "Un prototype démontré en environnement pertinent mais non représentatif de l'échelle ou de l'intégration du système final"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "2.4",
+      "intitule": "Chemin de qualification restant vers le vol",
+      "exigence": "Le chemin technique restant pour atteindre la qualification de vol (essais à mener, jalons, ressources) est identifié et planifié à ce stade.",
+      "preuves": [
+        "Plan de développement identifiant les essais et jalons restants jusqu'à la qualification de vol",
+        "Ressources (bancs d'essai, compétences, budget) associées à ce plan"
+      ],
+      "erreurs_frequentes": [
+        "Un TRL 6 revendiqué sans qu'aucun plan concret ne décrive le chemin restant vers le TRL 8-9",
+        "Un plan de qualification qui ignore un besoin d'essai déjà identifié comme critique au niveau précédent"
+      ],
+      "poids": 0.5
+    },
+    {
+      "chapitre": "2.5",
+      "intitule": "Risques de changement d'échelle",
+      "exigence": "Les risques spécifiquement liés au changement d'échelle entre le modèle testé et le système final (intégration, fabrication en série, environnement complet) sont analysés.",
+      "preuves": [
+        "Analyse des risques de changement d'échelle entre le modèle/prototype et le système final",
+        "Actions de mitigation associées aux risques identifiés comme majeurs"
+      ],
+      "erreurs_frequentes": [
+        "Une validation à petite échelle extrapolée au système complet sans analyse du risque de changement d'échelle"
+      ],
+      "poids": 0.5
+    },
+    {
+      "chapitre": "3.1",
+      "intitule": "TRL 7 — Démonstration en environnement spatial",
+      "exigence": "Un prototype du système a été démontré en environnement spatial réel (vol d'essai ou mission de démonstration).",
+      "preuves": [
+        "Rapport de mission ou de vol de démonstration en environnement spatial",
+        "Analyse des écarts entre le comportement observé en vol et les prévisions au sol"
+      ],
+      "erreurs_frequentes": [
+        "Une démonstration en environnement spatial simulé au sol présentée comme équivalente à un vol réel"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "3.2",
+      "intitule": "TRL 8 — Système qualifié par le vol",
+      "exigence": "Le système réel a été complété et qualifié par des essais et démonstrations, au sol ou en vol, dans sa configuration de vol définitive.",
+      "preuves": [
+        "Dossier de qualification du système dans sa configuration de vol finale",
+        "Rapport des essais de qualification (environnementaux, fonctionnels) couvrant l'ensemble du domaine de vol"
+      ],
+      "erreurs_frequentes": [
+        "Une qualification partielle, ne couvrant pas l'ensemble des configurations ou du domaine de vol prévu",
+        "Une configuration testée différente de la configuration de vol réellement livrée"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "3.3",
+      "intitule": "TRL 9 — Système éprouvé en exploitation",
+      "exigence": "Le système réel a démontré son bon fonctionnement lors d'une mission opérationnelle réussie.",
+      "preuves": [
+        "Rapport de mission opérationnelle démontrant le fonctionnement nominal du système",
+        "Retour d'expérience post-mission et écarts éventuels par rapport aux performances attendues"
+      ],
+      "erreurs_frequentes": [
+        "Une mission encore en cours présentée comme un succès démontré avant son terme ou ses jalons clés",
+        "L'absence de retour d'expérience formalisé alors que la mission est achevée"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "3.4",
+      "intitule": "Revue indépendante de la déclaration TRL",
+      "exigence": "Le niveau TRL revendiqué a fait l'objet d'une revue par une personne ou une instance indépendante de l'équipe de développement.",
+      "preuves": [
+        "Compte-rendu de revue TRL signé par un évaluateur indépendant de l'équipe projet",
+        "Traçabilité des éventuels écarts relevés lors de cette revue et de leur traitement"
+      ],
+      "erreurs_frequentes": [
+        "Un niveau TRL autodéclaré par l'équipe de développement, sans aucune revue tierce",
+        "Une revue réalisée par une personne impliquée dans le développement de la technologie évaluée"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "3.5",
+      "intitule": "Cohérence avec le maillon le plus faible du système",
+      "exigence": "Le niveau TRL revendiqué pour le système tient compte du niveau réellement atteint par son composant ou sous-système le moins mature, et ne reflète pas seulement ses éléments les plus avancés.",
+      "preuves": [
+        "Décomposition du système en composants ou sous-systèmes critiques, avec le TRL de chacun",
+        "Justification explicite du TRL système retenu au regard du TRL du composant le moins mature"
+      ],
+      "erreurs_frequentes": [
+        "Un TRL système annoncé au niveau de son composant le plus avancé, sans mention des composants critiques restés à un niveau inférieur"
+      ],
+      "poids": 1
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "code": "GRI-101",
+  "version": "2024",
+  "label": "GRI 101: Biodiversité 2024 — norme thématique du Global Reporting Initiative",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme GRI 101 est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (la numérotation des éléments d'information) et une reformulation des attendus sont utilisées. GRI 101 est une norme de reporting de durabilité, sans certification de l'organisme associée : le diagnostic évalue la maturité du reporting biodiversité, il ne vaut pas déclaration de performance environnementale. À faire relire par un praticien disposant du texte officiel avant mise en vente.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "101-1", "titre": "Politiques pour enrayer et inverser la perte de biodiversité" },
+    { "numero": "101-2", "titre": "Gestion des impacts sur la biodiversité" },
+    { "numero": "101-3", "titre": "Accès aux ressources génétiques et partage des avantages" },
+    { "numero": "101-4", "titre": "Sites présentant des impacts sur la biodiversité" },
+    { "numero": "101-5", "titre": "Facteurs directs de perte de biodiversité" },
+    { "numero": "101-6", "titre": "Espèces affectées" },
+    { "numero": "101-7", "titre": "Écosystèmes affectés et étendue des impacts" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "101-1.1",
+      "intitule": "Engagement politique formalisé",
+      "exigence": "L'organisme dispose d'une politique formalisée d'engagement à enrayer et inverser la perte de biodiversité, couvrant ses propres activités.",
+      "preuves": [
+        "Politique biodiversité écrite, approuvée au niveau approprié de gouvernance",
+        "Périmètre d'application de la politique (sites, activités, filiales couvertes)"
+      ],
+      "erreurs_frequentes": [
+        "Une déclaration d'intention générale sans engagement daté ni périmètre défini",
+        "Une politique qui ne couvre pas les activités les plus exposées du groupe"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "101-1.2",
+      "intitule": "Couverture de la chaîne de valeur",
+      "exigence": "L'organisme précise si son engagement biodiversité s'étend à sa chaîne d'approvisionnement et à ses autres relations d'affaires, au-delà de ses opérations directes.",
+      "preuves": [
+        "Périmètre chaîne de valeur explicitement défini dans la politique",
+        "Critères appliqués aux fournisseurs ou partenaires en matière de biodiversité"
+      ],
+      "erreurs_frequentes": [
+        "Un engagement limité aux sites propres, alors que l'essentiel de l'impact se situe dans la chaîne d'approvisionnement"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "101-1.3",
+      "intitule": "Objectifs chiffrés et échéancés",
+      "exigence": "L'organisme fixe des objectifs chiffrés et datés de réduction de son impact sur la biodiversité, alignés autant que possible avec le Cadre mondial de la biodiversité de Kunming-Montréal.",
+      "preuves": [
+        "Objectifs chiffrés, avec valeur de référence, cible et échéance",
+        "Suivi périodique de l'avancement vers ces objectifs"
+      ],
+      "erreurs_frequentes": [
+        "Des objectifs formulés en intention (\"réduire autant que possible\") sans valeur cible ni échéance",
+        "Une valeur de référence absente, rendant tout suivi de progression impossible à démontrer"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "101-2.1",
+      "intitule": "Hiérarchie d'atténuation",
+      "exigence": "L'organisme applique et documente une hiérarchie d'atténuation (éviter, réduire, restaurer, compenser) pour ses impacts significatifs sur la biodiversité.",
+      "preuves": [
+        "Description des mesures d'évitement et de réduction mises en œuvre par site significatif",
+        "Programmes de restauration ou de compensation, avec leur état d'avancement"
+      ],
+      "erreurs_frequentes": [
+        "Un recours direct à la compensation sans démonstration préalable des efforts d'évitement et de réduction",
+        "Des mesures de restauration annoncées sans indicateur de suivi de leur efficacité réelle"
+      ],
+      "poids": 1.5
+    },
+    {
+      "chapitre": "101-2.2",
+      "intitule": "Intégration dans les processus de décision",
+      "exigence": "L'organisme intègre l'évaluation des impacts sur la biodiversité dans ses processus de décision (nouveaux projets, achats, implantations).",
+      "preuves": [
+        "Procédure intégrant un screening biodiversité dans l'évaluation des nouveaux projets",
+        "Exemples de décisions modifiées à la suite de cette évaluation"
+      ],
+      "erreurs_frequentes": [
+        "Une évaluation biodiversité réalisée après le lancement du projet, à titre de justification plutôt que d'aide à la décision"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "101-2.3",
+      "intitule": "Consultation des parties prenantes locales",
+      "exigence": "L'organisme consulte les communautés locales et les parties prenantes concernées par ses impacts sur la biodiversité, et documente la prise en compte de leurs préoccupations.",
+      "preuves": [
+        "Comptes rendus de consultation des communautés locales pour les sites significatifs",
+        "Traçabilité des préoccupations soulevées et de la réponse apportée"
+      ],
+      "erreurs_frequentes": [
+        "Une consultation réalisée une seule fois, en amont du projet, sans mécanisme de suivi dans la durée",
+        "L'absence de canal de recueil des préoccupations accessible aux communautés concernées"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "101-3.1",
+      "intitule": "Accès aux ressources génétiques et partage des avantages",
+      "exigence": "Lorsque l'organisme utilise des ressources génétiques ou des savoirs traditionnels associés, il documente le respect des règles d'accès et de partage des avantages applicables.",
+      "preuves": [
+        "Autorisations d'accès aux ressources génétiques et accords de partage des avantages",
+        "Traçabilité de l'origine des ressources génétiques utilisées"
+      ],
+      "erreurs_frequentes": [
+        "L'absence de vérification de la conformité des fournisseurs de matières premières biologiques à ces règles",
+        "Une clause non applicable cotée par défaut sans vérifier que l'organisme n'est réellement pas concerné"
+      ],
+      "poids": 0.5
+    },
+    {
+      "chapitre": "101-3.2",
+      "intitule": "Consentement préalable donné en connaissance de cause",
+      "exigence": "L'organisme documente l'obtention du consentement préalable, libre et éclairé des communautés autochtones ou locales détentrices des ressources génétiques ou des savoirs traditionnels concernés.",
+      "preuves": [
+        "Accord de consentement préalable signé avec les communautés concernées",
+        "Description du processus suivi pour recueillir ce consentement"
+      ],
+      "erreurs_frequentes": [
+        "Un accord de partage des avantages signé sans preuve distincte du consentement préalable de la communauté",
+        "Une clause traitée comme non applicable sans vérification que des savoirs traditionnels sont effectivement mobilisés"
+      ],
+      "poids": 0.5
+    },
+    {
+      "chapitre": "101-4.1",
+      "intitule": "Sites en zones sensibles pour la biodiversité",
+      "exigence": "L'organisme recense ses sites situés dans ou à proximité d'aires protégées ou de zones clés pour la biodiversité, et en précise la surface et la nature des activités.",
+      "preuves": [
+        "Liste des sites concernés, avec distance à l'aire protégée ou à la zone sensible la plus proche",
+        "Surface d'emprise et nature de l'activité exercée sur chaque site"
+      ],
+      "erreurs_frequentes": [
+        "Un recensement limité aux sites de production, excluant les sites d'extraction ou d'approvisionnement en amont",
+        "L'absence de définition claire du seuil de proximité retenu pour qualifier un site de \"sensible\""
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "101-4.2",
+      "intitule": "Évolution de la superficie exploitée dans le temps",
+      "exigence": "L'organisme suit l'évolution de la superficie qu'il exploite ou occupe sur chaque site sensible, d'une période de reporting à l'autre.",
+      "preuves": [
+        "Superficie exploitée par site sensible, comparée à la période de reporting précédente",
+        "Justification de toute extension de superficie sur un site sensible"
+      ],
+      "erreurs_frequentes": [
+        "Une superficie déclarée de façon statique, sans comparaison avec les périodes antérieures",
+        "Une extension de site non signalée alors qu'elle empiète sur une zone jusque-là non exploitée"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "101-5.1",
+      "intitule": "Facteurs directs de perte de biodiversité",
+      "exigence": "L'organisme identifie, pour chaque site significatif, lesquels des cinq facteurs directs reconnus (changement d'usage des sols/mers, surexploitation, changement climatique, pollution, espèces exotiques envahissantes) sont associés à ses activités.",
+      "preuves": [
+        "Analyse par site des facteurs directs de perte de biodiversité associés à l'activité",
+        "Données quantitatives disponibles pour chaque facteur identifié (surface transformée, volumes prélevés, rejets...)"
+      ],
+      "erreurs_frequentes": [
+        "Une identification qualitative sans aucune donnée quantitative associée",
+        "Un facteur significatif (par exemple le changement d'usage des sols) omis parce qu'il est indirect ou historique"
+      ],
+      "poids": 1.5
+    },
+    {
+      "chapitre": "101-6.1",
+      "intitule": "Espèces menacées affectées",
+      "exigence": "L'organisme identifie les espèces figurant sur une liste de conservation reconnue (Liste rouge de l'UICN ou liste nationale équivalente) affectées par ses activités.",
+      "preuves": [
+        "Liste des espèces menacées identifiées à proximité des sites significatifs",
+        "Catégorie de menace (Liste rouge UICN) et nature de l'effet de l'activité sur ces espèces"
+      ],
+      "erreurs_frequentes": [
+        "Une identification des espèces réalisée une seule fois et jamais actualisée",
+        "Une confusion entre présence constatée sur site et effet réellement démontré de l'activité sur l'espèce"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "101-6.2",
+      "intitule": "Mesures de conservation pour les espèces affectées",
+      "exigence": "L'organisme décrit les mesures spécifiques prises pour protéger les espèces menacées identifiées, au-delà des mesures générales d'atténuation.",
+      "preuves": [
+        "Plans de conservation ou de gestion spécifiques à une espèce ou à un groupe d'espèces",
+        "Partenariats avec des organismes de conservation ou suivi scientifique des populations concernées"
+      ],
+      "erreurs_frequentes": [
+        "Une espèce menacée identifiée sans qu'aucune mesure spécifique ne lui soit dédiée au-delà des mesures générales du site"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "101-7.1",
+      "intitule": "Écosystèmes affectés et étendue de l'impact",
+      "exigence": "L'organisme décrit les types d'écosystèmes affectés par ses activités et quantifie, lorsque c'est possible, l'étendue et l'état de l'impact (surface convertie, dégradée ou restaurée).",
+      "preuves": [
+        "Typologie des écosystèmes affectés par site significatif",
+        "Surface convertie, dégradée et restaurée, avec la méthode d'estimation utilisée"
+      ],
+      "erreurs_frequentes": [
+        "Une étendue d'impact estimée sans préciser la méthode ni l'année de référence",
+        "Une surface restaurée comptabilisée dès l'engagement des travaux, avant toute vérification de son état écologique"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "101-7.2",
+      "intitule": "Services écosystémiques affectés",
+      "exigence": "L'organisme identifie les services écosystémiques (approvisionnement, régulation, culturels) dont dépendent ses activités ou celles des communautés voisines, et l'effet de ses activités sur leur disponibilité.",
+      "preuves": [
+        "Identification des services écosystémiques clés pour chaque site significatif",
+        "Analyse de dépendance de l'activité vis-à-vis de ces services et de l'effet de l'activité sur leur disponibilité future"
+      ],
+      "erreurs_frequentes": [
+        "Une analyse limitée aux impacts sur les écosystèmes, sans lien établi avec les services qu'ils rendent",
+        "L'absence de distinction entre services dont dépend l'organisme et services affectés par ses activités"
+      ],
+      "poids": 1
+    }
+  ]
+}

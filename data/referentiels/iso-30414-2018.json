@@ -1,0 +1,288 @@
+{
+  "code": "ISO-30414",
+  "version": "2018",
+  "label": "ISO 30414:2018 — Management des ressources humaines : lignes directrices pour le reporting du capital humain",
+  "statut": "actif",
+  "note_legale": "Formulations rédigées par l'équipe. Le texte officiel de la norme est protégé par le droit d'auteur et n'est jamais reproduit ici : seules la structure publique (les 11 domaines de reporting du capital humain) et une reformulation des attendus sont utilisées. Cette norme ne donne lieu à aucune certification de l'organisme : c'est un cadre de reporting, interne et externe, dont la maturité se mesure à la disponibilité et à la fiabilité des indicateurs, pas à une conformité vérifiable en audit. À faire relire par un praticien disposant du texte officiel avant mise en vente.",
+  "echelle": {
+    "0": "Inexistant — rien n'est en place sur ce point.",
+    "1": "Informel — cela se fait en pratique, sans règle écrite ni trace.",
+    "2": "Formalisé — c'est écrit et appliqué, mais sans revue régulière.",
+    "3": "Piloté — c'est écrit, appliqué, mesuré et revu périodiquement.",
+    "4": "Optimisé — le dispositif est revu, comparé et amélioré sur la base de données."
+  },
+  "chapitres": [
+    { "numero": "1", "titre": "Conformité et éthique" },
+    { "numero": "2", "titre": "Coûts" },
+    { "numero": "3", "titre": "Diversité" },
+    { "numero": "4", "titre": "Leadership" },
+    { "numero": "5", "titre": "Culture organisationnelle" },
+    { "numero": "6", "titre": "Santé, sécurité et bien-être" },
+    { "numero": "7", "titre": "Productivité" },
+    { "numero": "8", "titre": "Recrutement, mobilité et rotation" },
+    { "numero": "9", "titre": "Compétences et capacités" },
+    { "numero": "10", "titre": "Plans de succession" },
+    { "numero": "11", "titre": "Disponibilité de la main-d'œuvre" }
+  ],
+  "clauses": [
+    {
+      "chapitre": "1.1",
+      "intitule": "Griefs et procédures disciplinaires",
+      "exigence": "L'organisme recense le nombre et la nature des griefs déposés, des procédures disciplinaires engagées et de leur issue, et suit cette évolution dans le temps.",
+      "preuves": [
+        "Registre des griefs et procédures disciplinaires, avec motif, traitement et issue",
+        "Analyse de tendance sur au moins deux périodes de reporting"
+      ],
+      "erreurs_frequentes": [
+        "Un décompte global sans catégorisation par motif, qui ne permet de détecter aucun point de vigilance récurrent",
+        "L'absence de suivi des procédures encore en cours au moment du reporting"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "1.2",
+      "intitule": "Formation à la conformité et à l'éthique",
+      "exigence": "L'organisme mesure la proportion de collaborateurs ayant suivi une formation à l'éthique et à la conformité, par catégorie de poste.",
+      "preuves": [
+        "Taux de complétion de la formation, ventilé par catégorie de poste et par site",
+        "Contenu et fréquence de mise à jour du programme de formation"
+      ],
+      "erreurs_frequentes": [
+        "Un taux de complétion global qui masque une non-couverture du comité de direction",
+        "Une formation dispensée une seule fois, sans rappel périodique"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "2.1",
+      "intitule": "Coût total de la main-d'œuvre",
+      "exigence": "L'organisme calcule le coût total de la main-d'œuvre (rémunération, charges, avantages, formation) et le rapporte au chiffre d'affaires ou au budget de fonctionnement.",
+      "preuves": [
+        "Décomposition du coût total de la main-d'œuvre par grande catégorie de dépense",
+        "Évolution du ratio coût de la main-d'œuvre / chiffre d'affaires sur plusieurs exercices"
+      ],
+      "erreurs_frequentes": [
+        "Un coût limité à la masse salariale brute, sans les charges ni les avantages",
+        "L'absence de mise en regard avec un indicateur d'activité"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "2.2",
+      "intitule": "Coût par recrutement et coûts d'externalisation",
+      "exigence": "L'organisme suit le coût moyen d'un recrutement et la part de la main-d'œuvre externalisée ou intérimaire dans le coût total.",
+      "preuves": [
+        "Coût moyen par recrutement, avec sa méthode de calcul",
+        "Part et coût de la main-d'œuvre externe (intérim, sous-traitance de personnel)"
+      ],
+      "erreurs_frequentes": [
+        "Un coût de recrutement qui n'inclut que les frais d'annonce, sans le temps interne mobilisé",
+        "Une main-d'œuvre externe non distinguée de l'effectif propre dans les indicateurs de coût"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "3.1",
+      "intitule": "Représentation de la diversité dans l'effectif",
+      "exigence": "L'organisme mesure la répartition de son effectif selon l'âge, le genre et, lorsque la loi le permet, d'autres dimensions de diversité pertinentes.",
+      "preuves": [
+        "Pyramide des âges et répartition par genre, par catégorie de poste et niveau hiérarchique",
+        "Méthode de collecte respectueuse du cadre légal applicable en matière de données sensibles"
+      ],
+      "erreurs_frequentes": [
+        "Une répartition globale qui masque une absence de diversité dans l'encadrement",
+        "La collecte de données de diversité sans base légale ni consentement, là où la loi l'exige"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "3.2",
+      "intitule": "Diversité de l'encadrement supérieur",
+      "exigence": "L'organisme suit spécifiquement la diversité au sein du comité de direction et des postes de direction, distinctement de l'effectif général.",
+      "preuves": [
+        "Composition du comité de direction et des postes de direction par genre et par âge",
+        "Comparaison avec la répartition de l'effectif général"
+      ],
+      "erreurs_frequentes": [
+        "Un indicateur de diversité qui ne distingue pas l'encadrement supérieur du reste de l'effectif"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "4.1",
+      "intitule": "Confiance dans le leadership",
+      "exigence": "L'organisme mesure, par une enquête régulière, le niveau de confiance des collaborateurs envers l'encadrement.",
+      "preuves": [
+        "Résultats d'enquête de confiance, avec taux de réponse et évolution dans le temps",
+        "Actions engagées en réponse aux résultats précédents"
+      ],
+      "erreurs_frequentes": [
+        "Une enquête menée une fois sans reconduction, qui ne permet aucune mesure de tendance",
+        "L'absence de suivi des actions correctives entre deux enquêtes"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "4.2",
+      "intitule": "Étendue de l'encadrement et développement du leadership",
+      "exigence": "L'organisme suit le ratio d'encadrement (nombre de collaborateurs par manager) et la part de l'encadrement ayant bénéficié d'un développement du leadership.",
+      "preuves": [
+        "Ratio d'encadrement par service ou site",
+        "Taux de couverture des programmes de développement du leadership"
+      ],
+      "erreurs_frequentes": [
+        "Un ratio d'encadrement calculé globalement, qui masque de fortes disparités entre services"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "5.1",
+      "intitule": "Engagement des collaborateurs",
+      "exigence": "L'organisme mesure régulièrement l'engagement des collaborateurs par une enquête dont la méthodologie est documentée et stable dans le temps.",
+      "preuves": [
+        "Résultats d'enquête d'engagement, taux de réponse et méthodologie",
+        "Comparaison avec les périodes de reporting précédentes"
+      ],
+      "erreurs_frequentes": [
+        "Un changement de méthodologie d'une période à l'autre qui rend la comparaison impossible"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "5.2",
+      "intitule": "Rétention volontaire et involontaire",
+      "exigence": "L'organisme distingue, dans son taux de rétention, les départs volontaires des départs involontaires, et en analyse les motifs.",
+      "preuves": [
+        "Taux de rétention ventilé entre départs volontaires et involontaires",
+        "Analyse des motifs de départ volontaire (entretiens de départ ou équivalent)"
+      ],
+      "erreurs_frequentes": [
+        "Un taux de rétention global qui ne distingue pas la nature du départ",
+        "L'absence d'entretien de départ systématique, qui prive l'analyse de toute donnée de motif"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "6.1",
+      "intitule": "Accidents du travail et maladies professionnelles",
+      "exigence": "L'organisme suit le nombre et la gravité des accidents du travail et des maladies professionnelles, et le nombre de décès liés au travail.",
+      "preuves": [
+        "Taux de fréquence et de gravité des accidents du travail",
+        "Registre des maladies professionnelles reconnues et des décès liés au travail"
+      ],
+      "erreurs_frequentes": [
+        "Un décompte des accidents qui exclut les presqu'accidents et les incidents sans arrêt",
+        "L'absence de distinction entre effectif propre et personnel externe sur site"
+      ],
+      "poids": 1.5
+    },
+    {
+      "chapitre": "6.2",
+      "intitule": "Absentéisme lié à la santé et formation santé-sécurité",
+      "exigence": "L'organisme mesure le taux d'absentéisme lié à des raisons de santé et la couverture de la formation santé-sécurité au travail.",
+      "preuves": [
+        "Taux d'absentéisme, avec distinction des motifs lorsque cela est possible",
+        "Taux de couverture de la formation santé-sécurité par poste à risque"
+      ],
+      "erreurs_frequentes": [
+        "Un taux d'absentéisme global qui ne permet pas d'isoler la part liée à la santé au travail"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "7.1",
+      "intitule": "Valeur ajoutée par collaborateur",
+      "exigence": "L'organisme rapporte un indicateur de productivité de la main-d'œuvre (par exemple le résultat d'exploitation ou la valeur ajoutée par équivalent temps plein).",
+      "preuves": [
+        "Indicateur de productivité retenu, sa méthode de calcul et son évolution",
+        "Mise en regard avec l'évolution de l'effectif"
+      ],
+      "erreurs_frequentes": [
+        "Un indicateur de productivité calculé sans rapporter la méthode, qui empêche toute comparaison dans le temps"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "8.1",
+      "intitule": "Délai et qualité de recrutement",
+      "exigence": "L'organisme mesure le délai moyen de recrutement et un indicateur de qualité de l'embauche (par exemple la performance ou la rétention à un an des nouvelles recrues).",
+      "preuves": [
+        "Délai moyen de recrutement par type de poste",
+        "Indicateur de qualité de l'embauche et sa méthode de mesure"
+      ],
+      "erreurs_frequentes": [
+        "Un délai de recrutement mesuré sans définir précisément son point de départ et son point d'arrivée",
+        "L'absence de tout indicateur de qualité de l'embauche, réduisant le pilotage au seul volume"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "8.2",
+      "intitule": "Rotation et mobilité interne",
+      "exigence": "L'organisme suit le taux de rotation (turnover), volontaire et involontaire, ainsi que le taux de mobilité interne.",
+      "preuves": [
+        "Taux de rotation ventilé par catégorie de poste et par ancienneté",
+        "Taux de mobilité interne (promotions et changements de poste)"
+      ],
+      "erreurs_frequentes": [
+        "Un taux de rotation qui n'isole pas les départs en période d'essai, faussant la lecture",
+        "L'absence de suivi de la mobilité interne, alors qu'elle éclaire l'attractivité réelle du turnover"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "9.1",
+      "intitule": "Investissement en formation",
+      "exigence": "L'organisme mesure les dépenses de formation et le nombre d'heures de formation par collaborateur, par catégorie de poste.",
+      "preuves": [
+        "Dépense de formation totale et par collaborateur",
+        "Nombre moyen d'heures de formation par catégorie de poste"
+      ],
+      "erreurs_frequentes": [
+        "Une dépense de formation globale sans ventilation par catégorie, qui masque des écarts d'accès à la formation"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "9.2",
+      "intitule": "Couverture et efficacité de la formation",
+      "exigence": "L'organisme suit la part de l'effectif ayant suivi au moins une formation sur la période, et évalue l'effet de la formation sur la performance ou la compétence.",
+      "preuves": [
+        "Taux de collaborateurs formés sur la période",
+        "Méthode d'évaluation de l'efficacité de la formation (évaluation à froid, mise en pratique constatée...)"
+      ],
+      "erreurs_frequentes": [
+        "Une évaluation de la formation limitée à la satisfaction des participants, sans mesure de son effet réel"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "10.1",
+      "intitule": "Couverture des postes clés",
+      "exigence": "L'organisme identifie ses postes clés et suit la part d'entre eux disposant d'au moins un successeur identifié et préparé.",
+      "preuves": [
+        "Liste des postes identifiés comme clés et critère de sélection",
+        "Taux de couverture par un plan de succession et niveau de préparation des successeurs"
+      ],
+      "erreurs_frequentes": [
+        "Des postes clés définis a posteriori, après un départ, plutôt qu'anticipés",
+        "Un successeur identifié sur le papier sans plan de développement associé"
+      ],
+      "poids": 1
+    },
+    {
+      "chapitre": "11.1",
+      "intitule": "Effectif total et équivalent temps plein",
+      "exigence": "L'organisme rapporte son effectif total, son équivalent temps plein, et la répartition entre personnel permanent, temporaire et externe.",
+      "preuves": [
+        "Effectif total et effectif en équivalent temps plein, par type de contrat",
+        "Part du personnel externe (intérim, sous-traitance de personnel) dans l'effectif opérationnel"
+      ],
+      "erreurs_frequentes": [
+        "Un effectif total qui confond têtes et équivalents temps plein sans le préciser",
+        "L'absence de visibilité sur la part de personnel externe, qui fausse la lecture des autres indicateurs RH"
+      ],
+      "poids": 1
+    }
+  ]
+}
