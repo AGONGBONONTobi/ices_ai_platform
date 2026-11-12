@@ -1,69 +1,182 @@
 {
   "id": "psy-t46-2",
-  "title": "Préparer — Visualisation de données · T46.2",
+  "title": "Visualisation de données · T46.2",
   "category": "TRANSFORMATION DIGITALE & IA",
+  "output_kind": "assessment",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Visualisation de données ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Un graphique en barres compare les ventes de deux magasins : Magasin A à 82 000 € et Magasin B à 79 000 €. L'axe vertical ne commence pas à 0 mais à 75 000 €, ce qui fait apparaître la barre du Magasin A presque deux fois plus haute que celle du Magasin B. Quel est le problème avec ce graphique ?",
+      "help": "Comparez la différence réelle entre les deux chiffres et la différence que suggère le dessin.",
+      "options": [
+        {
+          "label": "L'axe tronqué (qui ne part pas de zéro) exagère visuellement une différence qui est en réalité minime (moins de 4 %).",
+          "score": 1
+        },
+        {
+          "label": "Il n'y a aucun problème, un axe peut toujours commencer où l'on veut sans conséquence sur la lecture.",
+          "score": 0
+        },
+        {
+          "label": "Le problème est que les deux magasins devraient être représentés par la même couleur.",
+          "score": 0
+        }
+      ],
+      "axe": "Lecture des échelles",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Un graphique présentant l'évolution du nombre d'accidents de la route par an a son axe vertical inversé : les valeurs les plus hautes sont en bas et les valeurs les plus basses sont en haut. Une courbe qui descend visuellement sur ce graphique représente en réalité quelle évolution ?",
+      "help": "Vérifiez toujours le sens de lecture de l'axe avant d'interpréter la pente d'une courbe.",
+      "options": [
+        {
+          "label": "Une hausse du nombre d'accidents, car l'axe inversé fait apparaître une augmentation comme une descente visuelle.",
+          "score": 1
+        },
+        {
+          "label": "Une baisse du nombre d'accidents, comme le suggère visuellement la courbe qui descend.",
+          "score": 0
+        },
+        {
+          "label": "Un axe inversé n'a aucune incidence sur la lecture du sens de la courbe.",
+          "score": 0
+        }
+      ],
+      "axe": "Lecture des échelles",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à lire et interpréter des graphiques. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Vous voulez montrer l'évolution du chiffre d'affaires d'une entreprise mois par mois sur les 3 dernières années (36 points de données). Quel type de graphique est le plus adapté pour faire ressortir la tendance et les variations dans le temps ?",
+      "help": "Pensez à la nature de la donnée : une suite de valeurs ordonnées dans le temps.",
+      "options": [
+        {
+          "label": "Un graphique en lignes (courbe temporelle).",
+          "score": 1
+        },
+        {
+          "label": "Un diagramme circulaire (camembert).",
+          "score": 0
+        },
+        {
+          "label": "Un nuage de points sans axe temporel.",
+          "score": 0
+        }
+      ],
+      "axe": "Choix du type de graphique",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Un rapport utilise un diagramme circulaire (camembert) pour représenter la répartition du budget d'une entreprise entre 14 catégories de dépenses différentes. Quel est le principal problème de ce choix ?",
+      "help": "Réfléchissez à la capacité de l'œil humain à comparer des angles ou des surfaces nombreuses et proches.",
+      "options": [
+        {
+          "label": "Avec autant de catégories, les parts deviennent trop petites et proches en taille pour être comparées visuellement de façon fiable ; un diagramme en barres serait plus lisible.",
+          "score": 1
+        },
+        {
+          "label": "Un camembert ne peut techniquement représenter que des pourcentages qui totalisent moins de 100 %.",
+          "score": 0
+        },
+        {
+          "label": "Il n'y a pas de problème, un camembert reste toujours la meilleure option quel que soit le nombre de catégories.",
+          "score": 0
+        }
+      ],
+      "axe": "Choix du type de graphique",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un diagramme en barres est présenté avec un effet 3D en perspective. Pourquoi cet effet est-il déconseillé quand on veut comparer précisément des valeurs ?",
+      "help": "Un effet de perspective modifie la taille apparente des objets selon leur position.",
+      "options": [
+        {
+          "label": "La perspective 3D déforme la perception des hauteurs et des surfaces, rendant la comparaison des valeurs moins précise qu'avec un graphique 2D classique.",
+          "score": 1
+        },
+        {
+          "label": "L'effet 3D rend toujours les valeurs exactement deux fois plus grandes qu'en réalité.",
+          "score": 0
+        },
+        {
+          "label": "L'effet 3D n'a aucune influence sur la perception, il est purement esthétique.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais visuels",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Un graphique superpose deux courbes avec deux axes verticaux différents (un pour chaque courbe), dont les échelles ont été choisies pour que les deux courbes se croisent et semblent évoluer ensemble. Quel risque cela présente-t-il ?",
+      "help": "Le choix de l'échelle de chaque axe reste libre, même quand deux séries sont affichées côte à côte.",
+      "options": [
+        {
+          "label": "Le choix des échelles des deux axes peut être ajusté pour suggérer visuellement une relation entre les deux séries qui n'existe pas réellement dans les données.",
+          "score": 1
+        },
+        {
+          "label": "Deux axes verticaux différents rendent le graphique automatiquement plus rigoureux statistiquement.",
+          "score": 0
+        },
+        {
+          "label": "Ce type de graphique est interdit par les logiciels de visualisation et ne peut donc pas induire en erreur.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais visuels",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Visualisation de données », dans le domaine « DATA LITERACY & IA ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à lire et interpréter des graphiques.\nFormat cible : 15 items, 10 min.\nContenu cible : types de graphiques, échelles, biais visuels.\nCalcul cible (non implémenté ici) : score, détection de graphiques trompeurs.\nUsage décrit : recrutement, formation.\nOptions cibles : graphiques interactifs et trompeurs.\nObjectif du domaine : évaluer la capacité à comprendre, utiliser et critiquer les données et l’IA — compétence devenue universelle à l’ère de l’IA générative\nGarde-fou du domaine : mise à jour trimestrielle obligatoire (écosystème IA évolutif) ; ne pas évaluer sur des outils propriétaires ; transparence\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un formateur en culture des données et de l'intelligence artificielle. Ce test est un contrôle de connaissances factuelles sur la visualisation de données : la lecture et l'interprétation de graphiques, incluant les biais visuels et les échelles trompeuses. Il ne s'agit en aucun cas d'un test psychométrique certifié, validé ou étalonné — aucune norme professionnelle, aucun percentile, aucun QI et aucune certification ne sont délivrés par cet outil.\n\nLe score global et le score par axe ont déjà été calculés à partir des réponses cochées et te sont fournis ci-dessous dans « Résultat du calcul ». Ne les recalcule pas, ne les modifie pas : reprends-les tels quels et commente-les.\n\nProduis une interprétation pédagogique :\n- un commentaire du score global, qui situe le niveau de maîtrise observé aujourd'hui sur ce sujet précis, sans comparaison à une norme ou à un percentile ;\n- pour chaque question dont la réponse choisie n'était pas la bonne, explique brièvement — en langage clair et sans jargon inutile — le concept réellement en jeu, pourquoi la réponse correcte est la bonne, et l'erreur de raisonnement la plus probable ;\n- des recommandations concrètes et actionnables (lectures, exercices pratiques, réflexes à adopter), explicitement priorisées sur l'axe ou les axes les plus faibles ;\n- un rappel explicite que ce résultat ne reflète que les réponses données aujourd'hui, qu'il ne s'agit ni d'un diagnostic, ni d'une certification, ni d'une mesure validée scientifiquement de l'aptitude de la personne, et qu'aucune décision de recrutement, de sélection, de promotion ou d'aptitude ne doit être fondée sur ce seul résultat.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun seuil de certification. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +193,5 @@
       "Garde-fou du domaine": "mise à jour trimestrielle obligatoire (écosystème IA évolutif) ; ne pas évaluer sur des outils propriétaires ; transparence"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

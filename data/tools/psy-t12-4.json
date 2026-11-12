@@ -1,69 +1,206 @@
 {
   "id": "psy-t12-4",
-  "title": "Préparer — Réponse à incident · T12.4",
+  "title": "Réponse à incident · T12.4",
   "category": "TRANSFORMATION DIGITALE & IA",
+  "output_kind": "assessment",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Réponse à incident ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Vous constatez que votre poste de travail affiche un message demandant une rançon (ransomware) et que les fichiers semblent chiffrés. Quelle est la première action à réaliser ?",
+      "help": "La priorité est d'arrêter la propagation et de prévenir les équipes compétentes, pas de résoudre le problème seul.",
+      "options": [
+        {
+          "label": "Éteindre immédiatement l'ordinateur sans en parler à personne",
+          "score": 0
+        },
+        {
+          "label": "Déconnecter le poste du réseau (câble ou Wi-Fi) et alerter immédiatement l'équipe sécurité/IT selon la procédure en vigueur",
+          "score": 1
+        },
+        {
+          "label": "Payer la rançon affichée pour récupérer les fichiers rapidement",
+          "score": 0
+        },
+        {
+          "label": "Continuer à travailler normalement en attendant que le problème se résolve",
+          "score": 0
+        }
+      ],
+      "axe": "Réponse à incident",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Dans la gestion d'un incident de sécurité, à quoi correspond l'étape de « confinement » (containment) ?",
+      "help": "Cette étape intervient après la détection et avant l'éradication complète de la menace.",
+      "options": [
+        {
+          "label": "Informer immédiatement les médias de l'incident",
+          "score": 0
+        },
+        {
+          "label": "Isoler les systèmes affectés pour empêcher la propagation de l'incident, avant l'éradication et la remédiation",
+          "score": 1
+        },
+        {
+          "label": "Supprimer définitivement toutes les traces de l'incident",
+          "score": 0
+        },
+        {
+          "label": "Redémarrer tous les serveurs de l'entreprise sans analyse préalable",
+          "score": 0
+        }
+      ],
+      "axe": "Réponse à incident",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : réaction face à un incident. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Vous suspectez qu'un compte utilisateur a été compromis, car des connexions inhabituelles à des heures atypiques ont été détectées. Quelle action est prioritaire et appropriée ?",
+      "help": "L'objectif immédiat est de limiter l'exposition du compte sans agir seul en dehors de la procédure officielle.",
+      "options": [
+        {
+          "label": "Attendre de voir si le comportement se reproduit avant d'agir",
+          "score": 0
+        },
+        {
+          "label": "Signaler l'anomalie et faire désactiver ou réinitialiser l'accès du compte via la procédure officielle, pour limiter l'exposition",
+          "score": 1
+        },
+        {
+          "label": "Supprimer le compte utilisateur immédiatement, sans en informer personne",
+          "score": 0
+        },
+        {
+          "label": "Se contenter de changer l'avatar ou le nom affiché du compte",
+          "score": 0
+        }
+      ],
+      "axe": "Réponse à incident",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Pourquoi est-il important de ne pas éteindre ni redémarrer précipitamment un poste potentiellement compromis avant l'intervention des équipes compétentes ?",
+      "help": "Pensez à ce qui est perdu quand un système est brutalement arrêté.",
+      "options": [
+        {
+          "label": "Cela n'a aucune importance pratique",
+          "score": 0
+        },
+        {
+          "label": "Cela peut détruire des preuves numériques utiles à l'investigation (mémoire volatile, traces de l'attaque en cours)",
+          "score": 1
+        },
+        {
+          "label": "Cela accélère au contraire la propagation du virus",
+          "score": 0
+        },
+        {
+          "label": "Cela empêche définitivement l'ordinateur de redémarrer ensuite",
+          "score": 0
+        }
+      ],
+      "axe": "Réponse à incident",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Lors d'un incident de sécurité, quel est l'objectif principal de la phase de « détection et d'alerte » ?",
+      "help": "Cette phase précède le confinement et l'éradication dans le cycle de gestion d'incident.",
+      "options": [
+        {
+          "label": "Identifier qu'un incident est en cours ou s'est produit, et le signaler rapidement aux bonnes personnes selon la procédure établie",
+          "score": 1
+        },
+        {
+          "label": "Rédiger directement le rapport final de l'incident",
+          "score": 0
+        },
+        {
+          "label": "Informer immédiatement l'ensemble des clients externes de l'entreprise",
+          "score": 0
+        },
+        {
+          "label": "Former l'ensemble du personnel à la cybersécurité",
+          "score": 0
+        }
+      ],
+      "axe": "Réponse à incident",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Un employé reçoit une pièce jointe suspecte et l'a déjà ouverte avant de réaliser son erreur. Que doit-il faire en priorité ?",
+      "help": "La rapidité du signalement compte davantage que la tentative de corriger soi-même l'erreur.",
+      "options": [
+        {
+          "label": "Ne rien dire, pour éviter d'être blâmé",
+          "score": 0
+        },
+        {
+          "label": "Signaler immédiatement l'incident à l'équipe sécurité/IT, sans attendre, même si une erreur a été commise",
+          "score": 1
+        },
+        {
+          "label": "Essayer de résoudre seul le problème en recherchant une solution en ligne",
+          "score": 0
+        },
+        {
+          "label": "Supprimer l'e-mail sans le signaler, pour effacer les traces",
+          "score": 0
+        }
+      ],
+      "axe": "Réponse à incident",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Réponse à incident », dans le domaine « CYBERSÉCURITÉ & HYGIÈNE NUMÉRIQUE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : réaction face à un incident.\nFormat cible : 5 scénarios, 10 min.\nContenu cible : détection, alerte, containment.\nCalcul cible (non implémenté ici) : score, délai de réaction.\nUsage décrit : rôles critiques.\nOptions cibles : simulation immersive.\nObjectif du domaine : mesurer la sensibilisation et les comportements de sécurité\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en gestion des incidents de cybersécurité. Ce test est un contrôle factuel des réflexes et de la méthode de réponse à incident — ce n'est en aucun cas un test psychométrique certifié ou validé scientifiquement : il n'établit ni percentile, ni norme professionnelle, ni QI, ni diagnostic clinique ou de personnalité. Il reflète uniquement les réponses données aujourd'hui à ces questions factuelles.\n\nLe score a déjà été calculé à partir des réponses fournies et t'est communiqué plus bas. Ne recalcule pas les scores, ne les modifie pas : reprends-les tels quels et commente-les.\n\nProduis une interprétation :\n- une lecture brève du score global et du niveau de maîtrise observé sur l'axe « Réponse à incident » ;\n- pour les réponses erronées ou le score le plus faible, des recommandations concrètes, pratiques et immédiatement applicables (quoi faire dans les premières minutes, qui alerter, quoi préserver) ;\n- rappelle explicitement qu'il s'agit d'un contrôle de connaissances à un instant donné, et non d'une évaluation certifiée ni d'une mesure de la capacité réelle à gérer une crise en situation réelle.\n\nN'invente aucune norme, aucun percentile, aucun classement sectoriel ni aucune certification. Ne décide d'aucune sanction, d'aucun accès ou d'aucune décision RH à partir de ce seul résultat.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "mesurer la sensibilisation et les comportements de sécurité"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

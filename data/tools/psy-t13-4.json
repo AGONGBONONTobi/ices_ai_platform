@@ -1,69 +1,206 @@
 {
   "id": "psy-t13-4",
-  "title": "Préparer — Collaboration cloud · T13.4",
+  "title": "Collaboration cloud · T13.4",
   "category": "TRANSFORMATION DIGITALE & IA",
+  "output_kind": "assessment",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Collaboration cloud ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
+      "name": "q1",
+      "type": "select",
+      "question": "Vous partagez un document avec un prestataire externe qui doit uniquement consulter le contenu, sans pouvoir le modifier ni ajouter de commentaires. Quel niveau d'accès faut-il lui attribuer ?",
+      "options": [
+        {
+          "label": "Lecteur (lecture seule)",
+          "score": 1
+        },
+        {
+          "label": "Éditeur",
+          "score": 0
+        },
+        {
+          "label": "Commentateur",
+          "score": 0
+        },
+        {
+          "label": "Propriétaire",
+          "score": 0
+        }
+      ],
+      "axe": "Collaboration cloud",
+      "required": true,
+      "help": "Les niveaux de partage distinguent la simple consultation de la modification."
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
+      "name": "q2",
+      "type": "select",
+      "question": "Un collègue a accidentellement supprimé un paragraphe important dans un document partagé il y a deux jours, et d'autres personnes ont modifié le document depuis. Quelle fonctionnalité permet de récupérer le contenu supprimé sans perdre les modifications faites depuis ?",
+      "options": [
+        {
+          "label": "Consulter l'historique des versions et restaurer ou copier le contenu de la version antérieure",
+          "score": 1
+        },
+        {
+          "label": "Supprimer le document et le recréer de mémoire",
+          "score": 0
+        },
+        {
+          "label": "Demander à chaque collaborateur d'annuler (Ctrl+Z) sur son propre ordinateur",
+          "score": 0
+        },
+        {
+          "label": "Changer les droits d'accès du collègue en lecteur",
+          "score": 0
+        }
+      ],
+      "axe": "Collaboration cloud",
+      "required": true,
+      "help": "Un historique de versions permet de revenir à un état antérieur d'un document."
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : partage, co-édition, permissions. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Vous relisez un document partagé en tant que relecteur externe et vous voulez suggérer une reformulation sans modifier directement le texte final, tant que l'auteur n'a pas validé. Quelle fonctionnalité est la plus adaptée ?",
+      "options": [
+        {
+          "label": "Le mode \"Suggestions\" ou commentaires, qui propose une modification sans l'appliquer directement",
+          "score": 1
+        },
+        {
+          "label": "Modifier directement le texte en mode édition normale",
+          "score": 0
+        },
+        {
+          "label": "Supprimer le paragraphe et en écrire un nouveau",
+          "score": 0
+        },
+        {
+          "label": "Envoyer un email séparé décrivant la modification, sans toucher au document",
+          "score": 0
+        }
+      ],
+      "axe": "Collaboration cloud",
+      "required": true,
+      "help": "Un mode de relecture distingue la suggestion de la modification directe du texte."
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Deux collègues modifient simultanément le même document en ligne, en édition collaborative en temps réel. Que se passe-t-il généralement pour les modifications des deux personnes ?",
+      "options": [
+        {
+          "label": "Les deux modifications apparaissent en temps réel et sont fusionnées automatiquement, sans que l'une efface l'autre",
+          "score": 1
+        },
+        {
+          "label": "Seule la dernière personne à enregistrer voit ses modifications conservées, les autres sont effacées",
+          "score": 0
+        },
+        {
+          "label": "Le document se verrouille et seule la première personne arrivée peut écrire",
+          "score": 0
+        },
+        {
+          "label": "Deux fichiers séparés sont automatiquement créés, un par personne",
+          "score": 0
+        }
+      ],
+      "axe": "Collaboration cloud",
+      "required": true,
+      "help": "L'édition collaborative en temps réel gère les modifications simultanées de plusieurs personnes."
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Vous activez l'option de partage \"Toute personne disposant du lien peut consulter\" sur un document contenant des données confidentielles d'un client. Quel est le principal risque de ce réglage ?",
+      "options": [
+        {
+          "label": "Le document devient accessible à toute personne qui obtient le lien, même par transfert involontaire, sans vérification d'identité",
+          "score": 1
+        },
+        {
+          "label": "Le document se supprime automatiquement après une semaine",
+          "score": 0
+        },
+        {
+          "label": "Le document devient en lecture seule même pour son propriétaire",
+          "score": 0
+        },
+        {
+          "label": "Le partage par lien chiffre automatiquement le contenu pour chaque destinataire",
+          "score": 0
+        }
+      ],
+      "axe": "Collaboration cloud",
+      "required": true,
+      "help": "Un lien ouvert à \"toute personne\" élargit l'accès au-delà des destinataires prévus."
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Un prestataire externe a terminé sa mission ; il avait un accès \"éditeur\" à un dossier partagé contenant des documents internes. Quelle action faut-il effectuer pour empêcher tout accès après la fin de sa mission ?",
+      "options": [
+        {
+          "label": "Retirer ou modifier ses droits d'accès dans les paramètres de partage du dossier",
+          "score": 1
+        },
+        {
+          "label": "Changer uniquement le mot de passe de sa propre session",
+          "score": 0
+        },
+        {
+          "label": "Renommer le dossier",
+          "score": 0
+        },
+        {
+          "label": "Attendre que son accès expire automatiquement après 30 jours",
+          "score": 0
+        }
+      ],
+      "axe": "Collaboration cloud",
+      "required": true,
+      "help": "La fin d'une mission externe est l'occasion de revoir les droits d'accès accordés."
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Collaboration cloud », dans le domaine « COMPÉTENCE NUMÉRIQUE & BUREAUTIQUE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : partage, co-édition, permissions.\nFormat cible : 12 tâches, 8 min.\nContenu cible : droits, versions, commentaires.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : travail hybride.\nOptions cibles : scénarios d’équipe.\nObjectif du domaine : évaluer les compétences numériques opérationnelles\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en compétences numériques et bureautique. L'utilisateur vient de répondre à un contrôle de connaissances factuelles sur la collaboration cloud (droits d'accès, versions, commentaires, co-édition). Ce test vérifie des savoirs pratiques objectifs : ce n'est ni un test psychométrique certifié, ni un instrument validé scientifiquement, et il ne donne lieu à aucun percentile ni norme professionnelle — seulement un niveau de connaissance observé aujourd'hui sur ces questions précises.\n\nLe score ci-dessous a déjà été calculé à partir des réponses cochées. Ne le recalcule pas, ne le modifie pas : reprends-le tel quel et commente-le.\n\nProduis une interprétation brève du niveau global, puis, pour les notions où des erreurs sont visibles dans les réponses, des recommandations concrètes, pratiques et actionnables en langage clair (ex. bien régler les niveaux de partage, utiliser l'historique des versions) pour progresser spécifiquement sur la collaboration cloud. Précise explicitement que ce résultat n'est ni un diagnostic, ni une certification, et qu'il ne reflète que les réponses données aujourd'hui à ce contrôle, pas une évaluation globale de la personne.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "évaluer les compétences numériques opérationnelles"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

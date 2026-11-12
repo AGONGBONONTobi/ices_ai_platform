@@ -1,69 +1,212 @@
 {
   "id": "psy-t46-7",
-  "title": "Préparer — Gouvernance & éthique IA · T46.7",
+  "title": "Gouvernance & éthique IA · T46.7",
   "category": "TRANSFORMATION DIGITALE & IA",
+  "output_kind": "assessment",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Gouvernance & éthique IA ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Le règlement européen sur l'intelligence artificielle (AI Act) classe les systèmes d'IA selon différents niveaux de risque. Laquelle de ces catégories ne fait PAS partie de cette classification officielle ?",
+      "help": "La classification de l'AI Act repose sur le niveau de risque du système, pas sur une certification de qualité.",
+      "options": [
+        {
+          "label": "« Risque certifié ISO », qui n'est pas une catégorie prévue par ce règlement.",
+          "score": 1
+        },
+        {
+          "label": "Risque inacceptable (pratiques interdites).",
+          "score": 0
+        },
+        {
+          "label": "Risque élevé.",
+          "score": 0
+        },
+        {
+          "label": "Risque minimal.",
+          "score": 0
+        }
+      ],
+      "axe": "AI Act — catégories de risque",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Parmi ces usages de l'intelligence artificielle, lequel est explicitement classé comme une pratique interdite (« risque inacceptable ») par l'AI Act européen ?",
+      "help": "Les pratiques interdites visent des usages jugés incompatibles avec les droits fondamentaux, pas les outils grand public ordinaires.",
+      "options": [
+        {
+          "label": "La notation sociale généralisée des citoyens par une autorité publique, à partir de leur comportement, pour leur attribuer un traitement différencié.",
+          "score": 1
+        },
+        {
+          "label": "Un correcteur orthographique intégré à un traitement de texte.",
+          "score": 0
+        },
+        {
+          "label": "Un moteur de recommandation de produits sur un site e-commerce.",
+          "score": 0
+        },
+        {
+          "label": "Un filtre anti-spam dans une messagerie électronique.",
+          "score": 0
+        }
+      ],
+      "axe": "AI Act — pratiques interdites",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : compréhension des enjeux de gouvernance et d’éthique. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Une entreprise traite des données personnelles de ses clients via un outil d'IA et justifie ce traitement uniquement par le fait que « c'est nécessaire au fonctionnement de l'outil d'IA ». Cette justification est-elle suffisante au regard du RGPD ?",
+      "help": "Le RGPD définit une liste fermée de bases légales possibles pour tout traitement de données personnelles.",
+      "options": [
+        {
+          "label": "Non : le RGPD exige de s'appuyer sur une base légale précise et définie (consentement, exécution d'un contrat, obligation légale, intérêt légitime, etc.) ; le simple fait de passer par un outil d'IA n'en constitue pas une.",
+          "score": 1
+        },
+        {
+          "label": "Oui, l'utilisation d'une IA constitue en elle-même une base légale reconnue par le RGPD.",
+          "score": 0
+        },
+        {
+          "label": "Oui, dès lors que l'entreprise a payé une licence pour l'outil d'IA.",
+          "score": 0
+        }
+      ],
+      "axe": "RGPD",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Un site web utilise un agent conversationnel (chatbot) pour répondre aux questions des visiteurs, sans que cela soit évident au premier regard. Qu'impose, sur ce point précis, l'approche de transparence retenue par l'AI Act européen pour ce type de système ?",
+      "help": "La transparence porte ici sur le fait de savoir à qui, ou à quoi, on s'adresse.",
+      "options": [
+        {
+          "label": "Informer la personne qu'elle interagit avec un système d'intelligence artificielle, sauf si cela est déjà évident du contexte.",
+          "score": 1
+        },
+        {
+          "label": "Aucune obligation particulière, la transparence ne concerne que les systèmes à haut risque, jamais les chatbots.",
+          "score": 0
+        },
+        {
+          "label": "Faire valider chaque conversation par un humain avant son envoi au visiteur.",
+          "score": 0
+        }
+      ],
+      "axe": "Transparence",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un outil d'IA rejette automatiquement, sans intervention humaine, une demande de prêt bancaire, avec un effet significatif sur la personne concernée. Le RGPD donne-t-il un droit particulier à cette personne dans ce cas ?",
+      "help": "Le RGPD encadre spécifiquement les décisions prises uniquement par un traitement automatisé.",
+      "options": [
+        {
+          "label": "Oui : sous certaines conditions, elle a le droit de ne pas être soumise à une décision fondée uniquement sur un traitement automatisé produisant des effets significatifs, et de demander une intervention humaine ou une explication.",
+          "score": 1
+        },
+        {
+          "label": "Non, le RGPD ne traite jamais des décisions automatisées, seulement du stockage des données.",
+          "score": 0
+        },
+        {
+          "label": "Non, dès qu'un algorithme est utilisé, la décision échappe par principe au champ d'application du RGPD.",
+          "score": 0
+        }
+      ],
+      "axe": "RGPD",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Une décision automatisée prise par un outil d'IA déployé par une entreprise s'avère discriminatoire envers certains clients. L'entreprise peut-elle se dégager de toute responsabilité en expliquant que « c'est l'algorithme qui a décidé, pas nous » ?",
+      "help": "Le principe de redevabilité porte sur qui reste responsable des effets d'un système, pas sur qui l'a techniquement exécuté.",
+      "options": [
+        {
+          "label": "Non : le principe de redevabilité veut que l'organisme qui déploie et utilise le système reste responsable de ses décisions et doit pouvoir démontrer sa conformité, quel que soit l'outil utilisé.",
+          "score": 1
+        },
+        {
+          "label": "Oui, la responsabilité juridique est automatiquement transférée à l'éditeur du logiciel d'IA dans tous les cas.",
+          "score": 0
+        },
+        {
+          "label": "Oui, un système automatisé ne peut par définition engager la responsabilité de personne.",
+          "score": 0
+        }
+      ],
+      "axe": "Redevabilité",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Pour un système d'IA à haut risque, qu'exige concrètement le principe de « supervision humaine » mis en avant par la gouvernance de l'IA ?",
+      "help": "La supervision humaine se juge par la capacité réelle d'agir sur le système, pas par une simple formalité.",
+      "options": [
+        {
+          "label": "Qu'un humain soit réellement en mesure de comprendre, surveiller, intervenir sur ou neutraliser les sorties du système — pas seulement d'observer passivement son fonctionnement.",
+          "score": 1
+        },
+        {
+          "label": "Qu'un humain signe un document administratif avant la mise en service du système, sans obligation de pouvoir intervenir ensuite.",
+          "score": 0
+        },
+        {
+          "label": "Qu'un technicien informatique soit physiquement présent dans la même pièce que le serveur qui exécute le modèle.",
+          "score": 0
+        }
+      ],
+      "axe": "Supervision humaine",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Gouvernance & éthique IA », dans le domaine « DATA LITERACY & IA ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : compréhension des enjeux de gouvernance et d’éthique.\nFormat cible : 15 items + cas, 10 min.\nContenu cible : AI Act, RGPD, transparence, redevabilité, supervision.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : conformité, gouvernance.\nOptions cibles : mise à jour réglementaire continue.\nObjectif du domaine : évaluer la capacité à comprendre, utiliser et critiquer les données et l’IA — compétence devenue universelle à l’ère de l’IA générative\nGarde-fou du domaine : mise à jour trimestrielle obligatoire (écosystème IA évolutif) ; ne pas évaluer sur des outils propriétaires ; transparence\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un formateur en culture des données et de l'intelligence artificielle. Ce test est un contrôle de connaissances factuelles sur la gouvernance et l'éthique de l'IA : AI Act, RGPD, transparence, redevabilité et supervision humaine. Il ne s'agit en aucun cas d'un test psychométrique certifié, validé ou étalonné, ni d'un avis juridique ; aucune norme professionnelle, aucun percentile, aucun QI et aucune certification ne sont délivrés par cet outil.\n\nLe score global et le score par axe ont déjà été calculés à partir des réponses cochées et te sont fournis ci-dessous dans « Résultat du calcul ». Ne les recalcule pas, ne les modifie pas : reprends-les tels quels et commente-les.\n\nProduis une interprétation pédagogique :\n- un commentaire du score global, qui situe le niveau de maîtrise observé aujourd'hui sur ce sujet précis, sans comparaison à une norme ou à un percentile ;\n- pour chaque question dont la réponse choisie n'était pas la bonne, explique brièvement — en langage clair et sans jargon inutile — le concept réellement en jeu, pourquoi la réponse correcte est la bonne, et l'erreur de raisonnement la plus probable ;\n- des recommandations concrètes et actionnables (lectures, exercices pratiques, réflexes à adopter), explicitement priorisées sur l'axe ou les axes les plus faibles ;\n- un rappel explicite que ce résultat ne reflète que les réponses données aujourd'hui, qu'il ne s'agit ni d'un diagnostic, ni d'une certification, ni d'une mesure validée scientifiquement de l'aptitude de la personne, ni d'un conseil juridique, et qu'aucune décision de recrutement, de sélection, de promotion ou d'aptitude ne doit être fondée sur ce seul résultat.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun seuil de certification. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +223,5 @@
       "Garde-fou du domaine": "mise à jour trimestrielle obligatoire (écosystème IA évolutif) ; ne pas évaluer sur des outils propriétaires ; transparence"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

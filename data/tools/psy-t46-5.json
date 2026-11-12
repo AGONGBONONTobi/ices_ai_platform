@@ -1,69 +1,182 @@
 {
   "id": "psy-t46-5",
-  "title": "Préparer — Hallucination & vérification · T46.5",
+  "title": "Hallucination & vérification · T46.5",
   "category": "TRANSFORMATION DIGITALE & IA",
+  "output_kind": "assessment",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Hallucination & vérification ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Un assistant IA affirme avec assurance qu'« un traité international signé en 1998 entre la France et un pays voisin régit cette situation », alors qu'aucun traité de ce type n'existe réellement. Comment appelle-t-on ce type d'erreur, typique des modèles de langage ?",
+      "help": "Le modèle produit une phrase grammaticalement correcte et plausible, mais sans ancrage dans un fait réel.",
+      "options": [
+        {
+          "label": "Une hallucination : une information fausse ou inventée, produite de façon fluide et confiante, sans lien avec un fait réel vérifiable.",
+          "score": 1
+        },
+        {
+          "label": "Un simple bug d'affichage du logiciel, sans rapport avec le contenu généré.",
+          "score": 0
+        },
+        {
+          "label": "Une preuve que le modèle ment intentionnellement comme le ferait une personne.",
+          "score": 0
+        }
+      ],
+      "axe": "Faits inventés (hallucination)",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Un assistant IA donne, pour appuyer une affirmation, une référence très précise : nom d'auteur, titre d'article, nom de revue scientifique, année et DOI. Que devez-vous faire avant d'utiliser cette référence dans un document sérieux ?",
+      "help": "Le niveau de détail apparent d'une référence n'est pas une preuve de son existence réelle.",
+      "options": [
+        {
+          "label": "Vérifier indépendamment (par exemple via une recherche ou une base académique) que cette référence existe réellement et dit bien ce qui est rapporté, car un modèle peut fabriquer des références plausibles mais inexistantes.",
+          "score": 1
+        },
+        {
+          "label": "Faire confiance directement à la référence : un format précis avec DOI garantit que la source existe.",
+          "score": 0
+        },
+        {
+          "label": "Ignorer la question des sources, elles ne sont jamais nécessaires si le ton de la réponse est assuré.",
+          "score": 0
+        }
+      ],
+      "axe": "Sources et citations",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à détecter les erreurs et hallucinations de l’IA. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Un assistant IA répond à une question factuelle avec un ton très assuré et détaillé, sans aucune formule d'incertitude. Ce ton confiant garantit-il que l'information donnée est exacte ?",
+      "help": "Le style d'écriture d'un modèle de langage est généré indépendamment de la véracité du contenu.",
+      "options": [
+        {
+          "label": "Non : un modèle de langage peut formuler une information fausse avec exactement le même ton assuré qu'une information vraie ; la confiance apparente n'est pas un indicateur fiable d'exactitude.",
+          "score": 1
+        },
+        {
+          "label": "Oui, un modèle n'emploie un ton assuré que lorsqu'il est effectivement certain d'avoir raison.",
+          "score": 0
+        },
+        {
+          "label": "Oui, car le ton est calculé statistiquement à partir du niveau de certitude réel de la réponse.",
+          "score": 0
+        }
+      ],
+      "axe": "Cohérence",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Un assistant IA répond à une question sur un sujet très spécifique et peu documenté par une statistique précise au dixième près (« 73,4 % des cas »), sans indiquer sa source ni avoir reçu de données chiffrées dans la conversation. Que devez-vous suspecter ?",
+      "help": "Un chiffre précis n'est pas plus fiable qu'un chiffre rond s'il n'est adossé à aucune source vérifiable.",
+      "options": [
+        {
+          "label": "Ce chiffre pourrait être fabriqué (halluciné) plutôt qu'issu d'une vraie étude, et doit être vérifié auprès d'une source fiable avant d'être réutilisé.",
+          "score": 1
+        },
+        {
+          "label": "Ce niveau de précision (un chiffre après la virgule) prouve que la statistique provient forcément d'une étude réelle et sérieuse.",
+          "score": 0
+        },
+        {
+          "label": "Il est impossible qu'un modèle de langage invente un chiffre aussi précis.",
+          "score": 0
+        }
+      ],
+      "axe": "Faits inventés (hallucination)",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Dans la même réponse, un assistant IA affirme d'abord qu'« un événement a eu lieu en 2015 » puis, deux paragraphes plus loin, qu'« il s'est produit en 2019 », sans le signaler. Que révèle cette contradiction interne ?",
+      "help": "Deux affirmations incompatibles dans une même réponse ne peuvent pas être toutes les deux exactes.",
+      "options": [
+        {
+          "label": "Un signe fiable d'erreur ou de manque de fiabilité de la réponse sur ce point précis, qui doit inciter à vérifier l'information avant de la réutiliser.",
+          "score": 1
+        },
+        {
+          "label": "Rien d'anormal, les modèles de langage ne produisent jamais ce genre de contradiction interne.",
+          "score": 0
+        },
+        {
+          "label": "La preuve que les deux dates sont correctes et qu'il s'agit en réalité de deux événements distincts.",
+          "score": 0
+        }
+      ],
+      "axe": "Cohérence",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Pour vérifier une affirmation factuelle importante produite par une IA avant de la publier, laquelle de ces méthodes est la plus fiable ?",
+      "help": "La vérification d'un fait repose généralement sur une source extérieure au modèle lui-même.",
+      "options": [
+        {
+          "label": "La recroiser avec une source externe indépendante et digne de confiance (source primaire, organisme officiel, étude citée directement).",
+          "score": 1
+        },
+        {
+          "label": "Reposer exactement la même question au même assistant et considérer qu'une réponse identique confirme l'exactitude du fait.",
+          "score": 0
+        },
+        {
+          "label": "Demander à l'assistant de « vérifier lui-même » sa réponse sans lui fournir aucune nouvelle information ni source externe.",
+          "score": 0
+        }
+      ],
+      "axe": "Vérification",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Hallucination & vérification », dans le domaine « DATA LITERACY & IA ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à détecter les erreurs et hallucinations de l’IA.\nFormat cible : 15 cas, 10 min.\nContenu cible : faits, sources, cohérence, vérification.\nCalcul cible (non implémenté ici) : score, taux de détection.\nUsage décrit : supervision d’outils IA.\nOptions cibles : cas générés par IA avec erreurs contrôlées.\nObjectif du domaine : évaluer la capacité à comprendre, utiliser et critiquer les données et l’IA — compétence devenue universelle à l’ère de l’IA générative\nGarde-fou du domaine : mise à jour trimestrielle obligatoire (écosystème IA évolutif) ; ne pas évaluer sur des outils propriétaires ; transparence\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un formateur en culture des données et de l'intelligence artificielle. Ce test est un contrôle de connaissances factuelles sur la détection des hallucinations de l'IA : faits inventés, fiabilité des sources, cohérence interne d'une réponse et méthodes de vérification. Il ne s'agit en aucun cas d'un test psychométrique certifié, validé ou étalonné — aucune norme professionnelle, aucun percentile, aucun QI et aucune certification ne sont délivrés par cet outil.\n\nLe score global et le score par axe ont déjà été calculés à partir des réponses cochées et te sont fournis ci-dessous dans « Résultat du calcul ». Ne les recalcule pas, ne les modifie pas : reprends-les tels quels et commente-les.\n\nProduis une interprétation pédagogique :\n- un commentaire du score global, qui situe le niveau de maîtrise observé aujourd'hui sur ce sujet précis, sans comparaison à une norme ou à un percentile ;\n- pour chaque question dont la réponse choisie n'était pas la bonne, explique brièvement — en langage clair et sans jargon inutile — le concept réellement en jeu, pourquoi la réponse correcte est la bonne, et l'erreur de raisonnement la plus probable ;\n- des recommandations concrètes et actionnables (lectures, exercices pratiques, réflexes à adopter), explicitement priorisées sur l'axe ou les axes les plus faibles ;\n- un rappel explicite que ce résultat ne reflète que les réponses données aujourd'hui, qu'il ne s'agit ni d'un diagnostic, ni d'une certification, ni d'une mesure validée scientifiquement de l'aptitude de la personne, et qu'aucune décision de recrutement, de sélection, de promotion ou d'aptitude ne doit être fondée sur ce seul résultat.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun seuil de certification. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +193,5 @@
       "Garde-fou du domaine": "mise à jour trimestrielle obligatoire (écosystème IA évolutif) ; ne pas évaluer sur des outils propriétaires ; transparence"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

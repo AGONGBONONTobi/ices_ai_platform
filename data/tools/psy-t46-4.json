@@ -1,69 +1,182 @@
 {
   "id": "psy-t46-4",
-  "title": "Préparer — Prompt & interaction IA · T46.4",
+  "title": "Prompt & interaction IA · T46.4",
   "category": "TRANSFORMATION DIGITALE & IA",
+  "output_kind": "assessment",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Prompt & interaction IA ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Pour obtenir un texte utilisable directement, laquelle de ces deux formulations envoyées à un assistant IA est la plus susceptible de produire un résultat précis dès la première tentative : « Écris un truc sur les chiens » ou « Écris un paragraphe de 100 mots sur les bienfaits d'une promenade quotidienne avec un chien, destiné à des personnes âgées » ?",
+      "help": "Comparez ce que chaque formulation précise réellement sur le sujet, la forme et le public visé.",
+      "options": [
+        {
+          "label": "La seconde, car elle précise le sujet, la longueur, l'angle et le public visé, ce qui réduit l'ambiguïté pour le modèle.",
+          "score": 1
+        },
+        {
+          "label": "La première, car laisser le modèle totalement libre donne toujours le résultat le plus créatif et le plus pertinent.",
+          "score": 0
+        },
+        {
+          "label": "Les deux formulations donnent statistiquement un résultat identique, la précision du prompt n'a pas d'effet.",
+          "score": 0
+        }
+      ],
+      "axe": "Formulation",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Vous voulez qu'un modèle de langage réponde systématiquement dans un format précis (par exemple une liste à puces de 3 éléments maximum, chacun commençant par un verbe). Laquelle de ces approches est reconnue comme la plus efficace pour obtenir ce format de façon fiable ?",
+      "help": "Montrer concrètement ce qui est attendu aide souvent davantage que le décrire de façon abstraite.",
+      "options": [
+        {
+          "label": "Fournir un ou deux exemples concrets du format attendu directement dans le prompt (apprentissage par l'exemple, dit « few-shot »).",
+          "score": 1
+        },
+        {
+          "label": "Décrire le format uniquement de façon abstraite, sans aucun exemple, et espérer que le modèle devine l'intention exacte.",
+          "score": 0
+        },
+        {
+          "label": "Écrire la consigne entièrement en lettres majuscules pour la rendre plus impérative.",
+          "score": 0
+        }
+      ],
+      "axe": "Formulation",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à interagir efficacement avec les LLM. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Un utilisateur demande à un assistant IA : « Corrige les fautes dans mon texte », sans coller le texte en question ni joindre de fichier accessible à l'assistant. Que va-t-il se passer ?",
+      "help": "Un modèle de langage ne travaille qu'avec ce qui lui est effectivement transmis dans la conversation.",
+      "options": [
+        {
+          "label": "L'assistant ne peut pas corriger un texte à lequel il n'a pas accès ; il va soit le signaler, soit répondre à côté en inventant ou en redemandant le texte.",
+          "score": 1
+        },
+        {
+          "label": "L'assistant retrouve automatiquement le texte visé sur l'ordinateur de l'utilisateur.",
+          "score": 0
+        },
+        {
+          "label": "L'assistant devine le texte exact avec certitude grâce au contexte de la conversation, même sans qu'il ait été fourni.",
+          "score": 0
+        }
+      ],
+      "axe": "Contexte",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Un prompt précise : « Réponds en exactement 3 points, 50 mots maximum, sans jargon technique. » Qu'apporte ce type de consigne par rapport à un prompt qui ne précise rien sur la forme attendue ?",
+      "help": "Une consigne de forme réduit le nombre de résultats possibles acceptables.",
+      "options": [
+        {
+          "label": "Cela donne des contraintes explicites de format et de longueur, ce qui rend le résultat plus prévisible et plus facile à réutiliser tel quel.",
+          "score": 1
+        },
+        {
+          "label": "Cela n'a aucun effet, un modèle de langage ignore systématiquement les contraintes de longueur et de format.",
+          "score": 0
+        },
+        {
+          "label": "Cela réduit automatiquement la justesse factuelle de la réponse.",
+          "score": 0
+        }
+      ],
+      "axe": "Contraintes",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "La première réponse d'un assistant IA à votre demande ne correspond pas à ce que vous attendiez. Laquelle de ces stratégies est reconnue comme la plus efficace pour l'améliorer ?",
+      "help": "Une réponse insatisfaisante donne souvent des indices précis sur ce qu'il faut préciser ensuite.",
+      "options": [
+        {
+          "label": "Reformuler la demande en expliquant précisément ce qui ne convient pas dans la réponse précédente et ce que vous voulez à la place (itération ciblée).",
+          "score": 1
+        },
+        {
+          "label": "Répéter mot pour mot exactement le même prompt une seconde fois, sans rien changer.",
+          "score": 0
+        },
+        {
+          "label": "Abandonner immédiatement, puisqu'une première réponse insatisfaisante signifie que le sujet est impossible à traiter par l'IA.",
+          "score": 0
+        }
+      ],
+      "axe": "Itération",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Un utilisateur commence son prompt par « Tu es un expert reconnu en droit fiscal international. » Cette formulation garantit-elle que les informations juridiques données ensuite par le modèle seront exactes ?",
+      "help": "Donner un rôle au modèle change surtout la manière dont il s'exprime.",
+      "options": [
+        {
+          "label": "Non : donner un rôle ou une persona au modèle peut influencer le style et le ton de la réponse, mais ne garantit en rien l'exactitude factuelle du contenu, qui doit toujours être vérifié.",
+          "score": 1
+        },
+        {
+          "label": "Oui, attribuer un rôle d'expert active des connaissances juridiques certifiées et vérifiées chez le modèle.",
+          "score": 0
+        },
+        {
+          "label": "Oui, car un modèle de langage ne peut produire d'erreur factuelle que s'il n'a reçu aucun rôle précis.",
+          "score": 0
+        }
+      ],
+      "axe": "Fiabilité du résultat",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Prompt & interaction IA », dans le domaine « DATA LITERACY & IA ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à interagir efficacement avec les LLM.\nFormat cible : 10 tâches de prompt, 12 min.\nContenu cible : formulation, contexte, contraintes, itération.\nCalcul cible (non implémenté ici) : qualité des prompts, résultat obtenu.\nUsage décrit : formation IA.\nOptions cibles : évaluation par LLM avec rubrique ; comparaison à des prompts experts.\nObjectif du domaine : évaluer la capacité à comprendre, utiliser et critiquer les données et l’IA — compétence devenue universelle à l’ère de l’IA générative\nGarde-fou du domaine : mise à jour trimestrielle obligatoire (écosystème IA évolutif) ; ne pas évaluer sur des outils propriétaires ; transparence\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un formateur en culture des données et de l'intelligence artificielle. Ce test est un contrôle de connaissances factuelles et de bonnes pratiques sur le prompt et l'interaction avec l'IA : formulation, contexte, contraintes et itération. Il ne s'agit en aucun cas d'un test psychométrique certifié, validé ou étalonné — aucune norme professionnelle, aucun percentile, aucun QI et aucune certification ne sont délivrés par cet outil.\n\nLe score global et le score par axe ont déjà été calculés à partir des réponses cochées et te sont fournis ci-dessous dans « Résultat du calcul ». Ne les recalcule pas, ne les modifie pas : reprends-les tels quels et commente-les.\n\nProduis une interprétation pédagogique :\n- un commentaire du score global, qui situe le niveau de maîtrise observé aujourd'hui sur ce sujet précis, sans comparaison à une norme ou à un percentile ;\n- pour chaque question dont la réponse choisie n'était pas la bonne, explique brièvement — en langage clair et sans jargon inutile — le concept réellement en jeu, pourquoi la réponse correcte est la bonne, et l'erreur de raisonnement la plus probable ;\n- des recommandations concrètes et actionnables (lectures, exercices pratiques, réflexes à adopter), explicitement priorisées sur l'axe ou les axes les plus faibles ;\n- un rappel explicite que ce résultat ne reflète que les réponses données aujourd'hui, qu'il ne s'agit ni d'un diagnostic, ni d'une certification, ni d'une mesure validée scientifiquement de l'aptitude de la personne, et qu'aucune décision de recrutement, de sélection, de promotion ou d'aptitude ne doit être fondée sur ce seul résultat.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun seuil de certification. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +193,5 @@
       "Garde-fou du domaine": "mise à jour trimestrielle obligatoire (écosystème IA évolutif) ; ne pas évaluer sur des outils propriétaires ; transparence"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

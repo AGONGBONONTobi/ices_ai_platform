@@ -1,69 +1,206 @@
 {
   "id": "psy-t12-7",
-  "title": "Préparer — Culture sécurité & signalement · T12.7",
+  "title": "Culture sécurité & signalement · T12.7",
   "category": "TRANSFORMATION DIGITALE & IA",
+  "output_kind": "assessment",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Culture sécurité & signalement ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Un employé a cliqué par erreur sur un lien de phishing et craint des représailles s'il le signale. Quelle est la pratique recommandée par une culture de sécurité saine (« culture juste ») ?",
+      "help": "L'objectif d'une culture juste est d'obtenir un signalement rapide, pas de punir l'erreur de bonne foi.",
+      "options": [
+        {
+          "label": "Ne rien dire, pour éviter toute sanction",
+          "score": 0
+        },
+        {
+          "label": "Encourager le signalement, sans sanction pour une erreur de bonne foi rapidement déclarée, afin de permettre une réaction rapide",
+          "score": 1
+        },
+        {
+          "label": "Sanctionner systématiquement tout employé qui clique sur un lien suspect",
+          "score": 0
+        },
+        {
+          "label": "Attendre que l'incident soit découvert par d'autres moyens",
+          "score": 0
+        }
+      ],
+      "axe": "Culture sécurité & signalement",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Pourquoi une politique de non-punition des erreurs de sécurité signalées de bonne foi améliore-t-elle la sécurité globale d'une organisation ?",
+      "help": "Le bénéfice se situe dans la rapidité et la fréquence des signalements obtenus.",
+      "options": [
+        {
+          "label": "Elle n'a aucun effet mesurable sur le comportement des employés",
+          "score": 0
+        },
+        {
+          "label": "Elle encourage les employés à signaler rapidement les incidents, ce qui permet une détection et une réaction plus rapides",
+          "score": 1
+        },
+        {
+          "label": "Elle supprime le besoin de former les employés à la sécurité",
+          "score": 0
+        },
+        {
+          "label": "Elle réduit mécaniquement le nombre réel d'incidents",
+          "score": 0
+        }
+      ],
+      "axe": "Culture sécurité & signalement",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : attitude, signalement, sécurité psychologique. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Quel canal est le plus approprié pour signaler un incident de sécurité suspecté, au sein d'une organisation disposant d'une procédure formalisée ?",
+      "help": "Un signalement efficace passe par un canal connu et traçable, pas par le bouche-à-oreille.",
+      "options": [
+        {
+          "label": "En parler uniquement entre collègues, sans suivre de procédure",
+          "score": 0
+        },
+        {
+          "label": "Utiliser le canal de signalement officiel désigné (adresse dédiée, outil interne, référent sécurité)",
+          "score": 1
+        },
+        {
+          "label": "Publier l'incident sur ses réseaux sociaux personnels",
+          "score": 0
+        },
+        {
+          "label": "Attendre la prochaine réunion d'équipe mensuelle pour en parler",
+          "score": 0
+        }
+      ],
+      "axe": "Culture sécurité & signalement",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Qu'est-ce que la « sécurité psychologique » dans le contexte d'une culture de cybersécurité d'entreprise ?",
+      "help": "Il s'agit d'un climat relationnel, pas d'un dispositif technique.",
+      "options": [
+        {
+          "label": "Un dispositif technique de chiffrement des données",
+          "score": 0
+        },
+        {
+          "label": "Un climat dans lequel les collaborateurs se sentent en confiance pour signaler une erreur ou une inquiétude sans craindre d'être jugés ou punis injustement",
+          "score": 1
+        },
+        {
+          "label": "Une assurance couvrant financièrement les conséquences d'un piratage",
+          "score": 0
+        },
+        {
+          "label": "Un programme de formation obligatoire organisé une seule fois par an",
+          "score": 0
+        }
+      ],
+      "axe": "Culture sécurité & signalement",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un collaborateur remarque qu'un collègue partage son mot de passe avec un stagiaire « pour l'aider ». Quelle attitude reflète une bonne culture de sécurité ?",
+      "help": "Le signalement constructif d'une pratique à risque fait partie d'une culture de sécurité mature.",
+      "options": [
+        {
+          "label": "Ignorer la situation, car cela ne le concerne pas directement",
+          "score": 0
+        },
+        {
+          "label": "Signaler la pratique à risque de façon constructive, via le canal approprié, pour que la situation soit corrigée",
+          "score": 1
+        },
+        {
+          "label": "Partager lui aussi son propre mot de passe par solidarité",
+          "score": 0
+        },
+        {
+          "label": "Se moquer publiquement du collègue concerné",
+          "score": 0
+        }
+      ],
+      "axe": "Culture sécurité & signalement",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Quel est l'un des bénéfices principaux d'un signalement rapide des incidents de sécurité, même mineurs, pour une organisation ?",
+      "help": "Les signalements mineurs, agrégés, révèlent souvent des tendances utiles avant qu'un incident majeur ne survienne.",
+      "options": [
+        {
+          "label": "Cela n'apporte aucun bénéfice concret à l'organisation",
+          "score": 0
+        },
+        {
+          "label": "Cela permet de détecter des tendances, de réagir plus vite et de limiter l'impact d'incidents plus graves",
+          "score": 1
+        },
+        {
+          "label": "Cela sert uniquement à produire des statistiques destinées à la direction",
+          "score": 0
+        },
+        {
+          "label": "Cela remplace la nécessité de toute mesure technique de sécurité",
+          "score": 0
+        }
+      ],
+      "axe": "Culture sécurité & signalement",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Culture sécurité & signalement », dans le domaine « CYBERSÉCURITÉ & HYGIÈNE NUMÉRIQUE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : attitude, signalement, sécurité psychologique.\nFormat cible : 15 items, 6 min.\nContenu cible : signalement, non-punition, culture.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : maturité sécurité.\nOptions cibles : benchmark sectoriel.\nObjectif du domaine : mesurer la sensibilisation et les comportements de sécurité\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en culture de cybersécurité organisationnelle. Ce test est un contrôle factuel de connaissances sur la culture de sécurité et le signalement — ce n'est en aucun cas un test psychométrique certifié ou validé scientifiquement : il n'établit ni percentile, ni norme professionnelle, ni QI, ni diagnostic clinique ou de personnalité. Il reflète uniquement les réponses données aujourd'hui à ces questions factuelles.\n\nLe score a déjà été calculé à partir des réponses fournies et t'est communiqué plus bas. Ne recalcule pas les scores, ne les modifie pas : reprends-les tels quels et commente-les.\n\nProduis une interprétation :\n- une lecture brève du score global et du niveau de connaissance observé sur l'axe « Culture sécurité & signalement » ;\n- pour les réponses erronées ou le score le plus faible, des recommandations concrètes, pratiques et immédiatement applicables (canaux de signalement, culture juste, sécurité psychologique au quotidien) ;\n- rappelle explicitement qu'il s'agit d'un contrôle de connaissances à un instant donné, et non d'une évaluation certifiée, ni d'une mesure de la maturité réelle de l'ensemble de l'organisation.\n\nN'invente aucune norme, aucun percentile, aucun classement sectoriel ni aucune certification. Ne décide d'aucune sanction, d'aucun accès ou d'aucune décision RH à partir de ce seul résultat.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "mesurer la sensibilisation et les comportements de sécurité"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

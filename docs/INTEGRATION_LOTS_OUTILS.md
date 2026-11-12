@@ -14,12 +14,44 @@ apparaître dans une instance déployée.
 
 | Source | Couverture | Mode disponible dans ce moteur |
 | --- | --- | --- |
-| Lot 5 — catalogue de 350 outils | 50 domaines, 350 codes `Tn.n` | 350 guides de préparation documentaire |
+| Lot 5 — catalogue de 350 outils | 50 domaines, 350 codes `Tn.n` | 35 outils fonctionnels (28 quiz notés, 7 analyses sans score), 315 guides de préparation documentaire |
 | Lot 6 — parcours cognitifs | 30 domaines, 149 fiches `Dnn-P…` | 28 supports de préparation, 121 références consultables |
 
-Le catalogue local passe de **1 088 à 1 587 entrées**. Les 499 nouvelles entrées
-sont 378 guides de préparation et 121 fiches de référence. Elles ne constituent
-pas 499 nouveaux tests psychométriques étalonnés.
+Le catalogue local passe de **1 088 à 1 587 entrées**. Des 499 nouvelles entrées,
+35 sont désormais des outils réellement fonctionnels (sans mode `preparation`
+ni `reference`), 343 restent des guides de préparation et 121 des fiches de
+référence. Elles ne constituent pas 499 nouveaux tests psychométriques étalonnés.
+
+## Intégration réelle du 12 novembre 2026 (35 outils)
+
+35 codes du lot 5 ont été transformés en outils fonctionnels, sans gating
+`execution`, au même titre que les 1088 outils historiques :
+
+- **28 quiz de connaissances factuelles** (domaines 11 Finance & numératie
+  financière, 12 Cybersécurité & hygiène numérique, 13 Compétence numérique &
+  bureautique, 46 Data literacy & IA) : `output_kind: "assessment"`, questions
+  à choix multiple avec une seule réponse objectivement correcte par question
+  (score 1/0), score calculé par `compute_scores` (jamais par le modèle).
+  Ce sont des connaissances factuelles établies (lecture d'états financiers,
+  hygiène de sécurité, bureautique, littératie des données), pas des construits
+  psychométriques — la correction objective y est honnête, contrairement aux
+  domaines de personnalité, aptitude ou santé mentale.
+- **7 outils d'aide à la décision sans score** (domaine 39, Biais cognitifs &
+  jugement) : `output_kind: "analysis"`, l'utilisateur décrit une décision
+  réelle, l'outil produit une analyse des biais pertinents et des questions de
+  débiaisage. Aucun coefficient de biais n'est calculé ou affiché : ce domaine
+  sert explicitement à des décisions de sélection dans la source, donc toute
+  note chiffrée y aurait été un score psychométrique fabriqué.
+
+Les 46 autres domaines du lot 5 (QI, personnalité, intelligence émotionnelle,
+motivation, intérêts, santé mentale, tempérament de l'enfant, neurodiversité,
+haut potentiel, etc.) et l'intégralité du lot 6 (parcours cognitifs individuels)
+restent des guides de préparation ou des fiches de référence : une correction
+objective y est impossible sans banque d'items calibrée et validée, que ce
+projet ne possède pas. Ce n'est pas un travail restant à finir à l'identique —
+c'est la limite de ce qu'un outil texte peut faire honnêtement sur ces
+construits. Preuves : `fast_api/app/services/scoring.py`,
+`data/imports/manager-lots/coverage.json` (champ `mode: "functional"`).
 
 Le lot 6 présente plusieurs paliers d’un parcours et réutilise des instruments
 du lot 5 : les deux nombres ne représentent donc pas des tests indépendants.

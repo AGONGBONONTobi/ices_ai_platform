@@ -1,69 +1,206 @@
 {
   "id": "psy-t12-5",
-  "title": "Préparer — Sécurité mobile, télétravail & USB · T12.5",
+  "title": "Sécurité mobile, télétravail & USB · T12.5",
   "category": "TRANSFORMATION DIGITALE & IA",
+  "output_kind": "assessment",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Sécurité mobile, télétravail & USB ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Vous travaillez depuis un café et devez vous connecter aux outils de l'entreprise via le Wi-Fi public gratuit de l'établissement. Quelle est la bonne pratique ?",
+      "help": "Un réseau Wi-Fi public partagé n'offre pas les mêmes garanties qu'un réseau d'entreprise.",
+      "options": [
+        {
+          "label": "Se connecter directement au Wi-Fi public et accéder aux outils professionnels",
+          "score": 0
+        },
+        {
+          "label": "Éviter le Wi-Fi public non sécurisé pour des accès professionnels, ou à défaut utiliser un VPN d'entreprise approuvé",
+          "score": 1
+        },
+        {
+          "label": "Se connecter au Wi-Fi public, mais seulement pour consulter ses e-mails",
+          "score": 0
+        },
+        {
+          "label": "Demander le mot de passe du Wi-Fi à voix haute pour vérifier qu'il est bien protégé",
+          "score": 0
+        }
+      ],
+      "axe": "Sécurité mobile, télétravail & USB",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Vous trouvez une clé USB inconnue sur le parking de l'entreprise. Quelle est la bonne conduite ?",
+      "help": "Une clé USB inconnue est un vecteur classique d'infection, qu'elle soit branchée sur un poste professionnel ou personnel.",
+      "options": [
+        {
+          "label": "La brancher sur votre ordinateur professionnel pour voir à qui elle appartient",
+          "score": 0
+        },
+        {
+          "label": "Ne pas la brancher et la remettre au service sécurité/IT, car elle peut contenir un logiciel malveillant",
+          "score": 1
+        },
+        {
+          "label": "La brancher sur un ordinateur personnel pour vérifier, sans risque pour l'entreprise",
+          "score": 0
+        },
+        {
+          "label": "La jeter directement à la poubelle sans en informer personne",
+          "score": 0
+        }
+      ],
+      "axe": "Sécurité mobile, télétravail & USB",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : risques du quotidien. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "En télétravail, quelle pratique concernant votre ordinateur professionnel respecte les règles de sécurité de base ?",
+      "help": "Le domicile n'est pas un environnement contrôlé comme peut l'être un bureau d'entreprise.",
+      "options": [
+        {
+          "label": "Laisser l'ordinateur déverrouillé en permanence pour plus de confort",
+          "score": 0
+        },
+        {
+          "label": "Verrouiller systématiquement la session dès qu'on s'éloigne de l'ordinateur, même à domicile",
+          "score": 1
+        },
+        {
+          "label": "Partager son mot de passe avec un membre de la famille en cas de besoin",
+          "score": 0
+        },
+        {
+          "label": "Désactiver le pare-feu pour améliorer la vitesse de connexion",
+          "score": 0
+        }
+      ],
+      "axe": "Sécurité mobile, télétravail & USB",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Dans un contexte de BYOD (Bring Your Own Device, utilisation d'un appareil personnel pour le travail), quelle affirmation est correcte ?",
+      "help": "Le fait qu'un appareil soit personnel ne dispense pas des règles de sécurité quand il accède aux ressources de l'entreprise.",
+      "options": [
+        {
+          "label": "Un appareil personnel ne nécessite aucune mesure de sécurité particulière puisqu'il n'appartient pas à l'entreprise",
+          "score": 0
+        },
+        {
+          "label": "Un appareil personnel utilisé pour accéder aux ressources de l'entreprise doit respecter les règles de sécurité définies par la politique BYOD (chiffrement, mise à jour, verrouillage, etc.)",
+          "score": 1
+        },
+        {
+          "label": "Le BYOD supprime toute responsabilité de l'employé en matière de sécurité",
+          "score": 0
+        },
+        {
+          "label": "Le BYOD est par principe interdit dans toutes les organisations",
+          "score": 0
+        }
+      ],
+      "axe": "Sécurité mobile, télétravail & USB",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Votre smartphone professionnel propose une mise à jour de sécurité du système. Quelle est la bonne pratique ?",
+      "help": "Les mises à jour de sécurité corrigent souvent des failles déjà exploitées activement.",
+      "options": [
+        {
+          "label": "Reporter indéfiniment la mise à jour pour ne pas être dérangé",
+          "score": 0
+        },
+        {
+          "label": "Installer la mise à jour de sécurité dans les meilleurs délais, car elle corrige des vulnérabilités connues",
+          "score": 1
+        },
+        {
+          "label": "Désactiver définitivement les mises à jour automatiques",
+          "score": 0
+        },
+        {
+          "label": "Attendre que le téléphone soit remplacé pour effectuer la mise à jour",
+          "score": 0
+        }
+      ],
+      "axe": "Sécurité mobile, télétravail & USB",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Vous devez transporter un ordinateur portable professionnel contenant des données sensibles lors d'un déplacement. Quelle mesure réduit réellement le risque en cas de perte ou de vol de l'appareil ?",
+      "help": "Un mot de passe de session seul ne protège pas le contenu du disque s'il est extrait physiquement.",
+      "options": [
+        {
+          "label": "Aucune mesure particulière n'est nécessaire si l'appareil a un mot de passe de session",
+          "score": 0
+        },
+        {
+          "label": "S'assurer que le disque est chiffré (chiffrement de disque complet), en plus du verrouillage de session",
+          "score": 1
+        },
+        {
+          "label": "Noter le mot de passe sur une étiquette collée sur l'appareil pour ne pas l'oublier",
+          "score": 0
+        },
+        {
+          "label": "Désactiver le verrouillage automatique pour un accès plus rapide",
+          "score": 0
+        }
+      ],
+      "axe": "Sécurité mobile, télétravail & USB",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Sécurité mobile, télétravail & USB », dans le domaine « CYBERSÉCURITÉ & HYGIÈNE NUMÉRIQUE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : risques du quotidien.\nFormat cible : 15 items, 6 min.\nContenu cible : Wi-Fi, devices, supports amovibles.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : télétravail, BYOD.\nOptions cibles : scénarios contextuels.\nObjectif du domaine : mesurer la sensibilisation et les comportements de sécurité\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en sensibilisation à la cybersécurité. Ce test est un contrôle factuel de connaissances et de pratiques sur la sécurité mobile, le télétravail et les supports amovibles (USB) — ce n'est en aucun cas un test psychométrique certifié ou validé scientifiquement : il n'établit ni percentile, ni norme professionnelle, ni QI, ni diagnostic clinique ou de personnalité. Il reflète uniquement les réponses données aujourd'hui à ces questions factuelles.\n\nLe score a déjà été calculé à partir des réponses fournies et t'est communiqué plus bas. Ne recalcule pas les scores, ne les modifie pas : reprends-les tels quels et commente-les.\n\nProduis une interprétation :\n- une lecture brève du score global et du niveau de maîtrise observé sur l'axe « Sécurité mobile, télétravail & USB » ;\n- pour les réponses erronées ou le score le plus faible, des recommandations concrètes, pratiques et immédiatement applicables (Wi-Fi public, VPN, verrouillage, chiffrement, supports amovibles) ;\n- rappelle explicitement qu'il s'agit d'un contrôle de connaissances à un instant donné, et non d'une évaluation certifiée ni d'un audit technique réel du poste ou du domicile.\n\nN'invente aucune norme, aucun percentile, aucun classement sectoriel ni aucune certification. Ne décide d'aucune sanction, d'aucun accès ou d'aucune décision RH à partir de ce seul résultat.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "mesurer la sensibilisation et les comportements de sécurité"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

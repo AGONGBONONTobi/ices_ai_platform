@@ -1,69 +1,206 @@
 {
   "id": "psy-t11-5",
-  "title": "Préparer — Risque & diversification · T11.5",
+  "title": "Risque & diversification · T11.5",
   "category": "FINANCE & GESTION",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Risque & diversification ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : risque, rendement, diversification. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Risque & diversification », dans le domaine « FINANCE & NUMÉRATIE FINANCIÈRE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : risque, rendement, diversification.\nFormat cible : 18 items, 10 min.\nContenu cible : volatilité, corrélation, allocation.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : investissement, assurance.\nOptions cibles : scénarios de marché.\nObjectif du domaine : évaluer la capacité à lire, interpréter et décider sur des données financières\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Pourquoi la diversification d'un portefeuille réduit-elle le risque global, à rendement attendu équivalent ?",
+      "options": [
+        {
+          "label": "Parce que combiner des actifs qui ne sont pas parfaitement corrélés entre eux réduit la volatilité globale du portefeuille, même si celle de chaque actif pris isolément ne change pas.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'elle élimine totalement tout risque, y compris le risque de marché.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'elle garantit un rendement plus élevé que n'importe quel actif pris seul.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'elle réduit les frais de gestion facturés sur le portefeuille.",
+          "score": 0
+        }
+      ],
+      "axe": "Risque & diversification",
+      "required": true,
+      "help": "La diversification joue sur le fait que les actifs ne varient pas tous de la même façon au même moment."
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Deux actifs ont une corrélation de -1 (corrélation parfaitement négative). Qu'est-ce que cela signifie ?",
+      "options": [
+        {
+          "label": "Quand la valeur de l'un augmente, celle de l'autre baisse systématiquement, dans une relation linéaire parfaite.",
+          "score": 1
+        },
+        {
+          "label": "Les deux actifs évoluent toujours exactement dans le même sens.",
+          "score": 0
+        },
+        {
+          "label": "Les deux actifs n'ont absolument aucune relation entre eux.",
+          "score": 0
+        },
+        {
+          "label": "Un des deux actifs a nécessairement une valeur de marché négative.",
+          "score": 0
+        }
+      ],
+      "axe": "Risque & diversification",
+      "required": true,
+      "help": "Une corrélation négative signifie que deux actifs évoluent en sens inverse."
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "En finance, que mesure la volatilité d'un actif ?",
+      "options": [
+        {
+          "label": "L'ampleur des variations (dispersion) de son rendement autour de sa moyenne sur une période donnée, généralement mesurée par l'écart-type.",
+          "score": 1
+        },
+        {
+          "label": "Le montant total des dividendes versés aux actionnaires.",
+          "score": 0
+        },
+        {
+          "label": "La liquidité de l'actif sur le marché secondaire.",
+          "score": 0
+        },
+        {
+          "label": "Le taux d'imposition applicable aux plus-values réalisées.",
+          "score": 0
+        }
+      ],
+      "axe": "Risque & diversification",
+      "required": true,
+      "help": "La volatilité mesure l'ampleur des variations de valeur d'un actif."
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Quel type de risque la diversification permet-elle de réduire, voire de quasiment éliminer, lorsqu'on détient un grand nombre d'actifs peu corrélés ?",
+      "options": [
+        {
+          "label": "Le risque spécifique (idiosyncratique), propre à chaque actif ou entreprise.",
+          "score": 1
+        },
+        {
+          "label": "Le risque systématique (de marché), commun à l'ensemble des actifs.",
+          "score": 0
+        },
+        {
+          "label": "Le risque de change, et uniquement celui-ci.",
+          "score": 0
+        },
+        {
+          "label": "Le risque d'inflation, et uniquement celui-ci.",
+          "score": 0
+        }
+      ],
+      "axe": "Risque & diversification",
+      "required": true,
+      "help": "Certains risques sont propres à un actif, d'autres touchent l'ensemble du marché."
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Quel est le principe général généralement observé entre le risque et le rendement attendu d'un actif financier ?",
+      "options": [
+        {
+          "label": "Un rendement espéré plus élevé s'accompagne généralement d'un risque (volatilité) plus élevé.",
+          "score": 1
+        },
+        {
+          "label": "Le rendement espéré est toujours totalement indépendant du niveau de risque.",
+          "score": 0
+        },
+        {
+          "label": "Un risque plus élevé garantit mécaniquement un rendement plus élevé.",
+          "score": 0
+        },
+        {
+          "label": "Le risque diminue automatiquement lorsque le rendement espéré augmente.",
+          "score": 0
+        }
+      ],
+      "axe": "Risque & diversification",
+      "required": true,
+      "help": "Un rendement attendu plus élevé s'accompagne généralement d'un risque plus élevé."
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Qu'entend-on par « allocation d'actifs » dans la construction d'un portefeuille d'investissement ?",
+      "options": [
+        {
+          "label": "La répartition du capital entre différentes classes d'actifs (actions, obligations, immobilier, liquidités...) selon le profil de risque et l'horizon de l'investisseur.",
+          "score": 1
+        },
+        {
+          "label": "Le choix d'un seul titre jugé le plus performant du marché à un instant donné.",
+          "score": 0
+        },
+        {
+          "label": "Une répartition égale et obligatoire entre exactement trois actifs.",
+          "score": 0
+        },
+        {
+          "label": "Le calcul de l'impôt dû sur les plus-values réalisées.",
+          "score": 0
+        }
+      ],
+      "axe": "Risque & diversification",
+      "required": true,
+      "help": "L'allocation d'actifs répartit un portefeuille entre grandes classes d'investissement."
+    }
+  ],
+  "promptTemplate": "Tu es formateur en gestion des risques financiers. Cet outil est un contrôle de connaissances factuelles sur le couple risque-rendement, la corrélation et la diversification de portefeuille : ce n'est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Risque & diversification » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (corrélation, volatilité, risque spécifique versus systématique, allocation d'actifs), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "évaluer la capacité à lire, interpréter et décider sur des données financières"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

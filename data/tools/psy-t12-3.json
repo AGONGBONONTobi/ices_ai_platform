@@ -1,69 +1,206 @@
 {
   "id": "psy-t12-3",
-  "title": "Préparer — Protection des données & confidentialité · T12.3",
+  "title": "Protection des données & confidentialité · T12.3",
   "category": "TRANSFORMATION DIGITALE & IA",
+  "output_kind": "assessment",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Protection des données & confidentialité ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Vous collectez des données clients pour une campagne marketing. Quel principe du RGPD vous impose de ne collecter que les données strictement nécessaires à cet objectif précis ?",
+      "help": "Ce principe limite la collecte à ce qui est réellement utile à la finalité annoncée.",
+      "options": [
+        {
+          "label": "Le principe de minimisation des données",
+          "score": 1
+        },
+        {
+          "label": "Le principe de libre circulation des données",
+          "score": 0
+        },
+        {
+          "label": "Le principe de rentabilité commerciale",
+          "score": 0
+        },
+        {
+          "label": "Le principe d'exhaustivité des fichiers clients",
+          "score": 0
+        }
+      ],
+      "axe": "Protection des données & confidentialité",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Un collègue vous demande d'envoyer par e-mail non chiffré, vers une adresse personnelle, un fichier Excel contenant les salaires et numéros de sécurité sociale de l'ensemble du personnel. Quelle est la bonne conduite ?",
+      "help": "La sensibilité des données doit déterminer le canal utilisé, pas la confiance accordée à la personne qui demande.",
+      "options": [
+        {
+          "label": "Envoyer le fichier, car il s'agit d'un collègue de confiance",
+          "score": 0
+        },
+        {
+          "label": "Refuser et orienter la demande vers un canal sécurisé et autorisé, car ces données sensibles ne doivent pas transiter ainsi",
+          "score": 1
+        },
+        {
+          "label": "Envoyer le fichier en mettant simplement la direction en copie cachée",
+          "score": 0
+        },
+        {
+          "label": "Envoyer seulement une partie des données pour limiter le risque",
+          "score": 0
+        }
+      ],
+      "axe": "Protection des données & confidentialité",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : gestion des données sensibles. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Que désigne concrètement le droit à l'effacement (« droit à l'oubli ») prévu par le RGPD pour une personne concernée ?",
+      "help": "Ce droit est encadré par la loi : il n'est ni absolu ni automatique dans tous les cas.",
+      "options": [
+        {
+          "label": "Le droit de demander la suppression de ses données personnelles, dans les conditions et limites prévues par la loi",
+          "score": 1
+        },
+        {
+          "label": "Le droit de supprimer les données personnelles d'autres personnes",
+          "score": 0
+        },
+        {
+          "label": "Le droit d'obtenir une remise commerciale sur un service",
+          "score": 0
+        },
+        {
+          "label": "Le droit de changer d'entreprise sans préavis",
+          "score": 0
+        }
+      ],
+      "axe": "Protection des données & confidentialité",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Vous devez stocker temporairement, sur un support externe, des documents contenant des données personnelles de clients. Quelle pratique respecte les principes de protection des données ?",
+      "help": "Le support, le chiffrement et le contrôle d'accès sont les trois leviers principaux ici.",
+      "options": [
+        {
+          "label": "Les stocker en clair sur une clé USB personnelle non chiffrée",
+          "score": 0
+        },
+        {
+          "label": "Les stocker uniquement sur un support chiffré et approuvé par l'entreprise, avec un accès limité aux personnes autorisées",
+          "score": 1
+        },
+        {
+          "label": "Les copier sur plusieurs clés USB personnelles pour avoir des sauvegardes",
+          "score": 0
+        },
+        {
+          "label": "Les déposer sur un service de cloud personnel gratuit, pour plus de simplicité",
+          "score": 0
+        }
+      ],
+      "axe": "Protection des données & confidentialité",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Une violation de données personnelles (fuite, perte ou accès non autorisé) vient de se produire dans votre organisation. Que prévoit le RGPD en matière de délai de notification à l'autorité de contrôle compétente ?",
+      "help": "Le texte fixe un délai précis, sauf exceptions encadrées par la loi.",
+      "options": [
+        {
+          "label": "Notifier l'autorité de contrôle compétente dans un délai de 72 heures après en avoir eu connaissance, sauf exception prévue par la loi",
+          "score": 1
+        },
+        {
+          "label": "Attendre la fin de l'année pour inclure l'incident dans un rapport global",
+          "score": 0
+        },
+        {
+          "label": "Ne notifier que si un client s'en plaint publiquement",
+          "score": 0
+        },
+        {
+          "label": "Notifier uniquement la direction interne, sans aucune obligation externe",
+          "score": 0
+        }
+      ],
+      "axe": "Protection des données & confidentialité",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Quelle est la différence essentielle entre « anonymisation » et « pseudonymisation » d'un jeu de données personnelles ?",
+      "help": "L'une des deux techniques conserve une possibilité de ré-identification sous conditions, l'autre non.",
+      "options": [
+        {
+          "label": "Elles sont strictement identiques et interchangeables",
+          "score": 0
+        },
+        {
+          "label": "L'anonymisation rend l'identification de la personne impossible, alors que la pseudonymisation permet une ré-identification à l'aide d'une information supplémentaire conservée séparément",
+          "score": 1
+        },
+        {
+          "label": "La pseudonymisation est interdite par le RGPD",
+          "score": 0
+        },
+        {
+          "label": "L'anonymisation ne s'applique qu'aux données financières",
+          "score": 0
+        }
+      ],
+      "axe": "Protection des données & confidentialité",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Protection des données & confidentialité », dans le domaine « CYBERSÉCURITÉ & HYGIÈNE NUMÉRIQUE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : gestion des données sensibles.\nFormat cible : 18 items, 8 min.\nContenu cible : RGPD, partage, stockage, minimisation.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : conformité, accès données.\nOptions cibles : cas sectoriels.\nObjectif du domaine : mesurer la sensibilisation et les comportements de sécurité\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en protection des données et conformité RGPD. Ce test est un contrôle factuel de connaissances sur la protection des données et la confidentialité — ce n'est en aucun cas un test psychométrique certifié ou validé scientifiquement : il n'établit ni percentile, ni norme professionnelle, ni QI, ni diagnostic clinique ou de personnalité, ni avis juridique formel. Il reflète uniquement les réponses données aujourd'hui à ces questions factuelles.\n\nLe score a déjà été calculé à partir des réponses fournies et t'est communiqué plus bas. Ne recalcule pas les scores, ne les modifie pas : reprends-les tels quels et commente-les.\n\nProduis une interprétation :\n- une lecture brève du score global et du niveau de maîtrise observé sur l'axe « Protection des données & confidentialité » ;\n- pour les réponses erronées ou le score le plus faible, des recommandations concrètes, pratiques et immédiatement applicables (minimisation, canaux sécurisés, respect des droits des personnes) ;\n- rappelle explicitement qu'il s'agit d'un contrôle de connaissances à un instant donné, et non d'une évaluation certifiée, d'un audit de conformité réel ni d'un avis juridique.\n\nN'invente aucune norme, aucun percentile, aucun classement sectoriel ni aucune certification. Ne décide d'aucune sanction, d'aucun accès ou d'aucune décision RH à partir de ce seul résultat.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "mesurer la sensibilisation et les comportements de sécurité"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

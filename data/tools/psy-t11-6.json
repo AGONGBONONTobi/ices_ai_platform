@@ -1,69 +1,206 @@
 {
   "id": "psy-t11-6",
-  "title": "Préparer — Fiscalité & conformité de base · T11.6",
+  "title": "Fiscalité & conformité de base · T11.6",
   "category": "FINANCE & GESTION",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Fiscalité & conformité de base ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : obligations fiscales et conformité. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Fiscalité & conformité de base », dans le domaine « FINANCE & NUMÉRATIE FINANCIÈRE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : obligations fiscales et conformité.\nFormat cible : 20 items, 10 min.\nContenu cible : TVA, impôts, déclarations, OHADA.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : gestion, conformité.\nOptions cibles : adaptation par pays.\nObjectif du domaine : évaluer la capacité à lire, interpréter et décider sur des données financières\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Une entreprise assujettie à la TVA facture ses clients en ajoutant la TVA, et paie elle-même de la TVA à ses fournisseurs sur ses achats professionnels. Comment fonctionne le mécanisme de base du montant qu'elle reverse à l'État ?",
+      "options": [
+        {
+          "label": "Elle reverse la différence entre la TVA collectée sur ses ventes et la TVA déductible payée sur ses achats (TVA collectée − TVA déductible).",
+          "score": 1
+        },
+        {
+          "label": "Elle reverse l'intégralité de la TVA collectée sur ses ventes, sans déduire la TVA payée sur ses achats.",
+          "score": 0
+        },
+        {
+          "label": "Elle reverse l'intégralité de son chiffre d'affaires hors taxes.",
+          "score": 0
+        },
+        {
+          "label": "La TVA est entièrement supportée par l'entreprise et jamais par le consommateur final.",
+          "score": 0
+        }
+      ],
+      "axe": "Fiscalité & conformité de base",
+      "required": true,
+      "help": "La TVA collectée et la TVA déductible se compensent avant reversement à l'État."
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "La TVA est qualifiée d'impôt indirect sur la consommation. Qui en supporte in fine la charge économique ?",
+      "options": [
+        {
+          "label": "Le consommateur final, qui paie la TVA incluse dans le prix du bien ou du service, les entreprises n'agissant que comme collecteurs intermédiaires.",
+          "score": 1
+        },
+        {
+          "label": "L'État, qui rembourse systématiquement la TVA à l'entreprise.",
+          "score": 0
+        },
+        {
+          "label": "Uniquement les actionnaires de l'entreprise.",
+          "score": 0
+        },
+        {
+          "label": "Les salariés de l'entreprise, via une ligne spécifique de leur bulletin de paie.",
+          "score": 0
+        }
+      ],
+      "axe": "Fiscalité & conformité de base",
+      "required": true,
+      "help": "Un impôt indirect est collecté par l'entreprise mais supporté économiquement par un autre acteur."
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Qu'est-ce que l'OHADA (Organisation pour l'Harmonisation du Droit des Affaires en Afrique) a notamment mis en place pour les entreprises de ses États membres ?",
+      "options": [
+        {
+          "label": "Un droit des affaires et un système comptable communs (dont le référentiel SYSCOHADA), applicables de façon harmonisée dans l'ensemble des États membres.",
+          "score": 1
+        },
+        {
+          "label": "Une monnaie unique commune à tous les pays africains.",
+          "score": 0
+        },
+        {
+          "label": "Un impôt mondial unique remplaçant tous les impôts nationaux.",
+          "score": 0
+        },
+        {
+          "label": "Une banque centrale mondiale de développement.",
+          "score": 0
+        }
+      ],
+      "axe": "Fiscalité & conformité de base",
+      "required": true,
+      "help": "L'OHADA vise à harmoniser des règles comptables et juridiques entre plusieurs pays."
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Dans la gestion de la conformité fiscale d'une entreprise, que signifie concrètement le respect des « délais déclaratifs » ?",
+      "options": [
+        {
+          "label": "Déposer les déclarations fiscales (TVA, impôt sur les sociétés, etc.) auprès de l'administration dans les échéances légales, indépendamment du paiement effectif de l'impôt dû.",
+          "score": 1
+        },
+        {
+          "label": "Payer ses impôts en une seule fois à la fin de chaque exercice, sans déclaration préalable.",
+          "score": 0
+        },
+        {
+          "label": "Attendre une relance de l'administration fiscale avant toute démarche.",
+          "score": 0
+        },
+        {
+          "label": "Ne concerner que les grandes entreprises cotées en bourse.",
+          "score": 0
+        }
+      ],
+      "axe": "Fiscalité & conformité de base",
+      "required": true,
+      "help": "Un délai déclaratif est une date limite fixée par l'administration fiscale."
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "L'impôt sur les sociétés (IS) est en principe calculé sur quelle base ?",
+      "options": [
+        {
+          "label": "Le résultat fiscal (bénéfice imposable), obtenu en ajustant le résultat comptable par des réintégrations et déductions fiscales.",
+          "score": 1
+        },
+        {
+          "label": "Le chiffre d'affaires total, sans aucune déduction de charges.",
+          "score": 0
+        },
+        {
+          "label": "La trésorerie disponible en fin d'exercice.",
+          "score": 0
+        },
+        {
+          "label": "Le montant des capitaux propres de l'entreprise.",
+          "score": 0
+        }
+      ],
+      "axe": "Fiscalité & conformité de base",
+      "required": true,
+      "help": "L'IS se calcule sur un résultat, pas sur le chiffre d'affaires brut."
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Quelle est la conséquence générale, dans la plupart des systèmes fiscaux, d'un dépôt tardif d'une déclaration fiscale ou d'un paiement en retard ?",
+      "options": [
+        {
+          "label": "L'application de pénalités et/ou d'intérêts de retard, en plus de l'impôt dû.",
+          "score": 1
+        },
+        {
+          "label": "Aucune conséquence si le retard est inférieur à un an.",
+          "score": 0
+        },
+        {
+          "label": "L'annulation automatique de l'impôt dû.",
+          "score": 0
+        },
+        {
+          "label": "Une réduction du taux d'imposition applicable l'année suivante.",
+          "score": 0
+        }
+      ],
+      "axe": "Fiscalité & conformité de base",
+      "required": true,
+      "help": "Un retard de déclaration ou de paiement entraîne généralement une sanction prévue par la loi."
+    }
+  ],
+  "promptTemplate": "Tu es formateur en fiscalité d'entreprise. Cet outil est un contrôle de connaissances factuelles sur les mécanismes fiscaux de base (TVA, impôt sur les sociétés, obligations déclaratives, cadre OHADA) : ce n'est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions. Il ne couvre pas les taux ou règles spécifiques à un pays donné, qui varient et doivent être vérifiés auprès d'un professionnel ou de l'administration fiscale compétente.\n\nLe score global et le score de l'axe « Fiscalité & conformité de base » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des mécanismes testés (logique de la TVA, cadre OHADA, obligations déclaratives, base de l'impôt sur les sociétés), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni un conseil fiscal personnalisé, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun taux applicable, aucun percentile ou classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "évaluer la capacité à lire, interpréter et décider sur des données financières"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

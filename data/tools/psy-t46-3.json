@@ -1,69 +1,182 @@
 {
   "id": "psy-t46-3",
-  "title": "Préparer — Algorithmes & logique · T46.3",
+  "title": "Algorithmes & logique · T46.3",
   "category": "TRANSFORMATION DIGITALE & IA",
+  "output_kind": "assessment",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Algorithmes & logique ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "On vous donne la règle suivante : « S'il pleut, alors Marc prend son parapluie. » Aujourd'hui, il ne pleut pas. Que peut-on en conclure avec certitude sur le parapluie de Marc ?",
+      "help": "La règle ne décrit qu'un seul cas : celui où il pleut.",
+      "options": [
+        {
+          "label": "Rien de certain : la règle ne dit rien sur ce que fait Marc quand il ne pleut pas, il pourrait prendre son parapluie pour une autre raison.",
+          "score": 1
+        },
+        {
+          "label": "Marc ne prend certainement pas son parapluie aujourd'hui.",
+          "score": 0
+        },
+        {
+          "label": "La règle est fausse puisqu'il ne pleut pas.",
+          "score": 0
+        }
+      ],
+      "axe": "Logique",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Pour trouver un nom dans un annuaire téléphonique papier de 10 000 noms triés par ordre alphabétique, quelle méthode est la plus rapide : lire les noms un par un depuis le début, ou ouvrir le livre au milieu puis répéter la division en deux à chaque étape (recherche dichotomique) ?",
+      "help": "Le tri alphabétique permet d'éliminer la moitié des possibilités à chaque étape.",
+      "options": [
+        {
+          "label": "La recherche par dichotomie (diviser en deux à chaque étape), car elle exploite le tri et nécessite beaucoup moins d'étapes.",
+          "score": 1
+        },
+        {
+          "label": "La lecture séquentielle du début, car elle est plus simple à réaliser donc plus rapide dans tous les cas.",
+          "score": 0
+        },
+        {
+          "label": "Les deux méthodes prennent exactement le même temps puisque la liste contient le même nombre de noms.",
+          "score": 0
+        }
+      ],
+      "axe": "Complexité algorithmique",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : compréhension du fonctionnement des algorithmes. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Un algorithme A met 1 seconde à traiter 1 000 éléments et 2 secondes pour 2 000 éléments (le temps double quand la taille double). Un algorithme B met 1 seconde pour 1 000 éléments et 4 secondes pour 2 000 éléments (le temps quadruple quand la taille double). Lequel des deux passera le mieux à l'échelle sur de très grands volumes de données ?",
+      "help": "Comparez la vitesse à laquelle le temps de traitement augmente, pas seulement le temps de départ.",
+      "options": [
+        {
+          "label": "L'algorithme A, dont le temps de traitement croît proportionnellement (linéairement) à la taille des données.",
+          "score": 1
+        },
+        {
+          "label": "L'algorithme B, car un temps qui quadruple montre qu'il traite plus de données à chaque étape.",
+          "score": 0
+        },
+        {
+          "label": "Les deux algorithmes passeront aussi bien à l'échelle, seul le temps de départ compte.",
+          "score": 0
+        }
+      ],
+      "axe": "Complexité algorithmique",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Un modèle est entraîné à partir d'un grand nombre d'e-mails déjà étiquetés par des humains comme « spam » ou « non-spam », afin de prédire l'étiquette d'un nouvel e-mail. De quel type d'apprentissage s'agit-il ?",
+      "help": "La présence ou l'absence d'étiquettes connues à l'avance distingue les grandes familles d'apprentissage automatique.",
+      "options": [
+        {
+          "label": "De l'apprentissage supervisé, car le modèle apprend à partir d'exemples déjà étiquetés par avance.",
+          "score": 1
+        },
+        {
+          "label": "De l'apprentissage non supervisé, car le modèle découvre seul les catégories de spam.",
+          "score": 0
+        },
+        {
+          "label": "D'un simple programme de règles fixes, sans aucun apprentissage réel.",
+          "score": 0
+        }
+      ],
+      "axe": "Apprentissage automatique et sur-apprentissage",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un modèle de prédiction obtient 99 % de bonnes réponses sur les données qui ont servi à l'entraîner, mais seulement 55 % de bonnes réponses sur de nouvelles données jamais vues. Comment appelle-t-on ce phénomène ?",
+      "help": "Le modèle se comporte très différemment selon qu'il revoit des données connues ou qu'il en découvre de nouvelles.",
+      "options": [
+        {
+          "label": "Le sur-apprentissage (overfitting) : le modèle a « appris par cœur » les données d'entraînement au lieu d'apprendre des régularités généralisables.",
+          "score": 1
+        },
+        {
+          "label": "Le sous-apprentissage (underfitting), puisque le score final de 55 % est faible.",
+          "score": 0
+        },
+        {
+          "label": "Un bug logiciel, ce phénomène ne peut normalement jamais se produire avec un modèle bien codé.",
+          "score": 0
+        }
+      ],
+      "axe": "Apprentissage automatique et sur-apprentissage",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Face à un modèle qui sur-apprend (très bon sur les données d'entraînement, médiocre sur des données nouvelles), laquelle de ces actions est reconnue comme une façon pertinente de réduire ce problème ?",
+      "help": "Le sur-apprentissage vient souvent d'un modèle qui mémorise plutôt qu'il ne généralise.",
+      "options": [
+        {
+          "label": "Entraîner le modèle avec davantage de données variées et/ou simplifier le modèle, plutôt que de le laisser mémoriser les mêmes exemples limités encore et encore.",
+          "score": 1
+        },
+        {
+          "label": "Entraîner le modèle encore plus longtemps sur exactement les mêmes données d'entraînement limitées.",
+          "score": 0
+        },
+        {
+          "label": "Supprimer toutes les données de test, puisque c'est leur existence qui cause le problème.",
+          "score": 0
+        }
+      ],
+      "axe": "Apprentissage automatique et sur-apprentissage",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Algorithmes & logique », dans le domaine « DATA LITERACY & IA ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : compréhension du fonctionnement des algorithmes.\nFormat cible : 15 items, 10 min.\nContenu cible : logique, complexité, apprentissage, sur-apprentissage.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : acculturation IA.\nOptions cibles : cas concrets d’algorithmes.\nObjectif du domaine : évaluer la capacité à comprendre, utiliser et critiquer les données et l’IA — compétence devenue universelle à l’ère de l’IA générative\nGarde-fou du domaine : mise à jour trimestrielle obligatoire (écosystème IA évolutif) ; ne pas évaluer sur des outils propriétaires ; transparence\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un formateur en culture des données et de l'intelligence artificielle. Ce test est un contrôle de connaissances factuelles sur les algorithmes et la logique : logique conditionnelle, complexité algorithmique, apprentissage automatique et sur-apprentissage. Il ne s'agit en aucun cas d'un test psychométrique certifié, validé ou étalonné — aucune norme professionnelle, aucun percentile, aucun QI et aucune certification ne sont délivrés par cet outil.\n\nLe score global et le score par axe ont déjà été calculés à partir des réponses cochées et te sont fournis ci-dessous dans « Résultat du calcul ». Ne les recalcule pas, ne les modifie pas : reprends-les tels quels et commente-les.\n\nProduis une interprétation pédagogique :\n- un commentaire du score global, qui situe le niveau de maîtrise observé aujourd'hui sur ce sujet précis, sans comparaison à une norme ou à un percentile ;\n- pour chaque question dont la réponse choisie n'était pas la bonne, explique brièvement — en langage clair et sans jargon inutile — le concept réellement en jeu, pourquoi la réponse correcte est la bonne, et l'erreur de raisonnement la plus probable ;\n- des recommandations concrètes et actionnables (lectures, exercices pratiques, réflexes à adopter), explicitement priorisées sur l'axe ou les axes les plus faibles ;\n- un rappel explicite que ce résultat ne reflète que les réponses données aujourd'hui, qu'il ne s'agit ni d'un diagnostic, ni d'une certification, ni d'une mesure validée scientifiquement de l'aptitude de la personne, et qu'aucune décision de recrutement, de sélection, de promotion ou d'aptitude ne doit être fondée sur ce seul résultat.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun seuil de certification. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +193,5 @@
       "Garde-fou du domaine": "mise à jour trimestrielle obligatoire (écosystème IA évolutif) ; ne pas évaluer sur des outils propriétaires ; transparence"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

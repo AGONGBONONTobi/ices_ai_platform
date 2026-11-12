@@ -206,3 +206,66 @@ Compléter ce fichier avec : outils/familles réellement implémentés, identifi
 concernés, traitements et calculs ajoutés, vérifications exécutées, blocages,
 état Git et état Supabase/déploiement vérifiés. Citer les fichiers et commandes
 de preuve. Séparer les faits observés, les résultats déclarés et les hypothèses.
+
+## Suite donnée par Claude, 12 novembre 2026
+
+35 des 499 fiches importées ont été transformées en outils réellement
+fonctionnels, sans `execution`, intégrés au catalogue normal :
+
+- **28 quiz à correction objective** — identifiants `psy-t11-1` à `psy-t11-7`
+  (Finance & numératie financière), `psy-t12-1` à `psy-t12-7` (Cybersécurité &
+  hygiène numérique), `psy-t13-1` à `psy-t13-7` (Compétence numérique &
+  bureautique), `psy-t46-1` à `psy-t46-7` (Data literacy & IA). Chaque outil :
+  `output_kind: "assessment"`, 6 à 7 questions à choix multiple avec une seule
+  réponse objectivement correcte (option `score: 1`, distracteurs `score: 0`),
+  score calculé par `fast_api/app/services/scoring.py::compute_scores` (jamais
+  par le modèle, qui ne fait que commenter le résultat déjà calculé).
+- **7 outils d'analyse sans score** — `psy-t39-1` à `psy-t39-7` (Biais
+  cognitifs & jugement). `output_kind: "analysis"` : l'utilisateur décrit une
+  décision réelle en cours, l'outil produit une analyse des biais pertinents
+  et des questions de débiaisage concrètes. Aucun coefficient de biais n'est
+  calculé ni affiché.
+
+Choix délibéré, pas un oubli : ces 5 domaines (sur 50 au lot 5) sont les seuls
+où une correction objective est honnête sans banque d'items calibrée — des
+faits financiers, de sécurité, de bureautique ou de littératie des données ont
+une réponse vraie ou fausse vérifiable. Les 45 autres domaines du lot 5 (QI,
+personnalité, intelligence émotionnelle, motivation, intérêts, santé mentale,
+tempérament de l'enfant, neurodiversité, haut potentiel...) mesurent des
+construits individuels qui exigeraient une norme ou un item calibré que ce
+projet n'a pas : leur attribuer un score aurait fabriqué un résultat
+psychométrique. Le lot 6 (parcours cognitifs individuels, probablement
+appliqués à des apprenants) n'a pas été touché pour la même raison, en plus
+d'impliquer potentiellement des mineurs — il reste exactement comme Codex l'a
+construit (28 guides de préparation, 121 fiches de référence).
+
+Méthode : 1 lecture directe des 5 sous-ensembles de `catalogue-350.json`, 4
+sous-agents en parallèle (domaines 11/12/13/46, un par domaine, même
+spécification : connaissances objectives uniquement, pas de question dont la
+bonne réponse serait incertaine) et le domaine 39 traité directement par moi
+(biais cognitifs = usage de sélection dans la source, jugé trop sensible pour
+délégation sans supervision directe).
+
+Vérifications exécutées (toutes depuis la racine du dépôt sauf indication) :
+- `npx tsx scripts/validate_tools.ts --quiet` → 1587 fiches, 0 erreur (3545
+  avertissements inchangés, pré-existants sur le catalogue historique).
+- `npx tsc --noEmit` → aucune erreur.
+- `npm run lint` → aucune erreur.
+- `npm run build` → build Next.js réussi.
+- `cd fast_api && source .venv/bin/activate && SUPABASE_URL=... GROQ_API_KEY=test python -m pytest -q` → 150 passed.
+- `data/imports/manager-lots/coverage.json` mis à jour : `functional_tools: 35`,
+  `preparation_guides: 343` (était 378), `by_batch_and_mode` recalculé.
+
+État Git : modifications locales non commitées au moment de la rédaction de
+cette note (35 fichiers `data/tools/psy-t{11,12,13,39,46}-*.json` + coverage.json
++ ce fichier + docs/INTEGRATION_LOTS_OUTILS.md). État Supabase : **aucune
+synchronisation effectuée** — ces 35 outils n'existent que dans le catalogue
+local jusqu'à l'exécution de `scripts/sync_tools_to_db.ts`, qui doit être lancé
+et vérifié séparément (et qui peut aussi supprimer côté base des identifiants
+absents du catalogue local — lire son code avant de l'exécuter).
+
+Hypothèse, pas un fait vérifié : la justesse factuelle des réponses correctes
+(finance, cybersécurité, bureautique, data literacy) repose sur les
+connaissances générales de l'agent qui les a écrites, pas sur une relecture
+par un expert du domaine ni sur un test utilisateur réel. Aucune génération LLM
+réelle (`/api/execute`) n'a été appelée pendant cette session pour ces 35 outils.

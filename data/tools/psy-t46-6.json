@@ -1,69 +1,182 @@
 {
   "id": "psy-t46-6",
-  "title": "Préparer — Biais algorithmiques · T46.6",
+  "title": "Biais algorithmiques · T46.6",
   "category": "TRANSFORMATION DIGITALE & IA",
+  "output_kind": "assessment",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Biais algorithmiques ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Une entreprise entraîne un algorithme de tri de CV à partir de dix années d'historique de recrutement, période durant laquelle très peu de femmes avaient été recrutées aux postes techniques. Quel risque ce choix de données d'entraînement introduit-il ?",
+      "help": "Un historique de décisions humaines passées peut lui-même contenir des déséquilibres.",
+      "options": [
+        {
+          "label": "L'algorithme risque d'apprendre et de reproduire cette sous-représentation historique, en défavorisant les candidatures féminines pour ces postes, même sans utiliser explicitement le genre comme critère.",
+          "score": 1
+        },
+        {
+          "label": "Aucun risque : un algorithme entraîné sur des données réelles est par définition neutre et objectif.",
+          "score": 0
+        },
+        {
+          "label": "Le seul risque est que l'algorithme soit simplement plus lent à s'exécuter sur de grands volumes de CV.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de sélection",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Un système de reconnaissance faciale, entraîné majoritairement avec des photos de visages à la peau claire, obtient un taux d'erreur nettement plus élevé sur des visages à la peau foncée. Quelle est la cause la plus directement en jeu ?",
+      "help": "La performance d'un modèle dépend de la diversité des exemples qu'il a vus pendant son entraînement.",
+      "options": [
+        {
+          "label": "La composition et la représentativité des données d'entraînement : un échantillon peu diversifié dégrade la performance du système pour les groupes sous-représentés.",
+          "score": 1
+        },
+        {
+          "label": "Les caméras utilisées sont nécessairement de moins bonne qualité pour les visages à la peau foncée.",
+          "score": 0
+        },
+        {
+          "label": "Il s'agit d'un phénomène aléatoire sans lien avec la composition des données d'entraînement.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de mesure",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à identifier les biais dans les données et les modèles. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Pour éviter qu'un algorithme de notation de crédit soit discriminant, une entreprise retire simplement la variable « genre » de ses données d'entraînement. Cela suffit-il à garantir l'absence de biais lié au genre dans les décisions du modèle ?",
+      "help": "Certaines variables apparemment neutres peuvent être fortement corrélées à une caractéristique sensible retirée.",
+      "options": [
+        {
+          "label": "Non, car d'autres variables corrélées au genre (comme le prénom, le secteur d'activité ou le code postal) peuvent servir de « proxy » et reproduire indirectement le même biais.",
+          "score": 1
+        },
+        {
+          "label": "Oui, retirer une variable sensible élimine automatiquement et complètement tout biais lié à cette variable.",
+          "score": 0
+        },
+        {
+          "label": "Oui, car un modèle ne peut jamais recréer une information qui n'est pas explicitement présente dans les données.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais d'apprentissage",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Un système de recommandation de contenu ne propose à un utilisateur que des vidéos très similaires à celles qu'il a déjà regardées, ce qui réduit progressivement la diversité de ce qu'il voit au fil du temps. Comment qualifie-t-on ce mécanisme ?",
+      "help": "Le système réagit aux clics passés de l'utilisateur, puis ses propositions influencent les clics futurs.",
+      "options": [
+        {
+          "label": "Un biais d'usage (boucle de rétroaction ou « bulle de filtre ») : le système s'auto-renforce à partir des interactions passées de l'utilisateur, indépendamment d'un biais présent dans les données d'origine.",
+          "score": 1
+        },
+        {
+          "label": "Un biais de mesure, car le capteur qui enregistre les clics est défectueux.",
+          "score": 0
+        },
+        {
+          "label": "Ce n'est pas un biais, car le système reflète exactement les goûts réels et stables de l'utilisateur.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais d'usage",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Une équipe technique affirme qu'aucun biais ne peut exister dans son algorithme puisque personne n'a volontairement programmé de règle discriminatoire. Cette affirmation est-elle juste ?",
+      "help": "Un biais peut provenir de choix indirects (données, objectifs, mesures) plutôt que d'une règle écrite.",
+      "options": [
+        {
+          "label": "Non : un biais peut émerger involontairement des données, de choix de conception ou d'objectifs d'optimisation, sans qu'aucune intention discriminatoire n'ait jamais été programmée.",
+          "score": 1
+        },
+        {
+          "label": "Oui, un biais ne peut exister que s'il a été intentionnellement codé par un développeur.",
+          "score": 0
+        },
+        {
+          "label": "Oui, car les algorithmes sont des calculs mathématiques qui ne peuvent par nature produire aucune discrimination.",
+          "score": 0
+        }
+      ],
+      "axe": "Nature du biais algorithmique",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Pour détecter si un modèle de décision (par exemple d'octroi de crédit) traite différemment certains groupes de population, quelle pratique est considérée comme une méthode de détection pertinente ?",
+      "help": "Une moyenne globale peut masquer de fortes différences entre sous-groupes.",
+      "options": [
+        {
+          "label": "Comparer les taux d'erreur ou les taux de décision du modèle séparément pour différents sous-groupes (âge, genre, origine géographique...), plutôt que de se limiter à un taux de réussite global unique.",
+          "score": 1
+        },
+        {
+          "label": "Se contenter du taux de réussite global du modèle sur l'ensemble des utilisateurs, qui suffit toujours à démontrer l'absence de biais.",
+          "score": 0
+        },
+        {
+          "label": "Vérifier uniquement la vitesse d'exécution du modèle, qui est corrélée à l'absence de biais.",
+          "score": 0
+        }
+      ],
+      "axe": "Détection du biais",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Biais algorithmiques », dans le domaine « DATA LITERACY & IA ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à identifier les biais dans les données et les modèles.\nFormat cible : 12 cas, 10 min.\nContenu cible : biais de sélection, de mesure, d’apprentissage, d’usage.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : gouvernance IA.\nOptions cibles : couplage avec D39 (biais cognitifs).\nObjectif du domaine : évaluer la capacité à comprendre, utiliser et critiquer les données et l’IA — compétence devenue universelle à l’ère de l’IA générative\nGarde-fou du domaine : mise à jour trimestrielle obligatoire (écosystème IA évolutif) ; ne pas évaluer sur des outils propriétaires ; transparence\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un formateur en culture des données et de l'intelligence artificielle. Ce test est un contrôle de connaissances factuelles sur les biais algorithmiques : biais de sélection, de mesure, d'apprentissage et d'usage dans les données et les modèles d'IA. Il ne s'agit en aucun cas d'un test psychométrique certifié, validé ou étalonné — aucune norme professionnelle, aucun percentile, aucun QI et aucune certification ne sont délivrés par cet outil.\n\nLe score global et le score par axe ont déjà été calculés à partir des réponses cochées et te sont fournis ci-dessous dans « Résultat du calcul ». Ne les recalcule pas, ne les modifie pas : reprends-les tels quels et commente-les.\n\nProduis une interprétation pédagogique :\n- un commentaire du score global, qui situe le niveau de maîtrise observé aujourd'hui sur ce sujet précis, sans comparaison à une norme ou à un percentile ;\n- pour chaque question dont la réponse choisie n'était pas la bonne, explique brièvement — en langage clair et sans jargon inutile — le concept réellement en jeu, pourquoi la réponse correcte est la bonne, et l'erreur de raisonnement la plus probable ;\n- des recommandations concrètes et actionnables (lectures, exercices pratiques, réflexes à adopter), explicitement priorisées sur l'axe ou les axes les plus faibles ;\n- un rappel explicite que ce résultat ne reflète que les réponses données aujourd'hui, qu'il ne s'agit ni d'un diagnostic, ni d'une certification, ni d'une mesure validée scientifiquement de l'aptitude de la personne, et qu'aucune décision de recrutement, de sélection, de promotion ou d'aptitude ne doit être fondée sur ce seul résultat.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun seuil de certification. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +193,5 @@
       "Garde-fou du domaine": "mise à jour trimestrielle obligatoire (écosystème IA évolutif) ; ne pas évaluer sur des outils propriétaires ; transparence"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

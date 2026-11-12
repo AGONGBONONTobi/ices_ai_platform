@@ -1,69 +1,206 @@
 {
   "id": "psy-t12-1",
-  "title": "Préparer — Phishing & ingénierie sociale · T12.1",
+  "title": "Phishing & ingénierie sociale · T12.1",
   "category": "TRANSFORMATION DIGITALE & IA",
+  "output_kind": "assessment",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Phishing & ingénierie sociale ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Vous recevez un e-mail prétendant venir du service informatique de votre entreprise, vous demandant de confirmer votre mot de passe en urgence sous peine de blocage du compte dans l'heure, via un lien pointant vers « login-microsoft0ffice.com ». Que devez-vous faire ?",
+      "help": "Pensez aux signaux classiques d'une tentative de phishing : urgence artificielle, nom de domaine suspect, demande d'identifiants.",
+      "options": [
+        {
+          "label": "Cliquer sur le lien et saisir ses identifiants rapidement pour éviter le blocage",
+          "score": 0
+        },
+        {
+          "label": "Signaler l'e-mail comme suspect au service sécurité/IT, sans cliquer sur le lien ni répondre",
+          "score": 1
+        },
+        {
+          "label": "Répondre directement à l'e-mail pour demander une confirmation",
+          "score": 0
+        },
+        {
+          "label": "Transférer l'e-mail à des collègues pour les prévenir, sans le signaler officiellement",
+          "score": 0
+        }
+      ],
+      "axe": "Phishing & ingénierie sociale",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Un expéditeur se présente comme « Direction Générale », mais son adresse e-mail est « pdg.urgent@gmail.com » au lieu du domaine habituel de l'entreprise. Quel est l'indice le plus fiable pour suspecter une tentative de fraude (phishing ou fraude au président) ?",
+      "help": "Comparez l'identité affichée et l'adresse technique réelle de l'expéditeur.",
+      "options": [
+        {
+          "label": "Le ton familier employé dans le message",
+          "score": 0
+        },
+        {
+          "label": "L'utilisation d'une adresse e-mail externe générique, incohérente avec la fonction annoncée",
+          "score": 1
+        },
+        {
+          "label": "La présence d'une signature en bas de message",
+          "score": 0
+        },
+        {
+          "label": "L'heure tardive d'envoi du message",
+          "score": 0
+        }
+      ],
+      "axe": "Phishing & ingénierie sociale",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : détection de tentatives de fraude. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Vous recevez une « facture » au format .zip contenant un fichier .exe, envoyée par un expéditeur inconnu, avec pour objet « Facture urgente à régler ». Quelle est la bonne pratique ?",
+      "help": "Un exécutable caché dans un document administratif est un classique des campagnes de logiciels malveillants.",
+      "options": [
+        {
+          "label": "Ouvrir le fichier pour vérifier s'il s'agit réellement d'une facture",
+          "score": 0
+        },
+        {
+          "label": "Ne pas ouvrir la pièce jointe et la signaler : un exécutable dans une fausse facture est un signe caractéristique de logiciel malveillant",
+          "score": 1
+        },
+        {
+          "label": "Renommer le fichier en .pdf avant de l'ouvrir",
+          "score": 0
+        },
+        {
+          "label": "Ouvrir le fichier dans un onglet de navigation privée pour plus de sécurité",
+          "score": 0
+        }
+      ],
+      "axe": "Phishing & ingénierie sociale",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Une personne vous appelle en se présentant comme technicien du support informatique. Elle affirme qu'un virus a été détecté sur votre poste et vous demande de lui communiquer votre mot de passe pour le neutraliser immédiatement. Quelle attitude est correcte ?",
+      "help": "Il s'agit d'un scénario classique de vishing (hameçonnage téléphonique) fondé sur l'urgence et l'autorité apparente.",
+      "options": [
+        {
+          "label": "Donner le mot de passe, car la situation présentée semble urgente",
+          "score": 0
+        },
+        {
+          "label": "Refuser de communiquer le mot de passe, raccrocher et vérifier la demande via un canal officiel connu de l'entreprise",
+          "score": 1
+        },
+        {
+          "label": "Donner un mot de passe légèrement modifié pour « tester »",
+          "score": 0
+        },
+        {
+          "label": "Demander à la personne de rappeler plus tard, sans vérifier son identité",
+          "score": 0
+        }
+      ],
+      "axe": "Phishing & ingénierie sociale",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un lien dans un e-mail affiche le texte « www.banque-exemple.com », mais en survolant le lien (sans cliquer), l'URL réelle qui s'affiche est « www.banque-exemple.secure-login.ru ». Que signifie cette différence ?",
+      "help": "Le texte visible d'un lien n'est pas toujours la destination réelle du clic.",
+      "options": [
+        {
+          "label": "Rien d'anormal, il s'agit probablement d'un sous-domaine sécurisé de la banque",
+          "score": 0
+        },
+        {
+          "label": "C'est un signe fort de tentative de phishing : l'URL réelle ne correspond pas au texte affiché",
+          "score": 1
+        },
+        {
+          "label": "Cela signifie seulement que le site est hébergé à l'étranger, ce qui est normal",
+          "score": 0
+        },
+        {
+          "label": "Cela indique simplement que le lien se chargera plus vite",
+          "score": 0
+        }
+      ],
+      "axe": "Phishing & ingénierie sociale",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Une personne non identifiée se présente à l'entrée des bureaux, affirme être technicien d'un prestataire, semble pressée et demande qu'on lui ouvre la porte sécurisée sans badge car elle a « oublié le sien ». Quelle est la bonne conduite ?",
+      "help": "Ce scénario illustre l'ingénierie sociale appliquée à l'accès physique, pas seulement au numérique.",
+      "options": [
+        {
+          "label": "Lui ouvrir la porte car elle semble légitime et pressée",
+          "score": 0
+        },
+        {
+          "label": "Vérifier son identité auprès de l'accueil ou du prestataire avant de lui donner accès, même si cela la retarde",
+          "score": 1
+        },
+        {
+          "label": "La laisser suivre discrètement une autre personne qui badge",
+          "score": 0
+        },
+        {
+          "label": "Lui prêter son propre badge pour la journée",
+          "score": 0
+        }
+      ],
+      "axe": "Phishing & ingénierie sociale",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Phishing & ingénierie sociale », dans le domaine « CYBERSÉCURITÉ & HYGIÈNE NUMÉRIQUE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : détection de tentatives de fraude.\nFormat cible : 20 emails/messages, 10 min.\nContenu cible : urgence, usurpation, liens, pièces jointes.\nCalcul cible (non implémenté ici) : taux de détection, faux positifs.\nUsage décrit : accès systèmes, formation.\nOptions cibles : simulations de phishing réelles.\nObjectif du domaine : mesurer la sensibilisation et les comportements de sécurité\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en sensibilisation à la cybersécurité. Ce test est un contrôle factuel de connaissances et de réflexes face au phishing et à l'ingénierie sociale — ce n'est en aucun cas un test psychométrique certifié ou validé scientifiquement : il n'établit ni percentile, ni norme professionnelle, ni QI, ni diagnostic clinique ou de personnalité. Il reflète uniquement les réponses données aujourd'hui à ces questions factuelles, sur l'échantillon de situations proposé.\n\nLe score a déjà été calculé à partir des réponses fournies et t'est communiqué plus bas. Ne recalcule pas les scores, ne les modifie pas : reprends-les tels quels et commente-les.\n\nProduis une interprétation :\n- une lecture brève du score global et du niveau de vigilance observé sur l'axe « Phishing & ingénierie sociale » ;\n- pour les réponses erronées ou le score le plus faible, des recommandations concrètes, pratiques et immédiatement applicables (réflexes à adopter face à un e-mail, un appel ou une demande d'accès suspects) ;\n- rappelle explicitement qu'il s'agit d'un contrôle de connaissances à un instant donné, et non d'une évaluation certifiée, d'un diagnostic ou d'une mesure de la fiabilité générale de la personne.\n\nN'invente aucune norme, aucun percentile, aucun classement sectoriel ni aucune certification. Ne décide d'aucune sanction, d'aucun accès ou d'aucune décision RH à partir de ce seul résultat.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "mesurer la sensibilisation et les comportements de sécurité"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

@@ -1,69 +1,206 @@
 {
   "id": "psy-t13-5",
-  "title": "Préparer — Recherche d’information · T13.5",
+  "title": "Recherche d’information · T13.5",
   "category": "TRANSFORMATION DIGITALE & IA",
+  "output_kind": "assessment",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Recherche d’information ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
+      "name": "q1",
+      "type": "select",
+      "question": "Vous cherchez sur un moteur de recherche l'expression exacte \"intelligence artificielle générative\", sans que les résultats incluent des pages où ces mots apparaissent séparément. Quelle syntaxe faut-il utiliser ?",
+      "options": [
+        {
+          "label": "\"intelligence artificielle générative\" (entre guillemets)",
+          "score": 1
+        },
+        {
+          "label": "+intelligence +artificielle +générative",
+          "score": 0
+        },
+        {
+          "label": "intelligence AND artificielle AND générative",
+          "score": 0
+        },
+        {
+          "label": "intelligence OR artificielle OR générative",
+          "score": 0
+        }
+      ],
+      "axe": "Recherche d’information",
+      "required": true,
+      "help": "Pensez aux opérateurs de recherche qui isolent une expression exacte."
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
+      "name": "q2",
+      "type": "select",
+      "question": "Vous cherchez des informations sur \"Python\" le langage de programmation, mais les résultats sont pollués par des pages sur le serpent. Quel opérateur permet d'exclure les pages contenant le mot \"serpent\" ?",
+      "options": [
+        {
+          "label": "Python -serpent",
+          "score": 1
+        },
+        {
+          "label": "Python +serpent",
+          "score": 0
+        },
+        {
+          "label": "Python !serpent",
+          "score": 0
+        },
+        {
+          "label": "Python NOT=serpent",
+          "score": 0
+        }
+      ],
+      "axe": "Recherche d’information",
+      "required": true,
+      "help": "Un opérateur dédié permet d'exclure un mot ambigu des résultats."
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : formuler, évaluer, synthétiser. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Vous voulez chercher des informations uniquement sur le site officiel service-public.fr, concernant les démarches de carte grise. Quel opérateur de recherche limite les résultats à ce site ?",
+      "options": [
+        {
+          "label": "site:service-public.fr carte grise",
+          "score": 1
+        },
+        {
+          "label": "url:service-public.fr carte grise",
+          "score": 0
+        },
+        {
+          "label": "domain=service-public.fr carte grise",
+          "score": 0
+        },
+        {
+          "label": "only:service-public.fr carte grise",
+          "score": 0
+        }
+      ],
+      "axe": "Recherche d’information",
+      "required": true,
+      "help": "Un opérateur de recherche restreint les résultats à un seul site."
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Vous trouvez une statistique surprenante sur un blog personnel anonyme, sans aucune référence à une étude ou à un organisme officiel. Quelle démarche permet de vérifier sa fiabilité avant de la réutiliser dans un rapport professionnel ?",
+      "options": [
+        {
+          "label": "Rechercher si la même statistique est confirmée par une source primaire identifiable (étude, organisme officiel, publication reconnue)",
+          "score": 1
+        },
+        {
+          "label": "La considérer comme fiable si le blog a beaucoup de likes ou de commentaires",
+          "score": 0
+        },
+        {
+          "label": "La republier telle quelle en citant le blog comme source unique",
+          "score": 0
+        },
+        {
+          "label": "Chercher un autre blog anonyme qui affirme la même chose",
+          "score": 0
+        }
+      ],
+      "axe": "Recherche d’information",
+      "required": true,
+      "help": "Une source fiable s'identifie par son origine identifiable, pas par sa popularité."
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Vous recherchez des informations sur une réglementation qui évolue souvent (par exemple les aides à la rénovation énergétique) et vous trouvez un article non daté sur un site non officiel. Quelle vérification est la plus importante avant d'utiliser cette information ?",
+      "options": [
+        {
+          "label": "Vérifier la date de publication ou de dernière mise à jour, et croiser avec une source officielle à jour",
+          "score": 1
+        },
+        {
+          "label": "Vérifier uniquement l'orthographe de l'article",
+          "score": 0
+        },
+        {
+          "label": "Vérifier si l'article contient des images",
+          "score": 0
+        },
+        {
+          "label": "Vérifier le nombre de partages sur les réseaux sociaux",
+          "score": 0
+        }
+      ],
+      "axe": "Recherche d’information",
+      "required": true,
+      "help": "La fraîcheur d'une information compte autant que son contenu pour un sujet qui évolue."
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Un assistant conversationnel basé sur l'IA vous donne une réponse factuelle précise (une date, un chiffre) sans citer de source. Quelle attitude est la plus appropriée avant d'utiliser cette information dans un contexte professionnel ?",
+      "options": [
+        {
+          "label": "Vérifier l'information auprès d'une source indépendante et fiable avant de la considérer comme exacte",
+          "score": 1
+        },
+        {
+          "label": "Faire confiance systématiquement, car l'IA est toujours exacte sur les faits",
+          "score": 0
+        },
+        {
+          "label": "Reformuler la question plusieurs fois jusqu'à obtenir toujours la même réponse, ce qui garantit son exactitude",
+          "score": 0
+        },
+        {
+          "label": "Ignorer systématiquement toute information fournie par une IA, sans jamais la vérifier",
+          "score": 0
+        }
+      ],
+      "axe": "Recherche d’information",
+      "required": true,
+      "help": "Un ton confiant n'est pas une preuve d'exactitude factuelle."
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Recherche d’information », dans le domaine « COMPÉTENCE NUMÉRIQUE & BUREAUTIQUE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : formuler, évaluer, synthétiser.\nFormat cible : 10 tâches, 10 min.\nContenu cible : opérateurs, sources, vérification.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : data literacy.\nOptions cibles : recherche augmentée par IA.\nObjectif du domaine : évaluer les compétences numériques opérationnelles\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en compétences numériques et bureautique. L'utilisateur vient de répondre à un contrôle de connaissances factuelles sur la recherche d'information (opérateurs de recherche, évaluation des sources, vérification). Ce test vérifie des savoirs pratiques objectifs : ce n'est ni un test psychométrique certifié, ni un instrument validé scientifiquement, et il ne donne lieu à aucun percentile ni norme professionnelle — seulement un niveau de connaissance observé aujourd'hui sur ces questions précises.\n\nLe score ci-dessous a déjà été calculé à partir des réponses cochées. Ne le recalcule pas, ne le modifie pas : reprends-le tel quel et commente-le.\n\nProduis une interprétation brève du niveau global, puis, pour les points où des erreurs sont visibles dans les réponses, des recommandations concrètes, pratiques et actionnables en langage clair (ex. utiliser les guillemets ou l'opérateur \"site:\", croiser systématiquement une source avant de la réutiliser) pour progresser spécifiquement sur la recherche d'information. Précise explicitement que ce résultat n'est ni un diagnostic, ni une certification, et qu'il ne reflète que les réponses données aujourd'hui à ce contrôle, pas une évaluation globale de la personne.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "évaluer les compétences numériques opérationnelles"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

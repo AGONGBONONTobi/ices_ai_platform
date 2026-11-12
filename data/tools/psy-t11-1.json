@@ -1,69 +1,201 @@
 {
   "id": "psy-t11-1",
-  "title": "Préparer — Lecture des états financiers · T11.1",
+  "title": "Lecture des états financiers · T11.1",
   "category": "FINANCE & GESTION",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Lecture des états financiers ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : bilan, compte de résultat, flux. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Lecture des états financiers », dans le domaine « FINANCE & NUMÉRATIE FINANCIÈRE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : bilan, compte de résultat, flux.\nFormat cible : 20 items + cas, 12 min.\nContenu cible : postes, équilibres, lecture.\nCalcul cible (non implémenté ici) : score, erreurs.\nUsage décrit : recrutement, formation.\nOptions cibles : cas sectoriels (OHADA/IFRS).\nObjectif du domaine : évaluer la capacité à lire, interpréter et décider sur des données financières\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Une entreprise présente un bilan avec un total Actif de 500 000 €. Lequel des énoncés suivants est nécessairement vrai ?",
+      "help": "Rappel : le bilan répond à une égalité comptable fondamentale.",
+      "options": [
+        {
+          "label": "Le total du Passif (dettes + capitaux propres) est également de 500 000 €.",
+          "score": 1
+        },
+        {
+          "label": "Le chiffre d'affaires de l'année est de 500 000 €.",
+          "score": 0
+        },
+        {
+          "label": "Le résultat net de l'exercice est de 500 000 €.",
+          "score": 0
+        },
+        {
+          "label": "La trésorerie disponible est de 500 000 €.",
+          "score": 0
+        }
+      ],
+      "axe": "Lecture des états financiers",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Lequel de ces documents décrit la situation patrimoniale de l'entreprise à une date donnée (une photographie, un stock), et non des flux sur une période ?",
+      "options": [
+        {
+          "label": "Le bilan",
+          "score": 1
+        },
+        {
+          "label": "Le compte de résultat",
+          "score": 0
+        },
+        {
+          "label": "Le tableau des flux de trésorerie",
+          "score": 0
+        },
+        {
+          "label": "Le compte de résultat prévisionnel",
+          "score": 0
+        }
+      ],
+      "axe": "Lecture des états financiers",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Parmi ces postes, lequel figure dans le compte de résultat et non dans le bilan ?",
+      "options": [
+        {
+          "label": "Le chiffre d'affaires",
+          "score": 1
+        },
+        {
+          "label": "Les capitaux propres",
+          "score": 0
+        },
+        {
+          "label": "Les stocks",
+          "score": 0
+        },
+        {
+          "label": "Les dettes fournisseurs",
+          "score": 0
+        }
+      ],
+      "axe": "Lecture des états financiers",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Une entreprise a un fonds de roulement net global positif. Qu'est-ce que cela signifie concrètement ?",
+      "options": [
+        {
+          "label": "Les ressources stables (capitaux propres + dettes à long terme) financent la totalité des actifs immobilisés et laissent un excédent pour financer le cycle d'exploitation.",
+          "score": 1
+        },
+        {
+          "label": "L'entreprise est en situation de faillite imminente.",
+          "score": 0
+        },
+        {
+          "label": "Le chiffre d'affaires est nécessairement supérieur aux charges de l'exercice.",
+          "score": 0
+        },
+        {
+          "label": "La trésorerie de l'entreprise est nécessairement négative.",
+          "score": 0
+        }
+      ],
+      "axe": "Lecture des états financiers",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Dans quelle catégorie du tableau des flux de trésorerie classe-t-on le remboursement du capital d'un emprunt bancaire ?",
+      "options": [
+        {
+          "label": "Les flux de financement",
+          "score": 1
+        },
+        {
+          "label": "Les flux d'exploitation",
+          "score": 0
+        },
+        {
+          "label": "Les flux d'investissement",
+          "score": 0
+        },
+        {
+          "label": "Le résultat exceptionnel",
+          "score": 0
+        }
+      ],
+      "axe": "Lecture des états financiers",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Une entreprise affiche un résultat net positif sur son compte de résultat, mais une trésorerie d'exploitation négative sur le même exercice. Que peut-on en conclure avec certitude ?",
+      "options": [
+        {
+          "label": "Le résultat comptable ne s'est pas traduit par une entrée de cash équivalente sur la période (par exemple créances clients ou stocks en forte hausse).",
+          "score": 1
+        },
+        {
+          "label": "Les comptes sont nécessairement frauduleux.",
+          "score": 0
+        },
+        {
+          "label": "L'entreprise a réalisé une perte sur l'exercice.",
+          "score": 0
+        },
+        {
+          "label": "Le chiffre d'affaires a nécessairement diminué par rapport à l'année précédente.",
+          "score": 0
+        }
+      ],
+      "axe": "Lecture des états financiers",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en analyse financière. Cet outil est un contrôle de connaissances factuelles sur la lecture des états financiers (bilan, compte de résultat, tableau des flux de trésorerie) : ce n'est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Lecture des états financiers » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (équilibre du bilan, distinction bilan/compte de résultat, lecture des flux de trésorerie), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +211,5 @@
       "Objectif du domaine": "évaluer la capacité à lire, interpréter et décider sur des données financières"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

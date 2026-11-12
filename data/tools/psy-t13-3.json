@@ -1,69 +1,206 @@
 {
   "id": "psy-t13-3",
-  "title": "Préparer — Email professionnel · T13.3",
+  "title": "Email professionnel · T13.3",
   "category": "TRANSFORMATION DIGITALE & IA",
+  "output_kind": "assessment",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Email professionnel ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
+      "name": "q1",
+      "type": "select",
+      "question": "Vous envoyez un email à 50 destinataires externes qui ne se connaissent pas entre eux, et vous voulez éviter que chacun voie l'adresse email de tous les autres. Quel champ faut-il utiliser pour ajouter ces destinataires ?",
+      "options": [
+        {
+          "label": "Cci (copie carbone invisible)",
+          "score": 1
+        },
+        {
+          "label": "Cc (copie carbone)",
+          "score": 0
+        },
+        {
+          "label": "À (champ destinataire principal), avec toutes les adresses séparées par des virgules",
+          "score": 0
+        },
+        {
+          "label": "Objet",
+          "score": 0
+        }
+      ],
+      "axe": "Email professionnel",
+      "required": true,
+      "help": "Un champ permet de masquer les adresses des autres destinataires entre eux."
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
+      "name": "q2",
+      "type": "select",
+      "question": "Vous envoyez un email professionnel demandant une validation avant 17h aujourd'hui. Quel objet respecte le mieux les bonnes pratiques de clarté et d'efficacité ?",
+      "options": [
+        {
+          "label": "Validation requise avant 17h aujourd'hui — Devis client Dupont",
+          "score": 1
+        },
+        {
+          "label": "Bonjour",
+          "score": 0
+        },
+        {
+          "label": "Important !!!",
+          "score": 0
+        },
+        {
+          "label": "(objet laissé vide)",
+          "score": 0
+        }
+      ],
+      "axe": "Email professionnel",
+      "required": true,
+      "help": "Un objet clair annonce l'action attendue et son échéance."
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : rédaction, netiquette, gestion. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Dans les usages de communication numérique (netiquette), comment est généralement perçu un message rédigé ENTIÈREMENT EN MAJUSCULES ?",
+      "options": [
+        {
+          "label": "Comme si l'expéditeur criait ou haussait le ton",
+          "score": 1
+        },
+        {
+          "label": "Comme un signe de politesse renforcée",
+          "score": 0
+        },
+        {
+          "label": "Comme une signature officielle obligatoire",
+          "score": 0
+        },
+        {
+          "label": "Comme un message automatiquement classé prioritaire par les serveurs de messagerie",
+          "score": 0
+        }
+      ],
+      "axe": "Email professionnel",
+      "required": true,
+      "help": "Les majuscules continues sont associées à une connotation précise en netiquette."
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Vous devez envoyer un document que le destinataire doit pouvoir lire sur n'importe quel appareil, en conservant exactement la mise en page, sans pouvoir le modifier facilement. Quel format de pièce jointe est le plus adapté ?",
+      "options": [
+        {
+          "label": "PDF",
+          "score": 1
+        },
+        {
+          "label": ".docx modifiable",
+          "score": 0
+        },
+        {
+          "label": ".txt brut",
+          "score": 0
+        },
+        {
+          "label": "Un lien vers un dossier partagé ouvert en écriture pour tous",
+          "score": 0
+        }
+      ],
+      "axe": "Email professionnel",
+      "required": true,
+      "help": "Le format d'un document influence sa mise en page à la lecture sur un autre appareil."
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Vous recevez un email envoyé à une liste de diffusion de 30 personnes. Votre réponse ne concerne qu'une question personnelle à l'expéditeur initial. Quelle action respecte le mieux les bonnes pratiques ?",
+      "options": [
+        {
+          "label": "Répondre uniquement à l'expéditeur (\"Répondre\"), pas à toute la liste",
+          "score": 1
+        },
+        {
+          "label": "Répondre à tous (\"Répondre à tous\") pour que chacun soit informé",
+          "score": 0
+        },
+        {
+          "label": "Transférer l'email à un nouveau destinataire sans répondre à la question",
+          "score": 0
+        },
+        {
+          "label": "Créer un nouveau fil de discussion avec un objet totalement différent",
+          "score": 0
+        }
+      ],
+      "axe": "Email professionnel",
+      "required": true,
+      "help": "Répondre à tous diffuse la réponse à l'ensemble de la liste, pas seulement à l'expéditeur."
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Vous devez envoyer un fichier vidéo de 500 Mo à un collègue, alors que la messagerie professionnelle limite généralement les pièces jointes à 20-25 Mo. Quelle solution est la plus adaptée ?",
+      "options": [
+        {
+          "label": "Déposer le fichier sur un espace de stockage cloud partagé et envoyer le lien par email",
+          "score": 1
+        },
+        {
+          "label": "Compresser le fichier en .zip, ce qui suffit en général à faire passer une vidéo sous la limite",
+          "score": 0
+        },
+        {
+          "label": "Diviser l'envoi en 20 emails séparés contenant chacun un morceau du fichier",
+          "score": 0
+        },
+        {
+          "label": "Réduire la résolution de l'écran avant l'envoi",
+          "score": 0
+        }
+      ],
+      "axe": "Email professionnel",
+      "required": true,
+      "help": "Les messageries professionnelles limitent en général la taille des pièces jointes."
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Email professionnel », dans le domaine « COMPÉTENCE NUMÉRIQUE & BUREAUTIQUE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : rédaction, netiquette, gestion.\nFormat cible : 10 items + rédaction, 8 min.\nContenu cible : objet, ton, priorité, pièces jointes.\nCalcul cible (non implémenté ici) : rubrique + LLM.\nUsage décrit : communication.\nOptions cibles : feedback automatique.\nObjectif du domaine : évaluer les compétences numériques opérationnelles\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en compétences numériques et bureautique. L'utilisateur vient de répondre à un contrôle de connaissances factuelles sur l'email professionnel (rédaction, netiquette, gestion des destinataires et des pièces jointes). Ce test vérifie des savoirs pratiques objectifs : ce n'est ni un test psychométrique certifié, ni un instrument validé scientifiquement, et il ne donne lieu à aucun percentile ni norme professionnelle — seulement un niveau de connaissance observé aujourd'hui sur ces questions précises.\n\nLe score ci-dessous a déjà été calculé à partir des réponses cochées. Ne le recalcule pas, ne le modifie pas : reprends-le tel quel et commente-le.\n\nProduis une interprétation brève du niveau global, puis, pour les usages où des erreurs sont visibles dans les réponses, des recommandations concrètes, pratiques et actionnables en langage clair (ex. quand utiliser Cci, comment formuler un objet utile) pour progresser spécifiquement sur l'email professionnel. Précise explicitement que ce résultat n'est ni un diagnostic, ni une certification, et qu'il ne reflète que les réponses données aujourd'hui à ce contrôle, pas une évaluation globale de la personne.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "évaluer les compétences numériques opérationnelles"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

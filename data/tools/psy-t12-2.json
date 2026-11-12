@@ -1,69 +1,206 @@
 {
   "id": "psy-t12-2",
-  "title": "Préparer — Mots de passe & authentification · T12.2",
+  "title": "Mots de passe & authentification · T12.2",
   "category": "TRANSFORMATION DIGITALE & IA",
+  "output_kind": "assessment",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Mots de passe & authentification ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Laquelle de ces pratiques constitue la meilleure protection d'un compte, même si le mot de passe venait à être découvert par un attaquant ?",
+      "help": "Pensez à ce qui ajoute une barrière indépendante du mot de passe lui-même.",
+      "options": [
+        {
+          "label": "Changer de mot de passe tous les 30 jours",
+          "score": 0
+        },
+        {
+          "label": "Activer l'authentification multifacteur (MFA) sur le compte",
+          "score": 1
+        },
+        {
+          "label": "Choisir un mot de passe facile à mémoriser",
+          "score": 0
+        },
+        {
+          "label": "Noter le mot de passe dans un fichier texte sur le bureau de l'ordinateur",
+          "score": 0
+        }
+      ],
+      "axe": "Mots de passe & authentification",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Parmi ces quatre mots de passe, lequel offre la meilleure résistance face à une attaque automatisée par force brute ou par dictionnaire ?",
+      "help": "La longueur et l'absence de motifs prévisibles comptent davantage que la simple présence de caractères spéciaux.",
+      "options": [
+        {
+          "label": "Password123!",
+          "score": 0
+        },
+        {
+          "label": "Un prénom suivi d'une année de naissance",
+          "score": 0
+        },
+        {
+          "label": "Une phrase longue et unique, par exemple « Tr0pical-SunFish#47!Cloud »",
+          "score": 1
+        },
+        {
+          "label": "azertyuiop",
+          "score": 0
+        }
+      ],
+      "axe": "Mots de passe & authentification",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : bonnes pratiques MFA. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Vous utilisez le même mot de passe pour votre messagerie professionnelle et pour plusieurs sites personnels. Quel est le principal risque de cette pratique ?",
+      "help": "Pensez à ce qui se passe si l'un de ces sites subit une fuite de données.",
+      "options": [
+        {
+          "label": "Aucun risque particulier si le mot de passe est complexe",
+          "score": 0
+        },
+        {
+          "label": "Si un seul de ces sites est compromis, tous les comptes utilisant ce même mot de passe deviennent vulnérables (attaque par réutilisation d'identifiants)",
+          "score": 1
+        },
+        {
+          "label": "Le seul inconvénient est de devoir réinitialiser plusieurs comptes en même temps",
+          "score": 0
+        },
+        {
+          "label": "Cela ralentit uniquement la vitesse de connexion",
+          "score": 0
+        }
+      ],
+      "axe": "Mots de passe & authentification",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Quel est le rôle principal d'un gestionnaire de mots de passe (coffre-fort numérique) ?",
+      "help": "Son intérêt porte sur la génération et le stockage, pas sur le partage.",
+      "options": [
+        {
+          "label": "Partager automatiquement vos mots de passe avec vos collègues",
+          "score": 0
+        },
+        {
+          "label": "Générer et stocker de façon chiffrée un mot de passe unique et complexe pour chaque compte",
+          "score": 1
+        },
+        {
+          "label": "Remplacer complètement le besoin d'authentification multifacteur",
+          "score": 0
+        },
+        {
+          "label": "Accélérer la connexion au réseau Wi-Fi",
+          "score": 0
+        }
+      ],
+      "axe": "Mots de passe & authentification",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Vous recevez sur votre téléphone une notification de validation MFA pour une connexion que vous n'avez pas initiée. Quelle est la bonne réaction ?",
+      "help": "Une demande MFA inattendue est un signal d'alerte, pas une formalité à valider rapidement.",
+      "options": [
+        {
+          "label": "Valider la demande pour qu'elle disparaisse",
+          "score": 0
+        },
+        {
+          "label": "Refuser la demande et changer immédiatement le mot de passe du compte concerné, car cela peut indiquer une tentative d'intrusion",
+          "score": 1
+        },
+        {
+          "label": "Ignorer la notification sans effectuer d'autre action",
+          "score": 0
+        },
+        {
+          "label": "Désactiver le MFA pour ne plus recevoir ce type de notification",
+          "score": 0
+        }
+      ],
+      "axe": "Mots de passe & authentification",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Parmi ces facteurs, lequel relève d'un facteur différent de « quelque chose que l'on sait » (comme un mot de passe), et renforce donc réellement une authentification à deux facteurs ?",
+      "help": "Les facteurs d'authentification classiques sont : ce que l'on sait, ce que l'on possède, ce que l'on est.",
+      "options": [
+        {
+          "label": "Une deuxième question secrète à retenir par cœur",
+          "score": 0
+        },
+        {
+          "label": "Un code à usage unique généré par une application d'authentification installée sur votre téléphone (facteur de possession)",
+          "score": 1
+        },
+        {
+          "label": "Un deuxième mot de passe différent du premier",
+          "score": 0
+        },
+        {
+          "label": "Un indice de mot de passe affiché à la connexion",
+          "score": 0
+        }
+      ],
+      "axe": "Mots de passe & authentification",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Mots de passe & authentification », dans le domaine « CYBERSÉCURITÉ & HYGIÈNE NUMÉRIQUE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : bonnes pratiques MFA.\nFormat cible : 15 items, 6 min.\nContenu cible : robustesse, gestionnaire, MFA.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : hygiène numérique.\nOptions cibles : audit de posture.\nObjectif du domaine : mesurer la sensibilisation et les comportements de sécurité\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en sensibilisation à la cybersécurité. Ce test est un contrôle factuel de connaissances et de bonnes pratiques sur les mots de passe et l'authentification — ce n'est en aucun cas un test psychométrique certifié ou validé scientifiquement : il n'établit ni percentile, ni norme professionnelle, ni QI, ni diagnostic clinique ou de personnalité. Il reflète uniquement les réponses données aujourd'hui à ces questions factuelles.\n\nLe score a déjà été calculé à partir des réponses fournies et t'est communiqué plus bas. Ne recalcule pas les scores, ne les modifie pas : reprends-les tels quels et commente-les.\n\nProduis une interprétation :\n- une lecture brève du score global et du niveau de maîtrise observé sur l'axe « Mots de passe & authentification » ;\n- pour les réponses erronées ou le score le plus faible, des recommandations concrètes, pratiques et immédiatement applicables (gestionnaire de mots de passe, activation du MFA, hygiène de base) ;\n- rappelle explicitement qu'il s'agit d'un contrôle de connaissances à un instant donné, et non d'une évaluation certifiée ni d'un audit technique réel de la posture de sécurité.\n\nN'invente aucune norme, aucun percentile, aucun classement sectoriel ni aucune certification. Ne décide d'aucune sanction, d'aucun accès ou d'aucune décision RH à partir de ce seul résultat.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "mesurer la sensibilisation et les comportements de sécurité"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

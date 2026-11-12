@@ -1,69 +1,206 @@
 {
   "id": "psy-t12-6",
-  "title": "Préparer — Conformité & sensibilisation (RGPD/AI Act) · T12.6",
+  "title": "Conformité & sensibilisation (RGPD/AI Act) · T12.6",
   "category": "TRANSFORMATION DIGITALE & IA",
+  "output_kind": "assessment",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Conformité & sensibilisation (RGPD/AI Act) ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Parmi les droits suivants, lequel fait partie des droits garantis aux personnes concernées par le RGPD ?",
+      "help": "Il s'agit d'un droit exercé par la personne sur ses propres données, pas sur celles d'un tiers.",
+      "options": [
+        {
+          "label": "Le droit d'accès à ses propres données personnelles détenues par un organisme",
+          "score": 1
+        },
+        {
+          "label": "Le droit d'accéder aux données personnelles de n'importe quel autre client",
+          "score": 0
+        },
+        {
+          "label": "Le droit de vendre ses propres données à un tiers via l'entreprise",
+          "score": 0
+        },
+        {
+          "label": "Le droit d'obtenir un remboursement automatique en cas de collecte de données",
+          "score": 0
+        }
+      ],
+      "axe": "Conformité & sensibilisation (RGPD/AI Act)",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Qu'est-ce qu'un registre des traitements, exigé par le RGPD pour les organismes qui traitent des données personnelles ?",
+      "help": "C'est un document de gouvernance interne, pas un outil de sécurité technique.",
+      "options": [
+        {
+          "label": "Un document interne recensant les activités de traitement de données personnelles réalisées par l'organisme, leur finalité et les mesures de sécurité associées",
+          "score": 1
+        },
+        {
+          "label": "Un fichier contenant tous les mots de passe des employés",
+          "score": 0
+        },
+        {
+          "label": "Un registre public listant l'ensemble des clients de l'entreprise",
+          "score": 0
+        },
+        {
+          "label": "Un simple antivirus installé sur les postes de travail",
+          "score": 0
+        }
+      ],
+      "axe": "Conformité & sensibilisation (RGPD/AI Act)",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : connaissance des obligations. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Dans le cadre de l'AI Act (règlement européen sur l'intelligence artificielle), un système d'IA utilisé pour la notation de crédit ou le recrutement est généralement classé dans quelle catégorie de risque, entraînant des obligations renforcées ?",
+      "help": "L'AI Act classe les systèmes d'IA selon une échelle de risque, avec des obligations proportionnées.",
+      "options": [
+        {
+          "label": "Risque minimal, sans aucune obligation particulière",
+          "score": 0
+        },
+        {
+          "label": "Risque élevé (« high-risk »), avec des obligations renforcées de transparence, de documentation et de supervision humaine",
+          "score": 1
+        },
+        {
+          "label": "Risque interdit dans tous les cas, sans exception",
+          "score": 0
+        },
+        {
+          "label": "Une catégorie non couverte par le texte européen",
+          "score": 0
+        }
+      ],
+      "axe": "Conformité & sensibilisation (RGPD/AI Act)",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Avant de mettre en œuvre un nouveau traitement de données personnelles présentant un risque élevé pour les droits des personnes, quelle démarche le RGPD impose selon les cas ?",
+      "help": "Cette démarche permet d'évaluer en amont les risques pour les personnes concernées.",
+      "options": [
+        {
+          "label": "Aucune démarche particulière n'est nécessaire avant la mise en œuvre",
+          "score": 0
+        },
+        {
+          "label": "Réaliser une analyse d'impact relative à la protection des données (AIPD / DPIA)",
+          "score": 1
+        },
+        {
+          "label": "Informer uniquement le service commercial de l'entreprise",
+          "score": 0
+        },
+        {
+          "label": "Demander l'avis préalable des actionnaires",
+          "score": 0
+        }
+      ],
+      "axe": "Conformité & sensibilisation (RGPD/AI Act)",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un client vous demande de connaître les données personnelles que votre entreprise détient sur lui et pour quelle finalité elles sont utilisées. Quel droit exerce-t-il ?",
+      "help": "Ce droit porte précisément sur la connaissance de ses propres données et de leur usage.",
+      "options": [
+        {
+          "label": "Le droit d'opposition commerciale",
+          "score": 0
+        },
+        {
+          "label": "Le droit d'accès",
+          "score": 1
+        },
+        {
+          "label": "Le droit de résiliation du contrat",
+          "score": 0
+        },
+        {
+          "label": "Le droit de garantie légale",
+          "score": 0
+        }
+      ],
+      "axe": "Conformité & sensibilisation (RGPD/AI Act)",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Quelle affirmation décrit correctement un des objectifs de l'AI Act européen ?",
+      "help": "Le texte encadre l'usage de l'IA, il ne l'interdit pas de façon générale.",
+      "options": [
+        {
+          "label": "Interdire totalement l'usage de l'intelligence artificielle dans l'Union européenne",
+          "score": 0
+        },
+        {
+          "label": "Encadrer les systèmes d'IA selon leur niveau de risque pour les droits et la sécurité des personnes, avec des obligations proportionnées",
+          "score": 1
+        },
+        {
+          "label": "Remplacer entièrement le RGPD par un nouveau cadre juridique",
+          "score": 0
+        },
+        {
+          "label": "S'appliquer uniquement aux administrations publiques",
+          "score": 0
+        }
+      ],
+      "axe": "Conformité & sensibilisation (RGPD/AI Act)",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Conformité & sensibilisation (RGPD/AI Act) », dans le domaine « CYBERSÉCURITÉ & HYGIÈNE NUMÉRIQUE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : connaissance des obligations.\nFormat cible : 18 items, 8 min.\nContenu cible : droits, registre, AI Act.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : conformité.\nOptions cibles : mise à jour réglementaire.\nObjectif du domaine : mesurer la sensibilisation et les comportements de sécurité\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en conformité numérique (RGPD et AI Act). Ce test est un contrôle factuel de connaissance des obligations réglementaires de base — ce n'est en aucun cas un test psychométrique certifié ou validé scientifiquement, ni un avis juridique : il n'établit ni percentile, ni norme professionnelle, ni QI, ni diagnostic clinique ou de personnalité. Il reflète uniquement les réponses données aujourd'hui à ces questions factuelles.\n\nLe score a déjà été calculé à partir des réponses fournies et t'est communiqué plus bas. Ne recalcule pas les scores, ne les modifie pas : reprends-les tels quels et commente-les.\n\nProduis une interprétation :\n- une lecture brève du score global et du niveau de connaissance observé sur l'axe « Conformité & sensibilisation (RGPD/AI Act) » ;\n- pour les réponses erronées ou le score le plus faible, des recommandations concrètes, pratiques et immédiatement applicables (droits des personnes, registre des traitements, classification des systèmes d'IA) ;\n- rappelle explicitement qu'il s'agit d'un contrôle de connaissances à un instant donné, et non d'une évaluation certifiée, d'un audit de conformité réel ni d'un avis juridique opposable.\n\nN'invente aucune norme, aucun percentile, aucun classement sectoriel ni aucune certification. Ne décide d'aucune sanction, d'aucun accès ou d'aucune décision RH à partir de ce seul résultat.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "mesurer la sensibilisation et les comportements de sécurité"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }
