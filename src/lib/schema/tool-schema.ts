@@ -61,6 +61,19 @@ export const toolSchema = z.object({
   // le rattachement normatif avait disparu en production.
   referentiel_code: z.string().optional(),
   referentiel_version: z.string().optional(),
+  provenance: z.object({
+    batch: z.string(),
+    document: z.string(),
+    code: z.string(),
+    domain: z.string(),
+    stage: z.string().optional(),
+    related_codes: z.array(z.string()).optional(),
+    blocks: z.record(z.string(), z.string()),
+  }).optional(),
+  execution: z.object({
+    mode: z.enum(["preparation", "reference"]),
+    notice: z.string().min(1),
+  }).optional(),
 });
 
 export type ToolSelectOption = z.infer<typeof toolSelectOptionSchema>;

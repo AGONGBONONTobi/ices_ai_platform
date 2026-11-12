@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d23-pr1",
+  "title": "Entretiens cognitifs · D23-PR1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Compréhension des consignes et des items, processus de réponse.\nFormat cible : Entretien individuel, pensée à voix haute, 45–60 min.\nContenu cible : Items candidats dans chaque langue et tranche d’âge.\nCalcul cible (non implémenté ici) : Codage qualitatif des difficultés (consigne, image, vocabulaire, culture).\nUsage décrit : Révision ou retrait d’items.\nOptions cibles : Grille de codage inter-juges ; revue par linguistes et spécialistes locaux.\nConditions et limites : Items acceptés seulement après accord inter-juges.\nObjectif du domaine : Administrer des versions expérimentales de tâches sous protocole approuvé pour développer, calibrer et valider les instruments A–F.\nGarde-fou du domaine : Consentement de recherche distinct ; code pseudonyme ; version figée ; comité d’éthique ; environnement séparé.\nDécisions exclues : Retour individuel diagnostique ; mélange avec l’environnement de production.\nZone d’usage : Z4 — Recherche sous protocole\nNiveau de décision cible : Recherche (aucun retour décisionnel)",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D23-PR1",
+    "domain": "Recherche en psychométrie",
+    "blocks": {
+      "mesure": "Compréhension des consignes et des items, processus de réponse.",
+      "format": "Entretien individuel, pensée à voix haute, 45–60 min.",
+      "contenu": "Items candidats dans chaque langue et tranche d’âge.",
+      "scoring": "Codage qualitatif des difficultés (consigne, image, vocabulaire, culture).",
+      "decision": "Révision ou retrait d’items.",
+      "avance": "Grille de codage inter-juges ; revue par linguistes et spécialistes locaux.",
+      "passerelle": "Items acceptés seulement après accord inter-juges.",
+      "Objectif du domaine": "Administrer des versions expérimentales de tâches sous protocole approuvé pour développer, calibrer et valider les instruments A–F.",
+      "Garde-fou du domaine": "Consentement de recherche distinct ; code pseudonyme ; version figée ; comité d’éthique ; environnement séparé.",
+      "Décisions exclues": "Retour individuel diagnostique ; mélange avec l’environnement de production.",
+      "Zone d’usage": "Z4 — Recherche sous protocole",
+      "Niveau de décision cible": "Recherche (aucun retour décisionnel)"
+    },
+    "related_codes": [],
+    "stage": "PR1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

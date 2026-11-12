@@ -1,0 +1,67 @@
+{
+  "id": "parcours-d08-p2b",
+  "title": "Calibration de confiance · D08-P2b",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Adéquation entre la confiance déclarée et l’exactitude.\nFormat cible : 16 items avec jugement de confiance, 8 min.\nContenu cible : Questions de raisonnement + curseur de confiance.\nCalcul cible (non implémenté ici) : Indice de calibration (Brier) descriptif, courbe.\nUsage décrit : Métacognition personnelle.\nOptions cibles : Référence catalogue : T6.6, T15.3.\nConditions et limites : Facultatif.\nObjectif du domaine : Offrir un aperçu de ses performances dans des tâches cognitives définies, avec information claire sur les limites, et un cheminement progressif vers des niveaux plus complets.\nGarde-fou du domaine : Limites consultables avant de commencer ; partage désactivé par défaut ; effet de pratique expliqué.\nDécisions exclues : « Votre QI est X », percentile universel, classement social.\nZone d’usage : Z1 — Parcours central du MVP\nNiveau de décision cible : N1",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D08-P2b",
+    "domain": "Auto-évaluation et pré-sélection personnelle",
+    "blocks": {
+      "mesure": "Adéquation entre la confiance déclarée et l’exactitude.",
+      "format": "16 items avec jugement de confiance, 8 min.",
+      "contenu": "Questions de raisonnement + curseur de confiance.",
+      "scoring": "Indice de calibration (Brier) descriptif, courbe.",
+      "decision": "Métacognition personnelle.",
+      "avance": "Référence catalogue : T6.6, T15.3.",
+      "passerelle": "Facultatif.",
+      "Objectif du domaine": "Offrir un aperçu de ses performances dans des tâches cognitives définies, avec information claire sur les limites, et un cheminement progressif vers des niveaux plus complets.",
+      "Garde-fou du domaine": "Limites consultables avant de commencer ; partage désactivé par défaut ; effet de pratique expliqué.",
+      "Décisions exclues": "« Votre QI est X », percentile universel, classement social.",
+      "Zone d’usage": "Z1 — Parcours central du MVP",
+      "Niveau de décision cible": "N1"
+    },
+    "related_codes": [
+      "T6.6",
+      "T15.3"
+    ],
+    "stage": "P2b"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

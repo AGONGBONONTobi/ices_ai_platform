@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d12-p3",
+  "title": "Séance avec conseiller · D12-P3",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Intégration accompagnée de l’ensemble des profils.\nFormat cible : 60 min avec conseiller qualifié.\nContenu cible : Revue des profils, du plan, des financements de formation.\nCalcul cible (non implémenté ici) : Aucun score nouveau.\nUsage décrit : Engagement personnel sur des actions.\nOptions cibles : Orientation vers dispositifs de financement de la formation par pays.\nConditions et limites : Suivi à 90 jours facultatif.\nObjectif du domaine : Clarifier préférences de tâches, intérêts, valeurs, compétences transférables et contraintes pour nourrir une réflexion de reconversion.\nGarde-fou du domaine : Les observations sont reliées à des tâches professionnelles, jamais à des intitulés de métiers déterministes.\nDécisions exclues : Prescription d’un métier unique, promesse de réussite, classement des métiers.\nZone d’usage : Z1 — Orientation exploratoire\nNiveau de décision cible : N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D12-P3",
+    "domain": "Reconversion professionnelle",
+    "blocks": {
+      "mesure": "Intégration accompagnée de l’ensemble des profils.",
+      "format": "60 min avec conseiller qualifié.",
+      "contenu": "Revue des profils, du plan, des financements de formation.",
+      "scoring": "Aucun score nouveau.",
+      "decision": "Engagement personnel sur des actions.",
+      "avance": "Orientation vers dispositifs de financement de la formation par pays.",
+      "passerelle": "Suivi à 90 jours facultatif.",
+      "Objectif du domaine": "Clarifier préférences de tâches, intérêts, valeurs, compétences transférables et contraintes pour nourrir une réflexion de reconversion.",
+      "Garde-fou du domaine": "Les observations sont reliées à des tâches professionnelles, jamais à des intitulés de métiers déterministes.",
+      "Décisions exclues": "Prescription d’un métier unique, promesse de réussite, classement des métiers.",
+      "Zone d’usage": "Z1 — Orientation exploratoire",
+      "Niveau de décision cible": "N2"
+    },
+    "related_codes": [],
+    "stage": "P3"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

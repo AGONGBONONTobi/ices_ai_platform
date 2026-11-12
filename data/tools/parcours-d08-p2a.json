@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d08-p2a",
+  "title": "Approfondissement modulable · D08-P2a",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Profil sur C, D et F, choisis par la personne.\nFormat cible : 24 à 30 items, 20–25 min, modules à la carte.\nContenu cible : Problèmes quantitatifs, rotations, apprentissage de règle avec transfert.\nCalcul cible (non implémenté ici) : Indicateurs par module avec marge d’incertitude si disponible.\nUsage décrit : Choix d’entraînement ou de consultation.\nOptions cibles : Historique personnel avec mention des changements d’appareil et de langue.\nConditions et limites : Jamais imposé.\nObjectif du domaine : Offrir un aperçu de ses performances dans des tâches cognitives définies, avec information claire sur les limites, et un cheminement progressif vers des niveaux plus complets.\nGarde-fou du domaine : Limites consultables avant de commencer ; partage désactivé par défaut ; effet de pratique expliqué.\nDécisions exclues : « Votre QI est X », percentile universel, classement social.\nZone d’usage : Z1 — Parcours central du MVP\nNiveau de décision cible : N1",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D08-P2a",
+    "domain": "Auto-évaluation et pré-sélection personnelle",
+    "blocks": {
+      "mesure": "Profil sur C, D et F, choisis par la personne.",
+      "format": "24 à 30 items, 20–25 min, modules à la carte.",
+      "contenu": "Problèmes quantitatifs, rotations, apprentissage de règle avec transfert.",
+      "scoring": "Indicateurs par module avec marge d’incertitude si disponible.",
+      "decision": "Choix d’entraînement ou de consultation.",
+      "avance": "Historique personnel avec mention des changements d’appareil et de langue.",
+      "passerelle": "Jamais imposé.",
+      "Objectif du domaine": "Offrir un aperçu de ses performances dans des tâches cognitives définies, avec information claire sur les limites, et un cheminement progressif vers des niveaux plus complets.",
+      "Garde-fou du domaine": "Limites consultables avant de commencer ; partage désactivé par défaut ; effet de pratique expliqué.",
+      "Décisions exclues": "« Votre QI est X », percentile universel, classement social.",
+      "Zone d’usage": "Z1 — Parcours central du MVP",
+      "Niveau de décision cible": "N1"
+    },
+    "related_codes": [],
+    "stage": "P2a"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

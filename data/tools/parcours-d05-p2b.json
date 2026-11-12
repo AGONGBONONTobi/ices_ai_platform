@@ -1,0 +1,69 @@
+{
+  "id": "parcours-d05-p2b",
+  "title": "Intérêts et valeurs · D05-P2b",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Intérêts RIASEC, attrait pour les métiers émergents et valeurs de travail.\nFormat cible : 60 items, 15 min.\nContenu cible : T10.1–T10.6 (RIASEC), T10.7 (métiers émergents, IA, économie verte), T30.2 (valeurs).\nCalcul cible (non implémenté ici) : Profil RIASEC à 3 lettres dominantes, profil de valeurs ; normes uniquement si validées localement.\nUsage décrit : Liste de familles de métiers à explorer, jamais un choix unique.\nOptions cibles : Base métiers actualisée par pays (marchés africains inclus).\nConditions et limites : Restitution affichée à côté, jamais fusionnée, du profil de tâches.\nObjectif du domaine : Fournir des éléments de réflexion sur les façons d’aborder différents types de problèmes, à croiser avec intérêts, valeurs, résultats et contraintes.\nGarde-fou du domaine : Les aptitudes observées ne déterminent ni la réussite ni la filière ; restitution séparée des intérêts, notes et contraintes.\nDécisions exclues : Filière recommandée par l’IA, élimination d’une option, classement des parcours.\nZone d’usage : Z1 — Parcours d’exploration\nNiveau de décision cible : N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D05-P2b",
+    "domain": "Orientation scolaire",
+    "blocks": {
+      "mesure": "Intérêts RIASEC, attrait pour les métiers émergents et valeurs de travail.",
+      "format": "60 items, 15 min.",
+      "contenu": "T10.1–T10.6 (RIASEC), T10.7 (métiers émergents, IA, économie verte), T30.2 (valeurs).",
+      "scoring": "Profil RIASEC à 3 lettres dominantes, profil de valeurs ; normes uniquement si validées localement.",
+      "decision": "Liste de familles de métiers à explorer, jamais un choix unique.",
+      "avance": "Base métiers actualisée par pays (marchés africains inclus).",
+      "passerelle": "Restitution affichée à côté, jamais fusionnée, du profil de tâches.",
+      "Objectif du domaine": "Fournir des éléments de réflexion sur les façons d’aborder différents types de problèmes, à croiser avec intérêts, valeurs, résultats et contraintes.",
+      "Garde-fou du domaine": "Les aptitudes observées ne déterminent ni la réussite ni la filière ; restitution séparée des intérêts, notes et contraintes.",
+      "Décisions exclues": "Filière recommandée par l’IA, élimination d’une option, classement des parcours.",
+      "Zone d’usage": "Z1 — Parcours d’exploration",
+      "Niveau de décision cible": "N2"
+    },
+    "related_codes": [
+      "T10.1",
+      "T10.6",
+      "T10.7",
+      "T30.2"
+    ],
+    "stage": "P2b"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

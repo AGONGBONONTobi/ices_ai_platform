@@ -1,0 +1,68 @@
+{
+  "id": "parcours-d02-p2a",
+  "title": "Parcours de tâches en deux séances · D02-P2a",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Profil descriptif sur trois modules : inductif (A), quantitatif non scolaire (C), apprentissage de règle (F).\nFormat cible : Deux séances de 10 min (12 items chacune), à des jours différents, pauses libres.\nContenu cible : Séance 1 : A + C (quantités, suites d’objets) ; séance 2 : F (découvrir la règle d’un jeu de tri, puis changement de règle).\nCalcul cible (non implémenté ici) : Réussite par module, temps, nombre d’essais avant découverte de la règle ; mention des facteurs pouvant affecter la séance (fatigue, bruit).\nUsage décrit : Préparer un échange avec l’enseignant ou un professionnel.\nOptions cibles : Référence catalogue : T1.1, T1.6, T15.5 en versions enfant ; contenus vérifiés pour ne pas dépendre du programme scolaire.\nConditions et limites : Aucun palier ne s’ouvre automatiquement : la famille choisit.\nObjectif du domaine : Aider une famille et un jeune à organiser une demande d’évaluation ou de soutien éducatif, à partir d’observations de tâches non diagnostiques et protégées.\nGarde-fou du domaine : Autorisation du représentant légal et assentiment du jeune ; deux restitutions séparées (jeune / parent) ; aucun compte mineur imposé ; aucune publicité.\nDécisions exclues : Diagnostic de trouble des apprentissages, TDAH, déficience ; orientation scolaire spécialisée ; classement.\nZone d’usage : Z2 — Orientation vers un professionnel\nNiveau de décision cible : N1–N2 ; N4 hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D02-P2a",
+    "domain": "Bilan cognitif enfant/adolescent",
+    "blocks": {
+      "mesure": "Profil descriptif sur trois modules : inductif (A), quantitatif non scolaire (C), apprentissage de règle (F).",
+      "format": "Deux séances de 10 min (12 items chacune), à des jours différents, pauses libres.",
+      "contenu": "Séance 1 : A + C (quantités, suites d’objets) ; séance 2 : F (découvrir la règle d’un jeu de tri, puis changement de règle).",
+      "scoring": "Réussite par module, temps, nombre d’essais avant découverte de la règle ; mention des facteurs pouvant affecter la séance (fatigue, bruit).",
+      "decision": "Préparer un échange avec l’enseignant ou un professionnel.",
+      "avance": "Référence catalogue : T1.1, T1.6, T15.5 en versions enfant ; contenus vérifiés pour ne pas dépendre du programme scolaire.",
+      "passerelle": "Aucun palier ne s’ouvre automatiquement : la famille choisit.",
+      "Objectif du domaine": "Aider une famille et un jeune à organiser une demande d’évaluation ou de soutien éducatif, à partir d’observations de tâches non diagnostiques et protégées.",
+      "Garde-fou du domaine": "Autorisation du représentant légal et assentiment du jeune ; deux restitutions séparées (jeune / parent) ; aucun compte mineur imposé ; aucune publicité.",
+      "Décisions exclues": "Diagnostic de trouble des apprentissages, TDAH, déficience ; orientation scolaire spécialisée ; classement.",
+      "Zone d’usage": "Z2 — Orientation vers un professionnel",
+      "Niveau de décision cible": "N1–N2 ; N4 hors plateforme"
+    },
+    "related_codes": [
+      "T1.1",
+      "T1.6",
+      "T15.5"
+    ],
+    "stage": "P2a"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

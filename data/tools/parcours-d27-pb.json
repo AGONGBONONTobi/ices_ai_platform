@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d27-pb",
+  "title": "Portail « non disponible pour la sélection » · D27-PB",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Demande d’usage obligatoire par une organisation.\nFormat cible : Écran de blocage.\nContenu cible : Explication, contact juridique/psychométrique.\nCalcul cible (non implémenté ici) : Aucun score.\nUsage décrit : Refus.\nOptions cibles : Journalisation.\nConditions et limites : Aucune passerelle vers un usage sélectif.\nObjectif du domaine : Protéger l’équité des admissions en empêchant l’usage d’un test indicatif comme filtre, tout en laissant un accès d’entraînement individuel.\nGarde-fou du domaine : Toute exception future requiert validation d’usage, équité, supervision, accommodations et procédure de recours.\nDécisions exclues : Score d’attribution, seuil, classement, export de listes.\nZone d’usage : Z3 — Exclu de la décision d’attribution\nNiveau de décision cible : N3 bloqué",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D27-PB",
+    "domain": "Bourses, concours et académies",
+    "blocks": {
+      "mesure": "Demande d’usage obligatoire par une organisation.",
+      "format": "Écran de blocage.",
+      "contenu": "Explication, contact juridique/psychométrique.",
+      "scoring": "Aucun score.",
+      "decision": "Refus.",
+      "avance": "Journalisation.",
+      "passerelle": "Aucune passerelle vers un usage sélectif.",
+      "Objectif du domaine": "Protéger l’équité des admissions en empêchant l’usage d’un test indicatif comme filtre, tout en laissant un accès d’entraînement individuel.",
+      "Garde-fou du domaine": "Toute exception future requiert validation d’usage, équité, supervision, accommodations et procédure de recours.",
+      "Décisions exclues": "Score d’attribution, seuil, classement, export de listes.",
+      "Zone d’usage": "Z3 — Exclu de la décision d’attribution",
+      "Niveau de décision cible": "N3 bloqué"
+    },
+    "related_codes": [],
+    "stage": "PB"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

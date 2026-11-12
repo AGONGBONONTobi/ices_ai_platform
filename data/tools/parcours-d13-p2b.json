@@ -1,0 +1,67 @@
+{
+  "id": "parcours-d13-p2b",
+  "title": "Style de décision · D13-P2b",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Manière de décider et anticipation du regret.\nFormat cible : 15 items + 4 scénarios, 10 min.\nContenu cible : T30.5 (style), T40.3 (regret).\nCalcul cible (non implémenté ici) : Style + points de vigilance.\nUsage décrit : Coaching décisionnel.\nOptions cibles : Restitution séparée des autres profils ; aucune combinaison de scores entre instruments différents.\nConditions et limites : Option de séance accompagnée (P3) ou d’orientation professionnelle (P4).\nObjectif du domaine : Structurer une séance entre une personne et son conseiller autour de préférences de raisonnement, d’expériences, de motivations et de style de décision.\nGarde-fou du domaine : Accès du conseiller uniquement après consentement granulaire ; résultat cognitif distinct des inventaires d’intérêts et des compétences.\nDécisions exclues : Recommandation automatisée de carrière, prédiction de réussite ou de satisfaction.\nZone d’usage : Z1 — Support à la conversation\nNiveau de décision cible : N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D13-P2b",
+    "domain": "Conseil de carrière",
+    "blocks": {
+      "mesure": "Manière de décider et anticipation du regret.",
+      "format": "15 items + 4 scénarios, 10 min.",
+      "contenu": "T30.5 (style), T40.3 (regret).",
+      "scoring": "Style + points de vigilance.",
+      "decision": "Coaching décisionnel.",
+      "avance": "Restitution séparée des autres profils ; aucune combinaison de scores entre instruments différents.",
+      "passerelle": "Option de séance accompagnée (P3) ou d’orientation professionnelle (P4).",
+      "Objectif du domaine": "Structurer une séance entre une personne et son conseiller autour de préférences de raisonnement, d’expériences, de motivations et de style de décision.",
+      "Garde-fou du domaine": "Accès du conseiller uniquement après consentement granulaire ; résultat cognitif distinct des inventaires d’intérêts et des compétences.",
+      "Décisions exclues": "Recommandation automatisée de carrière, prédiction de réussite ou de satisfaction.",
+      "Zone d’usage": "Z1 — Support à la conversation",
+      "Niveau de décision cible": "N2"
+    },
+    "related_codes": [
+      "T30.5",
+      "T40.3"
+    ],
+    "stage": "P2b"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

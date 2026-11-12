@@ -1,0 +1,67 @@
+{
+  "id": "parcours-d06-ps",
+  "title": "Raisonnement mécanique et visualisation · D06-PS",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Compréhension intuitive de mécanismes physiques et pliage/dépliage.\nFormat cible : 20 items animés, 20 min.\nContenu cible : Engrenages, leviers, poulies ; patrons de cubes.\nCalcul cible (non implémenté ici) : Indicateurs par famille d’item.\nUsage décrit : Exploration de pistes techniques (à croiser avec intérêts).\nOptions cibles : Référence catalogue : T16.2, T16.6.\nConditions et limites : Pas d’usage pour l’accès à une formation.\nObjectif du domaine : Explorer la performance à des problèmes de détection de régularités visuelles et de transformations spatiales.\nGarde-fou du domaine : Rapporter la tâche spécifique ; « non verbal » ne veut pas dire sans influence culturelle ; items non affichés correctement exclus du dénominateur.\nDécisions exclues : Score « intelligence non verbale », présentation comme « culture-free », sélection.\nZone d’usage : Z1 — Domaine direct d’évaluation indicative\nNiveau de décision cible : N1–N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D06-PS",
+    "domain": "Raisonnement non verbal",
+    "blocks": {
+      "mesure": "Compréhension intuitive de mécanismes physiques et pliage/dépliage.",
+      "format": "20 items animés, 20 min.",
+      "contenu": "Engrenages, leviers, poulies ; patrons de cubes.",
+      "scoring": "Indicateurs par famille d’item.",
+      "decision": "Exploration de pistes techniques (à croiser avec intérêts).",
+      "avance": "Référence catalogue : T16.2, T16.6.",
+      "passerelle": "Pas d’usage pour l’accès à une formation.",
+      "Objectif du domaine": "Explorer la performance à des problèmes de détection de régularités visuelles et de transformations spatiales.",
+      "Garde-fou du domaine": "Rapporter la tâche spécifique ; « non verbal » ne veut pas dire sans influence culturelle ; items non affichés correctement exclus du dénominateur.",
+      "Décisions exclues": "Score « intelligence non verbale », présentation comme « culture-free », sélection.",
+      "Zone d’usage": "Z1 — Domaine direct d’évaluation indicative",
+      "Niveau de décision cible": "N1–N2"
+    },
+    "related_codes": [
+      "T16.2",
+      "T16.6"
+    ],
+    "stage": "PS"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d03-p1",
+  "title": "Screening de raisonnement à plafond élevé · D03-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance sur des items de raisonnement inductif visuel (A) et quantitatif (C) ou spatial (D) comportant des items difficiles.\nFormat cible : 16 items, 12–15 min, deux blocs de difficulté (standard puis élevé), 1 essai par module.\nContenu cible : Matrices à règles combinées, suites à double progression, rotations composées ; choix C ou D selon accessibilité et langue.\nCalcul cible (non implémenté ici) : Réussite par bloc de difficulté et par famille de règle ; aucun seuil, aucun équivalent QI.\nUsage décrit : Information sur l’intérêt d’un approfondissement.\nOptions cibles : Ordre des modules contrebalancé ; formes parallèles A1/A2/A3 ; blocage de répétition à moins de 90 jours sur la même forme.\nConditions et limites : P2 accessible à tous, indépendamment du résultat P1.\nObjectif du domaine : Permettre l’exploration de performances de raisonnement élevées et des besoins associés, sans certifier un haut potentiel ni produire d’étiquette.\nGarde-fou du domaine : « Haut potentiel » n’est jamais une conclusion de la plateforme ; formes parallèles obligatoires ; recommandation d’un bilan reconnu si la personne souhaite une identification.\nDécisions exclues : Étiquette « HPI / non-HPI », seuil de QI, percentile mondial, accès conditionnel à un programme payant.\nZone d’usage : Z1 — Repérage indicatif\nNiveau de décision cible : N1–N2 ; N4 hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D03-P1",
+    "domain": "Identification des hauts potentiels",
+    "blocks": {
+      "mesure": "Performance sur des items de raisonnement inductif visuel (A) et quantitatif (C) ou spatial (D) comportant des items difficiles.",
+      "format": "16 items, 12–15 min, deux blocs de difficulté (standard puis élevé), 1 essai par module.",
+      "contenu": "Matrices à règles combinées, suites à double progression, rotations composées ; choix C ou D selon accessibilité et langue.",
+      "scoring": "Réussite par bloc de difficulté et par famille de règle ; aucun seuil, aucun équivalent QI.",
+      "decision": "Information sur l’intérêt d’un approfondissement.",
+      "avance": "Ordre des modules contrebalancé ; formes parallèles A1/A2/A3 ; blocage de répétition à moins de 90 jours sur la même forme.",
+      "passerelle": "P2 accessible à tous, indépendamment du résultat P1.",
+      "Objectif du domaine": "Permettre l’exploration de performances de raisonnement élevées et des besoins associés, sans certifier un haut potentiel ni produire d’étiquette.",
+      "Garde-fou du domaine": "« Haut potentiel » n’est jamais une conclusion de la plateforme ; formes parallèles obligatoires ; recommandation d’un bilan reconnu si la personne souhaite une identification.",
+      "Décisions exclues": "Étiquette « HPI / non-HPI », seuil de QI, percentile mondial, accès conditionnel à un programme payant.",
+      "Zone d’usage": "Z1 — Repérage indicatif",
+      "Niveau de décision cible": "N1–N2 ; N4 hors plateforme"
+    },
+    "related_codes": [],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

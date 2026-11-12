@@ -37,6 +37,21 @@ class ToolInput(BaseModel):
     poids: float | None = None
 
 
+class ToolProvenance(BaseModel):
+    batch: str
+    document: str
+    code: str
+    domain: str
+    stage: str | None = None
+    related_codes: list[str] = Field(default_factory=list)
+    blocks: dict[str, str]
+
+
+class ToolExecution(BaseModel):
+    mode: Literal["preparation", "reference"]
+    notice: str = Field(min_length=1)
+
+
 class ToolConfig(BaseModel):
     id: str = Field(min_length=1)
     title: str = Field(min_length=1)
@@ -52,6 +67,8 @@ class ToolConfig(BaseModel):
     # diagnostic ISO repose sur la mémoire du modèle.
     referentiel_code: str | None = None
     referentiel_version: str | None = None
+    provenance: ToolProvenance | None = None
+    execution: ToolExecution | None = None
 
 
 class ToolSummary(BaseModel):
@@ -63,6 +80,7 @@ class ToolSummary(BaseModel):
     # Présent uniquement pour les outils adossés à un référentiel officiel
     # (cf. app/services/referentiels.py) — sert à les distinguer dans le catalogue.
     referentiel_code: str | None = None
+    execution: ToolExecution | None = None
 
 
 class SearchRequest(BaseModel):
@@ -75,6 +93,7 @@ class SearchResultItem(BaseModel):
     category: str
     referentiel_code: str | None = None
     reason: str
+    execution: ToolExecution | None = None
 
 
 class SearchResponse(BaseModel):

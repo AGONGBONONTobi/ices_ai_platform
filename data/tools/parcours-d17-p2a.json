@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d17-p2a",
+  "title": "Critique d’une réponse synthétique · D17-P2a",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Détection d’erreurs, d’incertitudes et de sources manquantes.\nFormat cible : 10 cas, 15 min.\nContenu cible : Réponses volontairement ambiguës générées et figées.\nCalcul cible (non implémenté ici) : Taux de détection, qualité de justification.\nUsage décrit : Stratégies de vérification.\nOptions cibles : Modèle et version documentés.\nConditions et limites : Option de séance accompagnée (P3) ou d’orientation professionnelle (P4).\nObjectif du domaine : Aider à réfléchir à la vérification, au jugement et au partage de tâches avec un système d’IA.\nGarde-fou du domaine : Séparer score de tâche et qualité du modèle ; documenter modèle et version ; aucune réponse privée envoyée à un modèle sans consentement.\nDécisions exclues : Score « humain contre IA », mesure d’employabilité augmentée.\nZone d’usage : Z1 — Sensibilisation expérimentale\nNiveau de décision cible : N1",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D17-P2a",
+    "domain": "Complémentarité humain–IA",
+    "blocks": {
+      "mesure": "Détection d’erreurs, d’incertitudes et de sources manquantes.",
+      "format": "10 cas, 15 min.",
+      "contenu": "Réponses volontairement ambiguës générées et figées.",
+      "scoring": "Taux de détection, qualité de justification.",
+      "decision": "Stratégies de vérification.",
+      "avance": "Modèle et version documentés.",
+      "passerelle": "Option de séance accompagnée (P3) ou d’orientation professionnelle (P4).",
+      "Objectif du domaine": "Aider à réfléchir à la vérification, au jugement et au partage de tâches avec un système d’IA.",
+      "Garde-fou du domaine": "Séparer score de tâche et qualité du modèle ; documenter modèle et version ; aucune réponse privée envoyée à un modèle sans consentement.",
+      "Décisions exclues": "Score « humain contre IA », mesure d’employabilité augmentée.",
+      "Zone d’usage": "Z1 — Sensibilisation expérimentale",
+      "Niveau de décision cible": "N1"
+    },
+    "related_codes": [],
+    "stage": "P2a"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

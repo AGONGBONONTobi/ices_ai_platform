@@ -1,6 +1,6 @@
 """Exécution d'un outil par le LLM.
 
-Chaîne : quota → relecture de la fiche en base → validation des réponses →
+Chaîne : fiche en base et disponibilité → quota → validation des réponses →
 génération contrainte par schéma (avec retries) → décompte du quota.
 
 Le client n'envoie que l'identifiant de l'outil : la configuration — donc le
@@ -40,6 +40,15 @@ def execute_tool(
 ) -> ExecuteResponse:
     settings = get_settings()
 
+    # Le statut provient de la fiche en base, jamais du client. Une référence
+    # décrit une épreuve non implémentée : aucun appel LLM ni quota consommé.
+    tool = get_published_tool(payload.toolId)
+    if tool.execution and tool.execution.mode == "reference":
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail={"error": "TOOL_REFERENCE_ONLY", "details": tool.execution.notice},
+        )
+
     # --- Quota du plan gratuit ---
     if profile.plan == "free" and profile.tools_used_count >= settings.free_tier_limit:
         raise HTTPException(
@@ -52,9 +61,6 @@ def execute_tool(
                 ),
             },
         )
-
-    # --- Source de vérité : la base, jamais le payload client ---
-    tool = get_published_tool(payload.toolId)
 
     # L'utilisateur a rempli le formulaire tel qu'il lui a été servi, c'est-à-dire
     # traduit. On valide donc contre cette version-là, puis on repasse les valeurs

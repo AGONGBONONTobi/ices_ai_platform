@@ -1,0 +1,93 @@
+{
+  "id": "parcours-d01-ps",
+  "title": "Préparer — Dossier de préparation de consultation · D01-PS",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "question": "Que souhaitez-vous préparer ?",
+      "help": "Précisez votre objectif autour de « Dossier de préparation de consultation ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "required": true
+    },
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Quel est le contexte utile ?",
+      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "required": true
+    },
+    {
+      "name": "elements",
+      "type": "textarea",
+      "question": "Quels éléments factuels avez-vous déjà ?",
+      "help": "Indiquez uniquement vos observations et questions en lien avec : Synthèse organisée des éléments utiles au professionnel. Ne renseignez pas de score supposé.",
+      "required": false
+    },
+    {
+      "name": "contraintes",
+      "type": "textarea",
+      "question": "Quelles contraintes faut-il respecter ?",
+      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Prépare un support écrit pour « Dossier de préparation de consultation », dans le domaine « Bilan neuropsychologique adulte ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : Synthèse organisée des éléments utiles au professionnel.\nFormat cible : Document généré, 2 pages, téléchargeable et partageable (lien révocable, expiration 30 jours).\nContenu cible : Motif, chronologie déclarée, tâches réalisées (versions, langue, appareil), observations P3, questions de la personne.\nCalcul cible (non implémenté ici) : Aucun score interprété ; seuls les indicateurs descriptifs et leurs limites figurent.\nUsage décrit : Faciliter la première consultation.\nOptions cibles : Liste de 10 questions types adaptées au motif (« depuis quand ? dans quelles situations ? »).\nConditions et limites : Partage refusé tant que le consentement spécifique au destinataire n’est pas enregistré.\nObjectif du domaine : Aider un adulte à clarifier sa demande (mémoire, attention, raisonnement), à recueillir des observations de tâches non cliniques et à préparer une consultation avec un psychologue ou neuropsychologue habilité.\nGarde-fou du domaine : La plateforme ne réalise pas de bilan. Aucun mot « diagnostic », « déficit », « pathologique » dans les sorties. Le bilan est conduit hors plateforme par un professionnel qui choisit ses instruments sous licence.\nDécisions exclues : Diagnostic, détection de déficit, conclusion sur un trouble, aptitude au travail, indemnisation, expertise médico-légale.\nZone d’usage : Z2 — Orientation vers un professionnel\nNiveau de décision cible : N2 (orientation) ; N4 hors plateforme\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D01-PS",
+    "domain": "Bilan neuropsychologique adulte",
+    "blocks": {
+      "mesure": "Synthèse organisée des éléments utiles au professionnel.",
+      "format": "Document généré, 2 pages, téléchargeable et partageable (lien révocable, expiration 30 jours).",
+      "contenu": "Motif, chronologie déclarée, tâches réalisées (versions, langue, appareil), observations P3, questions de la personne.",
+      "scoring": "Aucun score interprété ; seuls les indicateurs descriptifs et leurs limites figurent.",
+      "decision": "Faciliter la première consultation.",
+      "avance": "Liste de 10 questions types adaptées au motif (« depuis quand ? dans quelles situations ? »).",
+      "passerelle": "Partage refusé tant que le consentement spécifique au destinataire n’est pas enregistré.",
+      "Objectif du domaine": "Aider un adulte à clarifier sa demande (mémoire, attention, raisonnement), à recueillir des observations de tâches non cliniques et à préparer une consultation avec un psychologue ou neuropsychologue habilité.",
+      "Garde-fou du domaine": "La plateforme ne réalise pas de bilan. Aucun mot « diagnostic », « déficit », « pathologique » dans les sorties. Le bilan est conduit hors plateforme par un professionnel qui choisit ses instruments sous licence.",
+      "Décisions exclues": "Diagnostic, détection de déficit, conclusion sur un trouble, aptitude au travail, indemnisation, expertise médico-légale.",
+      "Zone d’usage": "Z2 — Orientation vers un professionnel",
+      "Niveau de décision cible": "N2 (orientation) ; N4 hors plateforme"
+    },
+    "related_codes": [],
+    "stage": "PS"
+  },
+  "execution": {
+    "mode": "preparation",
+    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
+  }
+}

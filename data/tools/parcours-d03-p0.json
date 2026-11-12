@@ -1,0 +1,93 @@
+{
+  "id": "parcours-d03-p0",
+  "title": "Préparer — Information sur la notion de haut potentiel · D03-P0",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "question": "Que souhaitez-vous préparer ?",
+      "help": "Précisez votre objectif autour de « Information sur la notion de haut potentiel ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "required": true
+    },
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Quel est le contexte utile ?",
+      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "required": true
+    },
+    {
+      "name": "elements",
+      "type": "textarea",
+      "question": "Quels éléments factuels avez-vous déjà ?",
+      "help": "Indiquez uniquement vos observations et questions en lien avec : Compréhension des différences entre pratique, repérage, test supervisé et bilan clinique. Ne renseignez pas de score supposé.",
+      "required": false
+    },
+    {
+      "name": "contraintes",
+      "type": "textarea",
+      "question": "Quelles contraintes faut-il respecter ?",
+      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Prépare un support écrit pour « Information sur la notion de haut potentiel », dans le domaine « Identification des hauts potentiels ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : Compréhension des différences entre pratique, repérage, test supervisé et bilan clinique.\nFormat cible : Module d’information interactif, 5 min, schéma des quatre niveaux d’outils.\nContenu cible : Ce que mesure un test de raisonnement, ce qu’il ne mesure pas (créativité, réussite, motivation), effets de la pratique et de la langue.\nCalcul cible (non implémenté ici) : Aucun score ; quiz de compréhension en 3 items.\nUsage décrit : Choisir l’objectif : curiosité, préparation d’un bilan, recherche de ressources.\nOptions cibles : Contenu revu par psychologues et représentants de familles et d’adultes concernés.\nConditions et limites : L’objectif « obtenir une identification officielle » renvoie directement vers P4.\nObjectif du domaine : Permettre l’exploration de performances de raisonnement élevées et des besoins associés, sans certifier un haut potentiel ni produire d’étiquette.\nGarde-fou du domaine : « Haut potentiel » n’est jamais une conclusion de la plateforme ; formes parallèles obligatoires ; recommandation d’un bilan reconnu si la personne souhaite une identification.\nDécisions exclues : Étiquette « HPI / non-HPI », seuil de QI, percentile mondial, accès conditionnel à un programme payant.\nZone d’usage : Z1 — Repérage indicatif\nNiveau de décision cible : N1–N2 ; N4 hors plateforme\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D03-P0",
+    "domain": "Identification des hauts potentiels",
+    "blocks": {
+      "mesure": "Compréhension des différences entre pratique, repérage, test supervisé et bilan clinique.",
+      "format": "Module d’information interactif, 5 min, schéma des quatre niveaux d’outils.",
+      "contenu": "Ce que mesure un test de raisonnement, ce qu’il ne mesure pas (créativité, réussite, motivation), effets de la pratique et de la langue.",
+      "scoring": "Aucun score ; quiz de compréhension en 3 items.",
+      "decision": "Choisir l’objectif : curiosité, préparation d’un bilan, recherche de ressources.",
+      "avance": "Contenu revu par psychologues et représentants de familles et d’adultes concernés.",
+      "passerelle": "L’objectif « obtenir une identification officielle » renvoie directement vers P4.",
+      "Objectif du domaine": "Permettre l’exploration de performances de raisonnement élevées et des besoins associés, sans certifier un haut potentiel ni produire d’étiquette.",
+      "Garde-fou du domaine": "« Haut potentiel » n’est jamais une conclusion de la plateforme ; formes parallèles obligatoires ; recommandation d’un bilan reconnu si la personne souhaite une identification.",
+      "Décisions exclues": "Étiquette « HPI / non-HPI », seuil de QI, percentile mondial, accès conditionnel à un programme payant.",
+      "Zone d’usage": "Z1 — Repérage indicatif",
+      "Niveau de décision cible": "N1–N2 ; N4 hors plateforme"
+    },
+    "related_codes": [],
+    "stage": "P0"
+  },
+  "execution": {
+    "mode": "preparation",
+    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
+  }
+}

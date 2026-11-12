@@ -56,8 +56,23 @@ def _effective_schema(tool: ToolConfig) -> dict:
 
 def build_system_prompt(tool: ToolConfig, lang: str) -> str:
     """Règles transverses uniquement — le métier vit dans le promptTemplate de l'outil."""
+    preparation_rules = ""
+    if tool.execution and tool.execution.mode == "preparation":
+        preparation_rules = """
+PREPARATION GUIDE ONLY:
+This tool prepares a conversation, a protocol or a document from the declared
+context. It does not administer or validate a psychometric test. Never simulate
+test items, observations, performance, calibration, norms or professional review.
+Do not produce an IQ, percentile, diagnostic conclusion, standardized score or
+claim of psychometric validity. Do not infer aptitude, personality, mental health
+or neurodiversity from a person's prose. Do not recommend selecting, rejecting,
+ranking or granting access to a person in employment, education or insurance.
+Explain missing evidence and appropriate human review. Source scoring methods
+are development targets, never results available from this conversation.
+"""
     return f"""You are an expert consultant executing one specific professional tool.
 Tool: "{tool.title}" | Category: "{tool.category}"
+{preparation_rules}
 
 WHAT THIS TOOL MUST PRODUCE:
 {guidance_for(tool.output_kind)}
@@ -89,7 +104,18 @@ def build_user_prompt(
     évalue des faits au regard d'un référentiel fourni plutôt que de puiser dans
     sa mémoire. Les scores, eux, sont déjà calculés : le modèle les commente.
     """
-    parts = [build_prompt(tool.promptTemplate, user_inputs)]
+    # Le validateur omet les champs facultatifs vides. Ils restent pourtant
+    # déclarés dans le template : expliciter l'absence plutôt que transmettre
+    # leurs placeholders au modèle. Les variables inconnues restent visibles.
+    template_inputs = {
+        field.name: (
+            user_inputs[field.name]
+            if user_inputs.get(field.name) not in (None, "")
+            else "(non renseigné)"
+        )
+        for field in tool.inputs
+    }
+    parts = [build_prompt(tool.promptTemplate, template_inputs)]
 
     if clauses:
         parts.append(f"--- Référentiel applicable ---\n{clauses}")

@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d24-pr1",
+  "title": "Configuration de protocole · D24-PR1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Paramètres expérimentaux (conditions, durées, ordre, feedback).\nFormat cible : Interface studio, sans code.\nContenu cible : Modules A–F, variables indépendantes, règles d’arrêt.\nCalcul cible (non implémenté ici) : Journal de paramètres horodaté.\nUsage décrit : Validation par responsable scientifique.\nOptions cibles : Gabarits d’expériences classiques (n-back, task-switching).\nConditions et limites : Gel de version avant collecte.\nObjectif du domaine : Permettre à des chercheurs autorisés de configurer tâches, consignes et conditions expérimentales sur le moteur commun.\nGarde-fou du domaine : Configuration journalisée ; export pseudonymisé ; dissociation stricte avec les versions grand public.\nDécisions exclues : Mélange des essais expérimentaux avec les normes utilisateurs ; interprétation clinique intégrée.\nZone d’usage : Z4 — Outil expérimental\nNiveau de décision cible : Recherche",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D24-PR1",
+    "domain": "Sciences cognitives",
+    "blocks": {
+      "mesure": "Paramètres expérimentaux (conditions, durées, ordre, feedback).",
+      "format": "Interface studio, sans code.",
+      "contenu": "Modules A–F, variables indépendantes, règles d’arrêt.",
+      "scoring": "Journal de paramètres horodaté.",
+      "decision": "Validation par responsable scientifique.",
+      "avance": "Gabarits d’expériences classiques (n-back, task-switching).",
+      "passerelle": "Gel de version avant collecte.",
+      "Objectif du domaine": "Permettre à des chercheurs autorisés de configurer tâches, consignes et conditions expérimentales sur le moteur commun.",
+      "Garde-fou du domaine": "Configuration journalisée ; export pseudonymisé ; dissociation stricte avec les versions grand public.",
+      "Décisions exclues": "Mélange des essais expérimentaux avec les normes utilisateurs ; interprétation clinique intégrée.",
+      "Zone d’usage": "Z4 — Outil expérimental",
+      "Niveau de décision cible": "Recherche"
+    },
+    "related_codes": [],
+    "stage": "PR1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "parcours-d06-p2a",
+  "title": "Inductif + spatial · D06-P2a",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Profil visuo-spatial combinant induction (A) et rotation/visualisation (D).\nFormat cible : 30 items (18 A + 12 D), 25 min, pause.\nContenu cible : Matrices à règles multiples, rotations 2D/3D, dépliages de cubes.\nCalcul cible (non implémenté ici) : Indicateurs séparés A et D, vitesse/précision, erreurs de miroir pour D.\nUsage décrit : Information et entraînement ciblé.\nOptions cibles : Référence catalogue : T16.1, T16.2 ; détection d’une stratégie analytique vs visuelle.\nConditions et limites : Aucun score combiné.\nObjectif du domaine : Explorer la performance à des problèmes de détection de régularités visuelles et de transformations spatiales.\nGarde-fou du domaine : Rapporter la tâche spécifique ; « non verbal » ne veut pas dire sans influence culturelle ; items non affichés correctement exclus du dénominateur.\nDécisions exclues : Score « intelligence non verbale », présentation comme « culture-free », sélection.\nZone d’usage : Z1 — Domaine direct d’évaluation indicative\nNiveau de décision cible : N1–N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D06-P2a",
+    "domain": "Raisonnement non verbal",
+    "blocks": {
+      "mesure": "Profil visuo-spatial combinant induction (A) et rotation/visualisation (D).",
+      "format": "30 items (18 A + 12 D), 25 min, pause.",
+      "contenu": "Matrices à règles multiples, rotations 2D/3D, dépliages de cubes.",
+      "scoring": "Indicateurs séparés A et D, vitesse/précision, erreurs de miroir pour D.",
+      "decision": "Information et entraînement ciblé.",
+      "avance": "Référence catalogue : T16.1, T16.2 ; détection d’une stratégie analytique vs visuelle.",
+      "passerelle": "Aucun score combiné.",
+      "Objectif du domaine": "Explorer la performance à des problèmes de détection de régularités visuelles et de transformations spatiales.",
+      "Garde-fou du domaine": "Rapporter la tâche spécifique ; « non verbal » ne veut pas dire sans influence culturelle ; items non affichés correctement exclus du dénominateur.",
+      "Décisions exclues": "Score « intelligence non verbale », présentation comme « culture-free », sélection.",
+      "Zone d’usage": "Z1 — Domaine direct d’évaluation indicative",
+      "Niveau de décision cible": "N1–N2"
+    },
+    "related_codes": [
+      "T16.1",
+      "T16.2"
+    ],
+    "stage": "P2a"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d19-p1",
+  "title": "Activités de tâches · D19-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance aux tâches choisies.\nFormat cible : 12 items, 12 min.\nContenu cible : A–F.\nCalcul cible (non implémenté ici) : Descriptif.\nUsage décrit : Choix d’activités.\nOptions cibles : Formes parallèles, journalisation des versions d’items ; mode « exploratoire » si la langue ou l’âge ne sont pas validés.\nConditions et limites : Palier détaillé proposé, jamais imposé ; accès indépendant du résultat.\nObjectif du domaine : Proposer des activités cognitives et des stratégies d’apprentissage à des adultes de tout âge.\nGarde-fou du domaine : Message explicite : une variation isolée ne mesure pas la santé cérébrale ; bouton d’orientation professionnelle sans inférence.\nDécisions exclues : Dépistage de démence, interprétation d’une réponse comme symptôme.\nZone d’usage : Z1/Z2 — Exploration et entraînement\nNiveau de décision cible : N1",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D19-P1",
+    "domain": "Vieillissement actif",
+    "blocks": {
+      "mesure": "Performance aux tâches choisies.",
+      "format": "12 items, 12 min.",
+      "contenu": "A–F.",
+      "scoring": "Descriptif.",
+      "decision": "Choix d’activités.",
+      "avance": "Formes parallèles, journalisation des versions d’items ; mode « exploratoire » si la langue ou l’âge ne sont pas validés.",
+      "passerelle": "Palier détaillé proposé, jamais imposé ; accès indépendant du résultat.",
+      "Objectif du domaine": "Proposer des activités cognitives et des stratégies d’apprentissage à des adultes de tout âge.",
+      "Garde-fou du domaine": "Message explicite : une variation isolée ne mesure pas la santé cérébrale ; bouton d’orientation professionnelle sans inférence.",
+      "Décisions exclues": "Dépistage de démence, interprétation d’une réponse comme symptôme.",
+      "Zone d’usage": "Z1/Z2 — Exploration et entraînement",
+      "Niveau de décision cible": "N1"
+    },
+    "related_codes": [],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

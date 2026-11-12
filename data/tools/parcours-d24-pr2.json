@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d24-pr2",
+  "title": "Prévisualisation et test · D24-PR2",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Fonctionnement du protocole.\nFormat cible : Exécution sur données synthétiques.\nContenu cible : Parcours complet simulé.\nCalcul cible (non implémenté ici) : Contrôle des enregistrements de temps et événements.\nUsage décrit : Feu vert technique.\nOptions cibles : Tests de latence par classe d’appareil.\nConditions et limites : Passage en production uniquement après validation documentée.\nObjectif du domaine : Permettre à des chercheurs autorisés de configurer tâches, consignes et conditions expérimentales sur le moteur commun.\nGarde-fou du domaine : Configuration journalisée ; export pseudonymisé ; dissociation stricte avec les versions grand public.\nDécisions exclues : Mélange des essais expérimentaux avec les normes utilisateurs ; interprétation clinique intégrée.\nZone d’usage : Z4 — Outil expérimental\nNiveau de décision cible : Recherche",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D24-PR2",
+    "domain": "Sciences cognitives",
+    "blocks": {
+      "mesure": "Fonctionnement du protocole.",
+      "format": "Exécution sur données synthétiques.",
+      "contenu": "Parcours complet simulé.",
+      "scoring": "Contrôle des enregistrements de temps et événements.",
+      "decision": "Feu vert technique.",
+      "avance": "Tests de latence par classe d’appareil.",
+      "passerelle": "Passage en production uniquement après validation documentée.",
+      "Objectif du domaine": "Permettre à des chercheurs autorisés de configurer tâches, consignes et conditions expérimentales sur le moteur commun.",
+      "Garde-fou du domaine": "Configuration journalisée ; export pseudonymisé ; dissociation stricte avec les versions grand public.",
+      "Décisions exclues": "Mélange des essais expérimentaux avec les normes utilisateurs ; interprétation clinique intégrée.",
+      "Zone d’usage": "Z4 — Outil expérimental",
+      "Niveau de décision cible": "Recherche"
+    },
+    "related_codes": [],
+    "stage": "PR2"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

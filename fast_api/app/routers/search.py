@@ -35,6 +35,7 @@ def search(request: Request, payload: SearchRequest) -> SearchResponse:
                 category=r.category,
                 referentiel_code=r.referentiel_code,
                 reason=r.reason,
+                execution=r.execution,
             )
             for r in results
         ]

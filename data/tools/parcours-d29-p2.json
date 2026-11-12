@@ -1,0 +1,67 @@
+{
+  "id": "parcours-d29-p2",
+  "title": "Culture de signalement et retour d’expérience · D29-P2",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Disposition à signaler presque-accidents et incidents.\nFormat cible : 10 scénarios, 10 min.\nContenu cible : Signalement, non-punition, retour d’expérience (T28.5, T12.7).\nCalcul cible (non implémenté ici) : Retour formatif.\nUsage décrit : Sensibilisation.\nOptions cibles : Utilisable en formation collective anonyme.\nConditions et limites : Option de séance accompagnée (P3) ou d’orientation professionnelle (P4).\nObjectif du domaine : Empêcher le recours au score cognitif grand public dans des décisions pouvant exposer des tiers à un risque, tout en offrant une sensibilisation formative volontaire.\nGarde-fou du domaine : Renvoi vers procédures réglementées et expertise professionnelle (médecine du travail, organismes agréés) ; aucune conversion d’un résultat formatif en aptitude.\nDécisions exclues : Prédiction d’accidents, de fiabilité ou d’aptitude ; certification de sécurité ; tableau de bord employeur.\nZone d’usage : Z3 — Exclu du MVP\nNiveau de décision cible : N3 réglementé — hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D29-P2",
+    "domain": "Sécurité publique et métiers à risque",
+    "blocks": {
+      "mesure": "Disposition à signaler presque-accidents et incidents.",
+      "format": "10 scénarios, 10 min.",
+      "contenu": "Signalement, non-punition, retour d’expérience (T28.5, T12.7).",
+      "scoring": "Retour formatif.",
+      "decision": "Sensibilisation.",
+      "avance": "Utilisable en formation collective anonyme.",
+      "passerelle": "Option de séance accompagnée (P3) ou d’orientation professionnelle (P4).",
+      "Objectif du domaine": "Empêcher le recours au score cognitif grand public dans des décisions pouvant exposer des tiers à un risque, tout en offrant une sensibilisation formative volontaire.",
+      "Garde-fou du domaine": "Renvoi vers procédures réglementées et expertise professionnelle (médecine du travail, organismes agréés) ; aucune conversion d’un résultat formatif en aptitude.",
+      "Décisions exclues": "Prédiction d’accidents, de fiabilité ou d’aptitude ; certification de sécurité ; tableau de bord employeur.",
+      "Zone d’usage": "Z3 — Exclu du MVP",
+      "Niveau de décision cible": "N3 réglementé — hors plateforme"
+    },
+    "related_codes": [
+      "T12.7",
+      "T28.5"
+    ],
+    "stage": "P2"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

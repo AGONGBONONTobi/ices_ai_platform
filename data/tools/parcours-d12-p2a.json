@@ -1,0 +1,69 @@
+{
+  "id": "parcours-d12-p2a",
+  "title": "Intérêts, valeurs, compétences · D12-P2a",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Intérêts RIASEC, valeurs de travail et compétences transférables.\nFormat cible : 84 items, 25 min, sauvegarde automatique.\nContenu cible : T30.1 (intérêts), T30.2 (valeurs), T30.3 (compétences transférables).\nCalcul cible (non implémenté ici) : Trois profils séparés, jamais fusionnés.\nUsage décrit : Familles de métiers à explorer (au moins 5), jamais un choix unique.\nOptions cibles : Base métiers mise à jour trimestriellement, incluant métiers émergents (T10.7).\nConditions et limites : Restitution comparée à la carte de contexte.\nObjectif du domaine : Clarifier préférences de tâches, intérêts, valeurs, compétences transférables et contraintes pour nourrir une réflexion de reconversion.\nGarde-fou du domaine : Les observations sont reliées à des tâches professionnelles, jamais à des intitulés de métiers déterministes.\nDécisions exclues : Prescription d’un métier unique, promesse de réussite, classement des métiers.\nZone d’usage : Z1 — Orientation exploratoire\nNiveau de décision cible : N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D12-P2a",
+    "domain": "Reconversion professionnelle",
+    "blocks": {
+      "mesure": "Intérêts RIASEC, valeurs de travail et compétences transférables.",
+      "format": "84 items, 25 min, sauvegarde automatique.",
+      "contenu": "T30.1 (intérêts), T30.2 (valeurs), T30.3 (compétences transférables).",
+      "scoring": "Trois profils séparés, jamais fusionnés.",
+      "decision": "Familles de métiers à explorer (au moins 5), jamais un choix unique.",
+      "avance": "Base métiers mise à jour trimestriellement, incluant métiers émergents (T10.7).",
+      "passerelle": "Restitution comparée à la carte de contexte.",
+      "Objectif du domaine": "Clarifier préférences de tâches, intérêts, valeurs, compétences transférables et contraintes pour nourrir une réflexion de reconversion.",
+      "Garde-fou du domaine": "Les observations sont reliées à des tâches professionnelles, jamais à des intitulés de métiers déterministes.",
+      "Décisions exclues": "Prescription d’un métier unique, promesse de réussite, classement des métiers.",
+      "Zone d’usage": "Z1 — Orientation exploratoire",
+      "Niveau de décision cible": "N2"
+    },
+    "related_codes": [
+      "T10.7",
+      "T30.1",
+      "T30.2",
+      "T30.3"
+    ],
+    "stage": "P2a"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

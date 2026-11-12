@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d01-p4",
+  "title": "Bilan neuropsychologique partenaire · D01-P4",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Fonctionnement cognitif global et spécifique, évalué par un professionnel habilité.\nFormat cible : Hors plateforme, 2 à 4 heures, entretien clinique, anamnèse, épreuves sous licence (par exemple échelles de Wechsler pour adultes, épreuves mnésiques et exécutives choisies par le clinicien).\nContenu cible : Choix des instruments, de la norme et de l’interprétation sous la seule responsabilité du professionnel.\nCalcul cible (non implémenté ici) : Scores cliniques normés produits et conservés par le professionnel ; la plateforme ne les recalcule pas.\nUsage décrit : Diagnostic éventuel, recommandations de soins ou d’aménagement : relèvent du professionnel.\nOptions cibles : Interface partenaire : qualification vérifiée, prise de rendez-vous, transfert consenti du dossier PS, propriété du compte rendu clarifiée.\nConditions et limites : Retour éventuel du compte rendu dans l’espace personnel uniquement si le professionnel et la personne y consentent.\nObjectif du domaine : Aider un adulte à clarifier sa demande (mémoire, attention, raisonnement), à recueillir des observations de tâches non cliniques et à préparer une consultation avec un psychologue ou neuropsychologue habilité.\nGarde-fou du domaine : La plateforme ne réalise pas de bilan. Aucun mot « diagnostic », « déficit », « pathologique » dans les sorties. Le bilan est conduit hors plateforme par un professionnel qui choisit ses instruments sous licence.\nDécisions exclues : Diagnostic, détection de déficit, conclusion sur un trouble, aptitude au travail, indemnisation, expertise médico-légale.\nZone d’usage : Z2 — Orientation vers un professionnel\nNiveau de décision cible : N2 (orientation) ; N4 hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D01-P4",
+    "domain": "Bilan neuropsychologique adulte",
+    "blocks": {
+      "mesure": "Fonctionnement cognitif global et spécifique, évalué par un professionnel habilité.",
+      "format": "Hors plateforme, 2 à 4 heures, entretien clinique, anamnèse, épreuves sous licence (par exemple échelles de Wechsler pour adultes, épreuves mnésiques et exécutives choisies par le clinicien).",
+      "contenu": "Choix des instruments, de la norme et de l’interprétation sous la seule responsabilité du professionnel.",
+      "scoring": "Scores cliniques normés produits et conservés par le professionnel ; la plateforme ne les recalcule pas.",
+      "decision": "Diagnostic éventuel, recommandations de soins ou d’aménagement : relèvent du professionnel.",
+      "avance": "Interface partenaire : qualification vérifiée, prise de rendez-vous, transfert consenti du dossier PS, propriété du compte rendu clarifiée.",
+      "passerelle": "Retour éventuel du compte rendu dans l’espace personnel uniquement si le professionnel et la personne y consentent.",
+      "Objectif du domaine": "Aider un adulte à clarifier sa demande (mémoire, attention, raisonnement), à recueillir des observations de tâches non cliniques et à préparer une consultation avec un psychologue ou neuropsychologue habilité.",
+      "Garde-fou du domaine": "La plateforme ne réalise pas de bilan. Aucun mot « diagnostic », « déficit », « pathologique » dans les sorties. Le bilan est conduit hors plateforme par un professionnel qui choisit ses instruments sous licence.",
+      "Décisions exclues": "Diagnostic, détection de déficit, conclusion sur un trouble, aptitude au travail, indemnisation, expertise médico-légale.",
+      "Zone d’usage": "Z2 — Orientation vers un professionnel",
+      "Niveau de décision cible": "N2 (orientation) ; N4 hors plateforme"
+    },
+    "related_codes": [],
+    "stage": "P4"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d09-pb",
+  "title": "Politique de non-usage décisionnel · D09-PB",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Détection de toute demande d’usage employeur (lien d’invitation, campagne, API).\nFormat cible : Écran de blocage et notice, immédiat.\nContenu cible : Explication des raisons (validité, équité, cadre légal), contact institutionnel.\nCalcul cible (non implémenté ici) : Aucun score.\nUsage décrit : Refus de l’usage sélectif.\nOptions cibles : Journalisation des demandes pour suivi de conformité.\nConditions et limites : Demande institutionnelle redirigée vers l’équipe juridique et psychométrique.\nObjectif du domaine : Prévenir l’usage impropre des tests d’orientation dans une décision d’embauche et offrir aux personnes un parcours volontaire de développement séparé du processus RH.\nGarde-fou du domaine : Toute demande employeur déclenche la politique de non-usage ; aucun endpoint d’export de scores candidats. Le passage futur à N3 exige validation spécifique, revue juridique (AI Act Annexe III) et audit d’équité.\nDécisions exclues : Classement de candidats, filtrage, export de scores à un recruteur, administration par l’employeur.\nZone d’usage : Z3 — Exclu du MVP décisionnel\nNiveau de décision cible : N3 bloqué ; N1 volontaire séparé",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D09-PB",
+    "domain": "Recrutement et sélection",
+    "blocks": {
+      "mesure": "Détection de toute demande d’usage employeur (lien d’invitation, campagne, API).",
+      "format": "Écran de blocage et notice, immédiat.",
+      "contenu": "Explication des raisons (validité, équité, cadre légal), contact institutionnel.",
+      "scoring": "Aucun score.",
+      "decision": "Refus de l’usage sélectif.",
+      "avance": "Journalisation des demandes pour suivi de conformité.",
+      "passerelle": "Demande institutionnelle redirigée vers l’équipe juridique et psychométrique.",
+      "Objectif du domaine": "Prévenir l’usage impropre des tests d’orientation dans une décision d’embauche et offrir aux personnes un parcours volontaire de développement séparé du processus RH.",
+      "Garde-fou du domaine": "Toute demande employeur déclenche la politique de non-usage ; aucun endpoint d’export de scores candidats. Le passage futur à N3 exige validation spécifique, revue juridique (AI Act Annexe III) et audit d’équité.",
+      "Décisions exclues": "Classement de candidats, filtrage, export de scores à un recruteur, administration par l’employeur.",
+      "Zone d’usage": "Z3 — Exclu du MVP décisionnel",
+      "Niveau de décision cible": "N3 bloqué ; N1 volontaire séparé"
+    },
+    "related_codes": [],
+    "stage": "PB"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

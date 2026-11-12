@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d03-p3",
+  "title": "Passation supervisée de confirmation descriptive · D03-P3",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance sur A et F dans des conditions standardisées, pour réduire les effets d’environnement.\nFormat cible : 60 min, superviseur formé, formes non vues auparavant, identité vérifiée si la personne le souhaite.\nContenu cible : Matrices difficiles (forme sécurisée), apprentissage de règle avec transfert lointain.\nCalcul cible (non implémenté ici) : Indicateurs de tâche + observation ; revue humaine des signaux d’intégrité.\nUsage décrit : Compte rendu supervisé transmissible à un professionnel.\nOptions cibles : Ne remplace ni un test d’organisation spécialisée ni un bilan clinique.\nConditions et limites : Recommandation P4 si une reconnaissance officielle est souhaitée.\nObjectif du domaine : Permettre l’exploration de performances de raisonnement élevées et des besoins associés, sans certifier un haut potentiel ni produire d’étiquette.\nGarde-fou du domaine : « Haut potentiel » n’est jamais une conclusion de la plateforme ; formes parallèles obligatoires ; recommandation d’un bilan reconnu si la personne souhaite une identification.\nDécisions exclues : Étiquette « HPI / non-HPI », seuil de QI, percentile mondial, accès conditionnel à un programme payant.\nZone d’usage : Z1 — Repérage indicatif\nNiveau de décision cible : N1–N2 ; N4 hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D03-P3",
+    "domain": "Identification des hauts potentiels",
+    "blocks": {
+      "mesure": "Performance sur A et F dans des conditions standardisées, pour réduire les effets d’environnement.",
+      "format": "60 min, superviseur formé, formes non vues auparavant, identité vérifiée si la personne le souhaite.",
+      "contenu": "Matrices difficiles (forme sécurisée), apprentissage de règle avec transfert lointain.",
+      "scoring": "Indicateurs de tâche + observation ; revue humaine des signaux d’intégrité.",
+      "decision": "Compte rendu supervisé transmissible à un professionnel.",
+      "avance": "Ne remplace ni un test d’organisation spécialisée ni un bilan clinique.",
+      "passerelle": "Recommandation P4 si une reconnaissance officielle est souhaitée.",
+      "Objectif du domaine": "Permettre l’exploration de performances de raisonnement élevées et des besoins associés, sans certifier un haut potentiel ni produire d’étiquette.",
+      "Garde-fou du domaine": "« Haut potentiel » n’est jamais une conclusion de la plateforme ; formes parallèles obligatoires ; recommandation d’un bilan reconnu si la personne souhaite une identification.",
+      "Décisions exclues": "Étiquette « HPI / non-HPI », seuil de QI, percentile mondial, accès conditionnel à un programme payant.",
+      "Zone d’usage": "Z1 — Repérage indicatif",
+      "Niveau de décision cible": "N1–N2 ; N4 hors plateforme"
+    },
+    "related_codes": [],
+    "stage": "P3"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

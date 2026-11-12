@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d22-p1",
+  "title": "Tâches non cliniques séparées · D22-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance à des tâches cognitives.\nFormat cible : 12 items, 10 min.\nContenu cible : A–F.\nCalcul cible (non implémenté ici) : Descriptif, sans lien avec santé mentale.\nUsage décrit : Information personnelle.\nOptions cibles : Séparation technique des données de ressources consultées.\nConditions et limites : Palier détaillé proposé, jamais imposé ; accès indépendant du résultat.\nObjectif du domaine : Éviter qu’une performance à une tâche soit interprétée comme mesure de santé mentale et orienter vers des ressources adaptées.\nGarde-fou du domaine : En cas de demande d’aide urgente, affichage immédiat des ressources locales configurées par pays, jamais d’inférence issue des scores.\nDécisions exclues : Mesure d’humeur, d’anxiété ou de risque dans le portefeuille cognitif ; score combiné cognition–santé mentale ; inférence causale.\nZone d’usage : Z2 — Information et orientation\nNiveau de décision cible : N1 ; N4 exclu",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D22-P1",
+    "domain": "Santé mentale et profils cognitifs",
+    "blocks": {
+      "mesure": "Performance à des tâches cognitives.",
+      "format": "12 items, 10 min.",
+      "contenu": "A–F.",
+      "scoring": "Descriptif, sans lien avec santé mentale.",
+      "decision": "Information personnelle.",
+      "avance": "Séparation technique des données de ressources consultées.",
+      "passerelle": "Palier détaillé proposé, jamais imposé ; accès indépendant du résultat.",
+      "Objectif du domaine": "Éviter qu’une performance à une tâche soit interprétée comme mesure de santé mentale et orienter vers des ressources adaptées.",
+      "Garde-fou du domaine": "En cas de demande d’aide urgente, affichage immédiat des ressources locales configurées par pays, jamais d’inférence issue des scores.",
+      "Décisions exclues": "Mesure d’humeur, d’anxiété ou de risque dans le portefeuille cognitif ; score combiné cognition–santé mentale ; inférence causale.",
+      "Zone d’usage": "Z2 — Information et orientation",
+      "Niveau de décision cible": "N1 ; N4 exclu"
+    },
+    "related_codes": [],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "parcours-d29-p1",
+  "title": "Sensibilisation à la perception du risque · D29-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Identification et hiérarchisation des risques dans des scènes illustrées.\nFormat cible : 12 scénarios visuels, 15 min.\nContenu cible : Risques physiques, électriques, chute, incendie (T28.1) ; attitude d’amélioration continue (T28.7).\nCalcul cible (non implémenté ici) : Retour formatif immédiat par scénario, sans score global.\nUsage décrit : Apprentissage personnel.\nOptions cibles : Scénarios sectoriels (chantier, mine, usine) adaptés localement ; alignement ISO 45001.\nConditions et limites : Non convertible en aptitude.\nObjectif du domaine : Empêcher le recours au score cognitif grand public dans des décisions pouvant exposer des tiers à un risque, tout en offrant une sensibilisation formative volontaire.\nGarde-fou du domaine : Renvoi vers procédures réglementées et expertise professionnelle (médecine du travail, organismes agréés) ; aucune conversion d’un résultat formatif en aptitude.\nDécisions exclues : Prédiction d’accidents, de fiabilité ou d’aptitude ; certification de sécurité ; tableau de bord employeur.\nZone d’usage : Z3 — Exclu du MVP\nNiveau de décision cible : N3 réglementé — hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D29-P1",
+    "domain": "Sécurité publique et métiers à risque",
+    "blocks": {
+      "mesure": "Identification et hiérarchisation des risques dans des scènes illustrées.",
+      "format": "12 scénarios visuels, 15 min.",
+      "contenu": "Risques physiques, électriques, chute, incendie (T28.1) ; attitude d’amélioration continue (T28.7).",
+      "scoring": "Retour formatif immédiat par scénario, sans score global.",
+      "decision": "Apprentissage personnel.",
+      "avance": "Scénarios sectoriels (chantier, mine, usine) adaptés localement ; alignement ISO 45001.",
+      "passerelle": "Non convertible en aptitude.",
+      "Objectif du domaine": "Empêcher le recours au score cognitif grand public dans des décisions pouvant exposer des tiers à un risque, tout en offrant une sensibilisation formative volontaire.",
+      "Garde-fou du domaine": "Renvoi vers procédures réglementées et expertise professionnelle (médecine du travail, organismes agréés) ; aucune conversion d’un résultat formatif en aptitude.",
+      "Décisions exclues": "Prédiction d’accidents, de fiabilité ou d’aptitude ; certification de sécurité ; tableau de bord employeur.",
+      "Zone d’usage": "Z3 — Exclu du MVP",
+      "Niveau de décision cible": "N3 réglementé — hors plateforme"
+    },
+    "related_codes": [
+      "T28.1",
+      "T28.7"
+    ],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

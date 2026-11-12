@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d12-p1",
+  "title": "Mini-cas de résolution de problèmes · D12-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Approche de problèmes dans des contextes variés.\nFormat cible : 5 mini-cas, 15 min.\nContenu cible : Problèmes neutres en logistique, service, technique, administration, création.\nCalcul cible (non implémenté ici) : Notation sur critères explicites de la tâche ; les connaissances métier ne sont pas notées comme raisonnement.\nUsage décrit : Repérer des préférences de types de tâches.\nOptions cibles : Contextes adaptés aux marchés locaux, y compris économie informelle.\nConditions et limites : P2 libre.\nObjectif du domaine : Clarifier préférences de tâches, intérêts, valeurs, compétences transférables et contraintes pour nourrir une réflexion de reconversion.\nGarde-fou du domaine : Les observations sont reliées à des tâches professionnelles, jamais à des intitulés de métiers déterministes.\nDécisions exclues : Prescription d’un métier unique, promesse de réussite, classement des métiers.\nZone d’usage : Z1 — Orientation exploratoire\nNiveau de décision cible : N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D12-P1",
+    "domain": "Reconversion professionnelle",
+    "blocks": {
+      "mesure": "Approche de problèmes dans des contextes variés.",
+      "format": "5 mini-cas, 15 min.",
+      "contenu": "Problèmes neutres en logistique, service, technique, administration, création.",
+      "scoring": "Notation sur critères explicites de la tâche ; les connaissances métier ne sont pas notées comme raisonnement.",
+      "decision": "Repérer des préférences de types de tâches.",
+      "avance": "Contextes adaptés aux marchés locaux, y compris économie informelle.",
+      "passerelle": "P2 libre.",
+      "Objectif du domaine": "Clarifier préférences de tâches, intérêts, valeurs, compétences transférables et contraintes pour nourrir une réflexion de reconversion.",
+      "Garde-fou du domaine": "Les observations sont reliées à des tâches professionnelles, jamais à des intitulés de métiers déterministes.",
+      "Décisions exclues": "Prescription d’un métier unique, promesse de réussite, classement des métiers.",
+      "Zone d’usage": "Z1 — Orientation exploratoire",
+      "Niveau de décision cible": "N2"
+    },
+    "related_codes": [],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

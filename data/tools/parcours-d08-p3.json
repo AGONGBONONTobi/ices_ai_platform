@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d08-p3",
+  "title": "Passation supervisée volontaire · D08-P3",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance E et F en conditions contrôlées.\nFormat cible : 45 min, superviseur formé.\nContenu cible : Empan complexe ; changement de règle.\nCalcul cible (non implémenté ici) : Indicateurs + observation ; revue humaine.\nUsage décrit : Compte rendu supervisé personnel.\nOptions cibles : Utile avant un test supervisé externe.\nConditions et limites : Pas de certification.\nObjectif du domaine : Offrir un aperçu de ses performances dans des tâches cognitives définies, avec information claire sur les limites, et un cheminement progressif vers des niveaux plus complets.\nGarde-fou du domaine : Limites consultables avant de commencer ; partage désactivé par défaut ; effet de pratique expliqué.\nDécisions exclues : « Votre QI est X », percentile universel, classement social.\nZone d’usage : Z1 — Parcours central du MVP\nNiveau de décision cible : N1",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D08-P3",
+    "domain": "Auto-évaluation et pré-sélection personnelle",
+    "blocks": {
+      "mesure": "Performance E et F en conditions contrôlées.",
+      "format": "45 min, superviseur formé.",
+      "contenu": "Empan complexe ; changement de règle.",
+      "scoring": "Indicateurs + observation ; revue humaine.",
+      "decision": "Compte rendu supervisé personnel.",
+      "avance": "Utile avant un test supervisé externe.",
+      "passerelle": "Pas de certification.",
+      "Objectif du domaine": "Offrir un aperçu de ses performances dans des tâches cognitives définies, avec information claire sur les limites, et un cheminement progressif vers des niveaux plus complets.",
+      "Garde-fou du domaine": "Limites consultables avant de commencer ; partage désactivé par défaut ; effet de pratique expliqué.",
+      "Décisions exclues": "« Votre QI est X », percentile universel, classement social.",
+      "Zone d’usage": "Z1 — Parcours central du MVP",
+      "Niveau de décision cible": "N1"
+    },
+    "related_codes": [],
+    "stage": "P3"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

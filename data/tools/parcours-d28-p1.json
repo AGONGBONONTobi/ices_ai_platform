@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d28-p1",
+  "title": "Pratique générale non spécifique · D28-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance à des tâches générales (non liées au métier).\nFormat cible : Renvoi vers le parcours D08, 10–12 min.\nContenu cible : Modules A + C.\nCalcul cible (non implémenté ici) : Profil descriptif personnel.\nUsage décrit : Information personnelle.\nOptions cibles : Aucune mention de compatibilité avec un métier critique.\nConditions et limites : Palier détaillé proposé, jamais imposé ; accès indépendant du résultat.\nObjectif du domaine : Éviter de présenter les tâches du MVP comme preuve d’aptitude à la sécurité ou à une fonction réglementée, et orienter vers les canaux officiels.\nGarde-fou du domaine : Renvoi aux canaux d’évaluation officiels et réglementaires de la juridiction ; aucune vente de module « préparation officielle ».\nDécisions exclues : Badge, certificat ou rapport « apte » ; simulation de cockpit à visée décisionnelle ; présentation comme préparation officielle sans autorisation.\nZone d’usage : Z3 — Exclu du MVP\nNiveau de décision cible : N3 réglementé — hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D28-P1",
+    "domain": "Sélection militaire et aviation",
+    "blocks": {
+      "mesure": "Performance à des tâches générales (non liées au métier).",
+      "format": "Renvoi vers le parcours D08, 10–12 min.",
+      "contenu": "Modules A + C.",
+      "scoring": "Profil descriptif personnel.",
+      "decision": "Information personnelle.",
+      "avance": "Aucune mention de compatibilité avec un métier critique.",
+      "passerelle": "Palier détaillé proposé, jamais imposé ; accès indépendant du résultat.",
+      "Objectif du domaine": "Éviter de présenter les tâches du MVP comme preuve d’aptitude à la sécurité ou à une fonction réglementée, et orienter vers les canaux officiels.",
+      "Garde-fou du domaine": "Renvoi aux canaux d’évaluation officiels et réglementaires de la juridiction ; aucune vente de module « préparation officielle ».",
+      "Décisions exclues": "Badge, certificat ou rapport « apte » ; simulation de cockpit à visée décisionnelle ; présentation comme préparation officielle sans autorisation.",
+      "Zone d’usage": "Z3 — Exclu du MVP",
+      "Niveau de décision cible": "N3 réglementé — hors plateforme"
+    },
+    "related_codes": [],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

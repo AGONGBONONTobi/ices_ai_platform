@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d11-p1",
+  "title": "Tâches liées au rôle envisagé · D11-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance à des tâches liées aux activités du rôle visé : quantitatif (C), spatial (D), apprentissage/transfert (F).\nFormat cible : 14 items, 12 min, 1 essai par module.\nContenu cible : Problèmes courts à habillage neutre (planning, plan, nouvelle procédure).\nCalcul cible (non implémenté ici) : Indicateurs descriptifs par module ; aucune comparaison avec des titulaires du poste.\nUsage décrit : Réflexion sur les axes à approfondir.\nOptions cibles : Libellé permanent : « ne mesure pas l’aptitude au poste ».\nConditions et limites : P2 accessible sans condition.\nObjectif du domaine : Aider une personne à identifier les types de tâches qu’elle souhaite approfondir avant une mobilité et à organiser la vérification de ses compétences par l’expérience réelle.\nGarde-fou du domaine : Aucune API vers ATS/SIRH ; export marqué « personnel » ; toute décision de mobilité se fonde sur l’expérience et les compétences démontrées.\nDécisions exclues : Score d’adéquation poste/personne, condition de promotion, transmission à un ATS ou un SIRH.\nZone d’usage : Z1 — Exploration volontaire de compétences\nNiveau de décision cible : N1–N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D11-P1",
+    "domain": "Mobilité interne",
+    "blocks": {
+      "mesure": "Performance à des tâches liées aux activités du rôle visé : quantitatif (C), spatial (D), apprentissage/transfert (F).",
+      "format": "14 items, 12 min, 1 essai par module.",
+      "contenu": "Problèmes courts à habillage neutre (planning, plan, nouvelle procédure).",
+      "scoring": "Indicateurs descriptifs par module ; aucune comparaison avec des titulaires du poste.",
+      "decision": "Réflexion sur les axes à approfondir.",
+      "avance": "Libellé permanent : « ne mesure pas l’aptitude au poste ».",
+      "passerelle": "P2 accessible sans condition.",
+      "Objectif du domaine": "Aider une personne à identifier les types de tâches qu’elle souhaite approfondir avant une mobilité et à organiser la vérification de ses compétences par l’expérience réelle.",
+      "Garde-fou du domaine": "Aucune API vers ATS/SIRH ; export marqué « personnel » ; toute décision de mobilité se fonde sur l’expérience et les compétences démontrées.",
+      "Décisions exclues": "Score d’adéquation poste/personne, condition de promotion, transmission à un ATS ou un SIRH.",
+      "Zone d’usage": "Z1 — Exploration volontaire de compétences",
+      "Niveau de décision cible": "N1–N2"
+    },
+    "related_codes": [],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

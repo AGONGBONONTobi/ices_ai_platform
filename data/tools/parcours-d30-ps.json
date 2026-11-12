@@ -1,0 +1,67 @@
+{
+  "id": "parcours-d30-ps",
+  "title": "Problèmes complexes et pivot · D30-PS",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Apprentissage par l’échec et capacité à reconnaître la nécessité d’un pivot.\nFormat cible : 4 cycles essai–feedback + 3 cas, 20 min.\nContenu cible : T38.6 (apprentissage par l’échec), T42.6 (pivot).\nCalcul cible (non implémenté ici) : Retour formatif, vitesse d’ajustement descriptive.\nUsage décrit : Entraînement.\nOptions cibles : Cas d’entreprises africaines anonymisés.\nConditions et limites : Partage par lien révocable et expirant, après consentement spécifique.\nObjectif du domaine : Aider une personne ou une équipe à réfléchir à différentes manières d’aborder un problème nouveau, à son rapport au risque et à la lucidité sur son projet.\nGarde-fou du domaine : Aucun score « créativité/innovation » sans validation propre ; résultats individuels non utilisés pour investir, recruter ou sélectionner (cf. garde-fous T17 et T42).\nDécisions exclues : Prédiction de succès ou d’échec, classement de fondateurs, décision d’investissement, de financement ou de sélection en incubateur.\nZone d’usage : Z1 — Support de réflexion et de formation\nNiveau de décision cible : N1–N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D30-PS",
+    "domain": "Entrepreneuriat et innovation",
+    "blocks": {
+      "mesure": "Apprentissage par l’échec et capacité à reconnaître la nécessité d’un pivot.",
+      "format": "4 cycles essai–feedback + 3 cas, 20 min.",
+      "contenu": "T38.6 (apprentissage par l’échec), T42.6 (pivot).",
+      "scoring": "Retour formatif, vitesse d’ajustement descriptive.",
+      "decision": "Entraînement.",
+      "avance": "Cas d’entreprises africaines anonymisés.",
+      "passerelle": "Partage par lien révocable et expirant, après consentement spécifique.",
+      "Objectif du domaine": "Aider une personne ou une équipe à réfléchir à différentes manières d’aborder un problème nouveau, à son rapport au risque et à la lucidité sur son projet.",
+      "Garde-fou du domaine": "Aucun score « créativité/innovation » sans validation propre ; résultats individuels non utilisés pour investir, recruter ou sélectionner (cf. garde-fous T17 et T42).",
+      "Décisions exclues": "Prédiction de succès ou d’échec, classement de fondateurs, décision d’investissement, de financement ou de sélection en incubateur.",
+      "Zone d’usage": "Z1 — Support de réflexion et de formation",
+      "Niveau de décision cible": "N1–N2"
+    },
+    "related_codes": [
+      "T38.6",
+      "T42.6"
+    ],
+    "stage": "PS"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

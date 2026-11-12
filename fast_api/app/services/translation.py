@@ -24,7 +24,7 @@ Règles strictes :
 1. Renvoie UNIQUEMENT un objet JSON valide.
 2. Garde EXACTEMENT la même structure et les mêmes clés (title, category, inputs).
 3. Ne traduis pas la clé "name" dans le tableau "inputs".
-4. Traduis les valeurs textuelles ("title", "category", "label", "placeholder", "options").
+4. Traduis les valeurs textuelles ("title", "category", "label", "question", "help", "placeholder", "options").
 5. Assure-toi que la traduction est naturelle et professionnelle."""
 
 
@@ -119,6 +119,8 @@ def _merge_translation(tool: ToolConfig, translated: dict) -> ToolConfig:
             tool_input.model_copy(
                 update={
                     "label": candidate.get("label") or tool_input.label,
+                    "question": candidate.get("question") or tool_input.question,
+                    "help": candidate.get("help") or tool_input.help,
                     "placeholder": candidate.get("placeholder") or tool_input.placeholder,
                     "options": _merge_options(
                         candidate.get("options"), tool_input.options
@@ -170,6 +172,8 @@ def translate_tool_config(tool: ToolConfig, lang: str) -> ToolConfig:
                 # On garde le nom original pour la correspondance
                 "name": i.name,
                 "label": i.label,
+                "question": i.question,
+                "help": i.help,
                 "placeholder": i.placeholder,
                 "options": [
                     o if isinstance(o, str) else o.model_dump(exclude_none=True)

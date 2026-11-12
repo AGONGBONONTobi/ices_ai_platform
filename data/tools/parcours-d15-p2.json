@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d15-p2",
+  "title": "Sessions périodiques · D15-P2",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Évolution descriptive des performances.\nFormat cible : Formes parallèles, 15 min, intervalle configurable.\nContenu cible : Mêmes modules, items différents.\nCalcul cible (non implémenté ici) : Graphe annoté (appareil, langue, accommodation, interruption).\nUsage décrit : Ajuster objectifs et stratégies.\nOptions cibles : Aucun message causal ; changement de version = rupture de comparabilité signalée.\nConditions et limites : Option de séance accompagnée (P3) ou d’orientation professionnelle (P4).\nObjectif du domaine : Documenter des objectifs d’apprentissage et l’expérience de tâches dans le temps, sans conclusion de progrès ou de déclin.\nGarde-fou du domaine : Formes parallèles jamais identiques ; intervalle de réutilisation fixé par l’étude pilote ; suppression et désactivation des rappels possibles.\nDécisions exclues : Messages « déclin » ou « progrès » causals, norme clinique.\nZone d’usage : Z1 — Suivi volontaire\nNiveau de décision cible : N1",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D15-P2",
+    "domain": "Apprentissage tout au long de la vie",
+    "blocks": {
+      "mesure": "Évolution descriptive des performances.",
+      "format": "Formes parallèles, 15 min, intervalle configurable.",
+      "contenu": "Mêmes modules, items différents.",
+      "scoring": "Graphe annoté (appareil, langue, accommodation, interruption).",
+      "decision": "Ajuster objectifs et stratégies.",
+      "avance": "Aucun message causal ; changement de version = rupture de comparabilité signalée.",
+      "passerelle": "Option de séance accompagnée (P3) ou d’orientation professionnelle (P4).",
+      "Objectif du domaine": "Documenter des objectifs d’apprentissage et l’expérience de tâches dans le temps, sans conclusion de progrès ou de déclin.",
+      "Garde-fou du domaine": "Formes parallèles jamais identiques ; intervalle de réutilisation fixé par l’étude pilote ; suppression et désactivation des rappels possibles.",
+      "Décisions exclues": "Messages « déclin » ou « progrès » causals, norme clinique.",
+      "Zone d’usage": "Z1 — Suivi volontaire",
+      "Niveau de décision cible": "N1"
+    },
+    "related_codes": [],
+    "stage": "P2"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

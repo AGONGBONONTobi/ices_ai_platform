@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d22-pb",
+  "title": "Protocole d’aide immédiate · D22-PB",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Demande d’aide urgente exprimée explicitement par la personne.\nFormat cible : Bouton visible sur toutes les pages, affichage immédiat.\nContenu cible : Ressources locales par pays (services d’urgence, lignes d’écoute vérifiées).\nCalcul cible (non implémenté ici) : Aucune inférence à partir des scores.\nUsage décrit : Mise en relation avec une aide humaine.\nOptions cibles : Escalade humaine documentée ; ressources vérifiées trimestriellement.\nConditions et limites : Priorité absolue sur tout autre parcours.\nObjectif du domaine : Éviter qu’une performance à une tâche soit interprétée comme mesure de santé mentale et orienter vers des ressources adaptées.\nGarde-fou du domaine : En cas de demande d’aide urgente, affichage immédiat des ressources locales configurées par pays, jamais d’inférence issue des scores.\nDécisions exclues : Mesure d’humeur, d’anxiété ou de risque dans le portefeuille cognitif ; score combiné cognition–santé mentale ; inférence causale.\nZone d’usage : Z2 — Information et orientation\nNiveau de décision cible : N1 ; N4 exclu",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D22-PB",
+    "domain": "Santé mentale et profils cognitifs",
+    "blocks": {
+      "mesure": "Demande d’aide urgente exprimée explicitement par la personne.",
+      "format": "Bouton visible sur toutes les pages, affichage immédiat.",
+      "contenu": "Ressources locales par pays (services d’urgence, lignes d’écoute vérifiées).",
+      "scoring": "Aucune inférence à partir des scores.",
+      "decision": "Mise en relation avec une aide humaine.",
+      "avance": "Escalade humaine documentée ; ressources vérifiées trimestriellement.",
+      "passerelle": "Priorité absolue sur tout autre parcours.",
+      "Objectif du domaine": "Éviter qu’une performance à une tâche soit interprétée comme mesure de santé mentale et orienter vers des ressources adaptées.",
+      "Garde-fou du domaine": "En cas de demande d’aide urgente, affichage immédiat des ressources locales configurées par pays, jamais d’inférence issue des scores.",
+      "Décisions exclues": "Mesure d’humeur, d’anxiété ou de risque dans le portefeuille cognitif ; score combiné cognition–santé mentale ; inférence causale.",
+      "Zone d’usage": "Z2 — Information et orientation",
+      "Niveau de décision cible": "N1 ; N4 exclu"
+    },
+    "related_codes": [],
+    "stage": "PB"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

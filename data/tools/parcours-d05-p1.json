@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d05-p1",
+  "title": "Mini-tâches par dimension · D05-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance à une tâche brève par dimension choisie (inductive, verbale, quantitative, spatiale, apprentissage).\nFormat cible : 3 à 5 blocs de 4 items, 12 min.\nContenu cible : Une tâche abstraite courte par dimension.\nCalcul cible (non implémenté ici) : Réussite par tâche, sans hiérarchie entre dimensions.\nUsage décrit : Identifier les tâches à approfondir.\nOptions cibles : L’élève choisit l’ordre des tâches.\nConditions et limites : P2 accessible sans condition.\nObjectif du domaine : Fournir des éléments de réflexion sur les façons d’aborder différents types de problèmes, à croiser avec intérêts, valeurs, résultats et contraintes.\nGarde-fou du domaine : Les aptitudes observées ne déterminent ni la réussite ni la filière ; restitution séparée des intérêts, notes et contraintes.\nDécisions exclues : Filière recommandée par l’IA, élimination d’une option, classement des parcours.\nZone d’usage : Z1 — Parcours d’exploration\nNiveau de décision cible : N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D05-P1",
+    "domain": "Orientation scolaire",
+    "blocks": {
+      "mesure": "Performance à une tâche brève par dimension choisie (inductive, verbale, quantitative, spatiale, apprentissage).",
+      "format": "3 à 5 blocs de 4 items, 12 min.",
+      "contenu": "Une tâche abstraite courte par dimension.",
+      "scoring": "Réussite par tâche, sans hiérarchie entre dimensions.",
+      "decision": "Identifier les tâches à approfondir.",
+      "avance": "L’élève choisit l’ordre des tâches.",
+      "passerelle": "P2 accessible sans condition.",
+      "Objectif du domaine": "Fournir des éléments de réflexion sur les façons d’aborder différents types de problèmes, à croiser avec intérêts, valeurs, résultats et contraintes.",
+      "Garde-fou du domaine": "Les aptitudes observées ne déterminent ni la réussite ni la filière ; restitution séparée des intérêts, notes et contraintes.",
+      "Décisions exclues": "Filière recommandée par l’IA, élimination d’une option, classement des parcours.",
+      "Zone d’usage": "Z1 — Parcours d’exploration",
+      "Niveau de décision cible": "N2"
+    },
+    "related_codes": [],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

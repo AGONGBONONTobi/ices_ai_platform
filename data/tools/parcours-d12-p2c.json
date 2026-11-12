@@ -1,0 +1,67 @@
+{
+  "id": "parcours-d12-p2c",
+  "title": "Projection et scénarios · D12-P2c",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Capacité à formuler des scénarios de vie et un plan d’action.\nFormat cible : 3 exercices guidés, 20 min.\nContenu cible : Scénario à 1, 3 et 5 ans ; plan B ; obstacles et ressources (T30.6, T30.7).\nCalcul cible (non implémenté ici) : Rubrique de faisabilité et de cohérence.\nUsage décrit : Plan d’action à 90 jours.\nOptions cibles : Génération automatique d’un plan éditable.\nConditions et limites : Plan intégré à P3.\nObjectif du domaine : Clarifier préférences de tâches, intérêts, valeurs, compétences transférables et contraintes pour nourrir une réflexion de reconversion.\nGarde-fou du domaine : Les observations sont reliées à des tâches professionnelles, jamais à des intitulés de métiers déterministes.\nDécisions exclues : Prescription d’un métier unique, promesse de réussite, classement des métiers.\nZone d’usage : Z1 — Orientation exploratoire\nNiveau de décision cible : N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D12-P2c",
+    "domain": "Reconversion professionnelle",
+    "blocks": {
+      "mesure": "Capacité à formuler des scénarios de vie et un plan d’action.",
+      "format": "3 exercices guidés, 20 min.",
+      "contenu": "Scénario à 1, 3 et 5 ans ; plan B ; obstacles et ressources (T30.6, T30.7).",
+      "scoring": "Rubrique de faisabilité et de cohérence.",
+      "decision": "Plan d’action à 90 jours.",
+      "avance": "Génération automatique d’un plan éditable.",
+      "passerelle": "Plan intégré à P3.",
+      "Objectif du domaine": "Clarifier préférences de tâches, intérêts, valeurs, compétences transférables et contraintes pour nourrir une réflexion de reconversion.",
+      "Garde-fou du domaine": "Les observations sont reliées à des tâches professionnelles, jamais à des intitulés de métiers déterministes.",
+      "Décisions exclues": "Prescription d’un métier unique, promesse de réussite, classement des métiers.",
+      "Zone d’usage": "Z1 — Orientation exploratoire",
+      "Niveau de décision cible": "N2"
+    },
+    "related_codes": [
+      "T30.6",
+      "T30.7"
+    ],
+    "stage": "P2c"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

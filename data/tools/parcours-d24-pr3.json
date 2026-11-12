@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d24-pr3",
+  "title": "Collecte expérimentale · D24-PR3",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Variables définies par le protocole.\nFormat cible : Selon protocole.\nContenu cible : Tâches configurées, consentement participant.\nCalcul cible (non implémenté ici) : Aucune interprétation individuelle.\nUsage décrit : Données de recherche.\nOptions cibles : Séparation identité/réponses.\nConditions et limites : Passage en production uniquement après validation documentée.\nObjectif du domaine : Permettre à des chercheurs autorisés de configurer tâches, consignes et conditions expérimentales sur le moteur commun.\nGarde-fou du domaine : Configuration journalisée ; export pseudonymisé ; dissociation stricte avec les versions grand public.\nDécisions exclues : Mélange des essais expérimentaux avec les normes utilisateurs ; interprétation clinique intégrée.\nZone d’usage : Z4 — Outil expérimental\nNiveau de décision cible : Recherche",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D24-PR3",
+    "domain": "Sciences cognitives",
+    "blocks": {
+      "mesure": "Variables définies par le protocole.",
+      "format": "Selon protocole.",
+      "contenu": "Tâches configurées, consentement participant.",
+      "scoring": "Aucune interprétation individuelle.",
+      "decision": "Données de recherche.",
+      "avance": "Séparation identité/réponses.",
+      "passerelle": "Passage en production uniquement après validation documentée.",
+      "Objectif du domaine": "Permettre à des chercheurs autorisés de configurer tâches, consignes et conditions expérimentales sur le moteur commun.",
+      "Garde-fou du domaine": "Configuration journalisée ; export pseudonymisé ; dissociation stricte avec les versions grand public.",
+      "Décisions exclues": "Mélange des essais expérimentaux avec les normes utilisateurs ; interprétation clinique intégrée.",
+      "Zone d’usage": "Z4 — Outil expérimental",
+      "Niveau de décision cible": "Recherche"
+    },
+    "related_codes": [],
+    "stage": "PR3"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

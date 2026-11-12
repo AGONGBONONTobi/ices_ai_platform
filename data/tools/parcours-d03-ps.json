@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d03-ps",
+  "title": "Épreuve spécifique de raisonnement fluide non verbal · D03-PS",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Raisonnement fluide non verbal ciblé, pour les personnes dont la langue de passation n’est pas validée.\nFormat cible : 24 items, 20 min, consignes entièrement visuelles.\nContenu cible : Matrices originales sans référence culturelle identifiée lors de la revue locale.\nCalcul cible (non implémenté ici) : Réussite par niveau de difficulté ; mention que « non verbal » n’est pas « sans culture ».\nUsage décrit : Complément au profil quand B n’est pas disponible.\nOptions cibles : Mode exploratoire tant que la version n’est pas validée pour la population.\nConditions et limites : Ne remplace pas un bilan global.\nObjectif du domaine : Permettre l’exploration de performances de raisonnement élevées et des besoins associés, sans certifier un haut potentiel ni produire d’étiquette.\nGarde-fou du domaine : « Haut potentiel » n’est jamais une conclusion de la plateforme ; formes parallèles obligatoires ; recommandation d’un bilan reconnu si la personne souhaite une identification.\nDécisions exclues : Étiquette « HPI / non-HPI », seuil de QI, percentile mondial, accès conditionnel à un programme payant.\nZone d’usage : Z1 — Repérage indicatif\nNiveau de décision cible : N1–N2 ; N4 hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D03-PS",
+    "domain": "Identification des hauts potentiels",
+    "blocks": {
+      "mesure": "Raisonnement fluide non verbal ciblé, pour les personnes dont la langue de passation n’est pas validée.",
+      "format": "24 items, 20 min, consignes entièrement visuelles.",
+      "contenu": "Matrices originales sans référence culturelle identifiée lors de la revue locale.",
+      "scoring": "Réussite par niveau de difficulté ; mention que « non verbal » n’est pas « sans culture ».",
+      "decision": "Complément au profil quand B n’est pas disponible.",
+      "avance": "Mode exploratoire tant que la version n’est pas validée pour la population.",
+      "passerelle": "Ne remplace pas un bilan global.",
+      "Objectif du domaine": "Permettre l’exploration de performances de raisonnement élevées et des besoins associés, sans certifier un haut potentiel ni produire d’étiquette.",
+      "Garde-fou du domaine": "« Haut potentiel » n’est jamais une conclusion de la plateforme ; formes parallèles obligatoires ; recommandation d’un bilan reconnu si la personne souhaite une identification.",
+      "Décisions exclues": "Étiquette « HPI / non-HPI », seuil de QI, percentile mondial, accès conditionnel à un programme payant.",
+      "Zone d’usage": "Z1 — Repérage indicatif",
+      "Niveau de décision cible": "N1–N2 ; N4 hors plateforme"
+    },
+    "related_codes": [],
+    "stage": "PS"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

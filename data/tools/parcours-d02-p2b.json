@@ -1,0 +1,69 @@
+{
+  "id": "parcours-d02-p2b",
+  "title": "Tempérament et besoins — questionnaire parent · D02-P2b",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Description par le parent du tempérament et des besoins quotidiens du jeune (sans diagnostic).\nFormat cible : 24 items illustrés, 10 min, réponses du parent ; version adolescent auto-déclarée optionnelle.\nContenu cible : Régulation, persistance, sensibilité sensorielle, adaptabilité (inspiré de T41.1, T41.5, T41.6, T41.7).\nCalcul cible (non implémenté ici) : Profil descriptif en 4 dimensions sans seuil ; aucune alerte de trouble.\nUsage décrit : Conseils éducatifs généraux et questions à poser au professionnel.\nOptions cibles : Restitution séparée de celle des tâches cognitives ; jamais de score combiné.\nConditions et limites : Partage avec l’école uniquement sur décision du parent et assentiment du jeune.\nObjectif du domaine : Aider une famille et un jeune à organiser une demande d’évaluation ou de soutien éducatif, à partir d’observations de tâches non diagnostiques et protégées.\nGarde-fou du domaine : Autorisation du représentant légal et assentiment du jeune ; deux restitutions séparées (jeune / parent) ; aucun compte mineur imposé ; aucune publicité.\nDécisions exclues : Diagnostic de trouble des apprentissages, TDAH, déficience ; orientation scolaire spécialisée ; classement.\nZone d’usage : Z2 — Orientation vers un professionnel\nNiveau de décision cible : N1–N2 ; N4 hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D02-P2b",
+    "domain": "Bilan cognitif enfant/adolescent",
+    "blocks": {
+      "mesure": "Description par le parent du tempérament et des besoins quotidiens du jeune (sans diagnostic).",
+      "format": "24 items illustrés, 10 min, réponses du parent ; version adolescent auto-déclarée optionnelle.",
+      "contenu": "Régulation, persistance, sensibilité sensorielle, adaptabilité (inspiré de T41.1, T41.5, T41.6, T41.7).",
+      "scoring": "Profil descriptif en 4 dimensions sans seuil ; aucune alerte de trouble.",
+      "decision": "Conseils éducatifs généraux et questions à poser au professionnel.",
+      "avance": "Restitution séparée de celle des tâches cognitives ; jamais de score combiné.",
+      "passerelle": "Partage avec l’école uniquement sur décision du parent et assentiment du jeune.",
+      "Objectif du domaine": "Aider une famille et un jeune à organiser une demande d’évaluation ou de soutien éducatif, à partir d’observations de tâches non diagnostiques et protégées.",
+      "Garde-fou du domaine": "Autorisation du représentant légal et assentiment du jeune ; deux restitutions séparées (jeune / parent) ; aucun compte mineur imposé ; aucune publicité.",
+      "Décisions exclues": "Diagnostic de trouble des apprentissages, TDAH, déficience ; orientation scolaire spécialisée ; classement.",
+      "Zone d’usage": "Z2 — Orientation vers un professionnel",
+      "Niveau de décision cible": "N1–N2 ; N4 hors plateforme"
+    },
+    "related_codes": [
+      "T41.1",
+      "T41.5",
+      "T41.6",
+      "T41.7"
+    ],
+    "stage": "P2b"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

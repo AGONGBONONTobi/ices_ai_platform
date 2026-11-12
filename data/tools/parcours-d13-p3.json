@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d13-p3",
+  "title": "Rapport de préparation et séance · D13-P3",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Questions ouvertes pour la séance.\nFormat cible : Rapport généré de 2 pages + séance de 60 à 90 min.\nContenu cible : Résumé des éléments partagés, 8 questions ouvertes, zones non explorées.\nCalcul cible (non implémenté ici) : Aucun score nouveau.\nUsage décrit : Plan d’actions co-construit.\nOptions cibles : Le conseiller pose ses propres questions ; le rapport n’est qu’un support.\nConditions et limites : Notes de séance appartenant à la personne.\nObjectif du domaine : Structurer une séance entre une personne et son conseiller autour de préférences de raisonnement, d’expériences, de motivations et de style de décision.\nGarde-fou du domaine : Accès du conseiller uniquement après consentement granulaire ; résultat cognitif distinct des inventaires d’intérêts et des compétences.\nDécisions exclues : Recommandation automatisée de carrière, prédiction de réussite ou de satisfaction.\nZone d’usage : Z1 — Support à la conversation\nNiveau de décision cible : N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D13-P3",
+    "domain": "Conseil de carrière",
+    "blocks": {
+      "mesure": "Questions ouvertes pour la séance.",
+      "format": "Rapport généré de 2 pages + séance de 60 à 90 min.",
+      "contenu": "Résumé des éléments partagés, 8 questions ouvertes, zones non explorées.",
+      "scoring": "Aucun score nouveau.",
+      "decision": "Plan d’actions co-construit.",
+      "avance": "Le conseiller pose ses propres questions ; le rapport n’est qu’un support.",
+      "passerelle": "Notes de séance appartenant à la personne.",
+      "Objectif du domaine": "Structurer une séance entre une personne et son conseiller autour de préférences de raisonnement, d’expériences, de motivations et de style de décision.",
+      "Garde-fou du domaine": "Accès du conseiller uniquement après consentement granulaire ; résultat cognitif distinct des inventaires d’intérêts et des compétences.",
+      "Décisions exclues": "Recommandation automatisée de carrière, prédiction de réussite ou de satisfaction.",
+      "Zone d’usage": "Z1 — Support à la conversation",
+      "Niveau de décision cible": "N2"
+    },
+    "related_codes": [],
+    "stage": "P3"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

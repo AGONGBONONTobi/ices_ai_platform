@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d25-pr3",
+  "title": "Analyse et rapport agrégé · D25-PR3",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Effets agrégés et leur incertitude.\nFormat cible : Rapport.\nContenu cible : Agrégats par groupe ; limites de causalité et d’échantillonnage.\nCalcul cible (non implémenté ici) : Modèles multiniveaux ; analyses d’équité.\nUsage décrit : Recommandations de politique publique.\nOptions cibles : Suppression des cellules identifiantes.\nConditions et limites : Passage en production uniquement après validation documentée.\nObjectif du domaine : Soutenir une étude d’intervention éducative par des mesures agrégées, sans classer élèves, enseignants ou écoles.\nGarde-fou du domaine : Analyse éthique et juridique préalable ; instruments validés pour la population ; suppression des petites cellules.\nDécisions exclues : Classement d’école, d’enseignant ou d’élève ; conclusion causale sans plan d’identification ; évaluation individuelle des élèves.\nZone d’usage : Z4 — Recherche institutionnelle\nNiveau de décision cible : Recherche ; agrégats uniquement",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D25-PR3",
+    "domain": "Évaluation des politiques éducatives",
+    "blocks": {
+      "mesure": "Effets agrégés et leur incertitude.",
+      "format": "Rapport.",
+      "contenu": "Agrégats par groupe ; limites de causalité et d’échantillonnage.",
+      "scoring": "Modèles multiniveaux ; analyses d’équité.",
+      "decision": "Recommandations de politique publique.",
+      "avance": "Suppression des cellules identifiantes.",
+      "passerelle": "Passage en production uniquement après validation documentée.",
+      "Objectif du domaine": "Soutenir une étude d’intervention éducative par des mesures agrégées, sans classer élèves, enseignants ou écoles.",
+      "Garde-fou du domaine": "Analyse éthique et juridique préalable ; instruments validés pour la population ; suppression des petites cellules.",
+      "Décisions exclues": "Classement d’école, d’enseignant ou d’élève ; conclusion causale sans plan d’identification ; évaluation individuelle des élèves.",
+      "Zone d’usage": "Z4 — Recherche institutionnelle",
+      "Niveau de décision cible": "Recherche ; agrégats uniquement"
+    },
+    "related_codes": [],
+    "stage": "PR3"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

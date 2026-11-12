@@ -1,0 +1,67 @@
+{
+  "id": "parcours-d26-p2b",
+  "title": "Curiosité et engagement · D26-P2b",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Curiosité, fluidité d’idées.\nFormat cible : 10 min.\nContenu cible : T29.5, T36.1.\nCalcul cible (non implémenté ici) : Profil.\nUsage décrit : Activités suggérées.\nOptions cibles : Restitution séparée des autres profils ; aucune combinaison de scores entre instruments différents.\nConditions et limites : Option de séance accompagnée (P3) ou d’orientation professionnelle (P4).\nObjectif du domaine : Permettre à tous les apprenants d’explorer des tâches et d’accéder à des ressources enrichies, avec possibilités de repérage répétées et accessibles.\nGarde-fou du domaine : Un faible score ne bloque aucun programme ; reprise possible après apprentissage ; formes parallèles et règles anti-répétition.\nDécisions exclues : Catégorie « talent détecté » imposée ; fermeture d’accès sur un score.\nZone d’usage : Z1 — Repérage ouvert et non sélectif\nNiveau de décision cible : N1",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D26-P2b",
+    "domain": "Détection précoce des talents",
+    "blocks": {
+      "mesure": "Curiosité, fluidité d’idées.",
+      "format": "10 min.",
+      "contenu": "T29.5, T36.1.",
+      "scoring": "Profil.",
+      "decision": "Activités suggérées.",
+      "avance": "Restitution séparée des autres profils ; aucune combinaison de scores entre instruments différents.",
+      "passerelle": "Option de séance accompagnée (P3) ou d’orientation professionnelle (P4).",
+      "Objectif du domaine": "Permettre à tous les apprenants d’explorer des tâches et d’accéder à des ressources enrichies, avec possibilités de repérage répétées et accessibles.",
+      "Garde-fou du domaine": "Un faible score ne bloque aucun programme ; reprise possible après apprentissage ; formes parallèles et règles anti-répétition.",
+      "Décisions exclues": "Catégorie « talent détecté » imposée ; fermeture d’accès sur un score.",
+      "Zone d’usage": "Z1 — Repérage ouvert et non sélectif",
+      "Niveau de décision cible": "N1"
+    },
+    "related_codes": [
+      "T29.5",
+      "T36.1"
+    ],
+    "stage": "P2b"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

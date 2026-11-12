@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d23-pr4",
+  "title": "Invariance et DIF inter-langues · D23-PR4",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Équivalence de mesure entre langues, sexes, âges, pays.\nFormat cible : Échantillons appariés, 40 min.\nContenu cible : Formes adaptées selon les lignes directrices ITC.\nCalcul cible (non implémenté ici) : Invariance configurale, métrique, scalaire ; DIF (Mantel-Haenszel, IRT-LR).\nUsage décrit : Activation ou non d’une interprétation comparative.\nOptions cibles : Revue substantielle de tout item signalé.\nConditions et limites : Une langue reste exploratoire tant que l’invariance n’est pas démontrée.\nObjectif du domaine : Administrer des versions expérimentales de tâches sous protocole approuvé pour développer, calibrer et valider les instruments A–F.\nGarde-fou du domaine : Consentement de recherche distinct ; code pseudonyme ; version figée ; comité d’éthique ; environnement séparé.\nDécisions exclues : Retour individuel diagnostique ; mélange avec l’environnement de production.\nZone d’usage : Z4 — Recherche sous protocole\nNiveau de décision cible : Recherche (aucun retour décisionnel)",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D23-PR4",
+    "domain": "Recherche en psychométrie",
+    "blocks": {
+      "mesure": "Équivalence de mesure entre langues, sexes, âges, pays.",
+      "format": "Échantillons appariés, 40 min.",
+      "contenu": "Formes adaptées selon les lignes directrices ITC.",
+      "scoring": "Invariance configurale, métrique, scalaire ; DIF (Mantel-Haenszel, IRT-LR).",
+      "decision": "Activation ou non d’une interprétation comparative.",
+      "avance": "Revue substantielle de tout item signalé.",
+      "passerelle": "Une langue reste exploratoire tant que l’invariance n’est pas démontrée.",
+      "Objectif du domaine": "Administrer des versions expérimentales de tâches sous protocole approuvé pour développer, calibrer et valider les instruments A–F.",
+      "Garde-fou du domaine": "Consentement de recherche distinct ; code pseudonyme ; version figée ; comité d’éthique ; environnement séparé.",
+      "Décisions exclues": "Retour individuel diagnostique ; mélange avec l’environnement de production.",
+      "Zone d’usage": "Z4 — Recherche sous protocole",
+      "Niveau de décision cible": "Recherche (aucun retour décisionnel)"
+    },
+    "related_codes": [],
+    "stage": "PR4"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

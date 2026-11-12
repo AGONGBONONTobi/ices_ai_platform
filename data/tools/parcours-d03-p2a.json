@@ -1,0 +1,68 @@
+{
+  "id": "parcours-d03-p2a",
+  "title": "Raisonnement avancé multi-modules · D03-P2a",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Profil détaillé sur quatre modules de raisonnement, avec attention particulière au haut de distribution.\nFormat cible : 32 à 36 items, 30 min, sélection adaptative par blocs de difficulté (pas de CAT normatif au MVP), pause à mi-parcours.\nContenu cible : A : abstraction multi-règles ; B : analogies complexes (si langue validée) ; C : problèmes quantitatifs à plusieurs étapes ; D : visualisation 3D.\nCalcul cible (non implémenté ici) : Indicateurs par module, marge d’incertitude, homogénéité ou hétérogénéité du profil décrite en langage prudent.\nUsage décrit : Préparer un échange avec un professionnel ou un enseignant ; choisir des ressources d’approfondissement.\nOptions cibles : Référence catalogue : T29.1 (raisonnement avancé), T1.1–T1.4 ; calibration future sur populations à forte performance après étude spécifique.\nConditions et limites : Aucune catégorie produite ; lien vers P4 et vers ressources d’enrichissement accessibles sans seuil.\nObjectif du domaine : Permettre l’exploration de performances de raisonnement élevées et des besoins associés, sans certifier un haut potentiel ni produire d’étiquette.\nGarde-fou du domaine : « Haut potentiel » n’est jamais une conclusion de la plateforme ; formes parallèles obligatoires ; recommandation d’un bilan reconnu si la personne souhaite une identification.\nDécisions exclues : Étiquette « HPI / non-HPI », seuil de QI, percentile mondial, accès conditionnel à un programme payant.\nZone d’usage : Z1 — Repérage indicatif\nNiveau de décision cible : N1–N2 ; N4 hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D03-P2a",
+    "domain": "Identification des hauts potentiels",
+    "blocks": {
+      "mesure": "Profil détaillé sur quatre modules de raisonnement, avec attention particulière au haut de distribution.",
+      "format": "32 à 36 items, 30 min, sélection adaptative par blocs de difficulté (pas de CAT normatif au MVP), pause à mi-parcours.",
+      "contenu": "A : abstraction multi-règles ; B : analogies complexes (si langue validée) ; C : problèmes quantitatifs à plusieurs étapes ; D : visualisation 3D.",
+      "scoring": "Indicateurs par module, marge d’incertitude, homogénéité ou hétérogénéité du profil décrite en langage prudent.",
+      "decision": "Préparer un échange avec un professionnel ou un enseignant ; choisir des ressources d’approfondissement.",
+      "avance": "Référence catalogue : T29.1 (raisonnement avancé), T1.1–T1.4 ; calibration future sur populations à forte performance après étude spécifique.",
+      "passerelle": "Aucune catégorie produite ; lien vers P4 et vers ressources d’enrichissement accessibles sans seuil.",
+      "Objectif du domaine": "Permettre l’exploration de performances de raisonnement élevées et des besoins associés, sans certifier un haut potentiel ni produire d’étiquette.",
+      "Garde-fou du domaine": "« Haut potentiel » n’est jamais une conclusion de la plateforme ; formes parallèles obligatoires ; recommandation d’un bilan reconnu si la personne souhaite une identification.",
+      "Décisions exclues": "Étiquette « HPI / non-HPI », seuil de QI, percentile mondial, accès conditionnel à un programme payant.",
+      "Zone d’usage": "Z1 — Repérage indicatif",
+      "Niveau de décision cible": "N1–N2 ; N4 hors plateforme"
+    },
+    "related_codes": [
+      "T1.1",
+      "T1.4",
+      "T29.1"
+    ],
+    "stage": "P2a"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

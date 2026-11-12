@@ -27,3 +27,6 @@ react-app/.env*
 # OS
 .DS_Store
 Thumbs.db
+
+# Archives de messagerie professionnelles conservées sur le PC d'import
+/docs/lots-outils-manager/

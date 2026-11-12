@@ -1,0 +1,66 @@
+{
+  "id": "parcours-d06-p1",
+  "title": "Série inductive visuelle · D06-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Détection de régularités visuelles : alternance, progression, rotation, superposition, transformation.\nFormat cible : 16 items à choix multiple (6 options), 10 min indicatif, sans chronomètre visible.\nContenu cible : Matrices 3×3 et séries originales ; distracteurs construits à partir des erreurs conceptuelles observées en pilote.\nCalcul cible (non implémenté ici) : Réussite par famille de règle si le plan d’items le permet ; temps médian.\nUsage décrit : Information personnelle.\nOptions cibles : Référence catalogue : T1.1 (Gf) en version non normée ; formes parallèles.\nConditions et limites : P2 proposé à tous.\nObjectif du domaine : Explorer la performance à des problèmes de détection de régularités visuelles et de transformations spatiales.\nGarde-fou du domaine : Rapporter la tâche spécifique ; « non verbal » ne veut pas dire sans influence culturelle ; items non affichés correctement exclus du dénominateur.\nDécisions exclues : Score « intelligence non verbale », présentation comme « culture-free », sélection.\nZone d’usage : Z1 — Domaine direct d’évaluation indicative\nNiveau de décision cible : N1–N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D06-P1",
+    "domain": "Raisonnement non verbal",
+    "blocks": {
+      "mesure": "Détection de régularités visuelles : alternance, progression, rotation, superposition, transformation.",
+      "format": "16 items à choix multiple (6 options), 10 min indicatif, sans chronomètre visible.",
+      "contenu": "Matrices 3×3 et séries originales ; distracteurs construits à partir des erreurs conceptuelles observées en pilote.",
+      "scoring": "Réussite par famille de règle si le plan d’items le permet ; temps médian.",
+      "decision": "Information personnelle.",
+      "avance": "Référence catalogue : T1.1 (Gf) en version non normée ; formes parallèles.",
+      "passerelle": "P2 proposé à tous.",
+      "Objectif du domaine": "Explorer la performance à des problèmes de détection de régularités visuelles et de transformations spatiales.",
+      "Garde-fou du domaine": "Rapporter la tâche spécifique ; « non verbal » ne veut pas dire sans influence culturelle ; items non affichés correctement exclus du dénominateur.",
+      "Décisions exclues": "Score « intelligence non verbale », présentation comme « culture-free », sélection.",
+      "Zone d’usage": "Z1 — Domaine direct d’évaluation indicative",
+      "Niveau de décision cible": "N1–N2"
+    },
+    "related_codes": [
+      "T1.1"
+    ],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

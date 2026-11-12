@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d30-p1",
+  "title": "Problème ouvert et tâche F · D30-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Stratégies d’approche d’un problème nouveau : apprentissage de règle, transfert, recherche d’information.\nFormat cible : 1 problème ouvert + 12 items F + 6 items C ou D, 15 min.\nContenu cible : Problème neutre admettant plusieurs stratégies raisonnables ; règle à découvrir puis transférer.\nCalcul cible (non implémenté ici) : Notation sur critères explicites de la tâche (exactitude, nombre d’essais, informations demandées).\nUsage décrit : Questions d’apprentissage personnelles.\nOptions cibles : Journal des stratégies (essais, demandes d’indices) restitué de façon descriptive.\nConditions et limites : P2 libre, modules à la carte.\nObjectif du domaine : Aider une personne ou une équipe à réfléchir à différentes manières d’aborder un problème nouveau, à son rapport au risque et à la lucidité sur son projet.\nGarde-fou du domaine : Aucun score « créativité/innovation » sans validation propre ; résultats individuels non utilisés pour investir, recruter ou sélectionner (cf. garde-fous T17 et T42).\nDécisions exclues : Prédiction de succès ou d’échec, classement de fondateurs, décision d’investissement, de financement ou de sélection en incubateur.\nZone d’usage : Z1 — Support de réflexion et de formation\nNiveau de décision cible : N1–N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D30-P1",
+    "domain": "Entrepreneuriat et innovation",
+    "blocks": {
+      "mesure": "Stratégies d’approche d’un problème nouveau : apprentissage de règle, transfert, recherche d’information.",
+      "format": "1 problème ouvert + 12 items F + 6 items C ou D, 15 min.",
+      "contenu": "Problème neutre admettant plusieurs stratégies raisonnables ; règle à découvrir puis transférer.",
+      "scoring": "Notation sur critères explicites de la tâche (exactitude, nombre d’essais, informations demandées).",
+      "decision": "Questions d’apprentissage personnelles.",
+      "avance": "Journal des stratégies (essais, demandes d’indices) restitué de façon descriptive.",
+      "passerelle": "P2 libre, modules à la carte.",
+      "Objectif du domaine": "Aider une personne ou une équipe à réfléchir à différentes manières d’aborder un problème nouveau, à son rapport au risque et à la lucidité sur son projet.",
+      "Garde-fou du domaine": "Aucun score « créativité/innovation » sans validation propre ; résultats individuels non utilisés pour investir, recruter ou sélectionner (cf. garde-fous T17 et T42).",
+      "Décisions exclues": "Prédiction de succès ou d’échec, classement de fondateurs, décision d’investissement, de financement ou de sélection en incubateur.",
+      "Zone d’usage": "Z1 — Support de réflexion et de formation",
+      "Niveau de décision cible": "N1–N2"
+    },
+    "related_codes": [],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

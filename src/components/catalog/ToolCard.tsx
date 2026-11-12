@@ -7,9 +7,10 @@ import { Locale } from "@/lib/i18n/getDictionary";
 import { Badge } from "@/components/ui/badge";
 import { getCategoryStyle } from "@/lib/categoryStyles";
 import { motion } from "framer-motion";
+import { toolAvailabilityLabels } from "@/lib/i18n/toolAvailability";
 
 interface ToolCardProps {
-  tool: Pick<ToolConfig, "id" | "title" | "category" | "referentiel_code">;
+  tool: Pick<ToolConfig, "id" | "title" | "category" | "referentiel_code" | "execution">;
   lang: Locale;
   dict: any;
   index: number;
@@ -18,6 +19,7 @@ interface ToolCardProps {
 export function ToolCard({ tool, lang, dict, index }: ToolCardProps) {
   const style = getCategoryStyle(tool.category);
   const CategoryIcon = style.icon;
+  const availability = toolAvailabilityLabels(lang);
 
   return (
     <motion.div
@@ -72,12 +74,17 @@ export function ToolCard({ tool, lang, dict, index }: ToolCardProps) {
             <h3 className="text-sm font-semibold leading-snug text-slate-800 group-hover:text-violet-700 transition-colors duration-200 line-clamp-3">
               {tool.title}
             </h3>
+            {tool.execution && (
+              <p className="mt-2 text-xs font-medium text-slate-600">
+                {availability[tool.execution.mode]}
+              </p>
+            )}
           </div>
 
           {/* Footer CTA */}
           <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-100">
             <span className="text-xs text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity duration-200 font-medium">
-              {dict.tool?.launch || "Lancer"}
+              {tool.execution?.mode === "reference" ? availability.consult : dict.tool?.launch || "Lancer"}
             </span>
             <div
               className="flex items-center justify-center w-7 h-7 rounded-full transition-all duration-200 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5"

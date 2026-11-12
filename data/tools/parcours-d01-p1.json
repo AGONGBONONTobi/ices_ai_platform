@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d01-p1",
+  "title": "Screening d’orientation à deux modules · D01-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance observée dans deux tâches courtes liées au motif : raisonnement inductif visuel (A) et maintien/manipulation d’information (E).\nFormat cible : 12 à 16 items en deux blocs, 10–12 min, 1 item d’essai par module, pause possible entre blocs.\nContenu cible : A : complétion de motifs à règle unique puis double ; E : empan de séquences courtes (directe puis inverse) avec consigne écrite et audio.\nCalcul cible (non implémenté ici) : Proportion de réponses correctes par module, temps médian par item, nombre d’interruptions ; aucun percentile, aucun indice global.\nUsage décrit : Information personnelle : utilité d’approfondir (P2) ou de consulter (P4).\nOptions cibles : Sélection dynamique des modules selon le motif (mémoire → E + F ; raisonnement → A + C) ; détection des sessions dégradées (perte de focus, appareil inadapté).\nConditions et limites : Résultat marqué « exploratoire » si la langue n’est pas validée ; P2 proposé, jamais imposé.\nObjectif du domaine : Aider un adulte à clarifier sa demande (mémoire, attention, raisonnement), à recueillir des observations de tâches non cliniques et à préparer une consultation avec un psychologue ou neuropsychologue habilité.\nGarde-fou du domaine : La plateforme ne réalise pas de bilan. Aucun mot « diagnostic », « déficit », « pathologique » dans les sorties. Le bilan est conduit hors plateforme par un professionnel qui choisit ses instruments sous licence.\nDécisions exclues : Diagnostic, détection de déficit, conclusion sur un trouble, aptitude au travail, indemnisation, expertise médico-légale.\nZone d’usage : Z2 — Orientation vers un professionnel\nNiveau de décision cible : N2 (orientation) ; N4 hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D01-P1",
+    "domain": "Bilan neuropsychologique adulte",
+    "blocks": {
+      "mesure": "Performance observée dans deux tâches courtes liées au motif : raisonnement inductif visuel (A) et maintien/manipulation d’information (E).",
+      "format": "12 à 16 items en deux blocs, 10–12 min, 1 item d’essai par module, pause possible entre blocs.",
+      "contenu": "A : complétion de motifs à règle unique puis double ; E : empan de séquences courtes (directe puis inverse) avec consigne écrite et audio.",
+      "scoring": "Proportion de réponses correctes par module, temps médian par item, nombre d’interruptions ; aucun percentile, aucun indice global.",
+      "decision": "Information personnelle : utilité d’approfondir (P2) ou de consulter (P4).",
+      "avance": "Sélection dynamique des modules selon le motif (mémoire → E + F ; raisonnement → A + C) ; détection des sessions dégradées (perte de focus, appareil inadapté).",
+      "passerelle": "Résultat marqué « exploratoire » si la langue n’est pas validée ; P2 proposé, jamais imposé.",
+      "Objectif du domaine": "Aider un adulte à clarifier sa demande (mémoire, attention, raisonnement), à recueillir des observations de tâches non cliniques et à préparer une consultation avec un psychologue ou neuropsychologue habilité.",
+      "Garde-fou du domaine": "La plateforme ne réalise pas de bilan. Aucun mot « diagnostic », « déficit », « pathologique » dans les sorties. Le bilan est conduit hors plateforme par un professionnel qui choisit ses instruments sous licence.",
+      "Décisions exclues": "Diagnostic, détection de déficit, conclusion sur un trouble, aptitude au travail, indemnisation, expertise médico-légale.",
+      "Zone d’usage": "Z2 — Orientation vers un professionnel",
+      "Niveau de décision cible": "N2 (orientation) ; N4 hors plateforme"
+    },
+    "related_codes": [],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

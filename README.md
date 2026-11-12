@@ -89,6 +89,11 @@ dans le prompt.
 
 Seuls les outils en statut `published` sont servis par l'API.
 
+Les lots du manager ajoutent 499 entrées locales : 378 guides de préparation
+et 121 fiches de référence. Les modes sont affichés dans l'interface ; une fiche
+de référence ne peut pas être exécutée comme un test. Voir le
+[détail de l'intégration et de la couverture](docs/INTEGRATION_LOTS_OUTILS.md).
+
 ## Tests
 
 ```bash

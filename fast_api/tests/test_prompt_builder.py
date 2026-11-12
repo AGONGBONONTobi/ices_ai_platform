@@ -42,6 +42,25 @@ def test_le_prompt_utilisateur_contient_le_template_interpole():
     assert "{effectif}" not in prompt
 
 
+def test_les_champs_facultatifs_absents_ne_fuient_pas_dans_le_prompt():
+    tool = make_tool(
+        inputs=[
+            ToolInput(name="contexte", type="textarea"),
+            ToolInput(name="elements", type="textarea", required=False),
+            ToolInput(name="contraintes", type="textarea", required=False),
+        ],
+        promptTemplate="Contexte : {contexte}. Éléments : {elements}. Contraintes : {contraintes}. {inconnue}",
+    )
+    prompt = build_user_prompt(tool, {"contexte": "Préparer un entretien."})
+
+    assert "Éléments : (non renseigné)" in prompt
+    assert "Contraintes : (non renseigné)" in prompt
+    assert "{elements}" not in prompt
+    assert "{contraintes}" not in prompt
+    # Une variable non déclarée reste détectable : elle n'est pas blanchie.
+    assert "{inconnue}" in prompt
+
+
 def test_deux_outils_produisent_des_prompts_differents():
     """Le cœur de l'écart E1 : sans le template, tous les outils sont identiques."""
     a = make_tool(id="a", title="Diagnostic A", promptTemplate="Analyse la trésorerie.")

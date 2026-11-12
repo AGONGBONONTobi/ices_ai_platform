@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d03-p4",
+  "title": "Bilan psychologique d’identification · D03-P4",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Fonctionnement intellectuel global et indices multiples, profil psychologique.\nFormat cible : Hors plateforme : entretien, échelles d’intelligence sous licence adaptées à l’âge, observations.\nContenu cible : Choix des instruments et interprétation par le psychologue.\nCalcul cible (non implémenté ici) : Indices normés produits par le professionnel.\nUsage décrit : Identification éventuelle et recommandations : responsabilité professionnelle.\nOptions cibles : Mise en relation avec professionnels expérimentés en haut potentiel.\nConditions et limites : Les résultats plateforme ne sont jamais comparés au QI clinique.\nObjectif du domaine : Permettre l’exploration de performances de raisonnement élevées et des besoins associés, sans certifier un haut potentiel ni produire d’étiquette.\nGarde-fou du domaine : « Haut potentiel » n’est jamais une conclusion de la plateforme ; formes parallèles obligatoires ; recommandation d’un bilan reconnu si la personne souhaite une identification.\nDécisions exclues : Étiquette « HPI / non-HPI », seuil de QI, percentile mondial, accès conditionnel à un programme payant.\nZone d’usage : Z1 — Repérage indicatif\nNiveau de décision cible : N1–N2 ; N4 hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D03-P4",
+    "domain": "Identification des hauts potentiels",
+    "blocks": {
+      "mesure": "Fonctionnement intellectuel global et indices multiples, profil psychologique.",
+      "format": "Hors plateforme : entretien, échelles d’intelligence sous licence adaptées à l’âge, observations.",
+      "contenu": "Choix des instruments et interprétation par le psychologue.",
+      "scoring": "Indices normés produits par le professionnel.",
+      "decision": "Identification éventuelle et recommandations : responsabilité professionnelle.",
+      "avance": "Mise en relation avec professionnels expérimentés en haut potentiel.",
+      "passerelle": "Les résultats plateforme ne sont jamais comparés au QI clinique.",
+      "Objectif du domaine": "Permettre l’exploration de performances de raisonnement élevées et des besoins associés, sans certifier un haut potentiel ni produire d’étiquette.",
+      "Garde-fou du domaine": "« Haut potentiel » n’est jamais une conclusion de la plateforme ; formes parallèles obligatoires ; recommandation d’un bilan reconnu si la personne souhaite une identification.",
+      "Décisions exclues": "Étiquette « HPI / non-HPI », seuil de QI, percentile mondial, accès conditionnel à un programme payant.",
+      "Zone d’usage": "Z1 — Repérage indicatif",
+      "Niveau de décision cible": "N1–N2 ; N4 hors plateforme"
+    },
+    "related_codes": [],
+    "stage": "P4"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d14-p1",
+  "title": "Tâche de départ · D14-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance aux tâches liées au contenu : règles, transfert, quantitatif.\nFormat cible : 14 items, 12 min.\nContenu cible : C–F.\nCalcul cible (non implémenté ici) : Descriptif.\nUsage décrit : Choisir une stratégie de pratique.\nOptions cibles : Prérequis de cours exclus du calcul cognitif.\nConditions et limites : Palier détaillé proposé, jamais imposé ; accès indépendant du résultat.\nObjectif du domaine : Aider l’apprenant à choisir des formats de pratique et de soutien adaptés, sans jamais sélectionner l’accès à une formation.\nGarde-fou du domaine : Distinguer prérequis de cours et cognition ; toute comparaison avant/après est descriptive.\nDécisions exclues : Sélection à l’entrée, note d’admission ou de certification.\nZone d’usage : Z1 — Personnalisation pédagogique légère\nNiveau de décision cible : N1",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D14-P1",
+    "domain": "Formation professionnelle",
+    "blocks": {
+      "mesure": "Performance aux tâches liées au contenu : règles, transfert, quantitatif.",
+      "format": "14 items, 12 min.",
+      "contenu": "C–F.",
+      "scoring": "Descriptif.",
+      "decision": "Choisir une stratégie de pratique.",
+      "avance": "Prérequis de cours exclus du calcul cognitif.",
+      "passerelle": "Palier détaillé proposé, jamais imposé ; accès indépendant du résultat.",
+      "Objectif du domaine": "Aider l’apprenant à choisir des formats de pratique et de soutien adaptés, sans jamais sélectionner l’accès à une formation.",
+      "Garde-fou du domaine": "Distinguer prérequis de cours et cognition ; toute comparaison avant/après est descriptive.",
+      "Décisions exclues": "Sélection à l’entrée, note d’admission ou de certification.",
+      "Zone d’usage": "Z1 — Personnalisation pédagogique légère",
+      "Niveau de décision cible": "N1"
+    },
+    "related_codes": [],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

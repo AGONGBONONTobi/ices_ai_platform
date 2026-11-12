@@ -1,0 +1,87 @@
+{
+  "id": "psy-t9-4",
+  "title": "Préparer — Sécurité & stabilité · T9.4",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "question": "Que souhaitez-vous préparer ?",
+      "help": "Précisez votre objectif autour de « Sécurité & stabilité ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "required": true
+    },
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Quel est le contexte utile ?",
+      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "required": true
+    },
+    {
+      "name": "elements",
+      "type": "textarea",
+      "question": "Quels éléments factuels avez-vous déjà ?",
+      "help": "Indiquez uniquement vos observations et questions en lien avec : besoin de prévisibilité. Ne renseignez pas de score supposé.",
+      "required": false
+    },
+    {
+      "name": "contraintes",
+      "type": "textarea",
+      "question": "Quelles contraintes faut-il respecter ?",
+      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Prépare un support écrit pour « Sécurité & stabilité », dans le domaine « MOTIVATION & VALEURS PROFESSIONNELLES ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : besoin de prévisibilité.\nFormat cible : 15 items, 4 min.\nContenu cible : sécurité d’emploi, structure, clarté.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : mobilité, changement.\nOptions cibles : prédiction de résistance au changement.\nObjectif du domaine : identifier les moteurs profonds pour l’engagement, la rétention et l’adéquation poste-personne\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "5",
+    "document": "Catalogue_350_Outils_Psychometriques.docx",
+    "code": "T9.4",
+    "domain": "MOTIVATION & VALEURS PROFESSIONNELLES",
+    "blocks": {
+      "mesure": "besoin de prévisibilité.",
+      "format": "15 items, 4 min.",
+      "contenu": "sécurité d’emploi, structure, clarté.",
+      "scoring": "score.",
+      "decision": "mobilité, changement.",
+      "avance": "prédiction de résistance au changement.",
+      "Objectif du domaine": "identifier les moteurs profonds pour l’engagement, la rétention et l’adéquation poste-personne"
+    },
+    "related_codes": []
+  },
+  "execution": {
+    "mode": "preparation",
+    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
+  }
+}

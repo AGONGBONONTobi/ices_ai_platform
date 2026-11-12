@@ -1,0 +1,67 @@
+{
+  "id": "parcours-d12-p2b",
+  "title": "Contraintes et style de décision · D12-P2b",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Contraintes réelles et manière de décider.\nFormat cible : 30 items + 4 scénarios, 15 min.\nContenu cible : T30.4 (contraintes, marché local), T30.5 (style de décision).\nCalcul cible (non implémenté ici) : Carte de contraintes ; style de décision et risques associés.\nUsage décrit : Évaluer le réalisme des pistes.\nOptions cibles : Données de marché sourcées et datées par pays.\nConditions et limites : Option de séance accompagnée (P3) ou d’orientation professionnelle (P4).\nObjectif du domaine : Clarifier préférences de tâches, intérêts, valeurs, compétences transférables et contraintes pour nourrir une réflexion de reconversion.\nGarde-fou du domaine : Les observations sont reliées à des tâches professionnelles, jamais à des intitulés de métiers déterministes.\nDécisions exclues : Prescription d’un métier unique, promesse de réussite, classement des métiers.\nZone d’usage : Z1 — Orientation exploratoire\nNiveau de décision cible : N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D12-P2b",
+    "domain": "Reconversion professionnelle",
+    "blocks": {
+      "mesure": "Contraintes réelles et manière de décider.",
+      "format": "30 items + 4 scénarios, 15 min.",
+      "contenu": "T30.4 (contraintes, marché local), T30.5 (style de décision).",
+      "scoring": "Carte de contraintes ; style de décision et risques associés.",
+      "decision": "Évaluer le réalisme des pistes.",
+      "avance": "Données de marché sourcées et datées par pays.",
+      "passerelle": "Option de séance accompagnée (P3) ou d’orientation professionnelle (P4).",
+      "Objectif du domaine": "Clarifier préférences de tâches, intérêts, valeurs, compétences transférables et contraintes pour nourrir une réflexion de reconversion.",
+      "Garde-fou du domaine": "Les observations sont reliées à des tâches professionnelles, jamais à des intitulés de métiers déterministes.",
+      "Décisions exclues": "Prescription d’un métier unique, promesse de réussite, classement des métiers.",
+      "Zone d’usage": "Z1 — Orientation exploratoire",
+      "Niveau de décision cible": "N2"
+    },
+    "related_codes": [
+      "T30.4",
+      "T30.5"
+    ],
+    "stage": "P2b"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

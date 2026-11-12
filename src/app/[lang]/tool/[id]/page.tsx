@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Diamond } from "@phosphor-icons/react/dist/ssr";
 import ToolExecutor from "./ToolExecutor";
+import { toolAvailabilityLabels } from "@/lib/i18n/toolAvailability";
 
 interface ToolPageProps {
   params: { lang: Locale; id: string };
@@ -24,6 +25,7 @@ export default async function ToolPage({ params }: ToolPageProps) {
   }
 
   const isRtl = lang === "ar";
+  const availability = toolAvailabilityLabels(lang);
 
   return (
     <div className="min-h-screen mesh-bg text-foreground" dir={isRtl ? "rtl" : "ltr"}>
@@ -56,6 +58,62 @@ export default async function ToolPage({ params }: ToolPageProps) {
 
       {/* Main Content */}
       <main className="max-w-2xl mx-auto px-4 sm:px-6 py-12">
+        {tool.execution && (
+          <section className="mb-8 space-y-3 rounded-2xl border border-violet-200 bg-white/80 p-5">
+            <p className="text-xs font-semibold uppercase tracking-wide text-violet-700">
+              {availability[tool.execution.mode]}
+            </p>
+            {tool.execution.mode === "reference" && (
+              <h1 className="text-2xl font-bold text-slate-900">{tool.title}</h1>
+            )}
+            <p className="text-sm leading-relaxed text-slate-700">
+              {tool.execution.mode === "reference" ? availability.referenceNotice : availability.preparationNotice}
+            </p>
+            <p lang="fr" className="text-sm leading-relaxed text-slate-600">{tool.execution.notice}</p>
+          </section>
+        )}
+        {tool.provenance && (
+          <details className="mb-8 rounded-2xl border border-slate-200 bg-white/80 p-5">
+            <summary className="cursor-pointer font-semibold text-slate-800 focus-visible:outline-violet-600">
+              {availability.source} · {tool.provenance.code}
+            </summary>
+            <div className="mt-4 space-y-4 text-sm">
+              <p className="text-slate-500">{availability.original}</p>
+              <p lang="fr" className="break-words text-slate-600">
+                {availability.lot} {tool.provenance.batch} · {tool.provenance.document}<br />
+                {tool.provenance.domain}
+                {tool.provenance.stage && ` · ${tool.provenance.stage}`}
+              </p>
+              <dl className="space-y-4">
+                {Object.entries(tool.provenance.blocks).map(([key, value]) => (
+                  <div key={key}>
+                    <dt className="font-semibold text-slate-800">
+                      {availability.blocks[key as keyof typeof availability.blocks] ?? key}
+                    </dt>
+                    <dd lang="fr" className="mt-1 whitespace-pre-line leading-relaxed text-slate-600">{value}</dd>
+                  </div>
+                ))}
+              </dl>
+              {(tool.provenance.related_codes?.length ?? 0) > 0 && (
+                <div className="space-y-2">
+                  <p className="font-semibold text-slate-800">{availability.related}</p>
+                  <ul className="flex flex-wrap gap-2">
+                    {tool.provenance.related_codes?.map((code) => (
+                      <li key={code}>
+                        <Link
+                          href={`/${lang}/tool/psy-${code.toLowerCase().replace(".", "-")}`}
+                          className="inline-block rounded-lg border border-violet-200 px-3 py-1 text-violet-700 underline-offset-2 hover:underline focus-visible:outline-violet-600"
+                        >
+                          {code}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </details>
+        )}
         <ToolExecutor tool={tool} dict={dict} lang={lang} />
       </main>
     </div>

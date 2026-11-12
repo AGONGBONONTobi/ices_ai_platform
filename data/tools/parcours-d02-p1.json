@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d02-p1",
+  "title": "Tâche brève adaptée à l’âge · D02-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance observée sur une tâche de détection de régularités visuelles (A) ou de transformations spatiales simples (D).\nFormat cible : 8 à 12 items, 8–10 min, 2 items d’essai avec retour, consigne audio et visuelle, pas de chronomètre affiché.\nContenu cible : Motifs colorés et formes familières validés par entretiens cognitifs ; difficulté progressive ; arrêt après 3 échecs consécutifs.\nCalcul cible (non implémenté ici) : Nombre d’items réussis et commentaires d’observation (« a demandé à réentendre la consigne ») ; aucune comparaison à d’autres enfants.\nUsage décrit : Orientation : ressources éducatives ou préparation d’un rendez-vous.\nOptions cibles : Mascotte neutre originale, retours encourageants identiques quelle que soit la réponse.\nConditions et limites : P2 proposé si la famille le souhaite, avec intervalle minimal de 48 h.\nObjectif du domaine : Aider une famille et un jeune à organiser une demande d’évaluation ou de soutien éducatif, à partir d’observations de tâches non diagnostiques et protégées.\nGarde-fou du domaine : Autorisation du représentant légal et assentiment du jeune ; deux restitutions séparées (jeune / parent) ; aucun compte mineur imposé ; aucune publicité.\nDécisions exclues : Diagnostic de trouble des apprentissages, TDAH, déficience ; orientation scolaire spécialisée ; classement.\nZone d’usage : Z2 — Orientation vers un professionnel\nNiveau de décision cible : N1–N2 ; N4 hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D02-P1",
+    "domain": "Bilan cognitif enfant/adolescent",
+    "blocks": {
+      "mesure": "Performance observée sur une tâche de détection de régularités visuelles (A) ou de transformations spatiales simples (D).",
+      "format": "8 à 12 items, 8–10 min, 2 items d’essai avec retour, consigne audio et visuelle, pas de chronomètre affiché.",
+      "contenu": "Motifs colorés et formes familières validés par entretiens cognitifs ; difficulté progressive ; arrêt après 3 échecs consécutifs.",
+      "scoring": "Nombre d’items réussis et commentaires d’observation (« a demandé à réentendre la consigne ») ; aucune comparaison à d’autres enfants.",
+      "decision": "Orientation : ressources éducatives ou préparation d’un rendez-vous.",
+      "avance": "Mascotte neutre originale, retours encourageants identiques quelle que soit la réponse.",
+      "passerelle": "P2 proposé si la famille le souhaite, avec intervalle minimal de 48 h.",
+      "Objectif du domaine": "Aider une famille et un jeune à organiser une demande d’évaluation ou de soutien éducatif, à partir d’observations de tâches non diagnostiques et protégées.",
+      "Garde-fou du domaine": "Autorisation du représentant légal et assentiment du jeune ; deux restitutions séparées (jeune / parent) ; aucun compte mineur imposé ; aucune publicité.",
+      "Décisions exclues": "Diagnostic de trouble des apprentissages, TDAH, déficience ; orientation scolaire spécialisée ; classement.",
+      "Zone d’usage": "Z2 — Orientation vers un professionnel",
+      "Niveau de décision cible": "N1–N2 ; N4 hors plateforme"
+    },
+    "related_codes": [],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

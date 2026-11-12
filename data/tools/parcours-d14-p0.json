@@ -1,0 +1,93 @@
+{
+  "id": "parcours-d14-p0",
+  "title": "Préparer — Objectif de formation · D14-P0",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "question": "Que souhaitez-vous préparer ?",
+      "help": "Précisez votre objectif autour de « Objectif de formation ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "required": true
+    },
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Quel est le contexte utile ?",
+      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "required": true
+    },
+    {
+      "name": "elements",
+      "type": "textarea",
+      "question": "Quels éléments factuels avez-vous déjà ?",
+      "help": "Indiquez uniquement vos observations et questions en lien avec : Objectif d’apprentissage poursuivi. Ne renseignez pas de score supposé.",
+      "required": false
+    },
+    {
+      "name": "contraintes",
+      "type": "textarea",
+      "question": "Quelles contraintes faut-il respecter ?",
+      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Prépare un support écrit pour « Objectif de formation », dans le domaine « Formation professionnelle ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : Objectif d’apprentissage poursuivi.\nFormat cible : 4 min.\nContenu cible : Contenu de la formation, contexte, échéance.\nCalcul cible (non implémenté ici) : Aucun score.\nUsage décrit : Sélection des tâches proches du contenu.\nOptions cibles : Correspondance contenu → module paramétrable par le formateur.\nConditions et limites : Accès au palier suivant après lecture des limites et consentement.\nObjectif du domaine : Aider l’apprenant à choisir des formats de pratique et de soutien adaptés, sans jamais sélectionner l’accès à une formation.\nGarde-fou du domaine : Distinguer prérequis de cours et cognition ; toute comparaison avant/après est descriptive.\nDécisions exclues : Sélection à l’entrée, note d’admission ou de certification.\nZone d’usage : Z1 — Personnalisation pédagogique légère\nNiveau de décision cible : N1\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D14-P0",
+    "domain": "Formation professionnelle",
+    "blocks": {
+      "mesure": "Objectif d’apprentissage poursuivi.",
+      "format": "4 min.",
+      "contenu": "Contenu de la formation, contexte, échéance.",
+      "scoring": "Aucun score.",
+      "decision": "Sélection des tâches proches du contenu.",
+      "avance": "Correspondance contenu → module paramétrable par le formateur.",
+      "passerelle": "Accès au palier suivant après lecture des limites et consentement.",
+      "Objectif du domaine": "Aider l’apprenant à choisir des formats de pratique et de soutien adaptés, sans jamais sélectionner l’accès à une formation.",
+      "Garde-fou du domaine": "Distinguer prérequis de cours et cognition ; toute comparaison avant/après est descriptive.",
+      "Décisions exclues": "Sélection à l’entrée, note d’admission ou de certification.",
+      "Zone d’usage": "Z1 — Personnalisation pédagogique légère",
+      "Niveau de décision cible": "N1"
+    },
+    "related_codes": [],
+    "stage": "P0"
+  },
+  "execution": {
+    "mode": "preparation",
+    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
+  }
+}

@@ -60,7 +60,8 @@ def list_published_tools() -> list[ToolSummary]:
         response = (
             _published_only(
                 client.table("tools").select(
-                    "id, title, category, referentiel_code:config->>referentiel_code"
+                    "id, title, category, referentiel_code:config->>referentiel_code, "
+                    "execution:config->execution"
                 )
             )
             .order("category", desc=False)

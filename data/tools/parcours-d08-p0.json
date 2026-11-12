@@ -1,0 +1,93 @@
+{
+  "id": "parcours-d08-p0",
+  "title": "Préparer — Motif personnel et limites · D08-P0",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "question": "Que souhaitez-vous préparer ?",
+      "help": "Précisez votre objectif autour de « Motif personnel et limites ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "required": true
+    },
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Quel est le contexte utile ?",
+      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "required": true
+    },
+    {
+      "name": "elements",
+      "type": "textarea",
+      "question": "Quels éléments factuels avez-vous déjà ?",
+      "help": "Indiquez uniquement vos observations et questions en lien avec : Motif (curiosité, préparation, entraînement) et compréhension des limites. Ne renseignez pas de score supposé.",
+      "required": false
+    },
+    {
+      "name": "contraintes",
+      "type": "textarea",
+      "question": "Quelles contraintes faut-il respecter ?",
+      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Prépare un support écrit pour « Motif personnel et limites », dans le domaine « Auto-évaluation et pré-sélection personnelle ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : Motif (curiosité, préparation, entraînement) et compréhension des limites.\nFormat cible : 3 écrans, 4 min.\nContenu cible : Motif, langue, appareil, accessibilité ; page « ce que ce parcours ne dit pas ».\nCalcul cible (non implémenté ici) : Aucun score.\nUsage décrit : Choix du screening adapté.\nOptions cibles : Si langue non validée : A + C (moins dépendants de la langue) et mention exploratoire.\nConditions et limites : Lecture des limites obligatoire (case à cocher).\nObjectif du domaine : Offrir un aperçu de ses performances dans des tâches cognitives définies, avec information claire sur les limites, et un cheminement progressif vers des niveaux plus complets.\nGarde-fou du domaine : Limites consultables avant de commencer ; partage désactivé par défaut ; effet de pratique expliqué.\nDécisions exclues : « Votre QI est X », percentile universel, classement social.\nZone d’usage : Z1 — Parcours central du MVP\nNiveau de décision cible : N1\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D08-P0",
+    "domain": "Auto-évaluation et pré-sélection personnelle",
+    "blocks": {
+      "mesure": "Motif (curiosité, préparation, entraînement) et compréhension des limites.",
+      "format": "3 écrans, 4 min.",
+      "contenu": "Motif, langue, appareil, accessibilité ; page « ce que ce parcours ne dit pas ».",
+      "scoring": "Aucun score.",
+      "decision": "Choix du screening adapté.",
+      "avance": "Si langue non validée : A + C (moins dépendants de la langue) et mention exploratoire.",
+      "passerelle": "Lecture des limites obligatoire (case à cocher).",
+      "Objectif du domaine": "Offrir un aperçu de ses performances dans des tâches cognitives définies, avec information claire sur les limites, et un cheminement progressif vers des niveaux plus complets.",
+      "Garde-fou du domaine": "Limites consultables avant de commencer ; partage désactivé par défaut ; effet de pratique expliqué.",
+      "Décisions exclues": "« Votre QI est X », percentile universel, classement social.",
+      "Zone d’usage": "Z1 — Parcours central du MVP",
+      "Niveau de décision cible": "N1"
+    },
+    "related_codes": [],
+    "stage": "P0"
+  },
+  "execution": {
+    "mode": "preparation",
+    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
+  }
+}

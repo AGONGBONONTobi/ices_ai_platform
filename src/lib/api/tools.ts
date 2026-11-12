@@ -2,7 +2,7 @@ import { apiFetch, apiUpload, ApiError } from "./client";
 import { ToolConfig } from "@/lib/schema/tool-schema";
 import { Locale } from "@/lib/i18n/getDictionary";
 
-export type ToolSummary = Pick<ToolConfig, "id" | "title" | "category" | "referentiel_code">;
+export type ToolSummary = Pick<ToolConfig, "id" | "title" | "category" | "referentiel_code" | "execution">;
 
 /**
  * Catalogue complet, déjà traduit côté backend avec les traductions en cache.
@@ -50,6 +50,7 @@ export interface SmartSearchResult {
   category: string;
   referentiel_code: string | null;
   reason: string;
+  execution?: ToolConfig["execution"];
 }
 
 /**

@@ -16,6 +16,8 @@ Le score fait donc foi côté source, seul le libellé est traduit.
 
 import json
 from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import MagicMock
 
 import pytest
 
@@ -85,3 +87,47 @@ def test_une_traduction_absente_laisse_les_options_intactes(outil: ToolConfig) -
     fusion = _merge_translation(outil, {"title": "ISO 45001 Self-Assessment"})
 
     assert fusion.inputs[1].options == outil.inputs[1].options
+
+
+def test_les_questions_sont_traduites_sans_remplacer_le_statut_ni_la_source(outil: ToolConfig, monkeypatch) -> None:
+    # Métadonnées de disponibilité : elles doivent venir de la fiche de base,
+    # même si une traduction ancienne ou erronée contient d'autres valeurs.
+    from app.schemas import ToolExecution, ToolInput, ToolProvenance
+    from app.services import translation
+
+    outil = outil.model_copy(update={
+        "execution": ToolExecution(mode="reference", notice="À valider."),
+        "inputs": [ToolInput(name="contexte", type="textarea", question="Votre contexte ?", help="Décrivez votre objectif.")],
+        "provenance": ToolProvenance(
+            batch="6", document="Parcours.docx", code="D01-P3",
+            domain="Orientation", blocks={"mesure": "Observation accompagnée."},
+        ),
+    })
+    translated = {
+        "title": "Translated title", "execution": {"mode": "preparation"},
+        "provenance": {"code": "FAUX"},
+        "inputs": [{"name": "contexte", "question": "Your context?", "help": "Describe your goal."}],
+    }
+    client = MagicMock()
+    client.table.return_value.select.return_value.eq.return_value.eq.return_value.maybe_single.return_value.execute.return_value = SimpleNamespace(data=None)
+    monkeypatch.setattr(translation, "get_supabase_anon", lambda: client)
+    monkeypatch.setattr(translation, "get_supabase_admin", lambda: client)
+    monkeypatch.setattr(translation, "get_settings", lambda: SimpleNamespace(groq_model="test"))
+    sent = []
+
+    def complete(**kwargs):
+        sent.append(json.loads(kwargs["messages"][1]["content"]))
+        return SimpleNamespace(choices=[SimpleNamespace(message=SimpleNamespace(content=json.dumps(translated)))])
+
+    monkeypatch.setattr(translation, "get_groq", lambda: SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=complete))))
+    fusion = translation.translate_tool_config(outil, "en")
+
+    assert fusion.title == "Translated title"
+    assert fusion.inputs[0].question == "Your context?"
+    assert fusion.inputs[0].help == "Describe your goal."
+    assert sent[0]["inputs"][0]["question"] == "Votre contexte ?"
+    assert sent[0]["inputs"][0]["help"] == "Décrivez votre objectif."
+    assert fusion.execution.mode == "reference"
+    assert fusion.execution.notice == "À valider."
+    assert fusion.provenance.code == "D01-P3"
+    assert fusion.provenance.blocks == {"mesure": "Observation accompagnée."}

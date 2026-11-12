@@ -1,0 +1,93 @@
+{
+  "id": "parcours-d13-p0",
+  "title": "Préparer — Choix de ce qui est partagé · D13-P0",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "question": "Que souhaitez-vous préparer ?",
+      "help": "Précisez votre objectif autour de « Choix de ce qui est partagé ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "required": true
+    },
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Quel est le contexte utile ?",
+      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "required": true
+    },
+    {
+      "name": "elements",
+      "type": "textarea",
+      "question": "Quels éléments factuels avez-vous déjà ?",
+      "help": "Indiquez uniquement vos observations et questions en lien avec : Périmètre de partage voulu par la personne. Ne renseignez pas de score supposé.",
+      "required": false
+    },
+    {
+      "name": "contraintes",
+      "type": "textarea",
+      "question": "Quelles contraintes faut-il respecter ?",
+      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Prépare un support écrit pour « Choix de ce qui est partagé », dans le domaine « Conseil de carrière ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : Périmètre de partage voulu par la personne.\nFormat cible : Écran de consentement, 4 min.\nContenu cible : Sélection élément par élément de ce que verra le conseiller ; durée d’accès.\nCalcul cible (non implémenté ici) : Aucun score.\nUsage décrit : Paramétrage du partage.\nOptions cibles : Révocation en un clic, journal des accès.\nConditions et limites : Sans consentement, le conseiller ne voit qu’une page vide.\nObjectif du domaine : Structurer une séance entre une personne et son conseiller autour de préférences de raisonnement, d’expériences, de motivations et de style de décision.\nGarde-fou du domaine : Accès du conseiller uniquement après consentement granulaire ; résultat cognitif distinct des inventaires d’intérêts et des compétences.\nDécisions exclues : Recommandation automatisée de carrière, prédiction de réussite ou de satisfaction.\nZone d’usage : Z1 — Support à la conversation\nNiveau de décision cible : N2\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D13-P0",
+    "domain": "Conseil de carrière",
+    "blocks": {
+      "mesure": "Périmètre de partage voulu par la personne.",
+      "format": "Écran de consentement, 4 min.",
+      "contenu": "Sélection élément par élément de ce que verra le conseiller ; durée d’accès.",
+      "scoring": "Aucun score.",
+      "decision": "Paramétrage du partage.",
+      "avance": "Révocation en un clic, journal des accès.",
+      "passerelle": "Sans consentement, le conseiller ne voit qu’une page vide.",
+      "Objectif du domaine": "Structurer une séance entre une personne et son conseiller autour de préférences de raisonnement, d’expériences, de motivations et de style de décision.",
+      "Garde-fou du domaine": "Accès du conseiller uniquement après consentement granulaire ; résultat cognitif distinct des inventaires d’intérêts et des compétences.",
+      "Décisions exclues": "Recommandation automatisée de carrière, prédiction de réussite ou de satisfaction.",
+      "Zone d’usage": "Z1 — Support à la conversation",
+      "Niveau de décision cible": "N2"
+    },
+    "related_codes": [],
+    "stage": "P0"
+  },
+  "execution": {
+    "mode": "preparation",
+    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
+  }
+}

@@ -164,6 +164,12 @@ export default function ToolExecutor({ tool, dict, lang }: ToolExecutorProps) {
   const [answers, setAnswers] = useState<{ label: string; value: string }[]>([]);
   const [error, setError] = useState<string | null>(null);
 
+  // La fiche reste consultable, mais ne propose ni collecte de réponses ni
+  // téléversement tant que l'épreuve n'est pas effectivement disponible.
+  if (tool.execution?.mode === "reference") {
+    return null;
+  }
+
   const handleSubmit = async (userInputs: Record<string, any>) => {
     setIsGenerating(true);
     setError(null);

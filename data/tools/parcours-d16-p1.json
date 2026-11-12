@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d16-p1",
+  "title": "Tâche en conditions choisies · D16-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance F dans une condition choisie.\nFormat cible : 12 items, 10 min.\nContenu cible : Règle à découvrir.\nCalcul cible (non implémenté ici) : Descriptif.\nUsage décrit : Réflexion personnelle.\nOptions cibles : Formes parallèles, journalisation des versions d’items ; mode « exploratoire » si la langue ou l’âge ne sont pas validés.\nConditions et limites : Palier détaillé proposé, jamais imposé ; accès indépendant du résultat.\nObjectif du domaine : Explorer comment interruptions et charge perçue influencent le vécu des tâches, pour ajuster ses conditions de travail.\nGarde-fou du domaine : Aucune capture d’écran, de frappe ou d’activité ; interruptions uniquement simulées et validées éthiquement.\nDécisions exclues : Mesure de productivité, aptitude au télétravail, transmission à l’employeur.\nZone d’usage : Z1 — Auto-réflexion\nNiveau de décision cible : N1",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D16-P1",
+    "domain": "Travail hybride et à distance",
+    "blocks": {
+      "mesure": "Performance F dans une condition choisie.",
+      "format": "12 items, 10 min.",
+      "contenu": "Règle à découvrir.",
+      "scoring": "Descriptif.",
+      "decision": "Réflexion personnelle.",
+      "avance": "Formes parallèles, journalisation des versions d’items ; mode « exploratoire » si la langue ou l’âge ne sont pas validés.",
+      "passerelle": "Palier détaillé proposé, jamais imposé ; accès indépendant du résultat.",
+      "Objectif du domaine": "Explorer comment interruptions et charge perçue influencent le vécu des tâches, pour ajuster ses conditions de travail.",
+      "Garde-fou du domaine": "Aucune capture d’écran, de frappe ou d’activité ; interruptions uniquement simulées et validées éthiquement.",
+      "Décisions exclues": "Mesure de productivité, aptitude au télétravail, transmission à l’employeur.",
+      "Zone d’usage": "Z1 — Auto-réflexion",
+      "Niveau de décision cible": "N1"
+    },
+    "related_codes": [],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

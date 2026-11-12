@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d20-p4",
+  "title": "Service de réadaptation · D20-P4",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Évaluation et rééducation professionnelles.\nFormat cible : Hors plateforme.\nContenu cible : Protocoles cliniques.\nCalcul cible (non implémenté ici) : Professionnel.\nUsage décrit : Professionnel.\nOptions cibles : Mise en relation.\nConditions et limites : Retour du compte rendu sur la plateforme uniquement avec double consentement.\nObjectif du domaine : Orienter vers un service professionnel et proposer séparément des activités générales non thérapeutiques.\nGarde-fou du domaine : Aucun tableau de progression de réadaptation ; aucune alerte médicale générée par la plateforme.\nDécisions exclues : Mesure de récupération, de séquelles, d’aptitude au retour au travail ou d’efficacité d’un traitement.\nZone d’usage : Z3 — Exclu comme suivi clinique\nNiveau de décision cible : N4 hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D20-P4",
+    "domain": "Réadaptation cognitive",
+    "blocks": {
+      "mesure": "Évaluation et rééducation professionnelles.",
+      "format": "Hors plateforme.",
+      "contenu": "Protocoles cliniques.",
+      "scoring": "Professionnel.",
+      "decision": "Professionnel.",
+      "avance": "Mise en relation.",
+      "passerelle": "Retour du compte rendu sur la plateforme uniquement avec double consentement.",
+      "Objectif du domaine": "Orienter vers un service professionnel et proposer séparément des activités générales non thérapeutiques.",
+      "Garde-fou du domaine": "Aucun tableau de progression de réadaptation ; aucune alerte médicale générée par la plateforme.",
+      "Décisions exclues": "Mesure de récupération, de séquelles, d’aptitude au retour au travail ou d’efficacité d’un traitement.",
+      "Zone d’usage": "Z3 — Exclu comme suivi clinique",
+      "Niveau de décision cible": "N4 hors plateforme"
+    },
+    "related_codes": [],
+    "stage": "P4"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

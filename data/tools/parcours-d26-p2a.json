@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d26-p2a",
+  "title": "Reprise après apprentissage · D26-P2a",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance après une période d’apprentissage.\nFormat cible : 25 min, forme parallèle.\nContenu cible : Tâche F d’apprentissage + reprise des modules.\nCalcul cible (non implémenté ici) : Comparaison descriptive.\nUsage décrit : Encouragement à poursuivre.\nOptions cibles : La performance initiale ne ferme aucune possibilité.\nConditions et limites : Option de séance accompagnée (P3) ou d’orientation professionnelle (P4).\nObjectif du domaine : Permettre à tous les apprenants d’explorer des tâches et d’accéder à des ressources enrichies, avec possibilités de repérage répétées et accessibles.\nGarde-fou du domaine : Un faible score ne bloque aucun programme ; reprise possible après apprentissage ; formes parallèles et règles anti-répétition.\nDécisions exclues : Catégorie « talent détecté » imposée ; fermeture d’accès sur un score.\nZone d’usage : Z1 — Repérage ouvert et non sélectif\nNiveau de décision cible : N1",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D26-P2a",
+    "domain": "Détection précoce des talents",
+    "blocks": {
+      "mesure": "Performance après une période d’apprentissage.",
+      "format": "25 min, forme parallèle.",
+      "contenu": "Tâche F d’apprentissage + reprise des modules.",
+      "scoring": "Comparaison descriptive.",
+      "decision": "Encouragement à poursuivre.",
+      "avance": "La performance initiale ne ferme aucune possibilité.",
+      "passerelle": "Option de séance accompagnée (P3) ou d’orientation professionnelle (P4).",
+      "Objectif du domaine": "Permettre à tous les apprenants d’explorer des tâches et d’accéder à des ressources enrichies, avec possibilités de repérage répétées et accessibles.",
+      "Garde-fou du domaine": "Un faible score ne bloque aucun programme ; reprise possible après apprentissage ; formes parallèles et règles anti-répétition.",
+      "Décisions exclues": "Catégorie « talent détecté » imposée ; fermeture d’accès sur un score.",
+      "Zone d’usage": "Z1 — Repérage ouvert et non sélectif",
+      "Niveau de décision cible": "N1"
+    },
+    "related_codes": [],
+    "stage": "P2a"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

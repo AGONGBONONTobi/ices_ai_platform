@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d23-pr3",
+  "title": "Calibration et fiabilité · D23-PR3",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Paramètres IRT et fiabilité par population.\nFormat cible : Plan d’ancrage, 40 min.\nContenu cible : Items retenus.\nCalcul cible (non implémenté ici) : IRT 2PL/3PL, information du test, ω de McDonald, erreur standard conditionnelle.\nUsage décrit : Statut de validation par module × langue × âge.\nOptions cibles : Standards : ω ≥ 0,80 (0,85 si décision individuelle).\nConditions et limites : Publication interne du dossier psychométrique.\nObjectif du domaine : Administrer des versions expérimentales de tâches sous protocole approuvé pour développer, calibrer et valider les instruments A–F.\nGarde-fou du domaine : Consentement de recherche distinct ; code pseudonyme ; version figée ; comité d’éthique ; environnement séparé.\nDécisions exclues : Retour individuel diagnostique ; mélange avec l’environnement de production.\nZone d’usage : Z4 — Recherche sous protocole\nNiveau de décision cible : Recherche (aucun retour décisionnel)",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D23-PR3",
+    "domain": "Recherche en psychométrie",
+    "blocks": {
+      "mesure": "Paramètres IRT et fiabilité par population.",
+      "format": "Plan d’ancrage, 40 min.",
+      "contenu": "Items retenus.",
+      "scoring": "IRT 2PL/3PL, information du test, ω de McDonald, erreur standard conditionnelle.",
+      "decision": "Statut de validation par module × langue × âge.",
+      "avance": "Standards : ω ≥ 0,80 (0,85 si décision individuelle).",
+      "passerelle": "Publication interne du dossier psychométrique.",
+      "Objectif du domaine": "Administrer des versions expérimentales de tâches sous protocole approuvé pour développer, calibrer et valider les instruments A–F.",
+      "Garde-fou du domaine": "Consentement de recherche distinct ; code pseudonyme ; version figée ; comité d’éthique ; environnement séparé.",
+      "Décisions exclues": "Retour individuel diagnostique ; mélange avec l’environnement de production.",
+      "Zone d’usage": "Z4 — Recherche sous protocole",
+      "Niveau de décision cible": "Recherche (aucun retour décisionnel)"
+    },
+    "related_codes": [],
+    "stage": "PR3"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

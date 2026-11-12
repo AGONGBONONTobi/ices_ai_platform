@@ -1,0 +1,67 @@
+{
+  "id": "parcours-d13-p2a",
+  "title": "Motivation et valeurs · D13-P2a",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Moteurs professionnels : accomplissement, influence, affiliation, sécurité, autonomie, sens, conformité.\nFormat cible : 105 items, 20 min.\nContenu cible : T9.1 à T9.7.\nCalcul cible (non implémenté ici) : Profil motivationnel ; normes uniquement si validées localement.\nUsage décrit : Thèmes de séance.\nOptions cibles : Détection de tensions valeurs/poste (T9.7).\nConditions et limites : Restitution séparée des tâches cognitives.\nObjectif du domaine : Structurer une séance entre une personne et son conseiller autour de préférences de raisonnement, d’expériences, de motivations et de style de décision.\nGarde-fou du domaine : Accès du conseiller uniquement après consentement granulaire ; résultat cognitif distinct des inventaires d’intérêts et des compétences.\nDécisions exclues : Recommandation automatisée de carrière, prédiction de réussite ou de satisfaction.\nZone d’usage : Z1 — Support à la conversation\nNiveau de décision cible : N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D13-P2a",
+    "domain": "Conseil de carrière",
+    "blocks": {
+      "mesure": "Moteurs professionnels : accomplissement, influence, affiliation, sécurité, autonomie, sens, conformité.",
+      "format": "105 items, 20 min.",
+      "contenu": "T9.1 à T9.7.",
+      "scoring": "Profil motivationnel ; normes uniquement si validées localement.",
+      "decision": "Thèmes de séance.",
+      "avance": "Détection de tensions valeurs/poste (T9.7).",
+      "passerelle": "Restitution séparée des tâches cognitives.",
+      "Objectif du domaine": "Structurer une séance entre une personne et son conseiller autour de préférences de raisonnement, d’expériences, de motivations et de style de décision.",
+      "Garde-fou du domaine": "Accès du conseiller uniquement après consentement granulaire ; résultat cognitif distinct des inventaires d’intérêts et des compétences.",
+      "Décisions exclues": "Recommandation automatisée de carrière, prédiction de réussite ou de satisfaction.",
+      "Zone d’usage": "Z1 — Support à la conversation",
+      "Niveau de décision cible": "N2"
+    },
+    "related_codes": [
+      "T9.1",
+      "T9.7"
+    ],
+    "stage": "P2a"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

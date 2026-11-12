@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d21-p2",
+  "title": "Recherche et vérification du professionnel · D21-P2",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Adéquation entre la demande et l’offre de professionnels qualifiés.\nFormat cible : Recherche filtrée par pays, langue, spécialité, modalité, tarif, accessibilité.\nContenu cible : Profils partenaires : qualification vérifiée, périmètre d’exercice, disponibilités.\nCalcul cible (non implémenté ici) : Aucune notation des professionnels par algorithme cognitif ; avis modérés éventuels.\nUsage décrit : Choix du professionnel par la personne.\nOptions cibles : Vérification périodique des titres (PartnerProfile) avec date affichée.\nConditions et limites : Professionnel non vérifié = non affiché.\nObjectif du domaine : Permettre à une personne de trouver un professionnel habilité, de transmettre une demande avec son accord et de suivre son rendez-vous.\nGarde-fou du domaine : Le compte rendu clinique est rédigé et conservé sous la responsabilité du professionnel ; tests sous licence protégés.\nDécisions exclues : Présenter un module plateforme comme composante du bilan ; prestation clinique par la plateforme.\nZone d’usage : Z2 — Parcours partenaire\nNiveau de décision cible : N4 hors plateforme (mise en relation N2)",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D21-P2",
+    "domain": "Neuropsychologie clinique",
+    "blocks": {
+      "mesure": "Adéquation entre la demande et l’offre de professionnels qualifiés.",
+      "format": "Recherche filtrée par pays, langue, spécialité, modalité, tarif, accessibilité.",
+      "contenu": "Profils partenaires : qualification vérifiée, périmètre d’exercice, disponibilités.",
+      "scoring": "Aucune notation des professionnels par algorithme cognitif ; avis modérés éventuels.",
+      "decision": "Choix du professionnel par la personne.",
+      "avance": "Vérification périodique des titres (PartnerProfile) avec date affichée.",
+      "passerelle": "Professionnel non vérifié = non affiché.",
+      "Objectif du domaine": "Permettre à une personne de trouver un professionnel habilité, de transmettre une demande avec son accord et de suivre son rendez-vous.",
+      "Garde-fou du domaine": "Le compte rendu clinique est rédigé et conservé sous la responsabilité du professionnel ; tests sous licence protégés.",
+      "Décisions exclues": "Présenter un module plateforme comme composante du bilan ; prestation clinique par la plateforme.",
+      "Zone d’usage": "Z2 — Parcours partenaire",
+      "Niveau de décision cible": "N4 hors plateforme (mise en relation N2)"
+    },
+    "related_codes": [],
+    "stage": "P2"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

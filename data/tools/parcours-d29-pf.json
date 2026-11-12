@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d29-pf",
+  "title": "Programme futur conditionnel · D29-PF",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Compétences de sécurité définies par analyse de poste.\nFormat cible : À définir.\nContenu cible : Instruments validés + évaluation médicale et ergonomique.\nCalcul cible (non implémenté ici) : Modèle validé, audit d’équité.\nUsage décrit : Décision humaine, droit de recours.\nOptions cibles : Documentation AI Act, DPIA.\nConditions et limites : Activation interdite sans validation, revue juridique et mandat.\nObjectif du domaine : Empêcher le recours au score cognitif grand public dans des décisions pouvant exposer des tiers à un risque, tout en offrant une sensibilisation formative volontaire.\nGarde-fou du domaine : Renvoi vers procédures réglementées et expertise professionnelle (médecine du travail, organismes agréés) ; aucune conversion d’un résultat formatif en aptitude.\nDécisions exclues : Prédiction d’accidents, de fiabilité ou d’aptitude ; certification de sécurité ; tableau de bord employeur.\nZone d’usage : Z3 — Exclu du MVP\nNiveau de décision cible : N3 réglementé — hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D29-PF",
+    "domain": "Sécurité publique et métiers à risque",
+    "blocks": {
+      "mesure": "Compétences de sécurité définies par analyse de poste.",
+      "format": "À définir.",
+      "contenu": "Instruments validés + évaluation médicale et ergonomique.",
+      "scoring": "Modèle validé, audit d’équité.",
+      "decision": "Décision humaine, droit de recours.",
+      "avance": "Documentation AI Act, DPIA.",
+      "passerelle": "Activation interdite sans validation, revue juridique et mandat.",
+      "Objectif du domaine": "Empêcher le recours au score cognitif grand public dans des décisions pouvant exposer des tiers à un risque, tout en offrant une sensibilisation formative volontaire.",
+      "Garde-fou du domaine": "Renvoi vers procédures réglementées et expertise professionnelle (médecine du travail, organismes agréés) ; aucune conversion d’un résultat formatif en aptitude.",
+      "Décisions exclues": "Prédiction d’accidents, de fiabilité ou d’aptitude ; certification de sécurité ; tableau de bord employeur.",
+      "Zone d’usage": "Z3 — Exclu du MVP",
+      "Niveau de décision cible": "N3 réglementé — hors plateforme"
+    },
+    "related_codes": [],
+    "stage": "PF"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

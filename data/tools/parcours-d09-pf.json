@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d09-pf",
+  "title": "Programme futur N3 (conditionnel) · D09-PF",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Aptitudes liées à un poste défini par analyse de poste.\nFormat cible : À définir par étude de validité spécifique.\nContenu cible : Échantillons de travail, tests d’aptitude supervisés, entretiens structurés, mises en situation.\nCalcul cible (non implémenté ici) : Modèle validé, audit DIF par genre, âge, langue, origine.\nUsage décrit : Aide à la décision avec supervision humaine obligatoire, droit de recours.\nOptions cibles : Documentation technique AI Act, DPIA, registre.\nConditions et limites : Activation interdite tant que les quatre portes (validité, juridique, équité, gouvernance) ne sont pas franchies.\nObjectif du domaine : Prévenir l’usage impropre des tests d’orientation dans une décision d’embauche et offrir aux personnes un parcours volontaire de développement séparé du processus RH.\nGarde-fou du domaine : Toute demande employeur déclenche la politique de non-usage ; aucun endpoint d’export de scores candidats. Le passage futur à N3 exige validation spécifique, revue juridique (AI Act Annexe III) et audit d’équité.\nDécisions exclues : Classement de candidats, filtrage, export de scores à un recruteur, administration par l’employeur.\nZone d’usage : Z3 — Exclu du MVP décisionnel\nNiveau de décision cible : N3 bloqué ; N1 volontaire séparé",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D09-PF",
+    "domain": "Recrutement et sélection",
+    "blocks": {
+      "mesure": "Aptitudes liées à un poste défini par analyse de poste.",
+      "format": "À définir par étude de validité spécifique.",
+      "contenu": "Échantillons de travail, tests d’aptitude supervisés, entretiens structurés, mises en situation.",
+      "scoring": "Modèle validé, audit DIF par genre, âge, langue, origine.",
+      "decision": "Aide à la décision avec supervision humaine obligatoire, droit de recours.",
+      "avance": "Documentation technique AI Act, DPIA, registre.",
+      "passerelle": "Activation interdite tant que les quatre portes (validité, juridique, équité, gouvernance) ne sont pas franchies.",
+      "Objectif du domaine": "Prévenir l’usage impropre des tests d’orientation dans une décision d’embauche et offrir aux personnes un parcours volontaire de développement séparé du processus RH.",
+      "Garde-fou du domaine": "Toute demande employeur déclenche la politique de non-usage ; aucun endpoint d’export de scores candidats. Le passage futur à N3 exige validation spécifique, revue juridique (AI Act Annexe III) et audit d’équité.",
+      "Décisions exclues": "Classement de candidats, filtrage, export de scores à un recruteur, administration par l’employeur.",
+      "Zone d’usage": "Z3 — Exclu du MVP décisionnel",
+      "Niveau de décision cible": "N3 bloqué ; N1 volontaire séparé"
+    },
+    "related_codes": [],
+    "stage": "PF"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

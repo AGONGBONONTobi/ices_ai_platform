@@ -1,0 +1,93 @@
+{
+  "id": "parcours-d02-p0",
+  "title": "Préparer — Information adaptée et autorisations · D02-P0",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "question": "Que souhaitez-vous préparer ?",
+      "help": "Précisez votre objectif autour de « Information adaptée et autorisations ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "required": true
+    },
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Quel est le contexte utile ?",
+      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "required": true
+    },
+    {
+      "name": "elements",
+      "type": "textarea",
+      "question": "Quels éléments factuels avez-vous déjà ?",
+      "help": "Indiquez uniquement vos observations et questions en lien avec : Compréhension par le jeune et le représentant légal de ce que fait et ne fait pas le parcours. Ne renseignez pas de score supposé.",
+      "required": false
+    },
+    {
+      "name": "contraintes",
+      "type": "textarea",
+      "question": "Quelles contraintes faut-il respecter ?",
+      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Prépare un support écrit pour « Information adaptée et autorisations », dans le domaine « Bilan cognitif enfant/adolescent ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : Compréhension par le jeune et le représentant légal de ce que fait et ne fait pas le parcours.\nFormat cible : Deux tunnels distincts : parent (texte) et jeune (illustrations + audio), 5–8 min.\nContenu cible : Explication en 4 vignettes pour 8–11 ans, en 6 écrans pour 12–17 ans ; autorisation parentale ; assentiment du jeune avec droit de refus.\nCalcul cible (non implémenté ici) : Aucun score ; vérification de compréhension par 2 questions imagées.\nUsage décrit : Poursuite uniquement si autorisation ET assentiment.\nOptions cibles : Configuration par pays de l’âge du consentement numérique ; journal des versions de notices.\nConditions et limites : Refus du jeune = arrêt immédiat sans message culpabilisant.\nObjectif du domaine : Aider une famille et un jeune à organiser une demande d’évaluation ou de soutien éducatif, à partir d’observations de tâches non diagnostiques et protégées.\nGarde-fou du domaine : Autorisation du représentant légal et assentiment du jeune ; deux restitutions séparées (jeune / parent) ; aucun compte mineur imposé ; aucune publicité.\nDécisions exclues : Diagnostic de trouble des apprentissages, TDAH, déficience ; orientation scolaire spécialisée ; classement.\nZone d’usage : Z2 — Orientation vers un professionnel\nNiveau de décision cible : N1–N2 ; N4 hors plateforme\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D02-P0",
+    "domain": "Bilan cognitif enfant/adolescent",
+    "blocks": {
+      "mesure": "Compréhension par le jeune et le représentant légal de ce que fait et ne fait pas le parcours.",
+      "format": "Deux tunnels distincts : parent (texte) et jeune (illustrations + audio), 5–8 min.",
+      "contenu": "Explication en 4 vignettes pour 8–11 ans, en 6 écrans pour 12–17 ans ; autorisation parentale ; assentiment du jeune avec droit de refus.",
+      "scoring": "Aucun score ; vérification de compréhension par 2 questions imagées.",
+      "decision": "Poursuite uniquement si autorisation ET assentiment.",
+      "avance": "Configuration par pays de l’âge du consentement numérique ; journal des versions de notices.",
+      "passerelle": "Refus du jeune = arrêt immédiat sans message culpabilisant.",
+      "Objectif du domaine": "Aider une famille et un jeune à organiser une demande d’évaluation ou de soutien éducatif, à partir d’observations de tâches non diagnostiques et protégées.",
+      "Garde-fou du domaine": "Autorisation du représentant légal et assentiment du jeune ; deux restitutions séparées (jeune / parent) ; aucun compte mineur imposé ; aucune publicité.",
+      "Décisions exclues": "Diagnostic de trouble des apprentissages, TDAH, déficience ; orientation scolaire spécialisée ; classement.",
+      "Zone d’usage": "Z2 — Orientation vers un professionnel",
+      "Niveau de décision cible": "N1–N2 ; N4 hors plateforme"
+    },
+    "related_codes": [],
+    "stage": "P0"
+  },
+  "execution": {
+    "mode": "preparation",
+    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
+  }
+}

@@ -16,8 +16,13 @@ model_router.py) tout en gardant une seule dépendance (Groq, déjà configuré)
 
 import json
 import logging
+import re
+import unicodedata
+from collections import Counter
+from math import log
 
 from app.config import get_settings
+from app.schemas import ToolExecution
 from app.services.generation import GenerationError, generate_structured
 from app.services.tools_repository import list_published_tools
 
@@ -56,14 +61,42 @@ TOOL_PICK_SCHEMA = {
 
 
 class SearchResult:
-    __slots__ = ("id", "title", "category", "referentiel_code", "reason")
+    __slots__ = ("id", "title", "category", "referentiel_code", "reason", "execution")
 
-    def __init__(self, id: str, title: str, category: str, referentiel_code: str | None, reason: str) -> None:
+    def __init__(self, id: str, title: str, category: str, referentiel_code: str | None, reason: str, execution: ToolExecution | None = None) -> None:
         self.id = id
         self.title = title
         self.category = category
         self.referentiel_code = referentiel_code
         self.reason = reason
+        self.execution = execution
+
+
+def _search_text(text: str) -> str:
+    plain = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode()
+    return " ".join(re.findall(r"[a-z0-9]+", plain.lower()))
+
+
+def _rank_candidates(query: str, candidates: list) -> list:
+    """Prioriser les correspondances avant le plafond, jamais selon l'ordre des ids.
+
+    La pondération des termes rares privilégie le construit recherché plutôt
+    que les mots fréquents comme « préparer ». Le routage sémantique conserve
+    son rôle quand la requête ne reprend aucun terme français du catalogue.
+    """
+    needle = _search_text(query)
+    terms = set(needle.split())
+    texts = [_search_text(f"{tool.title} {tool.id}") for tool in candidates]
+    frequencies = Counter(word for text in texts for word in set(text.split()))
+
+    def score(index: int) -> float:
+        text = texts[index]
+        overlap = terms.intersection(text.split())
+        return (100 if needle and f" {needle} " in f" {text} " else 0) + sum(
+            log(1 + len(candidates) / frequencies[word]) for word in overlap
+        )
+
+    return [candidates[index] for index in sorted(range(len(candidates)), key=lambda i: -score(i))]
 
 
 def _pick_categories(query: str, categories: list[str]) -> list[str]:
@@ -97,10 +130,13 @@ Available categories:
 
 def _pick_tools(query: str, candidates: list) -> list[tuple[str, str]]:
     """Retourne des paires (id, reason), dans l'ordre de pertinence décroissante."""
-    candidates = candidates[:MAX_CANDIDATES]
+    candidates = _rank_candidates(query, candidates)[:MAX_CANDIDATES]
     # Une ligne "id: titre" par outil coûte moins de tokens qu'un tableau d'objets
     # JSON répétant les clés — sensible ici vu la limite de 6000 tokens/minute.
-    catalog_excerpt = "\n".join(f"{t.id}: {t.title}" for t in candidates)
+    catalog_excerpt = "\n".join(
+        f"{t.id}: {t.title}" + (f" [{t.execution.mode}]" if t.execution else "")
+        for t in candidates
+    )
 
     system_prompt = f"""You are a recommendation assistant for a catalog of professional AI tools.
 Given a user's need (in any language) and a list of candidate tools (one per line,
@@ -110,6 +146,11 @@ why this tool fits.
 Return ONLY a raw JSON object: {{"results": [{{"id": "exact-id-from-the-list", "reason": "..."}}]}}.
 IDs must be copied EXACTLY from the list — never invent one. If nothing truly fits, return fewer
 results rather than a poor match."""
+    system_prompt += (
+        "\nA preparation entry creates a preparation document, never test results. "
+        "A reference entry is read-only methodology, not an available assessment. "
+        "Explain that limitation in its reason; do not promise a test or a score."
+    )
 
     user_prompt = f"""User need: {query}
 
@@ -162,6 +203,7 @@ def search_tools(query: str) -> list[SearchResult]:
             category=by_id[tool_id].category,
             referentiel_code=by_id[tool_id].referentiel_code,
             reason=reason,
+            execution=by_id[tool_id].execution,
         )
         for tool_id, reason in picks
         if tool_id in by_id

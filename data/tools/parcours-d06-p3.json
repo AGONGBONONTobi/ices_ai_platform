@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d06-p3",
+  "title": "Passation supervisée · D06-P3",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance A en conditions standardisées.\nFormat cible : 40 min, forme sécurisée, superviseur formé.\nContenu cible : Matrices difficiles non exposées.\nCalcul cible (non implémenté ici) : Indicateurs + observation ; revue humaine des signaux d’intégrité.\nUsage décrit : Compte rendu descriptif.\nOptions cibles : Possibilité de contestation.\nConditions et limites : Aucune certification.\nObjectif du domaine : Explorer la performance à des problèmes de détection de régularités visuelles et de transformations spatiales.\nGarde-fou du domaine : Rapporter la tâche spécifique ; « non verbal » ne veut pas dire sans influence culturelle ; items non affichés correctement exclus du dénominateur.\nDécisions exclues : Score « intelligence non verbale », présentation comme « culture-free », sélection.\nZone d’usage : Z1 — Domaine direct d’évaluation indicative\nNiveau de décision cible : N1–N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D06-P3",
+    "domain": "Raisonnement non verbal",
+    "blocks": {
+      "mesure": "Performance A en conditions standardisées.",
+      "format": "40 min, forme sécurisée, superviseur formé.",
+      "contenu": "Matrices difficiles non exposées.",
+      "scoring": "Indicateurs + observation ; revue humaine des signaux d’intégrité.",
+      "decision": "Compte rendu descriptif.",
+      "avance": "Possibilité de contestation.",
+      "passerelle": "Aucune certification.",
+      "Objectif du domaine": "Explorer la performance à des problèmes de détection de régularités visuelles et de transformations spatiales.",
+      "Garde-fou du domaine": "Rapporter la tâche spécifique ; « non verbal » ne veut pas dire sans influence culturelle ; items non affichés correctement exclus du dénominateur.",
+      "Décisions exclues": "Score « intelligence non verbale », présentation comme « culture-free », sélection.",
+      "Zone d’usage": "Z1 — Domaine direct d’évaluation indicative",
+      "Niveau de décision cible": "N1–N2"
+    },
+    "related_codes": [],
+    "stage": "P3"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

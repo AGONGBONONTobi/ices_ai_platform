@@ -1,0 +1,93 @@
+{
+  "id": "parcours-d05-p0",
+  "title": "Préparer — Centres d’intérêt et filières envisagées · D05-P0",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "question": "Que souhaitez-vous préparer ?",
+      "help": "Précisez votre objectif autour de « Centres d’intérêt et filières envisagées ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "required": true
+    },
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Quel est le contexte utile ?",
+      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "required": true
+    },
+    {
+      "name": "elements",
+      "type": "textarea",
+      "question": "Quels éléments factuels avez-vous déjà ?",
+      "help": "Indiquez uniquement vos observations et questions en lien avec : Pistes déjà envisagées par l’élève et contraintes connues. Ne renseignez pas de score supposé.",
+      "required": false
+    },
+    {
+      "name": "contraintes",
+      "type": "textarea",
+      "question": "Quelles contraintes faut-il respecter ?",
+      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Prépare un support écrit pour « Centres d’intérêt et filières envisagées », dans le domaine « Orientation scolaire ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : Pistes déjà envisagées par l’élève et contraintes connues.\nFormat cible : Formulaire visuel, 6 min.\nContenu cible : Domaines d’intérêt, filières envisagées, contraintes déclarées (géographiques, financières, familiales).\nCalcul cible (non implémenté ici) : Aucun score.\nUsage décrit : Choix des dimensions de tâche à explorer.\nOptions cibles : Carte d’exploration réutilisable dans P3.\nConditions et limites : Aucune donnée scolaire nominative exigée.\nObjectif du domaine : Fournir des éléments de réflexion sur les façons d’aborder différents types de problèmes, à croiser avec intérêts, valeurs, résultats et contraintes.\nGarde-fou du domaine : Les aptitudes observées ne déterminent ni la réussite ni la filière ; restitution séparée des intérêts, notes et contraintes.\nDécisions exclues : Filière recommandée par l’IA, élimination d’une option, classement des parcours.\nZone d’usage : Z1 — Parcours d’exploration\nNiveau de décision cible : N2\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D05-P0",
+    "domain": "Orientation scolaire",
+    "blocks": {
+      "mesure": "Pistes déjà envisagées par l’élève et contraintes connues.",
+      "format": "Formulaire visuel, 6 min.",
+      "contenu": "Domaines d’intérêt, filières envisagées, contraintes déclarées (géographiques, financières, familiales).",
+      "scoring": "Aucun score.",
+      "decision": "Choix des dimensions de tâche à explorer.",
+      "avance": "Carte d’exploration réutilisable dans P3.",
+      "passerelle": "Aucune donnée scolaire nominative exigée.",
+      "Objectif du domaine": "Fournir des éléments de réflexion sur les façons d’aborder différents types de problèmes, à croiser avec intérêts, valeurs, résultats et contraintes.",
+      "Garde-fou du domaine": "Les aptitudes observées ne déterminent ni la réussite ni la filière ; restitution séparée des intérêts, notes et contraintes.",
+      "Décisions exclues": "Filière recommandée par l’IA, élimination d’une option, classement des parcours.",
+      "Zone d’usage": "Z1 — Parcours d’exploration",
+      "Niveau de décision cible": "N2"
+    },
+    "related_codes": [],
+    "stage": "P0"
+  },
+  "execution": {
+    "mode": "preparation",
+    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
+  }
+}

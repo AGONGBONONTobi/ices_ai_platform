@@ -1,0 +1,66 @@
+{
+  "id": "parcours-d30-p3",
+  "title": "Atelier d’équipe facilité · D30-P3",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Dynamique collective de résolution d’un problème nouveau.\nFormat cible : Atelier de 90 min, 3 à 6 personnes, facilitateur formé.\nContenu cible : Problème commun, rôles tournants, débrief sur stratégies et besoins d’informations.\nCalcul cible (non implémenté ici) : Aucun score individuel ; observations collectives.\nUsage décrit : Plan d’apprentissage d’équipe.\nOptions cibles : Couplage T14.1 (rôles d’équipe) en option, restitution non comparative.\nConditions et limites : Aucune donnée individuelle transmise à un investisseur.\nObjectif du domaine : Aider une personne ou une équipe à réfléchir à différentes manières d’aborder un problème nouveau, à son rapport au risque et à la lucidité sur son projet.\nGarde-fou du domaine : Aucun score « créativité/innovation » sans validation propre ; résultats individuels non utilisés pour investir, recruter ou sélectionner (cf. garde-fous T17 et T42).\nDécisions exclues : Prédiction de succès ou d’échec, classement de fondateurs, décision d’investissement, de financement ou de sélection en incubateur.\nZone d’usage : Z1 — Support de réflexion et de formation\nNiveau de décision cible : N1–N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D30-P3",
+    "domain": "Entrepreneuriat et innovation",
+    "blocks": {
+      "mesure": "Dynamique collective de résolution d’un problème nouveau.",
+      "format": "Atelier de 90 min, 3 à 6 personnes, facilitateur formé.",
+      "contenu": "Problème commun, rôles tournants, débrief sur stratégies et besoins d’informations.",
+      "scoring": "Aucun score individuel ; observations collectives.",
+      "decision": "Plan d’apprentissage d’équipe.",
+      "avance": "Couplage T14.1 (rôles d’équipe) en option, restitution non comparative.",
+      "passerelle": "Aucune donnée individuelle transmise à un investisseur.",
+      "Objectif du domaine": "Aider une personne ou une équipe à réfléchir à différentes manières d’aborder un problème nouveau, à son rapport au risque et à la lucidité sur son projet.",
+      "Garde-fou du domaine": "Aucun score « créativité/innovation » sans validation propre ; résultats individuels non utilisés pour investir, recruter ou sélectionner (cf. garde-fous T17 et T42).",
+      "Décisions exclues": "Prédiction de succès ou d’échec, classement de fondateurs, décision d’investissement, de financement ou de sélection en incubateur.",
+      "Zone d’usage": "Z1 — Support de réflexion et de formation",
+      "Niveau de décision cible": "N1–N2"
+    },
+    "related_codes": [
+      "T14.1"
+    ],
+    "stage": "P3"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

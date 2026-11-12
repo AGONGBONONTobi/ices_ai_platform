@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d07-p2",
+  "title": "Checklist de préparation · D07-P2",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : État de préparation logistique.\nFormat cible : Checklist interactive, 10 min.\nContenu cible : Format de l’épreuve, matériel, langue, règles de passation, aménagements à demander.\nCalcul cible (non implémenté ici) : Taux de complétion de la checklist.\nUsage décrit : Préparer le jour de l’épreuve.\nOptions cibles : Rappel de calendrier opt-in.\nConditions et limites : Pas d’éligibilité présumée.\nObjectif du domaine : Informer sur la différence entre entraînement, test supervisé officiel et bilan clinique, et préparer une candidature auprès de l’organisation visée.\nGarde-fou du domaine : Aucun test d’admission sur la plateforme ; aucune revendication d’affiliation à une organisation sans autorisation écrite.\nDécisions exclues : Prédiction d’admission, conversion de score, réutilisation d’items sécurisés, affiliation non autorisée.\nZone d’usage : Z3 — Exclu comme instrument d’admission\nNiveau de décision cible : N1 (pratique) ; décision hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D07-P2",
+    "domain": "Admission dans une société à haut potentiel",
+    "blocks": {
+      "mesure": "État de préparation logistique.",
+      "format": "Checklist interactive, 10 min.",
+      "contenu": "Format de l’épreuve, matériel, langue, règles de passation, aménagements à demander.",
+      "scoring": "Taux de complétion de la checklist.",
+      "decision": "Préparer le jour de l’épreuve.",
+      "avance": "Rappel de calendrier opt-in.",
+      "passerelle": "Pas d’éligibilité présumée.",
+      "Objectif du domaine": "Informer sur la différence entre entraînement, test supervisé officiel et bilan clinique, et préparer une candidature auprès de l’organisation visée.",
+      "Garde-fou du domaine": "Aucun test d’admission sur la plateforme ; aucune revendication d’affiliation à une organisation sans autorisation écrite.",
+      "Décisions exclues": "Prédiction d’admission, conversion de score, réutilisation d’items sécurisés, affiliation non autorisée.",
+      "Zone d’usage": "Z3 — Exclu comme instrument d’admission",
+      "Niveau de décision cible": "N1 (pratique) ; décision hors plateforme"
+    },
+    "related_codes": [],
+    "stage": "P2"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d10-p1",
+  "title": "Exploration cognitive choisie · D10-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance aux modules choisis.\nFormat cible : 16 items, 15 min.\nContenu cible : A–F selon la carte.\nCalcul cible (non implémenté ici) : Indicateurs descriptifs privés.\nUsage décrit : Identifier des axes d’apprentissage.\nOptions cibles : Aucune inférence de potentiel.\nConditions et limites : P2 libre.\nObjectif du domaine : Aider une personne à choisir des occasions d’apprentissage et à construire un plan de développement qu’elle contrôle.\nGarde-fou du domaine : Accès employeur désactivé par défaut ; refus sans pénalité ; aucune vue manager comparative.\nDécisions exclues : Classement interne, potentiel de leadership inféré, plan de succession, alimentation des dossiers RH.\nZone d’usage : Z1 — Orientation de développement\nNiveau de décision cible : N1",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D10-P1",
+    "domain": "Gestion des talents",
+    "blocks": {
+      "mesure": "Performance aux modules choisis.",
+      "format": "16 items, 15 min.",
+      "contenu": "A–F selon la carte.",
+      "scoring": "Indicateurs descriptifs privés.",
+      "decision": "Identifier des axes d’apprentissage.",
+      "avance": "Aucune inférence de potentiel.",
+      "passerelle": "P2 libre.",
+      "Objectif du domaine": "Aider une personne à choisir des occasions d’apprentissage et à construire un plan de développement qu’elle contrôle.",
+      "Garde-fou du domaine": "Accès employeur désactivé par défaut ; refus sans pénalité ; aucune vue manager comparative.",
+      "Décisions exclues": "Classement interne, potentiel de leadership inféré, plan de succession, alimentation des dossiers RH.",
+      "Zone d’usage": "Z1 — Orientation de développement",
+      "Niveau de décision cible": "N1"
+    },
+    "related_codes": [],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

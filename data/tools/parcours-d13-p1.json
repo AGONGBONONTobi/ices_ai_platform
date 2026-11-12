@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d13-p1",
+  "title": "Forme courte de tâches · D13-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance aux tâches A–D et F.\nFormat cible : 12 items, 12 min, option « ne pas répondre ».\nContenu cible : Items courts, un module par dimension.\nCalcul cible (non implémenté ici) : Résumé descriptif.\nUsage décrit : Matière de conversation.\nOptions cibles : Aucune donnée clinique collectée.\nConditions et limites : Palier détaillé proposé, jamais imposé ; accès indépendant du résultat.\nObjectif du domaine : Structurer une séance entre une personne et son conseiller autour de préférences de raisonnement, d’expériences, de motivations et de style de décision.\nGarde-fou du domaine : Accès du conseiller uniquement après consentement granulaire ; résultat cognitif distinct des inventaires d’intérêts et des compétences.\nDécisions exclues : Recommandation automatisée de carrière, prédiction de réussite ou de satisfaction.\nZone d’usage : Z1 — Support à la conversation\nNiveau de décision cible : N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D13-P1",
+    "domain": "Conseil de carrière",
+    "blocks": {
+      "mesure": "Performance aux tâches A–D et F.",
+      "format": "12 items, 12 min, option « ne pas répondre ».",
+      "contenu": "Items courts, un module par dimension.",
+      "scoring": "Résumé descriptif.",
+      "decision": "Matière de conversation.",
+      "avance": "Aucune donnée clinique collectée.",
+      "passerelle": "Palier détaillé proposé, jamais imposé ; accès indépendant du résultat.",
+      "Objectif du domaine": "Structurer une séance entre une personne et son conseiller autour de préférences de raisonnement, d’expériences, de motivations et de style de décision.",
+      "Garde-fou du domaine": "Accès du conseiller uniquement après consentement granulaire ; résultat cognitif distinct des inventaires d’intérêts et des compétences.",
+      "Décisions exclues": "Recommandation automatisée de carrière, prédiction de réussite ou de satisfaction.",
+      "Zone d’usage": "Z1 — Support à la conversation",
+      "Niveau de décision cible": "N2"
+    },
+    "related_codes": [],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

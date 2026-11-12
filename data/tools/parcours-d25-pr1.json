@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d25-pr1",
+  "title": "Création d’étude et protocole · D25-PR1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Question d’évaluation et théorie du changement.\nFormat cible : Dossier de protocole.\nContenu cible : Objectifs, population, plan, puissance statistique, base légale, consentement.\nCalcul cible (non implémenté ici) : Statistiques définies par le protocole ; aucune interprétation individuelle.\nUsage décrit : Approbation éthique.\nOptions cibles : Pré-enregistrement de la méthode d’analyse.\nConditions et limites : Collecte interdite sans approbation.\nObjectif du domaine : Soutenir une étude d’intervention éducative par des mesures agrégées, sans classer élèves, enseignants ou écoles.\nGarde-fou du domaine : Analyse éthique et juridique préalable ; instruments validés pour la population ; suppression des petites cellules.\nDécisions exclues : Classement d’école, d’enseignant ou d’élève ; conclusion causale sans plan d’identification ; évaluation individuelle des élèves.\nZone d’usage : Z4 — Recherche institutionnelle\nNiveau de décision cible : Recherche ; agrégats uniquement",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D25-PR1",
+    "domain": "Évaluation des politiques éducatives",
+    "blocks": {
+      "mesure": "Question d’évaluation et théorie du changement.",
+      "format": "Dossier de protocole.",
+      "contenu": "Objectifs, population, plan, puissance statistique, base légale, consentement.",
+      "scoring": "Statistiques définies par le protocole ; aucune interprétation individuelle.",
+      "decision": "Approbation éthique.",
+      "avance": "Pré-enregistrement de la méthode d’analyse.",
+      "passerelle": "Collecte interdite sans approbation.",
+      "Objectif du domaine": "Soutenir une étude d’intervention éducative par des mesures agrégées, sans classer élèves, enseignants ou écoles.",
+      "Garde-fou du domaine": "Analyse éthique et juridique préalable ; instruments validés pour la population ; suppression des petites cellules.",
+      "Décisions exclues": "Classement d’école, d’enseignant ou d’élève ; conclusion causale sans plan d’identification ; évaluation individuelle des élèves.",
+      "Zone d’usage": "Z4 — Recherche institutionnelle",
+      "Niveau de décision cible": "Recherche ; agrégats uniquement"
+    },
+    "related_codes": [],
+    "stage": "PR1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

@@ -12,6 +12,7 @@ import {
 import { searchTools, SmartSearchResult } from "@/lib/api/tools";
 import { getCategoryStyle } from "@/lib/categoryStyles";
 import { Locale } from "@/lib/i18n/getDictionary";
+import { toolAvailabilityLabels } from "@/lib/i18n/toolAvailability";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface SmartSearchProps {
@@ -21,6 +22,7 @@ interface SmartSearchProps {
 
 export function SmartSearch({ dict, lang }: SmartSearchProps) {
   const t = dict.catalog.smartSearch;
+  const availability = toolAvailabilityLabels(lang);
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -179,6 +181,11 @@ export function SmartSearch({ dict, lang }: SmartSearchProps) {
                       )}
                     </div>
                     <p className="text-xs text-slate-500 mt-0.5 line-clamp-2">{result.reason}</p>
+                    {result.execution && (
+                      <p className="mt-1 text-xs font-medium text-violet-700">
+                        {availability[result.execution.mode]}
+                      </p>
+                    )}
                   </div>
                   <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-violet-500 group-hover:translate-x-0.5 transition-all shrink-0 mt-2.5" />
                 </Link>

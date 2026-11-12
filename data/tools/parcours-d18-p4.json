@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d18-p4",
+  "title": "Orientation professionnelle · D18-P4",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Évaluation par un professionnel si la personne le souhaite.\nFormat cible : Hors plateforme.\nContenu cible : Instruments choisis par le professionnel.\nCalcul cible (non implémenté ici) : Professionnel.\nUsage décrit : Conclusions éventuelles du professionnel.\nOptions cibles : Mise en relation consentie.\nConditions et limites : Retour du compte rendu sur la plateforme uniquement avec double consentement.\nObjectif du domaine : Proposer des options de passation et une ressource de dialogue sur l’environnement de travail, sans aucun dépistage.\nGarde-fou du domaine : Contrôle total de la personne sur le partage ; consentement renforcé ; anonymat par défaut.\nDécisions exclues : Inférence de handicap ou de neurodivergence ; exigence d’une épreuve pour accéder aux accommodations.\nZone d’usage : Z2 — Accessibilité et choix\nNiveau de décision cible : N1",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D18-P4",
+    "domain": "Neurodiversité en entreprise",
+    "blocks": {
+      "mesure": "Évaluation par un professionnel si la personne le souhaite.",
+      "format": "Hors plateforme.",
+      "contenu": "Instruments choisis par le professionnel.",
+      "scoring": "Professionnel.",
+      "decision": "Conclusions éventuelles du professionnel.",
+      "avance": "Mise en relation consentie.",
+      "passerelle": "Retour du compte rendu sur la plateforme uniquement avec double consentement.",
+      "Objectif du domaine": "Proposer des options de passation et une ressource de dialogue sur l’environnement de travail, sans aucun dépistage.",
+      "Garde-fou du domaine": "Contrôle total de la personne sur le partage ; consentement renforcé ; anonymat par défaut.",
+      "Décisions exclues": "Inférence de handicap ou de neurodivergence ; exigence d’une épreuve pour accéder aux accommodations.",
+      "Zone d’usage": "Z2 — Accessibilité et choix",
+      "Niveau de décision cible": "N1"
+    },
+    "related_codes": [],
+    "stage": "P4"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

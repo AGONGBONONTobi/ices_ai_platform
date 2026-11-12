@@ -1,0 +1,67 @@
+{
+  "id": "parcours-d01-p2b",
+  "title": "Questionnaire de contexte et métamémoire · D01-P2b",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Perception de ses propres stratégies de mémorisation et facteurs de contexte susceptibles d’influencer la session.\nFormat cible : 18 items Likert + 2 prédictions de performance, 8 min.\nContenu cible : Stratégies (répétition, élaboration, prise de notes), conditions de passation, fatigue déclarée, écart prédiction/réalisation.\nCalcul cible (non implémenté ici) : Profil de stratégies et écart de calibration descriptif ; aucun score de symptôme.\nUsage décrit : Enrichir la discussion avec le professionnel ; suggestions de stratégies générales.\nOptions cibles : Adapté de T3.7 (métamémoire) et T15.3 (calibration) en version non clinique.\nConditions et limites : Données intégrées au dossier PS uniquement si la personne le choisit.\nObjectif du domaine : Aider un adulte à clarifier sa demande (mémoire, attention, raisonnement), à recueillir des observations de tâches non cliniques et à préparer une consultation avec un psychologue ou neuropsychologue habilité.\nGarde-fou du domaine : La plateforme ne réalise pas de bilan. Aucun mot « diagnostic », « déficit », « pathologique » dans les sorties. Le bilan est conduit hors plateforme par un professionnel qui choisit ses instruments sous licence.\nDécisions exclues : Diagnostic, détection de déficit, conclusion sur un trouble, aptitude au travail, indemnisation, expertise médico-légale.\nZone d’usage : Z2 — Orientation vers un professionnel\nNiveau de décision cible : N2 (orientation) ; N4 hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D01-P2b",
+    "domain": "Bilan neuropsychologique adulte",
+    "blocks": {
+      "mesure": "Perception de ses propres stratégies de mémorisation et facteurs de contexte susceptibles d’influencer la session.",
+      "format": "18 items Likert + 2 prédictions de performance, 8 min.",
+      "contenu": "Stratégies (répétition, élaboration, prise de notes), conditions de passation, fatigue déclarée, écart prédiction/réalisation.",
+      "scoring": "Profil de stratégies et écart de calibration descriptif ; aucun score de symptôme.",
+      "decision": "Enrichir la discussion avec le professionnel ; suggestions de stratégies générales.",
+      "avance": "Adapté de T3.7 (métamémoire) et T15.3 (calibration) en version non clinique.",
+      "passerelle": "Données intégrées au dossier PS uniquement si la personne le choisit.",
+      "Objectif du domaine": "Aider un adulte à clarifier sa demande (mémoire, attention, raisonnement), à recueillir des observations de tâches non cliniques et à préparer une consultation avec un psychologue ou neuropsychologue habilité.",
+      "Garde-fou du domaine": "La plateforme ne réalise pas de bilan. Aucun mot « diagnostic », « déficit », « pathologique » dans les sorties. Le bilan est conduit hors plateforme par un professionnel qui choisit ses instruments sous licence.",
+      "Décisions exclues": "Diagnostic, détection de déficit, conclusion sur un trouble, aptitude au travail, indemnisation, expertise médico-légale.",
+      "Zone d’usage": "Z2 — Orientation vers un professionnel",
+      "Niveau de décision cible": "N2 (orientation) ; N4 hors plateforme"
+    },
+    "related_codes": [
+      "T3.7",
+      "T15.3"
+    ],
+    "stage": "P2b"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

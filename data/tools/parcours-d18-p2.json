@@ -1,0 +1,67 @@
+{
+  "id": "parcours-d18-p2",
+  "title": "Préférences d’environnement · D18-P2",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Préférences sensorielles et d’organisation.\nFormat cible : 30 items, 10 min.\nContenu cible : T47.4, T47.6 en version non diagnostique.\nCalcul cible (non implémenté ici) : Fiche de préférences.\nUsage décrit : Dialogue avec l’employeur, si choisi.\nOptions cibles : Restitution séparée des autres profils ; aucune combinaison de scores entre instruments différents.\nConditions et limites : Option de séance accompagnée (P3) ou d’orientation professionnelle (P4).\nObjectif du domaine : Proposer des options de passation et une ressource de dialogue sur l’environnement de travail, sans aucun dépistage.\nGarde-fou du domaine : Contrôle total de la personne sur le partage ; consentement renforcé ; anonymat par défaut.\nDécisions exclues : Inférence de handicap ou de neurodivergence ; exigence d’une épreuve pour accéder aux accommodations.\nZone d’usage : Z2 — Accessibilité et choix\nNiveau de décision cible : N1",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D18-P2",
+    "domain": "Neurodiversité en entreprise",
+    "blocks": {
+      "mesure": "Préférences sensorielles et d’organisation.",
+      "format": "30 items, 10 min.",
+      "contenu": "T47.4, T47.6 en version non diagnostique.",
+      "scoring": "Fiche de préférences.",
+      "decision": "Dialogue avec l’employeur, si choisi.",
+      "avance": "Restitution séparée des autres profils ; aucune combinaison de scores entre instruments différents.",
+      "passerelle": "Option de séance accompagnée (P3) ou d’orientation professionnelle (P4).",
+      "Objectif du domaine": "Proposer des options de passation et une ressource de dialogue sur l’environnement de travail, sans aucun dépistage.",
+      "Garde-fou du domaine": "Contrôle total de la personne sur le partage ; consentement renforcé ; anonymat par défaut.",
+      "Décisions exclues": "Inférence de handicap ou de neurodivergence ; exigence d’une épreuve pour accéder aux accommodations.",
+      "Zone d’usage": "Z2 — Accessibilité et choix",
+      "Niveau de décision cible": "N1"
+    },
+    "related_codes": [
+      "T47.4",
+      "T47.6"
+    ],
+    "stage": "P2"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

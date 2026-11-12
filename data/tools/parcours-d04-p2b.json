@@ -1,0 +1,67 @@
+{
+  "id": "parcours-d04-p2b",
+  "title": "Stratégies d’apprentissage de l’élève · D04-P2b",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Stratégies déclarées : répétition, organisation, planification, gestion du temps.\nFormat cible : 20 items illustrés ou textuels selon l’âge, 10 min.\nContenu cible : Inspiré de T15.1 et T15.2 : réviser, s’organiser, demander de l’aide, procrastiner.\nCalcul cible (non implémenté ici) : Profil de stratégies, sans comparaison normative.\nUsage décrit : Conseils d’étude adaptés à l’âge.\nOptions cibles : Recommandations issues de la science de l’apprentissage (espacement, récupération).\nConditions et limites : Intégrable au guide de conversation PS.\nObjectif du domaine : Aider élève, famille et équipe éducative à formuler une question d’apprentissage précise et à tester des ajustements pédagogiques simples.\nGarde-fou du domaine : Les enseignants ne voient rien sans partage volontaire et autorisé ; aucune recommandation d’aménagement automatique.\nDécisions exclues : Redoublement, orientation en classe spécialisée, aménagement automatique, diagnostic.\nZone d’usage : Z1/Z2 — Orientation éducative\nNiveau de décision cible : N1–N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D04-P2b",
+    "domain": "Psychologie scolaire",
+    "blocks": {
+      "mesure": "Stratégies déclarées : répétition, organisation, planification, gestion du temps.",
+      "format": "20 items illustrés ou textuels selon l’âge, 10 min.",
+      "contenu": "Inspiré de T15.1 et T15.2 : réviser, s’organiser, demander de l’aide, procrastiner.",
+      "scoring": "Profil de stratégies, sans comparaison normative.",
+      "decision": "Conseils d’étude adaptés à l’âge.",
+      "avance": "Recommandations issues de la science de l’apprentissage (espacement, récupération).",
+      "passerelle": "Intégrable au guide de conversation PS.",
+      "Objectif du domaine": "Aider élève, famille et équipe éducative à formuler une question d’apprentissage précise et à tester des ajustements pédagogiques simples.",
+      "Garde-fou du domaine": "Les enseignants ne voient rien sans partage volontaire et autorisé ; aucune recommandation d’aménagement automatique.",
+      "Décisions exclues": "Redoublement, orientation en classe spécialisée, aménagement automatique, diagnostic.",
+      "Zone d’usage": "Z1/Z2 — Orientation éducative",
+      "Niveau de décision cible": "N1–N2"
+    },
+    "related_codes": [
+      "T15.1",
+      "T15.2"
+    ],
+    "stage": "P2b"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

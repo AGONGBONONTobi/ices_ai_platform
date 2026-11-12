@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d20-pb",
+  "title": "Limites et annuaire · D20-PB",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Situation déclarée par la personne.\nFormat cible : 3 min.\nContenu cible : Limites du parcours, annuaire.\nCalcul cible (non implémenté ici) : Aucun score.\nUsage décrit : Prise de contact.\nOptions cibles : Journalisation des demandes ; contact institutionnel ; revue juridique.\nConditions et limites : Aucune passerelle vers un usage sélectif.\nObjectif du domaine : Orienter vers un service professionnel et proposer séparément des activités générales non thérapeutiques.\nGarde-fou du domaine : Aucun tableau de progression de réadaptation ; aucune alerte médicale générée par la plateforme.\nDécisions exclues : Mesure de récupération, de séquelles, d’aptitude au retour au travail ou d’efficacité d’un traitement.\nZone d’usage : Z3 — Exclu comme suivi clinique\nNiveau de décision cible : N4 hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D20-PB",
+    "domain": "Réadaptation cognitive",
+    "blocks": {
+      "mesure": "Situation déclarée par la personne.",
+      "format": "3 min.",
+      "contenu": "Limites du parcours, annuaire.",
+      "scoring": "Aucun score.",
+      "decision": "Prise de contact.",
+      "avance": "Journalisation des demandes ; contact institutionnel ; revue juridique.",
+      "passerelle": "Aucune passerelle vers un usage sélectif.",
+      "Objectif du domaine": "Orienter vers un service professionnel et proposer séparément des activités générales non thérapeutiques.",
+      "Garde-fou du domaine": "Aucun tableau de progression de réadaptation ; aucune alerte médicale générée par la plateforme.",
+      "Décisions exclues": "Mesure de récupération, de séquelles, d’aptitude au retour au travail ou d’efficacité d’un traitement.",
+      "Zone d’usage": "Z3 — Exclu comme suivi clinique",
+      "Niveau de décision cible": "N4 hors plateforme"
+    },
+    "related_codes": [],
+    "stage": "PB"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

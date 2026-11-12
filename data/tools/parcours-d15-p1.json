@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d15-p1",
+  "title": "Session initiale · D15-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance F, C, D.\nFormat cible : 18 items, 15 min.\nContenu cible : Règles, suites, rotations.\nCalcul cible (non implémenté ici) : Indicateurs bruts.\nUsage décrit : Base de référence personnelle.\nOptions cibles : Version d’items journalisée.\nConditions et limites : Palier détaillé proposé, jamais imposé ; accès indépendant du résultat.\nObjectif du domaine : Documenter des objectifs d’apprentissage et l’expérience de tâches dans le temps, sans conclusion de progrès ou de déclin.\nGarde-fou du domaine : Formes parallèles jamais identiques ; intervalle de réutilisation fixé par l’étude pilote ; suppression et désactivation des rappels possibles.\nDécisions exclues : Messages « déclin » ou « progrès » causals, norme clinique.\nZone d’usage : Z1 — Suivi volontaire\nNiveau de décision cible : N1",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D15-P1",
+    "domain": "Apprentissage tout au long de la vie",
+    "blocks": {
+      "mesure": "Performance F, C, D.",
+      "format": "18 items, 15 min.",
+      "contenu": "Règles, suites, rotations.",
+      "scoring": "Indicateurs bruts.",
+      "decision": "Base de référence personnelle.",
+      "avance": "Version d’items journalisée.",
+      "passerelle": "Palier détaillé proposé, jamais imposé ; accès indépendant du résultat.",
+      "Objectif du domaine": "Documenter des objectifs d’apprentissage et l’expérience de tâches dans le temps, sans conclusion de progrès ou de déclin.",
+      "Garde-fou du domaine": "Formes parallèles jamais identiques ; intervalle de réutilisation fixé par l’étude pilote ; suppression et désactivation des rappels possibles.",
+      "Décisions exclues": "Messages « déclin » ou « progrès » causals, norme clinique.",
+      "Zone d’usage": "Z1 — Suivi volontaire",
+      "Niveau de décision cible": "N1"
+    },
+    "related_codes": [],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

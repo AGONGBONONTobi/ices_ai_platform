@@ -1,0 +1,69 @@
+{
+  "id": "parcours-d01-p2a",
+  "title": "Profil de tâches élargi · D01-P2a",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Profil descriptif sur quatre modules : inductif visuel (A), quantitatif (C), spatial (D), apprentissage/flexibilité (F).\nFormat cible : 28 à 32 items, 25–30 min, ordre des modules contrebalancé, pause proposée à mi-parcours.\nContenu cible : Matrices à difficulté progressive, suites numériques courtes sans prérequis scolaire, rotations 2D, découverte de règle avec changement de règle à mi-tâche.\nCalcul cible (non implémenté ici) : Indicateurs par module (réussite, temps, erreurs de persévération pour F) avec marge d’incertitude lorsque le modèle le permet ; écarts entre modules signalés comme « à discuter », jamais interprétés.\nUsage décrit : Préparer des questions précises pour le professionnel ; aucune décision médicale ou professionnelle.\nOptions cibles : Référence catalogue : T1.1, T1.3, T1.4, T2.2 (versions non cliniques) ; formes parallèles pour toute reprise à moins de 6 mois.\nConditions et limites : Si écart important entre modules ou plainte persistante déclarée : bouton « préparer une consultation » (PS puis P4).\nObjectif du domaine : Aider un adulte à clarifier sa demande (mémoire, attention, raisonnement), à recueillir des observations de tâches non cliniques et à préparer une consultation avec un psychologue ou neuropsychologue habilité.\nGarde-fou du domaine : La plateforme ne réalise pas de bilan. Aucun mot « diagnostic », « déficit », « pathologique » dans les sorties. Le bilan est conduit hors plateforme par un professionnel qui choisit ses instruments sous licence.\nDécisions exclues : Diagnostic, détection de déficit, conclusion sur un trouble, aptitude au travail, indemnisation, expertise médico-légale.\nZone d’usage : Z2 — Orientation vers un professionnel\nNiveau de décision cible : N2 (orientation) ; N4 hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D01-P2a",
+    "domain": "Bilan neuropsychologique adulte",
+    "blocks": {
+      "mesure": "Profil descriptif sur quatre modules : inductif visuel (A), quantitatif (C), spatial (D), apprentissage/flexibilité (F).",
+      "format": "28 à 32 items, 25–30 min, ordre des modules contrebalancé, pause proposée à mi-parcours.",
+      "contenu": "Matrices à difficulté progressive, suites numériques courtes sans prérequis scolaire, rotations 2D, découverte de règle avec changement de règle à mi-tâche.",
+      "scoring": "Indicateurs par module (réussite, temps, erreurs de persévération pour F) avec marge d’incertitude lorsque le modèle le permet ; écarts entre modules signalés comme « à discuter », jamais interprétés.",
+      "decision": "Préparer des questions précises pour le professionnel ; aucune décision médicale ou professionnelle.",
+      "avance": "Référence catalogue : T1.1, T1.3, T1.4, T2.2 (versions non cliniques) ; formes parallèles pour toute reprise à moins de 6 mois.",
+      "passerelle": "Si écart important entre modules ou plainte persistante déclarée : bouton « préparer une consultation » (PS puis P4).",
+      "Objectif du domaine": "Aider un adulte à clarifier sa demande (mémoire, attention, raisonnement), à recueillir des observations de tâches non cliniques et à préparer une consultation avec un psychologue ou neuropsychologue habilité.",
+      "Garde-fou du domaine": "La plateforme ne réalise pas de bilan. Aucun mot « diagnostic », « déficit », « pathologique » dans les sorties. Le bilan est conduit hors plateforme par un professionnel qui choisit ses instruments sous licence.",
+      "Décisions exclues": "Diagnostic, détection de déficit, conclusion sur un trouble, aptitude au travail, indemnisation, expertise médico-légale.",
+      "Zone d’usage": "Z2 — Orientation vers un professionnel",
+      "Niveau de décision cible": "N2 (orientation) ; N4 hors plateforme"
+    },
+    "related_codes": [
+      "T1.1",
+      "T1.3",
+      "T1.4",
+      "T2.2"
+    ],
+    "stage": "P2a"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

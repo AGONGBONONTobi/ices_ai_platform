@@ -1,0 +1,88 @@
+{
+  "id": "psy-t18-3",
+  "title": "Préparer — Adaptabilité & agilité · T18.3",
+  "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
+  "inputs": [
+    {
+      "name": "objectif",
+      "type": "textarea",
+      "question": "Que souhaitez-vous préparer ?",
+      "help": "Précisez votre objectif autour de « Adaptabilité & agilité ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "required": true
+    },
+    {
+      "name": "contexte",
+      "type": "textarea",
+      "question": "Quel est le contexte utile ?",
+      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "required": true
+    },
+    {
+      "name": "elements",
+      "type": "textarea",
+      "question": "Quels éléments factuels avez-vous déjà ?",
+      "help": "Indiquez uniquement vos observations et questions en lien avec : ajustement au changement, apprentissage rapide. Ne renseignez pas de score supposé.",
+      "required": false
+    },
+    {
+      "name": "contraintes",
+      "type": "textarea",
+      "question": "Quelles contraintes faut-il respecter ?",
+      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "required": false
+    }
+  ],
+  "promptTemplate": "Prépare un support écrit pour « Adaptabilité & agilité », dans le domaine « COMPÉTENCES TRANSVERSALES (SOFT SKILLS) ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : ajustement au changement, apprentissage rapide.\nFormat cible : 15 items + 2 scénarios de changement, 8 min.\nContenu cible : imprévus, nouvelles règles, échec.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : affectation en transformation.\nOptions cibles : couplage avec D26 (résilience).\nObjectif du domaine : mesurer les compétences non techniques les plus prédictives de la performance et de l’employabilité\nGarde-fou du domaine : éviter l’auto-évaluation seule → privilégier scénarios + 360°\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "5",
+    "document": "Catalogue_350_Outils_Psychometriques.docx",
+    "code": "T18.3",
+    "domain": "COMPÉTENCES TRANSVERSALES (SOFT SKILLS)",
+    "blocks": {
+      "mesure": "ajustement au changement, apprentissage rapide.",
+      "format": "15 items + 2 scénarios de changement, 8 min.",
+      "contenu": "imprévus, nouvelles règles, échec.",
+      "scoring": "score.",
+      "decision": "affectation en transformation.",
+      "avance": "couplage avec D26 (résilience).",
+      "Objectif du domaine": "mesurer les compétences non techniques les plus prédictives de la performance et de l’employabilité",
+      "Garde-fou du domaine": "éviter l’auto-évaluation seule → privilégier scénarios + 360°"
+    },
+    "related_codes": []
+  },
+  "execution": {
+    "mode": "preparation",
+    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
+  }
+}

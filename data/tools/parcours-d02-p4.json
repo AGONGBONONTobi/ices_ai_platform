@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d02-p4",
+  "title": "Bilan psychologique de l’enfant ou de l’adolescent · D02-P4",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Évaluation cognitive et psychologique complète conduite par un psychologue habilité.\nFormat cible : Hors plateforme : entretien parent, entretien enfant, épreuves sous licence (par exemple échelles d’intelligence pour enfants), observations scolaires.\nContenu cible : Le professionnel choisit les instruments, normes et la restitution.\nCalcul cible (non implémenté ici) : Scores cliniques produits par le professionnel, non recalculés par la plateforme.\nUsage décrit : Diagnostic éventuel et recommandations : responsabilité du professionnel.\nOptions cibles : Annuaire filtré par pays, langue et spécialité pédiatrique ; transfert consenti du dossier.\nConditions et limites : Compte rendu non stocké sur la plateforme sauf demande explicite du représentant légal.\nObjectif du domaine : Aider une famille et un jeune à organiser une demande d’évaluation ou de soutien éducatif, à partir d’observations de tâches non diagnostiques et protégées.\nGarde-fou du domaine : Autorisation du représentant légal et assentiment du jeune ; deux restitutions séparées (jeune / parent) ; aucun compte mineur imposé ; aucune publicité.\nDécisions exclues : Diagnostic de trouble des apprentissages, TDAH, déficience ; orientation scolaire spécialisée ; classement.\nZone d’usage : Z2 — Orientation vers un professionnel\nNiveau de décision cible : N1–N2 ; N4 hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D02-P4",
+    "domain": "Bilan cognitif enfant/adolescent",
+    "blocks": {
+      "mesure": "Évaluation cognitive et psychologique complète conduite par un psychologue habilité.",
+      "format": "Hors plateforme : entretien parent, entretien enfant, épreuves sous licence (par exemple échelles d’intelligence pour enfants), observations scolaires.",
+      "contenu": "Le professionnel choisit les instruments, normes et la restitution.",
+      "scoring": "Scores cliniques produits par le professionnel, non recalculés par la plateforme.",
+      "decision": "Diagnostic éventuel et recommandations : responsabilité du professionnel.",
+      "avance": "Annuaire filtré par pays, langue et spécialité pédiatrique ; transfert consenti du dossier.",
+      "passerelle": "Compte rendu non stocké sur la plateforme sauf demande explicite du représentant légal.",
+      "Objectif du domaine": "Aider une famille et un jeune à organiser une demande d’évaluation ou de soutien éducatif, à partir d’observations de tâches non diagnostiques et protégées.",
+      "Garde-fou du domaine": "Autorisation du représentant légal et assentiment du jeune ; deux restitutions séparées (jeune / parent) ; aucun compte mineur imposé ; aucune publicité.",
+      "Décisions exclues": "Diagnostic de trouble des apprentissages, TDAH, déficience ; orientation scolaire spécialisée ; classement.",
+      "Zone d’usage": "Z2 — Orientation vers un professionnel",
+      "Niveau de décision cible": "N1–N2 ; N4 hors plateforme"
+    },
+    "related_codes": [],
+    "stage": "P4"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

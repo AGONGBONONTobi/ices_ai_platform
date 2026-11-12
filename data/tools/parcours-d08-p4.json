@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d08-p4",
+  "title": "Orientation professionnelle · D08-P4",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Selon besoin exprimé.\nFormat cible : Hors plateforme.\nContenu cible : Instruments sous licence choisis par le professionnel ; aucun item reproduit sur la plateforme.\nCalcul cible (non implémenté ici) : Normes et interprétation sous responsabilité professionnelle ; la plateforme ne recalcule rien.\nUsage décrit : Conclusions et recommandations relevant exclusivement du professionnel.\nOptions cibles : Annuaire partenaires.\nConditions et limites : Retour du compte rendu sur la plateforme uniquement avec double consentement.\nObjectif du domaine : Offrir un aperçu de ses performances dans des tâches cognitives définies, avec information claire sur les limites, et un cheminement progressif vers des niveaux plus complets.\nGarde-fou du domaine : Limites consultables avant de commencer ; partage désactivé par défaut ; effet de pratique expliqué.\nDécisions exclues : « Votre QI est X », percentile universel, classement social.\nZone d’usage : Z1 — Parcours central du MVP\nNiveau de décision cible : N1",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D08-P4",
+    "domain": "Auto-évaluation et pré-sélection personnelle",
+    "blocks": {
+      "mesure": "Selon besoin exprimé.",
+      "format": "Hors plateforme.",
+      "contenu": "Instruments sous licence choisis par le professionnel ; aucun item reproduit sur la plateforme.",
+      "scoring": "Normes et interprétation sous responsabilité professionnelle ; la plateforme ne recalcule rien.",
+      "decision": "Conclusions et recommandations relevant exclusivement du professionnel.",
+      "avance": "Annuaire partenaires.",
+      "passerelle": "Retour du compte rendu sur la plateforme uniquement avec double consentement.",
+      "Objectif du domaine": "Offrir un aperçu de ses performances dans des tâches cognitives définies, avec information claire sur les limites, et un cheminement progressif vers des niveaux plus complets.",
+      "Garde-fou du domaine": "Limites consultables avant de commencer ; partage désactivé par défaut ; effet de pratique expliqué.",
+      "Décisions exclues": "« Votre QI est X », percentile universel, classement social.",
+      "Zone d’usage": "Z1 — Parcours central du MVP",
+      "Niveau de décision cible": "N1"
+    },
+    "related_codes": [],
+    "stage": "P4"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

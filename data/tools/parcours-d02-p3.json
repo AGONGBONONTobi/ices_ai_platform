@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d02-p3",
+  "title": "Séance accompagnée · D02-P3",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Observations de tâches E (mémoire de travail) et F en présence d’un professionnel de l’éducation formé.\nFormat cible : 40 min, présentiel de préférence, protocole écrit, parent informé, pauses obligatoires toutes les 15 min.\nContenu cible : Empan d’images, tâche de tri avec changement de règle, grille d’observation (compréhension, persévérance, demandes d’aide).\nCalcul cible (non implémenté ici) : Indicateurs de tâche + observation structurée ; aucun indice clinique.\nUsage décrit : Compte rendu descriptif pour la famille et, si autorisé, pour le professionnel P4.\nOptions cibles : Supervision par personnel ayant vérification d’antécédents selon droit local.\nConditions et limites : Recommandation P4 si la famille cherche une conclusion clinique.\nObjectif du domaine : Aider une famille et un jeune à organiser une demande d’évaluation ou de soutien éducatif, à partir d’observations de tâches non diagnostiques et protégées.\nGarde-fou du domaine : Autorisation du représentant légal et assentiment du jeune ; deux restitutions séparées (jeune / parent) ; aucun compte mineur imposé ; aucune publicité.\nDécisions exclues : Diagnostic de trouble des apprentissages, TDAH, déficience ; orientation scolaire spécialisée ; classement.\nZone d’usage : Z2 — Orientation vers un professionnel\nNiveau de décision cible : N1–N2 ; N4 hors plateforme",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D02-P3",
+    "domain": "Bilan cognitif enfant/adolescent",
+    "blocks": {
+      "mesure": "Observations de tâches E (mémoire de travail) et F en présence d’un professionnel de l’éducation formé.",
+      "format": "40 min, présentiel de préférence, protocole écrit, parent informé, pauses obligatoires toutes les 15 min.",
+      "contenu": "Empan d’images, tâche de tri avec changement de règle, grille d’observation (compréhension, persévérance, demandes d’aide).",
+      "scoring": "Indicateurs de tâche + observation structurée ; aucun indice clinique.",
+      "decision": "Compte rendu descriptif pour la famille et, si autorisé, pour le professionnel P4.",
+      "avance": "Supervision par personnel ayant vérification d’antécédents selon droit local.",
+      "passerelle": "Recommandation P4 si la famille cherche une conclusion clinique.",
+      "Objectif du domaine": "Aider une famille et un jeune à organiser une demande d’évaluation ou de soutien éducatif, à partir d’observations de tâches non diagnostiques et protégées.",
+      "Garde-fou du domaine": "Autorisation du représentant légal et assentiment du jeune ; deux restitutions séparées (jeune / parent) ; aucun compte mineur imposé ; aucune publicité.",
+      "Décisions exclues": "Diagnostic de trouble des apprentissages, TDAH, déficience ; orientation scolaire spécialisée ; classement.",
+      "Zone d’usage": "Z2 — Orientation vers un professionnel",
+      "Niveau de décision cible": "N1–N2 ; N4 hors plateforme"
+    },
+    "related_codes": [],
+    "stage": "P3"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

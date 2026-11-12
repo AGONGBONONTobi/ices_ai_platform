@@ -1,0 +1,64 @@
+{
+  "id": "parcours-d04-p1",
+  "title": "Tâche ciblée sur la situation · D04-P1",
+  "category": "PROFILS APPRENANTS & PÉDAGOGIE",
+  "inputs": [],
+  "promptTemplate": "Fiche de référence uniquement. Aucune exécution autorisée.\nMesure visée : Performance à une tâche directement liée à la situation choisie.\nFormat cible : 10 à 14 items, 10 min, 2 essais, consignes écrites + audio.\nContenu cible : C : problèmes quantitatifs non scolaires ; D : transformations ; E : séquences ; F : règle à découvrir.\nCalcul cible (non implémenté ici) : Réussite, temps, moment où la tâche devient difficile, demandes de réécoute.\nUsage décrit : Identifier les conditions dans lesquelles la tâche est plus facile.\nOptions cibles : Contenus vérifiés pour ne pas reproduire un exercice du programme national.\nConditions et limites : P2 recommandé pour tester un ajustement.\nObjectif du domaine : Aider élève, famille et équipe éducative à formuler une question d’apprentissage précise et à tester des ajustements pédagogiques simples.\nGarde-fou du domaine : Les enseignants ne voient rien sans partage volontaire et autorisé ; aucune recommandation d’aménagement automatique.\nDécisions exclues : Redoublement, orientation en classe spécialisée, aménagement automatique, diagnostic.\nZone d’usage : Z1/Z2 — Orientation éducative\nNiveau de décision cible : N1–N2",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "titre": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "titre": {
+              "type": "string"
+            },
+            "contenu": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "titre",
+            "contenu"
+          ]
+        }
+      }
+    },
+    "required": [
+      "titre",
+      "sections"
+    ]
+  },
+  "output_kind": "document",
+  "provenance": {
+    "batch": "6",
+    "document": "Parcours_Evaluation_Cognitive_30_Domaines.docx",
+    "code": "D04-P1",
+    "domain": "Psychologie scolaire",
+    "blocks": {
+      "mesure": "Performance à une tâche directement liée à la situation choisie.",
+      "format": "10 à 14 items, 10 min, 2 essais, consignes écrites + audio.",
+      "contenu": "C : problèmes quantitatifs non scolaires ; D : transformations ; E : séquences ; F : règle à découvrir.",
+      "scoring": "Réussite, temps, moment où la tâche devient difficile, demandes de réécoute.",
+      "decision": "Identifier les conditions dans lesquelles la tâche est plus facile.",
+      "avance": "Contenus vérifiés pour ne pas reproduire un exercice du programme national.",
+      "passerelle": "P2 recommandé pour tester un ajustement.",
+      "Objectif du domaine": "Aider élève, famille et équipe éducative à formuler une question d’apprentissage précise et à tester des ajustements pédagogiques simples.",
+      "Garde-fou du domaine": "Les enseignants ne voient rien sans partage volontaire et autorisé ; aucune recommandation d’aménagement automatique.",
+      "Décisions exclues": "Redoublement, orientation en classe spécialisée, aménagement automatique, diagnostic.",
+      "Zone d’usage": "Z1/Z2 — Orientation éducative",
+      "Niveau de décision cible": "N1–N2"
+    },
+    "related_codes": [],
+    "stage": "P1"
+  },
+  "execution": {
+    "mode": "reference",
+    "notice": "Fiche méthodologique consultable. Cette étape nécessite des épreuves validées, une supervision, un service partenaire ou un protocole dédié qui ne sont pas disponibles dans le moteur actuel. Aucune passation ni résultat de test ne peut être généré ici."
+  }
+}

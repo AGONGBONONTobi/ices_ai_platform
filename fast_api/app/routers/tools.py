@@ -87,6 +87,11 @@ def extract_tool_inputs(
     del profile  # authentification uniquement
 
     tool = get_published_tool(tool_id)
+    if tool.execution and tool.execution.mode == "reference":
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail={"error": "TOOL_REFERENCE_ONLY", "details": tool.execution.notice},
+        )
     content = file.file.read()
 
     try:
