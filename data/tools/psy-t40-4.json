@@ -1,69 +1,206 @@
 {
   "id": "psy-t40-4",
-  "title": "Préparer — Valeur de l’information · T40.4",
+  "title": "Valeur de l’information · T40.4",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Valeur de l’information ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à évaluer le coût et la valeur de l’information. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Valeur de l’information », dans le domaine « DÉCISION SOUS INCERTITUDE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à évaluer le coût et la valeur de l’information.\nFormat cible : 10 scénarios, 10 min.\nContenu cible : collecte d’information, coût du délai, décision séquentielle.\nCalcul cible (non implémenté ici) : score, qualité d’arbitrage.\nUsage décrit : renseignement, stratégie, finance.\nOptions cibles : couplage avec D38 (problèmes complexes).\nObjectif du domaine : évaluer la capacité à décider rationnellement dans l’incertitude, l’ambiguïté et le risque — compétence critique pour les décideurs, investisseurs, assureurs, responsables publics\nGarde-fou du domaine : N3 ; ne remplace pas une décision humaine collégiale ; audit de biais ; supervision\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Qu'appelle-t-on la « valeur espérée de l'information parfaite » (VEIP, ou EVPI) dans un problème de décision sous incertitude ?",
+      "help": "Il s'agit d'une comparaison entre deux gains espérés, pas d'un coût d'achat.",
+      "options": [
+        {
+          "label": "La différence entre le gain espéré si l'on connaissait par avance, avec certitude, le scénario qui va se produire, et le gain espéré de la meilleure décision prise sans cette information.",
+          "score": 1
+        },
+        {
+          "label": "Le coût d'achat réel d'une étude de marché, quel que soit son apport informatif.",
+          "score": 0
+        },
+        {
+          "label": "La probabilité que l'information obtenue soit exacte.",
+          "score": 0
+        },
+        {
+          "label": "Le gain total obtenu dans le meilleur scénario possible, sans aucune comparaison.",
+          "score": 0
+        }
+      ],
+      "axe": "Valeur de l'information",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Une entreprise peut acheter une étude de marché pour 5 000 € qui, si elle était parfaite, augmenterait le gain espéré de la décision de 3 000 € par rapport à une décision prise sans aucune information. Que peut-on raisonnablement en conclure ?",
+      "help": "Comparez le coût de l'étude à la valeur maximale qu'une information pourrait apporter ici.",
+      "options": [
+        {
+          "label": "Il n'est pas rationnel de payer 5 000 € pour une information qui, même parfaite, ne vaudrait que 3 000 € de gain espéré supplémentaire.",
+          "score": 1
+        },
+        {
+          "label": "Il faut toujours acheter l'étude de marché, quel que soit son coût, car plus d'information est toujours préférable.",
+          "score": 0
+        },
+        {
+          "label": "Le coût de l'étude n'a aucune pertinence dans cette décision.",
+          "score": 0
+        },
+        {
+          "label": "La valeur de l'information est nécessairement égale à son coût d'achat.",
+          "score": 0
+        }
+      ],
+      "axe": "Valeur de l'information",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Pourquoi la valeur de l'information est-elle nulle lorsque la décision optimale ne change jamais, quel que soit le scénario qui se réalise ?",
+      "help": "Pensez à ce que l'information permettrait réellement de changer dans ce cas précis.",
+      "options": [
+        {
+          "label": "Parce que si la meilleure option reste la même dans tous les scénarios possibles, connaître à l'avance le scénario réel n'aide en rien à mieux décider.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'une information est, par définition, toujours sans valeur dans ce cas précis seulement si elle est gratuite.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la valeur de l'information dépend uniquement du coût de collecte, jamais des décisions possibles.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'il est impossible qu'une même option reste optimale dans plusieurs scénarios différents.",
+          "score": 0
+        }
+      ],
+      "axe": "Valeur de l'information",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Dans une décision séquentielle, pourquoi peut-il être rationnel de payer pour une information même imparfaite (qui ne lève pas totalement l'incertitude) ?",
+      "help": "L'information n'a pas besoin d'être parfaite pour être utile.",
+      "options": [
+        {
+          "label": "Parce qu'une information imparfaite peut réduire suffisamment l'incertitude pour améliorer la décision moyenne, même sans l'éliminer totalement, dès que ce gain dépasse son coût.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'une information imparfaite a toujours exactement la même valeur qu'une information parfaite.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'il est toujours irrationnel de payer pour une information qui n'est pas parfaite.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la valeur d'une information imparfaite est, par définition, négative.",
+          "score": 0
+        }
+      ],
+      "axe": "Valeur de l'information",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Une information coûte plus cher à obtenir que la valeur espérée de l'information parfaite (VEIP) elle-même pour cette décision. Que peut-on en conclure sur l'achat de cette information, même imparfaite ?",
+      "help": "La VEIP représente le plafond de ce qu'une information, même parfaite, peut rapporter.",
+      "options": [
+        {
+          "label": "Il n'est pas rationnel de l'acheter, car même une information parfaite (donc à la limite supérieure de ce qu'une information peut apporter) ne vaudrait pas son coût.",
+          "score": 1
+        },
+        {
+          "label": "Il faut toujours l'acheter, car toute information a une valeur positive garantie.",
+          "score": 0
+        },
+        {
+          "label": "Le coût de l'information n'a, par principe, jamais d'incidence sur la décision de l'acheter.",
+          "score": 0
+        },
+        {
+          "label": "La VEIP n'est pertinente que pour les décisions collectives.",
+          "score": 0
+        }
+      ],
+      "axe": "Valeur de l'information",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Pourquoi la valeur de l'information dépend-elle du contexte de décision (des options disponibles, des enjeux), et non seulement de la précision de l'information elle-même ?",
+      "help": "Une information très précise mais qui ne change rien à la décision n'apporte rien.",
+      "options": [
+        {
+          "label": "Parce qu'une information, même très précise, n'a de valeur que si elle peut effectivement changer la décision prise ou son résultat attendu dans ce contexte précis.",
+          "score": 1
+        },
+        {
+          "label": "Parce que la précision d'une information est, par définition, totalement indépendante de son contenu.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la valeur de l'information est une constante universelle, identique pour toute décision.",
+          "score": 0
+        },
+        {
+          "label": "Parce que seul le coût d'obtention de l'information déterminerait sa valeur, jamais son contenu.",
+          "score": 0
+        }
+      ],
+      "axe": "Valeur de l'information",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en analyse de décision. Cet outil est un contrôle de connaissances factuelles sur « Valeur de l’information » (domaine « DÉCISION SOUS INCERTITUDE ») : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence générale, ni une aptitude de décision ou de personnalité, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Valeur de l'information » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (valeur espérée de l'information parfaite (EVPI), arbitrage coût / valeur d'une information, information imparfaite, décision séquentielle d'achat d'information), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure d'intelligence générale ou de capacité de décision, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "N3 ; ne remplace pas une décision humaine collégiale ; audit de biais ; supervision"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

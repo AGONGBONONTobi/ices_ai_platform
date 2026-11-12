@@ -1,69 +1,206 @@
 {
   "id": "psy-t44-3",
-  "title": "Préparer — Interdépendances · T44.3",
+  "title": "Interdépendances · T44.3",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Interdépendances ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à cartographier les interdépendances. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Interdépendances », dans le domaine « PENSÉE SYSTÉMIQUE & COMPLEXITÉ ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à cartographier les interdépendances.\nFormat cible : 8 cas, 12 min.\nContenu cible : réseaux d’acteurs, chaînes de valeur, écosystèmes.\nCalcul cible (non implémenté ici) : score, pertinence de la cartographie.\nUsage décrit : stratégie, gestion de crise.\nOptions cibles : outils de cartographie systémique.\nObjectif du domaine : évaluer la capacité à comprendre des systèmes complexes, à identifier les points de levier et à anticiper les effets de second ordre — compétence critique pour les décideurs, les politiques publiques et la transition écologique\nGarde-fou du domaine : les cas doivent être non politiques ; éviter les scénarios idéologiques ; audit de biais\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Dans une chaîne de valeur (fournisseur → fabricant → distributeur → client), une rupture d’approvisionnement chez le fournisseur se traduit généralement par…",
+      "help": "Pensez à ce qui se passe plus loin dans la chaîne, même sans lien direct avec le fournisseur.",
+      "options": [
+        {
+          "label": "Des répercussions en cascade sur les acteurs en aval (fabricant, distributeur, client), même s’ils n’ont aucune relation directe avec le fournisseur.",
+          "score": 1
+        },
+        {
+          "label": "Aucun effet sur les acteurs qui n’ont pas de relation directe avec le fournisseur.",
+          "score": 0
+        },
+        {
+          "label": "Un effet limité exclusivement au fournisseur lui-même.",
+          "score": 0
+        },
+        {
+          "label": "Une amélioration automatique de la situation des autres acteurs de la chaîne.",
+          "score": 0
+        }
+      ],
+      "axe": "Interdépendances",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Qu’est-ce qui distingue une interdépendance directe d’une interdépendance indirecte entre deux acteurs d’un système ?",
+      "help": "Comparez le nombre d’intermédiaires entre les deux acteurs.",
+      "options": [
+        {
+          "label": "Une interdépendance directe résulte d’un lien immédiat entre les deux acteurs ; une interdépendance indirecte passe par un ou plusieurs acteurs intermédiaires.",
+          "score": 1
+        },
+        {
+          "label": "Une interdépendance directe est toujours plus forte qu’une interdépendance indirecte, par définition.",
+          "score": 0
+        },
+        {
+          "label": "Il n’existe aucune différence réelle entre les deux notions.",
+          "score": 0
+        },
+        {
+          "label": "Une interdépendance indirecte désigne un lien qui n’a, en réalité, aucun effet mesurable.",
+          "score": 0
+        }
+      ],
+      "axe": "Interdépendances",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Dans un écosystème d’affaires (fournisseurs, partenaires, concurrents, clients), pourquoi est-il risqué d’analyser un acteur de façon isolée, sans cartographier ses relations avec les autres ?",
+      "help": "Pensez à ce que peuvent produire les décisions d’un acteur chez les acteurs qui lui sont connectés.",
+      "options": [
+        {
+          "label": "Parce que les décisions de cet acteur peuvent produire des effets imprévus chez des acteurs connectés, qui en retour influencent à nouveau l’acteur initial.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu’un acteur isolé n’a, par définition, jamais d’impact sur le reste du système.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la cartographie des relations ralentit toujours l’analyse sans apporter d’information utile.",
+          "score": 0
+        },
+        {
+          "label": "Parce que seuls les acteurs directement liés entre eux peuvent s’influencer mutuellement.",
+          "score": 0
+        }
+      ],
+      "axe": "Interdépendances",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Une cartographie des interdépendances (acteurs et flux entre eux) permet avant tout de…",
+      "help": "Pensez à ce que révèle une vue d’ensemble des connexions entre acteurs, plutôt qu’une analyse acteur par acteur.",
+      "options": [
+        {
+          "label": "Identifier les acteurs clés dont la défaillance ou le changement de comportement affecterait un grand nombre d’autres acteurs.",
+          "score": 1
+        },
+        {
+          "label": "Éliminer toute incertitude sur le comportement futur de chaque acteur.",
+          "score": 0
+        },
+        {
+          "label": "Remplacer entièrement l’analyse financière de chaque acteur pris séparément.",
+          "score": 0
+        },
+        {
+          "label": "Garantir qu’aucun acteur du système ne pourra jamais faire défaut.",
+          "score": 0
+        }
+      ],
+      "axe": "Interdépendances",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Deux entreprises sans aucun lien commercial direct peuvent néanmoins être interdépendantes si…",
+      "help": "Pensez à ce qu’elles pourraient avoir en commun sans se connaître directement.",
+      "options": [
+        {
+          "label": "Elles dépendent toutes deux d’un même fournisseur critique ou d’une même infrastructure partagée.",
+          "score": 1
+        },
+        {
+          "label": "Elles sont situées dans la même zone géographique, ce qui crée automatiquement une dépendance entre elles.",
+          "score": 0
+        },
+        {
+          "label": "Elles ont le même nombre de salariés.",
+          "score": 0
+        },
+        {
+          "label": "Il est en réalité impossible que deux entreprises sans lien commercial direct soient interdépendantes.",
+          "score": 0
+        }
+      ],
+      "axe": "Interdépendances",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Dans un réseau d’acteurs, un nœud « central » (fortement connecté à de nombreux autres acteurs) présente généralement…",
+      "help": "Pensez à ce qui se produit sur le réseau si ce nœud tombe en panne.",
+      "options": [
+        {
+          "label": "Un risque systémique plus élevé : sa défaillance se propage à un grand nombre d’acteurs connectés.",
+          "score": 1
+        },
+        {
+          "label": "Un risque systémique plus faible, car il est entouré de nombreux acteurs qui le protègent automatiquement.",
+          "score": 0
+        },
+        {
+          "label": "Aucune différence de risque par rapport à un acteur peu connecté.",
+          "score": 0
+        },
+        {
+          "label": "Une immunité totale face à toute défaillance, du fait de sa centralité.",
+          "score": 0
+        }
+      ],
+      "axe": "Interdépendances",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en pensée systémique. Cet outil est un contrôle de connaissances factuelles sur la cartographie des interdépendances (réseaux d’acteurs, chaînes de valeur, écosystèmes) : ce n’est PAS un test psychométrique certifié ou validé, il ne mesure ni le QI ni une aptitude générale, il ne produit aucun percentile ni aucune norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Interdépendances » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (interdépendances directes et indirectes, effets en chaîne dans une chaîne de valeur, risque lié aux nœuds centraux d’un réseau), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, ni une mesure d’intelligence ou d’aptitude générale, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "les cas doivent être non politiques ; éviter les scénarios idéologiques ; audit de biais"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

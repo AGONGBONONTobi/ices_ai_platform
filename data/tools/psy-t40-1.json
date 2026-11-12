@@ -1,69 +1,206 @@
 {
   "id": "psy-t40-1",
-  "title": "Préparer — Probabilités & espérance · T40.1",
+  "title": "Probabilités & espérance · T40.1",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Probabilités & espérance ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : compréhension des probabilités et de la valeur espérée. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Probabilités & espérance », dans le domaine « DÉCISION SOUS INCERTITUDE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : compréhension des probabilités et de la valeur espérée.\nFormat cible : 18 items, 12 min.\nContenu cible : probabilités simples, conditionnelles, espérance, variance.\nCalcul cible (non implémenté ici) : score, erreurs typiques (heuristique de disponibilité).\nUsage décrit : finance, assurance, médecine.\nOptions cibles : items actualisés avec des cas réels (marchés, climat).\nObjectif du domaine : évaluer la capacité à décider rationnellement dans l’incertitude, l’ambiguïté et le risque — compétence critique pour les décideurs, investisseurs, assureurs, responsables publics\nGarde-fou du domaine : N3 ; ne remplace pas une décision humaine collégiale ; audit de biais ; supervision\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Une loterie offre 10 % de chances de gagner 1000 € et 90 % de chances de ne rien gagner. Quelle est l'espérance de gain de cette loterie ?",
+      "help": "L'espérance se calcule en pondérant chaque gain possible par sa probabilité, puis en additionnant.",
+      "options": [
+        {
+          "label": "100 € (0,10 × 1000 € + 0,90 × 0 €).",
+          "score": 1
+        },
+        {
+          "label": "1000 €, car c'est le seul gain possible.",
+          "score": 0
+        },
+        {
+          "label": "10 €, en divisant le gain par le nombre de résultats possibles.",
+          "score": 0
+        },
+        {
+          "label": "500 €, la moyenne entre 0 et 1000 €.",
+          "score": 0
+        }
+      ],
+      "axe": "Probabilités & espérance",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "On tire une carte dans un jeu de 52 cartes. Quelle est la probabilité de tirer un as (il y a 4 as) ?",
+      "help": "La probabilité est le nombre de cas favorables divisé par le nombre total de cas possibles.",
+      "options": [
+        {
+          "label": "4/52, soit environ 7,7 %.",
+          "score": 1
+        },
+        {
+          "label": "1/52 (une seule carte gagnante).",
+          "score": 0
+        },
+        {
+          "label": "13/52 (une couleur entière).",
+          "score": 0
+        },
+        {
+          "label": "1/4 (un as sur quatre couleurs).",
+          "score": 0
+        }
+      ],
+      "axe": "Probabilités & espérance",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Dans une population donnée, une maladie touche 1 % des personnes. Un test a 90 % de sensibilité (détecte 90 % des malades) et 90 % de spécificité (identifie correctement 90 % des non-malades). Un individu testé positif : que peut-on affirmer sur sa probabilité réelle d'être malade ?",
+      "help": "Comparez le nombre attendu de vrais positifs au nombre attendu de faux positifs dans une grande population.",
+      "options": [
+        {
+          "label": "Elle reste nettement inférieure à 90 %, car la très faible prévalence de la maladie (1 %) fait que les faux positifs parmi les nombreuses personnes saines dépassent largement les vrais positifs parmi les rares personnes malades.",
+          "score": 1
+        },
+        {
+          "label": "Elle est exactement égale à 90 %, puisque c'est la sensibilité du test.",
+          "score": 0
+        },
+        {
+          "label": "Elle est de 99 %, puisque le test est positif.",
+          "score": 0
+        },
+        {
+          "label": "La prévalence de la maladie dans la population n'a aucune influence sur ce calcul.",
+          "score": 0
+        }
+      ],
+      "axe": "Probabilités & espérance",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Deux événements A et B sont indépendants, avec P(A) = 0,5 et P(B) = 0,4. Quelle est la probabilité que A et B se produisent tous les deux ?",
+      "help": "Pour deux événements indépendants, la probabilité conjointe est un produit, pas une somme.",
+      "options": [
+        {
+          "label": "0,20 (0,5 × 0,4).",
+          "score": 1
+        },
+        {
+          "label": "0,90 (0,5 + 0,4).",
+          "score": 0
+        },
+        {
+          "label": "0,45, la moyenne des deux probabilités.",
+          "score": 0
+        },
+        {
+          "label": "0,50, car A domine toujours B.",
+          "score": 0
+        }
+      ],
+      "axe": "Probabilités & espérance",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un jeu propose de gagner 100 € avec une probabilité de 0,2 et de perdre 20 € avec une probabilité de 0,8. Quelle est l'espérance de ce jeu ?",
+      "help": "N'oubliez pas de soustraire la perte pondérée du gain pondéré.",
+      "options": [
+        {
+          "label": "4 € (0,2 × 100 € − 0,8 × 20 € = 20 € − 16 €).",
+          "score": 1
+        },
+        {
+          "label": "80 €, en ignorant la probabilité de perte.",
+          "score": 0
+        },
+        {
+          "label": "−4 €, en inversant le signe du calcul correct.",
+          "score": 0
+        },
+        {
+          "label": "0 €, car les deux probabilités s'annuleraient.",
+          "score": 0
+        }
+      ],
+      "axe": "Probabilités & espérance",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Pourquoi l'heuristique de disponibilité peut-elle fausser une estimation de probabilité, par exemple sur le risque d'un accident d'avion ?",
+      "help": "Ce qui est facile à se rappeler n'est pas nécessairement ce qui est le plus fréquent.",
+      "options": [
+        {
+          "label": "Parce qu'on tend à juger un événement plus probable simplement parce qu'il est facile à se rappeler ou très médiatisé (comme un accident spectaculaire), indépendamment de sa fréquence réelle.",
+          "score": 1
+        },
+        {
+          "label": "Parce que les probabilités basées sur les statistiques officielles sont toujours fausses par construction.",
+          "score": 0
+        },
+        {
+          "label": "Parce que l'heuristique de disponibilité donne systématiquement une probabilité plus faible que la réalité.",
+          "score": 0
+        },
+        {
+          "label": "Parce que cette heuristique ne s'applique qu'aux probabilités conditionnelles, jamais aux probabilités simples.",
+          "score": 0
+        }
+      ],
+      "axe": "Probabilités & espérance",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en probabilités appliquées à la décision. Cet outil est un contrôle de connaissances factuelles sur « Probabilités & espérance » (domaine « DÉCISION SOUS INCERTITUDE ») : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence générale, ni une aptitude de décision ou de personnalité, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Probabilités & espérance » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (calcul de probabilités simples et conditionnelles, espérance de gain, théorème de Bayes, heuristique de disponibilité), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure d'intelligence générale ou de capacité de décision, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "N3 ; ne remplace pas une décision humaine collégiale ; audit de biais ; supervision"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

@@ -1,42 +1,42 @@
 {
   "id": "psy-t43-7",
-  "title": "Préparer — Culture d’innovation · T43.7",
+  "title": "Culture d’innovation · T43.7",
   "category": "INNOVATION & R&D",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Culture d’innovation ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle décision réelle d'évolution de la culture d'innovation de votre organisation êtes-vous en train de préparer ?",
+      "help": "Décrivez le périmètre concerné (équipe, département, organisation) et ce qui doit être décidé : un rituel à instaurer, un système d'incitation à revoir, un comportement de leadership à ajuster, un espace ou un temps à dégager.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à évaluer et faire évoluer une culture d’innovation. Ne renseignez pas de score supposé.",
+      "question": "Quels éléments factuels avez-vous déjà sur les pratiques actuelles ?",
+      "help": "Rituels existants, système d'incitation actuel, comportements observés chez les leaders concernés, retours déjà recueillis auprès des équipes.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si cette évolution de culture échoue ou n'est pas engagée ?",
+      "help": "Perte de talents orientés innovation, écart croissant avec des concurrents plus agiles, désengagement des équipes.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai cette évolution doit-elle être engagée ou présentée ?",
+      "placeholder": "Exemple : plan à présenter à la direction d'ici un mois",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Culture d’innovation », dans le domaine « INNOVATION & AMBIDEXTRIE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à évaluer et faire évoluer une culture d’innovation.\nFormat cible : 15 items + cas, 10 min.\nContenu cible : leadership, rituels, incentives, espace.\nCalcul cible (non implémenté ici) : score, recommandations.\nUsage décrit : transformation culturelle.\nOptions cibles : benchmark sectoriel.\nObjectif du domaine : évaluer la capacité d’une organisation et de ses dirigeants à explorer et exploiter simultanément — compétence stratégique clé pour les grandes entreprises, les groupes et les institutions\nGarde-fou du domaine : les scores individuels ne peuvent à eux seuls fonder une décision organisationnelle ; couplage avec diagnostic organisationnel\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en transformation de culture d'innovation spécialisé dans l'examen concret du leadership, des rituels, des systèmes d'incitation et des espaces dédiés à l'innovation : repérer l'écart entre les discours sur l'innovation et les pratiques réellement observées au quotidien.\n\nSituation décrite par l'utilisateur :\nÉvolution de culture à décider : {decision}\nÉléments déjà en main : {elements_connus}\nEnjeu : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite les pratiques concrètes mentionnées (rituels, incitations, comportements de leadership, espaces ou temps dédiés) et distingue ce qui est réellement en place de ce qui relève d'une intention affichée. Pose les questions concrètes à examiner pour CETTE situation : les comportements des leaders cités encouragent-ils réellement la prise d'initiative, ou sanctionnent-ils implicitement les tentatives qui n'aboutissent pas ? Le système d'incitation actuel récompense-t-il l'exécution de l'existant, l'exploration de nouvelles pistes, ou les deux de façon équilibrée ? Les rituels d'innovation décrits, s'ils existent, produisent-ils des décisions concrètes, ou restent-ils symboliques sans suite opérationnelle ? Quel changement, parmi le leadership, les incitations, les rituels ou l'espace disponible, aurait le plus d'effet si on ne pouvait en changer qu'un seul maintenant ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque pratique identifiée avec les questions de décision à se poser, et les points clés à retenir avant de trancher.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "les scores individuels ne peuvent à eux seuls fonder une décision organisationnelle ; couplage avec diagnostic organisationnel"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

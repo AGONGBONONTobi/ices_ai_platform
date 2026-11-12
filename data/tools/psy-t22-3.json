@@ -1,69 +1,232 @@
 {
   "id": "psy-t22-3",
-  "title": "Préparer — Pricing & perception de valeur · T22.3",
+  "title": "Pricing & perception de valeur · T22.3",
   "category": "MARKETING & COMMERCIAL",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Pricing & perception de valeur ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : compréhension des effets prix. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Pricing & perception de valeur », dans le domaine « ÉCONOMIE COMPORTEMENTALE & CONSOMMATEUR ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : compréhension des effets prix.\nFormat cible : 12 cas, 10 min.\nContenu cible : anchoring, decoy, bundles, freemium, prix psychologique.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : direction commerciale.\nOptions cibles : simulation de pricing avec données.\nObjectif du domaine : mesurer la compréhension des biais et la capacité à concevoir des décisions et offres fondées sur la science comportementale\nGarde-fou du domaine : distinguer nudge éthique et manipulation ; charte d’usage obligatoire\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Une annonce affiche « Prix conseillé : 199 € » barré, à côté de « Votre prix : 89 € ». Le prix barré de 199 € sert avant tout de :",
+      "help": "Le premier chiffre vu oriente la façon dont le second chiffre sera jugé.",
+      "options": [
+        {
+          "label": "Point d'ancrage pour faire paraître 89 € avantageux",
+          "score": 1
+        },
+        {
+          "label": "Leurre (decoy) entre deux autres offres",
+          "score": 0
+        },
+        {
+          "label": "Élément d'un bundle",
+          "score": 0
+        },
+        {
+          "label": "Prix d'écrémage",
+          "score": 0
+        }
+      ],
+      "axe": "Pricing & perception de valeur",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Un cinéma propose : petit pop-corn 3 €, grand pop-corn 7 €, et moyen pop-corn 6,50 €. Le format moyen, rarement choisi, sert uniquement à faire paraître le grand format plus avantageux par comparaison. Cette technique de tarification s'appelle :",
+      "help": "Une des trois options n'est quasiment jamais choisie pour elle-même ; elle sert de point de comparaison.",
+      "options": [
+        {
+          "label": "L'effet de leurre (decoy effect)",
+          "score": 1
+        },
+        {
+          "label": "L'ancrage",
+          "score": 0
+        },
+        {
+          "label": "Le bundle",
+          "score": 0
+        },
+        {
+          "label": "L'écrémage",
+          "score": 0
+        }
+      ],
+      "axe": "Pricing & perception de valeur",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Un vendeur propose un smartphone, une coque et un film de protection vendus ensemble à un prix inférieur à la somme des prix séparés. Cette pratique de tarification s'appelle :",
+      "help": "Plusieurs produits distincts sont regroupés sous un seul prix global.",
+      "options": [
+        {
+          "label": "Le bundle (vente groupée)",
+          "score": 1
+        },
+        {
+          "label": "Le freemium",
+          "score": 0
+        },
+        {
+          "label": "Le prix d'appel",
+          "score": 0
+        },
+        {
+          "label": "L'écrémage",
+          "score": 0
+        }
+      ],
+      "axe": "Pricing & perception de valeur",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Une application propose une version de base gratuite et des fonctionnalités avancées payantes. Ce modèle tarifaire s'appelle :",
+      "help": "Une partie du produit est accessible sans payer ; l'autre partie nécessite un paiement.",
+      "options": [
+        {
+          "label": "Le freemium",
+          "score": 1
+        },
+        {
+          "label": "Le bundle",
+          "score": 0
+        },
+        {
+          "label": "Le prix de pénétration",
+          "score": 0
+        },
+        {
+          "label": "Le prix d'écrémage",
+          "score": 0
+        }
+      ],
+      "axe": "Pricing & perception de valeur",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un produit est affiché à 9,99 € plutôt qu'à 10 €, bien que l'écart réel soit négligeable. Cette pratique tarifaire s'appelle :",
+      "help": "Le prix se termine volontairement juste avant un chiffre rond.",
+      "options": [
+        {
+          "label": "Le prix psychologique (charm pricing)",
+          "score": 1
+        },
+        {
+          "label": "L'ancrage",
+          "score": 0
+        },
+        {
+          "label": "L'effet de leurre",
+          "score": 0
+        },
+        {
+          "label": "L'écrémage",
+          "score": 0
+        }
+      ],
+      "axe": "Pricing & perception de valeur",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Une marque lance un nouveau produit haut de gamme à un prix élevé, puis le baisse progressivement une fois les premiers acheteurs à fort pouvoir d'achat satisfaits. Cette stratégie de tarification s'appelle :",
+      "help": "Le prix commence haut et descend ensuite par paliers, à l'inverse d'une stratégie d'entrée à bas prix.",
+      "options": [
+        {
+          "label": "Le prix d'écrémage",
+          "score": 1
+        },
+        {
+          "label": "Le prix de pénétration",
+          "score": 0
+        },
+        {
+          "label": "Le freemium",
+          "score": 0
+        },
+        {
+          "label": "Le bundle",
+          "score": 0
+        }
+      ],
+      "axe": "Pricing & perception de valeur",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Une entreprise lance un nouveau produit à un prix volontairement très bas pour gagner rapidement des parts de marché, avant d'augmenter le prix une fois la base de clients installée. Cette stratégie s'appelle :",
+      "help": "Le prix commence bas pour attirer vite du volume, à l'inverse d'une stratégie de lancement haut de gamme.",
+      "options": [
+        {
+          "label": "Le prix de pénétration",
+          "score": 1
+        },
+        {
+          "label": "Le prix d'écrémage",
+          "score": 0
+        },
+        {
+          "label": "Le prix d'appel ponctuel",
+          "score": 0
+        },
+        {
+          "label": "Le prix psychologique",
+          "score": 0
+        }
+      ],
+      "axe": "Pricing & perception de valeur",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en économie comportementale appliquée au marketing. Cet outil est un contrôle de connaissances factuelles sur « les effets de prix sur la perception de valeur (ancrage, effet de leurre, bundle, freemium, prix psychologique, écrémage, pénétration) » : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure pas votre propre sensibilité aux biais de décision, seulement votre connaissance des concepts, et il ne produit aucun percentile, aucune norme professionnelle ni aucun diagnostic de personnalité.\n\nLe score global et le score de l'axe « Pricing & perception de valeur » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (ancrage, effet de leurre, bundle, freemium, prix psychologique, écrémage, pénétration), sans comparaison à une norme externe et sans jugement sur la personnalité ou la vulnérabilité du répondant face aux biais ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, qu'il ne mesure pas la sensibilité personnelle du répondant aux biais testés, et qu'il ne reflète que les réponses données aujourd'hui.\n\nRappelle, si pertinent, que les techniques testées ici doivent être utilisées de façon éthique : ne recommande jamais une pratique relevant de la manipulation ou des dark patterns, et distingue toujours le nudge éthique de la manipulation. N'invente aucune norme, aucun percentile, aucun classement professionnel, aucun QI. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +243,5 @@
       "Garde-fou du domaine": "distinguer nudge éthique et manipulation ; charte d’usage obligatoire"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

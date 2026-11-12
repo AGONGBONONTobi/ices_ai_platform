@@ -1,42 +1,42 @@
 {
   "id": "psy-t43-3",
-  "title": "Préparer — Tolérance à l’échec · T43.3",
+  "title": "Tolérance à l’échec · T43.3",
   "category": "INNOVATION & R&D",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Tolérance à l’échec ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle situation réelle liée à un échec de projet ou d'initiative êtes-vous en train de traiter ?",
+      "help": "Décrivez le projet ou l'initiative qui a échoué ou sous-performé, et la décision à prendre : conduire un post-mortem, statuer sur les conséquences pour l'équipe, ajuster une pratique de reconnaissance.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à apprendre de l’échec sans le punir. Ne renseignez pas de score supposé.",
+      "question": "Que savez-vous déjà des causes de cet échec et des réactions qu'il a suscitées ?",
+      "help": "Facteurs identifiés, réactions de la hiérarchie ou de l'équipe, décisions déjà prises ou envisagées concernant les personnes impliquées.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu dans la façon de traiter cet échec ?",
+      "help": "Sécurité psychologique de l'équipe, volonté future de prendre des risques, réputation interne du projet ou des personnes impliquées.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai ce traitement de l'échec doit-il être finalisé ?",
+      "placeholder": "Exemple : post-mortem à boucler avant la fin du mois",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Tolérance à l’échec », dans le domaine « INNOVATION & AMBIDEXTRIE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à apprendre de l’échec sans le punir.\nFormat cible : 12 scénarios, 10 min.\nContenu cible : post-mortem, récompense, culture, sécurité psychologique.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : culture d’innovation.\nOptions cibles : couplage avec D14 (équipe, Vague 1).\nObjectif du domaine : évaluer la capacité d’une organisation et de ses dirigeants à explorer et exploiter simultanément — compétence stratégique clé pour les grandes entreprises, les groupes et les institutions\nGarde-fou du domaine : les scores individuels ne peuvent à eux seuls fonder une décision organisationnelle ; couplage avec diagnostic organisationnel\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en culture d'innovation spécialisé dans le traitement constructif de l'échec : la conduite d'un post-mortem utile, la distinction entre erreur d'exécution et erreur de process, et l'effet des réactions managériales sur la sécurité psychologique et la prise de risque future.\n\nSituation décrite par l'utilisateur :\nSituation liée à l'échec : {decision}\nÉléments déjà en main : {elements_connus}\nEnjeu : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite ce qui relève des causes factuelles de l'échec, de la réaction organisationnelle qui a suivi, et de ce qui reste à décider. Pose les questions concrètes à examiner pour CETTE situation : le post-mortem envisagé porte-t-il sur le processus de décision, c'est-à-dire ce qu'on savait au moment de décider, ou se concentre-t-il sur le résultat final avec le recul actuel ? La réaction prévue envers les personnes impliquées risque-t-elle de décourager la prise de risque sur de futures initiatives, même si elle semble juste dans ce cas précis ? Les causes identifiées sont-elles structurelles (process, ressources, timing de marché) ou attribuées trop vite à une personne ? Quel message, explicite ou implicite, ce traitement de l'échec envoie-t-il aux équipes qui observent comment il est géré ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque aspect identifié avec les questions de décision à se poser, et les points clés à retenir avant de trancher.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "les scores individuels ne peuvent à eux seuls fonder une décision organisationnelle ; couplage avec diagnostic organisationnel"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

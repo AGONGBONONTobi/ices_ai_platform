@@ -1,42 +1,42 @@
 {
   "id": "psy-t42-5",
-  "title": "Préparer — Gestion d’équipe fondatrice · T42.5",
+  "title": "Gestion d’équipe fondatrice · T42.5",
   "category": "STRATÉGIE & MANAGEMENT",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Gestion d’équipe fondatrice ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle décision réelle concernant votre équipe fondatrice êtes-vous en train de préparer ?",
+      "help": "Répartition des rôles, résolution d'un conflit entre cofondateurs, répartition de l'equity, règle de gouvernance à fixer, ou modalités de sortie d'un cofondateur.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à composer et faire fonctionner une équipe fondatrice. Ne renseignez pas de score supposé.",
+      "question": "Quels faits concrets avez-vous déjà sur la situation (répartition actuelle, accords existants, points de friction) ?",
+      "help": "Pacte d'associés existant, répartition actuelle de l'equity, décisions déjà prises à l'oral, points de désaccord identifiés.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si cette situation d'équipe fondatrice n'est pas réglée clairement ?",
+      "help": "Blocage opérationnel, départ d'un cofondateur, perte de confiance des investisseurs, coût d'un conflit prolongé.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai cette décision doit-elle être actée ?",
+      "placeholder": "Exemple : avant la prochaine réunion d'associés",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Gestion d’équipe fondatrice », dans le domaine « ENTREPRENEURIAT & INTENTION (VERSION AVANCÉE) ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à composer et faire fonctionner une équipe fondatrice.\nFormat cible : 8 scénarios, 10 min.\nContenu cible : rôles, conflits, equity, gouvernance, sortie.\nCalcul cible (non implémenté ici) : score, qualité de jugement.\nUsage décrit : programmes d’accompagnement.\nOptions cibles : couplage avec D14 (équipe, Vague 1) et D19 (leadership, Vague 2).\nObjectif du domaine : évaluer les compétences entrepreneuriales avancées — au-delà de la tolérance au risque (Vague 2) — pour accompagner les porteurs de projets, sélectionner des candidats à des programmes et préparer la levée de fonds\nGarde-fou du domaine : N2–N3 ; jamais de refus de financement sur score seul ; comité humain obligatoire ; audit de biais (genre, origine) ; transparence\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en gouvernance d'équipes fondatrices spécialisé dans la répartition des rôles, la gestion des conflits entre cofondateurs, les arbitrages d'equity et les modalités de sortie : la clarté des accords qui permettent à une équipe fondatrice de fonctionner dans la durée.\n\nSituation décrite par l'utilisateur :\nDécision concernant l'équipe fondatrice : {decision}\nÉléments déjà en main : {elements_connus}\nEnjeu : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite les rôles, accords ou points de friction mentionnés et identifie ce qui est explicitement acté par écrit par rapport à ce qui repose sur un accord oral ou une supposition. Pose les questions concrètes à clarifier : la répartition de l'equity reflète-t-elle encore la contribution réelle et à venir de chaque cofondateur, ou un accord initial jamais révisé ? Le conflit décrit porte-t-il sur un désaccord de fond (vision, rôle, rythme) ou sur un malentendu qui pourrait être clarifié par une conversation structurée ? Existe-t-il un mécanisme écrit (pacte d'associés, clause de vesting, clause de sortie) qui s'applique à cette situation, ou cette zone est-elle non couverte aujourd'hui ? Que se passerait-il concrètement, pour chaque cofondateur, si la situation actuelle restait figée six mois de plus ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque point identifié avec les questions de décision à se poser, et les points clés à retenir avant de trancher.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "N2–N3 ; jamais de refus de financement sur score seul ; comité humain obligatoire ; audit de biais (genre, origine) ; transparence"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

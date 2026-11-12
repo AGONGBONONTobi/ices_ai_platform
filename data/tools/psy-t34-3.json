@@ -1,69 +1,232 @@
 {
   "id": "psy-t34-3",
-  "title": "Préparer — Diagnostic technique & dépannage · T34.3",
+  "title": "Diagnostic technique & dépannage · T34.3",
   "category": "OUTILS SECTORIELS SPÉCIALISÉS",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Diagnostic technique & dépannage ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à diagnostiquer une panne. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Diagnostic technique & dépannage », dans le domaine « INGÉNIERIE, TECHNIQUE & SÉCURITÉ ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à diagnostiquer une panne.\nFormat cible : 8 cas de dépannage, 15 min.\nContenu cible : symptômes, hypothèses, tests, réparation.\nCalcul cible (non implémenté ici) : score + efficacité du diagnostic.\nUsage décrit : maintenance, SAV.\nOptions cibles : arbres de décision interactifs.\nObjectif du domaine : évaluer les compétences techniques et de sécurité des professionnels de l’ingénierie et de l’industrie\nGarde-fou du domaine : les scores ne remplacent pas les habilitations réglementaires ; pas de substitution aux certifications obligatoires\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Face à une panne, la première étape méthodologique rigoureuse consiste à :",
+      "help": "Une hypothèse fiable se construit à partir d'observations vérifiées, pas l'inverse.",
+      "options": [
+        {
+          "label": "Recueillir et vérifier les symptômes observés avant de formuler une hypothèse",
+          "score": 1
+        },
+        {
+          "label": "Remplacer directement la pièce la plus coûteuse du système",
+          "score": 0
+        },
+        {
+          "label": "Redémarrer le système sans chercher à comprendre la cause",
+          "score": 0
+        },
+        {
+          "label": "Demander à l'utilisateur de résoudre lui-même le problème",
+          "score": 0
+        }
+      ],
+      "axe": "Diagnostic technique & dépannage",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Après avoir formulé plusieurs hypothèses de panne possibles, l'étape suivante correcte consiste à :",
+      "help": "Toutes les hypothèses n'ont pas la même probabilité ni le même coût de vérification.",
+      "options": [
+        {
+          "label": "Tester chaque hypothèse de façon ciblée, de la plus probable et la plus simple à la plus complexe",
+          "score": 1
+        },
+        {
+          "label": "Remplacer tous les composants suspects en même temps",
+          "score": 0
+        },
+        {
+          "label": "Ignorer les hypothèses jugées peu probables sans les tester",
+          "score": 0
+        },
+        {
+          "label": "Appliquer directement la réparation la plus radicale disponible",
+          "score": 0
+        }
+      ],
+      "axe": "Diagnostic technique & dépannage",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Pour isoler la cause d'une panne intermittente sur un système complexe, la méthode la plus fiable consiste à :",
+      "help": "Réduire le périmètre de recherche étape par étape permet de localiser la cause plus sûrement qu'une approche globale.",
+      "options": [
+        {
+          "label": "Diviser le système en sous-ensembles et tester chacun isolément",
+          "score": 1
+        },
+        {
+          "label": "Remplacer l'ensemble du système d'un seul coup",
+          "score": 0
+        },
+        {
+          "label": "Ignorer la panne tant qu'elle reste rare",
+          "score": 0
+        },
+        {
+          "label": "Attendre qu'elle devienne permanente avant d'agir",
+          "score": 0
+        }
+      ],
+      "axe": "Diagnostic technique & dépannage",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Lorsque plusieurs causes possibles peuvent expliquer un même symptôme, il est généralement recommandé de tester d'abord :",
+      "help": "Ce principe de parcimonie privilégie l'explication la plus simple et la plus courante avant les causes plus rares.",
+      "options": [
+        {
+          "label": "La cause la plus simple et la plus fréquente",
+          "score": 1
+        },
+        {
+          "label": "La cause la plus rare",
+          "score": 0
+        },
+        {
+          "label": "La cause la plus coûteuse à vérifier",
+          "score": 0
+        },
+        {
+          "label": "La cause nécessitant le plus de démontage",
+          "score": 0
+        }
+      ],
+      "axe": "Diagnostic technique & dépannage",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Après une réparation, l'étape indispensable avant de clore l'intervention est de :",
+      "help": "Une réparation n'est validée que lorsqu'elle est vérifiée dans des conditions représentatives de l'usage réel.",
+      "options": [
+        {
+          "label": "Vérifier que le symptôme initial a disparu et que le système fonctionne en conditions réelles d'usage",
+          "score": 1
+        },
+        {
+          "label": "Documenter la panne sans retester le système",
+          "score": 0
+        },
+        {
+          "label": "Informer l'utilisateur sans aucune vérification",
+          "score": 0
+        },
+        {
+          "label": "Remonter immédiatement l'équipement sans test final",
+          "score": 0
+        }
+      ],
+      "axe": "Diagnostic technique & dépannage",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Remplacer uniquement la pièce qui a cassé, sans comprendre pourquoi elle a cassé, risque principalement de :",
+      "help": "Traiter le symptôme sans traiter la cause laisse la possibilité que le problème revienne.",
+      "options": [
+        {
+          "label": "Laisser la cause racine (root cause) non traitée et provoquer une panne récurrente",
+          "score": 1
+        },
+        {
+          "label": "Résoudre définitivement tous les problèmes futurs du système",
+          "score": 0
+        },
+        {
+          "label": "Améliorer automatiquement la fiabilité globale de l'équipement",
+          "score": 0
+        },
+        {
+          "label": "N'avoir aucune conséquence sur la suite",
+          "score": 0
+        }
+      ],
+      "axe": "Diagnostic technique & dépannage",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Un arbre de décision de diagnostic est utile en dépannage car il :",
+      "help": "Son rôle est d'organiser les tests à réaliser, pas de se substituer à l'expertise technique.",
+      "options": [
+        {
+          "label": "Structure les tests à effectuer selon les réponses précédentes, réduisant le temps de diagnostic",
+          "score": 1
+        },
+        {
+          "label": "Remplace entièrement l'expertise technique du dépanneur",
+          "score": 0
+        },
+        {
+          "label": "Garantit qu'aucune panne ne se reproduira jamais",
+          "score": 0
+        },
+        {
+          "label": "Élimine le besoin de tester le système après réparation",
+          "score": 0
+        }
+      ],
+      "axe": "Diagnostic technique & dépannage",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur technique en ingénierie et sécurité industrielle. Cet outil est un contrôle de connaissances factuelles sur « la méthodologie de diagnostic et de dépannage (collecte de symptômes, hypothèses, tests ciblés, cause racine, validation de la réparation) » : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence ni l'aptitude générale du répondant, il ne produit aucun percentile ni aucune norme professionnelle, et les scores ne remplacent en aucun cas les habilitations réglementaires ou les certifications obligatoires requises pour ces activités.\n\nLe score global et le score de l'axe « Diagnostic technique & dépannage » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (symptômes, hypothèses, tests, cause racine, validation de réparation), sans comparaison à une norme externe et sans jugement sur l'intelligence ou l'aptitude générale du répondant ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, et qu'il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nRappelle que ce score ne remplace jamais une habilitation réglementaire ni une certification obligatoire (ex. habilitation électrique, permis de travail, certification qualité) : seul l'organisme habilité peut délivrer ces certifications. N'invente aucune norme, aucun percentile, aucun classement professionnel, aucun QI. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +243,5 @@
       "Garde-fou du domaine": "les scores ne remplacent pas les habilitations réglementaires ; pas de substitution aux certifications obligatoires"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

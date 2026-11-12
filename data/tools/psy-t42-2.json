@@ -1,42 +1,42 @@
 {
   "id": "psy-t42-2",
-  "title": "Préparer — Modèle d’affaires & itération · T42.2",
+  "title": "Modèle d’affaires & itération · T42.2",
   "category": "STRATÉGIE & MANAGEMENT",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Modèle d’affaires & itération ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle décision réelle concernant votre modèle d'affaires êtes-vous en train de préparer ?",
+      "help": "Décrivez le business model concerné (produit, segment, canal de revenu) et ce qui doit être tranché : ajustement de l'offre, changement de structure de coûts, pivot partiel ou total.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à concevoir et faire évoluer un business model. Ne renseignez pas de score supposé.",
+      "question": "Quelles données de unit economics ou retours clients avez-vous déjà en main ?",
+      "help": "Coûts d'acquisition, marge par client, taux de rétention, retours qualitatifs sur la proposition de valeur.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si ce modèle d'affaires ne tient pas la route ?",
+      "help": "Trésorerie, runway, engagement d'investisseurs, crédibilité auprès de l'équipe.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai ce modèle doit-il être validé ou ajusté ?",
+      "placeholder": "Exemple : avant le prochain comité budgétaire",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Modèle d’affaires & itération », dans le domaine « ENTREPRENEURIAT & INTENTION (VERSION AVANCÉE) ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à concevoir et faire évoluer un business model.\nFormat cible : 6 cas, 12 min.\nContenu cible : BMC, value proposition, unit economics, pivot.\nCalcul cible (non implémenté ici) : score, cohérence.\nUsage décrit : incubateurs, investisseurs.\nOptions cibles : couplage avec D37 (innovation) et D11 (finance, Vague 1).\nObjectif du domaine : évaluer les compétences entrepreneuriales avancées — au-delà de la tolérance au risque (Vague 2) — pour accompagner les porteurs de projets, sélectionner des candidats à des programmes et préparer la levée de fonds\nGarde-fou du domaine : N2–N3 ; jamais de refus de financement sur score seul ; comité humain obligatoire ; audit de biais (genre, origine) ; transparence\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en modélisation économique spécialisé dans la construction et l'itération de business models : la cohérence entre la proposition de valeur, les segments de clientèle, les canaux de revenu et la structure de coûts, et la capacité à repérer quand un modèle doit être ajusté plutôt que simplement optimisé.\n\nSituation décrite par l'utilisateur :\nModèle d'affaires concerné : {decision}\nÉléments déjà en main : {elements_connus}\nEnjeu : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite les composantes du business model concernées (proposition de valeur, segments, canaux, structure de coûts, flux de revenus) et vérifie leur cohérence interne. Pose les questions concrètes qui permettent de juger si un ajustement ou un pivot est nécessaire : les unit economics actuels (coût d'acquisition, marge, durée de vie client) permettent-ils d'atteindre la rentabilité au volume visé, ou seulement avec des hypothèses optimistes ? La proposition de valeur répond-elle à un problème que les clients paient réellement pour résoudre, ou à un problème jugé intéressant par l'équipe ? Si un seul élément du modèle devait changer en premier, lequel limite le plus la croissance aujourd'hui ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque composante identifiée avec les questions de décision à se poser, et les points clés à retenir avant de trancher.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "N2–N3 ; jamais de refus de financement sur score seul ; comité humain obligatoire ; audit de biais (genre, origine) ; transparence"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

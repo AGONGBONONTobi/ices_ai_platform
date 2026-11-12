@@ -1,69 +1,206 @@
 {
   "id": "psy-t6-5",
-  "title": "Préparer — Désinformation & deepfakes · T6.5",
+  "title": "Désinformation & deepfakes · T6.5",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Désinformation & deepfakes ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : détection de contenus manipulés. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Désinformation & deepfakes », dans le domaine « PENSÉE CRITIQUE & ÉVALUATION DE L’INFORMATION ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : détection de contenus manipulés.\nFormat cible : 20 médias (texte, image, audio, vidéo), 15 min.\nContenu cible : fake news, deepfakes, manipulation d’images, IA générative.\nCalcul cible (non implémenté ici) : précision, calibration.\nUsage décrit : sécurité, communication, éducation.\nOptions cibles : contenus générés à la pointe ; mise à jour trimestrielle.\nObjectif du domaine : mesurer la capacité à juger la qualité de l’information et des raisonnements — compétence clé à l’ère de l’IA générative\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Une image virale semble montrer un événement choquant, mais aucune source fiable ne la reprend. Quelle est la méthode de vérification la plus appropriée en premier lieu ?",
+      "help": "Une technique courante permet de retrouver l’origine réelle d’une image.",
+      "options": [
+        {
+          "label": "Faire une recherche d’image inversée pour retrouver son origine, sa date et son contexte réels.",
+          "score": 1
+        },
+        {
+          "label": "Partager immédiatement l’image pour alerter le plus de personnes possible.",
+          "score": 0
+        },
+        {
+          "label": "Faire confiance à l’image si elle paraît nette et bien cadrée.",
+          "score": 0
+        },
+        {
+          "label": "Attendre que l’image devienne encore plus populaire avant de la vérifier.",
+          "score": 0
+        }
+      ],
+      "axe": "Désinformation & deepfakes",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Qu’est-ce qu’un « deepfake » au sens strict ?",
+      "help": "Le terme désigne un procédé technique précis, pas n’importe quelle manipulation visuelle.",
+      "options": [
+        {
+          "label": "Un contenu audiovisuel (vidéo, voix) généré ou modifié par des techniques d’intelligence artificielle pour faire dire ou faire paraître à une personne des choses qu’elle n’a pas dites ou faites.",
+          "score": 1
+        },
+        {
+          "label": "Toute photo retouchée avec un logiciel de retouche classique, même manuellement.",
+          "score": 0
+        },
+        {
+          "label": "Un article de presse écrit par un journaliste sous pseudonyme.",
+          "score": 0
+        },
+        {
+          "label": "Une rumeur transmise oralement sans support visuel.",
+          "score": 0
+        }
+      ],
+      "axe": "Désinformation & deepfakes",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Avant de partager une information alarmante trouvée sur un réseau social, quelle est la bonne pratique de vérification ?",
+      "help": "La popularité d’un contenu ne dit rien de son exactitude.",
+      "options": [
+        {
+          "label": "Vérifier si l’information est reprise par plusieurs sources indépendantes et reconnues avant de la partager.",
+          "score": 1
+        },
+        {
+          "label": "La partager rapidement, car l’urgence prime sur la vérification.",
+          "score": 0
+        },
+        {
+          "label": "La partager si elle a déjà beaucoup de « likes ».",
+          "score": 0
+        },
+        {
+          "label": "Ne vérifier que si l’information concerne un sujet qui nous intéresse personnellement.",
+          "score": 0
+        }
+      ],
+      "axe": "Désinformation & deepfakes",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Quel indice contextuel (et non une certitude en lui-même) peut éveiller la méfiance face à une vidéo potentiellement manipulée par IA ?",
+      "help": "Un indice isolé ne suffit jamais à conclure seul ; il s’ajoute à d’autres vérifications.",
+      "options": [
+        {
+          "label": "Des incohérences visuelles (clignement des yeux anormal, synchronisation labiale imparfaite, éclairage incohérent) combinées à l’absence de toute source fiable confirmant son authenticité.",
+          "score": 1
+        },
+        {
+          "label": "La haute résolution de la vidéo, qui prouve toujours son authenticité.",
+          "score": 0
+        },
+        {
+          "label": "Le nombre de vues de la vidéo.",
+          "score": 0
+        },
+        {
+          "label": "La présence de sous-titres.",
+          "score": 0
+        }
+      ],
+      "axe": "Désinformation & deepfakes",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un site diffuse une fausse information en imitant la charte graphique d’un média reconnu, avec une URL légèrement différente. Quelle technique de désinformation cela illustre-t-il ?",
+      "help": "La ressemblance visuelle avec une marque connue sert ici un objectif précis.",
+      "options": [
+        {
+          "label": "L’usurpation d’identité de marque (fausse identité éditoriale) pour donner une fausse impression de crédibilité.",
+          "score": 1
+        },
+        {
+          "label": "Une simple coïncidence de mise en page sans intention trompeuse.",
+          "score": 0
+        },
+        {
+          "label": "Une pratique standard et légale de partenariat média.",
+          "score": 0
+        },
+        {
+          "label": "Un format d’article d’opinion classique.",
+          "score": 0
+        }
+      ],
+      "axe": "Désinformation & deepfakes",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Quelle est la limite principale d’une vérification de contenu fondée uniquement sur « l’impression visuelle » (le contenu paraît réaliste ou non) ?",
+      "help": "Pensez à l’évolution récente de la qualité des contenus générés par IA.",
+      "options": [
+        {
+          "label": "Les outils de génération d’IA produisent des contenus de plus en plus réalistes, donc l’impression visuelle seule devient insuffisante ; il faut croiser avec la vérification de la source et du contexte.",
+          "score": 1
+        },
+        {
+          "label": "Cette méthode est toujours suffisante et ne nécessite aucune autre vérification.",
+          "score": 0
+        },
+        {
+          "label": "Elle garantit une détection à 100 % des contenus truqués.",
+          "score": 0
+        },
+        {
+          "label": "Elle n’a aucune limite connue à ce jour.",
+          "score": 0
+        }
+      ],
+      "axe": "Désinformation & deepfakes",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en vérification de l’information (fact-checking). Cet outil est un contrôle de connaissances factuelles sur la désinformation et les deepfakes (techniques de vérification, recherche d’image inversée, indices de manipulation) : ce n’est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Désinformation & deepfakes » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (vérification de source, définition d’un deepfake, indices de manipulation, usurpation d’identité éditoriale), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "mesurer la capacité à juger la qualité de l’information et des raisonnements — compétence clé à l’ère de l’IA générative"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

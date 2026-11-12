@@ -1,69 +1,206 @@
 {
   "id": "psy-t38-2",
-  "title": "Préparer — Causalité complexe · T38.2",
+  "title": "Causalité complexe · T38.2",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Causalité complexe ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à distinguer corrélation, causalité et causalité multiple. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Causalité complexe », dans le domaine « RÉSOLUTION DE PROBLÈMES COMPLEXES ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à distinguer corrélation, causalité et causalité multiple.\nFormat cible : 8 cas, 12 min.\nContenu cible : variables confondantes, médiation, modération, effets de réseau.\nCalcul cible (non implémenté ici) : score, typologie d’erreurs.\nUsage décrit : data science, santé publique, politiques publiques.\nOptions cibles : couplage avec D49 (pensée critique avancée).\nObjectif du domaine : évaluer la capacité à analyser et résoudre des problèmes mal structurés, dynamiques et à multiples variables — compétence de plus en plus critique à l’ère des systèmes complexes et de l’IA\nGarde-fou du domaine : les cas doivent être non politiques et non sensibles ; éviter les scénarios stigmatisants\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Une étude observe que les villes avec plus de pompiers par habitant ont aussi plus d'incendies. Peut-on en conclure que les pompiers provoquent des incendies ?",
+      "help": "Demandez-vous si une troisième variable pourrait expliquer les deux observations à la fois.",
+      "options": [
+        {
+          "label": "Non : il s'agit probablement d'une variable confondante (la taille de la ville), qui augmente à la fois le nombre de pompiers et le nombre d'incendies, sans lien causal direct entre les deux.",
+          "score": 1
+        },
+        {
+          "label": "Oui, la corrélation observée suffit à établir un lien de causalité direct.",
+          "score": 0
+        },
+        {
+          "label": "Non, parce qu'une corrélation positive implique toujours une causalité inverse.",
+          "score": 0
+        },
+        {
+          "label": "Oui, mais uniquement si l'étude est menée sur plus de 1000 villes.",
+          "score": 0
+        }
+      ],
+      "axe": "Causalité complexe",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Dans un modèle de médiation (X → M → Y), quel est le rôle de la variable M ?",
+      "help": "M se situe sur le chemin causal entre la cause et l'effet.",
+      "options": [
+        {
+          "label": "M est le mécanisme intermédiaire par lequel X produit son effet sur Y : une partie (ou la totalité) de l'effet de X passe « à travers » M.",
+          "score": 1
+        },
+        {
+          "label": "M est une variable qui modifie la force du lien entre X et Y sans être affectée par X.",
+          "score": 0
+        },
+        {
+          "label": "M est une variable totalement indépendante de X et de Y, utilisée uniquement comme variable de contrôle.",
+          "score": 0
+        },
+        {
+          "label": "M est la cause finale, et X n'a aucun effet propre.",
+          "score": 0
+        }
+      ],
+      "axe": "Causalité complexe",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Qu'est-ce qu'une variable modératrice, par opposition à une variable médiatrice ?",
+      "help": "Une modératrice change la force ou le sens d'une relation, sans être une étape de cette relation.",
+      "options": [
+        {
+          "label": "Une variable qui change l'intensité ou le sens de la relation entre X et Y (par exemple, l'effet d'un médicament diffère selon l'âge du patient), sans être elle-même un intermédiaire causal entre X et Y.",
+          "score": 1
+        },
+        {
+          "label": "Une variable qui transmet l'effet de X vers Y de façon séquentielle.",
+          "score": 0
+        },
+        {
+          "label": "Une variable qui est toujours la cause commune de X et de Y.",
+          "score": 0
+        },
+        {
+          "label": "Un synonyme exact de « variable confondante ».",
+          "score": 0
+        }
+      ],
+      "axe": "Causalité complexe",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Dans un réseau social, un individu change de comportement parce que plusieurs de ses contacts proches ont déjà changé le leur, indépendamment de toute cause externe commune. Ce phénomène illustre :",
+      "help": "La position dans le réseau, pas seulement les caractéristiques individuelles, joue un rôle ici.",
+      "options": [
+        {
+          "label": "Un effet de réseau (contagion sociale) : l'influence causale se propage via les connexions, et la position dans le réseau compte, pas seulement les attributs individuels.",
+          "score": 1
+        },
+        {
+          "label": "Une causalité inverse pure, où Y cause toujours X.",
+          "score": 0
+        },
+        {
+          "label": "Un cas typique de variable confondante classique, sans propagation entre individus.",
+          "score": 0
+        },
+        {
+          "label": "Une preuve que corrélation et causalité sont toujours identiques dans un réseau.",
+          "score": 0
+        }
+      ],
+      "axe": "Causalité complexe",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Pourquoi une expérience randomisée contrôlée (RCT) permet-elle en général de mieux établir la causalité qu'une simple observation ?",
+      "help": "La randomisation agit sur la répartition des facteurs qu'on ne mesure pas forcément.",
+      "options": [
+        {
+          "label": "Parce que la randomisation répartit en moyenne les facteurs confondants connus et inconnus de façon équilibrée entre les groupes, isolant ainsi l'effet de la variable manipulée.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'elle élimine totalement le besoin de mesurer la variable d'intérêt.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'elle garantit que la corrélation observée est toujours égale à 1.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'elle remplace la nécessité d'une taille d'échantillon suffisante.",
+          "score": 0
+        }
+      ],
+      "axe": "Causalité complexe",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Deux variables évoluent ensemble dans le temps (ex. ventes de glaces et noyades) sans lien causal direct entre elles. Quelle est l'explication la plus probable ?",
+      "help": "Une variable saisonnière pourrait influencer les deux séries à la fois.",
+      "options": [
+        {
+          "label": "Une troisième variable (la température, la saison) influence les deux simultanément : c'est une causalité commune, pas un lien direct entre elles.",
+          "score": 1
+        },
+        {
+          "label": "Il s'agit nécessairement d'une coïncidence statistique sans aucune explication possible.",
+          "score": 0
+        },
+        {
+          "label": "Les glaces provoquent directement les noyades par un mécanisme physiologique.",
+          "score": 0
+        },
+        {
+          "label": "Les noyades provoquent une hausse de la demande de glaces.",
+          "score": 0
+        }
+      ],
+      "axe": "Causalité complexe",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en raisonnement causal et analyse de données. Cet outil est un contrôle de connaissances factuelles sur « Causalité complexe » (domaine « RÉSOLUTION DE PROBLÈMES COMPLEXES ») : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence générale, ni une aptitude de décision ou de personnalité, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Causalité complexe » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (variables confondantes, médiation, modération, effets de réseau, corrélation vs causalité), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure d'intelligence générale ou de capacité de décision, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "les cas doivent être non politiques et non sensibles ; éviter les scénarios stigmatisants"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

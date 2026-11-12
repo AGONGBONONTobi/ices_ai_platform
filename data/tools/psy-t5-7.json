@@ -1,69 +1,148 @@
 {
   "id": "psy-t5-7",
-  "title": "Préparer — Multilinguisme & transfert · T5.7",
+  "title": "Multilinguisme & transfert · T5.7",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Multilinguisme & transfert ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "En français standard, le mot « actuellement » signifie :",
+      "help": "Ne le confondez pas avec le mot anglais qui lui ressemble le plus à l'écrit.",
+      "options": [
+        { "label": "En ce moment, à l'heure actuelle.", "score": 1 },
+        { "label": "En réalité, contrairement à ce qui est dit.", "score": 0 },
+        { "label": "Rarement, occasionnellement.", "score": 0 },
+        { "label": "Par le passé, autrefois.", "score": 0 }
+      ],
+      "axe": "Multilinguisme & transfert",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Quelle phrase évite un calque de l'anglais et respecte le français standard ?",
+      "help": "Une des formulations proposées traduit trop littéralement « come back to you ».",
+      "options": [
+        { "label": "Je vous recontacterai dès que possible.", "score": 1 },
+        { "label": "Je vais revenir vers vous dès que possible.", "score": 0 },
+        { "label": "Je vais vous revenir dès que possible.", "score": 0 },
+        { "label": "Je reviendrai vers vous dès que possible.", "score": 0 }
+      ],
+      "axe": "Multilinguisme & transfert",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : compétence en plusieurs langues et transfert. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Le mot anglais « library » est un faux ami du mot français « librairie ». Que désigne réellement une « librairie » en français ?",
+      "help": "En français, le lieu où l'on emprunte des livres gratuitement porte un autre nom.",
+      "options": [
+        { "label": "Un magasin où l'on vend des livres.", "score": 1 },
+        { "label": "Un lieu où l'on peut emprunter des livres gratuitement.", "score": 0 },
+        { "label": "Un entrepôt de livres destinés à être détruits.", "score": 0 },
+        { "label": "Une salle de lecture réservée aux étudiants.", "score": 0 }
+      ],
+      "axe": "Multilinguisme & transfert",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Laquelle de ces formulations est un calque de l'anglais « that makes sense » à éviter en français standard ?",
+      "help": "Les trois autres formulations expriment la même idée en français standard, sans calque.",
+      "options": [
+        { "label": "Ça fait du sens.", "score": 1 },
+        { "label": "Cela a du sens.", "score": 0 },
+        { "label": "Cela se comprend.", "score": 0 },
+        { "label": "C'est logique.", "score": 0 }
+      ],
+      "axe": "Multilinguisme & transfert",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Le mot anglais « eventually » est un faux ami du mot français « éventuellement ». Que signifie « éventuellement » en français ?",
+      "help": "En anglais, « eventually » signifie plutôt « finalement » ; le mot français n'a pas ce sens.",
+      "options": [
+        { "label": "Peut-être, le cas échéant : une possibilité, pas une certitude.", "score": 1 },
+        { "label": "Finalement, au bout du compte.", "score": 0 },
+        { "label": "Jamais, en aucun cas.", "score": 0 },
+        { "label": "Immédiatement, sans délai.", "score": 0 }
+      ],
+      "axe": "Multilinguisme & transfert",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "En français, l'expression « assister à une réunion » signifie :",
+      "help": "Ne confondez pas ce verbe avec le verbe anglais « to assist », qui signifie plutôt « aider ».",
+      "options": [
+        { "label": "Être présent, participer à une réunion en tant qu'observateur ou participant.", "score": 1 },
+        { "label": "Aider activement à l'organisation de la réunion.", "score": 0 },
+        { "label": "Diriger et présider la réunion.", "score": 0 },
+        { "label": "Annuler la réunion prévue.", "score": 0 }
+      ],
+      "axe": "Multilinguisme & transfert",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Quelle phrase française exprime l'idée de « to be excited about something » sans recourir à un calque discuté de l'anglais ?",
+      "help": "En français standard, « excité » a souvent une connotation différente de l'anglais « excited ».",
+      "options": [
+        { "label": "Je suis impatient(e) à l'idée de ce projet.", "score": 1 },
+        { "label": "Je suis excité(e) par ce projet.", "score": 0 },
+        { "label": "Je suis tout excité par ce projet.", "score": 0 },
+        { "label": "Ça m'excite beaucoup ce projet.", "score": 0 }
+      ],
+      "axe": "Multilinguisme & transfert",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Multilinguisme & transfert », dans le domaine « COMPRÉHENSION VERBALE & LANGAGE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : compétence en plusieurs langues et transfert.\nFormat cible : test adaptatif par langue, 15 min.\nContenu cible : compréhension, production, interférences.\nCalcul cible (non implémenté ici) : profil multilingue, dominance.\nUsage décrit : affectation internationale, formation.\nOptions cibles : 20 langues ; détection d’interférences.\nObjectif du domaine : évaluer la maîtrise de la langue et la capacité à traiter l’information écrite\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en français et en prévention des interférences linguistiques liées au contact avec d'autres langues (en particulier l'anglais). Cet outil est un entraînement et un contrôle de connaissances factuelles sur la compréhension et la production du français face aux interférences venues d'autres langues (faux amis, calques, anglicismes) : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure aucune compétence « multilingue » globale, il ne produit aucun percentile, aucune norme professionnelle, ni aucun QI, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Multilinguisme & transfert » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (faux amis, calques, anglicismes à éviter en français standard), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour s'entraîner sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure de QI, de dominance linguistique ou d'aptitude générale, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "assessment",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +158,5 @@
       "Objectif du domaine": "évaluer la maîtrise de la langue et la capacité à traiter l’information écrite"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

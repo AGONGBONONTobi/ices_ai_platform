@@ -1,69 +1,206 @@
 {
   "id": "psy-t49-2",
-  "title": "Préparer — Argumentation avancée · T49.2",
+  "title": "Argumentation avancée · T49.2",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Argumentation avancée ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à analyser et construire des arguments complexes. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Argumentation avancée », dans le domaine « PENSÉE CRITIQUE AVANCÉE (RENFORCEMENT) ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à analyser et construire des arguments complexes.\nFormat cible : 15 items + 2 tâches, 12 min.\nContenu cible : structure, validité, force, contre-arguments.\nCalcul cible (non implémenté ici) : score, qualité de l’argumentation.\nUsage décrit : conseil, droit, gouvernance.\nOptions cibles : comparaison à des argumentations expertes.\nObjectif du domaine : approfondir la pensée critique avec des modules avancés adaptés à l’ère de l’IA générative et de la désinformation de masse — au-delà de la Vague 1\nGarde-fou du domaine : N3 possible ; supervision humaine ; audit de biais ; droit à l’explication\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Un argument affirme : « Toutes les entreprises qui ont adopté cette méthode ont vu leur productivité augmenter. Donc cette méthode cause une hausse de productivité. » Quelle faiblesse méthodologique affaiblit la force causale de cet argument ?",
+      "help": "Pensez à ce qui manque pour exclure d’autres explications à la hausse observée.",
+      "options": [
+        {
+          "label": "L’absence de groupe de comparaison (entreprises n’ayant pas adopté la méthode), qui empêche d’exclure d’autres causes à la hausse de productivité observée.",
+          "score": 1
+        },
+        {
+          "label": "Le fait que l’argument porte sur des entreprises et non sur des individus.",
+          "score": 0
+        },
+        {
+          "label": "Le fait que la méthode ait été adoptée volontairement par les entreprises.",
+          "score": 0
+        },
+        {
+          "label": "L’absence de toute précision de date dans l’argument.",
+          "score": 0
+        }
+      ],
+      "axe": "Argumentation avancée",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Dans un débat, un interlocuteur présente un contre-argument sérieux mais y répond uniquement par une raillerie, sans jamais aborder le fond du contre-argument. Que peut-on dire de la qualité de cette réponse ?",
+      "help": "Une réfutation logique s’attaque au contenu de l’argument, pas à son interlocuteur ni à son ton.",
+      "options": [
+        {
+          "label": "Elle est faible sur le plan argumentatif : elle n’apporte aucune réfutation logique du contre-argument et évite le fond du débat.",
+          "score": 1
+        },
+        {
+          "label": "Elle est forte, car l’humour renforce toujours la crédibilité d’un argument.",
+          "score": 0
+        },
+        {
+          "label": "Elle est équivalente à une réfutation logique complète.",
+          "score": 0
+        },
+        {
+          "label": "Sa qualité ne peut être jugée sans connaître l’identité des deux interlocuteurs.",
+          "score": 0
+        }
+      ],
+      "axe": "Argumentation avancée",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Un argument juridique complexe repose sur plusieurs prémisses enchaînées : si l’une de ces prémisses est fausse, que devient la conclusion qui en dépendait logiquement ?",
+      "help": "La conclusion perd son fondement logique, ce qui ne dit pas automatiquement si elle est vraie ou fausse pour d’autres raisons.",
+      "options": [
+        {
+          "label": "La conclusion n’est plus garantie par cet argument, même si elle peut rester vraie pour d’autres raisons indépendantes.",
+          "score": 1
+        },
+        {
+          "label": "La conclusion reste automatiquement vraie malgré tout.",
+          "score": 0
+        },
+        {
+          "label": "La conclusion devient automatiquement fausse dans tous les cas.",
+          "score": 0
+        },
+        {
+          "label": "Les autres prémisses deviennent également fausses par contagion logique.",
+          "score": 0
+        }
+      ],
+      "axe": "Argumentation avancée",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Pour évaluer la force d’un argument complexe (et non sa simple validité formelle), quel critère supplémentaire faut-il considérer ?",
+      "help": "La validité logique porte sur la forme ; la force porte aussi sur le contenu.",
+      "options": [
+        {
+          "label": "La vérité et la plausibilité réelle des prémisses elles-mêmes, en plus de la cohérence logique de leur enchaînement vers la conclusion.",
+          "score": 1
+        },
+        {
+          "label": "Uniquement la longueur de l’argument.",
+          "score": 0
+        },
+        {
+          "label": "Uniquement le nombre de personnes qui le soutiennent.",
+          "score": 0
+        },
+        {
+          "label": "Uniquement le ton employé par celui qui l’énonce.",
+          "score": 0
+        }
+      ],
+      "axe": "Argumentation avancée",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un argumentaire avancé anticipe les objections possibles et y répond avant qu’elles ne soient soulevées. Quel est l’intérêt principal de cette démarche par rapport à un argumentaire qui ignore les contre-arguments ?",
+      "help": "Pensez à ce que cela montre sur la résistance de l’argumentation face à un examen critique.",
+      "options": [
+        {
+          "label": "Elle renforce la robustesse de l’argumentation en montrant qu’elle résiste à l’examen critique, plutôt que de se limiter à une présentation à sens unique.",
+          "score": 1
+        },
+        {
+          "label": "Elle rend l’argument totalement infaillible et incontestable.",
+          "score": 0
+        },
+        {
+          "label": "Elle n’a aucun intérêt particulier sur le plan argumentatif.",
+          "score": 0
+        },
+        {
+          "label": "Elle remplace la nécessité de fournir des preuves.",
+          "score": 0
+        }
+      ],
+      "axe": "Argumentation avancée",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Deux experts avancent des arguments opposés, tous deux logiquement valides dans leur structure interne. Comment expliquer qu’ils aboutissent à des conclusions différentes malgré une logique interne correcte ?",
+      "help": "La validité logique porte sur l’enchaînement du raisonnement, pas sur le contenu des prémisses de départ.",
+      "options": [
+        {
+          "label": "Leurs prémisses de départ diffèrent probablement ; un raisonnement peut être valide dans sa forme tout en reposant sur des prémisses différentes ou contestables.",
+          "score": 1
+        },
+        {
+          "label": "Cela est logiquement impossible : deux arguments valides aboutissent toujours à la même conclusion.",
+          "score": 0
+        },
+        {
+          "label": "L’un des deux experts ment nécessairement.",
+          "score": 0
+        },
+        {
+          "label": "La validité logique garantit toujours la vérité de la conclusion, donc l’un des deux arguments n’était pas réellement valide.",
+          "score": 0
+        }
+      ],
+      "axe": "Argumentation avancée",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en argumentation complexe. Cet outil est un contrôle de connaissances factuelles sur l’argumentation avancée (force d’un argument, prémisses enchaînées, réfutation de contre-arguments, validité vs vérité des prémisses) : ce n’est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Argumentation avancée » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (force causale d’un argument, enchaînement de prémisses, réfutation de contre-arguments, distinction validité/vérité des prémisses), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "N3 possible ; supervision humaine ; audit de biais ; droit à l’explication"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

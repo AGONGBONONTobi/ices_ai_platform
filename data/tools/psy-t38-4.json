@@ -1,69 +1,206 @@
 {
   "id": "psy-t38-4",
-  "title": "Préparer — Décision en incertitude · T38.4",
+  "title": "Décision en incertitude · T38.4",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Décision en incertitude ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à décider avec information incomplète. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Décision en incertitude », dans le domaine « RÉSOLUTION DE PROBLÈMES COMPLEXES ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à décider avec information incomplète.\nFormat cible : 6 scénarios, 12 min.\nContenu cible : probabilités incertaines, options, coût du délai.\nCalcul cible (non implémenté ici) : qualité de décision, gestion de l’ambiguïté.\nUsage décrit : rôles critiques, finance, sécurité.\nOptions cibles : couplage avec D40 (décision sous incertitude).\nObjectif du domaine : évaluer la capacité à analyser et résoudre des problèmes mal structurés, dynamiques et à multiples variables — compétence de plus en plus critique à l’ère des systèmes complexes et de l’IA\nGarde-fou du domaine : les cas doivent être non politiques et non sensibles ; éviter les scénarios stigmatisants\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "En théorie de la décision, quelle est la différence entre une décision « sous risque » et une décision « sous incertitude » au sens strict ?",
+      "help": "La différence porte sur ce que l'on sait — ou non — des probabilités elles-mêmes.",
+      "options": [
+        {
+          "label": "Sous risque, les probabilités des issues possibles sont connues (ou estimables) ; sous incertitude stricte, même les probabilités des issues ne sont pas connues.",
+          "score": 1
+        },
+        {
+          "label": "Les deux termes désignent exactement la même situation de décision.",
+          "score": 0
+        },
+        {
+          "label": "Sous risque, les issues possibles sont inconnues ; sous incertitude, elles sont toutes connues avec certitude.",
+          "score": 0
+        },
+        {
+          "label": "Une décision sous incertitude ne peut jamais comporter plusieurs issues possibles.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision en incertitude",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Un décideur ne connaît pas les probabilités des différents scénarios, mais il choisit l'option dont le pire résultat possible est le moins mauvais parmi toutes les options. Quelle règle de décision applique-t-il ?",
+      "help": "Cette règle cherche à se protéger du pire cas, pas à maximiser une moyenne.",
+      "options": [
+        {
+          "label": "La règle du maximin : elle vise à se protéger du pire scénario plutôt qu'à maximiser un gain espéré.",
+          "score": 1
+        },
+        {
+          "label": "La règle de l'espérance de valeur maximale, qui requiert de connaître les probabilités exactes.",
+          "score": 0
+        },
+        {
+          "label": "La règle de la majorité, utilisée uniquement en décision collective.",
+          "score": 0
+        },
+        {
+          "label": "La règle du premier choix venu, sans aucun critère explicite.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision en incertitude",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Qu'appelle-t-on le « principe de dominance » en théorie de la décision ?",
+      "help": "Une option dominante ne fait jamais moins bien qu'une autre, dans aucun scénario.",
+      "options": [
+        {
+          "label": "Si une option produit un résultat au moins aussi bon qu'une autre dans tous les scénarios possibles, et strictement meilleur dans au moins un scénario, alors elle doit être préférée à cette autre option.",
+          "score": 1
+        },
+        {
+          "label": "Le principe selon lequel l'option la plus coûteuse est toujours la meilleure.",
+          "score": 0
+        },
+        {
+          "label": "Le principe selon lequel il faut toujours choisir l'option recommandée par la majorité, indépendamment des résultats.",
+          "score": 0
+        },
+        {
+          "label": "Le principe selon lequel une option domine une autre dès qu'elle est choisie en premier.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision en incertitude",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Pourquoi « attendre d'avoir plus d'informations » avant de décider a-t-il un coût, même si cela semble réduire le risque de se tromper ?",
+      "help": "Le temps qui passe n'est jamais neutre.",
+      "options": [
+        {
+          "label": "Parce que le délai lui-même a un coût (occasion manquée, situation qui évolue, fenêtre d'action qui se referme), qui doit être mis en balance avec le gain de certitude obtenu.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'attendre ne comporte objectivement jamais aucun coût, seulement des bénéfices.",
+          "score": 0
+        },
+        {
+          "label": "Parce que toute information supplémentaire est par définition fausse.",
+          "score": 0
+        },
+        {
+          "label": "Parce que le temps d'attente augmente automatiquement les probabilités de succès.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision en incertitude",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un décideur traite une situation réellement incertaine (probabilités inconnues) comme si elle était un jeu de hasard aux probabilités parfaitement connues. Quelle erreur commet-il ?",
+      "help": "Il assigne une précision à quelque chose qui, par nature, n'en a pas.",
+      "options": [
+        {
+          "label": "Il confond incertitude et risque, ce qui peut le conduire à une confiance injustifiée dans un calcul de probabilités qu'il n'a en réalité pas les moyens d'établir.",
+          "score": 1
+        },
+        {
+          "label": "Il applique correctement la théorie de la décision, car risque et incertitude sont rigoureusement identiques.",
+          "score": 0
+        },
+        {
+          "label": "Il élimine toute possibilité d'erreur en formalisant la décision.",
+          "score": 0
+        },
+        {
+          "label": "Il transforme automatiquement l'incertitude en certitude totale.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision en incertitude",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Dans un contexte d'information incomplète, pourquoi est-il utile d'envisager explicitement plusieurs scénarios contrastés (optimiste, central, pessimiste) plutôt qu'une seule prévision unique ?",
+      "help": "Une seule prévision ponctuelle masque l'éventail des issues possibles.",
+      "options": [
+        {
+          "label": "Parce que cela rend visible l'éventail des résultats possibles et évite de fonder la décision sur une seule estimation ponctuelle, trompeusement précise.",
+          "score": 1
+        },
+        {
+          "label": "Parce que la moyenne de plusieurs scénarios est toujours égale au scénario réellement observé.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la théorie de la décision interdit l'usage d'une prévision unique, en toutes circonstances.",
+          "score": 0
+        },
+        {
+          "label": "Parce que cela supprime tout besoin ultérieur de réviser la décision.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision en incertitude",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en théorie de la décision. Cet outil est un contrôle de connaissances factuelles sur « Décision en incertitude » (domaine « RÉSOLUTION DE PROBLÈMES COMPLEXES ») : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence générale, ni une aptitude de décision ou de personnalité, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Décision en incertitude » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (distinction risque / incertitude, règle du maximin, principe de dominance, coût du délai), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure d'intelligence générale ou de capacité de décision, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "les cas doivent être non politiques et non sensibles ; éviter les scénarios stigmatisants"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

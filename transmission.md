@@ -209,42 +209,54 @@ de preuve. Séparer les faits observés, les résultats déclarés et les hypoth
 
 ## Suite donnée par Claude, 12 novembre 2026
 
-35 des 499 fiches importées ont été transformées en outils réellement
-fonctionnels, sans `execution`, intégrés au catalogue normal :
+217 des 499 fiches importées (62 % des 350 codes du lot 5) ont été
+transformées en outils réellement fonctionnels, sans `execution`, intégrés au
+catalogue normal. Deux passes : une première de 35 outils (domaines 11, 12,
+13, 46 en quiz + 39 en analyse), puis une seconde de 182 outils supplémentaires
+sur demande explicite de Kenzo ("fais tout") de pousser l'intégration sur tout
+ce qui est honnêtement faisable, en travaillant en autonomie complète.
 
-- **28 quiz à correction objective** — identifiants `psy-t11-1` à `psy-t11-7`
-  (Finance & numératie financière), `psy-t12-1` à `psy-t12-7` (Cybersécurité &
-  hygiène numérique), `psy-t13-1` à `psy-t13-7` (Compétence numérique &
-  bureautique), `psy-t46-1` à `psy-t46-7` (Data literacy & IA). Chaque outil :
-  `output_kind: "assessment"`, 6 à 7 questions à choix multiple avec une seule
-  réponse objectivement correcte (option `score: 1`, distracteurs `score: 0`),
-  score calculé par `fast_api/app/services/scoring.py::compute_scores` (jamais
-  par le modèle, qui ne fait que commenter le résultat déjà calculé).
-- **7 outils d'analyse sans score** — `psy-t39-1` à `psy-t39-7` (Biais
-  cognitifs & jugement). `output_kind: "analysis"` : l'utilisateur décrit une
-  décision réelle en cours, l'outil produit une analyse des biais pertinents
-  et des questions de débiaisage concrètes. Aucun coefficient de biais n'est
-  calculé ni affiché.
+- **Quiz à correction objective** (`output_kind: "assessment"`, score calculé
+  par `fast_api/app/services/scoring.py::compute_scores`, jamais par le
+  modèle) — domaines 4 (calcul mental), 5 (vocabulaire/grammaire), 6 et 49
+  (évaluation de sources, sophismes), 11 (finance), 12 (cybersécurité), 13
+  (bureautique), 22 (concepts marketing/biais du consommateur), 34
+  (raisonnement mécanique/technique), 38 et 40 (systémique, probabilités,
+  théorie de la décision), 44 (boucles de rétroaction), 46 (data literacy &
+  IA). 13 domaines × 7 = 91 outils.
+- **Outils d'analyse sans score** (`output_kind: "analysis"`, l'utilisateur
+  décrit une situation réelle, l'outil produit une analyse substantielle de
+  CETTE situation, jamais un score ni une étiquette de personnalité) —
+  domaines 17, 19, 20, 21, 23, 24, 25, 28, 32, 35, 36, 37, 39, 42, 43, 45, 48,
+  50 (risque financier, leadership, gouvernance, stratégie concurrentielle,
+  marketing, communication, négociation, HSE, politique publique, économie
+  informelle, créativité, biais cognitifs, entrepreneuriat, innovation,
+  prospective, interculturel). 18 domaines × 7 = 126 outils.
 
-Choix délibéré, pas un oubli : ces 5 domaines (sur 50 au lot 5) sont les seuls
-où une correction objective est honnête sans banque d'items calibrée — des
-faits financiers, de sécurité, de bureautique ou de littératie des données ont
-une réponse vraie ou fausse vérifiable. Les 45 autres domaines du lot 5 (QI,
-personnalité, intelligence émotionnelle, motivation, intérêts, santé mentale,
-tempérament de l'enfant, neurodiversité, haut potentiel...) mesurent des
-construits individuels qui exigeraient une norme ou un item calibré que ce
-projet n'a pas : leur attribuer un score aurait fabriqué un résultat
-psychométrique. Le lot 6 (parcours cognitifs individuels, probablement
-appliqués à des apprenants) n'a pas été touché pour la même raison, en plus
-d'impliquer potentiellement des mineurs — il reste exactement comme Codex l'a
-construit (28 guides de préparation, 121 fiches de référence).
+Choix délibéré, pas un oubli : ces 31 domaines (sur 50 au lot 5) sont ceux où
+une correction objective ou une analyse de situation réelle est honnête sans
+fabriquer une mesure de la personne. Les 19 domaines restants du lot 5 (QI,
+fonctions exécutives, mémoire, personnalité Big Five, intelligence
+émotionnelle, motivation, intérêts professionnels, rôles d'équipe Belbin,
+apprentissage/métacognition, raisonnement spatial, soft skills,
+résilience/stress, santé mentale, haut potentiel, orientation de vie,
+aptitudes élitistes, raisonnement clinique santé, tempérament de l'enfant,
+neurodiversité) exigeraient une norme ou un item calibré que ce projet n'a
+pas : leur attribuer un score aurait fabriqué un résultat psychométrique. Le
+lot 6 (parcours cognitifs individuels, probablement appliqués à des
+apprenants) n'a pas été touché pour la même raison, en plus d'impliquer
+potentiellement des mineurs — il reste exactement comme Codex l'a construit
+(28 guides de préparation, 121 fiches de référence). Cette limite tient même
+sous l'instruction explicite de Kenzo de tout intégrer : c'est une limite de
+sécurité/honnêteté, pas une décision business qui se discute.
 
-Méthode : 1 lecture directe des 5 sous-ensembles de `catalogue-350.json`, 4
-sous-agents en parallèle (domaines 11/12/13/46, un par domaine, même
-spécification : connaissances objectives uniquement, pas de question dont la
-bonne réponse serait incertaine) et le domaine 39 traité directement par moi
-(biais cognitifs = usage de sélection dans la source, jugé trop sensible pour
-délégation sans supervision directe).
+Méthode : lecture directe des sous-ensembles pertinents de
+`catalogue-350.json`, classification des 50 domaines en trois familles (quiz
+objectif / analyse de situation sans score / reste intouché), puis 19
+sous-agents en parallèle au total (5 pour les domaines quiz restants, 14 pour
+les domaines d'analyse, chacun avec consigne explicite anti-fabrication de
+score et miroir structurel sur un fichier déjà construit comme référence :
+`psy-t11-1.json` pour les quiz, `psy-t39-1.json` pour les analyses).
 
 Vérifications exécutées (toutes depuis la racine du dépôt sauf indication) :
 - `npx tsx scripts/validate_tools.ts --quiet` → 1587 fiches, 0 erreur (3545
@@ -253,19 +265,19 @@ Vérifications exécutées (toutes depuis la racine du dépôt sauf indication) 
 - `npm run lint` → aucune erreur.
 - `npm run build` → build Next.js réussi.
 - `cd fast_api && source .venv/bin/activate && SUPABASE_URL=... GROQ_API_KEY=test python -m pytest -q` → 150 passed.
-- `data/imports/manager-lots/coverage.json` mis à jour : `functional_tools: 35`,
-  `preparation_guides: 343` (était 378), `by_batch_and_mode` recalculé.
+- `data/imports/manager-lots/coverage.json` mis à jour : `functional_tools: 217`,
+  `preparation_guides: 161` (était 378), `by_batch_and_mode` recalculé.
 
-État Git : modifications locales non commitées au moment de la rédaction de
-cette note (35 fichiers `data/tools/psy-t{11,12,13,39,46}-*.json` + coverage.json
-+ ce fichier + docs/INTEGRATION_LOTS_OUTILS.md). État Supabase : **aucune
-synchronisation effectuée** — ces 35 outils n'existent que dans le catalogue
-local jusqu'à l'exécution de `scripts/sync_tools_to_db.ts`, qui doit être lancé
-et vérifié séparément (et qui peut aussi supprimer côté base des identifiants
-absents du catalogue local — lire son code avant de l'exécuter).
+État Git : 217 fichiers `data/tools/psy-t*.json` + coverage.json + ce fichier
++ docs/INTEGRATION_LOTS_OUTILS.md, committés et poussés sur `main`. État
+Supabase : **aucune synchronisation effectuée** — ces 217 outils n'existent
+que dans le catalogue local jusqu'à l'exécution de `scripts/sync_tools_to_db.ts`,
+qui doit être lancé et vérifié séparément (et qui peut aussi supprimer côté
+base des identifiants absents du catalogue local — lire son code avant de
+l'exécuter).
 
 Hypothèse, pas un fait vérifié : la justesse factuelle des réponses correctes
-(finance, cybersécurité, bureautique, data literacy) repose sur les
-connaissances générales de l'agent qui les a écrites, pas sur une relecture
-par un expert du domaine ni sur un test utilisateur réel. Aucune génération LLM
-réelle (`/api/execute`) n'a été appelée pendant cette session pour ces 35 outils.
+repose sur les connaissances générales des agents qui les ont écrites, pas sur
+une relecture par un expert du domaine ni sur un test utilisateur réel. Aucune
+génération LLM réelle (`/api/execute`) n'a été appelée pendant cette session
+pour ces 217 outils.

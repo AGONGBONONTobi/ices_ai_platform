@@ -1,69 +1,206 @@
 {
   "id": "psy-t38-6",
-  "title": "Préparer — Apprentissage par l’échec · T38.6",
+  "title": "Apprentissage par l’échec · T38.6",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Apprentissage par l’échec ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à tirer des leçons d’échecs simulés. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Apprentissage par l’échec », dans le domaine « RÉSOLUTION DE PROBLÈMES COMPLEXES ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à tirer des leçons d’échecs simulés.\nFormat cible : 4 cycles essai-feedback, 15 min.\nContenu cible : itérations, ajustements, stratégie d’apprentissage.\nCalcul cible (non implémenté ici) : vitesse d’apprentissage, qualité des ajustements.\nUsage décrit : profils de growth, innovation.\nOptions cibles : mesure de la méta-apprentissage (apprendre à apprendre de l’échec).\nObjectif du domaine : évaluer la capacité à analyser et résoudre des problèmes mal structurés, dynamiques et à multiples variables — compétence de plus en plus critique à l’ère des systèmes complexes et de l’IA\nGarde-fou du domaine : les cas doivent être non politiques et non sensibles ; éviter les scénarios stigmatisants\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Lorsqu'on teste une hypothèse par essais successifs, pourquoi est-il préférable de ne modifier qu'une seule variable à la fois entre deux essais ?",
+      "help": "Pensez à ce qu'il devient possible — ou impossible — d'attribuer à un changement de résultat.",
+      "options": [
+        {
+          "label": "Parce que cela permet d'attribuer sans ambiguïté le changement de résultat à la variable modifiée, plutôt qu'à un effet combiné impossible à démêler.",
+          "score": 1
+        },
+        {
+          "label": "Parce que modifier plusieurs variables à la fois donne toujours un résultat plus rapide à interpréter.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la loi impose de tester une seule variable par essai dans tout contexte professionnel.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'une seule variable modifiée garantit automatiquement la réussite de l'essai suivant.",
+          "score": 0
+        }
+      ],
+      "axe": "Apprentissage par l'échec",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Une équipe étudie uniquement les projets qui ont réussi pour en déduire « ce qui marche », sans examiner les projets similaires qui ont échoué. Quel biais risque de fausser ses conclusions ?",
+      "help": "Le biais porte sur ce que l'on choisit — ou non — d'observer.",
+      "options": [
+        {
+          "label": "Le biais de survie (survivorship bias) : ignorer les cas d'échec conduit à surestimer l'importance de facteurs qui, en réalité, étaient aussi présents dans des cas ayant échoué.",
+          "score": 1
+        },
+        {
+          "label": "Le biais d'ancrage, qui consiste à se fier excessivement à la première information reçue.",
+          "score": 0
+        },
+        {
+          "label": "L'effet de halo, qui consiste à généraliser un trait positif à l'ensemble d'une personne.",
+          "score": 0
+        },
+        {
+          "label": "Le biais de négativité, qui consiste à surpondérer systématiquement les informations négatives.",
+          "score": 0
+        }
+      ],
+      "axe": "Apprentissage par l'échec",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Après un échec, une équipe modifie son approche puis mesure à nouveau les résultats avant d'ajuster une nouvelle fois. Quelle structure générale de l'apprentissage itératif ce processus illustre-t-il ?",
+      "help": "Chaque itération s'appuie sur l'information produite par l'itération précédente.",
+      "options": [
+        {
+          "label": "Une boucle d'essai-ajustement-nouvelle mesure (apparentée aux cycles itératifs du type « planifier – agir – mesurer – ajuster »), où chaque itération exploite le retour d'expérience du cycle précédent.",
+          "score": 1
+        },
+        {
+          "label": "Une démarche strictement linéaire, sans aucun retour en arrière possible une fois une étape franchie.",
+          "score": 0
+        },
+        {
+          "label": "Un processus où chaque nouvel essai est indépendant du précédent et n'en tire aucune information.",
+          "score": 0
+        },
+        {
+          "label": "Un processus qui, par définition, ne peut jamais comporter plus de deux itérations.",
+          "score": 0
+        }
+      ],
+      "axe": "Apprentissage par l'échec",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Pourquoi un échec isolé et unique fournit-il, en général, une information plus fragile qu'une série répétée d'essais similaires ?",
+      "help": "Pensez à ce que le hasard peut expliquer, à lui seul, sur un seul essai.",
+      "options": [
+        {
+          "label": "Parce qu'un seul échec peut résulter du hasard ou d'un facteur ponctuel, alors qu'une tendance répétée sur plusieurs essais réduit la part attribuable au seul hasard.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'un échec isolé est toujours plus fiable statistiquement qu'une série d'essais répétés.",
+          "score": 0
+        },
+        {
+          "label": "Parce que le nombre d'essais n'a strictement aucune incidence sur la fiabilité d'une conclusion.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'un échec isolé prouve nécessairement une erreur systémique durable.",
+          "score": 0
+        }
+      ],
+      "axe": "Apprentissage par l'échec",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Qu'est-ce qui distingue un ajustement pertinent après un échec d'une simple réaction impulsive au même échec ?",
+      "help": "L'un des deux s'appuie sur une étape d'analyse préalable, l'autre non.",
+      "options": [
+        {
+          "label": "L'ajustement pertinent s'appuie sur une analyse de la cause probable de l'échec, tandis que la réaction impulsive change une pratique sans avoir identifié ce qui a réellement causé l'échec.",
+          "score": 1
+        },
+        {
+          "label": "Un ajustement pertinent doit toujours être plus coûteux que la pratique initiale.",
+          "score": 0
+        },
+        {
+          "label": "Une réaction impulsive produit systématiquement de meilleurs résultats à long terme.",
+          "score": 0
+        },
+        {
+          "label": "Il n'existe aucune différence méthodologique entre les deux démarches.",
+          "score": 0
+        }
+      ],
+      "axe": "Apprentissage par l'échec",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Pourquoi le simple fait de répéter une même action après un échec, sans rien changer, ne constitue-t-il pas un apprentissage ?",
+      "help": "L'apprentissage suppose de traiter une information nouvelle, pas de l'ignorer.",
+      "options": [
+        {
+          "label": "Parce que l'apprentissage suppose une modification informée de l'action en réponse au retour d'expérience ; répéter sans changement ne traite aucune information nouvelle.",
+          "score": 1
+        },
+        {
+          "label": "Parce que répéter une action identique garantit statistiquement un résultat différent la fois suivante.",
+          "score": 0
+        },
+        {
+          "label": "Parce que l'apprentissage, par définition, ne nécessite jamais de changement de comportement.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'un échec répété devient automatiquement un succès après un nombre suffisant de répétitions.",
+          "score": 0
+        }
+      ],
+      "axe": "Apprentissage par l'échec",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en méthodologie d'expérimentation et d'amélioration continue. Cet outil est un contrôle de connaissances factuelles sur « Apprentissage par l’échec » (domaine « RÉSOLUTION DE PROBLÈMES COMPLEXES ») : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence générale, ni une aptitude de décision ou de personnalité, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Apprentissage par l'échec » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (test d'une seule variable à la fois, biais de survie, cycles itératifs essai-ajustement, analyse de cause plutôt que réaction impulsive), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure d'intelligence générale ou de capacité de décision, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "les cas doivent être non politiques et non sensibles ; éviter les scénarios stigmatisants"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

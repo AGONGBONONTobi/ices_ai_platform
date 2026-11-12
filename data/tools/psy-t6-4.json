@@ -1,69 +1,206 @@
 {
   "id": "psy-t6-4",
-  "title": "Préparer — Biais de confirmation & recherche de preuves · T6.4",
+  "title": "Biais de confirmation & recherche de preuves · T6.4",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Biais de confirmation & recherche de preuves ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à chercher des preuves contraires. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Biais de confirmation & recherche de preuves », dans le domaine « PENSÉE CRITIQUE & ÉVALUATION DE L’INFORMATION ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à chercher des preuves contraires.\nFormat cible : tâche de sélection de preuves, 10 min.\nContenu cible : Wason, recherche déséquilibrée, falsification.\nCalcul cible (non implémenté ici) : taux de recherche de confirmation.\nUsage décrit : décision, audit, science.\nOptions cibles : scénarios professionnels.\nObjectif du domaine : mesurer la capacité à juger la qualité de l’information et des raisonnements — compétence clé à l’ère de l’IA générative\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Une règle énonce : « Si une carte a un A sur une face, alors elle a un 4 sur l’autre face. » Quatre cartes sont visibles : A, B, 4, 7. Quelles cartes faut-il absolument retourner pour tester rigoureusement cette règle ?",
+      "help": "Pensez aux cartes qui, si elles violaient la règle, la réfuteraient — pas seulement à celles qui la confirmeraient.",
+      "options": [
+        {
+          "label": "La carte A et la carte 7 : il faut vérifier que A a bien un 4 derrière, et que 7 n’a pas de A derrière.",
+          "score": 1
+        },
+        {
+          "label": "La carte A et la carte 4 seulement.",
+          "score": 0
+        },
+        {
+          "label": "La carte 4 seulement.",
+          "score": 0
+        },
+        {
+          "label": "Les quatre cartes, de façon indifférenciée.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de confirmation",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Un décideur ne lit que les articles qui confirment son opinion initiale et évite ceux qui la contredisent. Comment appelle-t-on ce comportement ?",
+      "help": "Le nom de ce biais décrit directement ce qu’il recherche activement.",
+      "options": [
+        {
+          "label": "Le biais de confirmation.",
+          "score": 1
+        },
+        {
+          "label": "La pente glissante.",
+          "score": 0
+        },
+        {
+          "label": "L’appel à l’autorité.",
+          "score": 0
+        },
+        {
+          "label": "La calibration de confiance.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de confirmation",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Selon le principe de falsifiabilité en démarche scientifique, une hypothèse bien formulée doit avant tout :",
+      "help": "Une hypothèse qui ne pourrait jamais être mise en défaut pose un problème particulier.",
+      "options": [
+        {
+          "label": "Pouvoir être potentiellement réfutée par une observation ou une expérience, et pas seulement confirmée.",
+          "score": 1
+        },
+        {
+          "label": "Être confirmée par le plus grand nombre d’exemples possible, sans jamais être mise à l’épreuve d’une réfutation.",
+          "score": 0
+        },
+        {
+          "label": "Être formulée par une autorité scientifique reconnue.",
+          "score": 0
+        },
+        {
+          "label": "Ne jamais pouvoir être testée, pour rester valable indéfiniment.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de confirmation",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Pour évaluer rigoureusement une affirmation controversée, quelle démarche de recherche d’information est la plus rigoureuse ?",
+      "help": "Une recherche équilibrée regarde dans les deux directions, pas seulement celle qu’on espère confirmer.",
+      "options": [
+        {
+          "label": "Chercher activement des sources et arguments qui pourraient contredire l’affirmation, en plus de ceux qui la soutiennent.",
+          "score": 1
+        },
+        {
+          "label": "Chercher uniquement des sources qui confirment ce qu’on pense déjà, pour gagner du temps.",
+          "score": 0
+        },
+        {
+          "label": "Se limiter à la première source trouvée, qu’elle confirme ou non l’affirmation.",
+          "score": 0
+        },
+        {
+          "label": "Éviter toute recherche et se fier à son intuition.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de confirmation",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un auditeur soupçonne une fraude dans un relevé de comptes. Il ne cherche que des éléments confirmant son soupçon et ignore ceux qui l’infirmeraient. Quel est le risque principal de cette approche ?",
+      "help": "Pensez à ce qui arrive à une conclusion construite sur une recherche à sens unique.",
+      "options": [
+        {
+          "label": "Conclure à une fraude à tort (faux positif), en construisant une conclusion biaisée qui ignore les preuves disponibles.",
+          "score": 1
+        },
+        {
+          "label": "Ne jamais pouvoir conclure à une fraude, même si elle existe.",
+          "score": 0
+        },
+        {
+          "label": "Améliorer l’objectivité de l’audit en se concentrant sur une seule piste.",
+          "score": 0
+        },
+        {
+          "label": "Éliminer tout risque d’erreur, car se concentrer sur une hypothèse réduit la complexité.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de confirmation",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Pourquoi les chercheurs sont-ils encouragés à déclarer leurs hypothèses et méthodes d’analyse avant de collecter les données (pré-enregistrement) ?",
+      "help": "Pensez au moment où l’on connaît déjà les résultats et à la tentation que cela peut créer.",
+      "options": [
+        {
+          "label": "Pour éviter d’ajuster l’hypothèse ou l’analyse après coup en fonction des résultats obtenus, ce qui limite le biais de confirmation rétrospectif.",
+          "score": 1
+        },
+        {
+          "label": "Pour accélérer la publication de l’étude, peu importe la rigueur.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la loi l’exige dans tous les pays et toutes les disciplines.",
+          "score": 0
+        },
+        {
+          "label": "Pour garantir que les résultats confirment toujours l’hypothèse de départ.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de confirmation",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en méthodologie de recherche d’information. Cet outil est un contrôle de connaissances factuelles sur le biais de confirmation et la recherche de preuves (tâche de Wason, falsifiabilité, recherche équilibrée) : ce n’est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Biais de confirmation » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (recherche de contre-preuves, falsifiabilité, pré-enregistrement des hypothèses), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "mesurer la capacité à juger la qualité de l’information et des raisonnements — compétence clé à l’ère de l’IA générative"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

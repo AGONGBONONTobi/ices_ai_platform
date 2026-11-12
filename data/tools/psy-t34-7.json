@@ -1,69 +1,232 @@
 {
   "id": "psy-t34-7",
-  "title": "Préparer — Résolution de problème technique sous contrainte · T34.7",
+  "title": "Résolution de problème technique sous contrainte · T34.7",
   "category": "OUTILS SECTORIELS SPÉCIALISÉS",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Résolution de problème technique sous contrainte ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à résoudre un problème en conditions réelles. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Résolution de problème technique sous contrainte », dans le domaine « INGÉNIERIE, TECHNIQUE & SÉCURITÉ ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à résoudre un problème en conditions réelles.\nFormat cible : 5 simulations, 15 min.\nContenu cible : délais, ressources, sécurité, qualité.\nCalcul cible (non implémenté ici) : score + qualité de solution.\nUsage décrit : postes critiques.\nOptions cibles : simulation de chantier ou d’usine.\nObjectif du domaine : évaluer les compétences techniques et de sécurité des professionnels de l’ingénierie et de l’industrie\nGarde-fou du domaine : les scores ne remplacent pas les habilitations réglementaires ; pas de substitution aux certifications obligatoires\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Lorsqu'un impératif de délai entre en conflit direct avec une exigence de sécurité sur un chantier ou en usine, la priorité à respecter est :",
+      "help": "Aucun objectif de planning ne justifie de prendre un risque de sécurité identifié.",
+      "options": [
+        {
+          "label": "La sécurité, même si cela implique de retarder l'échéance",
+          "score": 1
+        },
+        {
+          "label": "Toujours le délai, car les clients sont prioritaires",
+          "score": 0
+        },
+        {
+          "label": "La qualité, sans tenir compte de la sécurité",
+          "score": 0
+        },
+        {
+          "label": "Le coût, car il conditionne le budget du projet",
+          "score": 0
+        }
+      ],
+      "axe": "Résolution de problème technique sous contrainte",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Face à une ressource critique manquante (pièce, outil, compétence) pour terminer une tâche dans les délais, la première action recommandée est :",
+      "help": "Une évaluation préalable permet d'éviter une solution de contournement improvisée et risquée.",
+      "options": [
+        {
+          "label": "Évaluer précisément l'impact et chercher des alternatives sûres avant d'improviser une solution risquée",
+          "score": 1
+        },
+        {
+          "label": "Improviser immédiatement une solution de contournement sans évaluation",
+          "score": 0
+        },
+        {
+          "label": "Ignorer la contrainte et continuer comme prévu initialement",
+          "score": 0
+        },
+        {
+          "label": "Attendre sans communiquer le risque aux parties concernées",
+          "score": 0
+        }
+      ],
+      "axe": "Résolution de problème technique sous contrainte",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Accélérer une opération critique en sautant une étape de contrôle qualité pour respecter un délai expose principalement au risque de :",
+      "help": "Sauter un contrôle ne supprime pas le risque de défaut, il supprime seulement sa détection avant livraison.",
+      "options": [
+        {
+          "label": "Livrer un produit ou une installation non conforme, avec un risque de défaillance ultérieure",
+          "score": 1
+        },
+        {
+          "label": "N'avoir aucun risque si l'opérateur est expérimenté",
+          "score": 0
+        },
+        {
+          "label": "Améliorer automatiquement la satisfaction client",
+          "score": 0
+        },
+        {
+          "label": "Réduire garantie des coûts totaux du projet",
+          "score": 0
+        }
+      ],
+      "axe": "Résolution de problème technique sous contrainte",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Sous forte pression de délai, appliquer une solution de contournement (« quick fix ») sans analyser la cause racine d'un problème technique :",
+      "help": "Traiter un symptôme sans en comprendre la cause laisse la possibilité qu'il revienne ou s'aggrave.",
+      "options": [
+        {
+          "label": "Peut résoudre temporairement le symptôme mais laisse le risque de récurrence ou d'aggravation",
+          "score": 1
+        },
+        {
+          "label": "Résout définitivement le problème dans tous les cas",
+          "score": 0
+        },
+        {
+          "label": "Élimine le besoin de documenter l'incident",
+          "score": 0
+        },
+        {
+          "label": "Améliore la fiabilité à long terme du système",
+          "score": 0
+        }
+      ],
+      "axe": "Résolution de problème technique sous contrainte",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Lorsqu'un problème technique rend un délai intenable malgré toutes les mesures raisonnables, la bonne pratique est de :",
+      "help": "Dissimuler une difficulté réelle empêche les parties concernées de réagir à temps.",
+      "options": [
+        {
+          "label": "Communiquer rapidement et de façon transparente la situation aux parties concernées",
+          "score": 1
+        },
+        {
+          "label": "Ne rien dire tant que la situation n'est pas critique",
+          "score": 0
+        },
+        {
+          "label": "Dissimuler le problème jusqu'à la date limite",
+          "score": 0
+        },
+        {
+          "label": "Reporter la responsabilité sur un collègue sans vérification",
+          "score": 0
+        }
+      ],
+      "axe": "Résolution de problème technique sous contrainte",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Face à plusieurs problèmes techniques simultanés sur un chantier ou en usine, la méthode recommandée pour prioriser les actions consiste à évaluer :",
+      "help": "La priorisation efficace combine deux dimensions : l'ampleur du danger potentiel et sa probabilité réelle.",
+      "options": [
+        {
+          "label": "La gravité potentielle (sécurité, impact) combinée à la probabilité d'occurrence de chaque problème",
+          "score": 1
+        },
+        {
+          "label": "Uniquement l'ordre chronologique d'apparition des problèmes",
+          "score": 0
+        },
+        {
+          "label": "Uniquement la facilité de résolution de chaque problème",
+          "score": 0
+        },
+        {
+          "label": "Uniquement la préférence personnelle du technicien",
+          "score": 0
+        }
+      ],
+      "axe": "Résolution de problème technique sous contrainte",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Lorsque les ressources (temps, personnel, matériel) sont limitées, une approche rigoureuse de résolution de problème technique privilégie :",
+      "help": "Une ressource limitée se concentre là où l'impact sécurité/qualité est le plus fort.",
+      "options": [
+        {
+          "label": "Une allocation ciblée sur les tâches critiques à plus fort impact sécurité/qualité",
+          "score": 1
+        },
+        {
+          "label": "Une répartition strictement égale entre toutes les tâches sans distinction",
+          "score": 0
+        },
+        {
+          "label": "Une priorité systématique à la tâche la moins coûteuse",
+          "score": 0
+        },
+        {
+          "label": "Un traitement des tâches dans l'ordre alphabétique",
+          "score": 0
+        }
+      ],
+      "axe": "Résolution de problème technique sous contrainte",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur technique en ingénierie et sécurité industrielle. Cet outil est un contrôle de connaissances factuelles sur « la résolution de problème technique sous contrainte (arbitrage sécurité/délai, gestion des ressources limitées, cause racine, priorisation par risque) » : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence ni l'aptitude générale du répondant, il ne produit aucun percentile ni aucune norme professionnelle, et les scores ne remplacent en aucun cas les habilitations réglementaires ou les certifications obligatoires requises pour ces activités.\n\nLe score global et le score de l'axe « Résolution de problème technique sous contrainte » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (arbitrage sécurité/délai, ressources limitées, cause racine, priorisation par risque), sans comparaison à une norme externe et sans jugement sur l'intelligence ou l'aptitude générale du répondant ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, et qu'il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nRappelle que ce score ne remplace jamais une habilitation réglementaire ni une certification obligatoire (ex. habilitation électrique, permis de travail, certification qualité) : seul l'organisme habilité peut délivrer ces certifications. N'invente aucune norme, aucun percentile, aucun classement professionnel, aucun QI. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +243,5 @@
       "Garde-fou du domaine": "les scores ne remplacent pas les habilitations réglementaires ; pas de substitution aux certifications obligatoires"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

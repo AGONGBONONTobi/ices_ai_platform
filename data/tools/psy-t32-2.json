@@ -1,42 +1,42 @@
 {
   "id": "psy-t32-2",
-  "title": "Préparer — Évaluation de politique publique · T32.2",
+  "title": "Évaluation de politique publique · T32.2",
   "category": "OUTILS SECTORIELS SPÉCIALISÉS",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Évaluation de politique publique ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle politique ou quel programme public réel êtes-vous en train d'évaluer ?",
+      "help": "Décrivez le programme, son objectif annoncé et la question d'évaluation posée.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à évaluer une politique. Ne renseignez pas de score supposé.",
+      "question": "Quels indicateurs, données ou résultats disposez-vous déjà pour cette évaluation ?",
+      "help": "Indicateurs de suivi, enquêtes, comparaisons déjà réalisées, dans l'ordre où ils sont arrivés si possible.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si l'évaluation conclut à un effet qui n'existe pas réellement, ou inversement ?",
+      "help": "Reconduction du programme, réallocation budgétaire, crédibilité auprès des bailleurs ou des citoyens.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai l'évaluation doit-elle être rendue ?",
+      "placeholder": "Exemple : rapport d'évaluation attendu fin de trimestre",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Évaluation de politique publique », dans le domaine « SECTEUR PUBLIC & POLITIQUES PUBLIQUES ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à évaluer une politique.\nFormat cible : 8 cas avec données, 15 min.\nContenu cible : théorie du changement, indicateurs, contrefactuel, causalité.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : cadres évaluateurs.\nOptions cibles : couplage D6 (pensée critique, Vague 1).\nObjectif du domaine : évaluer les compétences d’analyse, d’évaluation et de gestion publiques\nGarde-fou du domaine : interdiction absolue de tout scoring de loyauté politique, d’opinion ou d’appartenance ; uniquement compétences techniques, éthique professionnelle et méthodes\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en évaluation de politiques publiques spécialisé dans la rigueur causale : la capacité à distinguer corrélation et causalité, à construire ou vérifier un contrefactuel, et à relier une théorie du changement à des indicateurs mesurables.\n\nSituation décrite par l'utilisateur :\nDécision ou situation : {decision}\nÉléments déjà en main : {elements_connus}\nEnjeu si la décision est mauvaise : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite si une théorie du changement explicite relie l'action aux résultats observés, si un contrefactuel a été envisagé, et si les indicateurs utilisés mesurent réellement le résultat visé. Soulève des questions concrètes : la théorie du changement reliant l'action aux résultats observés est-elle explicite et plausible ? Un contrefactuel (groupe témoin, tendance antérieure, comparaison territoriale) a-t-il été envisagé ? Les indicateurs utilisés mesurent-ils le résultat visé ou un proxy approximatif ? D'autres facteurs externes pourraient-ils expliquer les mêmes résultats observés ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque repère identifié avec les questions de décision à se poser, et les points clés à retenir avant de trancher.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "interdiction absolue de tout scoring de loyauté politique, d’opinion ou d’appartenance ; uniquement compétences techniques, éthique professionnelle et méthodes"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

@@ -1,42 +1,42 @@
 {
   "id": "psy-t35-4",
-  "title": "Préparer — Cadres juridiques & OHADA · T35.4",
+  "title": "Cadres juridiques & OHADA · T35.4",
   "category": "STRATÉGIE & MANAGEMENT",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Cadres juridiques & OHADA ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle décision juridique ou contractuelle réelle êtes-vous en train de préparer dans l'espace OHADA ?",
+      "help": "Décrivez la structuration de société, le contrat à rédiger ou le contentieux concerné.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : compréhension des cadres d’affaires. Ne renseignez pas de score supposé.",
+      "question": "Quels éléments juridiques (statuts, clauses contractuelles, antécédents de contentieux) avez-vous déjà en main ?",
+      "help": "Documents déjà rédigés, avis juridiques déjà reçus, précédents similaires connus.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si la structuration juridique ou le contrat est mal conçu ?",
+      "help": "Responsabilité des associés, risque de contentieux, coût d'une renégociation ultérieure.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai cette décision juridique doit-elle être arrêtée ?",
+      "placeholder": "Exemple : contrat à signer avant la fin du mois",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Cadres juridiques & OHADA », dans le domaine « PROSPECTIVE AFRIQUE & MARCHÉS ÉMERGENTS ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : compréhension des cadres d’affaires.\nFormat cible : 12 cas, 12 min.\nContenu cible : OHADA, droit des sociétés, contrats, contentieux.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : structuration, conformité.\nOptions cibles : couplage Vague 1 (juridique).\nObjectif du domaine : évaluer la compréhension des spécificités économiques, réglementaires et culturelles des marchés africains et émergents\nGarde-fou du domaine : lutte contre les biais post-coloniaux et les stéréotypes ; items validés par des experts africains ; audit d’équité ; pas de hiérarchisation culturelle\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en cadres juridiques d'affaires spécialisé dans le droit OHADA : le droit des sociétés, la rédaction contractuelle et la gestion des contentieux dans l'espace OHADA.\n\nSituation décrite par l'utilisateur :\nDécision ou situation : {decision}\nÉléments déjà en main : {elements_connus}\nEnjeu si la décision est mauvaise : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite si la forme juridique envisagée correspond réellement au projet et quelles clauses contractuelles restent absentes ou ambiguës. Soulève des questions concrètes : la forme juridique envisagée est-elle celle qui correspond réellement au projet décrit, au regard de l'Acte uniforme sur le droit des sociétés ? Quelles clauses contractuelles (responsabilité, résiliation, règlement des différends) manquent ou restent ambiguës dans ce cas ? En cas de contentieux, quelle juridiction (nationale, CCJA) serait compétente et avec quels délais ? Quels risques juridiques spécifiques à cette situation n'ont pas encore été couverts ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque repère identifié avec les questions de décision à se poser, et les points clés à retenir avant de trancher.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "lutte contre les biais post-coloniaux et les stéréotypes ; items validés par des experts africains ; audit d’équité ; pas de hiérarchisation culturelle"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

@@ -14,43 +14,54 @@ apparaître dans une instance déployée.
 
 | Source | Couverture | Mode disponible dans ce moteur |
 | --- | --- | --- |
-| Lot 5 — catalogue de 350 outils | 50 domaines, 350 codes `Tn.n` | 35 outils fonctionnels (28 quiz notés, 7 analyses sans score), 315 guides de préparation documentaire |
+| Lot 5 — catalogue de 350 outils | 50 domaines, 350 codes `Tn.n` | 217 outils fonctionnels (quiz notés + analyses sans score), 133 guides de préparation documentaire |
 | Lot 6 — parcours cognitifs | 30 domaines, 149 fiches `Dnn-P…` | 28 supports de préparation, 121 références consultables |
 
 Le catalogue local passe de **1 088 à 1 587 entrées**. Des 499 nouvelles entrées,
-35 sont désormais des outils réellement fonctionnels (sans mode `preparation`
-ni `reference`), 343 restent des guides de préparation et 121 des fiches de
+217 sont désormais des outils réellement fonctionnels (sans mode `preparation`
+ni `reference`), 161 restent des guides de préparation et 121 des fiches de
 référence. Elles ne constituent pas 499 nouveaux tests psychométriques étalonnés.
 
-## Intégration réelle du 12 novembre 2026 (35 outils)
+## Intégration réelle du 12 novembre 2026 (217 outils, 62 % du lot 5)
 
-35 codes du lot 5 ont été transformés en outils fonctionnels, sans gating
-`execution`, au même titre que les 1088 outils historiques :
+217 des 350 codes du lot 5 ont été transformés en outils fonctionnels, sans
+gating `execution`, au même titre que les 1088 outils historiques :
 
-- **28 quiz de connaissances factuelles** (domaines 11 Finance & numératie
-  financière, 12 Cybersécurité & hygiène numérique, 13 Compétence numérique &
-  bureautique, 46 Data literacy & IA) : `output_kind: "assessment"`, questions
-  à choix multiple avec une seule réponse objectivement correcte par question
-  (score 1/0), score calculé par `compute_scores` (jamais par le modèle).
-  Ce sont des connaissances factuelles établies (lecture d'états financiers,
-  hygiène de sécurité, bureautique, littératie des données), pas des construits
-  psychométriques — la correction objective y est honnête, contrairement aux
-  domaines de personnalité, aptitude ou santé mentale.
-- **7 outils d'aide à la décision sans score** (domaine 39, Biais cognitifs &
-  jugement) : `output_kind: "analysis"`, l'utilisateur décrit une décision
-  réelle, l'outil produit une analyse des biais pertinents et des questions de
-  débiaisage. Aucun coefficient de biais n'est calculé ou affiché : ce domaine
-  sert explicitement à des décisions de sélection dans la source, donc toute
-  note chiffrée y aurait été un score psychométrique fabriqué.
+- **Quiz de connaissances factuelles à correction objective** (score 1/0,
+  jamais recalculé par le modèle, calculé par `compute_scores`) sur les
+  domaines où une réponse vraie/fausse existe réellement : 4 (calcul mental),
+  5 (vocabulaire/grammaire), 6 et 49 (évaluation de sources/sophismes), 11
+  (finance), 12 (cybersécurité), 13 (bureautique), 22 (concepts marketing/
+  biais du consommateur — connaissance du concept, jamais mesure de la
+  sensibilité propre de l'utilisateur), 34 (raisonnement mécanique/technique),
+  38 et 40 (systémique, probabilités, théorie de la décision), 44 (boucles de
+  rétroaction), 46 (data literacy & IA).
+- **Outils d'aide à la décision sans score** (`output_kind: "analysis"`,
+  l'utilisateur décrit une situation réelle, l'outil produit une analyse
+  substantielle de CETTE situation — jamais un score, une norme ou une
+  étiquette de personnalité) sur les domaines de jugement et de stratégie
+  d'entreprise : 17, 19, 20, 21, 23, 24, 25, 28, 32, 35, 36, 37, 39, 42, 43,
+  45, 48, 50 (tolérance au risque, leadership, gouvernance, stratégie
+  concurrentielle, marketing, communication, négociation, HSE, politique
+  publique, économie informelle, créativité, biais cognitifs, entrepreneuriat,
+  innovation, prospective, interculturel). Les domaines de créativité (36/37)
+  et de rôles d'équipe ont explicitement été reformulés en outils d'aide
+  (brainstorming, analyse de situation) plutôt qu'en test noté de la
+  personne, pour ne pas fabriquer une mesure de trait.
 
-Les 46 autres domaines du lot 5 (QI, personnalité, intelligence émotionnelle,
-motivation, intérêts, santé mentale, tempérament de l'enfant, neurodiversité,
-haut potentiel, etc.) et l'intégralité du lot 6 (parcours cognitifs individuels)
-restent des guides de préparation ou des fiches de référence : une correction
-objective y est impossible sans banque d'items calibrée et validée, que ce
-projet ne possède pas. Ce n'est pas un travail restant à finir à l'identique —
-c'est la limite de ce qu'un outil texte peut faire honnêtement sur ces
-construits. Preuves : `fast_api/app/services/scoring.py`,
+Les 19 domaines restants du lot 5 (raisonnement général/QI, fonctions
+exécutives, mémoire, personnalité Big Five, intelligence émotionnelle,
+motivation, intérêts professionnels, rôles d'équipe Belbin, apprentissage/
+métacognition, raisonnement spatial, soft skills, résilience/stress, santé
+mentale, haut potentiel, orientation de vie, aptitudes élitistes,
+raisonnement clinique santé, tempérament de l'enfant, neurodiversité) et
+l'intégralité du lot 6 (parcours cognitifs individuels, probablement destinés
+à des apprenants) restent des guides de préparation ou des fiches de
+référence : une correction objective y est impossible sans banque d'items
+calibrée et validée, que ce projet ne possède pas, et certains impliquent
+potentiellement des mineurs. Ce n'est pas un travail restant à finir à
+l'identique — c'est la limite de ce qu'un outil texte peut faire honnêtement
+sur ces construits. Preuves : `fast_api/app/services/scoring.py`,
 `data/imports/manager-lots/coverage.json` (champ `mode: "functional"`).
 
 Le lot 6 présente plusieurs paliers d’un parcours et réutilise des instruments

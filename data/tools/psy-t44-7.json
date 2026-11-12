@@ -1,69 +1,206 @@
 {
   "id": "psy-t44-7",
-  "title": "Préparer — Modélisation causale · T44.7",
+  "title": "Modélisation causale · T44.7",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Modélisation causale ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à construire un modèle causal. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Modélisation causale », dans le domaine « PENSÉE SYSTÉMIQUE & COMPLEXITÉ ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à construire un modèle causal.\nFormat cible : 4 cas, 15 min.\nContenu cible : variables, liens, hypothèses, validation.\nCalcul cible (non implémenté ici) : qualité du modèle, cohérence.\nUsage décrit : recherche, politiques publiques.\nOptions cibles : couplage avec D46 (data literacy).\nObjectif du domaine : évaluer la capacité à comprendre des systèmes complexes, à identifier les points de levier et à anticiper les effets de second ordre — compétence critique pour les décideurs, les politiques publiques et la transition écologique\nGarde-fou du domaine : les cas doivent être non politiques ; éviter les scénarios idéologiques ; audit de biais\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Dans un diagramme causal (par exemple un diagramme de boucle causale), une flèche portant un signe « + » entre deux variables A → B signifie…",
+      "help": "Pensez au sens de variation de B quand A varie, et non à une causalité automatique et figée.",
+      "options": [
+        {
+          "label": "Que lorsque A augmente, B a tendance à augmenter aussi (et quand A diminue, B diminue aussi), toutes choses égales par ailleurs.",
+          "score": 1
+        },
+        {
+          "label": "Que A cause toujours une augmentation immédiate et fixe de B, sans qu’aucune autre influence ne puisse intervenir.",
+          "score": 0
+        },
+        {
+          "label": "Qu’il n’existe, en réalité, aucun lien entre A et B.",
+          "score": 0
+        },
+        {
+          "label": "Que B influence toujours A, mais jamais l’inverse.",
+          "score": 0
+        }
+      ],
+      "axe": "Modélisation causale",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Un signe « - » sur une flèche A → B dans un diagramme causal signifie…",
+      "help": "Pensez à une relation qui va dans le sens inverse entre A et B.",
+      "options": [
+        {
+          "label": "Que lorsque A augmente, B a tendance à diminuer (et inversement, quand A diminue, B a tendance à augmenter).",
+          "score": 1
+        },
+        {
+          "label": "Qu’il n’existe aucun lien réel entre A et B.",
+          "score": 0
+        },
+        {
+          "label": "Que A et B augmentent toujours ensemble, de façon strictement proportionnelle.",
+          "score": 0
+        },
+        {
+          "label": "Que la relation entre A et B est toujours instantanée, sans aucun délai.",
+          "score": 0
+        }
+      ],
+      "axe": "Modélisation causale",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Pourquoi observer une corrélation statistique entre deux variables ne suffit-il pas à établir un lien de causalité entre elles ?",
+      "help": "Pensez à ce qu’une troisième variable cachée pourrait expliquer à elle seule.",
+      "options": [
+        {
+          "label": "Parce que la corrélation peut provenir d’une troisième variable (facteur confondant) qui influence les deux, sans qu’aucune des deux ne cause directement l’autre.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu’une corrélation garantit en réalité l’existence d’un lien de causalité direct entre les deux variables.",
+          "score": 0
+        },
+        {
+          "label": "Parce que deux variables corrélées ne peuvent, par définition, jamais avoir de lien de causalité.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la corrélation statistique ne concerne que des variables appartenant au même système.",
+          "score": 0
+        }
+      ],
+      "axe": "Modélisation causale",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Qu’est-ce qu’une hypothèse causale testable, par opposition à une simple affirmation ?",
+      "help": "Pensez à ce qu’il faudrait pouvoir observer pour confirmer ou infirmer l’hypothèse.",
+      "options": [
+        {
+          "label": "Une proposition formulée de façon suffisamment précise pour qu’on puisse chercher des données ou des observations capables de la confirmer ou de l’infirmer.",
+          "score": 1
+        },
+        {
+          "label": "Une affirmation qu’on accepte par principe, sans chercher à la confronter à des données.",
+          "score": 0
+        },
+        {
+          "label": "Une opinion personnelle qui n’a, par nature, pas besoin d’être vérifiée.",
+          "score": 0
+        },
+        {
+          "label": "Une affirmation qui devient automatiquement vraie dès qu’elle est formulée dans un modèle causal.",
+          "score": 0
+        }
+      ],
+      "axe": "Modélisation causale",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Lors de la construction d’un modèle causal, pourquoi est-il important d’identifier les boucles de rétroaction entre les variables, et pas seulement les liens à sens unique ?",
+      "help": "Pensez à ce qu’on risque de sous-estimer si on ignore les effets de retour d’une variable sur elle-même.",
+      "options": [
+        {
+          "label": "Parce qu’ignorer les boucles de rétroaction conduit à sous-estimer les effets indirects et les dynamiques d’amplification ou de stabilisation du système.",
+          "score": 1
+        },
+        {
+          "label": "Parce que les boucles de rétroaction n’ont, en réalité, aucune incidence sur le comportement global d’un modèle causal.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu’un modèle causal ne peut, par définition, jamais contenir de boucle de rétroaction.",
+          "score": 0
+        },
+        {
+          "label": "Parce que seules les variables externes au système méritent d’être modélisées.",
+          "score": 0
+        }
+      ],
+      "axe": "Modélisation causale",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Valider un modèle causal consiste principalement à…",
+      "help": "Pensez à ce qui distingue un modèle vérifié d’un modèle simplement présenté de façon convaincante.",
+      "options": [
+        {
+          "label": "Confronter les prédictions du modèle à des données ou des observations réelles pour vérifier si le comportement prévu correspond à ce qui est observé.",
+          "score": 1
+        },
+        {
+          "label": "S’assurer que le modèle est esthétiquement cohérent et facile à présenter, indépendamment de toute vérification empirique.",
+          "score": 0
+        },
+        {
+          "label": "Compter le nombre de variables présentes dans le modèle, sans examiner les données.",
+          "score": 0
+        },
+        {
+          "label": "Obtenir l’accord unanime de toutes les personnes consultées, sans confrontation aux données.",
+          "score": 0
+        }
+      ],
+      "axe": "Modélisation causale",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en pensée systémique. Cet outil est un contrôle de connaissances factuelles sur la modélisation causale (variables, liens orientés et signés, hypothèses testables, validation empirique) : ce n’est PAS un test psychométrique certifié ou validé, il ne mesure ni le QI ni une aptitude générale, il ne produit aucun percentile ni aucune norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Modélisation causale » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (signes des liens causaux, distinction corrélation/causalité, hypothèse testable, validation par les données), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, ni une mesure d’intelligence ou d’aptitude générale, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "les cas doivent être non politiques ; éviter les scénarios idéologiques ; audit de biais"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

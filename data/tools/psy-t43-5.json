@@ -1,42 +1,42 @@
 {
   "id": "psy-t43-5",
-  "title": "Préparer — Transfert & industrialisation · T43.5",
+  "title": "Transfert & industrialisation · T43.5",
   "category": "INNOVATION & R&D",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Transfert & industrialisation ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle décision réelle de passage à l'échelle ou d'industrialisation êtes-vous en train de préparer ?",
+      "help": "Décrivez le prototype, le pilote ou le projet concerné et la question posée : industrialiser, déployer plus largement, ou ajuster avant de passer à l'échelle.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à passer de l’idée au déploiement à l’échelle. Ne renseignez pas de score supposé.",
+      "question": "Quels résultats de prototypage ou de pilote avez-vous déjà en main ?",
+      "help": "Performances observées à petite échelle, contraintes techniques ou opérationnelles identifiées, retours des premiers utilisateurs ou sites pilotes.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu dans cette décision de passage à l'échelle ?",
+      "help": "Investissement d'industrialisation, risque d'échec à grande échelle, délai de mise sur le marché, ressources de production ou de déploiement mobilisées.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai cette décision d'industrialisation doit-elle être prise ?",
+      "placeholder": "Exemple : décision à prendre avant le prochain cycle budgétaire",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Transfert & industrialisation », dans le domaine « INNOVATION & AMBIDEXTRIE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à passer de l’idée au déploiement à l’échelle.\nFormat cible : 8 cas, 12 min.\nContenu cible : prototypage, industrialisation, déploiement, scaling.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : direction industrielle, R&D.\nOptions cibles : couplage avec D38 (problèmes complexes).\nObjectif du domaine : évaluer la capacité d’une organisation et de ses dirigeants à explorer et exploiter simultanément — compétence stratégique clé pour les grandes entreprises, les groupes et les institutions\nGarde-fou du domaine : les scores individuels ne peuvent à eux seuls fonder une décision organisationnelle ; couplage avec diagnostic organisationnel\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en industrialisation et déploiement à l'échelle spécialisé dans le passage du prototype ou du pilote à la production ou au déploiement généralisé : l'écart entre ce qui fonctionne à petite échelle sous surveillance et ce qui doit fonctionner de façon autonome à grande échelle.\n\nSituation décrite par l'utilisateur :\nDécision d'industrialisation ou de passage à l'échelle : {decision}\nÉléments déjà en main : {elements_connus}\nEnjeu : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite ce qui a été validé au stade du prototype ou du pilote, et ce qui reste une hypothèse non testée à l'échelle visée. Pose les questions concrètes à vérifier avant d'industrialiser ou de déployer plus largement : les conditions du pilote (ressources dédiées, attention managériale, utilisateurs sélectionnés) sont-elles reproductibles à grande échelle, ou spécifiques à ce contexte restreint ? Quel goulot d'étranglement technique, logistique ou humain apparaît seulement en passant d'une poignée d'unités à un volume industriel ? Le coût réel d'industrialisation a-t-il été chiffré, ou seulement le coût du prototype a-t-il été extrapolé ? Quel test intermédiaire, à une échelle supérieure au pilote mais inférieure au déploiement complet, permettrait de vérifier ces hypothèses avant l'engagement final ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque hypothèse identifiée avec les questions de décision à se poser, et les points clés à retenir avant de trancher.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "les scores individuels ne peuvent à eux seuls fonder une décision organisationnelle ; couplage avec diagnostic organisationnel"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

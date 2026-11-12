@@ -1,69 +1,206 @@
 {
   "id": "psy-t49-7",
-  "title": "Préparer — Raisonnement scientifique avancé · T49.7",
+  "title": "Raisonnement scientifique avancé · T49.7",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Raisonnement scientifique avancé ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à raisonner sur des preuves scientifiques complexes. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Raisonnement scientifique avancé », dans le domaine « PENSÉE CRITIQUE AVANCÉE (RENFORCEMENT) ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à raisonner sur des preuves scientifiques complexes.\nFormat cible : 15 items + 2 cas, 12 min.\nContenu cible : causalité, réplication, méta-analyse, conflits d’intérêts.\nCalcul cible (non implémenté ici) : score, qualité du raisonnement.\nUsage décrit : santé, politiques publiques, R&D.\nOptions cibles : cas issus de la recherche récente.\nObjectif du domaine : approfondir la pensée critique avec des modules avancés adaptés à l’ère de l’IA générative et de la désinformation de masse — au-delà de la Vague 1\nGarde-fou du domaine : N3 possible ; supervision humaine ; audit de biais ; droit à l’explication\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Une méta-analyse combine les résultats de 40 études indépendantes sur un même traitement. Quel avantage principal une méta-analyse bien menée offre-t-elle par rapport à une seule étude, même de grande taille ?",
+      "help": "Pensez à ce qu’apporte l’intégration de plusieurs échantillons et contextes indépendants.",
+      "options": [
+        {
+          "label": "Elle augmente la puissance statistique globale et permet de dégager une tendance plus robuste en intégrant la variabilité entre plusieurs échantillons et contextes indépendants.",
+          "score": 1
+        },
+        {
+          "label": "Elle garantit automatiquement l’absence de tout biais, quelle que soit la qualité des études incluses.",
+          "score": 0
+        },
+        {
+          "label": "Elle élimine le besoin de toute étude future sur le sujet.",
+          "score": 0
+        },
+        {
+          "label": "Elle est toujours plus fiable qu’un essai contrôlé randomisé, sans aucune exception.",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement scientifique avancé",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Dans une méta-analyse, pourquoi est-il important d’évaluer le risque de « biais de publication » (le fait que les études aux résultats positifs ou spectaculaires sont plus souvent publiées que celles aux résultats négatifs ou nuls) ?",
+      "help": "Pensez à ce qui se passe si les études négatives, restées non publiées, manquent dans l’analyse.",
+      "options": [
+        {
+          "label": "Parce que ce biais peut faire surestimer l’effet réel d’un traitement si les études négatives, restées non publiées, sont absentes de l’analyse.",
+          "score": 1
+        },
+        {
+          "label": "Parce que les études aux résultats négatifs ne sont jamais scientifiquement valides.",
+          "score": 0
+        },
+        {
+          "label": "Parce que ce biais n’a aucune incidence tant que le nombre d’études incluses est élevé.",
+          "score": 0
+        },
+        {
+          "label": "Parce que le biais de publication concerne uniquement les études financées par l’industrie.",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement scientifique avancé",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Une étude affirme avoir démontré un lien de causalité entre deux phénomènes sur la seule base d’une corrélation statistique forte, sans manipulation expérimentale ni contrôle des facteurs confondants. Quelle est la limite méthodologique principale de cette affirmation causale ?",
+      "help": "La force statistique d’une corrélation ne règle pas la question des explications alternatives.",
+      "options": [
+        {
+          "label": "Une corrélation statistique, même forte, ne suffit pas à établir une causalité sans élimination des explications alternatives (facteurs confondants, causalité inverse, hasard).",
+          "score": 1
+        },
+        {
+          "label": "Aucune limite : une corrélation statistiquement significative établit toujours une causalité certaine.",
+          "score": 0
+        },
+        {
+          "label": "La limite ne concerne que les études avec un petit échantillon.",
+          "score": 0
+        },
+        {
+          "label": "La limite disparaît si la corrélation est supérieure à 90 %.",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement scientifique avancé",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Un conflit d’intérêts financier non déclaré est découvert après la publication d’une étude influente sur les politiques publiques. Quelle conséquence méthodologique cela entraîne-t-il, indépendamment de la question de savoir si les résultats sont ou non exacts ?",
+      "help": "La question posée porte sur le niveau de confiance à accorder, pas sur une affirmation définitive de fraude.",
+      "options": [
+        {
+          "label": "Cela affaiblit la confiance qu’on peut accorder à l’étude en l’absence de réplication indépendante, car le conflit d’intérêts pourrait avoir influencé des choix méthodologiques ou l’interprétation des résultats.",
+          "score": 1
+        },
+        {
+          "label": "Cela rend automatiquement tous les résultats de l’étude faux.",
+          "score": 0
+        },
+        {
+          "label": "Cela n’a aucune incidence, la méthodologie restant seule garante de la validité.",
+          "score": 0
+        },
+        {
+          "label": "Cela ne concerne que les études publiées dans des revues peu connues.",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement scientifique avancé",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Pourquoi un résultat scientifique qui n’a jamais pu être répliqué par d’autres équipes, plusieurs années après sa publication initiale, doit-il être considéré avec une prudence particulière ?",
+      "help": "L’absence de réplication, malgré plusieurs tentatives, est elle-même une information.",
+      "options": [
+        {
+          "label": "Parce que l’absence de réplication indépendante, malgré plusieurs tentatives, est un signal que le résultat initial pourrait être dû au hasard, à un biais méthodologique ou à une erreur, plutôt qu’à un effet réel et généralisable.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu’un résultat non répliqué est nécessairement frauduleux dans tous les cas.",
+          "score": 0
+        },
+        {
+          "label": "Parce que l’absence de réplication n’a aucune signification scientifique.",
+          "score": 0
+        },
+        {
+          "label": "Parce que seules les études répliquées peuvent être publiées, par définition.",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement scientifique avancé",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Dans l’élaboration d’une politique publique fondée sur des preuves scientifiques, pourquoi privilégier les conclusions d’une méta-analyse ou d’une synthèse systématique plutôt que celles d’une étude isolée, même bien menée ?",
+      "help": "Une étude isolée, même rigoureuse, peut rester une exception statistique parmi d’autres résultats.",
+      "options": [
+        {
+          "label": "Parce qu’une synthèse systématique intègre l’ensemble des preuves disponibles et leur variabilité, réduisant le risque de fonder une décision sur un résultat isolé qui pourrait être une exception statistique.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu’une étude isolée n’a jamais aucune valeur scientifique, même bien menée.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu’une méta-analyse ne peut jamais se tromper, par construction.",
+          "score": 0
+        },
+        {
+          "label": "Parce que le nombre d’études incluses importe plus que leur qualité méthodologique respective.",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement scientifique avancé",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en méthodologie scientifique avancée. Cet outil est un contrôle de connaissances factuelles sur le raisonnement scientifique avancé (méta-analyses, biais de publication, limites de la corrélation, conflits d’intérêts, réplication, synthèses systématiques) : ce n’est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Raisonnement scientifique avancé » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (apport d’une méta-analyse, biais de publication, limites de la corrélation sans contrôle expérimental, effet d’un conflit d’intérêts non déclaré, valeur de la réplication), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "N3 possible ; supervision humaine ; audit de biais ; droit à l’explication"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

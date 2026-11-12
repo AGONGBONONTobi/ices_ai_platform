@@ -1,42 +1,42 @@
 {
   "id": "psy-t50-7",
-  "title": "Préparer — Décision stratégique Afrique · T50.7",
+  "title": "Décision stratégique Afrique · T50.7",
   "category": "STRATÉGIE & MANAGEMENT",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Décision stratégique Afrique ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle décision stratégique réelle en contexte africain êtes-vous en train de préparer ?",
+      "help": "Décrivez une situation précise et actuelle (partenariat, implantation, investissement). Cet outil analyse cette situation, pas votre personnalité.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à décider en contexte africain. Ne renseignez pas de score supposé.",
+      "question": "Quelles informations, options ou avis avez-vous déjà en main avant de trancher ?",
+      "help": "Indiquez les options envisagées, les sources consultées et les avis déjà reçus, dans l'ordre où ils sont arrivés si possible.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si cette décision s'avère mauvaise ?",
+      "help": "Budget, partenariats, réputation, personnes et communautés concernées, réversibilité.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai devez-vous trancher ?",
+      "placeholder": "Exemple : décision à prendre d'ici vendredi",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Décision stratégique Afrique », dans le domaine « PROSPECTIVE AFRIQUE & MARCHÉS ÉMERGENTS (RENFORCEMENT) ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à décider en contexte africain.\nFormat cible : 6 simulations, 15 min.\nContenu cible : arbitrages, partenariats, risques, impact.\nCalcul cible (non implémenté ici) : qualité de décision, cohérence.\nUsage décrit : direction, investissement.\nOptions cibles : couplage avec D35 (Vague 2) et D40 (décision sous incertitude).\nObjectif du domaine : approfondir la compréhension des dynamiques africaines et des marchés émergents — au-delà de la Vague 2 — pour les décideurs, investisseurs et organisations internationales\nGarde-fou du domaine : audit post-colonial obligatoire ; validation par experts africains ; normes locales propres ; pas de hiérarchisation culturelle ; lutte contre les stéréotypes\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en décision stratégique, spécialisé dans les arbitrages, partenariats, risques et impacts propres à une décision prise en contexte africain, pour une décision de direction ou d'investissement.\n\nSituation décrite par l'utilisateur :\nDécision ou situation : {decision}\nInformations et options déjà recueillies : {elements_connus}\nEnjeu si cette décision s'avère mauvaise : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite les arbitrages réels que la décision implique (entre partenaires, entre niveaux de risque, entre impacts attendus), et identifie les parties prenantes locales et internationales concernées par chaque option. Distingue les risques spécifiques au contexte décrit (réglementaire, opérationnel, réputationnel, sécuritaire) de ceux qui seraient communs à toute décision de ce type ailleurs. Propose des questions de décision : quelle option ou quel partenaire local a été écarté, et pourquoi ? Quel est l'impact attendu pour les parties prenantes locales si la décision est mise en œuvre, et a-t-il été vérifié auprès d'elles ? Que répondrait l'utilisateur s'il devait justifier ce choix dans un an face à un résultat décevant ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque arbitrage identifié avec les questions de décision à se poser, et les points clés à retenir avant de trancher.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "audit post-colonial obligatoire ; validation par experts africains ; normes locales propres ; pas de hiérarchisation culturelle ; lutte contre les stéréotypes"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

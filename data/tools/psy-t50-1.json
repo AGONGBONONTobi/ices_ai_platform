@@ -1,42 +1,42 @@
 {
   "id": "psy-t50-1",
-  "title": "Préparer — Signaux faibles Afrique · T50.1",
+  "title": "Signaux faibles Afrique · T50.1",
   "category": "STRATÉGIE & MANAGEMENT",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Signaux faibles Afrique ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle décision ou situation réelle liée à un marché africain ou émergent êtes-vous en train d'évaluer ?",
+      "help": "Décrivez une situation précise et actuelle (secteur, pays ou région, activité concernée). Cet outil analyse cette situation, pas votre personnalité.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à détecter les tendances émergentes africaines. Ne renseignez pas de score supposé.",
+      "question": "Quels signaux faibles, observations de terrain ou informations avez-vous déjà recueillis ?",
+      "help": "Indiquez ce que vous avez observé ou appris, et la source de chaque élément (terrain, presse locale, contact, rapport), dans l'ordre où vous les avez reçus si possible.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si ces signaux sont mal interprétés ou ignorés ?",
+      "help": "Budget, délai d'entrée sur le marché, partenariats engagés, réversibilité de la décision.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai devez-vous trancher ?",
+      "placeholder": "Exemple : décision à prendre d'ici vendredi",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Signaux faibles Afrique », dans le domaine « PROSPECTIVE AFRIQUE & MARCHÉS ÉMERGENTS (RENFORCEMENT) ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à détecter les tendances émergentes africaines.\nFormat cible : 15 cas, 12 min.\nContenu cible : démographie, urbanisation, technologie, culture.\nCalcul cible (non implémenté ici) : score, précocité.\nUsage décrit : stratégie, investissement.\nOptions cibles : mise à jour continue avec des cas récents.\nObjectif du domaine : approfondir la compréhension des dynamiques africaines et des marchés émergents — au-delà de la Vague 2 — pour les décideurs, investisseurs et organisations internationales\nGarde-fou du domaine : audit post-colonial obligatoire ; validation par experts africains ; normes locales propres ; pas de hiérarchisation culturelle ; lutte contre les stéréotypes\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en veille stratégique et prospective, spécialisé dans la détection des signaux faibles sur les marchés africains et les marchés émergents : les indices précoces, encore peu visibles ou peu commentés, d'un changement en cours dans la démographie, l'urbanisation, la technologie ou la culture, qui peuvent annoncer une évolution significative d'un marché avant qu'elle ne devienne évidente pour la majorité des acteurs.\n\nSituation décrite par l'utilisateur :\nDécision ou situation : {decision}\nSignaux et informations déjà recueillis : {elements_connus}\nEnjeu si ces signaux sont mal interprétés ou ignorés : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite chaque signal faible effectivement mentionné par l'utilisateur, en distinguant ce qui relève d'une observation de terrain vérifiable de ce qui relève d'une rumeur, d'une extrapolation ou d'une impression non recoupée. Classe chaque signal selon qu'il touche la démographie, l'urbanisation, la technologie ou la culture, et explique à quel horizon et par quel mécanisme il pourrait produire un effet concret sur l'activité décrite. Propose des questions de vérification : quelles sources locales indépendantes permettraient de confirmer ou d'infirmer ce signal ? Ce signal est-il isolé ou recoupé par plusieurs observations distinctes et non liées entre elles ? Quel est le coût d'agir trop tôt sur la base de ce signal, comparé au coût d'agir trop tard ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque signal identifié avec les questions de vérification et de décision à se poser, et les points clés à retenir avant de trancher.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "audit post-colonial obligatoire ; validation par experts africains ; normes locales propres ; pas de hiérarchisation culturelle ; lutte contre les stéréotypes"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

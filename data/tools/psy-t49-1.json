@@ -1,69 +1,206 @@
 {
   "id": "psy-t49-1",
-  "title": "Préparer — Évaluation avancée de sources · T49.1",
+  "title": "Évaluation avancée de sources · T49.1",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Évaluation avancée de sources ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à évaluer des sources complexes et contradictoires. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Évaluation avancée de sources », dans le domaine « PENSÉE CRITIQUE AVANCÉE (RENFORCEMENT) ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à évaluer des sources complexes et contradictoires.\nFormat cible : 15 cas, 12 min.\nContenu cible : sources primaires/secondaires, conflits d’intérêts, prédation.\nCalcul cible (non implémenté ici) : score, qualité de l’évaluation.\nUsage décrit : renseignement, journalisme, audit.\nOptions cibles : cas issus de l’actualité (anonymisés).\nObjectif du domaine : approfondir la pensée critique avec des modules avancés adaptés à l’ère de l’IA générative et de la désinformation de masse — au-delà de la Vague 1\nGarde-fou du domaine : N3 possible ; supervision humaine ; audit de biais ; droit à l’explication\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Deux études sur l’efficacité d’un traitement arrivent à des conclusions opposées : l’une, financée par le fabricant, conclut à une forte efficacité ; l’autre, indépendante et à plus large échantillon, ne trouve pas d’effet significatif. Quelle démarche d’évaluation est la plus rigoureuse face à cette contradiction ?",
+      "help": "Comparez la méthodologie, le financement et la convergence avec d’autres études, plutôt que de trancher au hasard.",
+      "options": [
+        {
+          "label": "Comparer la taille des échantillons, la méthodologie et le financement, et chercher si d’autres études indépendantes convergent avec l’une ou l’autre.",
+          "score": 1
+        },
+        {
+          "label": "Donner automatiquement raison à l’étude financée par le fabricant, car il connaît mieux son produit.",
+          "score": 0
+        },
+        {
+          "label": "Donner automatiquement raison à l’étude la plus récente, quelle que soit sa méthodologie.",
+          "score": 0
+        },
+        {
+          "label": "Faire la moyenne arithmétique des deux conclusions opposées pour obtenir une réponse neutre.",
+          "score": 0
+        }
+      ],
+      "axe": "Évaluation avancée de sources",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Une source primaire (le rapport officiel original) et une source secondaire (un article de presse qui le résume) se contredisent sur un chiffre précis. Laquelle privilégier en priorité, et pourquoi ?",
+      "help": "Réfléchissez à l’endroit où une erreur de résumé ou d’interprétation peut le plus facilement s’introduire.",
+      "options": [
+        {
+          "label": "La source primaire, car elle est à l’origine de l’information et les sources secondaires peuvent introduire des erreurs de résumé ou d’interprétation.",
+          "score": 1
+        },
+        {
+          "label": "La source secondaire, car elle est toujours rédigée par un journaliste professionnel.",
+          "score": 0
+        },
+        {
+          "label": "Les deux sont équivalentes et le choix est arbitraire.",
+          "score": 0
+        },
+        {
+          "label": "La source la plus récemment consultée, indépendamment de son statut primaire ou secondaire.",
+          "score": 0
+        }
+      ],
+      "axe": "Évaluation avancée de sources",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Un expert cité dans un article a, par ailleurs, un intérêt financier direct dans l’entreprise dont il commente les résultats, information non mentionnée dans l’article. Quel est le risque principal à ignorer ce conflit d’intérêts non déclaré ?",
+      "help": "Le risque porte sur la crédibilité accordée à l’avis, pas sur la véracité automatique de l’article entier.",
+      "options": [
+        {
+          "label": "Accorder une crédibilité excessive à un avis potentiellement biaisé par un intérêt personnel, alors que cet intérêt pourrait avoir influencé le commentaire.",
+          "score": 1
+        },
+        {
+          "label": "Aucun risque : un conflit d’intérêts non déclaré n’a jamais d’effet sur la validité d’un avis.",
+          "score": 0
+        },
+        {
+          "label": "Le risque que l’article soit automatiquement faux dans son intégralité.",
+          "score": 0
+        },
+        {
+          "label": "Le risque que l’expert soit poursuivi en justice.",
+          "score": 0
+        }
+      ],
+      "axe": "Évaluation avancée de sources",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Une revue scientifique peu connue, sans comité de lecture rigoureux identifiable, publie un article aux conclusions spectaculaires qui contredisent le consensus établi dans le domaine. Quelle attitude d’évaluation avancée est la plus appropriée ?",
+      "help": "Ni l’acceptation immédiate ni le rejet automatique ne sont des démarches rigoureuses à eux seuls.",
+      "options": [
+        {
+          "label": "Examiner la rigueur du comité de lecture, chercher si d’autres équipes ont tenté de répliquer le résultat, et attendre une corroboration indépendante avant de le considérer comme établi.",
+          "score": 1
+        },
+        {
+          "label": "Accepter immédiatement la conclusion, car elle est nouvelle et inédite.",
+          "score": 0
+        },
+        {
+          "label": "Rejeter l’article sans l’avoir examiné, uniquement parce que la revue est peu connue.",
+          "score": 0
+        },
+        {
+          "label": "Considérer que contredire le consensus prouve automatiquement que le consensus avait tort.",
+          "score": 0
+        }
+      ],
+      "axe": "Évaluation avancée de sources",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Deux témoins oculaires d’un même événement donnent des versions partiellement contradictoires. Quelle démarche permet de mieux évaluer la fiabilité relative de leurs témoignages ?",
+      "help": "Pensez à ce qui peut corroborer un témoignage indépendamment de sa précision apparente.",
+      "options": [
+        {
+          "label": "Chercher des éléments de corroboration indépendants et examiner la position, l’intérêt et les conditions d’observation de chaque témoin.",
+          "score": 1
+        },
+        {
+          "label": "Croire systématiquement le témoignage le plus détaillé, quel que soit son contenu.",
+          "score": 0
+        },
+        {
+          "label": "Croire systématiquement le premier témoignage recueilli chronologiquement.",
+          "score": 0
+        },
+        {
+          "label": "Ignorer les deux témoignages, puisqu’ils se contredisent.",
+          "score": 0
+        }
+      ],
+      "axe": "Évaluation avancée de sources",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Pourquoi une source journalistique qui cite systématiquement ses sources primaires et corrige publiquement ses erreurs est-elle généralement considérée comme plus fiable qu’une source qui ne le fait jamais ?",
+      "help": "Pensez à ce que ces pratiques permettent de faire, plutôt qu’à une garantie absolue qu’elles offriraient.",
+      "options": [
+        {
+          "label": "Parce que la transparence sur les sources et la correction des erreurs permettent de vérifier l’information et témoignent d’une rigueur éditoriale, sans garantir pour autant une infaillibilité totale.",
+          "score": 1
+        },
+        {
+          "label": "Parce que citer des sources rend un article automatiquement vrai à 100 %, sans aucune exception.",
+          "score": 0
+        },
+        {
+          "label": "Parce que les corrections publiques prouvent que le média ment habituellement.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la fiabilité d’un média ne dépend que de sa popularité.",
+          "score": 0
+        }
+      ],
+      "axe": "Évaluation avancée de sources",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en analyse de sources complexes. Cet outil est un contrôle de connaissances factuelles sur l’évaluation avancée de sources contradictoires ou complexes (arbitrage entre études divergentes, primaire/secondaire, conflits d’intérêts non déclarés, corroboration) : ce n’est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Évaluation avancée de sources » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (arbitrage entre sources contradictoires, primauté de la source primaire, détection des conflits d’intérêts, corroboration indépendante), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "N3 possible ; supervision humaine ; audit de biais ; droit à l’explication"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

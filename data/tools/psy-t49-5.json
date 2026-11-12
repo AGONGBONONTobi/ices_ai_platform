@@ -1,69 +1,206 @@
 {
   "id": "psy-t49-5",
-  "title": "Préparer — Deepfakes & IA générative · T49.5",
+  "title": "Deepfakes & IA générative · T49.5",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Deepfakes & IA générative ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à détecter les contenus générés par IA. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Deepfakes & IA générative », dans le domaine « PENSÉE CRITIQUE AVANCÉE (RENFORCEMENT) ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à détecter les contenus générés par IA.\nFormat cible : 20 médias (texte, image, audio, vidéo), 15 min.\nContenu cible : deepfakes, textes générés, voix synthétiques.\nCalcul cible (non implémenté ici) : précision, calibration.\nUsage décrit : sécurité, journalisme, éducation.\nOptions cibles : contenus à la pointe ; mise à jour continue.\nObjectif du domaine : approfondir la pensée critique avec des modules avancés adaptés à l’ère de l’IA générative et de la désinformation de masse — au-delà de la Vague 1\nGarde-fou du domaine : N3 possible ; supervision humaine ; audit de biais ; droit à l’explication\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Un appel téléphonique utilise une voix synthétique imitant celle d’un dirigeant d’entreprise pour demander un virement urgent. Quelle pratique de vérification réduit le risque de fraude dans ce type de scénario (« clonage vocal ») ?",
+      "help": "Pensez à un moyen de confirmer l’identité qui ne dépende pas uniquement de ce qu’on entend au téléphone.",
+      "options": [
+        {
+          "label": "Vérifier la demande par un second canal de communication indépendant et déjà connu (rappel sur un numéro vérifié, contact en personne).",
+          "score": 1
+        },
+        {
+          "label": "Exécuter le virement immédiatement si la voix semble familière.",
+          "score": 0
+        },
+        {
+          "label": "Demander à l’appelant de répéter plus fort pour mieux reconnaître sa voix.",
+          "score": 0
+        },
+        {
+          "label": "Se fier uniquement au numéro affiché à l’écran, qui ne peut jamais être falsifié.",
+          "score": 0
+        }
+      ],
+      "axe": "Deepfakes & IA générative",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Pourquoi un texte généré par une IA peut-il sembler cohérent et bien écrit tout en contenant des informations factuellement inventées ?",
+      "help": "Ces modèles produisent du texte plausible selon des régularités statistiques, pas une vérification factuelle systématique.",
+      "options": [
+        {
+          "label": "Parce que ces modèles génèrent du texte statistiquement plausible à partir de leur entraînement, sans vérification systématique de l’exactitude factuelle de chaque affirmation produite.",
+          "score": 1
+        },
+        {
+          "label": "Parce que toute information produite par une IA générative est nécessairement vérifiée avant d’être affichée.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu’un texte bien écrit est par définition toujours factuellement exact.",
+          "score": 0
+        },
+        {
+          "label": "Parce que les IA génératives ne peuvent produire que des informations déjà vérifiées par des humains.",
+          "score": 0
+        }
+      ],
+      "axe": "Deepfakes & IA générative",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Quelle est la meilleure pratique pour évaluer l’authenticité d’une vidéo virale montrant une personnalité publique dans une situation inhabituelle ?",
+      "help": "L’apparence visuelle seule ne permet pas de conclure ; il faut croiser avec une confirmation externe.",
+      "options": [
+        {
+          "label": "Chercher si des médias ou canaux officiels fiables confirment l’événement, plutôt que de juger uniquement sur l’apparence visuelle de la vidéo.",
+          "score": 1
+        },
+        {
+          "label": "Juger uniquement sur la qualité de l’image : une haute définition garantit l’authenticité.",
+          "score": 0
+        },
+        {
+          "label": "Considérer que toute vidéo qui circule largement est nécessairement authentique.",
+          "score": 0
+        },
+        {
+          "label": "Ne vérifier que si la vidéo semble défavorable à la personnalité concernée.",
+          "score": 0
+        }
+      ],
+      "axe": "Deepfakes & IA générative",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Un détecteur automatique de contenus générés par IA annonce qu’un texte a « probablement » été généré par IA avec un certain taux de confiance. Comment interpréter correctement ce résultat ?",
+      "help": "Un taux de confiance exprime une probabilité, pas une certitude absolue.",
+      "options": [
+        {
+          "label": "Comme une indication probabiliste et faillible, pas une preuve absolue : ces détecteurs peuvent se tromper, notamment sur des textes courts ou édités.",
+          "score": 1
+        },
+        {
+          "label": "Comme une preuve scientifique infaillible et incontestable dans tous les cas.",
+          "score": 0
+        },
+        {
+          "label": "Comme une preuve que le texte est automatiquement faux sur le fond.",
+          "score": 0
+        },
+        {
+          "label": "Comme une donnée sans aucune valeur, à ignorer systématiquement.",
+          "score": 0
+        }
+      ],
+      "axe": "Deepfakes & IA générative",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Dans un contexte professionnel sensible (recrutement, contentieux), pourquoi est-il risqué de fonder une décision uniquement sur l’analyse d’une image ou vidéo potentiellement générée par IA, sans autre élément de preuve ?",
+      "help": "Une seule source de preuve visuelle, même examinée attentivement, reste faillible.",
+      "options": [
+        {
+          "label": "Parce que l’authenticité d’un contenu visuel ne peut pas être établie avec certitude sur la seule inspection visuelle, et qu’une décision importante doit s’appuyer sur plusieurs sources de preuve corroborantes.",
+          "score": 1
+        },
+        {
+          "label": "Parce que les contenus visuels sont toujours plus fiables que les témoignages écrits.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu’une image ou vidéo constitue toujours une preuve juridique suffisante à elle seule.",
+          "score": 0
+        },
+        {
+          "label": "Parce que l’IA générative n’existe pas encore en pratique.",
+          "score": 0
+        }
+      ],
+      "axe": "Deepfakes & IA générative",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Quelle est la différence essentielle entre une retouche d’image classique (contraste, recadrage) et un deepfake au sens propre ?",
+      "help": "La différence porte sur l’intention de faire croire à une déclaration ou une action attribuée à une personne réelle.",
+      "options": [
+        {
+          "label": "Le deepfake vise spécifiquement à faire dire ou faire paraître à une personne réelle des propos ou actions qu’elle n’a pas eus, en utilisant des techniques génératives, alors qu’une retouche classique modifie l’apparence sans forcément créer une fausse attribution.",
+          "score": 1
+        },
+        {
+          "label": "Il n’existe aucune différence : toute retouche d’image est un deepfake par définition.",
+          "score": 0
+        },
+        {
+          "label": "Un deepfake est toujours réalisé sans aucun outil numérique.",
+          "score": 0
+        },
+        {
+          "label": "La retouche classique est toujours plus trompeuse qu’un deepfake.",
+          "score": 0
+        }
+      ],
+      "axe": "Deepfakes & IA générative",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en vérification de contenus générés par IA. Cet outil est un contrôle de connaissances factuelles sur les deepfakes et l’IA générative (clonage vocal, texte généré, vérification d’authenticité, limites des détecteurs automatiques) : ce n’est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Deepfakes & IA générative » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (vérification par canal indépendant, limites des textes générés par IA, confirmation par source officielle, fiabilité limitée des détecteurs automatiques, définition d’un deepfake), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "N3 possible ; supervision humaine ; audit de biais ; droit à l’explication"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

@@ -1,69 +1,206 @@
 {
   "id": "psy-t6-1",
-  "title": "Préparer — Évaluation des sources · T6.1",
+  "title": "Évaluation des sources · T6.1",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Évaluation des sources ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : crédibilité, autorité, actualité, intention. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Évaluation des sources », dans le domaine « PENSÉE CRITIQUE & ÉVALUATION DE L’INFORMATION ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : crédibilité, autorité, actualité, intention.\nFormat cible : 20 cas, 12 min.\nContenu cible : sources primaires/secondaires, conflits d’intérêts, prédation.\nCalcul cible (non implémenté ici) : score, typologie d’erreurs.\nUsage décrit : data literacy, recherche, journalisme.\nOptions cibles : cas réels anonymisés ; mise à jour continue.\nObjectif du domaine : mesurer la capacité à juger la qualité de l’information et des raisonnements — compétence clé à l’ère de l’IA générative\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Un article affirme qu’un vaccin provoque un effet secondaire grave. L’auteur signe seulement « Dr Martin, expert en santé », sans autre précision. Que faut-il vérifier en priorité pour juger de l’autorité de cette source ?",
+      "help": "Pensez à ce qui fonde réellement une expertise reconnue sur un sujet précis.",
+      "options": [
+        {
+          "label": "L’affiliation institutionnelle réelle de l’auteur, son domaine de spécialité précis, et si ses pairs le reconnaissent comme expert sur ce sujet.",
+          "score": 1
+        },
+        {
+          "label": "Si l’article est bien écrit, sans fautes d’orthographe.",
+          "score": 0
+        },
+        {
+          "label": "Le nombre de partages de l’article sur les réseaux sociaux.",
+          "score": 0
+        },
+        {
+          "label": "Si le titre de l’article est accrocheur.",
+          "score": 0
+        }
+      ],
+      "axe": "Évaluation des sources",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Vous voulez citer une statistique sur le taux de chômage trouvée dans un article en ligne qui n’affiche aucune date de publication visible. Quelle est la bonne pratique ?",
+      "help": "Une statistique économique a une durée de validité limitée.",
+      "options": [
+        {
+          "label": "Rechercher la date de publication (métadonnées, archives, URL) avant d’utiliser le chiffre, car une statistique non datée peut être obsolète.",
+          "score": 1
+        },
+        {
+          "label": "Utiliser le chiffre tel quel, puisque le site paraît professionnel.",
+          "score": 0
+        },
+        {
+          "label": "Multiplier le chiffre par le nombre d’années écoulées pour l’actualiser soi-même.",
+          "score": 0
+        },
+        {
+          "label": "Ignorer la date, qui n’a pas d’importance pour des statistiques économiques.",
+          "score": 0
+        }
+      ],
+      "axe": "Évaluation des sources",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Une étude concluant qu’un complément alimentaire est bénéfique a été entièrement financée par l’entreprise qui le commercialise. Que doit faire un lecteur critique face à ce conflit d’intérêts ?",
+      "help": "Un financement intéressé n’invalide pas forcément une étude à lui seul, mais il change la façon de la lire.",
+      "options": [
+        {
+          "label": "En tenir compte comme un facteur pouvant biaiser les résultats, sans rejeter l’étude en bloc, et chercher des études indépendantes convergentes.",
+          "score": 1
+        },
+        {
+          "label": "Rejeter systématiquement toute étude financée par une entreprise, quel qu’en soit le contenu.",
+          "score": 0
+        },
+        {
+          "label": "Ignorer la question du financement si la méthodologie semble correcte.",
+          "score": 0
+        },
+        {
+          "label": "Considérer que ce financement renforce la crédibilité, puisque l’entreprise connaît bien son produit.",
+          "score": 0
+        }
+      ],
+      "axe": "Évaluation des sources",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Pour vérifier l’affirmation « une étude montre que... » reprise dans un article, quelle source est la plus fiable à consulter ?",
+      "help": "Distinguez l’information d’origine de ce qui en est rapporté ailleurs.",
+      "options": [
+        {
+          "label": "L’étude scientifique originale (source primaire), plutôt que l’article qui la résume.",
+          "score": 1
+        },
+        {
+          "label": "Un article de presse grand public qui résume l’étude.",
+          "score": 0
+        },
+        {
+          "label": "Un post sur les réseaux sociaux qui cite l’étude.",
+          "score": 0
+        },
+        {
+          "label": "Un résumé généré automatiquement par un moteur de recherche.",
+          "score": 0
+        }
+      ],
+      "axe": "Évaluation des sources",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un article scientifique est publié dans une revue qui accepte de publier presque tout article moyennant des frais, sans relecture sérieuse par des pairs. Que doit-on en conclure sur sa crédibilité ?",
+      "help": "La simple existence d’une publication n’équivaut pas à une validation scientifique.",
+      "options": [
+        {
+          "label": "La publication seule ne garantit pas la validité scientifique ; il faut vérifier la méthodologie et chercher une réplication ou une relecture indépendante.",
+          "score": 1
+        },
+        {
+          "label": "Toute publication est scientifiquement validée du simple fait d’être publiée.",
+          "score": 0
+        },
+        {
+          "label": "Le fait que la revue accepte l’article prouve qu’il est particulièrement solide.",
+          "score": 0
+        },
+        {
+          "label": "Il est impossible de juger la qualité sans avoir lu tous les articles jamais publiés par cette revue.",
+          "score": 0
+        }
+      ],
+      "axe": "Évaluation des sources",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Trois sources indépendantes et reconnues rapportent un même fait ; une quatrième source isolée, sans affiliation vérifiable, le contredit sans apporter de preuve. Quelle attitude est la plus rigoureuse ?",
+      "help": "Le nombre de sources convergentes n’est qu’un indice parmi d’autres, mais il compte.",
+      "options": [
+        {
+          "label": "Accorder davantage de poids à la convergence des sources indépendantes et fiables, tout en restant prêt à examiner toute preuve que la source isolée pourrait présenter.",
+          "score": 1
+        },
+        {
+          "label": "Accorder un poids égal à toutes les sources, quel que soit leur nombre ou leur fiabilité.",
+          "score": 0
+        },
+        {
+          "label": "Privilégier systématiquement la source isolée parce qu’elle apporte un point de vue différent.",
+          "score": 0
+        },
+        {
+          "label": "Rejeter les trois sources convergentes au prétexte qu’elles pourraient s’être copiées.",
+          "score": 0
+        }
+      ],
+      "axe": "Évaluation des sources",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en littératie informationnelle. Cet outil est un contrôle de connaissances factuelles sur l’évaluation de la crédibilité des sources (autorité, actualité, intention, distinction source primaire/secondaire, conflits d’intérêts) : ce n’est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Évaluation des sources » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (autorité de l’auteur, actualité de l’information, intention et conflits d’intérêts, distinction source primaire/secondaire), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "mesurer la capacité à juger la qualité de l’information et des raisonnements — compétence clé à l’ère de l’IA générative"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

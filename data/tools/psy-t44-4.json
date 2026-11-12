@@ -1,69 +1,206 @@
 {
   "id": "psy-t44-4",
-  "title": "Préparer — Émergence & propriétés · T44.4",
+  "title": "Émergence & propriétés · T44.4",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Émergence & propriétés ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : compréhension des propriétés émergentes. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Émergence & propriétés », dans le domaine « PENSÉE SYSTÉMIQUE & COMPLEXITÉ ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : compréhension des propriétés émergentes.\nFormat cible : 8 cas, 10 min.\nContenu cible : comportements collectifs, seuils, auto-organisation.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : politiques publiques, management.\nOptions cibles : couplage avec D48 (interculturel).\nObjectif du domaine : évaluer la capacité à comprendre des systèmes complexes, à identifier les points de levier et à anticiper les effets de second ordre — compétence critique pour les décideurs, les politiques publiques et la transition écologique\nGarde-fou du domaine : les cas doivent être non politiques ; éviter les scénarios idéologiques ; audit de biais\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Qu’est-ce qu’une propriété émergente dans un système complexe ?",
+      "help": "Pensez à ce qui se voit au niveau de l’ensemble, et non à ce que montre un seul composant pris isolément.",
+      "options": [
+        {
+          "label": "Une propriété qui apparaît au niveau du système dans son ensemble et qui ne peut pas être déduite de l’observation d’un seul composant pris isolément.",
+          "score": 1
+        },
+        {
+          "label": "Une propriété présente de façon identique dans chaque composant du système.",
+          "score": 0
+        },
+        {
+          "label": "Une propriété fixée dès la conception du système et qui ne peut jamais changer.",
+          "score": 0
+        },
+        {
+          "label": "Une propriété qui ne concerne que le plus grand composant du système.",
+          "score": 0
+        }
+      ],
+      "axe": "Émergence & propriétés",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Un embouteillage peut apparaître sur une autoroute sans aucun accident ni obstacle, simplement à partir des interactions locales entre conducteurs (freinages, distances de sécurité). Ce phénomène illustre principalement…",
+      "help": "Demandez-vous d’où vient le comportement observé : d’une cause centrale unique, ou des interactions locales entre de nombreux éléments ?",
+      "options": [
+        {
+          "label": "L’émergence : un comportement collectif (le bouchon) qui résulte des interactions locales entre véhicules, sans cause centrale unique.",
+          "score": 1
+        },
+        {
+          "label": "Une boucle de rétroaction simple entre deux véhicules uniquement.",
+          "score": 0
+        },
+        {
+          "label": "Un effet de seuil totalement indépendant des interactions entre véhicules.",
+          "score": 0
+        },
+        {
+          "label": "Une interdépendance directe entre un conducteur et la route elle-même.",
+          "score": 0
+        }
+      ],
+      "axe": "Émergence & propriétés",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Un effet de seuil dans un système désigne…",
+      "help": "Pensez à ce qui se passe quand une valeur critique est franchie, par opposition à une évolution régulière.",
+      "options": [
+        {
+          "label": "Une situation où une variation progressive d’un paramètre produit un changement brusque et qualitatif de l’état du système, une fois une valeur critique dépassée.",
+          "score": 1
+        },
+        {
+          "label": "Une variation continue et strictement proportionnelle, sans aucune rupture possible.",
+          "score": 0
+        },
+        {
+          "label": "Un phénomène qui ne peut concerner que des systèmes purement mécaniques.",
+          "score": 0
+        },
+        {
+          "label": "Un changement d’état qui se produit systématiquement de façon instantanée, sans accumulation préalable.",
+          "score": 0
+        }
+      ],
+      "axe": "Émergence & propriétés",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Dans un lac, l’accumulation progressive de nutriments peut rester sans effet visible pendant des années, puis provoquer en quelques mois un basculement soudain vers une eau trouble dominée par les algues, difficile à inverser. Ce basculement illustre…",
+      "help": "Comparez la lenteur de la cause à la rapidité de l’effet observé.",
+      "options": [
+        {
+          "label": "Un effet de seuil (point de bascule) : une accumulation lente déclenche un changement brusque et potentiellement difficile à inverser.",
+          "score": 1
+        },
+        {
+          "label": "Une évolution parfaitement linéaire et proportionnelle à l’accumulation de nutriments.",
+          "score": 0
+        },
+        {
+          "label": "Un effet purement aléatoire, sans lien avec l’accumulation progressive des nutriments.",
+          "score": 0
+        },
+        {
+          "label": "Un effet immédiatement réversible, sans aucune difficulté à revenir à l’état initial.",
+          "score": 0
+        }
+      ],
+      "axe": "Émergence & propriétés",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "L’auto-organisation dans un système complexe désigne…",
+      "help": "Pensez à ce qui produit l’ordre observé : une autorité centrale, ou les interactions entre les éléments eux-mêmes ?",
+      "options": [
+        {
+          "label": "L’émergence spontanée d’un ordre ou d’une structure à partir des interactions locales entre composants, sans plan ni autorité centrale qui la dirige.",
+          "score": 1
+        },
+        {
+          "label": "Une organisation entièrement planifiée à l’avance par une autorité centrale.",
+          "score": 0
+        },
+        {
+          "label": "L’absence totale d’ordre ou de structure observable dans le système.",
+          "score": 0
+        },
+        {
+          "label": "Un synonyme strict de boucle de rétroaction d’équilibrage.",
+          "score": 0
+        }
+      ],
+      "axe": "Émergence & propriétés",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Dans une colonie de fourmis, aucun individu ne connaît le plan global du nid, pourtant une organisation efficace des tâches (recherche de nourriture, construction, défense) apparaît à partir de règles d’interaction simples entre individus. Ce phénomène illustre principalement…",
+      "help": "Repérez l’absence de chef d’orchestre dans la description de la situation.",
+      "options": [
+        {
+          "label": "L’auto-organisation : un ordre global qui émerge d’interactions locales sans coordination centrale.",
+          "score": 1
+        },
+        {
+          "label": "Une hiérarchie centrale qui planifie et dirige chaque tâche individuellement.",
+          "score": 0
+        },
+        {
+          "label": "Un effet de seuil sans rapport avec l’organisation des tâches.",
+          "score": 0
+        },
+        {
+          "label": "Une interdépendance purement financière entre les individus de la colonie.",
+          "score": 0
+        }
+      ],
+      "axe": "Émergence & propriétés",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en pensée systémique. Cet outil est un contrôle de connaissances factuelles sur les propriétés émergentes, les effets de seuil et l’auto-organisation dans les systèmes complexes : ce n’est PAS un test psychométrique certifié ou validé, il ne mesure ni le QI ni une aptitude générale, il ne produit aucun percentile ni aucune norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Émergence & propriétés » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (propriété émergente, effet de seuil, auto-organisation), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, ni une mesure d’intelligence ou d’aptitude générale, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "les cas doivent être non politiques ; éviter les scénarios idéologiques ; audit de biais"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

@@ -1,69 +1,206 @@
 {
   "id": "psy-t44-2",
-  "title": "Préparer — Délais & stocks/flux · T44.2",
+  "title": "Délais & stocks/flux · T44.2",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Délais & stocks/flux ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : compréhension des délais et de l’accumulation. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Délais & stocks/flux », dans le domaine « PENSÉE SYSTÉMIQUE & COMPLEXITÉ ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : compréhension des délais et de l’accumulation.\nFormat cible : 10 cas, 12 min.\nContenu cible : stocks, flux, délais, effets retardés.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : supply chain, politiques publiques.\nOptions cibles : simulation interactive.\nObjectif du domaine : évaluer la capacité à comprendre des systèmes complexes, à identifier les points de levier et à anticiper les effets de second ordre — compétence critique pour les décideurs, les politiques publiques et la transition écologique\nGarde-fou du domaine : les cas doivent être non politiques ; éviter les scénarios idéologiques ; audit de biais\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Dans une représentation systémique, un « stock » (ou niveau) correspond à…",
+      "help": "Pensez à ce qui s’accumule à un instant donné, plutôt qu’à une vitesse de changement.",
+      "options": [
+        {
+          "label": "Une quantité accumulée à un instant donné, par exemple l’eau contenue dans une baignoire.",
+          "score": 1
+        },
+        {
+          "label": "La vitesse à laquelle une quantité augmente ou diminue, par exemple le débit d’un robinet.",
+          "score": 0
+        },
+        {
+          "label": "Un délai entre une action et son effet observable.",
+          "score": 0
+        },
+        {
+          "label": "Une boucle de rétroaction reliant deux variables.",
+          "score": 0
+        }
+      ],
+      "axe": "Délais & stocks/flux",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Dans une représentation systémique, un « flux » (ou taux) correspond à…",
+      "help": "Pensez à ce qui se mesure par unité de temps, et non à une quantité accumulée.",
+      "options": [
+        {
+          "label": "La vitesse à laquelle un stock augmente ou diminue, par exemple le débit d’un robinet ou d’une vidange.",
+          "score": 1
+        },
+        {
+          "label": "La quantité totale accumulée dans un réservoir à un instant donné.",
+          "score": 0
+        },
+        {
+          "label": "Un effet de seuil déclenché par l’accumulation d’une variable.",
+          "score": 0
+        },
+        {
+          "label": "Un acteur du système relié à d’autres acteurs.",
+          "score": 0
+        }
+      ],
+      "axe": "Délais & stocks/flux",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Pourquoi un stock ne peut-il changer que progressivement, même si le flux qui l’alimente varie instantanément ?",
+      "help": "Rappelez-vous ce qu’un stock représente par rapport aux flux qui le traversent dans le temps.",
+      "options": [
+        {
+          "label": "Parce qu’un stock résulte de l’accumulation des flux au fil du temps : il intègre les flux passés et ne peut pas « sauter » instantanément à une nouvelle valeur.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu’un stock est, par définition, toujours fixe et ne peut jamais varier.",
+          "score": 0
+        },
+        {
+          "label": "Parce que les flux n’ont, en réalité, aucune influence sur les stocks.",
+          "score": 0
+        },
+        {
+          "label": "Parce que seuls les délais, et non les flux, font varier un stock.",
+          "score": 0
+        }
+      ],
+      "axe": "Délais & stocks/flux",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Un responsable logistique double ses commandes dès que les ventes augmentent, mais les livraisons n’arrivent que six semaines plus tard. Quel est l’effet typique de ce délai non anticipé sur le système ?",
+      "help": "Demandez-vous ce qui se passe quand une décision est prise sur une information qui a changé le temps que son effet se manifeste.",
+      "options": [
+        {
+          "label": "Un risque de surajustement (trop commander, puis stock excédentaire) et d’oscillations, car les décisions se fondent sur une information qui ne reflète plus la situation réelle au moment où elles produisent leurs effets.",
+          "score": 1
+        },
+        {
+          "label": "Aucun effet particulier : les délais de livraison n’influencent jamais la dynamique du système.",
+          "score": 0
+        },
+        {
+          "label": "Une stabilisation plus rapide du système, car les délais réduisent toujours les écarts entre l’offre et la demande.",
+          "score": 0
+        },
+        {
+          "label": "Une disparition du stock, car les flux entrants et sortants s’annulent automatiquement en présence d’un délai.",
+          "score": 0
+        }
+      ],
+      "axe": "Délais & stocks/flux",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Dans la métaphore de la baignoire, si le robinet (flux entrant) est ouvert plus fort que le bouchon (flux sortant) n’évacue, que devient le niveau d’eau (le stock) ?",
+      "help": "Comparez simplement ce qui entre à ce qui sort.",
+      "options": [
+        {
+          "label": "Il augmente, car le flux entrant net est positif (plus d’eau entre qu’il n’en sort).",
+          "score": 1
+        },
+        {
+          "label": "Il diminue, car un flux entrant plus fort vide toujours plus vite le réservoir.",
+          "score": 0
+        },
+        {
+          "label": "Il reste strictement constant, quel que soit l’écart entre les deux flux.",
+          "score": 0
+        },
+        {
+          "label": "Il devient impossible à déterminer sans connaître la couleur de l’eau.",
+          "score": 0
+        }
+      ],
+      "axe": "Délais & stocks/flux",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Quel est le principal risque d’un délai long entre une action corrective et son effet visible sur un système ?",
+      "help": "Pensez à ce qui peut arriver si on agit à nouveau avant de voir le résultat de la première action.",
+      "options": [
+        {
+          "label": "Un risque accru d’oscillations ou de surcorrection, car une nouvelle action peut être prise avant que les effets de la précédente ne soient visibles.",
+          "score": 1
+        },
+        {
+          "label": "Une garantie que le système se stabilisera plus rapidement, car les délais longs lissent toujours les variations.",
+          "score": 0
+        },
+        {
+          "label": "Une disparition complète du besoin de corriger le système.",
+          "score": 0
+        },
+        {
+          "label": "Un effet strictement identique à celui d’un délai court, sans différence pour la dynamique du système.",
+          "score": 0
+        }
+      ],
+      "axe": "Délais & stocks/flux",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en pensée systémique. Cet outil est un contrôle de connaissances factuelles sur les notions de stock, de flux, de délai et d’effet retardé en dynamique des systèmes : ce n’est PAS un test psychométrique certifié ou validé, il ne mesure ni le QI ni une aptitude générale, il ne produit aucun percentile ni aucune norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Délais & stocks/flux » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle de la distinction entre stock (quantité accumulée) et flux (vitesse de variation), et de la compréhension des effets de délai sur le comportement d’un système, sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, ni une mesure d’intelligence ou d’aptitude générale, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "les cas doivent être non politiques ; éviter les scénarios idéologiques ; audit de biais"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

@@ -1,42 +1,42 @@
 {
   "id": "psy-t28-6",
-  "title": "Préparer — Travail d’équipe en environnement à risque · T28.6",
+  "title": "Travail d'équipe en environnement à risque · T28.6",
   "category": "GESTION DES RISQUES",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Travail d’équipe en environnement à risque ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle situation d'équipe en environnement à risque (intervention, chantier, poste critique) souhaitez-vous analyser ?",
+      "help": "Décrivez l'intervention ou le chantier concerné et la composition de l'équipe.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : coordination et confiance en situation critique. Ne renseignez pas de score supposé.",
+      "question": "Quels rôles, briefings ou checklists sont déjà prévus pour cette équipe ou cette intervention ?",
+      "help": "Indiquez ce qui est déjà organisé : répartition des rôles, briefing avant intervention, checklist utilisée.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si la coordination de l'équipe faillit pendant cette intervention ?",
+      "help": "Conséquence d'un incident mal géré, confusion sur les rôles, retard de décision.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai cette intervention doit-elle avoir lieu ?",
+      "placeholder": "Exemple : intervention prévue dans trois jours",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Travail d’équipe en environnement à risque », dans le domaine « SÉCURITÉ, HSE & RISQUES OPÉRATIONNELS ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : coordination et confiance en situation critique.\nFormat cible : 10 scénarios, 10 min.\nContenu cible : rôles, briefings, checklists, gestion d’incident.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : composition d’équipes critiques.\nOptions cibles : couplage D14 (équipe).\nObjectif du domaine : évaluer la perception du risque, la culture sécurité et la conformité aux procédures dans les environnements à risque\nGarde-fou du domaine : jamais de refus d’affectation sur la seule base du score ; couplage obligatoire avec évaluation ergonomique et médicale ; non-discrimination\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en prévention des risques spécialisé dans le travail d'équipe en environnement à risque : la répartition des rôles, les briefings, les checklists et la gestion d'un incident en cours.\n\nSituation décrite par l'utilisateur :\nSituation d'équipe à analyser : {decision}\nRôles, briefings et checklists déjà prévus : {elements_connus}\nEnjeu d'une coordination défaillante : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite les rôles prévus pour chaque membre de l'équipe, l'existence d'un briefing avant l'intervention et l'usage ou non d'une checklist. Identifie les points de coordination qui semblent flous ou non partagés par tous. Propose des questions de préparation : chaque membre de l'équipe connaît-il son rôle et celui des autres avant le début de l'intervention ? Quelle checklist existe pour cette intervention, et a-t-elle été suivie ? Que se passe-t-il concrètement si un incident survient pendant l'intervention : qui décide, qui communique ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque repère identifié avec les questions de préparation à se poser, et les points clés à retenir avant l'intervention.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "jamais de refus d’affectation sur la seule base du score ; couplage obligatoire avec évaluation ergonomique et médicale ; non-discrimination"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

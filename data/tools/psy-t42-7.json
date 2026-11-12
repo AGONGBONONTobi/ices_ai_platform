@@ -1,42 +1,42 @@
 {
   "id": "psy-t42-7",
-  "title": "Préparer — Due diligence entrepreneuriale (auto-évaluation) · T42.7",
+  "title": "Due diligence entrepreneuriale (auto-évaluation) · T42.7",
   "category": "STRATÉGIE & MANAGEMENT",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Due diligence entrepreneuriale (auto-évaluation) ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quel projet réel souhaitez-vous examiner avant un rendez-vous avec un mentor ou un investisseur ?",
+      "help": "Décrivez le projet concerné et l'objectif de cette revue : préparation d'un pitch, bilan avant une levée, ou point d'étape avec un mentor.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à évaluer lucidement son propre projet. Ne renseignez pas de score supposé.",
+      "question": "Quels éléments factuels avez-vous déjà sur les forces, faiblesses, risques et besoins du projet ?",
+      "help": "Résultats obtenus, retours déjà reçus, ressources manquantes identifiées, risques déjà évoqués par des tiers.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si cette revue du projet manque de lucidité ?",
+      "help": "Crédibilité face à un investisseur, mauvaise allocation de ressources, risque non anticipé.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai cette revue doit-elle être prête ?",
+      "placeholder": "Exemple : avant le rendez-vous avec le mentor jeudi",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Due diligence entrepreneuriale (auto-évaluation) », dans le domaine « ENTREPRENEURIAT & INTENTION (VERSION AVANCÉE) ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à évaluer lucidement son propre projet.\nFormat cible : auto-évaluation structurée, 12 min.\nContenu cible : forces, faiblesses, risques, besoins, plan.\nCalcul cible (non implémenté ici) : calibration, lucidité.\nUsage décrit : mentorat, préparation investisseurs.\nOptions cibles : comparaison avec l’évaluation d’un mentor ; feedback de calibration.\nObjectif du domaine : évaluer les compétences entrepreneuriales avancées — au-delà de la tolérance au risque (Vague 2) — pour accompagner les porteurs de projets, sélectionner des candidats à des programmes et préparer la levée de fonds\nGarde-fou du domaine : N2–N3 ; jamais de refus de financement sur score seul ; comité humain obligatoire ; audit de biais (genre, origine) ; transparence\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en revue de projet entrepreneurial spécialisé dans l'examen lucide des forces, faiblesses, risques et besoins d'un projet avant une échéance : repérer les écarts entre ce que le projet affirme et ce qu'il peut démontrer.\n\nSituation décrite par l'utilisateur :\nProjet à examiner : {decision}\nÉléments déjà en main : {elements_connus}\nEnjeu : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite les forces, faiblesses, risques et besoins mentionnés pour CE projet, et distingue ceux appuyés sur des résultats vérifiables de ceux qui relèvent d'une intention ou d'une espérance. Pose les questions concrètes qui permettraient de fiabiliser cette auto-évaluation : chaque force citée repose-t-elle sur une preuve (client payant, résultat mesuré) ou sur une conviction de l'équipe ? La faiblesse la plus souvent évoquée par des tiers (mentors, clients, investisseurs potentiels) est-elle présente dans cette liste, ou a-t-elle été minimisée ? Le risque le plus coûteux en cas de réalisation a-t-il un plan d'atténuation concret, ou seulement la mention qu'il existe ? Si un mentor extérieur évaluait ce même projet avec les mêmes faits, sur quel point son jugement risquerait-il de diverger le plus de celui de l'utilisateur ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CE projet, des sections développant chaque point identifié avec les questions de décision à se poser, et les points clés à retenir avant la revue.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "N2–N3 ; jamais de refus de financement sur score seul ; comité humain obligatoire ; audit de biais (genre, origine) ; transparence"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

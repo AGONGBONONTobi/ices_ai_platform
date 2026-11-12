@@ -1,42 +1,42 @@
 {
   "id": "psy-t23-1",
-  "title": "Préparer — Persona & segmentation · T23.1",
+  "title": "Persona & segmentation · T23.1",
   "category": "MARKETING & COMMERCIAL",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Persona & segmentation ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quel produit, service ou offre réelle devez-vous cibler, et quelle décision de persona ou de segmentation êtes-vous en train de préparer ?",
+      "help": "Décrivez le produit ou l'offre réelle, le marché visé et la décision précise (créer un persona, choisir un segment prioritaire, exclure un anti-persona...). Cet outil analyse cette situation, pas votre profil personnel.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : construction et usage de personas. Ne renseignez pas de score supposé.",
+      "question": "Quelles données avez-vous déjà sur vos clients ou prospects (JTBD, usages, données démographiques, retours terrain) ?",
+      "help": "Indiquez les sources (interviews, données produit, études, retours commerciaux) et ce qu'elles montrent déjà.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si le persona ou le segment choisi est erroné ?",
+      "help": "Budget marketing engagé, roadmap produit, crédibilité commerciale, risque de cibler le mauvais public.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai devez-vous trancher ?",
+      "placeholder": "Exemple : lancement de campagne prévu dans deux semaines",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Persona & segmentation », dans le domaine « MARKETING & GROWTH ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : construction et usage de personas.\nFormat cible : 8 cas, 10 min.\nContenu cible : JTBD, ICP, segments, anti-personas.\nCalcul cible (non implémenté ici) : score, qualité de segmentation.\nUsage décrit : recrutement marketing.\nOptions cibles : cas avec données réelles anonymisées.\nObjectif du domaine : évaluer les compétences opérationnelles en marketing et croissance\nGarde-fou du domaine : items neutres vis-à-vis des plateformes ; pas de contenu trompeur\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un consultant en stratégie marketing spécialisé dans la construction et l'usage des personas : JTBD (Jobs To Be Done), ICP (Ideal Customer Profile), segmentation et anti-personas — l'art de définir précisément qui vous ciblez et pourquoi, pour éviter de parler à tout le monde et donc à personne.\n\nSituation décrite par l'utilisateur :\nProduit ou décision de segmentation : {decision}\nÉléments déjà en main : {elements_connus}\nEnjeu si la décision est mauvaise : {enjeu}\nÉchéance : {echeance}\n\nAnalyse CETTE situation en identifiant le ou les JTBD réels (quel problème le client essaie-t-il de résoudre, dans quel contexte ?), en distinguant le ICP (profil le plus adapté ou le plus rentable) des segments secondaires, et en nommant explicitement un ou plusieurs anti-personas (qui ne pas cibler, et pourquoi le dire explicitement fait gagner du budget). Pose les questions de vérification : ce persona repose-t-il sur des faits observés (interviews, données d'usage) ou sur des suppositions internes ? Le persona décrit-il un comportement d'achat réel ou un profil démographique vague qui n'aide pas à décider ? Quels segments existants pourraient être confondus à tort en un seul persona ? Qu'est-ce qui changerait dans le message, le canal ou le prix si l'on ciblait un autre segment que celui envisagé ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque repère identifié avec les questions de décision à se poser, et les points clés à retenir avant de trancher.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "items neutres vis-à-vis des plateformes ; pas de contenu trompeur"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

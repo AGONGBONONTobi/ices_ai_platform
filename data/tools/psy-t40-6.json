@@ -1,69 +1,206 @@
 {
   "id": "psy-t40-6",
-  "title": "Préparer — Décision séquentielle · T40.6",
+  "title": "Décision séquentielle · T40.6",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Décision séquentielle ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à décider par étapes avec révision bayésienne. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Décision séquentielle », dans le domaine « DÉCISION SOUS INCERTITUDE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à décider par étapes avec révision bayésienne.\nFormat cible : 6 simulations, 15 min.\nContenu cible : mise à jour des croyances, arrêt, continuation.\nCalcul cible (non implémenté ici) : qualité d’apprentissage, décision finale.\nUsage décrit : investissement, R&D, médecine.\nOptions cibles : couplage avec D46 (data literacy, Vague 3).\nObjectif du domaine : évaluer la capacité à décider rationnellement dans l’incertitude, l’ambiguïté et le risque — compétence critique pour les décideurs, investisseurs, assureurs, responsables publics\nGarde-fou du domaine : N3 ; ne remplace pas une décision humaine collégiale ; audit de biais ; supervision\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Avant un test, on estime à 20 % la probabilité qu'un projet soit viable (probabilité a priori). Le test donne un résultat positif, et on applique la règle de Bayes pour obtenir une probabilité a posteriori. Que représente cette probabilité a posteriori ?",
+      "help": "Il s'agit d'une probabilité révisée, pas de la probabilité initiale ni d'une mesure de fiabilité du test.",
+      "options": [
+        {
+          "label": "La probabilité révisée que le projet soit viable, après avoir pris en compte l'information apportée par le résultat du test.",
+          "score": 1
+        },
+        {
+          "label": "La probabilité initiale avant le test, qui reste inchangée quel que soit le résultat du test.",
+          "score": 0
+        },
+        {
+          "label": "La probabilité que le test lui-même soit fiable, indépendamment du projet.",
+          "score": 0
+        },
+        {
+          "label": "Le pourcentage de projets similaires ayant échoué dans le passé.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision séquentielle",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Selon la logique bayésienne, pourquoi deux personnes ayant la même information a priori mais recevant des résultats de test différents devraient-elles, en toute rationalité, aboutir à des croyances a posteriori différentes ?",
+      "help": "La mise à jour tient compte de ce qui a réellement été observé, pas uniquement du point de départ.",
+      "options": [
+        {
+          "label": "Parce que la mise à jour bayésienne combine la croyance initiale avec l'information nouvellement observée, et une information différente doit logiquement conduire à une révision différente de la croyance.",
+          "score": 1
+        },
+        {
+          "label": "Parce que la croyance a posteriori ne dépend jamais du résultat du test observé.",
+          "score": 0
+        },
+        {
+          "label": "Parce que deux personnes ayant la même croyance initiale doivent toujours aboutir exactement à la même conclusion, quel que soit le résultat observé.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la règle de Bayes s'applique uniquement si les deux personnes ont une croyance initiale identique à 50 %.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision séquentielle",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Dans une décision séquentielle (par exemple, poursuivre ou arrêter un essai clinique après chaque lot de résultats), quel est l'avantage principal de réviser la décision étape par étape plutôt que de décider une fois pour toutes au départ ?",
+      "help": "L'avantage tient à ce que chaque nouvelle étape permet d'apprendre, avant de s'engager définitivement.",
+      "options": [
+        {
+          "label": "Cela permet d'intégrer progressivement l'information observée à chaque étape pour arrêter plus tôt une option clairement mauvaise, ou poursuivre une option prometteuse, plutôt que de s'engager définitivement sur la base de la seule information initiale.",
+          "score": 1
+        },
+        {
+          "label": "Cela élimine totalement le besoin de disposer d'une information initiale avant de commencer.",
+          "score": 0
+        },
+        {
+          "label": "Une décision séquentielle produit toujours un résultat identique à une décision prise une seule fois au départ.",
+          "score": 0
+        },
+        {
+          "label": "Réviser la décision à chaque étape rend par définition la décision finale moins fiable.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision séquentielle",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Qu'appelle-t-on un « problème d'arrêt optimal » (optimal stopping) dans une suite d'observations séquentielles ?",
+      "help": "Il s'agit de choisir le bon moment pour arrêter d'observer, pas d'observer un nombre fixe imposé.",
+      "options": [
+        {
+          "label": "Le choix du moment où il devient préférable d'arrêter de recueillir des informations et de prendre une décision définitive, plutôt que de continuer à observer indéfiniment.",
+          "score": 1
+        },
+        {
+          "label": "L'obligation d'observer un nombre fixe et invariable d'essais avant toute décision, quelles que soient les circonstances.",
+          "score": 0
+        },
+        {
+          "label": "Un problème qui ne concerne que les décisions prises sans aucune incertitude.",
+          "score": 0
+        },
+        {
+          "label": "Le moment où la probabilité a priori devient égale à zéro.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision séquentielle",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Pourquoi continuer indéfiniment à collecter de l'information avant de décider, même quand les résultats sont déjà très clairs, peut être une stratégie sous-optimale ?",
+      "help": "Observer davantage a un coût, qu'il faut comparer au gain de certitude obtenu.",
+      "options": [
+        {
+          "label": "Parce que le coût (temps, ressources) de continuer à observer peut dépasser le gain marginal de certitude obtenu, alors qu'une décision pourrait déjà être prise avec un niveau de confiance suffisant.",
+          "score": 1
+        },
+        {
+          "label": "Parce que collecter plus d'information rend toujours la décision finale plus mauvaise.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'il est, par principe, toujours optimal d'observer un nombre infini d'essais avant de décider.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la croyance a posteriori ne peut jamais se stabiliser, quel que soit le nombre d'observations.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision séquentielle",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Une probabilité a priori très faible (par exemple 2 %) peut-elle, après une suite de résultats favorables successifs, devenir une probabilité a posteriori élevée ?",
+      "help": "Pensez à l'effet cumulatif de plusieurs observations cohérentes sur une croyance révisée.",
+      "options": [
+        {
+          "label": "Oui : la mise à jour bayésienne répétée sur plusieurs observations cohérentes peut déplacer significativement la croyance, même à partir d'un a priori initialement faible.",
+          "score": 1
+        },
+        {
+          "label": "Non, une probabilité a priori faible reste par définition toujours faible, quel que soit le nombre d'observations favorables.",
+          "score": 0
+        },
+        {
+          "label": "Non, car la règle de Bayes ne s'applique qu'à un unique résultat observé, jamais à une séquence.",
+          "score": 0
+        },
+        {
+          "label": "Oui, mais uniquement si la probabilité a priori était initialement supérieure à 50 %.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision séquentielle",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en révision bayésienne et décision séquentielle. Cet outil est un contrôle de connaissances factuelles sur « Décision séquentielle » (domaine « DÉCISION SOUS INCERTITUDE ») : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence générale, ni une aptitude de décision ou de personnalité, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Décision séquentielle » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (mise à jour bayésienne, probabilité a priori et a posteriori, arrêt optimal, coût de la collecte d'information), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure d'intelligence générale ou de capacité de décision, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "N3 ; ne remplace pas une décision humaine collégiale ; audit de biais ; supervision"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

@@ -1,69 +1,206 @@
 {
   "id": "psy-t49-3",
-  "title": "Préparer — Sophismes avancés & nouveaux médias · T49.3",
+  "title": "Sophismes avancés & nouveaux médias · T49.3",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Sophismes avancés & nouveaux médias ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : détection de sophismes dans les contenus modernes. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Sophismes avancés & nouveaux médias », dans le domaine « PENSÉE CRITIQUE AVANCÉE (RENFORCEMENT) ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : détection de sophismes dans les contenus modernes.\nFormat cible : 20 items, 10 min.\nContenu cible : réseaux sociaux, deepfakes, IA générative, manipulation.\nCalcul cible (non implémenté ici) : score, typologie.\nUsage décrit : sécurité, communication, éducation.\nOptions cibles : mise à jour trimestrielle avec les techniques émergentes.\nObjectif du domaine : approfondir la pensée critique avec des modules avancés adaptés à l’ère de l’IA générative et de la désinformation de masse — au-delà de la Vague 1\nGarde-fou du domaine : N3 possible ; supervision humaine ; audit de biais ; droit à l’explication\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Un influenceur partage une statistique sortie de son contexte d’origine (par exemple une donnée locale présentée comme nationale) pour appuyer son propos. Quel procédé cela illustre-t-il ?",
+      "help": "Le problème ne porte pas sur l’exactitude du chiffre lui-même, mais sur la façon dont il est présenté.",
+      "options": [
+        {
+          "label": "La décontextualisation d’une donnée, qui en déforme la portée et le sens réels.",
+          "score": 1
+        },
+        {
+          "label": "Un argument d’autorité parfaitement légitime.",
+          "score": 0
+        },
+        {
+          "label": "Une généralisation statistiquement rigoureuse.",
+          "score": 0
+        },
+        {
+          "label": "Une citation primaire fiable par définition.",
+          "score": 0
+        }
+      ],
+      "axe": "Sophismes avancés & nouveaux médias",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Sur un réseau social, un extrait vidéo très court d’une déclaration est partagé massivement, coupé juste avant une phrase qui en nuançait complètement le sens dans la vidéo complète. Quel procédé est à l’œuvre ?",
+      "help": "Comparez ce qui est montré au public et ce que disait réellement la vidéo complète.",
+      "options": [
+        {
+          "label": "La citation tronquée (ou sortie de son contexte), qui donne une impression fausse ou déformée du propos original.",
+          "score": 1
+        },
+        {
+          "label": "Une retranscription fidèle et complète du propos.",
+          "score": 0
+        },
+        {
+          "label": "Un exemple d’appel à la popularité.",
+          "score": 0
+        },
+        {
+          "label": "Un exemple de pente glissante.",
+          "score": 0
+        }
+      ],
+      "axe": "Sophismes avancés & nouveaux médias",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Un compte anonyme répète en boucle la même affirmation non sourcée sur plusieurs plateformes, en utilisant des formulations légèrement différentes chaque fois. Pourquoi cette répétition peut-elle tromper même des lecteurs critiques ?",
+      "help": "Le phénomène concerne la familiarité perçue d’une idée, indépendamment de ses preuves réelles.",
+      "options": [
+        {
+          "label": "Parce que l’exposition répétée à une affirmation tend à augmenter sa familiarité perçue, ce qui peut être confondu avec un signe de véracité (effet de vérité illusoire).",
+          "score": 1
+        },
+        {
+          "label": "Parce que la répétition d’une affirmation constitue en elle-même une preuve supplémentaire de sa véracité.",
+          "score": 0
+        },
+        {
+          "label": "Parce que les comptes anonymes sont toujours plus fiables que les comptes identifiés.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu’une affirmation répétée sur plusieurs plateformes devient automatiquement une source primaire.",
+          "score": 0
+        }
+      ],
+      "axe": "Sophismes avancés & nouveaux médias",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Un texte généré par une intelligence artificielle générative, présenté comme un témoignage humain authentique, est diffusé pour appuyer une thèse. Quel est le problème spécifique à ce procédé, indépendamment de la véracité du contenu du texte ?",
+      "help": "Le problème porte sur la nature de la preuve avancée, pas uniquement sur son contenu factuel.",
+      "options": [
+        {
+          "label": "Le texte usurpe une qualité qu’il n’a pas (un témoignage humain réel), ce qui trompe sur la nature et la provenance de la preuve avancée.",
+          "score": 1
+        },
+        {
+          "label": "Aucun problème : un texte généré par IA a toujours la même valeur de preuve qu’un témoignage humain réel.",
+          "score": 0
+        },
+        {
+          "label": "Le problème ne se pose que si le texte contient des erreurs factuelles.",
+          "score": 0
+        },
+        {
+          "label": "Un texte généré par IA ne peut par nature jamais sembler plausible.",
+          "score": 0
+        }
+      ],
+      "axe": "Sophismes avancés & nouveaux médias",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Une image manipulée associe un visage connu à un contexte embarrassant inventé, puis circule accompagnée du commentaire « authenticité non confirmée, à vérifier ». Cette formulation prudente suffit-elle à rendre la diffusion de l’image inoffensive ?",
+      "help": "Pensez à ce qui reste dans l’esprit du public même après une mise en garde.",
+      "options": [
+        {
+          "label": "Non : même accompagnée d’une mise en garde, la diffusion d’un contenu non vérifié contribue à sa propagation et à l’impression visuelle qu’il laisse.",
+          "score": 1
+        },
+        {
+          "label": "Oui, toute formulation de prudence annule entièrement le risque de désinformation.",
+          "score": 0
+        },
+        {
+          "label": "Oui, car mentionner un doute transfère toute responsabilité vers celui qui la lit.",
+          "score": 0
+        },
+        {
+          "label": "Non, parce que les images ne peuvent jamais être manipulées de façon crédible.",
+          "score": 0
+        }
+      ],
+      "axe": "Sophismes avancés & nouveaux médias",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Pourquoi les techniques de détection de sophismes « classiques » (homme de paille, pente glissante, etc.) restent-elles pertinentes face à des contenus générés ou amplifiés par des algorithmes de recommandation ?",
+      "help": "Seul le canal de diffusion change réellement ; la structure du raisonnement reste comparable.",
+      "options": [
+        {
+          "label": "Parce que la structure du raisonnement fallacieux reste la même ; seul le canal de diffusion change, et la vitesse de propagation rend la vigilance critique encore plus nécessaire.",
+          "score": 1
+        },
+        {
+          "label": "Parce que les algorithmes de recommandation ne diffusent jamais de contenus fallacieux.",
+          "score": 0
+        },
+        {
+          "label": "Parce que les sophismes classiques ne s’appliquent qu’aux médias imprimés.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu’un contenu algorithmique est par nature neutre et sans structure argumentative.",
+          "score": 0
+        }
+      ],
+      "axe": "Sophismes avancés & nouveaux médias",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en pensée critique appliquée aux nouveaux médias. Cet outil est un contrôle de connaissances factuelles sur les sophismes avancés dans les contenus modernes (décontextualisation, citations tronquées, effet de vérité illusoire, usurpation de témoignage, amplification algorithmique) : ce n’est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Sophismes avancés & nouveaux médias » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (décontextualisation, citation tronquée, effet de vérité illusoire, usurpation de preuve, rôle de l’amplification algorithmique), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "N3 possible ; supervision humaine ; audit de biais ; droit à l’explication"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

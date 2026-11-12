@@ -1,69 +1,232 @@
 {
   "id": "psy-t34-6",
-  "title": "Préparer — Lecture de plans & documentation technique · T34.6",
+  "title": "Lecture de plans & documentation technique · T34.6",
   "category": "OUTILS SECTORIELS SPÉCIALISÉS",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Lecture de plans & documentation technique ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à lire et produire de la documentation. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Lecture de plans & documentation technique », dans le domaine « INGÉNIERIE, TECHNIQUE & SÉCURITÉ ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à lire et produire de la documentation.\nFormat cible : 12 items + plans, 12 min.\nContenu cible : plans, schémas, notices, spécifications.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : postes techniques.\nOptions cibles : documents sectoriels réels anonymisés.\nObjectif du domaine : évaluer les compétences techniques et de sécurité des professionnels de l’ingénierie et de l’industrie\nGarde-fou du domaine : les scores ne remplacent pas les habilitations réglementaires ; pas de substitution aux certifications obligatoires\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Sur un plan technique à l'échelle 1:50, une longueur mesurée de 2 cm sur le plan correspond dans la réalité à :",
+      "help": "À l'échelle 1:50, chaque unité mesurée sur le plan représente 50 fois cette unité dans la réalité.",
+      "options": [
+        {
+          "label": "1 mètre (100 cm)",
+          "score": 1
+        },
+        {
+          "label": "50 cm",
+          "score": 0
+        },
+        {
+          "label": "2 mètres",
+          "score": 0
+        },
+        {
+          "label": "20 cm",
+          "score": 0
+        }
+      ],
+      "axe": "Lecture de plans & documentation technique",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Sur un plan technique, une cote indiquée entre parenthèses, différente des cotes normales, indique généralement :",
+      "help": "Les parenthèses signalent un statut particulier de l'information donnée, pas une erreur.",
+      "options": [
+        {
+          "label": "Une cote de référence (non contraignante, à titre indicatif) plutôt qu'une cote fonctionnelle stricte",
+          "score": 1
+        },
+        {
+          "label": "Une erreur de dessin à corriger systématiquement",
+          "score": 0
+        },
+        {
+          "label": "Une cote obligatoirement plus précise que les autres",
+          "score": 0
+        },
+        {
+          "label": "Une zone interdite d'usinage",
+          "score": 0
+        }
+      ],
+      "axe": "Lecture de plans & documentation technique",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Une vue en coupe sur un plan technique sert principalement à :",
+      "help": "La coupe permet de voir ce qui se trouve à l'intérieur d'une pièce, invisible depuis l'extérieur.",
+      "options": [
+        {
+          "label": "Révéler les détails internes d'une pièce ou d'un assemblage non visibles depuis l'extérieur",
+          "score": 1
+        },
+        {
+          "label": "Indiquer uniquement la couleur de la pièce",
+          "score": 0
+        },
+        {
+          "label": "Remplacer la nomenclature de l'assemblage",
+          "score": 0
+        },
+        {
+          "label": "Indiquer le poids total de l'assemblage",
+          "score": 0
+        }
+      ],
+      "axe": "Lecture de plans & documentation technique",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Dans un dossier technique, la nomenclature (liste des pièces, ou « BOM ») sert à :",
+      "help": "Ce document recense ce qui compose matériellement l'assemblage.",
+      "options": [
+        {
+          "label": "Lister l'ensemble des pièces et composants d'un assemblage avec leurs références et quantités",
+          "score": 1
+        },
+        {
+          "label": "Donner uniquement le prix de vente du produit fini",
+          "score": 0
+        },
+        {
+          "label": "Remplacer le plan d'ensemble",
+          "score": 0
+        },
+        {
+          "label": "Indiquer le planning de production",
+          "score": 0
+        }
+      ],
+      "axe": "Lecture de plans & documentation technique",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Sur un schéma électrique normalisé, chaque symbole représente :",
+      "help": "La normalisation permet à tout technicien formé de lire le schéma de la même façon.",
+      "options": [
+        {
+          "label": "Un composant ou une fonction électrique spécifique, selon une norme reconnue",
+          "score": 1
+        },
+        {
+          "label": "Une simple décoration sans signification technique",
+          "score": 0
+        },
+        {
+          "label": "Un repère propre à chaque dessinateur, sans norme commune",
+          "score": 0
+        },
+        {
+          "label": "Une information purement esthétique",
+          "score": 0
+        }
+      ],
+      "axe": "Lecture de plans & documentation technique",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Une cote indiquée « 50 ± 0,1 » sur un plan signifie que la dimension réelle acceptable se situe :",
+      "help": "Le signe ± définit un intervalle autour de la valeur centrale, dans les deux sens.",
+      "options": [
+        {
+          "label": "Entre 49,9 et 50,1 (inclus)",
+          "score": 1
+        },
+        {
+          "label": "Exactement à 50, sans aucune tolérance",
+          "score": 0
+        },
+        {
+          "label": "Entre 49 et 51",
+          "score": 0
+        },
+        {
+          "label": "Entre 50 et 50,1 uniquement",
+          "score": 0
+        }
+      ],
+      "axe": "Lecture de plans & documentation technique",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Une fiche technique (notice/spécification) d'un composant indique notamment :",
+      "help": "Ce document décrit le comportement garanti du composant, pas seulement son aspect commercial.",
+      "options": [
+        {
+          "label": "Ses caractéristiques, ses limites d'utilisation et ses conditions de fonctionnement garanties par le fabricant",
+          "score": 1
+        },
+        {
+          "label": "Uniquement son prix d'achat",
+          "score": 0
+        },
+        {
+          "label": "Uniquement le nom du fabricant, sans autre donnée",
+          "score": 0
+        },
+        {
+          "label": "Uniquement sa couleur et ses dimensions externes",
+          "score": 0
+        }
+      ],
+      "axe": "Lecture de plans & documentation technique",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur technique en ingénierie et sécurité industrielle. Cet outil est un contrôle de connaissances factuelles sur « la lecture de plans et de documentation technique (échelles, cotation, vues en coupe, nomenclature, schémas normalisés, fiches techniques) » : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence ni l'aptitude générale du répondant, il ne produit aucun percentile ni aucune norme professionnelle, et les scores ne remplacent en aucun cas les habilitations réglementaires ou les certifications obligatoires requises pour ces activités.\n\nLe score global et le score de l'axe « Lecture de plans & documentation technique » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (échelles, cotation, vues en coupe, nomenclature, schémas, fiches techniques), sans comparaison à une norme externe et sans jugement sur l'intelligence ou l'aptitude générale du répondant ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, et qu'il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nRappelle que ce score ne remplace jamais une habilitation réglementaire ni une certification obligatoire (ex. habilitation électrique, permis de travail, certification qualité) : seul l'organisme habilité peut délivrer ces certifications. N'invente aucune norme, aucun percentile, aucun classement professionnel, aucun QI. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +243,5 @@
       "Garde-fou du domaine": "les scores ne remplacent pas les habilitations réglementaires ; pas de substitution aux certifications obligatoires"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

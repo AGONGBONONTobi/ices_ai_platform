@@ -1,69 +1,206 @@
 {
   "id": "psy-t40-5",
-  "title": "Préparer — Coût d’opportunité & délai · T40.5",
+  "title": "Coût d’opportunité & délai · T40.5",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Coût d’opportunité & délai ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à intégrer le coût du temps et des alternatives. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Coût d’opportunité & délai », dans le domaine « DÉCISION SOUS INCERTITUDE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à intégrer le coût du temps et des alternatives.\nFormat cible : 10 scénarios, 10 min.\nContenu cible : arbitrages, deadlines, options abandonnées.\nCalcul cible (non implémenté ici) : score, cohérence intertemporelle.\nUsage décrit : management, entrepreneuriat.\nOptions cibles : simulation avec horizon temporel.\nObjectif du domaine : évaluer la capacité à décider rationnellement dans l’incertitude, l’ambiguïté et le risque — compétence critique pour les décideurs, investisseurs, assureurs, responsables publics\nGarde-fou du domaine : N3 ; ne remplace pas une décision humaine collégiale ; audit de biais ; supervision\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Qu'est-ce que le « coût d'opportunité » d'une ressource (temps, argent) déjà engagée dans une option ?",
+      "help": "Il ne s'agit pas de ce qui a été dépensé, mais de ce à quoi on renonce pour l'avenir.",
+      "options": [
+        {
+          "label": "La valeur de la meilleure alternative à laquelle on renonce en maintenant cette ressource dans l'option actuelle plutôt que de la réallouer ailleurs.",
+          "score": 1
+        },
+        {
+          "label": "Le montant total déjà dépensé dans l'option actuelle, qu'on ne peut plus récupérer.",
+          "score": 0
+        },
+        {
+          "label": "Le bénéfice garanti de l'option actuelle, indépendamment de toute alternative.",
+          "score": 0
+        },
+        {
+          "label": "Un synonyme strict de « coût irrécupérable » (sunk cost).",
+          "score": 0
+        }
+      ],
+      "axe": "Coût d'opportunité & délai",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "En quoi un « coût irrécupérable » (sunk cost) diffère-t-il d'un coût d'opportunité dans une décision à venir ?",
+      "help": "L'un regarde vers le passé, l'autre vers les options futures.",
+      "options": [
+        {
+          "label": "Le coût irrécupérable est une dépense déjà engagée et non récupérable, qui ne devrait pas influencer une décision tournée vers l'avenir ; le coût d'opportunité porte, lui, sur la valeur des options futures à laquelle on renonce.",
+          "score": 1
+        },
+        {
+          "label": "Les deux notions sont rigoureusement identiques et interchangeables dans tout calcul de décision.",
+          "score": 0
+        },
+        {
+          "label": "Un coût irrécupérable concerne uniquement l'argent, alors qu'un coût d'opportunité ne concerne que le temps.",
+          "score": 0
+        },
+        {
+          "label": "Un coût d'opportunité est toujours égal au double du coût irrécupérable.",
+          "score": 0
+        }
+      ],
+      "axe": "Coût d'opportunité & délai",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "On vous propose de recevoir 1000 € aujourd'hui ou 1000 € dans un an. Pourquoi, en toute rationalité économique (hors inflation), la plupart des approches de décision considèrent-elles que 1000 € aujourd'hui ont plus de valeur que 1000 € dans un an ?",
+      "help": "Une somme disponible tout de suite peut déjà produire quelque chose pendant l'année qui suit.",
+      "options": [
+        {
+          "label": "Parce qu'une somme disponible aujourd'hui peut être investie ou utilisée immédiatement, ce qui lui donne une valeur actualisée supérieure à la même somme reçue plus tard (principe de l'actualisation).",
+          "score": 1
+        },
+        {
+          "label": "Parce que 1000 € dans le futur valent, par construction, systématiquement plus que 1000 € aujourd'hui.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la valeur de l'argent ne change jamais dans le temps, les deux sommes sont rigoureusement équivalentes.",
+          "score": 0
+        },
+        {
+          "label": "Parce que seul le montant nominal compte, jamais le moment où il est perçu.",
+          "score": 0
+        }
+      ],
+      "axe": "Coût d'opportunité & délai",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Une entreprise retarde sans cesse une décision d'investissement « pour être plus sûre », alors que chaque mois de retard lui fait perdre une opportunité de marché équivalente. Quel coût, souvent sous-estimé, cette entreprise néglige-t-elle ?",
+      "help": "Ce coût porte sur ce que le simple fait d'attendre fait perdre, mois après mois.",
+      "options": [
+        {
+          "label": "Le coût d'opportunité du délai lui-même : le gain auquel elle renonce chaque mois en ne décidant pas, qui peut dépasser le bénéfice de la certitude supplémentaire obtenue en attendant.",
+          "score": 1
+        },
+        {
+          "label": "Le coût irrécupérable de ses décisions passées, qui serait le seul coût pertinent ici.",
+          "score": 0
+        },
+        {
+          "label": "Aucun coût significatif, puisque attendre ne comporte par nature aucune conséquence économique.",
+          "score": 0
+        },
+        {
+          "label": "Le coût de transport lié exclusivement au déplacement physique de biens.",
+          "score": 0
+        }
+      ],
+      "axe": "Coût d'opportunité & délai",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Pourquoi deux options ayant le même gain total mais des échéanciers de paiement différents (l'une immédiate, l'autre étalée sur plusieurs années) ne sont-elles généralement pas économiquement équivalentes ?",
+      "help": "La valeur d'une somme future doit être ramenée à sa valeur d'aujourd'hui pour être comparée.",
+      "options": [
+        {
+          "label": "Parce que la valeur actualisée des flux futurs est inférieure à leur valeur nominale, ce qui rend l'option au paiement plus rapide généralement plus avantageuse à montant nominal égal.",
+          "score": 1
+        },
+        {
+          "label": "Parce que la monnaie n'a, par définition, aucune valeur temporelle.",
+          "score": 0
+        },
+        {
+          "label": "Parce que les deux options sont toujours strictement équivalentes dès que le montant total est identique.",
+          "score": 0
+        },
+        {
+          "label": "Parce que l'échéancier de paiement n'a aucune incidence sur la valeur économique d'une option.",
+          "score": 0
+        }
+      ],
+      "axe": "Coût d'opportunité & délai",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Qu'appelle-t-on la « cohérence intertemporelle » d'une suite de décisions impliquant un arbitrage entre le présent et le futur ?",
+      "help": "Il s'agit de la stabilité d'une préférence au fil du temps, pas de son contenu précis.",
+      "options": [
+        {
+          "label": "La propriété par laquelle les préférences exprimées entre deux dates ne changent pas simplement parce que le moment de la décision a changé, évitant qu'une personne ne revienne systématiquement sur un choix déjà fait sans nouvelle information.",
+          "score": 1
+        },
+        {
+          "label": "Le fait de toujours préférer une récompense immédiate, quelle que soit la situation.",
+          "score": 0
+        },
+        {
+          "label": "Le fait que toute décision future soit automatiquement identique à la décision présente.",
+          "score": 0
+        },
+        {
+          "label": "Un synonyme de coût irrécupérable appliqué au temps.",
+          "score": 0
+        }
+      ],
+      "axe": "Coût d'opportunité & délai",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en analyse économique de la décision. Cet outil est un contrôle de connaissances factuelles sur « Coût d’opportunité & délai » (domaine « DÉCISION SOUS INCERTITUDE ») : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence générale, ni une aptitude de décision ou de personnalité, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Coût d'opportunité & délai » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (coût d'opportunité, distinction avec le coût irrécupérable, actualisation, cohérence intertemporelle), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure d'intelligence générale ou de capacité de décision, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "N3 ; ne remplace pas une décision humaine collégiale ; audit de biais ; supervision"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

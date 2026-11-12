@@ -1,69 +1,206 @@
 {
   "id": "psy-t38-7",
-  "title": "Préparer — Problèmes mal structurés · T38.7",
+  "title": "Problèmes mal structurés · T38.7",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Problèmes mal structurés ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à structurer un problème flou. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Problèmes mal structurés », dans le domaine « RÉSOLUTION DE PROBLÈMES COMPLEXES ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à structurer un problème flou.\nFormat cible : 4 cas ouverts, 15 min.\nContenu cible : reformulation, cadrage, hypothèses, priorisation.\nCalcul cible (non implémenté ici) : qualité du cadrage, pertinence des hypothèses.\nUsage décrit : conseil, direction, recherche.\nOptions cibles : comparaison à des cadrages experts ; détection de biais de cadrage.\nObjectif du domaine : évaluer la capacité à analyser et résoudre des problèmes mal structurés, dynamiques et à multiples variables — compétence de plus en plus critique à l’ère des systèmes complexes et de l’IA\nGarde-fou du domaine : les cas doivent être non politiques et non sensibles ; éviter les scénarios stigmatisants\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Selon la distinction classique entre problèmes « bien structurés » et « mal structurés » (ill-structured), qu'est-ce qui caractérise un problème mal structuré ?",
+      "help": "Pensez à ce qui, dans l'énoncé même du problème, reste flou au départ.",
+      "options": [
+        {
+          "label": "Ses objectifs, ses contraintes ou ses critères de réussite ne sont pas tous clairement définis au départ, ce qui oblige à les clarifier en même temps qu'on cherche une solution.",
+          "score": 1
+        },
+        {
+          "label": "Il existe toujours une procédure unique et connue qui mène mécaniquement à la bonne réponse.",
+          "score": 0
+        },
+        {
+          "label": "Il ne comporte, par définition, aucune contrainte d'aucune sorte.",
+          "score": 0
+        },
+        {
+          "label": "Il se résout toujours plus rapidement qu'un problème bien structuré.",
+          "score": 0
+        }
+      ],
+      "axe": "Problèmes mal structurés",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Pourquoi reformuler un problème avant de chercher directement une solution est-il souvent recommandé face à une situation floue ?",
+      "help": "Une bonne réponse à la mauvaise question reste une mauvaise réponse au problème réel.",
+      "options": [
+        {
+          "label": "Parce qu'une mauvaise formulation initiale du problème (un mauvais cadrage) conduit presque toujours à chercher la réponse à la mauvaise question, même si cette réponse est techniquement correcte.",
+          "score": 1
+        },
+        {
+          "label": "Parce que reformuler un problème le rend automatiquement plus simple à résoudre dans tous les cas.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la reformulation est une étape obligatoire imposée par une norme ISO.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'un problème correctement formulé n'a jamais besoin d'hypothèses.",
+          "score": 0
+        }
+      ],
+      "axe": "Problèmes mal structurés",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Une équipe traite un symptôme visible (des retards de livraison récurrents) sans jamais identifier sa cause racine (un processus d'approvisionnement défaillant). Quelle conséquence typique peut-on en attendre ?",
+      "help": "La cause sous-jacente continue d'agir même après que le symptôme a été traité.",
+      "options": [
+        {
+          "label": "Le symptôme traité réapparaîtra probablement, car la cause sous-jacente qui le produit n'a pas été corrigée.",
+          "score": 1
+        },
+        {
+          "label": "Le symptôme ne pourra plus jamais réapparaître, puisqu'il a été traité une première fois.",
+          "score": 0
+        },
+        {
+          "label": "Traiter un symptôme équivaut toujours à traiter sa cause racine.",
+          "score": 0
+        },
+        {
+          "label": "L'absence d'analyse de cause racine garantit un résultat plus durable.",
+          "score": 0
+        }
+      ],
+      "axe": "Problèmes mal structurés",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Dans une démarche de type « 5 pourquoi » (cinq pourquoi successifs) face à un problème, quel est l'objectif de la répétition de la question « pourquoi » ?",
+      "help": "Il s'agit de ne pas s'arrêter à la première explication venue.",
+      "options": [
+        {
+          "label": "Remonter progressivement des symptômes visibles vers une cause plus profonde et plus explicative, en évitant de s'arrêter à la première explication superficielle.",
+          "score": 1
+        },
+        {
+          "label": "Démontrer qu'un problème n'a, par construction, jamais de cause identifiable.",
+          "score": 0
+        },
+        {
+          "label": "Obtenir cinq solutions différentes à appliquer simultanément, sans lien entre elles.",
+          "score": 0
+        },
+        {
+          "label": "Remplacer entièrement la nécessité de vérifier les hypothèses par les faits.",
+          "score": 0
+        }
+      ],
+      "axe": "Problèmes mal structurés",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Pourquoi le cadrage initial d'un problème (la façon dont on le formule dès le départ) peut-il introduire un biais dans la recherche de solutions ?",
+      "help": "Un cadrage délimite, souvent sans qu'on en ait conscience, ce qui entre dans le champ de la recherche de solutions.",
+      "options": [
+        {
+          "label": "Parce qu'un cadrage trop étroit ou orienté exclut d'emblée certaines options de solution qui n'entrent pas dans ce cadrage, sans qu'on en ait conscience.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'un cadrage n'a, par définition, strictement aucune influence sur les solutions envisagées ensuite.",
+          "score": 0
+        },
+        {
+          "label": "Parce que tout cadrage, quel qu'il soit, conduit nécessairement à la même solution finale.",
+          "score": 0
+        },
+        {
+          "label": "Parce que seul le cadrage final (après résolution) a une quelconque importance.",
+          "score": 0
+        }
+      ],
+      "axe": "Problèmes mal structurés",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Face à un problème mal structuré, pourquoi est-il utile d'expliciter les hypothèses posées (sur les causes, les contraintes, les objectifs) plutôt que de les laisser implicites ?",
+      "help": "Une hypothèse qu'on ne formule jamais ne peut pas non plus être remise en question.",
+      "options": [
+        {
+          "label": "Parce que des hypothèses explicites peuvent être examinées, discutées et corrigées si elles se révèlent fausses, alors que des hypothèses implicites orientent la décision sans qu'on puisse les questionner.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'expliciter une hypothèse la transforme automatiquement en fait vérifié.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'un problème mal structuré ne peut, par définition, comporter aucune hypothèse.",
+          "score": 0
+        },
+        {
+          "label": "Parce que les hypothèses implicites sont toujours plus fiables que les hypothèses explicites.",
+          "score": 0
+        }
+      ],
+      "axe": "Problèmes mal structurés",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en structuration de problèmes et résolution de problèmes. Cet outil est un contrôle de connaissances factuelles sur « Problèmes mal structurés » (domaine « RÉSOLUTION DE PROBLÈMES COMPLEXES ») : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence générale, ni une aptitude de décision ou de personnalité, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Problèmes mal structurés » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (distinction problèmes bien structurés / mal structurés, reformulation et cadrage, analyse de cause racine, biais de cadrage), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure d'intelligence générale ou de capacité de décision, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "les cas doivent être non politiques et non sensibles ; éviter les scénarios stigmatisants"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

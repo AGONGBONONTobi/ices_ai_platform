@@ -1,69 +1,148 @@
 {
   "id": "psy-t5-2",
-  "title": "Préparer — Analogies verbales · T5.2",
+  "title": "Analogies verbales · T5.2",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Analogies verbales ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "« Doigt » est à « main » ce que « pétale » est à … ?",
+      "help": "Cherchez la relation entre une partie et l'ensemble dont elle fait partie.",
+      "options": [
+        { "label": "Fleur", "score": 1 },
+        { "label": "Arbre", "score": 0 },
+        { "label": "Jardin", "score": 0 },
+        { "label": "Racine", "score": 0 }
+      ],
+      "axe": "Analogies verbales",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "« Graine » est à « arbre » ce que « œuf » est à … ?",
+      "help": "Pensez à la relation entre une origine et l'être qui en résulte une fois développé.",
+      "options": [
+        { "label": "Oiseau", "score": 1 },
+        { "label": "Nid", "score": 0 },
+        { "label": "Plume", "score": 0 },
+        { "label": "Ciel", "score": 0 }
+      ],
+      "axe": "Analogies verbales",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : relations sémantiques et raisonnement verbal. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "« Clé » est à « serrure » ce que « marteau » est à … ?",
+      "help": "Identifiez la relation entre un outil et l'objet sur lequel il agit directement.",
+      "options": [
+        { "label": "Clou", "score": 1 },
+        { "label": "Scie", "score": 0 },
+        { "label": "Pinceau", "score": 0 },
+        { "label": "Tournevis", "score": 0 }
+      ],
+      "axe": "Analogies verbales",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "« Chaud » est à « froid » ce que « jour » est à … ?",
+      "help": "Cherchez le mot qui s'oppose à « jour » de la même façon que « froid » s'oppose à « chaud ».",
+      "options": [
+        { "label": "Nuit", "score": 1 },
+        { "label": "Soleil", "score": 0 },
+        { "label": "Matin", "score": 0 },
+        { "label": "Lumière", "score": 0 }
+      ],
+      "axe": "Analogies verbales",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "« Médecin » est à « hôpital » ce que « enseignant » est à … ?",
+      "help": "Cherchez l'institution où exerce la personne mentionnée en second.",
+      "options": [
+        { "label": "École", "score": 1 },
+        { "label": "Élève", "score": 0 },
+        { "label": "Livre", "score": 0 },
+        { "label": "Cours", "score": 0 }
+      ],
+      "axe": "Analogies verbales",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "« Abeille » est à « ruche » ce que « fourmi » est à … ?",
+      "help": "Pensez à l'habitat collectif propre à chacun de ces deux insectes.",
+      "options": [
+        { "label": "Fourmilière", "score": 1 },
+        { "label": "Toile", "score": 0 },
+        { "label": "Nid", "score": 0 },
+        { "label": "Terrier", "score": 0 }
+      ],
+      "axe": "Analogies verbales",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "« Cause » est à « effet » ce que « question » est à … ?",
+      "help": "Cherchez ce qu'une question entraîne naturellement, comme une cause entraîne un effet.",
+      "options": [
+        { "label": "Réponse", "score": 1 },
+        { "label": "Problème", "score": 0 },
+        { "label": "Hypothèse", "score": 0 },
+        { "label": "Débat", "score": 0 }
+      ],
+      "axe": "Analogies verbales",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Analogies verbales », dans le domaine « COMPRÉHENSION VERBALE & LANGAGE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : relations sémantiques et raisonnement verbal.\nFormat cible : 20 items, 10 min.\nContenu cible : partie-tout, cause-effet, fonction, opposition.\nCalcul cible (non implémenté ici) : score, typologie de relations.\nUsage décrit : potentiel analytique, orientation.\nOptions cibles : banque multilingue calibrée.\nObjectif du domaine : évaluer la maîtrise de la langue et la capacité à traiter l’information écrite\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en vocabulaire et en raisonnement verbal. Cet outil est un entraînement et un contrôle de connaissances factuelles sur les analogies verbales (relations partie-tout, cause-effet, fonction, opposition) : ce n'est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile, aucune norme professionnelle, ni aucun QI, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Analogies verbales » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des types de relations testées (partie-tout, cause-effet, fonction, opposition), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour s'entraîner sur les types de relations où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure de QI ou d'aptitude générale, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "assessment",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +158,5 @@
       "Objectif du domaine": "évaluer la maîtrise de la langue et la capacité à traiter l’information écrite"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

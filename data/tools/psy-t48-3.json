@@ -1,42 +1,42 @@
 {
   "id": "psy-t48-3",
-  "title": "Préparer — Adaptation & flexibilité · T48.3",
+  "title": "Adaptation & flexibilité · T48.3",
   "category": "COMMUNICATION & RELATIONS EXTÉRIEURES",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Adaptation & flexibilité ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle situation réelle d’adaptation à un nouveau contexte culturel préparez-vous (mission, expatriation, nouvelle équipe, nouveau marché) ?",
+      "help": "Décrivez une situation précise et actuelle (anonymisée si besoin).",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à s’adapter à des contextes culturels différents. Ne renseignez pas de score supposé.",
+      "question": "Quels écarts avez-vous déjà repérés entre vos habitudes et celles du nouveau contexte ?",
+      "help": "Comportements, rythmes ou usages déjà observés sur place ou rapportés.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu’est-ce qui est en jeu si l’ajustement nécessaire n’est pas fait, ou s’il est excessif ?",
+      "help": "Intégration, efficacité, perte de repères personnels.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai devez-vous vous ajuster à cette situation ?",
+      "placeholder": "Exemple : prise de poste dans un mois",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Adaptation & flexibilité », dans le domaine « INTERCULTUREL & LANGUES ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à s’adapter à des contextes culturels différents.\nFormat cible : 12 scénarios, 8 min.\nContenu cible : changement de cadre, ajustement, humilité.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : expatriation, missions.\nOptions cibles : couplage avec D17 (tolérance à l’ambiguïté, Vague 2).\nObjectif du domaine : évaluer la compétence interculturelle et la capacité à travailler dans des contextes multiculturels — compétence critique pour les organisations internationales, les groupes panafricains et les équipes distribuées\nGarde-fou du domaine : audit de biais culturels obligatoire ; validation par experts de chaque aire culturelle ; lutte contre les stéréotypes ; pas de hiérarchisation culturelle\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en adaptation interculturelle spécialisé dans l’ajustement à un nouveau cadre culturel : aider à analyser, dans UNE situation réelle de changement de contexte, ce qu’il faut ajuster dans ses repères habituels sans perdre ses propres repères.\n\nSituation décrite par l’utilisateur :\nSituation d’adaptation : {decision}\nÉcarts déjà repérés : {elements_connus}\nEnjeu si l’ajustement est mal calibré : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite les habitudes ou attentes de l’utilisateur qui pourraient devoir être ajustées dans ce nouveau contexte, et distingue-les de celles qui peuvent être conservées sans poser de problème. Pose les questions concrètes : quels comportements observés dans le nouveau contexte semblent déroutants, et quelle fonction remplissent-ils probablement pour les personnes locales ? Où l’ajustement envisagé reste-t-il un simple changement de forme, et où toucherait-il à quelque chose que l’utilisateur ne veut ou ne doit pas changer ? Quelles questions pourraient être posées sur place plutôt que supposées à l’avance ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque repère identifié avec les questions de décision à se poser, et les points clés à retenir avant de trancher.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "audit de biais culturels obligatoire ; validation par experts de chaque aire culturelle ; lutte contre les stéréotypes ; pas de hiérarchisation culturelle"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

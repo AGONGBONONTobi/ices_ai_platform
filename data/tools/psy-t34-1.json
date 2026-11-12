@@ -1,69 +1,232 @@
 {
   "id": "psy-t34-1",
-  "title": "Préparer — Raisonnement mécanique avancé · T34.1",
+  "title": "Raisonnement mécanique avancé · T34.1",
   "category": "OUTILS SECTORIELS SPÉCIALISÉS",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Raisonnement mécanique avancé ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : compréhension des systèmes mécaniques. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Raisonnement mécanique avancé », dans le domaine « INGÉNIERIE, TECHNIQUE & SÉCURITÉ ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : compréhension des systèmes mécaniques.\nFormat cible : 20 items animés, 12 min.\nContenu cible : engrenages, transmissions, résistance, cinématique.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : recrutement technique.\nOptions cibles : couplage D16 (mécanique).\nObjectif du domaine : évaluer les compétences techniques et de sécurité des professionnels de l’ingénierie et de l’industrie\nGarde-fou du domaine : les scores ne remplacent pas les habilitations réglementaires ; pas de substitution aux certifications obligatoires\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Deux engrenages sont en contact direct : l'engrenage menant tourne dans le sens horaire. Dans quel sens tourne l'engrenage mené ?",
+      "help": "Deux dents qui s'engrènent directement ne peuvent pas tourner dans le même sens.",
+      "options": [
+        {
+          "label": "Dans le sens antihoraire (sens inverse)",
+          "score": 1
+        },
+        {
+          "label": "Dans le même sens horaire",
+          "score": 0
+        },
+        {
+          "label": "Il ne tourne pas",
+          "score": 0
+        },
+        {
+          "label": "Cela dépend uniquement de la couleur des engrenages",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement mécanique avancé",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Un petit engrenage de 10 dents entraîne un grand engrenage de 40 dents. Comparé au petit engrenage, le grand engrenage tourne :",
+      "help": "Le rapport de vitesse entre deux engrenages en contact est inversement proportionnel à leur nombre de dents.",
+      "options": [
+        {
+          "label": "4 fois plus lentement",
+          "score": 1
+        },
+        {
+          "label": "4 fois plus vite",
+          "score": 0
+        },
+        {
+          "label": "À la même vitesse",
+          "score": 0
+        },
+        {
+          "label": "2 fois plus lentement",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement mécanique avancé",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Sur un levier simple, plus le bras de levier (distance entre le point d'appui et le point d'application de la force) est long, pour soulever une même charge :",
+      "help": "Allonger le bras de levier change le rapport entre l'effort à fournir et la charge à déplacer.",
+      "options": [
+        {
+          "label": "Moins la force nécessaire pour soulever la charge est importante",
+          "score": 1
+        },
+        {
+          "label": "Plus la force nécessaire est importante",
+          "score": 0
+        },
+        {
+          "label": "Cela n'a aucun effet sur la force nécessaire",
+          "score": 0
+        },
+        {
+          "label": "La charge devient physiquement plus légère",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement mécanique avancé",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Un palan à poulies mobiles réduit la force nécessaire pour soulever une charge donnée. En contrepartie, ce système :",
+      "help": "Le travail mécanique total nécessaire ne disparaît pas : il se répartit différemment entre force et distance.",
+      "options": [
+        {
+          "label": "Augmente la longueur de câble à tirer pour la même élévation de charge",
+          "score": 1
+        },
+        {
+          "label": "Réduit également la longueur de câble à tirer",
+          "score": 0
+        },
+        {
+          "label": "N'a aucun effet sur la longueur de câble nécessaire",
+          "score": 0
+        },
+        {
+          "label": "Double automatiquement la charge soulevée",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement mécanique avancé",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Dans une transmission par courroie reliant deux poulies de diamètres différents, la poulie de plus petit diamètre tourne, par rapport à la grande poulie :",
+      "help": "À vitesse linéaire de courroie identique, une plus petite circonférence impose plus de tours par unité de temps.",
+      "options": [
+        {
+          "label": "Plus vite que la poulie de plus grand diamètre",
+          "score": 1
+        },
+        {
+          "label": "Plus lentement que la poulie de plus grand diamètre",
+          "score": 0
+        },
+        {
+          "label": "À la même vitesse",
+          "score": 0
+        },
+        {
+          "label": "Dans le sens opposé uniquement",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement mécanique avancé",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Une pièce mécanique est soumise à une contrainte supérieure à sa limite élastique mais inférieure à sa limite de rupture. Elle subit alors :",
+      "help": "Entre la limite élastique et la limite de rupture, le matériau ne revient plus totalement à sa forme initiale, sans pour autant casser.",
+      "options": [
+        {
+          "label": "Une déformation permanente (plastique), sans rupture",
+          "score": 1
+        },
+        {
+          "label": "Aucune déformation du tout",
+          "score": 0
+        },
+        {
+          "label": "Une rupture immédiate de la pièce",
+          "score": 0
+        },
+        {
+          "label": "Uniquement une déformation élastique totalement réversible",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement mécanique avancé",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Pour une pièce en rotation à vitesse angulaire constante, un point situé plus loin de l'axe de rotation a une vitesse linéaire, par rapport à un point plus proche de l'axe :",
+      "help": "Pour un même nombre de tours par seconde, parcourir un plus grand cercle demande d'aller plus vite.",
+      "options": [
+        {
+          "label": "Plus grande qu'un point plus proche de l'axe",
+          "score": 1
+        },
+        {
+          "label": "Plus petite qu'un point plus proche de l'axe",
+          "score": 0
+        },
+        {
+          "label": "Identique, quelle que soit la distance à l'axe",
+          "score": 0
+        },
+        {
+          "label": "Nulle, quelle que soit la distance à l'axe",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement mécanique avancé",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur technique en ingénierie et sécurité industrielle. Cet outil est un contrôle de connaissances factuelles sur « le raisonnement mécanique (engrenages, leviers, poulies, transmissions par courroie, résistance des matériaux, cinématique) » : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence ni l'aptitude générale du répondant, il ne produit aucun percentile ni aucune norme professionnelle, et les scores ne remplacent en aucun cas les habilitations réglementaires ou les certifications obligatoires requises pour ces activités.\n\nLe score global et le score de l'axe « Raisonnement mécanique avancé » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (engrenages, leviers, poulies, transmissions, résistance des matériaux, cinématique), sans comparaison à une norme externe et sans jugement sur l'intelligence ou l'aptitude générale du répondant ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, et qu'il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nRappelle que ce score ne remplace jamais une habilitation réglementaire ni une certification obligatoire (ex. habilitation électrique, permis de travail, certification qualité) : seul l'organisme habilité peut délivrer ces certifications. N'invente aucune norme, aucun percentile, aucun classement professionnel, aucun QI. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +243,5 @@
       "Garde-fou du domaine": "les scores ne remplacent pas les habilitations réglementaires ; pas de substitution aux certifications obligatoires"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

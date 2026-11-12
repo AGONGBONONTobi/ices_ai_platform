@@ -1,69 +1,206 @@
 {
   "id": "psy-t44-6",
-  "title": "Préparer — Scénarios systémiques · T44.6",
+  "title": "Scénarios systémiques · T44.6",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Scénarios systémiques ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à simuler mentalement des évolutions systémiques. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Scénarios systémiques », dans le domaine « PENSÉE SYSTÉMIQUE & COMPLEXITÉ ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à simuler mentalement des évolutions systémiques.\nFormat cible : 6 scénarios, 12 min.\nContenu cible : propagation, effets en cascade, résilience.\nCalcul cible (non implémenté ici) : score, cohérence.\nUsage décrit : prospective, gestion de crise.\nOptions cibles : couplage avec D45 (prospective).\nObjectif du domaine : évaluer la capacité à comprendre des systèmes complexes, à identifier les points de levier et à anticiper les effets de second ordre — compétence critique pour les décideurs, les politiques publiques et la transition écologique\nGarde-fou du domaine : les cas doivent être non politiques ; éviter les scénarios idéologiques ; audit de biais\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Un effet de cascade dans un système désigne…",
+      "help": "Pensez à ce qui se passe lorsqu’une défaillance locale ne reste pas confinée à son point d’origine.",
+      "options": [
+        {
+          "label": "Une défaillance initiale localisée qui se propage et s’amplifie, entraînant la défaillance d’autres parties connectées du système.",
+          "score": 1
+        },
+        {
+          "label": "Un effet qui reste strictement confiné à son point d’origine, sans aucune propagation.",
+          "score": 0
+        },
+        {
+          "label": "Un synonyme strict de boucle d’équilibrage.",
+          "score": 0
+        },
+        {
+          "label": "Un phénomène qui ne peut concerner que des systèmes purement informatiques.",
+          "score": 0
+        }
+      ],
+      "axe": "Scénarios systémiques",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Lors d’une panne électrique régionale, une centrale tombe en panne, ce qui surcharge les lignes voisines, qui tombent en panne à leur tour, provoquant une panne généralisée sur tout le réseau. Ce phénomène illustre principalement…",
+      "help": "Observez comment la panne se propage d’un élément à l’autre plutôt que de rester isolée.",
+      "options": [
+        {
+          "label": "Un effet de cascade dû à un couplage fort entre les éléments du réseau électrique.",
+          "score": 1
+        },
+        {
+          "label": "Une boucle de rétroaction d’équilibrage qui stabilise le réseau électrique.",
+          "score": 0
+        },
+        {
+          "label": "Une propriété émergente sans rapport avec la propagation d’une défaillance.",
+          "score": 0
+        },
+        {
+          "label": "Un effet de seuil totalement indépendant du couplage entre les éléments du réseau.",
+          "score": 0
+        }
+      ],
+      "axe": "Scénarios systémiques",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "La résilience d’un système désigne avant tout…",
+      "help": "Pensez à la capacité du système à continuer de fonctionner après une perturbation, plutôt qu’à l’absence totale de perturbation.",
+      "options": [
+        {
+          "label": "Sa capacité à absorber une perturbation et à continuer de fonctionner, éventuellement en retrouvant un équilibre, sans s’effondrer.",
+          "score": 1
+        },
+        {
+          "label": "Sa capacité à rester figé dans un état parfaitement constant, sans jamais être perturbé.",
+          "score": 0
+        },
+        {
+          "label": "Son incapacité totale à s’adapter à toute perturbation extérieure.",
+          "score": 0
+        },
+        {
+          "label": "Sa taille globale, indépendamment de sa capacité à absorber des chocs.",
+          "score": 0
+        }
+      ],
+      "axe": "Scénarios systémiques",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Pourquoi un système comportant plusieurs fournisseurs indépendants pour une même ressource critique est-il généralement plus résilient qu’un système dépendant d’un seul fournisseur ?",
+      "help": "Pensez à ce qui se passe si l’un des fournisseurs fait défaut, selon qu’il y en a un seul ou plusieurs.",
+      "options": [
+        {
+          "label": "Parce que la défaillance d’un seul fournisseur n’entraîne pas l’arrêt complet du système : la redondance permet d’absorber le choc.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu’un seul fournisseur garantit toujours une meilleure coordination et donc davantage de résilience.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la redondance des fournisseurs augmente systématiquement le risque de défaillance du système.",
+          "score": 0
+        },
+        {
+          "label": "Parce que le nombre de fournisseurs n’a, en réalité, aucune incidence sur la résilience du système.",
+          "score": 0
+        }
+      ],
+      "axe": "Scénarios systémiques",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un système dit « fortement couplé » (où chaque partie dépend étroitement et rapidement des autres) propage généralement les perturbations…",
+      "help": "Pensez à la rapidité de propagation et à la marge de manœuvre disponible pour intervenir avant que la perturbation ne s’étende.",
+      "options": [
+        {
+          "label": "Plus vite et avec moins de marge pour intervenir, comparé à un système faiblement couplé.",
+          "score": 1
+        },
+        {
+          "label": "Plus lentement, car le couplage fort agit comme un frein naturel à toute perturbation.",
+          "score": 0
+        },
+        {
+          "label": "Exactement à la même vitesse qu’un système faiblement couplé, sans aucune différence.",
+          "score": 0
+        },
+        {
+          "label": "Jamais, car un système fortement couplé est par définition protégé contre les perturbations.",
+          "score": 0
+        }
+      ],
+      "axe": "Scénarios systémiques",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Après une perturbation majeure, un système résilient se caractérise par…",
+      "help": "Pensez à la différence entre « revenir exactement à l’identique » et « retrouver un fonctionnement acceptable ».",
+      "options": [
+        {
+          "label": "Sa capacité à retrouver un fonctionnement acceptable, même si ce n’est pas exactement l’état initial, grâce à ses mécanismes d’adaptation.",
+          "score": 1
+        },
+        {
+          "label": "Son retour garanti et immédiat à l’état exact précédant la perturbation, sans aucune adaptation.",
+          "score": 0
+        },
+        {
+          "label": "Sa disparition complète dès la première perturbation rencontrée.",
+          "score": 0
+        },
+        {
+          "label": "Son incapacité totale à retrouver un fonctionnement, quelle que soit la perturbation.",
+          "score": 0
+        }
+      ],
+      "axe": "Scénarios systémiques",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en pensée systémique. Cet outil est un contrôle de connaissances factuelles sur la propagation des perturbations, les effets de cascade et la résilience des systèmes : ce n’est PAS un test psychométrique certifié ou validé, il ne mesure ni le QI ni une aptitude générale, il ne produit aucun percentile ni aucune norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Scénarios systémiques » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (effet de cascade, couplage fort, résilience, rôle de la redondance), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, ni une mesure d’intelligence ou d’aptitude générale, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "les cas doivent être non politiques ; éviter les scénarios idéologiques ; audit de biais"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

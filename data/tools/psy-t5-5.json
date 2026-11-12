@@ -1,69 +1,148 @@
 {
   "id": "psy-t5-5",
-  "title": "Préparer — Résumé & idée principale · T5.5",
+  "title": "Résumé & idée principale · T5.5",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Résumé & idée principale ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Texte : « La bibliothèque municipale a prolongé ses horaires d'ouverture le samedi, suite à une forte demande des étudiants pendant la période des examens. Cette mesure sera réévaluée en fin d'année scolaire. » Quel résumé rend le plus fidèlement compte de ce texte ?",
+      "help": "Un bon résumé reprend l'essentiel sans ajouter ni inverser une information absente du texte.",
+      "options": [
+        { "label": "La bibliothèque ouvre plus longtemps le samedi en période d'examens, à la demande des étudiants, et cette mesure pourra être revue en fin d'année.", "score": 1 },
+        { "label": "La bibliothèque a définitivement fermé le samedi.", "score": 0 },
+        { "label": "Les étudiants ont demandé la fermeture de la bibliothèque pendant les examens.", "score": 0 },
+        { "label": "La bibliothèque a réduit ses horaires d'ouverture toute l'année.", "score": 0 }
+      ],
+      "axe": "Résumé & idée principale",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Texte : « L'entreprise a annoncé une baisse de 8 % de ses coûts de production grâce à l'automatisation d'une partie de sa chaîne de fabrication, sans réduction des effectifs. » Quel résumé est le plus fidèle à ce texte ?",
+      "help": "Vérifiez que le résumé ne confond pas la cause (l'automatisation) avec un effet qui n'est pas mentionné (des licenciements).",
+      "options": [
+        { "label": "Grâce à l'automatisation, l'entreprise a réduit ses coûts de production de 8 % sans licencier.", "score": 1 },
+        { "label": "L'entreprise a licencié 8 % de son personnel pour réduire ses coûts.", "score": 0 },
+        { "label": "L'automatisation a fait augmenter les coûts de production de l'entreprise.", "score": 0 },
+        { "label": "L'entreprise a stoppé toute automatisation de sa production.", "score": 0 }
+      ],
+      "axe": "Résumé & idée principale",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : synthèse, hiérarchisation. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Texte : « Après deux ans de travaux, le pont a rouvert à la circulation, mais reste limité aux véhicules légers en raison de renforcements structurels encore en cours. » Quel résumé rend compte fidèlement de ce texte, sans en déformer le sens ?",
+      "help": "Le texte indique une réouverture partielle, pas une réouverture totale ni une fermeture totale.",
+      "options": [
+        { "label": "Le pont a rouvert après deux ans de travaux, mais seuls les véhicules légers peuvent encore l'emprunter pour l'instant.", "score": 1 },
+        { "label": "Le pont est resté fermé à toute circulation.", "score": 0 },
+        { "label": "Le pont a rouvert sans aucune restriction de circulation.", "score": 0 },
+        { "label": "Les travaux du pont viennent seulement de commencer.", "score": 0 }
+      ],
+      "axe": "Résumé & idée principale",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Texte : « Le comité a examiné trois propositions budgétaires et a finalement retenu celle qui limite les dépenses tout en maintenant les investissements dans la formation. » Quel résumé est fidèle au texte, sans ajouter d'information absente ?",
+      "help": "Le texte précise à la fois ce qui a été choisi et ce qui a été préservé dans ce choix.",
+      "options": [
+        { "label": "Parmi trois propositions, le comité a choisi celle qui réduit les dépenses sans sacrifier les investissements en formation.", "score": 1 },
+        { "label": "Le comité a rejeté toutes les propositions budgétaires.", "score": 0 },
+        { "label": "Le comité a choisi la proposition la plus coûteuse.", "score": 0 },
+        { "label": "Le comité a supprimé tous les investissements en formation.", "score": 0 }
+      ],
+      "axe": "Résumé & idée principale",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Texte : « Le nouveau règlement intérieur interdit l'usage du téléphone portable pendant les cours, sauf autorisation explicite de l'enseignant pour un usage pédagogique. » Quel résumé reflète fidèlement ce texte, sans en exagérer ni en minimiser la portée ?",
+      "help": "Le texte prévoit une interdiction, mais aussi une exception précise : un bon résumé garde les deux éléments.",
+      "options": [
+        { "label": "Le téléphone portable est interdit en cours, sauf si l'enseignant l'autorise pour une utilisation pédagogique.", "score": 1 },
+        { "label": "Le téléphone portable est désormais totalement interdit dans l'établissement.", "score": 0 },
+        { "label": "Le téléphone portable est autorisé librement pendant les cours.", "score": 0 },
+        { "label": "Seuls les enseignants peuvent utiliser leur téléphone en classe.", "score": 0 }
+      ],
+      "axe": "Résumé & idée principale",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Texte : « Malgré une météo défavorable, l'événement a attiré davantage de visiteurs que l'année précédente, grâce à une nouvelle programmation jugée plus attractive par les organisateurs. » Quel résumé condense fidèlement ce texte ?",
+      "help": "Le texte oppose un facteur négatif (la météo) à un résultat finalement positif (plus de visiteurs).",
+      "options": [
+        { "label": "Malgré une météo défavorable, l'événement a attiré plus de visiteurs qu'avant grâce à une programmation jugée plus attractive.", "score": 1 },
+        { "label": "La météo défavorable a fait chuter le nombre de visiteurs.", "score": 0 },
+        { "label": "L'événement a attiré moins de visiteurs que l'année précédente.", "score": 0 },
+        { "label": "La nouvelle programmation a été jugée moins attractive par les organisateurs.", "score": 0 }
+      ],
+      "axe": "Résumé & idée principale",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Texte : « L'étude ne porte que sur un échantillon restreint de 40 participants dans une seule région ; ses auteurs appellent donc à la prudence avant toute généralisation des résultats. » Quel résumé reste fidèle aux limites signalées par le texte lui-même ?",
+      "help": "Le texte signale explicitement les limites de l'étude : un résumé fidèle doit les conserver, pas les effacer.",
+      "options": [
+        { "label": "L'étude, menée sur un petit échantillon dans une seule région, appelle à la prudence avant de généraliser ses résultats.", "score": 1 },
+        { "label": "L'étude démontre un résultat valable pour toute la population sans restriction.", "score": 0 },
+        { "label": "L'étude a été menée sur un très large échantillon national.", "score": 0 },
+        { "label": "Les auteurs affirment que leurs résultats sont certains et généralisables.", "score": 0 }
+      ],
+      "axe": "Résumé & idée principale",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Résumé & idée principale », dans le domaine « COMPRÉHENSION VERBALE & LANGAGE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : synthèse, hiérarchisation.\nFormat cible : 3 textes à résumer, 15 min.\nContenu cible : extraction, condensation, fidélité.\nCalcul cible (non implémenté ici) : similarité sémantique + rubrique.\nUsage décrit : métiers analytiques, communication.\nOptions cibles : scoring par LLM avec rubrique auditable.\nObjectif du domaine : évaluer la maîtrise de la langue et la capacité à traiter l’information écrite\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en synthèse et en résumé de texte. Cet outil est un entraînement et un contrôle de connaissances factuelles sur la capacité à reconnaître un résumé fidèle d'un texte court (extraction de l'essentiel, condensation, fidélité au texte source) : ce n'est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile, aucune norme professionnelle, ni aucun QI, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Résumé & idée principale » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (identification d'un résumé fidèle, détection d'ajouts ou d'omissions d'information), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour s'entraîner sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure de QI ou d'aptitude générale, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "assessment",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +158,5 @@
       "Objectif du domaine": "évaluer la maîtrise de la langue et la capacité à traiter l’information écrite"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

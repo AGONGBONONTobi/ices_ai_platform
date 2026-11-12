@@ -1,69 +1,206 @@
 {
   "id": "psy-t6-2",
-  "title": "Préparer — Analyse d’arguments · T6.2",
+  "title": "Analyse d’arguments · T6.2",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Analyse d’arguments ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : identification de prémisses, conclusion, structure. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Analyse d’arguments », dans le domaine « PENSÉE CRITIQUE & ÉVALUATION DE L’INFORMATION ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : identification de prémisses, conclusion, structure.\nFormat cible : 18 items, 12 min.\nContenu cible : arguments valides/invalides, enthymèmes.\nCalcul cible (non implémenté ici) : score, erreurs de structure.\nUsage décrit : droit, audit, management.\nOptions cibles : cartes d’arguments interactives.\nObjectif du domaine : mesurer la capacité à juger la qualité de l’information et des raisonnements — compétence clé à l’ère de l’IA générative\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Dans l’argument suivant : « Tous les mammifères sont des animaux à sang chaud. Les baleines sont des mammifères. Donc les baleines sont des animaux à sang chaud. », quelle phrase est la conclusion ?",
+      "help": "La conclusion est ce que l’argument cherche à établir à partir des autres phrases.",
+      "options": [
+        {
+          "label": "« Donc les baleines sont des animaux à sang chaud. »",
+          "score": 1
+        },
+        {
+          "label": "« Tous les mammifères sont des animaux à sang chaud. »",
+          "score": 0
+        },
+        {
+          "label": "« Les baleines sont des mammifères. »",
+          "score": 0
+        },
+        {
+          "label": "Aucune des trois phrases n’est une conclusion.",
+          "score": 0
+        }
+      ],
+      "axe": "Analyse d’arguments",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Un argument a la forme suivante : « Si A alors B. B est vrai. Donc A est vrai. » Que peut-on dire de sa validité logique ?",
+      "help": "Le fait que la conséquence soit vraie ne dit rien, en soi, sur la cause qui l’a produite.",
+      "options": [
+        {
+          "label": "Il est invalide : c’est l’erreur dite d’affirmation du conséquent, car B peut être vrai pour d’autres raisons que A.",
+          "score": 1
+        },
+        {
+          "label": "Il est valide : affirmer le conséquent permet toujours de conclure l’antécédent.",
+          "score": 0
+        },
+        {
+          "label": "Il est valide uniquement si A et B sont tous deux des faits scientifiques.",
+          "score": 0
+        },
+        {
+          "label": "La validité logique ne peut jamais être déterminée à partir de la seule forme d’un argument.",
+          "score": 0
+        }
+      ],
+      "axe": "Analyse d’arguments",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "« Jean est médecin, donc il doit avoir un bon salaire. » Quelle prémisse implicite (non énoncée) cet argument suppose-t-il ?",
+      "help": "Un enthymème est un argument dont une prémisse reste sous-entendue plutôt qu’énoncée.",
+      "options": [
+        {
+          "label": "Les médecins ont généralement un bon salaire.",
+          "score": 1
+        },
+        {
+          "label": "Jean a fait de longues études.",
+          "score": 0
+        },
+        {
+          "label": "Tous les professionnels ont un bon salaire.",
+          "score": 0
+        },
+        {
+          "label": "Jean travaille dans le secteur public.",
+          "score": 0
+        }
+      ],
+      "axe": "Analyse d’arguments",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "« Si le document est authentique, alors il porte un filigrane officiel. Le document porte un filigrane officiel. » Peut-on valablement en conclure que le document est authentique ?",
+      "help": "Une condition nécessaire énoncée n’est pas automatiquement une preuve suffisante.",
+      "options": [
+        {
+          "label": "Non : ce serait une erreur de raisonnement (affirmation du conséquent), la présence du filigrane ne prouvant pas à elle seule l’authenticité.",
+          "score": 1
+        },
+        {
+          "label": "Oui, car c’est un raisonnement par modus ponens valide.",
+          "score": 0
+        },
+        {
+          "label": "Oui, car la présence du filigrane est une preuve irréfutable à elle seule.",
+          "score": 0
+        },
+        {
+          "label": "On ne peut rien dire sans connaître le contenu du document.",
+          "score": 0
+        }
+      ],
+      "axe": "Analyse d’arguments",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un argument affirme : « Ce médicament est efficace, car 95 % des patients d’un essai contrôlé randomisé ont montré une amélioration, contre 40 % dans le groupe placebo. » Quel élément renforcerait le plus la force de cet argument ?",
+      "help": "Pensez à ce qui rend un résultat scientifique plus solide dans le temps.",
+      "options": [
+        {
+          "label": "La reproduction de ce résultat par d’autres essais indépendants menés par des équipes différentes.",
+          "score": 1
+        },
+        {
+          "label": "Le fait que le laboratoire ait largement communiqué sur ce résultat dans la presse.",
+          "score": 0
+        },
+        {
+          "label": "Le fait que l’essai ait duré plusieurs années.",
+          "score": 0
+        },
+        {
+          "label": "Le fait que le médicament soit vendu dans de nombreux pays.",
+          "score": 0
+        }
+      ],
+      "axe": "Analyse d’arguments",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "« Pour obtenir ce diplôme, il faut avoir validé tous les modules. » Cette phrase énonce une condition :",
+      "help": "Distinguez ce qui est indispensable de ce qui, à lui seul, garantirait le résultat.",
+      "options": [
+        {
+          "label": "Nécessaire (sans elle, pas de diplôme), mais pas forcément suffisante (d’autres conditions peuvent aussi être requises).",
+          "score": 1
+        },
+        {
+          "label": "Suffisante et nécessaire à la fois, dans tous les cas.",
+          "score": 0
+        },
+        {
+          "label": "Ni nécessaire ni suffisante, juste une recommandation.",
+          "score": 0
+        },
+        {
+          "label": "Suffisante seulement : valider les modules garantit toujours le diplôme, quoi qu’il arrive d’autre.",
+          "score": 0
+        }
+      ],
+      "axe": "Analyse d’arguments",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en logique argumentative. Cet outil est un contrôle de connaissances factuelles sur l’analyse d’arguments (prémisses, conclusion, structure, validité, enthymèmes) : ce n’est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Analyse d’arguments » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (identification des prémisses et de la conclusion, validité logique, prémisses implicites, force d’un argument), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "mesurer la capacité à juger la qualité de l’information et des raisonnements — compétence clé à l’ère de l’IA générative"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

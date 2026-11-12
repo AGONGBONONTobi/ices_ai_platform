@@ -1,69 +1,206 @@
 {
   "id": "psy-t40-7",
-  "title": "Préparer — Décision collective · T40.7",
+  "title": "Décision collective · T40.7",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Décision collective ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à décider en groupe avec information distribuée. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Décision collective », dans le domaine « DÉCISION SOUS INCERTITUDE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à décider en groupe avec information distribuée.\nFormat cible : 4 simulations d’équipe, 15 min.\nContenu cible : agrégation de jugements, dissensus, vote, délibération.\nCalcul cible (non implémenté ici) : qualité de la décision collective, contribution individuelle.\nUsage décrit : comités, conseils, équipes de crise.\nOptions cibles : simulation multi-agents ; détection de pensée de groupe.\nObjectif du domaine : évaluer la capacité à décider rationnellement dans l’incertitude, l’ambiguïté et le risque — compétence critique pour les décideurs, investisseurs, assureurs, responsables publics\nGarde-fou du domaine : N3 ; ne remplace pas une décision humaine collégiale ; audit de biais ; supervision\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Selon le théorème du jury de Condorcet, sous quelle condition l'agrégation des votes indépendants d'un grand nombre de personnes, chacune légèrement plus souvent juste que fausse, tend-elle à être plus fiable qu'un jugement individuel ?",
+      "help": "L'indépendance des jugements est une condition centrale de ce résultat.",
+      "options": [
+        {
+          "label": "Lorsque les jugements individuels sont suffisamment indépendants les uns des autres (non corrélés par une influence commune) et que chaque votant a une probabilité supérieure à 50 % d'avoir raison.",
+          "score": 1
+        },
+        {
+          "label": "Dans tous les cas, quelle que soit la corrélation entre les votants, même s'ils s'influencent fortement entre eux.",
+          "score": 0
+        },
+        {
+          "label": "Uniquement si chaque votant a individuellement une probabilité de 100 % d'avoir raison.",
+          "score": 0
+        },
+        {
+          "label": "Le théorème du jury de Condorcet ne s'applique qu'aux décisions unanimes.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision collective",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Pourquoi une forte pression à l'unanimité au sein d'un groupe peut-elle réduire, plutôt qu'améliorer, la qualité d'une décision collective ?",
+      "help": "Le problème touche à l'indépendance réelle des jugements exprimés, pas à leur nombre.",
+      "options": [
+        {
+          "label": "Parce qu'elle peut conduire à une pensée de groupe (groupthink), où les membres taisent leurs doutes ou informations divergentes par conformisme, perdant ainsi l'indépendance des jugements nécessaire à une bonne agrégation.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'une décision unanime est, par définition statistique, toujours plus fiable qu'une décision obtenue à la majorité.",
+          "score": 0
+        },
+        {
+          "label": "Parce que l'unanimité élimine par construction tout risque d'erreur collective.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la pression au consensus n'a, en pratique, aucune incidence démontrée sur la qualité d'une décision.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision collective",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Qu'illustre le paradoxe de Condorcet en matière de vote collectif, lorsque trois options A, B et C sont en compétition ?",
+      "help": "Le paradoxe porte sur la cohérence (ou l'incohérence) du classement collectif obtenu.",
+      "options": [
+        {
+          "label": "Les préférences collectives agrégées par un vote majoritaire peuvent être intransitives (le groupe préfère A à B, B à C, et pourtant C à A), même si chaque votant individuel a des préférences parfaitement cohérentes.",
+          "score": 1
+        },
+        {
+          "label": "Le vote majoritaire garantit toujours un classement final cohérent et transitif des options.",
+          "score": 0
+        },
+        {
+          "label": "Trois options en compétition conduisent toujours à une égalité parfaite des voix.",
+          "score": 0
+        },
+        {
+          "label": "Le paradoxe de Condorcet ne peut se produire qu'avec un nombre pair de votants.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision collective",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Pourquoi la « sagesse des foules » (wisdom of crowds) repose-t-elle sur l'indépendance des estimations individuelles, et non sur leur simple nombre ?",
+      "help": "Ce qui permet aux erreurs individuelles de s'annuler en moyenne, c'est leur absence de corrélation.",
+      "options": [
+        {
+          "label": "Parce que si les estimations individuelles sont fortement corrélées (influencées par la même source d'erreur), leurs erreurs ne s'annulent pas en moyenne, contrairement à des erreurs réellement indépendantes.",
+          "score": 1
+        },
+        {
+          "label": "Parce que plus il y a de participants, moins leur indépendance compte dans le résultat final.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la sagesse des foules exige que tous les participants donnent exactement la même estimation.",
+          "score": 0
+        },
+        {
+          "label": "Parce que l'indépendance des jugements n'a, en réalité, aucun effet démontré sur la précision moyenne.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision collective",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Dans une décision de groupe avec information distribuée (chaque membre ne détient qu'une partie de l'information totale), quel est le principal risque si les membres ne partagent pas explicitement ce qu'ils savent individuellement ?",
+      "help": "Le risque porte sur l'information qui reste cantonnée à un seul membre, sans être mobilisée.",
+      "options": [
+        {
+          "label": "Le groupe risque de converger sur l'information déjà commune à tous, sans jamais mobiliser les informations privées pourtant pertinentes détenues par certains membres seulement.",
+          "score": 1
+        },
+        {
+          "label": "Le groupe utilise toujours automatiquement l'ensemble de l'information disponible chez tous ses membres, sans effort de partage.",
+          "score": 0
+        },
+        {
+          "label": "L'absence de partage d'information n'a, par principe, aucune incidence sur la qualité de la décision finale.",
+          "score": 0
+        },
+        {
+          "label": "Un groupe dispose toujours de moins d'informations qu'un individu isolé.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision collective",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Pourquoi un vote à bulletin secret peut-il, dans certains contextes de décision collective, produire un résultat plus fiable qu'un vote à main levée successif ?",
+      "help": "Pensez à ce que les premiers votes exprimés publiquement peuvent influencer chez les suivants.",
+      "options": [
+        {
+          "label": "Parce qu'il réduit l'influence du conformisme et de l'effet d'ancrage sur les votes exprimés en premier, préservant ainsi davantage l'indépendance des jugements individuels.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'un vote à bulletin secret élimine par définition toute possibilité de désaccord entre les votants.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'un vote à main levée garantit toujours un résultat unanime.",
+          "score": 0
+        },
+        {
+          "label": "Parce que le mode de vote n'a, en pratique, aucune incidence sur l'indépendance des jugements.",
+          "score": 0
+        }
+      ],
+      "axe": "Décision collective",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en décision collective et agrégation des jugements. Cet outil est un contrôle de connaissances factuelles sur « Décision collective » (domaine « DÉCISION SOUS INCERTITUDE ») : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence générale, ni une aptitude de décision ou de personnalité, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Décision collective » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (théorème du jury de Condorcet, pensée de groupe (groupthink), paradoxe de Condorcet, sagesse des foules et indépendance des jugements), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure d'intelligence générale ou de capacité de décision, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "N3 ; ne remplace pas une décision humaine collégiale ; audit de biais ; supervision"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

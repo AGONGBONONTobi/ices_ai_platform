@@ -1,69 +1,148 @@
 {
   "id": "psy-t4-3",
-  "title": "Préparer — Statistiques descriptives · T4.3",
+  "title": "Statistiques descriptives · T4.3",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Statistiques descriptives ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Un magasin enregistre les ventes quotidiennes suivantes sur 5 jours : 10, 12, 11, 13, 14 (en unités). Quelle est la moyenne de ces ventes ?",
+      "help": "Additionnez toutes les valeurs, puis divisez par le nombre de jours.",
+      "options": [
+        { "label": "12", "score": 1 },
+        { "label": "11", "score": 0 },
+        { "label": "13", "score": 0 },
+        { "label": "10", "score": 0 }
+      ],
+      "axe": "Statistiques descriptives",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Pour la série suivante : 4, 8, 6, 10, 2, quelle est la médiane ?",
+      "help": "Classez d'abord les valeurs par ordre croissant avant de repérer la valeur centrale.",
+      "options": [
+        { "label": "6", "score": 1 },
+        { "label": "8", "score": 0 },
+        { "label": "4", "score": 0 },
+        { "label": "5", "score": 0 }
+      ],
+      "axe": "Statistiques descriptives",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : lecture de moyenne, médiane, dispersion. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Série de valeurs : 5, 5, 5, 5, 50. Quel énoncé décrit correctement l'effet de la valeur 50 sur la moyenne et sur la médiane ?",
+      "help": "Calculez séparément la moyenne et la médiane de cette série avant de comparer.",
+      "options": [
+        { "label": "La valeur 50 est une valeur extrême (outlier) qui tire fortement la moyenne vers le haut (14), alors que la médiane reste à 5.", "score": 1 },
+        { "label": "La moyenne et la médiane valent toutes les deux 50.", "score": 0 },
+        { "label": "La valeur 50 n'a aucun effet sur la moyenne.", "score": 0 },
+        { "label": "La médiane est plus sensible que la moyenne à cette valeur extrême.", "score": 0 }
+      ],
+      "axe": "Statistiques descriptives",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Deux séries A et B ont la même moyenne, mais la série A a un écart type nettement plus élevé que la série B. Que peut-on en conclure ?",
+      "help": "L'écart type mesure la dispersion des valeurs autour de la moyenne.",
+      "options": [
+        { "label": "Les valeurs de la série A sont globalement plus dispersées autour de la moyenne que celles de la série B.", "score": 1 },
+        { "label": "La série A a nécessairement une moyenne plus élevée.", "score": 0 },
+        { "label": "La série B contient nécessairement des valeurs aberrantes.", "score": 0 },
+        { "label": "L'écart type ne renseigne pas sur la dispersion des données.", "score": 0 }
+      ],
+      "axe": "Statistiques descriptives",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Dans un jeu de données, une observation est qualifiée de « valeur aberrante » (outlier). Qu'est-ce que cela signifie en général ?",
+      "help": "Pensez à la position de cette valeur par rapport à l'ensemble des autres observations.",
+      "options": [
+        { "label": "C'est une valeur nettement éloignée de l'ensemble des autres observations, qui peut déformer certains indicateurs comme la moyenne.", "score": 1 },
+        { "label": "C'est la valeur la plus fréquente de la série.", "score": 0 },
+        { "label": "C'est systématiquement une erreur de saisie qu'il faut supprimer.", "score": 0 },
+        { "label": "C'est la valeur centrale de la série triée.", "score": 0 }
+      ],
+      "axe": "Statistiques descriptives",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Deux séries de 5 notes sur 20 ont la même moyenne (10) : Série X = 10, 11, 10, 9, 10 ; Série Y = 2, 20, 2, 20, 6. Quelle affirmation est correcte ?",
+      "help": "Comparez l'écart des valeurs de chaque série par rapport à leur moyenne commune.",
+      "options": [
+        { "label": "La série X est beaucoup plus homogène (valeurs proches) que la série Y, bien qu'elles aient la même moyenne.", "score": 1 },
+        { "label": "Les deux séries sont rigoureusement identiques en termes de dispersion.", "score": 0 },
+        { "label": "La série Y a nécessairement une moyenne plus élevée que la série X.", "score": 0 },
+        { "label": "La moyenne suffit à elle seule à décrire complètement une série de données.", "score": 0 }
+      ],
+      "axe": "Statistiques descriptives",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Pourquoi la médiane est-elle souvent préférée à la moyenne pour décrire un revenu « typique » dans une population ?",
+      "help": "Réfléchissez à l'effet de quelques très hauts revenus sur chacun de ces deux indicateurs.",
+      "options": [
+        { "label": "Parce que la médiane est moins sensible aux valeurs extrêmes (très hauts revenus), alors que la moyenne peut être tirée vers le haut par quelques valeurs élevées.", "score": 1 },
+        { "label": "Parce que la médiane est toujours plus simple à calculer que la moyenne.", "score": 0 },
+        { "label": "Parce que la moyenne ne peut pas être calculée sur des revenus.", "score": 0 },
+        { "label": "Parce que la médiane donne toujours une valeur plus élevée que la moyenne.", "score": 0 }
+      ],
+      "axe": "Statistiques descriptives",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Statistiques descriptives », dans le domaine « RAISONNEMENT NUMÉRIQUE & NUMÉRATIE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : lecture de moyenne, médiane, dispersion.\nFormat cible : 18 items + interprétation de tableaux, 12 min.\nContenu cible : tendance centrale, variabilité, outliers.\nCalcul cible (non implémenté ici) : score, erreurs d’interprétation.\nUsage décrit : data literacy, management.\nOptions cibles : items avec graphiques interactifs.\nObjectif du domaine : évaluer la capacité à utiliser les nombres dans la vie professionnelle et personnelle\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en statistiques descriptives appliquées. Cet outil est un entraînement et un contrôle de connaissances factuelles sur la lecture de la tendance centrale, de la variabilité et des valeurs aberrantes (moyenne, médiane, dispersion, outliers) : ce n'est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile, aucune norme professionnelle, ni aucun QI, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Statistiques descriptives » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (moyenne, médiane, dispersion, valeurs aberrantes), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour s'entraîner sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure de QI ou d'aptitude générale, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "assessment",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +158,5 @@
       "Objectif du domaine": "évaluer la capacité à utiliser les nombres dans la vie professionnelle et personnelle"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

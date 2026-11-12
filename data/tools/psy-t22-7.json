@@ -1,69 +1,232 @@
 {
   "id": "psy-t22-7",
-  "title": "Préparer — Éthique des incitations · T22.7",
+  "title": "Éthique des incitations · T22.7",
   "category": "MARKETING & COMMERCIAL",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Éthique des incitations ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à distinguer nudge et manipulation. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Éthique des incitations », dans le domaine « ÉCONOMIE COMPORTEMENTALE & CONSOMMATEUR ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à distinguer nudge et manipulation.\nFormat cible : 12 dilemmes, 10 min.\nContenu cible : dark patterns, addiction, vulnérabilité.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : conformité, éthique produit.\nOptions cibles : alignement AI Act et RGPD (transparence).\nObjectif du domaine : mesurer la compréhension des biais et la capacité à concevoir des décisions et offres fondées sur la science comportementale\nGarde-fou du domaine : distinguer nudge éthique et manipulation ; charte d’usage obligatoire\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Laquelle de ces pratiques correspond à un « dark pattern » classique en conception d'interface ?",
+      "help": "Un dark pattern crée un déséquilibre volontaire entre la facilité d'une action et la difficulté de son contraire.",
+      "options": [
+        {
+          "label": "Rendre le bouton d'annulation d'un abonnement très difficile à trouver, alors que l'inscription se fait en un clic",
+          "score": 1
+        },
+        {
+          "label": "Afficher clairement le prix total dès la page produit",
+          "score": 0
+        },
+        {
+          "label": "Permettre l'annulation d'un abonnement en un seul clic",
+          "score": 0
+        },
+        {
+          "label": "Envoyer un rappel neutre avant le renouvellement d'un contrat",
+          "score": 0
+        }
+      ],
+      "axe": "Éthique des incitations",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Le « confirmshaming » désigne la pratique consistant à :",
+      "help": "Le nom évoque un sentiment désagréable volontairement associé au refus.",
+      "options": [
+        {
+          "label": "Formuler le bouton de refus de façon culpabilisante (ex. « Non merci, je préfère payer plein tarif »)",
+          "score": 1
+        },
+        {
+          "label": "Afficher publiquement la liste des utilisateurs ayant refusé une offre",
+          "score": 0
+        },
+        {
+          "label": "Confirmer une commande par un e-mail automatique",
+          "score": 0
+        },
+        {
+          "label": "Renvoyer automatiquement un formulaire abandonné",
+          "score": 0
+        }
+      ],
+      "axe": "Éthique des incitations",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Le défilement infini (« infinite scroll ») et les notifications répétées sans valeur ajoutée pour l'utilisateur sont le plus souvent analysés, dans la littérature sur l'éthique des interfaces, comme :",
+      "help": "Ce type de mécanisme cible une difficulté bien connue à s'arrêter plutôt qu'un besoin réel d'information.",
+      "options": [
+        {
+          "label": "Des dispositifs conçus pour exploiter des mécanismes compulsifs et maximiser le temps passé",
+          "score": 1
+        },
+        {
+          "label": "Un simple indicateur de progression dans un formulaire",
+          "score": 0
+        },
+        {
+          "label": "Un récapitulatif de commande avant paiement",
+          "score": 0
+        },
+        {
+          "label": "Un comparatif de prix transparent entre plusieurs offres",
+          "score": 0
+        }
+      ],
+      "axe": "Éthique des incitations",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Le « roach motel » (motel à cafards), nom donné à un type de dark pattern, désigne une interface où :",
+      "help": "Le nom évoque un piège : facile d'entrer, très difficile d'en sortir.",
+      "options": [
+        {
+          "label": "Il est très facile de s'inscrire ou de s'abonner, mais très difficile de se désinscrire ou se désabonner",
+          "score": 1
+        },
+        {
+          "label": "L'inscription et la désinscription sont également simples",
+          "score": 0
+        },
+        {
+          "label": "Plusieurs offres concurrentes sont présentées côte à côte",
+          "score": 0
+        },
+        {
+          "label": "Le bouton d'achat est clairement identifiable",
+          "score": 0
+        }
+      ],
+      "axe": "Éthique des incitations",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "La distinction généralement retenue (y compris dans des cadres réglementaires comme le RGPD) entre un nudge éthique et une pratique manipulatrice repose avant tout sur :",
+      "help": "Le critère ne porte pas sur le résultat commercial recherché, mais sur la façon dont le choix est présenté.",
+      "options": [
+        {
+          "label": "La préservation de la liberté de choix et la transparence de l'intention",
+          "score": 1
+        },
+        {
+          "label": "L'interdiction totale de toute influence commerciale",
+          "score": 0
+        },
+        {
+          "label": "L'obligation d'atteindre un résultat commercial donné",
+          "score": 0
+        },
+        {
+          "label": "L'absence totale de toute forme de persuasion",
+          "score": 0
+        }
+      ],
+      "axe": "Éthique des incitations",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Cibler délibérément des vulnérabilités psychologiques connues (par exemple chez des mineurs ou des personnes en difficulté financière) avec des incitations commerciales est :",
+      "help": "Ce type de ciblage fait l'objet d'une attention croissante des régulateurs, précisément parce qu'il pose un problème reconnu.",
+      "options": [
+        {
+          "label": "Généralement considéré comme contraire à l'éthique et de plus en plus encadré par la réglementation",
+          "score": 1
+        },
+        {
+          "label": "Une pratique marketing standard sans enjeu éthique particulier",
+          "score": 0
+        },
+        {
+          "label": "Un sujet purement commercial, sans lien avec la réglementation",
+          "score": 0
+        },
+        {
+          "label": "Une pratique systématiquement interdite depuis toujours, sans débat",
+          "score": 0
+        }
+      ],
+      "axe": "Éthique des incitations",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Le « nagging » (notifications répétées et insistantes pour forcer une action, comme réactiver une autorisation déjà refusée) est généralement classé, en éthique des interfaces, comme :",
+      "help": "La répétition insistante vise ici à user la capacité de refus plutôt qu'à informer.",
+      "options": [
+        {
+          "label": "Un dark pattern qui exploite la fatigue décisionnelle",
+          "score": 1
+        },
+        {
+          "label": "Un nudge éthique classique",
+          "score": 0
+        },
+        {
+          "label": "Une simplification légitime du parcours utilisateur",
+          "score": 0
+        },
+        {
+          "label": "Un simple feedback informatif",
+          "score": 0
+        }
+      ],
+      "axe": "Éthique des incitations",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en économie comportementale appliquée au marketing. Cet outil est un contrôle de connaissances factuelles sur « l'éthique des incitations et la distinction entre nudge éthique et dark pattern (confirmshaming, roach motel, ciblage de vulnérabilités, nagging) » : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure pas votre propre sensibilité aux biais de décision, seulement votre connaissance des concepts, et il ne produit aucun percentile, aucune norme professionnelle ni aucun diagnostic de personnalité.\n\nLe score global et le score de l'axe « Éthique des incitations » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (dark patterns, ciblage de vulnérabilités, distinction nudge/manipulation), sans comparaison à une norme externe et sans jugement sur la personnalité ou la vulnérabilité du répondant face aux biais ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, qu'il ne mesure pas la sensibilité personnelle du répondant aux biais testés, et qu'il ne reflète que les réponses données aujourd'hui.\n\nRappelle, si pertinent, que les techniques testées ici doivent être utilisées de façon éthique : ne recommande jamais une pratique relevant de la manipulation ou des dark patterns, et distingue toujours le nudge éthique de la manipulation. N'invente aucune norme, aucun percentile, aucun classement professionnel, aucun QI. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +243,5 @@
       "Garde-fou du domaine": "distinguer nudge éthique et manipulation ; charte d’usage obligatoire"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

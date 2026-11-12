@@ -1,42 +1,42 @@
 {
   "id": "psy-t25-2",
-  "title": "Préparer — Création de valeur (négociation intégrative) · T25.2",
+  "title": "Création de valeur (négociation intégrative) · T25.2",
   "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Création de valeur (négociation intégrative) ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle négociation réelle voulez-vous préparer en cherchant un accord gagnant-gagnant ?",
+      "help": "Décrivez une négociation précise et à venir où plusieurs éléments (prix, délai, volume, service) peuvent s'échanger, pas seulement se répartir.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à trouver des accords gagnant-gagnant. Ne renseignez pas de score supposé.",
+      "question": "Quelles priorités, contraintes ou ressources connaissez-vous déjà de chaque partie ?",
+      "help": "Indiquez ce qui compte le plus pour vous et ce que vous savez ou supposez des priorités de l'autre partie.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui serait perdu si aucune valeur supplémentaire n'était créée, au-delà d'un accord minimal ?",
+      "help": "Relation long terme, opportunités manquées, marge laissée sur la table.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai cet accord doit-il être conclu ?",
+      "placeholder": "Exemple : signature souhaitée avant la fin du mois",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Création de valeur (négociation intégrative) », dans le domaine « NÉGOCIATION & GESTION DES CONFLITS ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à trouver des accords gagnant-gagnant.\nFormat cible : 6 simulations, 15 min.\nContenu cible : échanges de priorités, packages, créativité.\nCalcul cible (non implémenté ici) : valeur créée vs optimum.\nUsage décrit : partenariats, M&A, achats.\nOptions cibles : simulation multi-parties avec IA.\nObjectif du domaine : évaluer les compétences de négociation et de résolution de conflits\nGarde-fou du domaine : les scénarios ne doivent pas encourager des pratiques coercitives ; charte éthique\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en négociation spécialisé dans la création de valeur en négociation intégrative : la recherche d'accords gagnant-gagnant par l'échange de priorités et la construction de « packages », plutôt que par la seule répartition d'une ressource fixe.\n\nSituation décrite par l'utilisateur :\nNégociation à préparer : {decision}\nPriorités et contraintes déjà connues de chaque partie : {elements_connus}\nValeur perdue si aucun accord créatif n'est trouvé : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite les priorités de chaque partie qui n'ont pas la même valeur pour les deux camps : ce sont ces écarts qui permettent de créer de la valeur en échangeant des concessions à bas coût pour soi contre des éléments à forte valeur pour l'autre. Identifie les éléments qui pourraient être regroupés en « package » plutôt que négociés un par un, et les options créatives non encore explorées. Propose des questions de préparation : quelles priorités de l'autre partie restent à clarifier ? Quels éléments pourriez-vous ajouter à la discussion (délai, volume, service, garantie) pour élargir les options d'accord ? Qu'est-ce qui distingue un accord minimal acceptable d'un accord qui crée réellement plus de valeur pour les deux parties ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque repère identifié avec les questions de préparation à se poser, et les points clés à retenir avant la négociation.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "les scénarios ne doivent pas encourager des pratiques coercitives ; charte éthique"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

@@ -1,69 +1,206 @@
 {
   "id": "psy-t44-1",
-  "title": "Préparer — Boucles de rétroaction · T44.1",
+  "title": "Boucles de rétroaction · T44.1",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Boucles de rétroaction ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à identifier boucles de renforcement et d’équilibrage. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Boucles de rétroaction », dans le domaine « PENSÉE SYSTÉMIQUE & COMPLEXITÉ ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à identifier boucles de renforcement et d’équilibrage.\nFormat cible : 10 cas, 12 min.\nContenu cible : systèmes écologiques, économiques, organisationnels.\nCalcul cible (non implémenté ici) : score, qualité de modélisation.\nUsage décrit : politiques publiques, stratégie.\nOptions cibles : couplage avec D38 (systèmes dynamiques).\nObjectif du domaine : évaluer la capacité à comprendre des systèmes complexes, à identifier les points de levier et à anticiper les effets de second ordre — compétence critique pour les décideurs, les politiques publiques et la transition écologique\nGarde-fou du domaine : les cas doivent être non politiques ; éviter les scénarios idéologiques ; audit de biais\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Une algue envahit un lac : plus il y a d’algues, plus elles produisent de spores qui donnent naissance à de nouvelles algues, ce qui augmente encore la population d’algues. Comment qualifier ce mécanisme ?",
+      "help": "Demandez-vous si le changement s’auto-amplifie ou se corrige de lui-même.",
+      "options": [
+        {
+          "label": "Une boucle de renforcement (rétroaction positive) : l’effet amplifie sa propre cause.",
+          "score": 1
+        },
+        {
+          "label": "Une boucle d’équilibrage (rétroaction négative) : l’effet contrecarre sa propre cause.",
+          "score": 0
+        },
+        {
+          "label": "Un effet de seuil sans lien avec une boucle de rétroaction.",
+          "score": 0
+        },
+        {
+          "label": "Un simple délai de propagation, sans mécanisme de rétroaction.",
+          "score": 0
+        }
+      ],
+      "axe": "Boucles de rétroaction",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Dans une forêt, quand la population de cerfs augmente, la nourriture disponible par individu diminue, ce qui réduit le taux de reproduction et ramène la population vers un niveau stable que le milieu peut soutenir (capacité de charge). Quel type de boucle décrit ce mécanisme ?",
+      "help": "Observez si le système revient vers un niveau stable ou s’en éloigne davantage.",
+      "options": [
+        {
+          "label": "Une boucle d’équilibrage : l’augmentation de la population déclenche une correction qui la ramène vers un niveau stable.",
+          "score": 1
+        },
+        {
+          "label": "Une boucle de renforcement : l’augmentation de la population s’auto-amplifie indéfiniment.",
+          "score": 0
+        },
+        {
+          "label": "Une propriété émergente sans lien avec une rétroaction.",
+          "score": 0
+        },
+        {
+          "label": "Un point de levier au sens de Meadows.",
+          "score": 0
+        }
+      ],
+      "axe": "Boucles de rétroaction",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Quand les prix d’un bien augmentent, la demande pour ce bien diminue ; cette baisse de la demande réduit à son tour la pression à la hausse sur les prix, qui refluent vers un niveau d’équilibre. De quel type de boucle s’agit-il ?",
+      "help": "Comparez l’effet final au point de départ : amplification ou retour vers un équilibre ?",
+      "options": [
+        {
+          "label": "Une boucle d’équilibrage : la hausse des prix engendre une correction qui freine cette même hausse.",
+          "score": 1
+        },
+        {
+          "label": "Une boucle de renforcement : la hausse des prix s’auto-entretient sans frein.",
+          "score": 0
+        },
+        {
+          "label": "Un effet de cascade indépendant de toute rétroaction.",
+          "score": 0
+        },
+        {
+          "label": "Une interdépendance directe entre deux acteurs, sans boucle de rétroaction.",
+          "score": 0
+        }
+      ],
+      "axe": "Boucles de rétroaction",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Plus un réseau social compte d’utilisateurs, plus il devient utile et attractif pour de nouveaux utilisateurs (effet de réseau), ce qui attire encore davantage d’utilisateurs. Quel type de boucle ce mécanisme illustre-t-il ?",
+      "help": "Posez-vous la question : est-ce que la croissance freine ou nourrit elle-même sa propre poursuite ?",
+      "options": [
+        {
+          "label": "Une boucle de renforcement : l’augmentation du nombre d’utilisateurs alimente sa propre poursuite.",
+          "score": 1
+        },
+        {
+          "label": "Une boucle d’équilibrage : l’augmentation du nombre d’utilisateurs freine naturellement la croissance.",
+          "score": 0
+        },
+        {
+          "label": "Un simple stock sans flux associé.",
+          "score": 0
+        },
+        {
+          "label": "Un effet de seuil ponctuel sans dynamique continue.",
+          "score": 0
+        }
+      ],
+      "axe": "Boucles de rétroaction",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Dans une équipe, un collaborateur en difficulté reçoit moins de reconnaissance, ce qui diminue sa motivation, ce qui diminue encore sa performance, ce qui diminue encore sa reconnaissance. Comment qualifier cette dynamique ?",
+      "help": "Suivez la chaîne d’un bout à l’autre : la situation s’aggrave-t-elle ou se stabilise-t-elle ?",
+      "options": [
+        {
+          "label": "Une boucle de renforcement : chaque étape amplifie la dégradation de la situation.",
+          "score": 1
+        },
+        {
+          "label": "Une boucle d’équilibrage : chaque étape corrige progressivement la situation.",
+          "score": 0
+        },
+        {
+          "label": "Une interdépendance indirecte, sans mécanisme de rétroaction.",
+          "score": 0
+        },
+        {
+          "label": "Un effet retardé sans boucle de rétroaction.",
+          "score": 0
+        }
+      ],
+      "axe": "Boucles de rétroaction",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Le thermostat d’un bureau régule la température : quand celle-ci s’écarte de la consigne, le système ajuste le chauffage ou la climatisation jusqu’à revenir à la valeur cible, puis s’arrête. Quel type de boucle décrit ce fonctionnement ?",
+      "help": "Le système cherche-t-il à s’écarter davantage de sa cible ou à y revenir ?",
+      "options": [
+        {
+          "label": "Une boucle d’équilibrage : l’écart par rapport à la consigne déclenche une correction qui réduit cet écart.",
+          "score": 1
+        },
+        {
+          "label": "Une boucle de renforcement : l’écart par rapport à la consigne s’amplifie continuellement.",
+          "score": 0
+        },
+        {
+          "label": "Une propriété émergente du bâtiment, sans rapport avec une boucle.",
+          "score": 0
+        },
+        {
+          "label": "Un point de levier à fort impact au sens de Meadows.",
+          "score": 0
+        }
+      ],
+      "axe": "Boucles de rétroaction",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en pensée systémique. Cet outil est un contrôle de connaissances factuelles sur les boucles de rétroaction (boucles de renforcement et boucles d’équilibrage) : ce n’est PAS un test psychométrique certifié ou validé, il ne mesure ni le QI ni une aptitude générale, il ne produit aucun percentile ni aucune norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Boucles de rétroaction » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle de la distinction entre boucle de renforcement (effet qui amplifie sa propre cause) et boucle d’équilibrage (effet qui corrige ou stabilise sa propre cause), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, ni une mesure d’intelligence ou d’aptitude générale, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "les cas doivent être non politiques ; éviter les scénarios idéologiques ; audit de biais"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

@@ -1,69 +1,148 @@
 {
   "id": "psy-t4-6",
-  "title": "Préparer — Lecture de graphiques & tableaux · T4.6",
+  "title": "Lecture de graphiques & tableaux · T4.6",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Lecture de graphiques & tableaux ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Un tableau indique les ventes trimestrielles suivantes, en milliers d'euros : T1 = 120, T2 = 150, T3 = 90, T4 = 140. Quel trimestre a enregistré les ventes les plus faibles ?",
+      "help": "Comparez les quatre valeurs entre elles pour repérer la plus petite.",
+      "options": [
+        { "label": "T3", "score": 1 },
+        { "label": "T1", "score": 0 },
+        { "label": "T2", "score": 0 },
+        { "label": "T4", "score": 0 }
+      ],
+      "axe": "Lecture de graphiques & tableaux",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Sur un graphique en courbe, les ventes mensuelles passent de 200 à 260 entre janvier et février, puis retombent à 180 en mars. Quelle est la tendance observée entre février et mars ?",
+      "help": "Comparez uniquement les deux valeurs de février et de mars.",
+      "options": [
+        { "label": "Une baisse", "score": 1 },
+        { "label": "Une hausse", "score": 0 },
+        { "label": "Une stagnation", "score": 0 },
+        { "label": "Une hausse puis une stagnation", "score": 0 }
+      ],
+      "axe": "Lecture de graphiques & tableaux",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : extraction et interprétation de données visuelles. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Un tableau croisé indique les unités vendues par région et par produit : région Nord = 300 unités du produit A + 100 unités du produit B ; région Sud = 150 unités du produit A + 200 unités du produit B. Quelle région a vendu le plus d'unités au total, produits A et B confondus ?",
+      "help": "Additionnez, pour chaque région, les unités des deux produits avant de comparer.",
+      "options": [
+        { "label": "La région Nord", "score": 1 },
+        { "label": "La région Sud", "score": 0 },
+        { "label": "Les deux régions à égalité", "score": 0 },
+        { "label": "On ne peut pas savoir avec ces données", "score": 0 }
+      ],
+      "axe": "Lecture de graphiques & tableaux",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Sur un nuage de points représentant la relation entre le nombre d'heures d'entraînement et le score à un test physique, les points sont dispersés mais suivent globalement une ligne montante de gauche à droite. Que suggère cette tendance ?",
+      "help": "Une ligne montante dans un nuage de points traduit un lien entre deux variables, sans en préciser la cause.",
+      "options": [
+        { "label": "Une corrélation positive : plus le nombre d'heures d'entraînement est élevé, plus le score tend à être élevé.", "score": 1 },
+        { "label": "Une corrélation négative entre les deux variables.", "score": 0 },
+        { "label": "L'absence totale de lien entre les deux variables.", "score": 0 },
+        { "label": "Une preuve certaine que l'entraînement est la seule cause du score.", "score": 0 }
+      ],
+      "axe": "Lecture de graphiques & tableaux",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un graphique en barres montre les ventes de deux produits sur 3 mois : Produit A = 50, 55, 60 ; Produit B = 80, 40, 20. Quelle affirmation décrit correctement l'évolution ?",
+      "help": "Observez séparément la direction prise par chaque produit sur les 3 mois.",
+      "options": [
+        { "label": "Le produit A progresse de façon stable alors que le produit B est en forte baisse sur la période.", "score": 1 },
+        { "label": "Les deux produits progressent de façon identique.", "score": 0 },
+        { "label": "Le produit B dépasse le produit A sur les 3 mois.", "score": 0 },
+        { "label": "Le produit A est en baisse constante.", "score": 0 }
+      ],
+      "axe": "Lecture de graphiques & tableaux",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "L'axe vertical d'un graphique en barres commence à 90 au lieu de 0, ce qui fait paraître une différence réelle de 2 unités (de 90 à 92) comme très importante visuellement. Que peut-on dire de ce graphique ?",
+      "help": "Pensez à l'effet visuel d'une troncature de l'axe sur la perception d'une différence.",
+      "options": [
+        { "label": "Il peut être trompeur, car la troncature de l'axe exagère visuellement l'ampleur réelle de la différence.", "score": 1 },
+        { "label": "Il est toujours plus précis qu'un graphique qui commence à 0.", "score": 0 },
+        { "label": "La troncature de l'axe n'a aucune influence sur la perception visuelle.", "score": 0 },
+        { "label": "Ce type de graphique est interdit par convention mathématique.", "score": 0 }
+      ],
+      "axe": "Lecture de graphiques & tableaux",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Dans un tableau croisé « satisfaction × ancienneté », 80 % des employés ayant moins de 2 ans d'ancienneté se disent satisfaits, contre 40 % des employés ayant plus de 10 ans d'ancienneté. Quelle lecture directe peut-on faire de ce tableau ?",
+      "help": "Limitez-vous à ce que les deux pourcentages indiqués permettent réellement de comparer.",
+      "options": [
+        { "label": "Le taux de satisfaction déclarée est plus élevé chez les employés les moins anciens que chez les plus anciens, dans cet échantillon.", "score": 1 },
+        { "label": "L'ancienneté est la cause certaine et unique de l'insatisfaction.", "score": 0 },
+        { "label": "Les deux groupes ont le même taux de satisfaction.", "score": 0 },
+        { "label": "Le tableau ne permet aucune comparaison entre les groupes.", "score": 0 }
+      ],
+      "axe": "Lecture de graphiques & tableaux",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Lecture de graphiques & tableaux », dans le domaine « RAISONNEMENT NUMÉRIQUE & NUMÉRATIE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : extraction et interprétation de données visuelles.\nFormat cible : 15 items, 10 min.\nContenu cible : barres, courbes, nuages, tableaux croisés.\nCalcul cible (non implémenté ici) : précision, temps.\nUsage décrit : métiers analytiques, reporting.\nOptions cibles : détection de graphiques trompeurs.\nObjectif du domaine : évaluer la capacité à utiliser les nombres dans la vie professionnelle et personnelle\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en lecture de données chiffrées (graphiques et tableaux). Cet outil est un entraînement et un contrôle de connaissances factuelles sur l'extraction et l'interprétation de données visuelles (barres, courbes, nuages de points, tableaux croisés, y compris la détection de graphiques trompeurs) : ce n'est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile, aucune norme professionnelle, ni aucun QI, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Lecture de graphiques & tableaux » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (lecture de tableaux, de courbes, de nuages de points, repérage de graphiques trompeurs), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour s'entraîner sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure de QI ou d'aptitude générale, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "assessment",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +158,5 @@
       "Objectif du domaine": "évaluer la capacité à utiliser les nombres dans la vie professionnelle et personnelle"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

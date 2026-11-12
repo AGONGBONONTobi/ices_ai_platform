@@ -1,69 +1,206 @@
 {
   "id": "psy-t6-6",
-  "title": "Préparer — Calibration de confiance · T6.6",
+  "title": "Calibration de confiance · T6.6",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Calibration de confiance ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : adéquation entre confiance et exactitude. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Calibration de confiance », dans le domaine « PENSÉE CRITIQUE & ÉVALUATION DE L’INFORMATION ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : adéquation entre confiance et exactitude.\nFormat cible : questions + jugement de confiance, 15 min.\nContenu cible : métacognition, surconfiance, sous-confiance.\nCalcul cible (non implémenté ici) : Brier score, courbe de calibration.\nUsage décrit : décision, délégation, supervision.\nOptions cibles : feedback de calibration en temps réel.\nObjectif du domaine : mesurer la capacité à juger la qualité de l’information et des raisonnements — compétence clé à l’ère de l’IA générative\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Une personne annonce être sûre à 90 % de ses réponses, mais elle n’a en réalité raison que 60 % du temps sur un grand nombre de questions similaires. Comment qualifie-t-on ce profil de jugement ?",
+      "help": "Comparez le niveau de confiance annoncé au taux de réussite réellement observé.",
+      "options": [
+        {
+          "label": "Une surconfiance : son niveau de confiance déclaré est supérieur à son taux réel de réussite.",
+          "score": 1
+        },
+        {
+          "label": "Une sous-confiance.",
+          "score": 0
+        },
+        {
+          "label": "Une calibration parfaite.",
+          "score": 0
+        },
+        {
+          "label": "Un biais de confirmation.",
+          "score": 0
+        }
+      ],
+      "axe": "Calibration de confiance",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Qu’est-ce qu’un jugement de confiance « bien calibré » ?",
+      "help": "La calibration se mesure sur un grand nombre de jugements, pas sur un seul.",
+      "options": [
+        {
+          "label": "Un jugement où, sur un grand nombre de réponses, le niveau de confiance déclaré correspond en moyenne au taux réel de bonnes réponses.",
+          "score": 1
+        },
+        {
+          "label": "Un jugement où la personne est toujours sûre à 100 % de ses réponses.",
+          "score": 0
+        },
+        {
+          "label": "Un jugement où la personne ne donne jamais de niveau de confiance.",
+          "score": 0
+        },
+        {
+          "label": "Un jugement où la confiance déclarée n’a par définition aucun rapport avec l’exactitude.",
+          "score": 0
+        }
+      ],
+      "axe": "Calibration de confiance",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Le score de Brier mesure la qualité d’une prévision probabiliste. Un score de Brier plus bas indique :",
+      "help": "Ce score mesure un écart ; réfléchissez à ce que signifie un écart plus petit.",
+      "options": [
+        {
+          "label": "Une meilleure calibration et précision des prévisions, l’écart entre la probabilité annoncée et le résultat réel étant plus faible.",
+          "score": 1
+        },
+        {
+          "label": "Une prévision toujours fausse.",
+          "score": 0
+        },
+        {
+          "label": "Une plus grande confiance affichée, indépendamment de l’exactitude.",
+          "score": 0
+        },
+        {
+          "label": "Un plus grand nombre de prévisions réalisées.",
+          "score": 0
+        }
+      ],
+      "axe": "Calibration de confiance",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Dans l’effet Dunning-Kruger tel que généralement décrit, les personnes les moins compétentes dans un domaine ont tendance à :",
+      "help": "Le manque de repères dans un domaine joue un rôle particulier dans l’auto-évaluation.",
+      "options": [
+        {
+          "label": "Surestimer leur propre compétence, faute de repères suffisants pour évaluer correctement leurs lacunes.",
+          "score": 1
+        },
+        {
+          "label": "Systématiquement sous-estimer leur compétence par excès de modestie.",
+          "score": 0
+        },
+        {
+          "label": "Évaluer leur compétence de façon toujours parfaitement exacte.",
+          "score": 0
+        },
+        {
+          "label": "Ne jamais exprimer d’opinion sur leur propre compétence.",
+          "score": 0
+        }
+      ],
+      "axe": "Calibration de confiance",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Pour améliorer la calibration de ses jugements de confiance dans le temps, quelle pratique est la plus efficace ?",
+      "help": "Pensez à ce qui permet d’ajuster un jugement au fil du temps, plutôt qu’à l’intuition seule.",
+      "options": [
+        {
+          "label": "Comparer régulièrement ses prévisions passées à leur résultat réel, et ajuster ses niveaux de confiance en conséquence.",
+          "score": 1
+        },
+        {
+          "label": "Augmenter systématiquement son niveau de confiance affiché à chaque nouvelle prévision.",
+          "score": 0
+        },
+        {
+          "label": "Éviter de prévoir quoi que ce soit afin de ne jamais se tromper.",
+          "score": 0
+        },
+        {
+          "label": "Se fier uniquement à son ressenti immédiat, sans jamais le comparer aux résultats obtenus.",
+          "score": 0
+        }
+      ],
+      "axe": "Calibration de confiance",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Une personne annonce être sûre à 50 % d’une réponse binaire (vrai/faux). Que signifie ce niveau de confiance ?",
+      "help": "50 % correspond à un point précis sur l’échelle de probabilité entre deux issues.",
+      "options": [
+        {
+          "label": "Qu’elle estime qu’il y a autant de chances que la réponse soit vraie que fausse, soit une incertitude maximale sur une question à deux issues.",
+          "score": 1
+        },
+        {
+          "label": "Qu’elle est certaine que la réponse est fausse.",
+          "score": 0
+        },
+        {
+          "label": "Qu’elle a donné une réponse aléatoire sans aucune réflexion, par définition.",
+          "score": 0
+        },
+        {
+          "label": "Que la question n’a pas de réponse connue.",
+          "score": 0
+        }
+      ],
+      "axe": "Calibration de confiance",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en jugement sous incertitude. Cet outil est un contrôle de connaissances factuelles sur la calibration de confiance (surconfiance, sous-confiance, score de Brier, métacognition) : ce n’est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Calibration de confiance » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (définition de la calibration, surconfiance, score de Brier, pratiques d’amélioration de la calibration), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "mesurer la capacité à juger la qualité de l’information et des raisonnements — compétence clé à l’ère de l’IA générative"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

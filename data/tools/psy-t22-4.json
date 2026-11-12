@@ -1,69 +1,232 @@
 {
   "id": "psy-t22-4",
-  "title": "Préparer — Confiance & persuasion · T22.4",
+  "title": "Confiance & persuasion · T22.4",
   "category": "MARKETING & COMMERCIAL",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Confiance & persuasion ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : compréhension des leviers de confiance. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Confiance & persuasion », dans le domaine « ÉCONOMIE COMPORTEMENTALE & CONSOMMATEUR ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : compréhension des leviers de confiance.\nFormat cible : 12 cas, 8 min.\nContenu cible : preuve sociale, autorité, réciprocité, transparence.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : marketing, communication.\nOptions cibles : couplage avec D24 (influence).\nObjectif du domaine : mesurer la compréhension des biais et la capacité à concevoir des décisions et offres fondées sur la science comportementale\nGarde-fou du domaine : distinguer nudge éthique et manipulation ; charte d’usage obligatoire\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Une marque affiche « Rejoint par plus de 50 000 utilisateurs ce mois-ci ». Ce message mobilise principalement :",
+      "help": "Le message met en avant ce que beaucoup d'autres personnes ont déjà fait.",
+      "options": [
+        {
+          "label": "La preuve sociale",
+          "score": 1
+        },
+        {
+          "label": "L'autorité",
+          "score": 0
+        },
+        {
+          "label": "La réciprocité",
+          "score": 0
+        },
+        {
+          "label": "La rareté",
+          "score": 0
+        }
+      ],
+      "axe": "Confiance & persuasion",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Une publicité pour un dentifrice indique « Recommandé par 9 dentistes sur 10 ». Ce message mobilise principalement :",
+      "help": "Le message s'appuie sur la crédibilité d'un expert ou d'un titre reconnu, pas sur le nombre d'utilisateurs.",
+      "options": [
+        {
+          "label": "L'autorité (la crédibilité d'un expert reconnu)",
+          "score": 1
+        },
+        {
+          "label": "La preuve sociale",
+          "score": 0
+        },
+        {
+          "label": "La réciprocité",
+          "score": 0
+        },
+        {
+          "label": "L'engagement",
+          "score": 0
+        }
+      ],
+      "axe": "Confiance & persuasion",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Un vendeur offre un petit échantillon gratuit avant de proposer un produit payant ; le client se sent alors plus enclin à acheter. Ce mécanisme de persuasion s'appelle :",
+      "help": "Recevoir quelque chose en premier crée souvent une envie de rendre la pareille.",
+      "options": [
+        {
+          "label": "La réciprocité",
+          "score": 1
+        },
+        {
+          "label": "La cohérence",
+          "score": 0
+        },
+        {
+          "label": "La sympathie",
+          "score": 0
+        },
+        {
+          "label": "La rareté",
+          "score": 0
+        }
+      ],
+      "axe": "Confiance & persuasion",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Une personne ayant accepté de signer une pétition en ligne (petit engagement public) est ensuite plus susceptible d'accepter une demande plus importante liée à la même cause. Ce mécanisme s'appelle :",
+      "help": "Un premier engagement, même minime, crée une tendance à vouloir rester fidèle à soi-même par la suite.",
+      "options": [
+        {
+          "label": "Le principe de cohérence et d'engagement",
+          "score": 1
+        },
+        {
+          "label": "La réciprocité",
+          "score": 0
+        },
+        {
+          "label": "L'autorité",
+          "score": 0
+        },
+        {
+          "label": "La preuve sociale",
+          "score": 0
+        }
+      ],
+      "axe": "Confiance & persuasion",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un site affiche clairement l'ensemble des frais (livraison, taxes, service) dès la page produit, avant même d'ajouter l'article au panier. Cette pratique relève principalement de :",
+      "help": "Rien n'est caché ni révélé plus tard dans le parcours d'achat : l'information complète est donnée dès le départ.",
+      "options": [
+        {
+          "label": "La transparence",
+          "score": 1
+        },
+        {
+          "label": "La rareté",
+          "score": 0
+        },
+        {
+          "label": "L'autorité",
+          "score": 0
+        },
+        {
+          "label": "L'ancrage",
+          "score": 0
+        }
+      ],
+      "axe": "Confiance & persuasion",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Un commercial mentionne spontanément un point commun avec son client (même ville d'origine, même passion) avant de présenter son offre. Ce mécanisme de persuasion s'appelle :",
+      "help": "Le lien évoqué ici concerne une proximité ou une affinité personnelle, pas une compétence ou un titre.",
+      "options": [
+        {
+          "label": "Le principe de sympathie (liking)",
+          "score": 1
+        },
+        {
+          "label": "L'autorité",
+          "score": 0
+        },
+        {
+          "label": "La rareté",
+          "score": 0
+        },
+        {
+          "label": "La réciprocité",
+          "score": 0
+        }
+      ],
+      "axe": "Confiance & persuasion",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Laquelle de ces deux pratiques construit une confiance durable plutôt qu'une manipulation à court terme : afficher le prix total dès le départ, ou révéler des frais additionnels seulement à la dernière étape du paiement ?",
+      "help": "Une des deux pratiques laisse le client décider en connaissance de cause avant de s'engager ; l'autre le surprend après coup.",
+      "options": [
+        {
+          "label": "Afficher clairement le prix total avant le paiement",
+          "score": 1
+        },
+        {
+          "label": "Révéler des frais additionnels seulement à la dernière étape",
+          "score": 0
+        },
+        {
+          "label": "Les deux pratiques sont équivalentes en matière de confiance",
+          "score": 0
+        },
+        {
+          "label": "Aucune des deux ne concerne la confiance du client",
+          "score": 0
+        }
+      ],
+      "axe": "Confiance & persuasion",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en économie comportementale appliquée au marketing. Cet outil est un contrôle de connaissances factuelles sur « les leviers de confiance et de persuasion (preuve sociale, autorité, réciprocité, cohérence, sympathie, transparence) » : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure pas votre propre sensibilité aux biais de décision, seulement votre connaissance des concepts, et il ne produit aucun percentile, aucune norme professionnelle ni aucun diagnostic de personnalité.\n\nLe score global et le score de l'axe « Confiance & persuasion » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (preuve sociale, autorité, réciprocité, cohérence, sympathie, transparence), sans comparaison à une norme externe et sans jugement sur la personnalité ou la vulnérabilité du répondant face aux biais ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, qu'il ne mesure pas la sensibilité personnelle du répondant aux biais testés, et qu'il ne reflète que les réponses données aujourd'hui.\n\nRappelle, si pertinent, que les techniques testées ici doivent être utilisées de façon éthique : ne recommande jamais une pratique relevant de la manipulation ou des dark patterns, et distingue toujours le nudge éthique de la manipulation. N'invente aucune norme, aucun percentile, aucun classement professionnel, aucun QI. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +243,5 @@
       "Garde-fou du domaine": "distinguer nudge éthique et manipulation ; charte d’usage obligatoire"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

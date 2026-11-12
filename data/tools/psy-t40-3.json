@@ -1,69 +1,206 @@
 {
   "id": "psy-t40-3",
-  "title": "Préparer — Regret & anticipation · T40.3",
+  "title": "Regret & anticipation · T40.3",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Regret & anticipation ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à anticiper le regret et à décider en conséquence. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Regret & anticipation », dans le domaine « DÉCISION SOUS INCERTITUDE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à anticiper le regret et à décider en conséquence.\nFormat cible : 12 scénarios, 10 min.\nContenu cible : décisions irréversibles, regret anticipé, minimax.\nCalcul cible (non implémenté ici) : score, stratégie de décision.\nUsage décrit : carrière, investissement, santé.\nOptions cibles : couplage avec D17 (risque, Vague 2).\nObjectif du domaine : évaluer la capacité à décider rationnellement dans l’incertitude, l’ambiguïté et le risque — compétence critique pour les décideurs, investisseurs, assureurs, responsables publics\nGarde-fou du domaine : N3 ; ne remplace pas une décision humaine collégiale ; audit de biais ; supervision\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Qu'est-ce que le « regret », au sens de la théorie de la décision, face à un choix sous incertitude ?",
+      "help": "Le regret se définit toujours par rapport à ce qu'on aurait pu obtenir de mieux, dans le même scénario.",
+      "options": [
+        {
+          "label": "L'écart entre le résultat obtenu avec l'option choisie et le résultat qu'on aurait obtenu avec la meilleure option possible dans le scénario qui s'est réellement produit.",
+          "score": 1
+        },
+        {
+          "label": "La probabilité que l'option choisie soit statistiquement la pire de toutes les options.",
+          "score": 0
+        },
+        {
+          "label": "Un sentiment purement subjectif, sans aucune définition quantifiable en théorie de la décision.",
+          "score": 0
+        },
+        {
+          "label": "La différence entre le coût et le bénéfice d'une option, indépendamment des autres options.",
+          "score": 0
+        }
+      ],
+      "axe": "Regret & anticipation",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Un décideur doit choisir entre deux investissements. Il examine, pour chaque scénario économique possible, l'écart entre le gain de chaque option et le gain de la meilleure option dans ce même scénario, puis choisit l'investissement dont le plus grand écart (le pire regret possible) est le plus faible. Quelle règle applique-t-il ?",
+      "help": "Cette règle minimise le pire des regrets, pas la moyenne des gains.",
+      "options": [
+        {
+          "label": "La règle du minimax regret : minimiser le regret maximal possible, plutôt que maximiser le gain espéré.",
+          "score": 1
+        },
+        {
+          "label": "La règle de l'espérance maximale, qui ignore totalement la notion de regret.",
+          "score": 0
+        },
+        {
+          "label": "La règle de la majorité, utilisée en décision collective.",
+          "score": 0
+        },
+        {
+          "label": "La règle du premier choix, indépendante de tout calcul.",
+          "score": 0
+        }
+      ],
+      "axe": "Regret & anticipation",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Pourquoi le « regret anticipé » influence-t-il davantage les décisions jugées irréversibles que les décisions facilement réversibles ?",
+      "help": "Pensez à ce qu'il devient possible — ou non — de corriger après coup.",
+      "options": [
+        {
+          "label": "Parce qu'en cas de décision irréversible, il n'est pas possible de corriger l'erreur après coup si le scénario le moins favorable se réalise, ce qui rend le coût d'un mauvais choix potentiellement définitif.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'une décision réversible élimine par définition toute possibilité de regret.",
+          "score": 0
+        },
+        {
+          "label": "Parce que le regret anticipé ne s'applique, par construction, qu'aux décisions collectives.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'une décision irréversible garantit toujours un résultat meilleur qu'une décision réversible.",
+          "score": 0
+        }
+      ],
+      "axe": "Regret & anticipation",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Dans un tableau de décision avec plusieurs options et plusieurs scénarios, comment calcule-t-on le « regret » d'une option donnée dans un scénario donné ?",
+      "help": "La comparaison se fait toujours à l'intérieur du même scénario, pas entre scénarios différents.",
+      "options": [
+        {
+          "label": "En soustrayant le gain de cette option, dans ce scénario, au gain de la meilleure option disponible dans ce même scénario (le résultat est toujours positif ou nul).",
+          "score": 1
+        },
+        {
+          "label": "En additionnant les gains de toutes les options dans ce scénario.",
+          "score": 0
+        },
+        {
+          "label": "En calculant la moyenne des gains de toutes les options, tous scénarios confondus.",
+          "score": 0
+        },
+        {
+          "label": "En multipliant le gain de l'option par la probabilité du scénario, sans comparaison aux autres options.",
+          "score": 0
+        }
+      ],
+      "axe": "Regret & anticipation",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un décideur choisit systématiquement l'option qui minimise son regret maximal, sans jamais tenir compte des probabilités des scénarios. Quelle est une limite reconnue de cette approche ?",
+      "help": "Tous les scénarios comptent de la même façon dans cette règle, même les plus improbables.",
+      "options": [
+        {
+          "label": "Elle peut conduire à une option trop prudente, qui néglige des scénarios très improbables mais pondère leur regret potentiel comme s'ils étaient certains.",
+          "score": 1
+        },
+        {
+          "label": "Cette approche garantit toujours le gain espéré le plus élevé, sans aucune limite.",
+          "score": 0
+        },
+        {
+          "label": "Cette approche est strictement identique à la règle de l'espérance de gain maximale.",
+          "score": 0
+        },
+        {
+          "label": "Cette approche élimine par construction tout besoin d'évaluer plusieurs scénarios.",
+          "score": 0
+        }
+      ],
+      "axe": "Regret & anticipation",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Pourquoi anticiper le regret avant une décision importante (plutôt que seulement après) peut-il être une démarche rationnelle, et non un simple excès de prudence ?",
+      "help": "L'exercice consiste à examiner les pires issues avant de s'engager, pas après.",
+      "options": [
+        {
+          "label": "Parce que cela pousse à examiner explicitement les pires scénarios possibles et leurs conséquences avant de s'engager, ce qui peut révéler des options plus robustes qu'une option seulement optimale en moyenne.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'anticiper le regret supprime totalement l'incertitude sur les scénarios futurs.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'une décision prise sans anticiper le regret est, par définition, toujours irrationnelle.",
+          "score": 0
+        },
+        {
+          "label": "Parce que le regret anticipé est toujours identique au regret réellement ressenti après coup.",
+          "score": 0
+        }
+      ],
+      "axe": "Regret & anticipation",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en théorie de la décision et du regret. Cet outil est un contrôle de connaissances factuelles sur « Regret & anticipation » (domaine « DÉCISION SOUS INCERTITUDE ») : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence générale, ni une aptitude de décision ou de personnalité, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Regret & anticipation » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (définition du regret en théorie de la décision, règle du minimax regret, irréversibilité, calcul d'un tableau de regret), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure d'intelligence générale ou de capacité de décision, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "N3 ; ne remplace pas une décision humaine collégiale ; audit de biais ; supervision"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

@@ -1,69 +1,148 @@
 {
   "id": "psy-t4-1",
-  "title": "Préparer — Calcul mental · T4.1",
+  "title": "Calcul mental · T4.1",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Calcul mental ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Combien font 78 + 46 ?",
+      "help": "Décomposez : par exemple 78 + 40, puis + 6.",
+      "options": [
+        { "label": "124", "score": 1 },
+        { "label": "114", "score": 0 },
+        { "label": "134", "score": 0 },
+        { "label": "122", "score": 0 }
+      ],
+      "axe": "Calcul mental",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Combien font 203 − 87 ?",
+      "help": "Vous pouvez passer par un nombre rond intermédiaire, par exemple 203 − 90, puis ajuster.",
+      "options": [
+        { "label": "116", "score": 1 },
+        { "label": "126", "score": 0 },
+        { "label": "106", "score": 0 },
+        { "label": "114", "score": 0 }
+      ],
+      "axe": "Calcul mental",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : fluence arithmétique. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Combien font 12 × 8 ?",
+      "help": "Vous pouvez décomposer 12 en 10 + 2.",
+      "options": [
+        { "label": "96", "score": 1 },
+        { "label": "86", "score": 0 },
+        { "label": "106", "score": 0 },
+        { "label": "108", "score": 0 }
+      ],
+      "axe": "Calcul mental",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Combien font 144 ÷ 12 ?",
+      "help": "Cherchez combien de fois 12 entre dans 144.",
+      "options": [
+        { "label": "12", "score": 1 },
+        { "label": "11", "score": 0 },
+        { "label": "14", "score": 0 },
+        { "label": "13", "score": 0 }
+      ],
+      "axe": "Calcul mental",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "À quel pourcentage correspond la fraction 3/4 ?",
+      "help": "Pensez à ramener la fraction sur 100.",
+      "options": [
+        { "label": "75 %", "score": 1 },
+        { "label": "34 %", "score": 0 },
+        { "label": "43 %", "score": 0 },
+        { "label": "134 %", "score": 0 }
+      ],
+      "axe": "Calcul mental",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Combien font 2/5 + 1/5 ?",
+      "help": "Les deux fractions ont déjà le même dénominateur.",
+      "options": [
+        { "label": "3/5", "score": 1 },
+        { "label": "2/5", "score": 0 },
+        { "label": "1/1", "score": 0 },
+        { "label": "3/10", "score": 0 }
+      ],
+      "axe": "Calcul mental",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Combien font 15 % de 200 ?",
+      "help": "10 % de 200 est facile à calculer ; ajustez ensuite pour 15 %.",
+      "options": [
+        { "label": "30", "score": 1 },
+        { "label": "15", "score": 0 },
+        { "label": "20", "score": 0 },
+        { "label": "35", "score": 0 }
+      ],
+      "axe": "Calcul mental",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Calcul mental », dans le domaine « RAISONNEMENT NUMÉRIQUE & NUMÉRATIE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : fluence arithmétique.\nFormat cible : 30 items chronométrés, 8 min.\nContenu cible : quatre opérations, fractions, pourcentages simples.\nCalcul cible (non implémenté ici) : précision × vitesse.\nUsage décrit : pré-requis, orientation.\nOptions cibles : CAT ; détection d’automatismes.\nObjectif du domaine : évaluer la capacité à utiliser les nombres dans la vie professionnelle et personnelle\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en calcul mental et en numératie appliquée. Cet outil est un entraînement et un contrôle de connaissances factuelles sur le calcul mental (quatre opérations, fractions, pourcentages simples) : ce n'est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile, aucune norme professionnelle, ni aucun QI, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Calcul mental » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des opérations testées (addition, soustraction, multiplication, division, fractions, pourcentages simples), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour s'entraîner sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure de QI ou d'aptitude générale, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "assessment",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +158,5 @@
       "Objectif du domaine": "évaluer la capacité à utiliser les nombres dans la vie professionnelle et personnelle"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

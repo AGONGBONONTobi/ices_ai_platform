@@ -1,69 +1,206 @@
 {
   "id": "psy-t38-1",
-  "title": "Préparer — Systèmes dynamiques · T38.1",
+  "title": "Systèmes dynamiques · T38.1",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Systèmes dynamiques ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à comprendre stocks, flux, délais et rétroactions. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Systèmes dynamiques », dans le domaine « RÉSOLUTION DE PROBLÈMES COMPLEXES ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à comprendre stocks, flux, délais et rétroactions.\nFormat cible : 6 simulations interactives, 15 min.\nContenu cible : gestion de stock, propagation, équilibrage, points de rupture.\nCalcul cible (non implémenté ici) : qualité de gestion, performance finale, erreurs typiques.\nUsage décrit : direction des opérations, supply chain.\nOptions cibles : couplage avec D44 (pensée systémique).\nObjectif du domaine : évaluer la capacité à analyser et résoudre des problèmes mal structurés, dynamiques et à multiples variables — compétence de plus en plus critique à l’ère des systèmes complexes et de l’IA\nGarde-fou du domaine : les cas doivent être non politiques et non sensibles ; éviter les scénarios stigmatisants\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Dans un système dynamique, qu'est-ce qui distingue un « stock » d'un « flux » ?",
+      "help": "Pensez à la différence entre une quantité accumulée et un taux de variation par unité de temps.",
+      "options": [
+        {
+          "label": "Un stock est une quantité accumulée à un instant donné (ex. le niveau d'eau d'un réservoir) ; un flux est un taux de variation par unité de temps (ex. le débit entrant ou sortant).",
+          "score": 1
+        },
+        {
+          "label": "Un stock se mesure toujours en pourcentage, un flux toujours en valeur absolue.",
+          "score": 0
+        },
+        {
+          "label": "Un stock ne peut jamais diminuer, alors qu'un flux peut être positif ou négatif.",
+          "score": 0
+        },
+        {
+          "label": "Un stock et un flux désignent la même grandeur, exprimée dans deux unités différentes.",
+          "score": 0
+        }
+      ],
+      "axe": "Systèmes dynamiques",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Une entreprise augmente sa production chaque fois que son stock d'invendus baisse, ce qui fait encore baisser le stock, ce qui pousse à produire encore plus — jusqu'à ce que la capacité de l'usine finisse par freiner cette croissance. Quel type de boucle de rétroaction illustre ce mécanisme d'amplification initial, avant que la capacité ne freine ?",
+      "help": "Une boucle qui amplifie l'écart initial porte un nom précis en pensée systémique.",
+      "options": [
+        {
+          "label": "Une boucle de rétroaction renforçante (positive) : l'effet amplifie la cause initiale.",
+          "score": 1
+        },
+        {
+          "label": "Une boucle de rétroaction d'équilibrage (négative) : l'effet s'oppose à la cause initiale.",
+          "score": 0
+        },
+        {
+          "label": "Un délai de transport pur, sans boucle de rétroaction.",
+          "score": 0
+        },
+        {
+          "label": "Une relation purement linéaire sans rétroaction.",
+          "score": 0
+        }
+      ],
+      "axe": "Systèmes dynamiques",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Dans le modèle de « l'effet coup de fouet » (bullwhip effect) en gestion de chaîne d'approvisionnement, qu'observe-t-on typiquement ?",
+      "help": "Le phénomène concerne l'amplitude des commandes au fil des maillons de la chaîne.",
+      "options": [
+        {
+          "label": "Les fluctuations de commande s'amplifient en remontant de l'aval (client final) vers l'amont (fournisseurs), même si la demande réelle varie peu.",
+          "score": 1
+        },
+        {
+          "label": "Les fluctuations de commande s'atténuent progressivement en remontant vers les fournisseurs.",
+          "score": 0
+        },
+        {
+          "label": "Le stock de chaque acteur de la chaîne reste parfaitement stable grâce aux délais.",
+          "score": 0
+        },
+        {
+          "label": "L'effet coup de fouet n'existe que lorsque la demande finale est parfaitement constante.",
+          "score": 0
+        }
+      ],
+      "axe": "Systèmes dynamiques",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Pourquoi un délai (de production, de livraison, d'information) rend-il un système dynamique plus difficile à stabiliser par une action corrective ?",
+      "help": "Réfléchissez à ce que l'on sait — ou ne sait pas — au moment où l'on agit.",
+      "options": [
+        {
+          "label": "Parce que l'effet de l'action n'est visible qu'après coup, ce qui pousse souvent à sur-corriger (ou sous-corriger) avant même de voir les effets de la première action.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'un délai supprime automatiquement toute rétroaction du système.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'un délai transforme toujours une boucle renforçante en boucle d'équilibrage.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'un délai empêche par définition l'existence d'un stock dans le système.",
+          "score": 0
+        }
+      ],
+      "axe": "Systèmes dynamiques",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un thermostat qui coupe le chauffage dès que la température cible est atteinte, puis le relance dès qu'elle redescend, illustre :",
+      "help": "La variable reste proche d'une valeur cible, grâce à un mécanisme qui s'oppose aux écarts.",
+      "options": [
+        {
+          "label": "Une boucle d'équilibrage : le système ramène une variable vers une valeur cible, en s'opposant à tout écart.",
+          "score": 1
+        },
+        {
+          "label": "Une boucle renforçante : l'écart à la cible s'amplifie dans le temps.",
+          "score": 0
+        },
+        {
+          "label": "Un point de rupture : un seuil au-delà duquel le système change de régime de façon irréversible.",
+          "score": 0
+        },
+        {
+          "label": "Un stock sans aucun flux associé.",
+          "score": 0
+        }
+      ],
+      "axe": "Systèmes dynamiques",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Qu'appelle-t-on un « point de rupture » (ou seuil critique) dans un système dynamique ?",
+      "help": "Pensez à un seuil au-delà duquel le comportement du système change qualitativement.",
+      "options": [
+        {
+          "label": "Un niveau au-delà duquel une petite variation supplémentaire du stock ou d'une variable fait basculer le système dans un régime qualitativement différent (ex. rupture de stock, effondrement d'un écosystème).",
+          "score": 1
+        },
+        {
+          "label": "La valeur moyenne autour de laquelle le stock oscille en permanence.",
+          "score": 0
+        },
+        {
+          "label": "Le moment où un flux devient par définition égal à zéro.",
+          "score": 0
+        },
+        {
+          "label": "Un synonyme strict de boucle renforçante.",
+          "score": 0
+        }
+      ],
+      "axe": "Systèmes dynamiques",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en pensée systémique. Cet outil est un contrôle de connaissances factuelles sur « Systèmes dynamiques » (domaine « RÉSOLUTION DE PROBLÈMES COMPLEXES ») : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence générale, ni une aptitude de décision ou de personnalité, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Systèmes dynamiques » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (stocks et flux, boucles de rétroaction renforçantes et d'équilibrage, délais, points de rupture), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure d'intelligence générale ou de capacité de décision, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "les cas doivent être non politiques et non sensibles ; éviter les scénarios stigmatisants"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

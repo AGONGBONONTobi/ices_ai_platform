@@ -1,69 +1,148 @@
 {
   "id": "psy-t4-5",
-  "title": "Préparer — Finance personnelle · T4.5",
+  "title": "Finance personnelle · T4.5",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Finance personnelle ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Vous placez 1 000 € à un taux d'intérêt simple de 5 % par an. Quel est le montant des intérêts gagnés après 1 an ?",
+      "help": "Avec un taux d'intérêt simple, les intérêts se calculent sur le capital de départ.",
+      "options": [
+        { "label": "50 €", "score": 1 },
+        { "label": "500 €", "score": 0 },
+        { "label": "100 €", "score": 0 },
+        { "label": "5 €", "score": 0 }
+      ],
+      "axe": "Finance personnelle",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Vous remboursez un crédit en 12 mensualités égales de 200 € chacune, hors intérêts. Quel est le montant total remboursé sur l'année ?",
+      "help": "Multipliez le montant d'une mensualité par le nombre de mensualités.",
+      "options": [
+        { "label": "2 400 €", "score": 1 },
+        { "label": "2 200 €", "score": 0 },
+        { "label": "2 000 €", "score": 0 },
+        { "label": "2 600 €", "score": 0 }
+      ],
+      "axe": "Finance personnelle",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : intérêts, budget, épargne, crédit. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Un capital de 1 000 € est placé à intérêts composés à 10 % par an. Quel est le montant total après 2 ans ?",
+      "help": "Avec des intérêts composés, les intérêts de la première année sont eux-mêmes réinvestis la deuxième année.",
+      "options": [
+        { "label": "1 210 €", "score": 1 },
+        { "label": "1 200 €", "score": 0 },
+        { "label": "1 100 €", "score": 0 },
+        { "label": "1 300 €", "score": 0 }
+      ],
+      "axe": "Finance personnelle",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Si l'inflation annuelle est de 3 % et que votre épargne ne rapporte que 1 % d'intérêt par an, que se passe-t-il pour votre pouvoir d'achat ?",
+      "help": "Comparez le taux de rendement de l'épargne au taux d'inflation.",
+      "options": [
+        { "label": "Le pouvoir d'achat de votre épargne diminue, car l'inflation (3 %) est supérieure au rendement obtenu (1 %).", "score": 1 },
+        { "label": "Le pouvoir d'achat augmente car l'épargne rapporte des intérêts.", "score": 0 },
+        { "label": "Le pouvoir d'achat reste strictement identique.", "score": 0 },
+        { "label": "L'inflation n'affecte que les salaires, jamais l'épargne.", "score": 0 }
+      ],
+      "axe": "Finance personnelle",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Quelle est la différence essentielle entre un taux d'intérêt simple et un taux d'intérêt composé sur plusieurs années ?",
+      "help": "Demandez-vous si les intérêts déjà versés produisent eux-mêmes des intérêts par la suite.",
+      "options": [
+        { "label": "Avec l'intérêt composé, les intérêts déjà acquis produisent eux-mêmes des intérêts les années suivantes, contrairement à l'intérêt simple.", "score": 1 },
+        { "label": "L'intérêt simple est toujours plus avantageux pour l'épargnant à long terme.", "score": 0 },
+        { "label": "L'intérêt composé ne s'applique qu'aux emprunts, jamais à l'épargne.", "score": 0 },
+        { "label": "Il n'y a pas de différence pratique entre les deux sur plusieurs années.", "score": 0 }
+      ],
+      "axe": "Finance personnelle",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Dans un crédit à mensualités constantes, la part de la mensualité consacrée aux intérêts est généralement, au début du crédit :",
+      "help": "Les intérêts d'une période se calculent sur le capital qu'il reste encore à rembourser.",
+      "options": [
+        { "label": "Plus élevée qu'en fin de crédit, car les intérêts se calculent sur un capital restant dû encore important.", "score": 1 },
+        { "label": "Toujours nulle, seul le capital est remboursé au début.", "score": 0 },
+        { "label": "Identique à chaque mensualité du début à la fin.", "score": 0 },
+        { "label": "Plus faible qu'en fin de crédit.", "score": 0 }
+      ],
+      "axe": "Finance personnelle",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Un budget mensuel prévoit 1 500 € de revenus et 1 350 € de dépenses fixes et variables. Quel montant reste disponible pour l'épargne ce mois-ci ?",
+      "help": "Soustrayez le total des dépenses du total des revenus.",
+      "options": [
+        { "label": "150 €", "score": 1 },
+        { "label": "1 350 €", "score": 0 },
+        { "label": "1 500 €", "score": 0 },
+        { "label": "100 €", "score": 0 }
+      ],
+      "axe": "Finance personnelle",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Finance personnelle », dans le domaine « RAISONNEMENT NUMÉRIQUE & NUMÉRATIE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : intérêts, budget, épargne, crédit.\nFormat cible : 20 items contextualisés, 12 min.\nContenu cible : intérêts composés, taux, mensualités, inflation.\nCalcul cible (non implémenté ici) : score, recommandations.\nUsage décrit : inclusion financière, formation.\nOptions cibles : simulateur intégré.\nObjectif du domaine : évaluer la capacité à utiliser les nombres dans la vie professionnelle et personnelle\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en finance personnelle. Cet outil est un entraînement et un contrôle de connaissances factuelles sur les notions de base de la finance personnelle (intérêts simples et composés, mensualités, inflation, budget) : ce n'est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile, aucune norme professionnelle, ni aucun QI, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Finance personnelle » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (intérêts, mensualités, inflation, budget), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour s'entraîner sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure de QI ou d'aptitude générale, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "assessment",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +158,5 @@
       "Objectif du domaine": "évaluer la capacité à utiliser les nombres dans la vie professionnelle et personnelle"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

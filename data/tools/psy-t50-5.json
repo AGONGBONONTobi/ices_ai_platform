@@ -1,42 +1,42 @@
 {
   "id": "psy-t50-5",
-  "title": "Préparer — Climat & transition · T50.5",
+  "title": "Climat & transition · T50.5",
   "category": "STRATÉGIE & MANAGEMENT",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Climat & transition ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle décision ou situation réelle liée au climat ou à la transition en Afrique êtes-vous en train d'évaluer ?",
+      "help": "Décrivez une situation précise et actuelle (projet, pays, secteur concerné). Cet outil analyse cette situation, pas votre personnalité.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : compréhension des enjeux climatiques africains. Ne renseignez pas de score supposé.",
+      "question": "Quelles informations climatiques ou de financement avez-vous déjà recueillies ?",
+      "help": "Indiquez vos sources (étude d'impact, bailleur, contact local) et les montants ou conditions déjà évoqués, dans l'ordre où ils sont arrivés si possible.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si cette analyse climatique est incomplète ou déséquilibrée ?",
+      "help": "Investissement engagé, réputation, impact sur les communautés locales, réversibilité de la décision.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai devez-vous trancher ?",
+      "placeholder": "Exemple : décision à prendre d'ici vendredi",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Climat & transition », dans le domaine « PROSPECTIVE AFRIQUE & MARCHÉS ÉMERGENTS (RENFORCEMENT) ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : compréhension des enjeux climatiques africains.\nFormat cible : 12 cas, 10 min.\nContenu cible : adaptation, transition, financement, justice climatique.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : stratégie, investissement.\nOptions cibles : couplage avec Vague 1 (RSE) et Vague 2 (HSE).\nObjectif du domaine : approfondir la compréhension des dynamiques africaines et des marchés émergents — au-delà de la Vague 2 — pour les décideurs, investisseurs et organisations internationales\nGarde-fou du domaine : audit post-colonial obligatoire ; validation par experts africains ; normes locales propres ; pas de hiérarchisation culturelle ; lutte contre les stéréotypes\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller spécialisé dans les enjeux climatiques africains : adaptation, transition énergétique, financement climatique et justice climatique, pour éclairer une décision de stratégie ou d'investissement.\n\nSituation décrite par l'utilisateur :\nDécision ou situation : {decision}\nInformations climatiques ou de financement déjà recueillies : {elements_connus}\nEnjeu si cette analyse climatique est incomplète ou déséquilibrée : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite les dimensions d'adaptation, de transition, de financement et de justice climatique qui concernent la décision envisagée, et précise pour chacune si elle est documentée par l'utilisateur ou simplement supposée. Vérifie si l'analyse distingue bien les mesures d'adaptation locale des mesures de transition ou d'atténuation, et si elle tient compte de qui supporte le coût et qui bénéficie du financement évoqué. Propose des questions de décision : quelles parties prenantes locales seraient directement affectées par ce projet ou cet investissement, et ont-elles été consultées ou prises en compte ? Quelles sources permettraient de vérifier les montants, les conditions de financement ou les risques climatiques mentionnés avant de trancher ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque enjeu climatique identifié avec les questions de décision à se poser, et les points clés à retenir avant de trancher.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "audit post-colonial obligatoire ; validation par experts africains ; normes locales propres ; pas de hiérarchisation culturelle ; lutte contre les stéréotypes"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

@@ -1,42 +1,42 @@
 {
   "id": "psy-t21-4",
-  "title": "Préparer — Positionnement & avantage concurrentiel · T21.4",
+  "title": "Positionnement & avantage concurrentiel · T21.4",
   "category": "STRATÉGIE & MANAGEMENT",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Positionnement & avantage concurrentiel ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle décision réelle de positionnement ou de construction d'avantage concurrentiel souhaitez-vous analyser ?",
+      "help": "Décrivez l'offre, le marché et la décision de positionnement à préparer, anonymisé si besoin.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : identification et construction d’un avantage. Ne renseignez pas de score supposé.",
+      "question": "Que savez-vous déjà sur la position actuelle de votre offre face aux concurrents ?",
+      "help": "Prix, coûts, éléments de différenciation, niche visée, écosystème de partenaires.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si le positionnement choisi ne constitue pas un avantage défendable ?",
+      "help": "Guerre des prix, perte de différenciation, avantage facilement copié.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai ce positionnement doit-il être arrêté ?",
+      "placeholder": "Exemple : lancement de l'offre prévu dans trois mois",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Positionnement & avantage concurrentiel », dans le domaine « STRATÉGIE & ANALYSE CONCURRENTIELLE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : identification et construction d’un avantage.\nFormat cible : 10 cas, 12 min.\nContenu cible : coût, différenciation, niche, écosystème.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : direction marketing/stratégie.\nOptions cibles : couplage avec D23 (marketing).\nObjectif du domaine : évaluer les compétences d’analyse stratégique et de formulation de choix\nGarde-fou du domaine : les cas doivent être fictifs ou anonymisés ; pas d’usage pour évaluer un salarié sur des données réelles de son employeur\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en stratégie spécialisé dans le positionnement et la construction d'un avantage concurrentiel : par les coûts, par la différenciation, par une niche, ou par un écosystème de partenaires difficile à répliquer.\n\nSituation décrite par l'utilisateur :\nDécision de positionnement à analyser : {decision}\nÉléments déjà connus : {elements_connus}\nEnjeu si l'avantage n'est pas défendable : {enjeu}\nÉchéance : {echeance}\n\nIdentifie dans la situation décrite quel type d'avantage est visé ou possible (coût, différenciation, niche, écosystème) et évalue sa soutenabilité réelle face aux concurrents mentionnés. Explique concrètement ce qui rendrait cet avantage difficile à copier, ou au contraire fragile. Propose des questions de décision concrètes : cet avantage résiste-t-il si un concurrent baisse ses prix ou copie la différenciation en moins d'un an ? La niche visée est-elle assez grande pour être viable, ou trop étroite pour durer ? Quel élément de l'écosystème (partenaires, données, réseau) serait le plus coûteux à reconstruire pour un concurrent ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque repère identifié avec les questions de décision à se poser, et les points clés à retenir avant de trancher.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "les cas doivent être fictifs ou anonymisés ; pas d’usage pour évaluer un salarié sur des données réelles de son employeur"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

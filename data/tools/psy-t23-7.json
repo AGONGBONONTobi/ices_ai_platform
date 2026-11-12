@@ -1,42 +1,42 @@
 {
   "id": "psy-t23-7",
-  "title": "Préparer — Growth expérimental · T23.7",
+  "title": "Growth expérimental · T23.7",
   "category": "MARKETING & COMMERCIAL",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Growth expérimental ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle expérience ou test growth réel devez-vous concevoir ou prioriser (nouvelle fonctionnalité, test A/B, changement de pricing) ?",
+      "help": "Décrivez le contexte produit réel et la décision précise à trancher sur cette expérience.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à concevoir et prioriser des expériences. Ne renseignez pas de score supposé.",
+      "question": "Quelles hypothèses, données préliminaires ou résultats d'expériences passées avez-vous déjà ?",
+      "help": "Indiquez les hypothèses déjà formulées et ce qui les a inspirées (données, retours clients, intuition).",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si cette expérience est mal conçue ou arrêtée trop tôt ou trop tard ?",
+      "help": "Temps d'équipe engagé, crédibilité des futurs tests, décision produit prise sur une base fausse.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai devez-vous trancher ?",
+      "placeholder": "Exemple : lancement du test prévu lundi prochain",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Growth expérimental », dans le domaine « MARKETING & GROWTH ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à concevoir et prioriser des expériences.\nFormat cible : 6 cas de test, 12 min.\nContenu cible : hypothèses, ICE/RICE, taille d’échantillon, arrêt.\nCalcul cible (non implémenté ici) : score + qualité des hypothèses.\nUsage décrit : équipes growth.\nOptions cibles : simulation de backlog d’expériences.\nObjectif du domaine : évaluer les compétences opérationnelles en marketing et croissance\nGarde-fou du domaine : items neutres vis-à-vis des plateformes ; pas de contenu trompeur\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un consultant growth spécialisé dans la conception et la priorisation d'expériences : formulation d'hypothèses testables, priorisation ICE/RICE, dimensionnement d'échantillon et critères d'arrêt — la discipline qui évite de lancer des tests qui ne pourront jamais être concluants.\n\nSituation décrite par l'utilisateur :\nExpérience à concevoir ou prioriser : {decision}\nÉléments déjà en main : {elements_connus}\nEnjeu si la décision est mauvaise : {enjeu}\nÉchéance : {echeance}\n\nAnalyse CETTE situation en vérifiant si l'expérience décrite part d'une hypothèse testable et falsifiable (si X alors Y, mesuré par Z) plutôt que d'une simple idée à essayer. Évalue la priorisation annoncée (impact, confiance, effort) et la cohérence entre la taille d'échantillon disponible et la durée prévue du test. Pose les questions de vérification : l'hypothèse formulée peut-elle être prouvée fausse, ou est-elle tellement vague qu'elle sera « confirmée » quoi qu'il arrive ? Le critère d'arrêt (durée, taille d'échantillon, seuil de signification) a-t-il été fixé avant le lancement ou sera-t-il décidé après en fonction du résultat ? Cette expérience est-elle prioritaire par rapport aux autres idées du backlog selon un calcul explicite plutôt qu'une préférence personnelle ? Que se passe-t-il si le résultat est négatif : l'hypothèse sera-t-elle vraiment abandonnée ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque repère identifié avec les questions de décision à se poser, et les points clés à retenir avant de trancher.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "items neutres vis-à-vis des plateformes ; pas de contenu trompeur"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

@@ -1,69 +1,148 @@
 {
   "id": "psy-t4-4",
-  "title": "Préparer — Probabilités & risque · T4.4",
+  "title": "Probabilités & risque · T4.4",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Probabilités & risque ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "On lance un dé à 6 faces non biaisé. Quelle est la probabilité d'obtenir un nombre pair ?",
+      "help": "Comptez combien de faces du dé portent un nombre pair, sur un total de 6 faces.",
+      "options": [
+        { "label": "1/2 (50 %)", "score": 1 },
+        { "label": "1/3", "score": 0 },
+        { "label": "1/6", "score": 0 },
+        { "label": "2/3", "score": 0 }
+      ],
+      "axe": "Probabilités & risque",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Une pièce de monnaie équilibrée est lancée 4 fois de suite et tombe sur « face » les 4 fois. Quelle est la probabilité d'obtenir « face » au 5e lancer ?",
+      "help": "Chaque lancer d'une pièce équilibrée est indépendant des lancers précédents.",
+      "options": [
+        { "label": "1/2, car chaque lancer est indépendant des précédents.", "score": 1 },
+        { "label": "Très faible, car il est improbable d'obtenir 5 fois « face » de suite.", "score": 0 },
+        { "label": "Supérieure à 1/2, car la pièce est « due » pour un résultat différent.", "score": 0 },
+        { "label": "0, car on ne peut pas obtenir 5 fois le même résultat.", "score": 0 }
+      ],
+      "axe": "Probabilités & risque",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : raisonnement probabiliste, risque. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Dans une loterie, chaque numéro a la même probabilité d'être tiré à chaque tirage, indépendamment des tirages précédents. Un numéro n'est pas sorti depuis 50 tirages. Quelle affirmation est correcte ?",
+      "help": "L'indépendance des tirages signifie que le hasard n'a pas de mémoire des tirages passés.",
+      "options": [
+        { "label": "Ce numéro a exactement la même probabilité de sortir au prochain tirage que n'importe quel autre numéro.", "score": 1 },
+        { "label": "Ce numéro a plus de chances de sortir parce qu'il est « en retard ».", "score": 0 },
+        { "label": "Ce numéro a moins de chances de sortir parce qu'il n'est pas sorti récemment.", "score": 0 },
+        { "label": "La probabilité augmente mécaniquement à chaque tirage manqué.", "score": 0 }
+      ],
+      "axe": "Probabilités & risque",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Une urne contient 3 boules rouges et 7 boules bleues. On tire une boule au hasard. Quelle est la probabilité de tirer une boule rouge ?",
+      "help": "Rapportez le nombre de boules rouges au nombre total de boules dans l'urne.",
+      "options": [
+        { "label": "3/10 (30 %)", "score": 1 },
+        { "label": "7/10", "score": 0 },
+        { "label": "3/7", "score": 0 },
+        { "label": "1/3", "score": 0 }
+      ],
+      "axe": "Probabilités & risque",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un test médical est positif chez 90 % des personnes réellement malades, et une maladie ne touche que 1 % de la population. Un résultat positif à ce test signifie-t-il automatiquement que la personne est malade avec une quasi-certitude ?",
+      "help": "Pensez au nombre de personnes saines testées, bien plus nombreuses que les personnes malades, et au nombre de faux positifs que cela peut produire.",
+      "options": [
+        { "label": "Non, car avec une maladie rare, même un test fiable peut produire un nombre significatif de faux positifs parmi les nombreuses personnes saines testées.", "score": 1 },
+        { "label": "Oui, un résultat positif signifie presque toujours que la personne est malade.", "score": 0 },
+        { "label": "Oui, car la fiabilité du test à 90 % garantit la certitude du diagnostic.", "score": 0 },
+        { "label": "Le taux de maladie dans la population n'a aucune influence sur l'interprétation du résultat.", "score": 0 }
+      ],
+      "axe": "Probabilités & risque",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "On tire une carte dans un jeu de 52 cartes, qui contient 4 as et 4 rois. Quelle est la probabilité de tirer un as OU un roi ?",
+      "help": "Les événements « tirer un as » et « tirer un roi » ne peuvent pas se produire en même temps sur une seule carte.",
+      "options": [
+        { "label": "8/52 (soit 2/13)", "score": 1 },
+        { "label": "4/52", "score": 0 },
+        { "label": "16/52", "score": 0 },
+        { "label": "1/52", "score": 0 }
+      ],
+      "axe": "Probabilités & risque",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Deux événements A et B sont indépendants. La probabilité de A est 0,5 et celle de B est 0,4. Quelle est la probabilité que A ET B se produisent tous les deux ?",
+      "help": "Pour deux événements indépendants, la probabilité de leur conjonction se calcule par multiplication.",
+      "options": [
+        { "label": "0,20 (20 %)", "score": 1 },
+        { "label": "0,90 (90 %)", "score": 0 },
+        { "label": "0,10 (10 %)", "score": 0 },
+        { "label": "0,45 (45 %)", "score": 0 }
+      ],
+      "axe": "Probabilités & risque",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Probabilités & risque », dans le domaine « RAISONNEMENT NUMÉRIQUE & NUMÉRATIE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : raisonnement probabiliste, risque.\nFormat cible : 18 items, 12 min.\nContenu cible : probabilités simples, conditionnelles, biais du joueur.\nCalcul cible (non implémenté ici) : score, biais détectés.\nUsage décrit : décision, assurance, finance, santé.\nOptions cibles : scénarios de décision sous risque.\nObjectif du domaine : évaluer la capacité à utiliser les nombres dans la vie professionnelle et personnelle\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en raisonnement probabiliste appliqué. Cet outil est un entraînement et un contrôle de connaissances factuelles sur les probabilités simples, les probabilités conditionnelles et les pièges classiques de raisonnement face au hasard (comme le biais du joueur) : ce n'est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile, aucune norme professionnelle, ni aucun QI, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Probabilités & risque » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (calcul de probabilités simples, indépendance des événements, lecture d'un faux positif), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour s'entraîner sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure de QI ou d'aptitude générale, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "assessment",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +158,5 @@
       "Objectif du domaine": "évaluer la capacité à utiliser les nombres dans la vie professionnelle et personnelle"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

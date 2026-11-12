@@ -1,69 +1,206 @@
 {
   "id": "psy-t6-7",
-  "title": "Préparer — Raisonnement scientifique & causalité · T6.7",
+  "title": "Raisonnement scientifique & causalité · T6.7",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Raisonnement scientifique & causalité ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : distinction corrélation/causalité, contrôle, échantillonnage. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Raisonnement scientifique & causalité », dans le domaine « PENSÉE CRITIQUE & ÉVALUATION DE L’INFORMATION ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : distinction corrélation/causalité, contrôle, échantillonnage.\nFormat cible : 18 items, 12 min.\nContenu cible : variables confondantes, biais de sélection, réplication.\nCalcul cible (non implémenté ici) : score, erreurs causales.\nUsage décrit : santé, politique publique, data.\nOptions cibles : cas d’étude sectoriels.\nObjectif du domaine : mesurer la capacité à juger la qualité de l’information et des raisonnements — compétence clé à l’ère de l’IA générative\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Une étude observe que les villes qui comptent plus de pompiers connaissent aussi plus d’incendies importants. Peut-on en conclure que les pompiers causent les incendies ?",
+      "help": "Demandez-vous s’il n’existe pas une troisième variable qui expliquerait les deux observations à la fois.",
+      "options": [
+        {
+          "label": "Non : il s’agit probablement d’une variable confondante (plus d’incendies importants justifie l’affectation de plus de pompiers), pas d’une causalité des pompiers vers les incendies.",
+          "score": 1
+        },
+        {
+          "label": "Oui, la corrélation observée prouve que les pompiers causent les incendies.",
+          "score": 0
+        },
+        {
+          "label": "Oui, car corrélation et causalité sont toujours équivalentes.",
+          "score": 0
+        },
+        {
+          "label": "Impossible à dire sans savoir combien de pompiers il y a exactement.",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement scientifique & causalité",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Qu’est-ce qu’une variable confondante dans une étude observationnelle ?",
+      "help": "Elle agit sur les deux phénomènes observés en même temps, sans être elle-même la cause directe recherchée.",
+      "options": [
+        {
+          "label": "Une variable extérieure liée à la fois à la cause supposée et à l’effet observé, qui peut expliquer une corrélation sans qu’il y ait de lien causal direct entre les deux.",
+          "score": 1
+        },
+        {
+          "label": "Une variable qui n’a jamais aucune influence sur les résultats.",
+          "score": 0
+        },
+        {
+          "label": "Le nom donné à la variable que l’on cherche à mesurer en priorité.",
+          "score": 0
+        },
+        {
+          "label": "Une erreur de saisie dans les données.",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement scientifique & causalité",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Pourquoi un essai contrôlé randomisé (avec répartition aléatoire des participants entre groupes) permet-il de mieux établir un lien de causalité qu’une simple étude observationnelle ?",
+      "help": "Le tirage au hasard agit sur la répartition de facteurs qu’on ne mesure pas forcément soi-même.",
+      "options": [
+        {
+          "label": "Parce que la randomisation répartit en moyenne équitablement les facteurs confondants connus et inconnus entre les groupes, isolant mieux l’effet du facteur étudié.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu’elle élimine totalement le besoin de contrôler quoi que ce soit d’autre.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu’elle garantit automatiquement un échantillon de grande taille.",
+          "score": 0
+        },
+        {
+          "label": "Parce que les participants savent toujours quel traitement ils reçoivent, ce qui fiabilise les résultats.",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement scientifique & causalité",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Un sondage en ligne volontaire sur les habitudes alimentaires attire surtout des personnes très intéressées par la nutrition. Quel type de biais cela illustre-t-il ?",
+      "help": "Ce biais concerne la composition de l’échantillon, pas l’interprétation des résultats.",
+      "options": [
+        {
+          "label": "Un biais de sélection : l’échantillon n’est pas représentatif de la population générale.",
+          "score": 1
+        },
+        {
+          "label": "Un biais de confirmation.",
+          "score": 0
+        },
+        {
+          "label": "Une erreur de causalité inversée.",
+          "score": 0
+        },
+        {
+          "label": "Un effet de halo.",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement scientifique & causalité",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Pourquoi la réplication d’un résultat scientifique par des équipes indépendantes est-elle importante ?",
+      "help": "Un résultat isolé peut avoir plusieurs origines possibles, pas seulement un effet réel.",
+      "options": [
+        {
+          "label": "Parce qu’un résultat unique peut être dû au hasard, à une erreur méthodologique ou à un biais propre à une équipe ; la réplication renforce la confiance dans sa robustesse.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu’un seul résultat publié est toujours suffisant pour établir une vérité scientifique définitive.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la réplication est une simple formalité administrative sans valeur scientifique.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu’elle garantit que l’étude initiale était falsifiée.",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement scientifique & causalité",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Deux événements se succèdent dans le temps (A puis B). Le simple fait que A précède B suffit-il à prouver que A cause B ?",
+      "help": "Le nom latin de cette erreur classique signifie littéralement « après cela, donc causé par cela ».",
+      "options": [
+        {
+          "label": "Non, la succession temporelle est nécessaire mais pas suffisante pour établir une causalité (erreur dite « post hoc, ergo propter hoc »).",
+          "score": 1
+        },
+        {
+          "label": "Oui, la succession temporelle est à elle seule une preuve suffisante de causalité.",
+          "score": 0
+        },
+        {
+          "label": "Non, car la temporalité n’a jamais aucun rapport avec la causalité.",
+          "score": 0
+        },
+        {
+          "label": "Oui, mais seulement si A et B se produisent dans le même pays.",
+          "score": 0
+        }
+      ],
+      "axe": "Raisonnement scientifique & causalité",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en méthodologie scientifique. Cet outil est un contrôle de connaissances factuelles sur le raisonnement scientifique et la causalité (corrélation/causalité, variables confondantes, biais de sélection, réplication) : ce n’est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Raisonnement scientifique & causalité » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (distinction corrélation/causalité, variables confondantes, biais de sélection, intérêt de la réplication), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +216,5 @@
       "Objectif du domaine": "mesurer la capacité à juger la qualité de l’information et des raisonnements — compétence clé à l’ère de l’IA générative"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

@@ -1,69 +1,148 @@
 {
   "id": "psy-t5-6",
-  "title": "Préparer — Métaphores & langage figuré · T5.6",
+  "title": "Métaphores & langage figuré · T5.6",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Métaphores & langage figuré ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Que signifie l'expression « avoir le cœur sur la main » ?",
+      "help": "Pensez au geste symbolique de tendre son cœur aux autres.",
+      "options": [
+        { "label": "Être généreux, prêt à aider les autres.", "score": 1 },
+        { "label": "Être malade du cœur.", "score": 0 },
+        { "label": "Être avare et égoïste.", "score": 0 },
+        { "label": "Être très stressé avant un examen.", "score": 0 }
+      ],
+      "axe": "Métaphores & langage figuré",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Le proverbe « Petit à petit, l'oiseau fait son nid » signifie :",
+      "help": "Pensez à la façon dont un oiseau construit son nid, brindille après brindille.",
+      "options": [
+        { "label": "On arrive à ses objectifs par des efforts progressifs et répétés.", "score": 1 },
+        { "label": "Il ne faut jamais remettre à demain ce qu'on peut faire aujourd'hui.", "score": 0 },
+        { "label": "Les petits oiseaux construisent toujours de grands nids.", "score": 0 },
+        { "label": "Il vaut mieux abandonner un projet trop ambitieux.", "score": 0 }
+      ],
+      "axe": "Métaphores & langage figuré",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : compréhension de l’implicite. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Dans la phrase « Quelle belle journée pour un pique-nique ! » dite sous une pluie battante, quelle figure de style est utilisée ?",
+      "help": "Le décalage entre les mots prononcés et la réalité observée est caractéristique d'une figure précise.",
+      "options": [
+        { "label": "L'ironie", "score": 1 },
+        { "label": "La métaphore", "score": 0 },
+        { "label": "La comparaison", "score": 0 },
+        { "label": "L'hyperbole", "score": 0 }
+      ],
+      "axe": "Métaphores & langage figuré",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Que signifie l'expression imagée « jeter l'éponge » ?",
+      "help": "L'expression vient du monde de la boxe, où ce geste met fin au combat.",
+      "options": [
+        { "label": "Abandonner, renoncer à poursuivre un effort ou une lutte.", "score": 1 },
+        { "label": "Nettoyer soigneusement une pièce.", "score": 0 },
+        { "label": "Prendre une décision rapide et audacieuse.", "score": 0 },
+        { "label": "Commencer un nouveau projet avec enthousiasme.", "score": 0 }
+      ],
+      "axe": "Métaphores & langage figuré",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Dans « Ce roman est un véritable océan d'émotions », quelle figure de style relie « roman » et « océan » ?",
+      "help": "Il n'y a pas de mot de comparaison comme « comme » : les deux éléments sont directement assimilés l'un à l'autre.",
+      "options": [
+        { "label": "Une métaphore", "score": 1 },
+        { "label": "Une litote", "score": 0 },
+        { "label": "Une antithèse", "score": 0 },
+        { "label": "Une anaphore", "score": 0 }
+      ],
+      "axe": "Métaphores & langage figuré",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Que signifie généralement le proverbe « Qui sème le vent récolte la tempête » ?",
+      "help": "Pensez à l'idée d'une conséquence disproportionnée par rapport à l'acte initial.",
+      "options": [
+        { "label": "Les actes imprudents ou provocateurs entraînent des conséquences graves pour celui qui les commet.", "score": 1 },
+        { "label": "Il faut toujours observer la météo avant de semer.", "score": 0 },
+        { "label": "Le travail agricole est toujours récompensé rapidement.", "score": 0 },
+        { "label": "Il vaut mieux ne jamais prendre de risques dans la vie.", "score": 0 }
+      ],
+      "axe": "Métaphores & langage figuré",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Quand quelqu'un dit, d'un ton las, « Super, encore une réunion qui aurait pu être un simple e-mail… », que faut-il comprendre au-delà du sens littéral des mots ?",
+      "help": "Le mot « Super » contredit ici le ton et la situation décrite.",
+      "options": [
+        { "label": "La personne exprime, de façon ironique, son agacement face à une réunion jugée inutile.", "score": 1 },
+        { "label": "La personne est sincèrement enthousiaste à l'idée de cette réunion.", "score": 0 },
+        { "label": "La personne demande officiellement l'annulation de toutes les réunions.", "score": 0 },
+        { "label": "La personne n'a aucune opinion sur cette réunion.", "score": 0 }
+      ],
+      "axe": "Métaphores & langage figuré",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Métaphores & langage figuré », dans le domaine « COMPRÉHENSION VERBALE & LANGAGE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : compréhension de l’implicite.\nFormat cible : 18 items, 10 min.\nContenu cible : métaphores, ironie, proverbes, sous-entendus.\nCalcul cible (non implémenté ici) : score, erreurs littérales.\nUsage décrit : communication, négociation, interculturel.\nOptions cibles : items culturellement adaptés.\nObjectif du domaine : évaluer la maîtrise de la langue et la capacité à traiter l’information écrite\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en langue et en expressions figurées du français. Cet outil est un entraînement et un contrôle de connaissances factuelles sur la compréhension de l'implicite (métaphores, ironie, proverbes, sous-entendus) : ce n'est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile, aucune norme professionnelle, ni aucun QI, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Métaphores & langage figuré » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (sens des expressions imagées, des proverbes, repérage de l'ironie), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour s'entraîner sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure de QI ou d'aptitude générale, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "assessment",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +158,5 @@
       "Objectif du domaine": "évaluer la maîtrise de la langue et la capacité à traiter l’information écrite"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

@@ -1,42 +1,42 @@
 {
   "id": "psy-t28-7",
-  "title": "Préparer — Culture sécurité & amélioration continue · T28.7",
+  "title": "Culture sécurité & amélioration continue · T28.7",
   "category": "GESTION DES RISQUES",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Culture sécurité & amélioration continue ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle situation réelle liée à un retour d'expérience, un presque-accident ou une amélioration de sécurité souhaitez-vous analyser ?",
+      "help": "Décrivez l'événement ou le presque-accident concerné, et le contexte dans lequel il s'est produit.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : attitude vis-à-vis de l’amélioration et du retour d’expérience. Ne renseignez pas de score supposé.",
+      "question": "Qu'est-ce qui s'est déjà passé (presque-accident, incident mineur) et quelles actions ont déjà été envisagées ou mises en place ?",
+      "help": "Indiquez les causes déjà identifiées et les actions correctives déjà discutées ou appliquées.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si cet enseignement n'est pas exploité ?",
+      "help": "Risque de récidive, pour cette équipe ou pour d'autres équipes exposées au même risque.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai ce retour d'expérience doit-il être traité ?",
+      "placeholder": "Exemple : analyse à restituer avant la prochaine réunion sécurité",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Culture sécurité & amélioration continue », dans le domaine « SÉCURITÉ, HSE & RISQUES OPÉRATIONNELS ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : attitude vis-à-vis de l’amélioration et du retour d’expérience.\nFormat cible : 15 items, 8 min.\nContenu cible : RETEX, presque-accidents, amélioration.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : maturité HSE.\nOptions cibles : benchmark sectoriel anonymisé.\nObjectif du domaine : évaluer la perception du risque, la culture sécurité et la conformité aux procédures dans les environnements à risque\nGarde-fou du domaine : jamais de refus d’affectation sur la seule base du score ; couplage obligatoire avec évaluation ergonomique et médicale ; non-discrimination\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en prévention des risques spécialisé dans la culture sécurité et l'amélioration continue : l'exploitation des retours d'expérience et des presque-accidents pour prévenir une récidive, au-delà du simple constat de l'incident.\n\nSituation décrite par l'utilisateur :\nRetour d'expérience à analyser : {decision}\nCauses et actions déjà envisagées : {elements_connus}\nEnjeu si l'enseignement n'est pas exploité : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite l'événement ou le presque-accident en cause, les causes déjà identifiées et les actions déjà envisagées ou mises en place. Signale si l'analyse s'arrête à une cause immédiate sans interroger les causes plus profondes (organisation, procédure, formation). Propose des questions de préparation : quelle cause profonde, au-delà du geste individuel, a pu contribuer à cet événement ? Quelle action corrective a réellement été mise en place, et a-t-elle été vérifiée dans le temps ? Comment cet enseignement sera-t-il partagé avec d'autres équipes exposées au même risque ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque repère identifié avec les questions de préparation à se poser, et les points clés à retenir avant de clore ce retour d'expérience.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "jamais de refus d’affectation sur la seule base du score ; couplage obligatoire avec évaluation ergonomique et médicale ; non-discrimination"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

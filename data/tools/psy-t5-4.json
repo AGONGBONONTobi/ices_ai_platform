@@ -1,69 +1,148 @@
 {
   "id": "psy-t5-4",
-  "title": "Préparer — Inférence & compréhension de texte · T5.4",
+  "title": "Inférence & compréhension de texte · T5.4",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Inférence & compréhension de texte ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Texte : « Après plusieurs mois de sécheresse, les récoltes ont été particulièrement faibles cette année. Les agriculteurs de la région s'inquiètent pour leurs revenus des prochains mois. » Quelle est l'idée principale de ce texte ?",
+      "help": "Cherchez l'information centrale autour de laquelle les deux phrases s'organisent.",
+      "options": [
+        { "label": "La sécheresse a entraîné de mauvaises récoltes, ce qui inquiète les agriculteurs pour leurs revenus futurs.", "score": 1 },
+        { "label": "Les agriculteurs se réjouissent d'une récolte exceptionnelle cette année.", "score": 0 },
+        { "label": "La région n'a connu aucune difficulté climatique particulière.", "score": 0 },
+        { "label": "Les revenus des agriculteurs ont déjà fortement augmenté cette année.", "score": 0 }
+      ],
+      "axe": "Inférence & compréhension de texte",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Texte : « Marie regarda sa montre pour la troisième fois en cinq minutes, puis se leva pour aller voir par la fenêtre si le bus arrivait. » Que peut-on raisonnablement inférer de l'état de Marie ?",
+      "help": "Le texte ne dit jamais explicitement ce que ressent Marie : il faut le déduire de ses gestes répétés.",
+      "options": [
+        { "label": "Marie est impatiente ou inquiète d'attendre le bus.", "score": 1 },
+        { "label": "Marie est totalement indifférente à l'heure.", "score": 0 },
+        { "label": "Marie vient d'arriver et n'attend personne.", "score": 0 },
+        { "label": "Marie a décidé de ne plus jamais prendre le bus.", "score": 0 }
+      ],
+      "axe": "Inférence & compréhension de texte",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : compréhension littérale et inférentielle. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Texte : « Bien sûr, parce que recommencer le projet depuis le début à la dernière minute, c'est exactement ce dont on avait besoin. » Quel est le ton de cette phrase ?",
+      "help": "Comparez ce que la phrase dit littéralement avec ce qu'une telle situation inspirerait réellement.",
+      "options": [
+        { "label": "Ironique", "score": 1 },
+        { "label": "Enthousiaste et sincère", "score": 0 },
+        { "label": "Neutre et factuel", "score": 0 },
+        { "label": "Triste et résigné", "score": 0 }
+      ],
+      "axe": "Inférence & compréhension de texte",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Texte : « Le rapport conclut que les résultats observés ne permettent pas, à ce stade, de confirmer ni d'infirmer l'hypothèse initiale. » Quelle affirmation reflète fidèlement ce texte ?",
+      "help": "Le texte ne prend volontairement aucune position tranchée sur l'hypothèse.",
+      "options": [
+        { "label": "Le rapport reste prudent et ne tranche pas sur la validité de l'hypothèse.", "score": 1 },
+        { "label": "Le rapport confirme clairement l'hypothèse initiale.", "score": 0 },
+        { "label": "Le rapport rejette totalement l'hypothèse initiale.", "score": 0 },
+        { "label": "Le rapport ne mentionne aucune hypothèse.", "score": 0 }
+      ],
+      "axe": "Inférence & compréhension de texte",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Texte : « Pourriez-vous, quand vous aurez un instant, jeter un œil au dossier ? Il n'y a évidemment aucune urgence. » Quelle est l'intention la plus probable de l'auteur de ce message ?",
+      "help": "Le ton poli et mesuré suggère une intention précise, malgré la formule « aucune urgence ».",
+      "options": [
+        { "label": "Demander poliment que le dossier soit traité, tout en adoptant un ton mesuré.", "score": 1 },
+        { "label": "Exiger que le dossier soit traité immédiatement et de façon urgente.", "score": 0 },
+        { "label": "Informer que le dossier a déjà été traité.", "score": 0 },
+        { "label": "Annuler la demande de traitement du dossier.", "score": 0 }
+      ],
+      "axe": "Inférence & compréhension de texte",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Texte : « Le village, autrefois animé par son marché hebdomadaire, ne compte plus aujourd'hui qu'une poignée de commerces fermés la moitié de l'année. » Quelle inférence peut-on raisonnablement tirer de ce texte ?",
+      "help": "Comparez la situation décrite dans le passé à celle décrite dans le présent.",
+      "options": [
+        { "label": "L'activité commerciale du village a nettement décliné au fil du temps.", "score": 1 },
+        { "label": "Le marché hebdomadaire du village attire plus de monde que jamais.", "score": 0 },
+        { "label": "Le nombre de commerces a fortement augmenté récemment.", "score": 0 },
+        { "label": "Le texte ne permet aucune comparaison entre le passé et le présent.", "score": 0 }
+      ],
+      "axe": "Inférence & compréhension de texte",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Texte : « Il a fini le marathon en moins de trois heures, sans jamais s'être entraîné sérieusement auparavant, dit-elle avec un sourire en coin. » Quel est le ton le plus probable de cette remarque ?",
+      "help": "Le détail « avec un sourire en coin » donne une indication sur la façon dont la phrase doit être comprise.",
+      "options": [
+        { "label": "Un ton teinté de scepticisme ou d'ironie, suggérant un doute sur l'affirmation.", "score": 1 },
+        { "label": "Un ton purement admiratif et sans aucune réserve.", "score": 0 },
+        { "label": "Un ton neutre et purement informatif.", "score": 0 },
+        { "label": "Un ton de colère envers la personne évoquée.", "score": 0 }
+      ],
+      "axe": "Inférence & compréhension de texte",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Inférence & compréhension de texte », dans le domaine « COMPRÉHENSION VERBALE & LANGAGE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : compréhension littérale et inférentielle.\nFormat cible : 5 textes, 25 questions, 20 min.\nContenu cible : idée principale, inférence, ton, intention.\nCalcul cible (non implémenté ici) : score global + sous-scores.\nUsage décrit : admission, recrutement, formation.\nOptions cibles : textes sectoriels ; adaptation au niveau.\nObjectif du domaine : évaluer la maîtrise de la langue et la capacité à traiter l’information écrite\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en compréhension de l'écrit. Cet outil est un entraînement et un contrôle de connaissances factuelles sur la compréhension littérale et inférentielle de courts textes (idée principale, inférence, ton, intention) : ce n'est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile, aucune norme professionnelle, ni aucun QI, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Inférence & compréhension de texte » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (idée principale, inférence, ton, intention de l'auteur), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour s'entraîner sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure de QI ou d'aptitude générale, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "assessment",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +158,5 @@
       "Objectif du domaine": "évaluer la maîtrise de la langue et la capacité à traiter l’information écrite"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

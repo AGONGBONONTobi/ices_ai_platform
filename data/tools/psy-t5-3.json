@@ -1,69 +1,148 @@
 {
   "id": "psy-t5-3",
-  "title": "Préparer — Grammaire & syntaxe · T5.3",
+  "title": "Grammaire & syntaxe · T5.3",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
   "inputs": [
     {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Grammaire & syntaxe ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "name": "q1",
+      "type": "select",
+      "question": "Quelle phrase respecte correctement l'accord du participe passé ?",
+      "help": "Le participe passé employé avec « avoir » s'accorde avec le complément d'objet direct lorsqu'il est placé avant le verbe.",
+      "options": [
+        { "label": "Les fleurs que j'ai cueillies sont magnifiques.", "score": 1 },
+        { "label": "Les fleurs que j'ai cueilli sont magnifiques.", "score": 0 },
+        { "label": "Les fleurs que j'ai cueillis sont magnifiques.", "score": 0 },
+        { "label": "Les fleurs que j'ai cueillie sont magnifiques.", "score": 0 }
+      ],
+      "axe": "Grammaire & syntaxe",
       "required": true
     },
     {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
+      "name": "q2",
+      "type": "select",
+      "question": "Quelle phrase utilise correctement le mode subjonctif après « il faut que » ?",
+      "help": "« Il faut que » impose un mode verbal particulier au verbe qui suit.",
+      "options": [
+        { "label": "Il faut que tu viennes demain.", "score": 1 },
+        { "label": "Il faut que tu viens demain.", "score": 0 },
+        { "label": "Il faut que tu viendras demain.", "score": 0 },
+        { "label": "Il faut que tu venais demain.", "score": 0 }
+      ],
+      "axe": "Grammaire & syntaxe",
       "required": true
     },
     {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : correction, structure de phrase. Ne renseignez pas de score supposé.",
-      "required": false
+      "name": "q3",
+      "type": "select",
+      "question": "Quelle phrase est correctement ponctuée pour relier deux propositions complètes et liées par le sens ?",
+      "help": "Deux phrases complètes et grammaticalement autonomes ne se relient pas par une simple virgule en français standard.",
+      "options": [
+        { "label": "Il a terminé son travail ; il peut donc partir.", "score": 1 },
+        { "label": "Il a terminé son travail, il peut donc partir.", "score": 0 },
+        { "label": "Il a terminé son travail : il peut, donc partir.", "score": 0 },
+        { "label": "Il a terminé, son travail il peut donc partir.", "score": 0 }
+      ],
+      "axe": "Grammaire & syntaxe",
+      "required": true
     },
     {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
+      "name": "q4",
+      "type": "select",
+      "question": "Quelle phrase respecte la règle d'accord du participe passé avec l'auxiliaire « avoir » lorsque le complément d'objet direct suit le verbe ?",
+      "help": "Quand le complément d'objet direct est placé après le verbe, le participe passé ne s'accorde pas avec lui.",
+      "options": [
+        { "label": "Elle a mangé une pomme.", "score": 1 },
+        { "label": "Elle a mangée une pomme.", "score": 0 },
+        { "label": "Elle a mangés une pomme.", "score": 0 },
+        { "label": "Elle a mangées une pomme.", "score": 0 }
+      ],
+      "axe": "Grammaire & syntaxe",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Quelle phrase introduit correctement une proposition relative à l'aide du pronom relatif adapté ?",
+      "help": "Le choix du pronom relatif dépend de la fonction qu'occupe l'élément repris dans la proposition relative.",
+      "options": [
+        { "label": "Le livre dont je t'ai parlé est sur la table.", "score": 1 },
+        { "label": "Le livre que je t'ai parlé est sur la table.", "score": 0 },
+        { "label": "Le livre où je t'ai parlé est sur la table.", "score": 0 },
+        { "label": "Le livre qui je t'ai parlé est sur la table.", "score": 0 }
+      ],
+      "axe": "Grammaire & syntaxe",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Quelle est la forme correcte du verbe « finir » au futur simple, à la première personne du pluriel ?",
+      "help": "Pensez à la terminaison propre à « nous » au futur simple.",
+      "options": [
+        { "label": "Nous finirons", "score": 1 },
+        { "label": "Nous finiront", "score": 0 },
+        { "label": "Nous finissons", "score": 0 },
+        { "label": "Nous finirions", "score": 0 }
+      ],
+      "axe": "Grammaire & syntaxe",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Quelle phrase respecte l'usage standard de l'accord sujet-verbe avec l'expression « la plupart de » ?",
+      "help": "Avec « la plupart des + nom pluriel », le verbe s'accorde habituellement avec ce nom pluriel.",
+      "options": [
+        { "label": "La plupart des élèves ont réussi l'examen.", "score": 1 },
+        { "label": "La plupart des élèves a réussi l'examen.", "score": 0 },
+        { "label": "La plupart de l'élève ont réussi l'examen.", "score": 0 },
+        { "label": "La plupart des élèves ai réussi l'examen.", "score": 0 }
+      ],
+      "axe": "Grammaire & syntaxe",
+      "required": true
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Grammaire & syntaxe », dans le domaine « COMPRÉHENSION VERBALE & LANGAGE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : correction, structure de phrase.\nFormat cible : 25 items, 10 min.\nContenu cible : accords, temps, ponctuation, syntaxe complexe.\nCalcul cible (non implémenté ici) : score, types d’erreurs.\nUsage décrit : rédaction professionnelle, recrutement.\nOptions cibles : correction automatique par IA.\nObjectif du domaine : évaluer la maîtrise de la langue et la capacité à traiter l’information écrite\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es formateur en grammaire et en syntaxe du français. Cet outil est un entraînement et un contrôle de connaissances factuelles sur la correction grammaticale et la structure de phrase (accords, temps verbaux, ponctuation, syntaxe complexe) : ce n'est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile, aucune norme professionnelle, ni aucun QI, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Grammaire & syntaxe » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des règles testées (accords, conjugaison, ponctuation, propositions relatives), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour s'entraîner sur les règles où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure de QI ou d'aptitude générale, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "assessment",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +158,5 @@
       "Objectif du domaine": "évaluer la maîtrise de la langue et la capacité à traiter l’information écrite"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

@@ -1,69 +1,232 @@
 {
   "id": "psy-t22-6",
-  "title": "Préparer — Économie comportementale & politiques publiques · T22.6",
+  "title": "Économie comportementale & politiques publiques · T22.6",
   "category": "MARKETING & COMMERCIAL",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Économie comportementale & politiques publiques ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : application aux politiques publiques. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Économie comportementale & politiques publiques », dans le domaine « ÉCONOMIE COMPORTEMENTALE & CONSOMMATEUR ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : application aux politiques publiques.\nFormat cible : 8 cas, 12 min.\nContenu cible : vaccination, épargne, fiscalité, inclusion financière.\nCalcul cible (non implémenté ici) : score + rubrique éthique.\nUsage décrit : secteur public (couplage D32).\nOptions cibles : cas africains (mobile money, inclusion).\nObjectif du domaine : mesurer la compréhension des biais et la capacité à concevoir des décisions et offres fondées sur la science comportementale\nGarde-fou du domaine : distinguer nudge éthique et manipulation ; charte d’usage obligatoire\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Le programme « Save More Tomorrow » propose aux salariés de préengager dès aujourd'hui une augmentation future de leur taux d'épargne retraite, synchronisée avec leurs prochaines hausses de salaire. Cette approche contourne principalement :",
+      "help": "L'augmentation de l'épargne n'est jamais ressentie comme une perte immédiate sur le salaire actuel.",
+      "options": [
+        {
+          "label": "L'aversion à la perte liée à une baisse immédiate du salaire disponible",
+          "score": 1
+        },
+        {
+          "label": "Une obligation fiscale existante",
+          "score": 0
+        },
+        {
+          "label": "Une interdiction réglementaire de dépenser",
+          "score": 0
+        },
+        {
+          "label": "Une baisse des taux d'intérêt bancaires",
+          "score": 0
+        }
+      ],
+      "axe": "Économie comportementale & politiques publiques",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "L'inscription automatique (« opt-out ») à un plan d'épargne retraite d'entreprise, où le salarié doit activement se désinscrire pour ne pas y participer, augmente fortement les taux de participation par rapport à une inscription volontaire. Ce résultat s'explique principalement par :",
+      "help": "Ce qui change ici, c'est ce qui se passe si la personne ne fait rien du tout.",
+      "options": [
+        {
+          "label": "L'effet de l'option par défaut",
+          "score": 1
+        },
+        {
+          "label": "L'aversion à la perte",
+          "score": 0
+        },
+        {
+          "label": "La preuve sociale",
+          "score": 0
+        },
+        {
+          "label": "L'ancrage fiscal",
+          "score": 0
+        }
+      ],
+      "axe": "Économie comportementale & politiques publiques",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Des études sur l'envoi de rappels par SMS avant un rendez-vous de vaccination montrent généralement que ces rappels :",
+      "help": "L'effet mesuré dans ces études concerne le taux de présence effective au rendez-vous.",
+      "options": [
+        {
+          "label": "Augmentent significativement le taux de présentation au rendez-vous",
+          "score": 1
+        },
+        {
+          "label": "N'ont aucun effet mesurable",
+          "score": 0
+        },
+        {
+          "label": "Diminuent la confiance envers la vaccination",
+          "score": 0
+        },
+        {
+          "label": "Remplacent la nécessité de prendre un rendez-vous",
+          "score": 0
+        }
+      ],
+      "axe": "Économie comportementale & politiques publiques",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Simplifier les formulaires fiscaux et pré-remplir les informations déjà connues par l'administration (déclaration pré-remplie) tend à :",
+      "help": "L'effort cognitif demandé au contribuable est réduit, sans changer les règles fiscales elles-mêmes.",
+      "options": [
+        {
+          "label": "Augmenter le taux de déclaration correcte et dans les délais",
+          "score": 1
+        },
+        {
+          "label": "Réduire mécaniquement les recettes fiscales de l'État",
+          "score": 0
+        },
+        {
+          "label": "Faciliter la fraude fiscale",
+          "score": 0
+        },
+        {
+          "label": "N'avoir aucun effet observable",
+          "score": 0
+        }
+      ],
+      "axe": "Économie comportementale & politiques publiques",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Les services de mobile money (comme M-Pesa) dans les stratégies d'inclusion financière permettent avant tout d'étendre l'accès aux services financiers à des populations qui :",
+      "help": "L'enjeu principal de l'inclusion financière est l'accès pour ceux qui en étaient jusque-là exclus.",
+      "options": [
+        {
+          "label": "N'avaient pas accès à un compte bancaire traditionnel",
+          "score": 1
+        },
+        {
+          "label": "Possédaient déjà un compte bancaire classique",
+          "score": 0
+        },
+        {
+          "label": "Cherchaient avant tout à éviter toute traçabilité",
+          "score": 0
+        },
+        {
+          "label": "Étaient exclusivement des grandes entreprises",
+          "score": 0
+        }
+      ],
+      "axe": "Économie comportementale & politiques publiques",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Un message de renouvellement d'assurance maladie formulé comme « vous perdrez votre couverture si vous ne renouvelez pas avant le [date] » plutôt que comme un gain à venir, est généralement plus efficace pour la conformité, en grande partie grâce à :",
+      "help": "Le message met l'accent sur ce que la personne risque de perdre si elle n'agit pas.",
+      "options": [
+        {
+          "label": "L'aversion à la perte",
+          "score": 1
+        },
+        {
+          "label": "La preuve sociale",
+          "score": 0
+        },
+        {
+          "label": "L'ancrage",
+          "score": 0
+        },
+        {
+          "label": "L'effet de halo",
+          "score": 0
+        }
+      ],
+      "axe": "Économie comportementale & politiques publiques",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Les interventions de politique publique fondées sur l'économie comportementale (« nudges ») sont, par définition, conçues pour :",
+      "help": "La définition même du nudge exclut toute suppression de choix.",
+      "options": [
+        {
+          "label": "Préserver la liberté de choix tout en orientant vers une option jugée bénéfique, sans l'interdire",
+          "score": 1
+        },
+        {
+          "label": "Interdire systématiquement les comportements jugés nuisibles",
+          "score": 0
+        },
+        {
+          "label": "Remplacer la législation existante",
+          "score": 0
+        },
+        {
+          "label": "Imposer une option unique obligatoire",
+          "score": 0
+        }
+      ],
+      "axe": "Économie comportementale & politiques publiques",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en économie comportementale appliquée au marketing. Cet outil est un contrôle de connaissances factuelles sur « l'application de l'économie comportementale aux politiques publiques (épargne retraite, rappels de vaccination, fiscalité, inclusion financière) » : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure pas votre propre sensibilité aux biais de décision, seulement votre connaissance des concepts, et il ne produit aucun percentile, aucune norme professionnelle ni aucun diagnostic de personnalité.\n\nLe score global et le score de l'axe « Économie comportementale & politiques publiques » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (épargne retraite, rappels de vaccination, fiscalité, inclusion financière), sans comparaison à une norme externe et sans jugement sur la personnalité ou la vulnérabilité du répondant face aux biais ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, qu'il ne mesure pas la sensibilité personnelle du répondant aux biais testés, et qu'il ne reflète que les réponses données aujourd'hui.\n\nRappelle, si pertinent, que les techniques testées ici doivent être utilisées de façon éthique : ne recommande jamais une pratique relevant de la manipulation ou des dark patterns, et distingue toujours le nudge éthique de la manipulation. N'invente aucune norme, aucun percentile, aucun classement professionnel, aucun QI. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +243,5 @@
       "Garde-fou du domaine": "distinguer nudge éthique et manipulation ; charte d’usage obligatoire"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

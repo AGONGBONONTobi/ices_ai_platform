@@ -1,69 +1,206 @@
 {
   "id": "psy-t40-2",
-  "title": "Préparer — Risque vs ambiguïté · T40.2",
+  "title": "Risque vs ambiguïté · T40.2",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Risque vs ambiguïté ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à distinguer risque connu et ambiguïté radicale. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Risque vs ambiguïté », dans le domaine « DÉCISION SOUS INCERTITUDE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à distinguer risque connu et ambiguïté radicale.\nFormat cible : 12 scénarios, 10 min.\nContenu cible : loteries, événements rares, inconnues inconnues.\nCalcul cible (non implémenté ici) : score, aversion à l’ambiguïté.\nUsage décrit : innovation, finance, politiques.\nOptions cibles : scénarios de rupture (crise, black swan).\nObjectif du domaine : évaluer la capacité à décider rationnellement dans l’incertitude, l’ambiguïté et le risque — compétence critique pour les décideurs, investisseurs, assureurs, responsables publics\nGarde-fou du domaine : N3 ; ne remplace pas une décision humaine collégiale ; audit de biais ; supervision\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "En théorie de la décision, quelle est la distinction entre « risque » (au sens de Knight) et « ambiguïté » ?",
+      "help": "La différence porte sur le degré de connaissance des probabilités elles-mêmes.",
+      "options": [
+        {
+          "label": "Le risque correspond à une situation où les probabilités des issues sont connues ou objectivement estimables ; l'ambiguïté correspond à une situation où même ces probabilités sont inconnues ou mal définies.",
+          "score": 1
+        },
+        {
+          "label": "Les deux termes sont rigoureusement synonymes en théorie de la décision.",
+          "score": 0
+        },
+        {
+          "label": "Le risque désigne l'absence totale d'information, et l'ambiguïté désigne une information parfaite.",
+          "score": 0
+        },
+        {
+          "label": "L'ambiguïté ne concerne que les décisions collectives, jamais les décisions individuelles.",
+          "score": 0
+        }
+      ],
+      "axe": "Risque vs ambiguïté",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Dans le paradoxe d'Ellsberg, des personnes préfèrent généralement tirer une boule d'une urne dont elles connaissent exactement la composition (ex. 50 rouges, 50 noires) plutôt que d'une urne de composition inconnue, même quand l'espérance de gain est identique dans les deux cas. Que révèle ce choix ?",
+      "help": "Le choix porte sur une préférence qui n'est pas justifiée par l'espérance de gain.",
+      "options": [
+        {
+          "label": "Une aversion à l'ambiguïté : les personnes préfèrent un risque dont elles connaissent les probabilités à une situation où ces probabilités sont inconnues, même sans que cela soit rationnellement justifié par l'espérance de gain.",
+          "score": 1
+        },
+        {
+          "label": "Une préférence rationnelle strictement fondée sur l'espérance de gain, qui serait plus élevée dans l'urne connue.",
+          "score": 0
+        },
+        {
+          "label": "Une indifférence totale entre les deux urnes, contredisant le paradoxe.",
+          "score": 0
+        },
+        {
+          "label": "Une preuve que les probabilités inconnues sont toujours objectivement plus favorables.",
+          "score": 0
+        }
+      ],
+      "axe": "Risque vs ambiguïté",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Un « événement rare » dans une distribution de probabilité connue (par exemple, un tirage à 1 chance sur 1000) se distingue d'un « cygne noir » (black swan) principalement parce que :",
+      "help": "L'un des deux était déjà prévu par le modèle, même avec une faible probabilité ; l'autre non.",
+      "options": [
+        {
+          "label": "Le cygne noir désigne un événement qu'on n'avait pas anticipé dans le modèle de probabilité lui-même (une inconnue inconnue), alors que l'événement rare reste prévu par le modèle, même avec une faible probabilité.",
+          "score": 1
+        },
+        {
+          "label": "Un cygne noir a, par définition, une probabilité strictement nulle de se produire.",
+          "score": 0
+        },
+        {
+          "label": "Les deux notions désignent exactement la même chose, sans aucune différence.",
+          "score": 0
+        },
+        {
+          "label": "Un événement rare ne peut jamais être intégré dans un modèle de probabilité.",
+          "score": 0
+        }
+      ],
+      "axe": "Risque vs ambiguïté",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Pourquoi une « inconnue inconnue » (unknown unknown) pose-t-elle un défi différent d'un risque connu, même rare ?",
+      "help": "Ce qu'on n'a même pas envisagé ne peut, par construction, recevoir aucune probabilité préalable.",
+      "options": [
+        {
+          "label": "Parce qu'on ne peut, par définition, ni l'anticiper dans un modèle ni lui attribuer une probabilité avant qu'elle ne se manifeste, contrairement à un risque identifié à l'avance.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'une inconnue inconnue a toujours une probabilité supérieure à 50 %.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'elle est, par construction, toujours moins grave qu'un risque connu.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'elle peut toujours être calculée avec les mêmes outils statistiques qu'un risque connu.",
+          "score": 0
+        }
+      ],
+      "axe": "Risque vs ambiguïté",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Face à une situation d'ambiguïté réelle (probabilités inconnues), pourquoi est-il risqué d'assigner malgré tout une probabilité numérique précise à chaque scénario ?",
+      "help": "L'incertitude porte ici sur la valeur même de la probabilité, pas seulement sur le résultat.",
+      "options": [
+        {
+          "label": "Parce que cela donne une fausse impression de précision et de maîtrise, alors que l'incertitude porte justement sur la valeur même de cette probabilité.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'assigner une probabilité numérique est toujours interdit par la théorie de la décision.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'une probabilité numérique précise élimine automatiquement toute ambiguïté réelle.",
+          "score": 0
+        },
+        {
+          "label": "Parce que les probabilités numériques ne peuvent exister que dans des situations de risque, jamais être estimées du tout.",
+          "score": 0
+        }
+      ],
+      "axe": "Risque vs ambiguïté",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Quelle est une implication pratique raisonnable de la distinction risque/ambiguïté pour un décideur en contexte d'innovation ou de crise ?",
+      "help": "Pensez à ce qui protège davantage lorsque les probabilités elles-mêmes sont incertaines.",
+      "options": [
+        {
+          "label": "Prévoir des marges de sécurité et des options réversibles plus larges face à une situation ambiguë que face à un risque bien quantifié, précisément parce que les probabilités ne sont pas fiables dans le premier cas.",
+          "score": 1
+        },
+        {
+          "label": "Traiter systématiquement toute situation ambiguë exactement comme un risque bien quantifié, en assignant les mêmes probabilités.",
+          "score": 0
+        },
+        {
+          "label": "Ignorer toute situation ambiguë au profit des seuls risques quantifiables.",
+          "score": 0
+        },
+        {
+          "label": "Considérer qu'une situation ambiguë devient automatiquement un risque quantifiable après un délai suffisant.",
+          "score": 0
+        }
+      ],
+      "axe": "Risque vs ambiguïté",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en théorie de la décision face au risque et à l'ambiguïté. Cet outil est un contrôle de connaissances factuelles sur « Risque vs ambiguïté » (domaine « DÉCISION SOUS INCERTITUDE ») : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence générale, ni une aptitude de décision ou de personnalité, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Risque vs ambiguïté » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (distinction risque / ambiguïté (Knight), paradoxe d'Ellsberg, inconnues inconnues, aversion à l'ambiguïté), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure d'intelligence générale ou de capacité de décision, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "N3 ; ne remplace pas une décision humaine collégiale ; audit de biais ; supervision"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

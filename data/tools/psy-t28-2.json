@@ -1,42 +1,42 @@
 {
   "id": "psy-t28-2",
-  "title": "Préparer — Conformité aux procédures · T28.2",
+  "title": "Conformité aux procédures · T28.2",
   "category": "GESTION DES RISQUES",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Conformité aux procédures ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle situation de travail où une procédure de sécurité (permis de travail, consigne, protocole) risque d'être contournée souhaitez-vous analyser ?",
+      "help": "Décrivez la situation précise : quelle procédure, quel contexte de production ou de délai.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : disposition à respecter les règles de sécurité. Ne renseignez pas de score supposé.",
+      "question": "Quelle procédure est concernée, et quel raccourci ou quelle pression de production a déjà été observé ou proposé ?",
+      "help": "Indiquez ce qui est exigé par la procédure et ce qui se passe réellement sur le terrain.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si la procédure n'est pas respectée dans ce cas précis ?",
+      "help": "Conséquence possible pour les personnes, conformité réglementaire, responsabilité.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai cette situation doit-elle être arbitrée ?",
+      "placeholder": "Exemple : décision attendue avant le début du chantier",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Conformité aux procédures », dans le domaine « SÉCURITÉ, HSE & RISQUES OPÉRATIONNELS ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : disposition à respecter les règles de sécurité.\nFormat cible : 15 dilemmes, 8 min.\nContenu cible : pression de production, raccourcis, permis de travail.\nCalcul cible (non implémenté ici) : score + détection de désirabilité.\nUsage décrit : culture sécurité.\nOptions cibles : items alignés ISO 45001.\nObjectif du domaine : évaluer la perception du risque, la culture sécurité et la conformité aux procédures dans les environnements à risque\nGarde-fou du domaine : jamais de refus d’affectation sur la seule base du score ; couplage obligatoire avec évaluation ergonomique et médicale ; non-discrimination\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en prévention des risques spécialisé dans la conformité aux procédures de sécurité : la tension entre pression de production, raccourcis pris sur le terrain et respect des permis de travail ou des consignes.\n\nSituation décrite par l'utilisateur :\nSituation de conformité à analyser : {decision}\nProcédure concernée et raccourci déjà observé : {elements_connus}\nEnjeu du non-respect de la procédure : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite la procédure concernée, le raccourci envisagé ou déjà pris, et la pression de production qui le motive. Analyse l'écart entre ce que la procédure exige et ce qui se passe réellement sur le terrain. Propose des questions de préparation : quel risque concret ce raccourci fait-il courir, et à qui ? Quelle alternative permettrait de tenir le délai sans s'écarter de la procédure ? Qui a l'autorité pour arbitrer entre le délai de production et le respect de la consigne ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque repère identifié avec les questions de préparation à se poser, et les points clés à retenir avant d'agir.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "jamais de refus d’affectation sur la seule base du score ; couplage obligatoire avec évaluation ergonomique et médicale ; non-discrimination"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

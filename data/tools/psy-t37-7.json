@@ -1,42 +1,42 @@
 {
   "id": "psy-t37-7",
-  "title": "Préparer — Design thinking appliqué · T37.7",
+  "title": "Design thinking appliqué · T37.7",
   "category": "INNOVATION & R&D",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Design thinking appliqué ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quel problème réel avez-vous besoin de résoudre en choisissant une solution concrète parmi plusieurs pistes ?",
+      "help": "Décrivez une situation précise et actuelle (anonymisée si besoin). Cet outil aide à choisir et affiner une solution pour CETTE situation, pas une mesure de votre créativité.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à appliquer une démarche centrée utilisateur. Ne renseignez pas de score supposé.",
+      "question": "Quelles idées ou pistes de solution avez-vous déjà sur la table ?",
+      "help": "Indiquez les options déjà envisagées, les contraintes connues et les avis déjà reçus, dans l'ordre où ils sont arrivés si possible.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si la solution retenue s'avère non viable ?",
+      "help": "Budget, délai, personnes concernées, réversibilité.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai devez-vous trancher sur une solution ?",
+      "placeholder": "Exemple : décision à prendre d'ici vendredi",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Design thinking appliqué », dans le domaine « CRÉATIVITÉ CONVERGENTE & INNOVATION ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à appliquer une démarche centrée utilisateur.\nFormat cible : 5 mini-cas, 12 min.\nContenu cible : empathie, définition, idéation, prototypage, test.\nCalcul cible (non implémenté ici) : complétude, pertinence, cohérence.\nUsage décrit : programmes de transformation, design produit.\nOptions cibles : simulation complète d’un sprint de design.\nObjectif du domaine : évaluer la capacité à transformer une idée en solution viable, à arbitrer et à faire aboutir un projet d’innovation\nGarde-fou du domaine : distinguer créativité (production) et innovation (mise en œuvre) ; ne pas confondre idée séduisante et solution viable\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en design thinking appliqué : la capacité à mener une démarche centrée utilisateur — comprendre, définir, générer des idées, prototyper et tester — sur un problème réel.\n\nSituation décrite par l'utilisateur :\nProblème à résoudre en choisissant une solution : {decision}\nPistes ou options déjà sur la table : {elements_connus}\nEnjeu si la solution retenue s'avère non viable : {enjeu}\nDélai disponible pour trancher : {echeance}\n\nApplique au problème décrit les étapes d'une démarche centrée utilisateur : ce qu'il faudrait comprendre de l'utilisateur concerné (empathie), une définition resserrée du problème réel à résoudre, des pistes d'idéation, une proposition de prototype simple à tester et la manière de le tester. Relie chaque étape aux éléments réellement fournis par l'utilisateur plutôt qu'à un cas générique.\n\nProduis une analyse structurée : une synthèse directe resituant le problème et l'arbitrage à opérer pour CETTE situation, des sections développant la démarche appliquée pour passer des pistes à une solution retenue et viable, et les points clés à retenir avant de valider cette solution.\n\nRappel impératif : cet outil est une aide à la décision et à la génération d'idées pour CETTE situation précise. Il ne mesure pas la créativité, une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "distinguer créativité (production) et innovation (mise en œuvre) ; ne pas confondre idée séduisante et solution viable"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

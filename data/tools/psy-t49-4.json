@@ -1,69 +1,206 @@
 {
   "id": "psy-t49-4",
-  "title": "Préparer — Biais de confirmation avancé · T49.4",
+  "title": "Biais de confirmation avancé · T49.4",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Biais de confirmation avancé ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à chercher activement des preuves contraires. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Biais de confirmation avancé », dans le domaine « PENSÉE CRITIQUE AVANCÉE (RENFORCEMENT) ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à chercher activement des preuves contraires.\nFormat cible : 10 tâches, 10 min.\nContenu cible : falsification, débat, hypothèses concurrentes.\nCalcul cible (non implémenté ici) : score, taux de recherche de contre-preuves.\nUsage décrit : science, audit, renseignement.\nOptions cibles : couplage avec D39 (biais cognitifs).\nObjectif du domaine : approfondir la pensée critique avec des modules avancés adaptés à l’ère de l’IA générative et de la désinformation de masse — au-delà de la Vague 1\nGarde-fou du domaine : N3 possible ; supervision humaine ; audit de biais ; droit à l’explication\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Face à deux hypothèses concurrentes expliquant un même phénomène, quelle démarche avancée permet de les départager le plus rigoureusement ?",
+      "help": "Cherchez une observation dont le résultat serait différent selon l’hypothèse vraie, pas une preuve compatible avec les deux.",
+      "options": [
+        {
+          "label": "Chercher une observation ou une expérience dont le résultat serait différent selon l’hypothèse vraie (test discriminant).",
+          "score": 1
+        },
+        {
+          "label": "Choisir l’hypothèse la plus simple à expliquer au public, indépendamment des preuves.",
+          "score": 0
+        },
+        {
+          "label": "Choisir l’hypothèse soutenue par l’autorité la plus reconnue, sans autre critère.",
+          "score": 0
+        },
+        {
+          "label": "Combiner les deux hypothèses en une moyenne, quelle que soit leur compatibilité logique.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de confirmation avancé",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Dans un débat contradictoire bien mené, chaque partie est invitée à énoncer les conditions qui, si elles étaient remplies, la feraient changer d’avis. Quel est l’intérêt de cet exercice ?",
+      "help": "Pensez à ce que cela empêche : s’accrocher à une position indépendamment des preuves.",
+      "options": [
+        {
+          "label": "Il force chaque partie à définir des critères de réfutation explicites pour sa propre position, ce qui limite le risque de s’accrocher à une opinion indépendamment des preuves contraires.",
+          "score": 1
+        },
+        {
+          "label": "Il n’a aucun intérêt, car une opinion ne devrait jamais changer une fois formée.",
+          "score": 0
+        },
+        {
+          "label": "Il garantit que les deux parties arriveront nécessairement à un accord.",
+          "score": 0
+        },
+        {
+          "label": "Il sert uniquement à prolonger artificiellement la durée du débat.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de confirmation avancé",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Un analyste de renseignement doit évaluer plusieurs hypothèses concurrentes sur un événement. La méthode dite « d’analyse des hypothèses concurrentes » recommande notamment de :",
+      "help": "La méthode insiste sur l’examen systématique de chaque hypothèse, pas uniquement de la préférée.",
+      "options": [
+        {
+          "label": "Lister explicitement toutes les hypothèses plausibles et rechercher pour chacune les preuves qui la contrediraient.",
+          "score": 1
+        },
+        {
+          "label": "Se concentrer uniquement sur l’hypothèse la plus probable a priori, sans examiner les autres.",
+          "score": 0
+        },
+        {
+          "label": "Éliminer d’emblée les hypothèses les moins plaisantes, indépendamment des preuves.",
+          "score": 0
+        },
+        {
+          "label": "Ne jamais réviser une hypothèse une fois qu’elle a été retenue au début de l’analyse.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de confirmation avancé",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Pourquoi le fait de chercher activement des contre-preuves à sa propre thèse est-il considéré comme une pratique avancée de rigueur, plutôt qu’un simple exercice académique ?",
+      "help": "Pensez à qui découvrirait sinon les failles d’un raisonnement, et à quel moment.",
+      "options": [
+        {
+          "label": "Parce qu’il permet de détecter les failles d’un raisonnement avant qu’un tiers ne les découvre, renforçant la fiabilité de la conclusion si elle résiste à l’épreuve.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu’il garantit que la thèse initiale sera toujours confirmée au final.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu’il permet d’éviter complètement toute remise en question future.",
+          "score": 0
+        },
+        {
+          "label": "Parce que chercher des contre-preuves n’a aucune utilité pratique en dehors du monde académique.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de confirmation avancé",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un expert change d’avis publiquement après avoir pris connaissance de nouvelles preuves solides contredisant sa position initiale. Comment interpréter ce changement d’un point de vue de rigueur intellectuelle ?",
+      "help": "Distinguez réviser une position face à des preuves nouvelles d’un simple revirement sans fondement.",
+      "options": [
+        {
+          "label": "Comme un signe de rigueur intellectuelle : réviser une position face à des preuves nouvelles et solides est cohérent avec une démarche critique.",
+          "score": 1
+        },
+        {
+          "label": "Comme une preuve que l’expert n’était pas compétent dès le départ.",
+          "score": 0
+        },
+        {
+          "label": "Comme un signe de faiblesse qui disqualifie systématiquement son avis sur tout sujet.",
+          "score": 0
+        },
+        {
+          "label": "Comme une preuve que la nouvelle position est nécessairement définitive et ne pourra plus jamais être révisée.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de confirmation avancé",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Quelle est la limite principale d’une approche qui ne teste qu’une seule hypothèse (la préférée), sans jamais la comparer explicitement à des hypothèses alternatives ?",
+      "help": "Pensez à ce qu’on ne peut pas savoir si on ne compare jamais les explications possibles entre elles.",
+      "options": [
+        {
+          "label": "Elle rend difficile de distinguer si les preuves trouvées confirment réellement cette hypothèse de façon spécifique, ou si elles seraient tout aussi compatibles avec une autre explication non examinée.",
+          "score": 1
+        },
+        {
+          "label": "Elle garantit une conclusion plus rapide et toujours plus fiable qu’une comparaison d’hypothèses.",
+          "score": 0
+        },
+        {
+          "label": "Elle n’a aucune limite si l’hypothèse de départ se révèle correcte a posteriori.",
+          "score": 0
+        },
+        {
+          "label": "Elle élimine tout risque de biais, par construction.",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de confirmation avancé",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en analyse rigoureuse d’hypothèses. Cet outil est un contrôle de connaissances factuelles sur le biais de confirmation avancé (tests discriminants entre hypothèses concurrentes, analyse des hypothèses concurrentes, révision face aux preuves) : ce n’est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Biais de confirmation avancé » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (tests discriminants entre hypothèses, analyse des hypothèses concurrentes, recherche active de contre-preuves, révision d’une position face aux preuves), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "N3 possible ; supervision humaine ; audit de biais ; droit à l’explication"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

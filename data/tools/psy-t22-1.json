@@ -1,69 +1,232 @@
 {
   "id": "psy-t22-1",
-  "title": "Préparer — Biais de décision du consommateur · T22.1",
+  "title": "Biais de décision du consommateur · T22.1",
   "category": "MARKETING & COMMERCIAL",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Biais de décision du consommateur ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : connaissance et détection des biais. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Biais de décision du consommateur », dans le domaine « ÉCONOMIE COMPORTEMENTALE & CONSOMMATEUR ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : connaissance et détection des biais.\nFormat cible : 20 items + cas, 10 min.\nContenu cible : ancrage, aversion à la perte, défaut, framing.\nCalcul cible (non implémenté ici) : score, typologie.\nUsage décrit : marketing, pricing.\nOptions cibles : items mis à jour selon la recherche récente (replications).\nObjectif du domaine : mesurer la compréhension des biais et la capacité à concevoir des décisions et offres fondées sur la science comportementale\nGarde-fou du domaine : distinguer nudge éthique et manipulation ; charte d’usage obligatoire\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Un commerçant affiche « Prix conseillé : 120 € » barré, puis « Votre prix : 59 € » en gros. Quel biais cette présentation exploite-t-elle principalement ?",
+      "help": "Pense au rôle du premier chiffre vu, qui sert de point de comparaison pour tout ce qui suit.",
+      "options": [
+        {
+          "label": "L'ancrage (le premier prix affiché sert de référence pour juger le second)",
+          "score": 1
+        },
+        {
+          "label": "L'aversion à la perte",
+          "score": 0
+        },
+        {
+          "label": "La preuve sociale",
+          "score": 0
+        },
+        {
+          "label": "L'effet de dotation",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de décision du consommateur",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Un site e-commerce affiche : « Ne perdez pas votre réduction de 20 %, elle expire ce soir ! » plutôt que « Gagnez 20 % de réduction si vous commandez ce soir ». Ce choix de formulation exploite :",
+      "help": "La formulation met l'accent sur ce que le client risque de perdre plutôt que sur ce qu'il pourrait gagner.",
+      "options": [
+        {
+          "label": "L'aversion à la perte (perdre quelque chose pèse plus que gagner l'équivalent)",
+          "score": 1
+        },
+        {
+          "label": "L'ancrage",
+          "score": 0
+        },
+        {
+          "label": "Le biais de confirmation",
+          "score": 0
+        },
+        {
+          "label": "L'effet de halo",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de décision du consommateur",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Sur un formulaire d'abonnement, la case « assurance annulation (+3 €/mois) » est précochée par défaut, et la majorité des clients la conservent sans la décocher. Ce phénomène illustre :",
+      "help": "Le comportement par défaut tend à devenir le choix retenu, même quand il reste possible de le changer.",
+      "options": [
+        {
+          "label": "L'effet de défaut (statu quo)",
+          "score": 1
+        },
+        {
+          "label": "L'aversion à la perte",
+          "score": 0
+        },
+        {
+          "label": "L'effet de rareté",
+          "score": 0
+        },
+        {
+          "label": "L'ancrage",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de décision du consommateur",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Un médicament est présenté comme « efficace à 90 % » plutôt que « inefficace dans 10 % des cas », bien que les deux énoncés soient statistiquement équivalents. Le changement de perception provoqué par la seule formulation s'appelle :",
+      "help": "La même information chiffrée, présentée positivement ou négativement, ne produit pas la même impression.",
+      "options": [
+        {
+          "label": "L'effet de cadrage (framing)",
+          "score": 1
+        },
+        {
+          "label": "L'effet de leurre (decoy)",
+          "score": 0
+        },
+        {
+          "label": "L'ancrage",
+          "score": 0
+        },
+        {
+          "label": "La preuve sociale",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de décision du consommateur",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un service propose trois forfaits : Basique (5 €, peu d'options), Standard (25 €, options moyennes) et Premium (27 €, toutes les options). Le forfait Standard, rarement choisi en soi, sert surtout à rendre le forfait Premium plus attractif par comparaison. Cette technique s'appelle :",
+      "help": "Un troisième choix volontairement peu avantageux peut servir uniquement à orienter la comparaison vers un autre choix.",
+      "options": [
+        {
+          "label": "L'effet de leurre (decoy effect)",
+          "score": 1
+        },
+        {
+          "label": "L'ancrage",
+          "score": 0
+        },
+        {
+          "label": "L'aversion à la perte",
+          "score": 0
+        },
+        {
+          "label": "L'effet de défaut",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de décision du consommateur",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Une bannière indique « Il ne reste plus que 2 articles en stock à ce prix ! ». Cette mention cherche à activer :",
+      "help": "Le message met en avant une quantité limitée et disponible pour peu de temps.",
+      "options": [
+        {
+          "label": "L'effet de rareté",
+          "score": 1
+        },
+        {
+          "label": "La preuve sociale",
+          "score": 0
+        },
+        {
+          "label": "L'ancrage",
+          "score": 0
+        },
+        {
+          "label": "L'aversion à la perte",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de décision du consommateur",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Une page produit affiche « 4,8/5 étoiles — plus de 10 000 clients satisfaits ». Ce type d'information mobilise principalement :",
+      "help": "Le message met en avant ce que beaucoup d'autres clients ont déjà pensé ou fait.",
+      "options": [
+        {
+          "label": "La preuve sociale",
+          "score": 1
+        },
+        {
+          "label": "L'autorité",
+          "score": 0
+        },
+        {
+          "label": "La réciprocité",
+          "score": 0
+        },
+        {
+          "label": "L'effet de rareté",
+          "score": 0
+        }
+      ],
+      "axe": "Biais de décision du consommateur",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en économie comportementale appliquée au marketing. Cet outil est un contrôle de connaissances factuelles sur « les biais de décision du consommateur (ancrage, aversion à la perte, effet de défaut, cadrage, effet de leurre, rareté, preuve sociale) » : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure pas votre propre sensibilité aux biais de décision, seulement votre connaissance des concepts, et il ne produit aucun percentile, aucune norme professionnelle ni aucun diagnostic de personnalité.\n\nLe score global et le score de l'axe « Biais de décision du consommateur » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (ancrage, aversion à la perte, effet de défaut, cadrage, effet de leurre, rareté, preuve sociale), sans comparaison à une norme externe et sans jugement sur la personnalité ou la vulnérabilité du répondant face aux biais ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, qu'il ne mesure pas la sensibilité personnelle du répondant aux biais testés, et qu'il ne reflète que les réponses données aujourd'hui.\n\nRappelle, si pertinent, que les techniques testées ici doivent être utilisées de façon éthique : ne recommande jamais une pratique relevant de la manipulation ou des dark patterns, et distingue toujours le nudge éthique de la manipulation. N'invente aucune norme, aucun percentile, aucun classement professionnel, aucun QI. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +243,5 @@
       "Garde-fou du domaine": "distinguer nudge éthique et manipulation ; charte d’usage obligatoire"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

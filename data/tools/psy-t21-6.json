@@ -1,42 +1,42 @@
 {
   "id": "psy-t21-6",
-  "title": "Préparer — Décision M&A & intégration · T21.6",
+  "title": "Décision M&A & intégration · T21.6",
   "category": "STRATÉGIE & MANAGEMENT",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Décision M&A & intégration ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle décision réelle de croissance externe (fusion, acquisition, rapprochement) souhaitez-vous analyser ?",
+      "help": "Décrivez l'opération envisagée et la décision à préparer, anonymisée si besoin.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : analyse d’opportunités de croissance externe. Ne renseignez pas de score supposé.",
+      "question": "Que savez-vous déjà sur la cible, les synergies attendues, le prix ou la culture de l'organisation visée ?",
+      "help": "Éléments de due diligence déjà disponibles, synergies estimées, écarts culturels identifiés.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si cette opération échoue ou si l'intégration est mal menée ?",
+      "help": "Destruction de valeur, perte de talents clés, choc culturel, surpaiement.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai cette décision doit-elle être prise ?",
+      "placeholder": "Exemple : offre à déposer avant la fin du mois",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Décision M&A & intégration », dans le domaine « STRATÉGIE & ANALYSE CONCURRENTIELLE ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : analyse d’opportunités de croissance externe.\nFormat cible : 6 cas, 15 min.\nContenu cible : due diligence, synergies, prix, intégration, culture.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : direction générale, private equity.\nOptions cibles : cas avec données financières simplifiées (couplage D11).\nObjectif du domaine : évaluer les compétences d’analyse stratégique et de formulation de choix\nGarde-fou du domaine : les cas doivent être fictifs ou anonymisés ; pas d’usage pour évaluer un salarié sur des données réelles de son employeur\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en stratégie spécialisé dans les décisions de croissance externe (fusions, acquisitions) et leur intégration : due diligence, évaluation des synergies, discipline de prix, plan d'intégration et compatibilité culturelle.\n\nSituation décrite par l'utilisateur :\nOpération à analyser : {decision}\nÉléments déjà connus : {elements_connus}\nEnjeu en cas d'échec ou de mauvaise intégration : {enjeu}\nÉchéance : {echeance}\n\nExamine dans la situation décrite les synergies annoncées et leur degré de certitude, le prix envisagé rapporté à ces synergies, et les signaux disponibles sur la compatibilité culturelle entre les deux organisations. Explique concrètement ce qui est étayé et ce qui reste une hypothèse non vérifiée. Propose des questions de décision concrètes : quelle part des synergies annoncées repose sur des hypothèses optimistes plutôt que sur des données vérifiées ? Quel est le prix maximum au-delà duquel l'opération détruit de la valeur même si les synergies se réalisent ? Quel risque culturel ou de perte de talents clés n'a pas encore été évalué ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque repère identifié avec les questions de décision à se poser, et les points clés à retenir avant de trancher.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "les cas doivent être fictifs ou anonymisés ; pas d’usage pour évaluer un salarié sur des données réelles de son employeur"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

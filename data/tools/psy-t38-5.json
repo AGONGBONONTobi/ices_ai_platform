@@ -1,69 +1,206 @@
 {
   "id": "psy-t38-5",
-  "title": "Préparer — Planification multi-étapes · T38.5",
+  "title": "Planification multi-étapes · T38.5",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Planification multi-étapes ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à planifier des séquences longues et dépendantes. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Planification multi-étapes », dans le domaine « RÉSOLUTION DE PROBLÈMES COMPLEXES ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à planifier des séquences longues et dépendantes.\nFormat cible : 5 cas de planification, 12 min.\nContenu cible : jalons, dépendances, risques, ressources.\nCalcul cible (non implémenté ici) : faisabilité, robustesse au changement.\nUsage décrit : gestion de programmes, PMO.\nOptions cibles : couplage Vague 1 (gestion de projets).\nObjectif du domaine : évaluer la capacité à analyser et résoudre des problèmes mal structurés, dynamiques et à multiples variables — compétence de plus en plus critique à l’ère des systèmes complexes et de l’IA\nGarde-fou du domaine : les cas doivent être non politiques et non sensibles ; éviter les scénarios stigmatisants\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Dans la méthode du chemin critique (critical path method), qu'appelle-t-on le « chemin critique » d'un projet ?",
+      "help": "Pensez à ce qui détermine réellement la durée minimale du projet.",
+      "options": [
+        {
+          "label": "La séquence de tâches dépendantes dont la durée totale détermine la durée minimale du projet : tout retard sur une tâche de ce chemin retarde l'ensemble du projet.",
+          "score": 1
+        },
+        {
+          "label": "La tâche la plus coûteuse du projet, indépendamment de sa durée.",
+          "score": 0
+        },
+        {
+          "label": "La liste de toutes les tâches du projet, classées par ordre alphabétique.",
+          "score": 0
+        },
+        {
+          "label": "Le chemin qui comporte le plus grand nombre de tâches, même si ce n'est pas le plus long en durée.",
+          "score": 0
+        }
+      ],
+      "axe": "Planification multi-étapes",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Une tâche B ne peut commencer que lorsque la tâche A est totalement terminée. Quel type de dépendance entre tâches cela illustre-t-il ?",
+      "help": "Le nom de la dépendance décrit la relation entre la fin de l'une et le début de l'autre.",
+      "options": [
+        {
+          "label": "Une dépendance fin-à-début (finish-to-start) : la fin de A est une condition du début de B.",
+          "score": 1
+        },
+        {
+          "label": "Une dépendance début-à-début (start-to-start) : A et B commencent obligatoirement en même temps.",
+          "score": 0
+        },
+        {
+          "label": "Une dépendance fin-à-fin (finish-to-finish) : A et B se terminent obligatoirement en même temps.",
+          "score": 0
+        },
+        {
+          "label": "L'absence de toute dépendance entre A et B.",
+          "score": 0
+        }
+      ],
+      "axe": "Planification multi-étapes",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Qu'appelle-t-on la « marge » (ou slack) d'une tâche qui n'est pas sur le chemin critique ?",
+      "help": "Il s'agit d'une latitude de retard, pas d'un budget ou d'un effectif.",
+      "options": [
+        {
+          "label": "Le délai dont cette tâche peut être retardée sans pour autant retarder la date de fin globale du projet.",
+          "score": 1
+        },
+        {
+          "label": "Le budget supplémentaire alloué uniquement aux tâches critiques.",
+          "score": 0
+        },
+        {
+          "label": "Le nombre de personnes affectées à la tâche.",
+          "score": 0
+        },
+        {
+          "label": "La durée totale de la tâche, exprimée en jours ouvrés.",
+          "score": 0
+        }
+      ],
+      "axe": "Planification multi-étapes",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Pourquoi un plan de projet strictement linéaire (sans aucune marge ni scénario alternatif) est-il considéré comme peu robuste aux imprévus ?",
+      "help": "Pensez à ce qui se propage d'une tâche à l'autre quand il n'y a aucune marge d'absorption.",
+      "options": [
+        {
+          "label": "Parce que le moindre retard sur une tâche dépendante se propage immédiatement sur toutes les tâches suivantes, sans marge d'absorption.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'un plan linéaire élimine par définition tout risque de retard.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'un plan de projet ne peut jamais comporter de tâches dépendantes entre elles.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'un plan sans marge garantit toujours une livraison plus rapide, sans contrepartie.",
+          "score": 0
+        }
+      ],
+      "axe": "Planification multi-étapes",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un jalon (milestone) dans un plan de projet correspond à :",
+      "help": "Un jalon marque un point dans le temps, pas une activité qui consomme des ressources.",
+      "options": [
+        {
+          "label": "Un point de contrôle à une date donnée, marquant l'achèvement d'une étape clé, mais sans durée propre (il ne consomme pas de ressources en lui-même).",
+          "score": 1
+        },
+        {
+          "label": "Une tâche comme une autre, avec sa propre durée et ses propres ressources affectées.",
+          "score": 0
+        },
+        {
+          "label": "La fin automatique du projet, quelle que soit son avancement réel.",
+          "score": 0
+        },
+        {
+          "label": "Un synonyme strict de chemin critique.",
+          "score": 0
+        }
+      ],
+      "axe": "Planification multi-étapes",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Pourquoi intégrer une marge de sécurité (buffer) à la fin d'une séquence de tâches critiques est-il une pratique recommandée en planification de risques ?",
+      "help": "La marge joue un rôle d'absorption des retards accumulés en amont.",
+      "options": [
+        {
+          "label": "Parce qu'elle absorbe une partie des retards cumulés sur les tâches précédentes avant qu'ils n'affectent la date de livraison finale.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'elle garantit que le projet ne connaîtra plus jamais aucun retard.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'elle remplace la nécessité d'identifier le chemin critique.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'une marge de sécurité doit toujours être placée au début du projet, jamais à la fin.",
+          "score": 0
+        }
+      ],
+      "axe": "Planification multi-étapes",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en gestion de projets. Cet outil est un contrôle de connaissances factuelles sur « Planification multi-étapes » (domaine « RÉSOLUTION DE PROBLÈMES COMPLEXES ») : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence générale, ni une aptitude de décision ou de personnalité, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Planification multi-étapes » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (chemin critique, dépendances entre tâches, marge (slack), jalons, marges de sécurité), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure d'intelligence générale ou de capacité de décision, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "les cas doivent être non politiques et non sensibles ; éviter les scénarios stigmatisants"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

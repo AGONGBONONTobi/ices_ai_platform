@@ -1,42 +1,42 @@
 {
   "id": "psy-t32-3",
-  "title": "Préparer — Budget & finances publiques · T32.3",
+  "title": "Budget & finances publiques · T32.3",
   "category": "OUTILS SECTORIELS SPÉCIALISÉS",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Budget & finances publiques ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle décision budgétaire ou financière publique réelle êtes-vous en train de préparer ?",
+      "help": "Décrivez le budget, le programme ou l'entité publique concernée et la décision à prendre.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : compréhension budgétaire. Ne renseignez pas de score supposé.",
+      "question": "Quels chiffres budgétaires (dotations, taux d'exécution, niveau de dette) avez-vous déjà en main ?",
+      "help": "Montants, taux d'exécution déjà connus, documents GFMIS ou rapports budgétaires disponibles.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si cette décision budgétaire s'avère mal calibrée ?",
+      "help": "Soutenabilité de la dette, continuité des services publics, respect des engagements communautaires (UEMOA/CEMAC).",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai la décision budgétaire doit-elle être arrêtée ?",
+      "placeholder": "Exemple : arbitrage budgétaire à rendre avant le conseil des ministres",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Budget & finances publiques », dans le domaine « SECTEUR PUBLIC & POLITIQUES PUBLIQUES ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : compréhension budgétaire.\nFormat cible : 12 cas, 12 min.\nContenu cible : budget, exécution, dette, GFMIS.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : gestion publique.\nOptions cibles : adaptation par pays (cadres UEMOA, CEMAC).\nObjectif du domaine : évaluer les compétences d’analyse, d’évaluation et de gestion publiques\nGarde-fou du domaine : interdiction absolue de tout scoring de loyauté politique, d’opinion ou d’appartenance ; uniquement compétences techniques, éthique professionnelle et méthodes\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en finances publiques spécialisé dans l'analyse budgétaire : la lecture d'un budget, de son exécution, du niveau d'endettement et des systèmes de gestion des finances publiques (GFMIS).\n\nSituation décrite par l'utilisateur :\nDécision ou situation : {decision}\nÉléments déjà en main : {elements_connus}\nEnjeu si la décision est mauvaise : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite le taux d'exécution budgétaire annoncé, le niveau de dette mentionné et les écarts entre prévisions et réalisations. Soulève des questions concrètes : le taux d'exécution budgétaire annoncé est-il cohérent avec la période de l'exercice en cours ? Le niveau de dette est-il mis en regard d'un ratio pertinent (dette/recettes, service de la dette) ? Les écarts entre prévisions et exécution sont-ils expliqués ou simplement constatés ? Quelles lignes budgétaires portent le plus de risque d'arbitrage en cours d'année ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque repère identifié avec les questions de décision à se poser, et les points clés à retenir avant de trancher.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "interdiction absolue de tout scoring de loyauté politique, d’opinion ou d’appartenance ; uniquement compétences techniques, éthique professionnelle et méthodes"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

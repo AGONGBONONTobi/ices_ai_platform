@@ -1,69 +1,232 @@
 {
   "id": "psy-t6-3",
-  "title": "Préparer — Détection de sophismes · T6.3",
+  "title": "Détection de sophismes · T6.3",
   "category": "PROFILS APPRENANTS & PÉDAGOGIE",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Détection de sophismes ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : reconnaissance des raisonnements fallacieux. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Détection de sophismes », dans le domaine « PENSÉE CRITIQUE & ÉVALUATION DE L’INFORMATION ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : reconnaissance des raisonnements fallacieux.\nFormat cible : 22 items, 12 min.\nContenu cible : homme de paille, pente glissante, appel à l’autorité, faux dilemme.\nCalcul cible (non implémenté ici) : score par type de sophisme.\nUsage décrit : négociation, communication, politique.\nOptions cibles : items générés par IA avec validation experte.\nObjectif du domaine : mesurer la capacité à juger la qualité de l’information et des raisonnements — compétence clé à l’ère de l’IA générative\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "A affirme : « Je pense qu’on devrait réduire un peu les dépenses publiques dans ce secteur. » B répond : « Donc tu veux laisser les gens mourir sans aide ! » Quel sophisme B commet-il ?",
+      "help": "B répond-il vraiment à la position de A, ou à une version déformée de celle-ci ?",
+      "options": [
+        {
+          "label": "L’homme de paille : B déforme la position de A en une version extrême, plus facile à attaquer.",
+          "score": 1
+        },
+        {
+          "label": "La pente glissante.",
+          "score": 0
+        },
+        {
+          "label": "L’appel à l’autorité.",
+          "score": 0
+        },
+        {
+          "label": "Le faux dilemme.",
+          "score": 0
+        }
+      ],
+      "axe": "Détection de sophismes",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "« Si on autorise les élèves à utiliser une calculatrice en classe, bientôt ils ne sauront plus compter du tout, puis ils ne sauront plus réfléchir, et la société s’effondrera. » Quel sophisme illustre cet enchaînement ?",
+      "help": "Chaque étape de la chaîne est-elle réellement démontrée comme inévitable ?",
+      "options": [
+        {
+          "label": "La pente glissante : une suite de conséquences catastrophiques non démontrées, présentées comme inévitables.",
+          "score": 1
+        },
+        {
+          "label": "L’homme de paille.",
+          "score": 0
+        },
+        {
+          "label": "Le faux dilemme.",
+          "score": 0
+        },
+        {
+          "label": "L’ad hominem.",
+          "score": 0
+        }
+      ],
+      "axe": "Détection de sophismes",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "« Cette star de cinéma recommande ce produit financier, donc c’est forcément un bon investissement. » Quel sophisme est en jeu ?",
+      "help": "La personne citée a-t-elle une expertise reconnue dans le domaine concerné ?",
+      "options": [
+        {
+          "label": "L’appel à une autorité non pertinente : la célébrité n’a pas d’expertise reconnue en finance.",
+          "score": 1
+        },
+        {
+          "label": "La pente glissante.",
+          "score": 0
+        },
+        {
+          "label": "Le faux dilemme.",
+          "score": 0
+        },
+        {
+          "label": "La généralisation hâtive.",
+          "score": 0
+        }
+      ],
+      "axe": "Détection de sophismes",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "« Soit vous êtes avec nous, soit vous êtes contre nous. » Quel sophisme cette phrase illustre-t-elle, en ignorant toute position intermédiaire ou nuancée ?",
+      "help": "Existe-t-il réellement seulement deux options possibles dans cette situation ?",
+      "options": [
+        {
+          "label": "Le faux dilemme.",
+          "score": 1
+        },
+        {
+          "label": "L’homme de paille.",
+          "score": 0
+        },
+        {
+          "label": "La pente glissante.",
+          "score": 0
+        },
+        {
+          "label": "L’appel à la popularité.",
+          "score": 0
+        }
+      ],
+      "axe": "Détection de sophismes",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "« Tu ne peux pas avoir raison sur le réchauffement climatique, tu n’as même pas de diplôme en sciences. » Ce raisonnement attaque la personne plutôt que son argument. Quel sophisme est-ce ?",
+      "help": "La qualité d’un argument dépend-elle du diplôme de celui qui le formule ?",
+      "options": [
+        {
+          "label": "L’ad hominem.",
+          "score": 1
+        },
+        {
+          "label": "L’appel à l’autorité légitime.",
+          "score": 0
+        },
+        {
+          "label": "La pente glissante.",
+          "score": 0
+        },
+        {
+          "label": "Le faux dilemme.",
+          "score": 0
+        }
+      ],
+      "axe": "Détection de sophismes",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "« Des millions de personnes utilisent ce remède, donc il doit être efficace. » Quel sophisme repose sur la popularité comme preuve de vérité ?",
+      "help": "Le nombre de personnes qui croient une chose la rend-il automatiquement vraie ?",
+      "options": [
+        {
+          "label": "L’appel à la popularité (argumentum ad populum).",
+          "score": 1
+        },
+        {
+          "label": "L’homme de paille.",
+          "score": 0
+        },
+        {
+          "label": "La pente glissante.",
+          "score": 0
+        },
+        {
+          "label": "L’appel à l’autorité légitime.",
+          "score": 0
+        }
+      ],
+      "axe": "Détection de sophismes",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "« Selon le consensus de centaines d’études climatologiques indépendantes et relues par des pairs, le réchauffement climatique est en grande partie d’origine humaine. » Pourquoi cet appel à l’autorité n’est-il pas un sophisme, contrairement à l’exemple de la star de cinéma vantant un produit financier ?",
+      "help": "Comparez la pertinence et la vérification de l’expertise invoquée dans les deux cas.",
+      "options": [
+        {
+          "label": "Parce que l’autorité invoquée est pertinente dans le domaine concerné, répétée et validée par un processus de relecture par les pairs, contrairement à une autorité sans expertise sur le sujet.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu’un grand nombre d’études suffit toujours à rendre un argument vrai, quel que soit leur sujet.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu’aucun appel à l’autorité n’est jamais un sophisme.",
+          "score": 0
+        },
+        {
+          "label": "Parce que le sujet traité est scientifique et non commercial.",
+          "score": 0
+        }
+      ],
+      "axe": "Détection de sophismes",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en pensée critique. Cet outil est un contrôle de connaissances factuelles sur la reconnaissance des sophismes courants (homme de paille, pente glissante, appel à l’autorité, faux dilemme, ad hominem, appel à la popularité) : ce n’est PAS un test psychométrique certifié ou validé, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd’hui sur un nombre limité de questions.\n\nLe score global et le score de l’axe « Détection de sophismes » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (identification de chaque type de sophisme, distinction entre autorité pertinente et autorité non pertinente), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d’entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n’est ni un diagnostic, ni une certification, et qu’il ne reflète que les réponses données aujourd’hui.\n\nN’invente aucune norme, aucun percentile, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -79,9 +242,5 @@
       "Objectif du domaine": "mesurer la capacité à juger la qualité de l’information et des raisonnements — compétence clé à l’ère de l’IA générative"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

@@ -1,42 +1,42 @@
 {
   "id": "psy-t25-1",
-  "title": "Préparer — Préparation & analyse des intérêts · T25.1",
+  "title": "Préparation & analyse des intérêts · T25.1",
   "category": "PERSONNALITÉ & COMPORTEMENT PROFESSIONNEL",
   "inputs": [
     {
-      "name": "objectif",
+      "name": "decision",
       "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Préparation & analyse des intérêts ». Ce formulaire prépare une démarche, sans évaluer une personne.",
+      "question": "Quelle négociation réelle êtes-vous en train de préparer ?",
+      "help": "Décrivez une négociation précise et à venir (anonymisée si besoin) : avec qui, sur quoi. Cet outil analyse cette situation, pas votre style de négociateur.",
       "required": true
     },
     {
-      "name": "contexte",
+      "name": "elements_connus",
       "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à préparer une négociation. Ne renseignez pas de score supposé.",
+      "question": "Que savez-vous déjà des positions, des intérêts et des parties prenantes de chaque côté ?",
+      "help": "Indiquez ce que l'autre partie demande ouvertement (position) et ce que vous pensez qu'elle recherche réellement (intérêt), ainsi que les personnes influentes autour de la table.",
       "required": false
     },
     {
-      "name": "contraintes",
+      "name": "enjeu",
       "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
+      "question": "Qu'est-ce qui est en jeu si cette négociation échoue ou si l'accord est mauvais ?",
+      "help": "Budget, relation, délai, et votre meilleure alternative si aucun accord n'est trouvé.",
+      "required": false
+    },
+    {
+      "name": "echeance",
+      "type": "text",
+      "question": "Sous quel délai cette négociation doit-elle être menée ?",
+      "placeholder": "Exemple : rendez-vous prévu jeudi prochain",
       "required": false
     }
   ],
-  "promptTemplate": "Prépare un support écrit pour « Préparation & analyse des intérêts », dans le domaine « NÉGOCIATION & GESTION DES CONFLITS ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à préparer une négociation.\nFormat cible : 8 cas, 12 min.\nContenu cible : intérêts vs positions, BATNA, ZOPA, parties prenantes.\nCalcul cible (non implémenté ici) : score + qualité de préparation.\nUsage décrit : négociateurs, achats, ventes.\nOptions cibles : grille de préparation générée automatiquement.\nObjectif du domaine : évaluer les compétences de négociation et de résolution de conflits\nGarde-fou du domaine : les scénarios ne doivent pas encourager des pratiques coercitives ; charte éthique\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "promptTemplate": "Tu es un conseiller en négociation spécialisé dans la préparation par l'analyse des intérêts : la distinction entre les positions affichées par chaque partie et les intérêts réels qui se cachent derrière, le BATNA (meilleure alternative à un accord négocié) et, lorsque les informations le permettent, la ZOPA (zone possible d'accord).\n\nSituation décrite par l'utilisateur :\nNégociation à préparer : {decision}\nPositions, intérêts et parties prenantes déjà connus : {elements_connus}\nEnjeu si la négociation échoue : {enjeu}\nÉchéance : {echeance}\n\nRepère dans la situation décrite les positions affichées de chaque partie et les intérêts probables qui se cachent derrière. Identifie le BATNA de l'utilisateur (ce qu'il ferait si aucun accord n'était trouvé) et, si les informations le permettent, une estimation de la ZOPA. Repère aussi les parties prenantes qui influencent la décision sans être à la table. Propose des questions concrètes de préparation : quel est le BATNA réel, pas supposé ? Quels intérêts de l'autre partie restent à vérifier plutôt qu'à deviner ? Qui, en dehors des négociateurs présents, doit valider l'accord ?\n\nProduis une analyse structurée : une synthèse directe de ce que tu observes dans CETTE situation, des sections développant chaque repère identifié avec les questions de préparation à se poser, et les points clés à retenir avant la négociation.\n\nRappel impératif : cet outil est une aide à la décision pour CETTE situation précise. Il ne mesure pas une aptitude ou une personnalité, ne produit aucun score, coefficient, percentile ou diagnostic, et ne doit jamais servir à une décision de recrutement, sélection, promotion ou certification. N'évalue pas la personne, seulement la situation décrite. Si des informations manquent, dis-le explicitement plutôt que d'inventer des faits.",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
+      "synthese": {
         "type": "string"
       },
       "sections": {
@@ -56,14 +56,21 @@
             "contenu"
           ]
         }
+      },
+      "points_cles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "synthese",
+      "sections",
+      "points_cles"
     ]
   },
-  "output_kind": "document",
+  "output_kind": "analysis",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +87,5 @@
       "Garde-fou du domaine": "les scénarios ne doivent pas encourager des pratiques coercitives ; charte éthique"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

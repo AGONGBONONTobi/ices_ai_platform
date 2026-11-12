@@ -1,69 +1,206 @@
 {
   "id": "psy-t38-3",
-  "title": "Préparer — Allocation de ressources sous contrainte · T38.3",
+  "title": "Allocation de ressources sous contrainte · T38.3",
   "category": "STRATÉGIE & MANAGEMENT",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Allocation de ressources sous contrainte ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : capacité à répartir des ressources rares entre objectifs concurrents. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Allocation de ressources sous contrainte », dans le domaine « RÉSOLUTION DE PROBLÈMES COMPLEXES ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : capacité à répartir des ressources rares entre objectifs concurrents.\nFormat cible : 5 simulations budgétaires, 15 min.\nContenu cible : budget, temps, personnes, arbitrages, priorités.\nCalcul cible (non implémenté ici) : efficience, équité, cohérence stratégique.\nUsage décrit : direction générale, gestion de crise.\nOptions cibles : simulation avec contraintes africaines (budget public contraint, ressources rares).\nObjectif du domaine : évaluer la capacité à analyser et résoudre des problèmes mal structurés, dynamiques et à multiples variables — compétence de plus en plus critique à l’ère des systèmes complexes et de l’IA\nGarde-fou du domaine : les cas doivent être non politiques et non sensibles ; éviter les scénarios stigmatisants\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "Qu'appelle-t-on le « coût d'opportunité » d'une décision d'allocation de ressources ?",
+      "help": "Il ne s'agit pas d'une dépense réelle, mais d'une valeur à laquelle on renonce.",
+      "options": [
+        {
+          "label": "La valeur de la meilleure option à laquelle on renonce en choisissant une autre option, même si aucune somme d'argent n'est explicitement dépensée pour cette option écartée.",
+          "score": 1
+        },
+        {
+          "label": "Le coût comptable total déjà engagé dans le projet, qu'on décide de poursuivre ou non.",
+          "score": 0
+        },
+        {
+          "label": "Le coût de transport lié uniquement au déplacement de ressources physiques.",
+          "score": 0
+        },
+        {
+          "label": "La différence entre le budget prévu et le budget final, une fois le projet terminé.",
+          "score": 0
+        }
+      ],
+      "axe": "Allocation de ressources sous contrainte",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Un responsable a déjà dépensé 80 000 € dans un projet qui ne produit plus de résultats utiles, mais continue de le financer « pour ne pas perdre ce qui a été investi ». Quel biais de décision illustre ce raisonnement ?",
+      "help": "Le montant déjà dépensé ne peut, par définition, plus être récupéré.",
+      "options": [
+        {
+          "label": "Le biais des coûts irrécupérables (sunk cost fallacy) : une dépense déjà engagée, qui ne peut être récupérée, ne devrait pas influencer une décision future tournée vers l'avenir.",
+          "score": 1
+        },
+        {
+          "label": "Le biais de disponibilité, qui consiste à surestimer un risque facilement imaginable.",
+          "score": 0
+        },
+        {
+          "label": "L'effet de halo, qui consiste à juger une personne à partir d'un seul trait.",
+          "score": 0
+        },
+        {
+          "label": "Le biais de confirmation, qui consiste à ne chercher que les informations qui confirment une idée.",
+          "score": 0
+        }
+      ],
+      "axe": "Allocation de ressources sous contrainte",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Dans une allocation budgétaire entre plusieurs projets, qu'exprime le principe des « rendements marginaux décroissants » ?",
+      "help": "Pensez à ce qui se passe quand on continue d'ajouter des ressources au même projet.",
+      "options": [
+        {
+          "label": "Au-delà d'un certain point, chaque unité supplémentaire de ressource allouée à un même projet produit un gain additionnel de plus en plus faible.",
+          "score": 1
+        },
+        {
+          "label": "Chaque ressource supplémentaire allouée produit systématiquement un gain croissant, sans limite.",
+          "score": 0
+        },
+        {
+          "label": "Le rendement d'un projet est toujours constant, quel que soit le montant alloué.",
+          "score": 0
+        },
+        {
+          "label": "Les rendements décroissants ne concernent que les ressources humaines, jamais le budget financier.",
+          "score": 0
+        }
+      ],
+      "axe": "Allocation de ressources sous contrainte",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Une allocation de ressources est dite « Pareto-efficiente » lorsque :",
+      "help": "Pensez à ce qu'il devient impossible de faire sans dégrader un autre objectif.",
+      "options": [
+        {
+          "label": "Il est impossible de réallouer les ressources pour améliorer la situation d'un objectif sans détériorer la situation d'au moins un autre objectif.",
+          "score": 1
+        },
+        {
+          "label": "Elle maximise uniquement le budget total dépensé, sans considérer les résultats obtenus.",
+          "score": 0
+        },
+        {
+          "label": "Elle répartit toujours les ressources de façon strictement égale entre tous les objectifs.",
+          "score": 0
+        },
+        {
+          "label": "Elle élimine complètement la notion de compromis entre objectifs concurrents.",
+          "score": 0
+        }
+      ],
+      "axe": "Allocation de ressources sous contrainte",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Face à un budget contraint et plusieurs projets concurrents, quelle démarche relève d'un arbitrage rationnel plutôt que d'une simple répartition égalitaire ?",
+      "help": "Comparez ce que chaque euro supplémentaire apporte, projet par projet.",
+      "options": [
+        {
+          "label": "Classer les projets selon leur contribution marginale attendue par euro investi, puis allouer en priorité aux projets dont la contribution marginale par euro est la plus élevée.",
+          "score": 1
+        },
+        {
+          "label": "Diviser le budget total par le nombre de projets, sans tenir compte de leur contribution attendue.",
+          "score": 0
+        },
+        {
+          "label": "Allouer tout le budget au projet qui a été proposé en premier, par ordre d'arrivée.",
+          "score": 0
+        },
+        {
+          "label": "Allouer le budget en fonction de la taille de l'équipe qui porte chaque projet, indépendamment des résultats attendus.",
+          "score": 0
+        }
+      ],
+      "axe": "Allocation de ressources sous contrainte",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "Pourquoi est-il risqué d'allouer 100 % d'un budget contraint à un seul objectif jugé prioritaire, sans réserve ?",
+      "help": "Pensez à ce qui se passe le jour où un imprévu survient.",
+      "options": [
+        {
+          "label": "Parce qu'en l'absence de marge, tout imprévu ou objectif émergent ne peut plus être financé, ce qui rigidifie la capacité d'adaptation du système.",
+          "score": 1
+        },
+        {
+          "label": "Parce qu'un budget doit toujours être réparti en parts strictement égales entre tous les objectifs possibles.",
+          "score": 0
+        },
+        {
+          "label": "Parce que la loi impose un plafond de dépense par objectif dans tous les contextes.",
+          "score": 0
+        },
+        {
+          "label": "Parce qu'un objectif prioritaire ne peut jamais recevoir plus de la moitié du budget disponible.",
+          "score": 0
+        }
+      ],
+      "axe": "Allocation de ressources sous contrainte",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur en gestion budgétaire et arbitrage de ressources. Cet outil est un contrôle de connaissances factuelles sur « Allocation de ressources sous contrainte » (domaine « RÉSOLUTION DE PROBLÈMES COMPLEXES ») : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence générale, ni une aptitude de décision ou de personnalité, il ne produit aucun percentile ni norme professionnelle, et il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nLe score global et le score de l'axe « Allocation de ressources sous contrainte » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (coût d'opportunité, biais des coûts irrécupérables, rendements marginaux décroissants, efficience Pareto), sans comparaison à une norme externe ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, ni une mesure d'intelligence générale ou de capacité de décision, et qu'il ne reflète que les réponses données aujourd'hui.\n\nN'invente aucune norme, aucun percentile, aucun QI, aucun classement professionnel. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +217,5 @@
       "Garde-fou du domaine": "les cas doivent être non politiques et non sensibles ; éviter les scénarios stigmatisants"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }

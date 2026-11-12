@@ -1,69 +1,232 @@
 {
   "id": "psy-t34-5",
-  "title": "Préparer — Sécurité industrielle & permis de travail · T34.5",
+  "title": "Sécurité industrielle & permis de travail · T34.5",
   "category": "OUTILS SECTORIELS SPÉCIALISÉS",
-  "inputs": [
-    {
-      "name": "objectif",
-      "type": "textarea",
-      "question": "Que souhaitez-vous préparer ?",
-      "help": "Précisez votre objectif autour de « Sécurité industrielle & permis de travail ». Ce formulaire prépare une démarche, sans évaluer une personne.",
-      "required": true
-    },
-    {
-      "name": "contexte",
-      "type": "textarea",
-      "question": "Quel est le contexte utile ?",
-      "help": "Décrivez une situation de façon anonyme, votre rôle et le public concerné. Évitez les noms et les données médicales ou personnelles détaillées.",
-      "required": true
-    },
-    {
-      "name": "elements",
-      "type": "textarea",
-      "question": "Quels éléments factuels avez-vous déjà ?",
-      "help": "Indiquez uniquement vos observations et questions en lien avec : compréhension des risques industriels. Ne renseignez pas de score supposé.",
-      "required": false
-    },
-    {
-      "name": "contraintes",
-      "type": "textarea",
-      "question": "Quelles contraintes faut-il respecter ?",
-      "help": "Langue, accessibilité, temps disponible, destinataire envisagé et limites de partage. Aucun document ne sera partagé automatiquement.",
-      "required": false
-    }
-  ],
-  "promptTemplate": "Prépare un support écrit pour « Sécurité industrielle & permis de travail », dans le domaine « INGÉNIERIE, TECHNIQUE & SÉCURITÉ ». Il s’agit d’un guide de préparation et non de la passation du test ou de la mise en œuvre complète du parcours.\n\nObjectif déclaré : {objectif}\nContexte déclaré : {contexte}\nÉléments fournis : {elements}\nContraintes déclarées : {contraintes}\n\nSPÉCIFICATION SOURCE — cible de conception, jamais un résultat acquis :\nMesure visée : compréhension des risques industriels.\nFormat cible : 15 scénarios, 10 min.\nContenu cible : LOTO, espace confiné, travail en hauteur, ATEX.\nCalcul cible (non implémenté ici) : score.\nUsage décrit : affectation à risque.\nOptions cibles : couplage D28 (HSE).\nObjectif du domaine : évaluer les compétences techniques et de sécurité des professionnels de l’ingénierie et de l’industrie\nGarde-fou du domaine : les scores ne remplacent pas les habilitations réglementaires ; pas de substitution aux certifications obligatoires\n\nProduis un document organisé : objectif et périmètre ; faits disponibles et informations manquantes ; préparation ou support écrit propre à cette fiche ; questions à discuter et prochaines étapes ; limites du document. Reste spécifique au construit et au contexte de la fiche. Pour une checklist, un journal ou un dossier, rédige le support modifiable lui-même, en laissant « à compléter » les faits absents. Pour un cadrage P0, prépare une notice et des questions de compréhension : ne prétends jamais avoir enregistré un consentement ou ouvert un palier. Aucun questionnaire psychométrique n’est administré ici. Ne fabrique ni items de test, ni réponses du participant, ni observations de passation. N’invente aucune aptitude, aucun score, classement, percentile, QI, diagnostic, seuil ou preuve de validation. Les méthodes de scoring mentionnées sont des spécifications futures, non des calculs à réaliser. Ne décide pas de recrutement, admission, promotion, assurance ou aptitude. Ne présente pas les banques, normes, traductions validées, partenaires, liens révocables ou suivis cités comme déjà disponibles. N’invente aucun professionnel, contact ou ressource locale. Aucun partage ni transfert n’est effectué. Mentionne le caractère préparatoire et l’absence de résultat de test dans le document final.",
+  "output_kind": "assessment",
   "outputSchema": {
     "type": "object",
     "properties": {
-      "titre": {
-        "type": "string"
+      "score_global": {
+        "type": "number",
+        "description": "Score sur 100"
       },
-      "sections": {
+      "axes": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "titre": {
+            "axe": {
               "type": "string"
             },
-            "contenu": {
-              "type": "string"
+            "score": {
+              "type": "number",
+              "description": "Score sur 100"
             }
           },
           "required": [
-            "titre",
-            "contenu"
+            "axe",
+            "score"
           ]
+        }
+      },
+      "recommandations": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     },
     "required": [
-      "titre",
-      "sections"
+      "score_global",
+      "axes",
+      "recommandations"
     ]
   },
-  "output_kind": "document",
+  "inputs": [
+    {
+      "name": "q1",
+      "type": "select",
+      "question": "La procédure « LOTO » (consignation-déconsignation) a pour objectif principal de :",
+      "help": "Le risque visé par cette procédure est la remise en énergie d'un équipement pendant une intervention.",
+      "options": [
+        {
+          "label": "Empêcher la remise en énergie accidentelle d'un équipement pendant une intervention de maintenance",
+          "score": 1
+        },
+        {
+          "label": "Accélérer les interventions en évitant les arrêts machine",
+          "score": 0
+        },
+        {
+          "label": "Remplacer les équipements de protection individuelle",
+          "score": 0
+        },
+        {
+          "label": "Informer uniquement le service des ressources humaines",
+          "score": 0
+        }
+      ],
+      "axe": "Sécurité industrielle & permis de travail",
+      "required": true
+    },
+    {
+      "name": "q2",
+      "type": "select",
+      "question": "Avant d'entrer dans un espace confiné, la vérification prioritaire à effectuer est :",
+      "help": "Le danger principal en espace confiné est souvent invisible et indétectable sans appareil.",
+      "options": [
+        {
+          "label": "Le contrôle de l'atmosphère (oxygène, gaz toxiques/inflammables) à l'aide d'un détecteur",
+          "score": 1
+        },
+        {
+          "label": "La vérification de l'éclairage uniquement",
+          "score": 0
+        },
+        {
+          "label": "La présence d'une seule personne, sans surveillance extérieure",
+          "score": 0
+        },
+        {
+          "label": "Le nettoyage visuel de l'espace",
+          "score": 0
+        }
+      ],
+      "axe": "Sécurité industrielle & permis de travail",
+      "required": true
+    },
+    {
+      "name": "q3",
+      "type": "select",
+      "question": "Lors d'un travail en hauteur, la protection collective (ex. garde-corps) est généralement privilégiée par rapport à la protection individuelle (ex. harnais) car :",
+      "help": "Une protection collective fonctionne indépendamment du comportement de chaque individu.",
+      "options": [
+        {
+          "label": "Elle protège tous les travailleurs sans dépendre d'un comportement individuel correct",
+          "score": 1
+        },
+        {
+          "label": "Elle est toujours moins coûteuse à installer",
+          "score": 0
+        },
+        {
+          "label": "Elle est obligatoire uniquement au-delà de 10 mètres de hauteur",
+          "score": 0
+        },
+        {
+          "label": "Elle remplace tout besoin de formation",
+          "score": 0
+        }
+      ],
+      "axe": "Sécurité industrielle & permis de travail",
+      "required": true
+    },
+    {
+      "name": "q4",
+      "type": "select",
+      "question": "Le classement ATEX d'une zone concerne le risque :",
+      "help": "ATEX est l'acronyme d'« atmosphères explosives ».",
+      "options": [
+        {
+          "label": "D'explosion lié à la présence d'atmosphères explosives (gaz, vapeurs, poussières inflammables)",
+          "score": 1
+        },
+        {
+          "label": "De contamination biologique",
+          "score": 0
+        },
+        {
+          "label": "De rayonnement ionisant",
+          "score": 0
+        },
+        {
+          "label": "De bruit excessif",
+          "score": 0
+        }
+      ],
+      "axe": "Sécurité industrielle & permis de travail",
+      "required": true
+    },
+    {
+      "name": "q5",
+      "type": "select",
+      "question": "Un permis de travail (permis de feu, permis de fouille, etc.) a pour fonction de :",
+      "help": "Le permis formalise les conditions dans lesquelles une intervention risquée peut être menée, avant qu'elle ne commence.",
+      "options": [
+        {
+          "label": "Formaliser l'autorisation et les conditions de sécurité d'une intervention à risque avant son démarrage",
+          "score": 1
+        },
+        {
+          "label": "Remplacer la formation du personnel concerné",
+          "score": 0
+        },
+        {
+          "label": "Garantir qu'aucun accident ne peut survenir",
+          "score": 0
+        },
+        {
+          "label": "Autoriser une intervention sans limite de durée",
+          "score": 0
+        }
+      ],
+      "axe": "Sécurité industrielle & permis de travail",
+      "required": true
+    },
+    {
+      "name": "q6",
+      "type": "select",
+      "question": "La hiérarchie des mesures de prévention du risque de chute privilégie, dans l'ordre :",
+      "help": "La prévention commence par supprimer le risque à la source, avant de chercher à s'en protéger.",
+      "options": [
+        {
+          "label": "L'élimination du risque, puis la protection collective, puis la protection individuelle",
+          "score": 1
+        },
+        {
+          "label": "La protection individuelle uniquement",
+          "score": 0
+        },
+        {
+          "label": "La formation uniquement, sans mesure matérielle",
+          "score": 0
+        },
+        {
+          "label": "L'assurance uniquement, sans mesure de prévention",
+          "score": 0
+        }
+      ],
+      "axe": "Sécurité industrielle & permis de travail",
+      "required": true
+    },
+    {
+      "name": "q7",
+      "type": "select",
+      "question": "Dans une zone ATEX, le matériel électrique utilisé doit être :",
+      "help": "Un matériel standard peut constituer lui-même une source d'inflammation dans ce type de zone.",
+      "options": [
+        {
+          "label": "Certifié et adapté à la zone (matériel antidéflagrant/ATEX)",
+          "score": 1
+        },
+        {
+          "label": "Un matériel standard sans contrainte particulière",
+          "score": 0
+        },
+        {
+          "label": "Uniquement un matériel étanche à l'eau",
+          "score": 0
+        },
+        {
+          "label": "Un matériel à haute puissance pour compenser les pertes",
+          "score": 0
+        }
+      ],
+      "axe": "Sécurité industrielle & permis de travail",
+      "required": true
+    }
+  ],
+  "promptTemplate": "Tu es formateur technique en ingénierie et sécurité industrielle. Cet outil est un contrôle de connaissances factuelles sur « la sécurité industrielle (consignation LOTO, espaces confinés, travail en hauteur, zones ATEX, permis de travail) » : ce n'est PAS un test psychométrique certifié ou validé, il ne mesure ni l'intelligence ni l'aptitude générale du répondant, il ne produit aucun percentile ni aucune norme professionnelle, et les scores ne remplacent en aucun cas les habilitations réglementaires ou les certifications obligatoires requises pour ces activités.\n\nLe score global et le score de l'axe « Sécurité industrielle & permis de travail » te sont déjà fournis plus bas, calculés à partir des bonnes et mauvaises réponses. Ne recalcule pas les scores, reprends-les tels quels.\n\nProduis :\n- une interprétation brève et honnête du score, en termes de maîtrise factuelle des notions testées (LOTO, espace confiné, travail en hauteur, ATEX, permis de travail), sans comparaison à une norme externe et sans jugement sur l'intelligence ou l'aptitude générale du répondant ;\n- des recommandations concrètes et actionnables, en langage clair et pratique, pour progresser sur les notions où la maîtrise semble incomplète, formulées comme des pistes de révision ou d'entraînement et non comme un jugement de valeur ;\n- un rappel explicite que ce résultat n'est ni un diagnostic, ni une certification, et qu'il ne reflète que les réponses données aujourd'hui sur un nombre limité de questions.\n\nRappelle que ce score ne remplace jamais une habilitation réglementaire ni une certification obligatoire (ex. habilitation électrique, permis de travail, certification qualité) : seul l'organisme habilité peut délivrer ces certifications. N'invente aucune norme, aucun percentile, aucun classement professionnel, aucun QI. Ne recalcule pas les scores.",
   "provenance": {
     "batch": "5",
     "document": "Catalogue_350_Outils_Psychometriques.docx",
@@ -80,9 +243,5 @@
       "Garde-fou du domaine": "les scores ne remplacent pas les habilitations réglementaires ; pas de substitution aux certifications obligatoires"
     },
     "related_codes": []
-  },
-  "execution": {
-    "mode": "preparation",
-    "notice": "Guide de préparation fondé sur vos informations déclarées. Il ne fait pas passer le test décrit dans le référentiel et ne produit ni score psychométrique, ni QI, ni percentile, ni diagnostic. Aucune conclusion de sélection ou d’aptitude individuelle."
   }
 }
